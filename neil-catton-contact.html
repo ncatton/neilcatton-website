@@ -706,33 +706,30 @@
     btn.textContent = "Sending…";
     btn.disabled = true;
 
-    /* TODO: Replace this fetch with your actual form endpoint
-       e.g. Formspree: https://formspree.io/f/YOUR_ID
-       or Netlify Forms, EmailJS, etc.
+    /* const data = new FormData(form);
+    try {
+      const res = await fetch("https://formspree.io/f/mdajdnrq", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
 
-    const data = new FormData(form);
-    const res = await fetch("https://formspree.io/f/YOUR_ID", {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" }
-    });
-
-    if (res.ok) {
-      form.style.display = "none";
-      success.style.display = "block";
-    } else {
+      if (res.ok) {
+        form.style.display = "none";
+        success.style.display = "block";
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        const json = await res.json();
+        const msg = json.errors ? json.errors.map(e => e.message).join(", ") : "Something went wrong.";
+        btn.textContent = "Send message";
+        btn.disabled = false;
+        alert(msg + " Please email nc@neilcatton.com directly if the problem persists.");
+      }
+    } catch(err) {
       btn.textContent = "Send message";
       btn.disabled = false;
-      alert("Something went wrong. Please email nc@neilcatton.com directly.");
+      alert("Could not send message. Please email nc@neilcatton.com directly.");
     }
-    */
-
-    /* Temporary demo success — remove when connected to real endpoint */
-    setTimeout(() => {
-      form.style.display = "none";
-      success.style.display = "block";
-      success.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 800);
 
   });
 </script>
