@@ -374,6 +374,308 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .themes-grid { grid-template-columns: 1fr; }
   }
+
+  /* ══════════════════════════════════════
+     FRAMEWORK SECTIONS
+  ══════════════════════════════════════ */
+  .framework-section {
+    padding: 4rem var(--col-pad);
+    border-top: 2px solid #1a1714;
+  }
+  .framework-section-1 { background: #f0ece6; }
+  .framework-section-2 { background: #e8e2da; }
+  .framework-section-3 { background: #f0ece6; }
+
+  .framework-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .framework-header { margin-bottom: 3rem; }
+
+  .framework-kicker {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .framework-kicker::before {
+    content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0;
+  }
+  .framework-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .framework-standfirst {
+    font-size: 1rem; font-weight: 300; color: #3d3935;
+    line-height: 1.8; max-width: 640px;
+  }
+  .framework-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+
+  /* ── FIVE IS GRID ── */
+  .five-is-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-bottom: 3rem;
+    border: 1px solid #d4cfc9;
+  }
+  .i-card {
+    padding: 1.75rem 1.25rem;
+    border-right: 1px solid #d4cfc9;
+    background: #f5f2ee;
+    position: relative;
+    overflow: hidden;
+  }
+  .i-card:last-child { border-right: none; }
+  .i-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+  }
+  .i-card-1::before { background: #2E6B8A; }
+  .i-card-2::before { background: #7B5F3A; }
+  .i-card-3::before { background: #6B3FA0; }
+  .i-card-4::before { background: #B03A2E; }
+  .i-card-5::before { background: #2b4a6f; }
+
+  .i-card-num {
+    font-family: var(--serif); font-size: 2.5rem; font-style: italic;
+    line-height: 1; margin-bottom: 0.75rem; opacity: 0.15; color: #1a1714;
+  }
+  .i-card-label {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.75rem; display: block;
+  }
+  .i-card-1 .i-card-label { color: #2E6B8A; }
+  .i-card-2 .i-card-label { color: #7B5F3A; }
+  .i-card-3 .i-card-label { color: #6B3FA0; }
+  .i-card-4 .i-card-label { color: #B03A2E; }
+  .i-card-5 .i-card-label { color: #2b4a6f; }
+
+  .i-card-title {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #1a1714; line-height: 1.3; margin-bottom: 0.75rem;
+  }
+  .i-card-desc {
+    font-size: 0.8125rem; color: #3d3935; line-height: 1.7; background: transparent;
+  }
+
+  /* ── ACTION PATHS ── */
+  .paths-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .path-card {
+    background: #1a1714; padding: 1.75rem;
+    border-left: 3px solid #2b4a6f;
+  }
+  .path-num {
+    font-family: var(--sans); font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(245,242,238,0.4); margin-bottom: 0.4rem;
+  }
+  .path-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #f5f2ee; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .path-desc {
+    font-size: 0.8125rem; color: rgba(245,242,238,0.6);
+    line-height: 1.65; margin-bottom: 1rem; background: transparent;
+  }
+  .path-actions {
+    list-style: none; padding: 0;
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.875rem;
+  }
+  .path-actions li {
+    font-size: 0.8rem; color: rgba(245,242,238,0.72);
+    line-height: 1.6; padding: 0.3rem 0;
+    padding-left: 0.875rem; position: relative; background: transparent;
+  }
+  .path-actions li::before {
+    content: ""; position: absolute; left: 0; top: 0.7rem;
+    width: 4px; height: 4px; background: #2b4a6f; border-radius: 50%;
+  }
+
+  /* ── RIGHTS / PRINCIPLES GRID ── */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .principle-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    border-top: 3px solid #2b4a6f;
+    padding: 1.25rem;
+  }
+  .principle-code {
+    font-family: var(--sans); font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #2b4a6f; margin-bottom: 0.5rem; display: block;
+  }
+  .principle-title {
+    font-family: var(--serif); font-size: 1rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .principle-desc {
+    font-size: 0.8rem; color: #3d3935; line-height: 1.65; background: transparent;
+  }
+
+  /* ── THREAT / PILLAR ROWS ── */
+  .pillars-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .pillar-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-card::before {
+    content: ""; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+  }
+  .pillar-p1::before { background: #2E6B8A; }
+  .pillar-p2::before { background: #B03A2E; }
+  .pillar-p3::before { background: #2b4a6f; }
+  .pillar-p4::before { background: #5c5652; }
+
+  .pillar-icon {
+    font-size: 1.25rem; margin-bottom: 0.75rem; display: block; opacity: 0.6;
+  }
+  .pillar-name {
+    font-family: var(--serif); font-size: 1rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem;
+  }
+  .pillar-desc {
+    font-size: 0.8rem; color: #3d3935; line-height: 1.65; background: transparent;
+  }
+
+  /* ── THREE TESTS INLINE ── */
+  .tests-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #d4cfc9;
+    margin-bottom: 3rem;
+  }
+  .test-fw-card {
+    padding: 1.75rem;
+    border-right: 1px solid #d4cfc9;
+    background: #1a1714;
+  }
+  .test-fw-card:last-child { border-right: none; }
+  .test-fw-num {
+    font-family: var(--serif); font-size: 2rem; font-style: italic;
+    color: rgba(212,207,201,0.2); line-height: 1; margin-bottom: 0.75rem;
+  }
+  .test-fw-name {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+    color: #f5f2ee; margin-bottom: 0.5rem;
+  }
+  .test-fw-question {
+    font-size: 0.8rem; font-style: italic; color: rgba(245,242,238,0.55);
+    margin-bottom: 0.75rem; line-height: 1.5; background: transparent;
+  }
+  .test-fw-desc {
+    font-size: 0.8rem; color: rgba(245,242,242,0.7);
+    line-height: 1.65; background: transparent;
+  }
+
+  /* ── AUDIENCE CARDS (bottom band) ── */
+  .audience-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid #d4cfc9;
+  }
+  .audience-card {
+    padding: 1.5rem;
+    border-right: 1px solid #d4cfc9;
+    background: #f5f2ee;
+  }
+  .audience-card:last-child { border-right: none; }
+  .audience-num {
+    font-family: var(--serif); font-size: 1.75rem; font-style: italic;
+    color: #d4cfc9; line-height: 1; margin-bottom: 0.5rem;
+  }
+  .audience-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 0.5rem; display: block;
+  }
+  .audience-title {
+    font-family: var(--serif); font-size: 0.975rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .audience-items {
+    list-style: none; padding: 0; margin-top: 0.75rem;
+    border-top: 1px solid #d4cfc9; padding-top: 0.75rem;
+  }
+  .audience-items li {
+    font-size: 0.775rem; color: #3d3935; line-height: 1.6;
+    padding: 0.2rem 0; padding-left: 0.75rem; position: relative;
+    background: transparent;
+  }
+  .audience-items li::before {
+    content: ""; position: absolute; left: 0; top: 0.65rem;
+    width: 3px; height: 3px; background: #2b4a6f; border-radius: 50%;
+  }
+
+  /* ── DOWNLOAD PROMPT ── */
+  .framework-download {
+    background: #2b4a6f;
+    padding: 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .framework-download-text { }
+  .framework-download-heading {
+    font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
+    color: #f5f2ee; margin-bottom: 0.3rem;
+  }
+  .framework-download-sub {
+    font-size: 0.875rem; color: rgba(245,242,238,0.65); line-height: 1.5;
+  }
+  .btn-download {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: #f5f2ee; color: #2b4a6f;
+    border: 2px solid #f5f2ee; transition: all 0.2s; flex-shrink: 0;
+  }
+  .btn-download:hover { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .five-is-grid { grid-template-columns: 1fr 1fr; }
+    .i-card:nth-child(5) { border-right: none; }
+    .paths-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: 1fr 1fr; }
+    .pillars-row { grid-template-columns: 1fr 1fr; }
+    .tests-row { grid-template-columns: 1fr; }
+    .test-fw-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .test-fw-card:last-child { border-bottom: none; }
+    .audience-row { grid-template-columns: 1fr 1fr; }
+    .audience-card:nth-child(2) { border-right: none; }
+    .audience-card:nth-child(3) { border-top: 1px solid #d4cfc9; }
+    .audience-card:nth-child(4) { border-right: none; border-top: 1px solid #d4cfc9; }
+    .framework-download { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 580px) {
+    .five-is-grid { grid-template-columns: 1fr; }
+    .i-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .pillars-row { grid-template-columns: 1fr; }
+    .audience-row { grid-template-columns: 1fr; }
+    .audience-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
+  }
 </style>
 </head>
 <body>
@@ -488,6 +790,174 @@
     </div>
   </section>
 
+
+  <!-- ── FRAMEWORK: THE NEXT EVOLUTION ── -->
+  <section class="framework-section framework-section-1" aria-labelledby="fw1-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw1-heading">
+          Putting The Next Evolution to work
+        </h2>
+        <p class="framework-standfirst">
+          The book is structured around five lenses — each one a domain where technology
+          is reshaping what it means to be human. Below each lens is the argument, and
+          below the argument are the actions. For individuals, organisations, leaders,
+          and builders.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five Is -->
+      <div class="five-is-grid" role="list">
+        <div class="i-card i-card-1" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>I</em></div>
+          <span class="i-card-label">Interfaces</span>
+          <h3 class="i-card-title">How we interact with technology is changing faster than we are adapting to it</h3>
+          <p class="i-card-desc">Screens are disappearing into environments. The interface becomes invisible — and with invisibility comes uncritical acceptance. Design determines behaviour, and most design is not designed with you in mind.</p>
+        </div>
+        <div class="i-card i-card-2" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>II</em></div>
+          <span class="i-card-label">Institutions</span>
+          <h3 class="i-card-title">Our foundational institutions were built for a slower, more stable world</h3>
+          <p class="i-card-desc">Government, education, healthcare, justice — each built for conditions that no longer exist. Technology does not wait for institutions to adapt. The gap between what organisations can do and what they are set up to do grows every year.</p>
+        </div>
+        <div class="i-card i-card-3" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>III</em></div>
+          <span class="i-card-label">Identity</span>
+          <h3 class="i-card-title">Who we are is increasingly defined, inferred, and stored by systems we do not control</h3>
+          <p class="i-card-desc">Digital identity is not a record of who you are. It is a model of who someone else thinks you are — built from data you did not knowingly provide, optimised for purposes that are not yours.</p>
+        </div>
+        <div class="i-card i-card-4" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>IV</em></div>
+          <span class="i-card-label">Intelligence</span>
+          <h3 class="i-card-title">AI is not a tool. It is an environment — one we are designing without sufficient intention</h3>
+          <p class="i-card-desc">The question is not whether AI is intelligent. It is what values are encoded in its decisions, whose interests it serves, and whether the humans it affects have any meaningful way to contest its outputs.</p>
+        </div>
+        <div class="i-card i-card-5" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>V</em></div>
+          <span class="i-card-label">Integrity</span>
+          <h3 class="i-card-title">The future is not something that happens to us. It is something we design — or fail to</h3>
+          <p class="i-card-desc">Integrity in this context means coherence between values and decisions — at every scale, from individual choices to institutional policy. Technology built without integrity is just acceleration toward consequences no one intended.</p>
+        </div>
+      </div>
+
+      <!-- Four Paths -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Four paths from insight to action
+      </h3>
+      <div class="paths-grid">
+        <div class="path-card">
+          <div class="path-num">Path 01</div>
+          <div class="path-name">Institutional Evolution</div>
+          <p class="path-desc">Foundational institutions must embrace systemic reinvention — not incremental improvement. The frameworks were written for a different world.</p>
+          <ul class="path-actions">
+            <li>Audit for legacy traps — what worked yesterday may prevent progress today</li>
+            <li>Redesign around purpose, not inherited process</li>
+            <li>Embed ethical impact assessment into governance from the start</li>
+            <li>Foster collaborative ecosystems across sector boundaries</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 02</div>
+          <div class="path-name">Human-Centred Technology Leadership</div>
+          <p class="path-desc">Those building and deploying technology carry the most direct responsibility for its human consequences.</p>
+          <ul class="path-actions">
+            <li>Mandate ethical design from conception — not as a late-stage review</li>
+            <li>Invest in Explainable AI and real accountability structures</li>
+            <li>Measure social and ecological impact alongside commercial outcomes</li>
+            <li>Champion human oversight in all high-stakes automated decisions</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 03</div>
+          <div class="path-name">Cultural &amp; Societal Shifts</div>
+          <p class="path-desc">Technology is a reflection of culture — and culture shapes how technology is used, perceived, and contested.</p>
+          <ul class="path-actions">
+            <li>Champion media literacy and narrative diversity</li>
+            <li>Teach futures literacy — in schools, workplaces, leadership programmes</li>
+            <li>Reclaim digital agency: move from passive consumption to active participation</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 04</div>
+          <div class="path-name">Personal Evolution</div>
+          <p class="path-desc">The future is not built by grand pronouncements. It is built by individual choices — including yours, whatever your role.</p>
+          <ul class="path-actions">
+            <li>Stay curious, not cynical — every constraint is also a design problem</li>
+            <li>Lead from your locus: your decisions create ripples at every level</li>
+            <li>Practice ethical imagination — ask "What if?" to stretch possibility, not induce fear</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- For whom -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        What this means for you
+      </h3>
+      <div class="audience-row" role="list">
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>I</em></div>
+          <span class="audience-label">For individuals</span>
+          <div class="audience-title">Cultivate digital self-awareness</div>
+          <ul class="audience-items">
+            <li>Audit the permissions you have granted — regularly</li>
+            <li>Learn to recognise persuasive design patterns</li>
+            <li>Exercise your right to opt out, disengage, have data deleted</li>
+            <li>Measure engagement by insight gained, not time captured</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>II</em></div>
+          <span class="audience-label">For organisations</span>
+          <div class="audience-title">Adopt a human-first design ethos</div>
+          <ul class="audience-items">
+            <li>Design is never neutral — own the assumptions in every default</li>
+            <li>Build in explainability and control from day one</li>
+            <li>Implement opt-in by default for significant data collection</li>
+            <li>Ensure human intervention is always possible</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>III</em></div>
+          <span class="audience-label">For leaders &amp; policymakers</span>
+          <div class="audience-title">Govern for an equitable digital future</div>
+          <ul class="audience-items">
+            <li>Develop adaptive regulatory frameworks that evolve with technology</li>
+            <li>Mandate algorithmic audits for high-stakes decisions</li>
+            <li>Ensure digital services are never the only option while a divide exists</li>
+            <li>Grant citizens the right to understand automated decisions affecting them</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>IV</em></div>
+          <span class="audience-label">For technology builders</span>
+          <div class="audience-title">Build with Most Valuable Ethics</div>
+          <ul class="audience-items">
+            <li>Not minimum viable product — Most Valuable Ethics from day one</li>
+            <li>Conduct bias audits on all predictive or anticipatory algorithms</li>
+            <li>Prioritise human override: no automated system should be uncontestable</li>
+            <li>Build clear redress mechanisms for harmful or inaccurate decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Download prompt -->
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full strategy framework — poster format</div>
+          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+        </div>
+        <a href="https://neilcatton.substack.com" class="btn-download"
+           target="_blank" rel="noopener noreferrer">
+          Subscribe for the download
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── BOOK II — THE COGNITIVE CRUCIBLE ── -->
   <section class="book-section" id="the-cognitive-crucible" aria-labelledby="book2-title" style="background:#ede9e3;">
     <div class="book-inner">
@@ -557,6 +1027,128 @@
             Buy on Amazon
           </a>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── FRAMEWORK: THE COGNITIVE CRUCIBLE ── -->
+  <section class="framework-section framework-section-2" aria-labelledby="fw2-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw2-heading">
+          Reclaiming your cognitive sovereignty
+        </h2>
+        <p class="framework-standfirst">
+          The Cognitive Crucible maps how intelligent systems are reshaping attention,
+          belief formation, and decision-making — often invisibly. The framework
+          below sets out the five domains of cognitive risk, six rights every digital
+          citizen holds, and the three tests to apply to any system operating in your mental environment.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five pillars of cognitive risk -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Five domains of cognitive risk
+      </h3>
+      <div class="pillars-row" role="list">
+        <div class="pillar-card pillar-p1" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◈</span>
+          <div class="pillar-name">The Attention Engine</div>
+          <p class="pillar-desc">Platforms are not designed to inform. They are designed to capture and hold attention — using variable reward mechanisms that exploit the same neurological pathways as addiction.</p>
+        </div>
+        <div class="pillar-card pillar-p2" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◎</span>
+          <div class="pillar-name">Weaponised Messaging</div>
+          <p class="pillar-desc">Influence operations have industrialised. The same tools that power recommendation engines power disinformation campaigns — the distinction is intent, not mechanism.</p>
+        </div>
+        <div class="pillar-card pillar-p3" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◇</span>
+          <div class="pillar-name">Algorithmic Bias</div>
+          <p class="pillar-desc">Algorithms are not neutral. They encode the values, assumptions, and blind spots of those who built them — and they apply those values at scale, to decisions that affect individual lives.</p>
+        </div>
+        <div class="pillar-card pillar-p4" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◆</span>
+          <div class="pillar-name">Identity Erosion</div>
+          <p class="pillar-desc">When systems infer who you are from behavioural data, they produce a version of you optimised for their purposes — not yours. That model then shapes what you see, what you're offered, and what decisions are made about you.</p>
+        </div>
+      </div>
+
+      <!-- Six digital rights -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Six rights of the digital citizen
+      </h3>
+      <div class="principles-grid" role="list">
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R1</span>
+          <div class="principle-title">The Right to Know</div>
+          <p class="principle-desc">When interacting with an automated or AI system, you have the right to be told. Simulated humans must be disclosed. Algorithmic curation must be declared.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R2</span>
+          <div class="principle-title">The Right to Understand</div>
+          <p class="principle-desc">Algorithmic decisions affecting you must be explainable in plain language — not buried in legal terms, not obscured by claims of proprietary complexity.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R3</span>
+          <div class="principle-title">The Right to Challenge</div>
+          <p class="principle-desc">Any decision made about you by an automated system must be contestable. There must always be a human in the loop — and that human must have genuine authority to act.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R4</span>
+          <div class="principle-title">The Right to Disengage</div>
+          <p class="principle-desc">Disengagement must be as intuitive as engagement. Systems must be built with withdrawal in mind — not as an afterthought, not as a dark pattern, but as a fundamental design requirement.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R5</span>
+          <div class="principle-title">The Right to Data Sovereignty</div>
+          <p class="principle-desc">You own your data. You have the right to access, correct, port, and delete it — on your terms, not the platform's. Data sovereignty is not a technical feature. It is a right.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R6</span>
+          <div class="principle-title">The Right to Opt Out</div>
+          <p class="principle-desc">The right to prioritise depth over convenience, and meaning over speed. Cognitive sovereignty demands that persuasion be transparent — and that opting out be genuinely possible.</p>
+        </div>
+      </div>
+
+      <!-- Three tests -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Three tests for any system in your mental environment
+      </h3>
+      <div class="tests-row" role="list">
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>1</em></div>
+          <div class="test-fw-name">Assistive</div>
+          <p class="test-fw-question">"Does this help me do something I couldn't do, or couldn't do easily, without it?"</p>
+          <p class="test-fw-desc">Not does it automate the thing — does it help the person. There is a meaningful difference between a system that extends human capability and one that replaces human judgement without accountability.</p>
+        </div>
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>2</em></div>
+          <div class="test-fw-name">Augmentive</div>
+          <p class="test-fw-question">"Does this genuinely add something — insight, capability, possibility?"</p>
+          <p class="test-fw-desc">Or does it merely replace one constraint with a different one? Augmentation means the human is more capable with the system than without it — not that the system has become the human.</p>
+        </div>
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>3</em></div>
+          <div class="test-fw-name">Adaptive</div>
+          <p class="test-fw-question">"Does this respond to my specific context and circumstance?"</p>
+          <p class="test-fw-desc">Or does it serve the average and call that good enough? A system that cannot adapt to the individual in front of it is not serving that individual — it is serving a statistical model of them.</p>
+        </div>
+      </div>
+
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full cognitive sovereignty framework</div>
+          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+        </div>
+        <a href="https://neilcatton.substack.com" class="btn-download"
+           target="_blank" rel="noopener noreferrer">
+          Subscribe for the download
+        </a>
       </div>
 
     </div>
@@ -634,6 +1226,131 @@
     </div>
   </section>
 
+
+
+  <!-- ── FRAMEWORK: THE SHADOW SYSTEM ── -->
+  <section class="framework-section framework-section-3" aria-labelledby="fw3-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw3-heading">
+          Understanding and defending against the shadow system
+        </h2>
+        <p class="framework-standfirst">
+          The Shadow System maps the evolution of cyber criminality from opportunistic
+          intrusion to geopolitical instrument — and sets out what defence looks like
+          at each scale. The framework operates at four levels: individual, organisation,
+          critical infrastructure, and nation state.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five parts of the threat landscape -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        The five-part threat landscape
+      </h3>
+      <div class="five-is-grid" role="list">
+        <div class="i-card i-card-1" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>I</em></div>
+          <span class="i-card-label" style="color:#2E6B8A;">It's Criminal</span>
+          <h3 class="i-card-title">The anatomy of a cyberattack and the economics of exploitation</h3>
+          <p class="i-card-desc">Cybercrime is an industry — with supply chains, specialisation, customer service, and profit margins. Understanding its structure is the first step to building effective defence.</p>
+        </div>
+        <div class="i-card i-card-2" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>II</em></div>
+          <span class="i-card-label" style="color:#7B5F3A;">It's Personal</span>
+          <h3 class="i-card-title">The individual as target, vector, and first line of defence</h3>
+          <p class="i-card-desc">Most attacks begin with a person — a click, a credential, a moment of inattention. Individual digital hygiene is not a nice-to-have. It is the perimeter.</p>
+        </div>
+        <div class="i-card i-card-3" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>III</em></div>
+          <span class="i-card-label" style="color:#6B3FA0;">It's Business</span>
+          <h3 class="i-card-title">Organisational exposure, resilience, and the true cost of a breach</h3>
+          <p class="i-card-desc">The question is not whether your organisation will be targeted. It is whether your risk posture matches your actual exposure — and whether your recovery capability has been tested before it needs to work.</p>
+        </div>
+        <div class="i-card i-card-4" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>IV</em></div>
+          <span class="i-card-label" style="color:#B03A2E;">It's Political</span>
+          <h3 class="i-card-title">State-sponsored operations and the rewriting of the rules of conflict</h3>
+          <p class="i-card-desc">Cyber has become the domain of first contact in geopolitical conflict — deniable, scalable, and capable of effects that would previously have required military action.</p>
+        </div>
+        <div class="i-card i-card-5" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>V</em></div>
+          <span class="i-card-label">It's the Future</span>
+          <h3 class="i-card-title">AI-enabled threats, quantum risk, and the shape of what is coming</h3>
+          <p class="i-card-desc">The threat landscape is not static. AI is industrialising attack capability at a rate that outpaces most defensive investment. The organisations and individuals who survive are those who treat security as a continuously evolving discipline.</p>
+        </div>
+      </div>
+
+      <!-- Four levels of defence -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Four levels of defence
+      </h3>
+      <div class="audience-row" role="list">
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>I</em></div>
+          <span class="audience-label">Individual</span>
+          <div class="audience-title">Your digital perimeter</div>
+          <ul class="audience-items">
+            <li>Use a password manager — unique credentials for every service</li>
+            <li>Enable multi-factor authentication on everything that matters</li>
+            <li>Treat every unsolicited link or attachment as hostile until verified</li>
+            <li>Review app permissions and connected accounts at least annually</li>
+            <li>Know what you would do the moment you suspect a breach</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>II</em></div>
+          <span class="audience-label">Organisation</span>
+          <div class="audience-title">Proportionate, embedded security</div>
+          <ul class="audience-items">
+            <li>Security strategy proportionate to actual risk exposure — not compliance minimum</li>
+            <li>Test recovery capability before you need it: backup, restore, incident response</li>
+            <li>People are the perimeter — invest in culture, not just controls</li>
+            <li>Third-party risk is your risk: audit your supply chain</li>
+            <li>Board-level ownership of cyber risk, not delegation to IT</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>III</em></div>
+          <span class="audience-label">Critical infrastructure</span>
+          <div class="audience-title">Resilience as a design principle</div>
+          <ul class="audience-items">
+            <li>Assume breach — design for containment and recovery, not just prevention</li>
+            <li>Operational technology and IT networks require separate security disciplines</li>
+            <li>Nation-state threat intelligence must inform defensive posture</li>
+            <li>Sector coordination: attacks on one are lessons for all</li>
+            <li>Continuity planning for scenarios where digital systems are unavailable</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>IV</em></div>
+          <span class="audience-label">Nation state</span>
+          <div class="audience-title">Doctrine for the fifth domain</div>
+          <ul class="audience-items">
+            <li>Cyber doctrine requires the same rigour as military doctrine — and the same clarity on escalation</li>
+            <li>Attribution is political as much as technical: act accordingly</li>
+            <li>Offensive capability must be matched by defensive investment</li>
+            <li>International norms in cyberspace require active, not passive, diplomacy</li>
+            <li>Democratic societies must hold state cyber capability to democratic standards</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full threat landscape and defence framework</div>
+          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+        </div>
+        <a href="https://neilcatton.substack.com" class="btn-download"
+           target="_blank" rel="noopener noreferrer">
+          Subscribe for the download
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ── BOOK IV — COMING SOON ── -->
   <section class="book-section" id="predictive-purpose" aria-labelledby="book4-title" style="background:#1a1714; border-bottom:none;">
