@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Neil Catton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: #f5f2ee;
+    color: #1a1714;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid #2b4a6f; outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: #1a1714; color: #f5f2ee;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d4cfc9;
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+    color: #1a1714; text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #3d3935; text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 1.5px; background: #2b4a6f; transition: width 0.25s ease;
+  }
+  .nav-links a:hover { color: #2b4a6f; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: #2b4a6f; }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+
+  /* ── PAGE HEADER ── */
+  .page-header { padding-top: 7rem; background: #1a1714; }
+  .page-header-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 3rem var(--col-pad) 3.5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: end;
+  }
+  .page-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.45); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+  .page-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 0.95; letter-spacing: -0.03em;
+    color: #f5f2ee; margin-bottom: 2rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards;
+  }
+  .page-title em { font-style: italic; color: #d4cfc9; }
+  .page-standfirst {
+    font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+    color: rgba(245,242,238,0.72);
+    opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
+  }
+
+  /* Substack info panel — right column of header */
+  .substack-panel {
+    background: rgba(245,242,238,0.06);
+    border: 1px solid rgba(212,207,201,0.2);
+    padding: 2rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards;
+  }
+  .substack-panel-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(245,242,238,0.4);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .substack-panel-name {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+    color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .substack-panel-desc {
+    font-size: 0.9rem; font-weight: 300; line-height: 1.7;
+    color: rgba(245,242,238,0.65); margin-bottom: 1.5rem;
+  }
+  .btn-subscribe {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: #2b4a6f; color: #f5f2ee;
+    border: 2px solid #2b4a6f; transition: all 0.2s;
+  }
+  .btn-subscribe:hover { background: #f5f2ee; color: #2b4a6f; border-color: #f5f2ee; }
+
+  /* ── ABOUT THE PUBLICATION ── */
+  .publication-strip {
+    background: #2b4a6f;
+    padding: 3rem var(--col-pad);
+  }
+  .publication-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .pub-stat { text-align: center; }
+  .pub-stat-word {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+    font-style: italic; color: #f5f2ee;
+    display: block; margin-bottom: 0.35rem;
+  }
+  .pub-stat-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(245,242,238,0.6);
+  }
+
+  /* ── LIVE FEED SECTION ── */
+  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }
+  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652;
+    margin-bottom: 1rem; display: block;
+  }
+  .section-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem;
+  }
+  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 3rem; }
+
+  /* Live feed grid */
+  #rss-feed { min-height: 200px; }
+
+  .feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .feed-card {
+    border-top: 2px solid #d4cfc9;
+    padding-top: 1.5rem;
+    transition: border-color 0.2s;
+    background: transparent;
+  }
+  .feed-card:hover { border-color: #2b4a6f; }
+
+  .feed-card-pub {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #5c5652;
+    margin-bottom: 0.75rem; display: block;
+  }
+  .feed-card-title {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+    line-height: 1.35; color: #1a1714; margin-bottom: 0.75rem;
+    text-decoration: none; display: block;
+  }
+  .feed-card-title:hover { color: #2b4a6f; }
+  .feed-card-excerpt {
+    font-size: 0.9rem; color: #3d3935; line-height: 1.65; margin-bottom: 1rem;
+    background: transparent;
+  }
+  .feed-card-date {
+    font-size: 0.75rem; color: #5c5652; margin-bottom: 1rem;
+  }
+  .feed-card-link {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #2b4a6f; text-decoration: none;
+  }
+  .feed-card-link::after { content: " →"; }
+  .feed-card-link:hover { color: #1a1714; text-decoration: underline; }
+
+  /* Loading / empty states */
+  .feed-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: #5c5652;
+    font-size: 0.9rem;
+  }
+
+  .feed-empty {
+    grid-column: 1 / -1;
+    background: #ede9e3;
+    border: 1px solid #d4cfc9;
+    padding: 3rem;
+    text-align: center;
+  }
+  .feed-empty-heading {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+    color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .feed-empty-body {
+    font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.5rem;
+  }
+
+  /* View all CTA */
+  .feed-cta { text-align: center; }
+
+  /* ── ABOUT THE WRITING ── */
+  .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }
+  .about-writing-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .about-writing-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem;
+  }
+  .about-writing p {
+    font-size: 1.0625rem; font-weight: 400; line-height: 1.85;
+    color: #1a1714; margin-bottom: 1.25rem; background: transparent;
+  }
+
+  /* Topic tags */
+  .topics-label {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652;
+    margin-bottom: 1.25rem; display: block;
+  }
+  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .topic-item {
+    font-size: 0.9375rem; font-weight: 400; color: #1a1714;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #d4cfc9;
+    display: flex; align-items: center; gap: 0.75rem;
+    background: transparent;
+  }
+  .topic-item::before {
+    content: ""; width: 4px; height: 4px;
+    background: #2b4a6f; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ── SUBSCRIBE STRIP ── */
+  .subscribe-section {
+    background: #1a1714;
+    padding: 5rem var(--col-pad);
+    text-align: center;
+  }
+  .subscribe-inner { max-width: 560px; margin: 0 auto; }
+  .subscribe-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem;
+  }
+  .subscribe-sub {
+    font-size: 1rem; font-weight: 300;
+    color: rgba(245,242,238,0.7); margin-bottom: 2.5rem; line-height: 1.7;
+  }
+  .subscribe-form { display: flex; max-width: 440px; margin: 0 auto; }
+  .subscribe-label {
+    position: absolute; width:1px; height:1px;
+    padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+  }
+  .subscribe-input {
+    flex: 1;
+    font-family: var(--sans); font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+    background: rgba(245,242,238,0.1);
+    border: 2px solid rgba(245,242,238,0.3); border-right: none;
+    color: #f5f2ee; outline: none; min-height: 44px;
+    transition: border-color 0.2s;
+  }
+  .subscribe-input::placeholder { color: rgba(245,242,238,0.4); }
+  .subscribe-input:focus { border-color: rgba(245,242,238,0.75); }
+  .subscribe-btn {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: #f5f2ee; color: #2b4a6f;
+    border: 2px solid #f5f2ee; padding: 0.875rem 1.5rem;
+    min-height: 44px; cursor: pointer; transition: all 0.2s;
+  }
+  .subscribe-btn:hover { background: #2b4a6f; border-color: #2b4a6f; color: #f5f2ee; }
+  .subscribe-note { font-size: 0.78rem; color: rgba(245,242,238,0.4); margin-top: 1.25rem; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px; min-width: 44px;
+    transition: all 0.2s ease; cursor: pointer; border: none;
+  }
+  .btn-primary { background: #1a1714; color: #f5f2ee; border: 2px solid #1a1714; }
+  .btn-primary:hover { background: #2b4a6f; border-color: #2b4a6f; }
+  .btn-secondary { background: transparent; color: #1a1714; border: 2px solid #1a1714; }
+  .btn-secondary:hover { border-color: #2b4a6f; color: #2b4a6f; }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #1a1714; padding: 2.75rem var(--col-pad); }
+  .footer-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.25rem;
+  }
+  .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; text-decoration: none; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #f5f2ee; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.3); width: 100%; }
+
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .page-header-inner { grid-template-columns: 1fr; }
+    .substack-panel { display: none; }
+    .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pub-stat { text-align: left; }
+    /* feed-grid uses auto-fill — handles mobile automatically */
+    .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .topics-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-input { border-right: 2px solid rgba(245,242,238,0.3); }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="articles.html" aria-current="page">Writing</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Writing</span>
+        <h1 class="page-title" id="page-title">The Next<br><em>Evolution</em></h1>
+        <p class="page-standfirst">
+          A strategic briefing for leaders and system shapers — moving from
+          accidental evolution to the intentional design of trust, agency,
+          and moral architecture. Published when there is something worth saying.
+        </p>
+      </div>
+      <div class="substack-panel" aria-label="Substack publication details">
+        <span class="substack-panel-label">Publication</span>
+        <p class="substack-panel-name">The Next Evolution</p>
+        <p class="substack-panel-desc">
+          Essays at the intersection of technology, ethics, and human purpose.
+          Written for CTOs, board members, and anyone navigating systems that
+          weren't built with them in mind.
+        </p>
+        <a href="https://neilcatton.substack.com" class="btn-subscribe"
+           target="_blank" rel="noopener noreferrer">
+          Subscribe on Substack
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PUBLICATION PILLARS -->
+  <div class="publication-strip" role="region" aria-label="Publication principles">
+    <div class="publication-inner">
+      <div class="pub-stat">
+        <span class="pub-stat-word">When it matters</span>
+        <span class="pub-stat-label">Published to no schedule</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">Free to read</span>
+        <span class="pub-stat-label">No paywall</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">One argument</span>
+        <span class="pub-stat-label">Per essay, clearly made</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE RSS FEED -->
+  <section class="feed-section" aria-labelledby="feed-heading">
+    <div class="feed-inner">
+      <span class="section-label" aria-hidden="true">Latest essays</span>
+      <h2 class="section-heading" id="feed-heading">From the Substack</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div id="rss-feed" role="region" aria-label="Latest articles" aria-live="polite">
+        <div class="feed-grid">
+          <div class="feed-loading">Loading latest essays…</div>
+        </div>
+      </div>
+
+      <div class="feed-cta" style="margin-top:1rem;">
+        <a href="https://neilcatton.substack.com" class="btn btn-primary"
+           target="_blank" rel="noopener noreferrer">
+          Read all essays on Substack
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE WRITING -->
+  <section class="about-writing" aria-labelledby="about-writing-heading">
+    <div class="about-writing-inner">
+      <div>
+        <h2 class="about-writing-heading" id="about-writing-heading">
+          Why Substack.<br>Why no schedule.
+        </h2>
+        <p>
+          The Next Evolution publishes when there is something worth saying.
+          Not to a content calendar. Not to an algorithm. The form is deliberate:
+          if the writing argues that technology should adapt to the individual
+          rather than the other way around, it would be a poor advertisement
+          for itself if it chased engagement metrics instead.
+        </p>
+        <p>
+          The essays are read by CTOs, board members, and product leaders —
+          and by people who have nothing to do with technology professionally
+          but find themselves navigating systems that were not built with them
+          in mind. That range is not accidental. The argument is the same
+          whoever is reading it.
+        </p>
+        <p>
+          Each essay makes one argument. Clearly. Anchored in a specific
+          human consequence. It does not end with a rallying call.
+        </p>
+        <a href="https://neilcatton.substack.com" class="btn btn-secondary"
+           target="_blank" rel="noopener noreferrer"
+           style="margin-top:0.5rem;">
+          Follow on Substack
+        </a>
+      </div>
+
+      <div>
+        <span class="topics-label">Territory</span>
+        <div class="topics-grid" role="list">
+          <div class="topic-item" role="listitem">AI ethics &amp; governance</div>
+          <div class="topic-item" role="listitem">Human agency in technology</div>
+          <div class="topic-item" role="listitem">Organisational systems</div>
+          <div class="topic-item" role="listitem">Cognitive sovereignty</div>
+          <div class="topic-item" role="listitem">Cyber security &amp; risk</div>
+          <div class="topic-item" role="listitem">Digital identity</div>
+          <div class="topic-item" role="listitem">Public sector technology</div>
+          <div class="topic-item" role="listitem">Trust &amp; moral architecture</div>
+          <div class="topic-item" role="listitem">System design &amp; failure</div>
+          <div class="topic-item" role="listitem">Leadership &amp; strategy</div>
+          <div class="topic-item" role="listitem">Society 5.0</div>
+          <div class="topic-item" role="listitem">The future of policing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe-section" aria-labelledby="subscribe-heading">
+    <div class="subscribe-inner">
+      <h2 class="subscribe-heading" id="subscribe-heading">One essay.<br>When it matters.</h2>
+      <p class="subscribe-sub">
+        No noise. No schedule. Published when there is something
+        worth saying — and not before.
+      </p>
+      <form class="subscribe-form" action="https://neilcatton.substack.com" method="get">
+        <label class="subscribe-label" for="sub-email">Email address</label>
+        <input class="subscribe-input" type="email" id="sub-email" name="email"
+               placeholder="your@email.com" autocomplete="email" required>
+        <button class="subscribe-btn" type="submit">Subscribe</button>
+      </form>
+      <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  /* ── NAV scroll shadow ── */
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+
+  /* ── FEED LOADING ── */
+  /* Tries three methods in sequence:
+     1. Substack native API (fastest, most complete)
+     2. rss2json proxy (CORS-safe fallback)
+     3. DOMParser on raw RSS via allorigins proxy
+     If all fail, shows the static featured article  */
+
+  const PUB = "neilcatton";
+  const FEED_URL = `https://${PUB}.substack.com/feed`;
+
+  async function loadFeed() {
+    const el = document.getElementById("rss-feed");
+
+    // Method 1 — Substack public API
+    try {
+      const res = await fetch(
+        `https://${PUB}.substack.com/api/v1/posts?limit=9&offset=0`,
+        { headers: { "Accept": "application/json" } }
+      );
+      if (res.ok) {
+        const posts = await res.json();
+        if (Array.isArray(posts) && posts.length > 0) {
+          renderSubstackAPI(el, posts);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 2 — rss2json proxy
+    try {
+      const res = await fetch(
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}&count=9&api_key=`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if (data.status === "ok" && data.items && data.items.length > 0) {
+          renderRSS2JSON(el, data.items);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 3 — allorigins RSS proxy
+    try {
+      const res = await fetch(
+        `https://api.allorigins.win/get?url=${encodeURIComponent(FEED_URL)}`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data.contents, "text/xml");
+        const items = Array.from(doc.querySelectorAll("item")).slice(0, 9);
+        if (items.length > 0) {
+          renderXML(el, items);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // All failed — show static featured article
+    showStatic(el);
+  }
+
+  function makeCard(title, excerpt, link, dateStr) {
+    const a = document.createElement("article");
+    a.className = "feed-card";
+    a.innerHTML = `
+      <span class="feed-card-pub">The Next Evolution</span>
+      <a class="feed-card-title" href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
+      <p class="feed-card-excerpt">${excerpt}</p>
+      <p class="feed-card-date">${dateStr}</p>
+      <a class="feed-card-link" href="${link}" target="_blank" rel="noopener noreferrer"
+         aria-label="Read ${title} on Substack">Read</a>`;
+    return a;
+  }
+
+  function stripHTML(str) {
+    const d = document.createElement("div");
+    d.innerHTML = str || "";
+    return (d.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  function fmtDate(str) {
+    try {
+      return new Date(str).toLocaleDateString("en-GB", {
+        day: "numeric", month: "long", year: "numeric"
+      });
+    } catch(e) { return str || ""; }
+  }
+
+  function renderSubstackAPI(el, posts) {
+    const grid = document.createElement("div");
+    grid.className = "feed-grid";
+    posts.slice(0, 9).forEach(p => {
+      const title   = p.title || "Untitled";
+      const excerpt = (stripHTML(p.subtitle || p.body_html || "")).slice(0, 160) + "…";
+      const link    = p.canonical_url || `https://${PUB}.substack.com/p/${p.slug}`;
+      const date    = fmtDate(p.post_date || p.published_at);
+      grid.appendChild(makeCard(title, excerpt, link, date));
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+  }
+
+  function renderRSS2JSON(el, items) {
+    const grid = document.createElement("div");
+    grid.className = "feed-grid";
+    items.forEach(item => {
+      const title   = item.title || "Untitled";
+      const excerpt = stripHTML(item.description || item.content || "").slice(0, 160) + "…";
+      const link    = item.link || `https://${PUB}.substack.com`;
+      const date    = fmtDate(item.pubDate);
+      grid.appendChild(makeCard(title, excerpt, link, date));
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+  }
+
+  function renderXML(el, items) {
+    const grid = document.createElement("div");
+    grid.className = "feed-grid";
+    items.forEach(item => {
+      const title   = item.querySelector("title")?.textContent || "Untitled";
+      const excerpt = stripHTML(item.querySelector("description")?.textContent || "").slice(0, 160) + "…";
+      const link    = item.querySelector("link")?.textContent || `https://${PUB}.substack.com`;
+      const date    = fmtDate(item.querySelector("pubDate")?.textContent);
+      grid.appendChild(makeCard(title, excerpt, link, date));
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+  }
+
+  function showStatic(el) {
+    // Show latest known article + link to archive, stacked cleanly
+    el.innerHTML = `
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap:2rem; margin-bottom:2rem;">
+        <article class="feed-card">
+          <span class="feed-card-pub">The Next Evolution &nbsp;·&nbsp; Latest</span>
+          <a class="feed-card-title"
+             href="https://neilcatton.substack.com/p/boredom-was-the-doorway"
+             target="_blank" rel="noopener noreferrer">
+            Boredom Was The Doorway
+          </a>
+          <p class="feed-card-excerpt">
+            We handed children the most effective attention-capture technology ever built.
+            We didn't redesign it for them. A teacher had been watching it happen for
+            three years — children arriving who couldn't reach boredom.
+          </p>
+          <p class="feed-card-date">22 May 2026</p>
+          <a class="feed-card-link"
+             href="https://neilcatton.substack.com/p/boredom-was-the-doorway"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Read Boredom Was The Doorway on Substack">Read</a>
+        </article>
+        <article class="feed-card">
+          <span class="feed-card-pub">The Next Evolution &nbsp;·&nbsp; Archive</span>
+          <p class="feed-card-title" style="font-family:'Playfair Display',Georgia,serif; font-size:1.15rem; color:#1a1714; margin-bottom:0.75rem; display:block; text-decoration:none;">
+            Dozens of essays published
+          </p>
+          <p class="feed-card-excerpt">
+            Articles at the intersection of technology, ethics, and human purpose —
+            from AI governance and cognitive sovereignty to cyber security, policing,
+            and the systems that shape how we live and work.
+          </p>
+          <a href="https://neilcatton.substack.com"
+             class="feed-card-link"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View all articles on Substack">
+            View all on Substack →
+          </a>
+        </article>
+      </div>`;
+  }
+
+  loadFeed();
+</script>
+
+</body>
+</html>
