@@ -719,6 +719,103 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
+<script>
+  /* ═══════════════════════════════════════════════════
+     SUBSTACK FEED — shared function used by home + articles pages
+     Primary: /substack-feed (Netlify proxy — no CORS, most reliable)
+     Fallback 1: rss2json.com
+     Fallback 2: allorigins.win
+  ═══════════════════════════════════════════════════ */
+  window.SubstackFeed = (function() {
+
+    var PUB_URL = "https://neilcatton.substack.com";
+    var PROXY   = "/substack-feed";       // Netlify rewrites this to the RSS feed
+    var RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" +
+                   encodeURIComponent(PUB_URL + "/feed") + "&count=12";
+    var ALLORIGINS = "https://api.allorigins.win/get?url=" +
+                     encodeURIComponent(PUB_URL + "/feed");
+
+    function strip(str) {
+      var d = document.createElement("div");
+      d.innerHTML = str || "";
+      return (d.textContent || d.innerText || "").replace(/\s+/g, " ").trim();
+    }
+
+    function fmt(str) {
+      try {
+        return new Date(str).toLocaleDateString("en-GB", {
+          day: "numeric", month: "long", year: "numeric"
+        });
+      } catch(e) { return ""; }
+    }
+
+    function parseXML(xml) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(xml, "text/xml");
+      var err = doc.querySelector("parsererror");
+      if (err) return null;
+      var nodes = Array.from(doc.querySelectorAll("item"));
+      if (!nodes.length) return null;
+      return nodes.map(function(n) {
+        var link = n.querySelector("link");
+        var linkText = link ? (link.textContent || link.getAttribute("href") || "") : PUB_URL;
+        // Substack puts link text after the tag — textContent can be empty
+        if (!linkText.trim()) {
+          var sib = link ? link.nextSibling : null;
+          linkText = sib ? sib.textContent.trim() : PUB_URL;
+        }
+        return {
+          title:   (n.querySelector("title") || {}).textContent || "Untitled",
+          excerpt: strip((n.querySelector("description") || {}).textContent || "").slice(0, 155) + "…",
+          link:    linkText.trim() || PUB_URL,
+          date:    fmt((n.querySelector("pubDate") || {}).textContent || "")
+        };
+      });
+    }
+
+    async function fetch3() {
+      // Method 1 — Netlify proxy (same origin, no CORS)
+      try {
+        var r = await fetch(PROXY, { headers: { Accept: "application/rss+xml, application/xml, text/xml" } });
+        if (r.ok) {
+          var xml = await r.text();
+          var items = parseXML(xml);
+          if (items && items.length) { return items; }
+        }
+      } catch(e) {}
+
+      // Method 2 — rss2json
+      try {
+        var r2 = await fetch(RSS2JSON);
+        if (r2.ok) {
+          var d = await r2.json();
+          if (d.status === "ok" && d.items && d.items.length) {
+            return d.items.map(function(i) { return {
+              title:   i.title || "Untitled",
+              excerpt: strip(i.description || i.content || "").slice(0, 155) + "…",
+              link:    i.link || PUB_URL,
+              date:    fmt(i.pubDate)
+            }; });
+          }
+        }
+      } catch(e) {}
+
+      // Method 3 — allorigins
+      try {
+        var r3 = await fetch(ALLORIGINS);
+        if (r3.ok) {
+          var d3 = await r3.json();
+          var items3 = parseXML(d3.contents || "");
+          if (items3 && items3.length) { return items3; }
+        }
+      } catch(e) {}
+
+      return null;
+    }
+
+    return { fetch: fetch3, pubUrl: PUB_URL };
+  })();
+</script>
 </head>
 <body>
 
@@ -852,35 +949,19 @@
       <span class="section-label" aria-hidden="true">Writing</span>
       <h2 class="section-heading" id="writing-heading">Recent essays</h2>
       <hr class="section-rule" aria-hidden="true">
-      <div class="articles-grid">
-        <article class="article-card">
-          <p class="article-pub">The Next Evolution</p>
-          <h3 class="article-title">The Form That Wasn't Designed for Anyone</h3>
-          <p class="article-excerpt">When a system is built for the average, it serves almost no one. What gets lost when efficiency becomes the only measure.</p>
-          <p class="article-meta">8 min read</p>
-          <a href="https://neilcatton.substack.com" class="btn-ghost" target="_blank" rel="noopener noreferrer"
-             style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;">Read →</a>
-        </article>
-        <article class="article-card">
-          <p class="article-pub">The Cognitive Crucible</p>
-          <h3 class="article-title">What AI Can't Know About Your Particular Tuesday</h3>
-          <p class="article-excerpt">Context is not a feature. It's the entire point. And most systems have no mechanism to hold it.</p>
-          <p class="article-meta">6 min read</p>
-          <a href="https://neilcatton.substack.com" class="btn-ghost" target="_blank" rel="noopener noreferrer"
-             style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;">Read →</a>
-        </article>
-        <article class="article-card">
-          <p class="article-pub">The Shadow System</p>
-          <h3 class="article-title">The Workaround Is the Real Process</h3>
-          <p class="article-excerpt">Every organisation has a shadow system — the one that actually gets things done. It exists because the official one failed.</p>
-          <p class="article-meta">7 min read</p>
-          <a href="https://neilcatton.substack.com" class="btn-ghost" target="_blank" rel="noopener noreferrer"
-             style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;">Read →</a>
-        </article>
+
+      <!-- Live feed — populated by JS below -->
+      <div id="home-feed" aria-label="Recent articles" aria-live="polite">
+        <div class="articles-grid">
+          <div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--ink-light);font-size:0.9rem;">
+            Loading latest essays…
+          </div>
+        </div>
       </div>
-      <div style="margin-top:3rem;text-align:center;">
-        <a href="https://neilcatton.substack.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-          All writing on Substack
+
+      <div style="margin-top:2.5rem;text-align:center;">
+        <a href="articles.html" class="btn btn-secondary">
+          All writing
         </a>
       </div>
     </div>
@@ -981,10 +1062,134 @@
 </footer>
 
 <script>
+  /* ── NAV scroll shadow ── */
   const nav = document.getElementById("site-nav");
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   }, { passive: true });
+
+  /* ── HOME FEED — same three-method approach as articles page ── */
+  const PUB = "neilcatton";
+  const FEED_URL = "https://" + PUB + ".substack.com/feed";
+
+  function stripHTML(str) {
+    const d = document.createElement("div");
+    d.innerHTML = str || "";
+    return (d.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  function fmtDate(str) {
+    try {
+      return new Date(str).toLocaleDateString("en-GB", {
+        day: "numeric", month: "long", year: "numeric"
+      });
+    } catch(e) { return ""; }
+  }
+
+  function makeCard(title, excerpt, link, date) {
+    const card = document.createElement("article");
+    card.className = "article-card";
+    card.innerHTML =
+      '<p class="article-pub">The Next Evolution</p>' +
+      '<h3 class="article-title">' +
+        '<a href="' + link + '" target="_blank" rel="noopener noreferrer" ' +
+        'style="color:inherit;text-decoration:none;">' + title + '</a>' +
+      '</h3>' +
+      '<p class="article-excerpt">' + excerpt + '</p>' +
+      '<p class="article-meta">' + date + '</p>' +
+      '<a href="' + link + '" class="btn-ghost" target="_blank" rel="noopener noreferrer" ' +
+      'style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;' +
+      'text-transform:uppercase;color:var(--accent);text-decoration:none;" ' +
+      'aria-label="Read ' + title + ' on Substack">Read →</a>';
+    return card;
+  }
+
+  function renderCards(items) {
+    const el = document.getElementById("home-feed");
+    const grid = document.createElement("div");
+    grid.className = "articles-grid";
+    items.slice(0, 3).forEach(function(item) {
+      grid.appendChild(makeCard(item.title, item.excerpt, item.link, item.date));
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+  }
+
+  function showFallback() {
+    renderCards([{
+      title: "Boredom Was The Doorway",
+      excerpt: "We handed children the most effective attention-capture technology ever built. We didn't redesign it for them. A teacher had been watching it happen for three years.",
+      link: "https://neilcatton.substack.com/p/boredom-was-the-doorway",
+      date: "22 May 2026"
+    }]);
+  }
+
+  async function loadHomeFeed() {
+    // Method 1 — Substack API
+    try {
+      const r = await fetch("https://" + PUB + ".substack.com/api/v1/posts?limit=3&offset=0",
+        { headers: { Accept: "application/json" } });
+      if (r.ok) {
+        const posts = await r.json();
+        if (Array.isArray(posts) && posts.length) {
+          const items = posts.map(function(p) { return {
+            title: p.title || "Untitled",
+            excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 140) + "…",
+            link: p.canonical_url || "https://" + PUB + ".substack.com/p/" + p.slug,
+            date: fmtDate(p.post_date || p.published_at)
+          }; });
+          renderCards(items);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 2 — rss2json
+    try {
+      const r = await fetch("https://api.rss2json.com/v1/api.json?rss_url=" +
+        encodeURIComponent(FEED_URL) + "&count=3");
+      if (r.ok) {
+        const d = await r.json();
+        if (d.status === "ok" && d.items && d.items.length) {
+          const items = d.items.map(function(i) { return {
+            title: i.title || "Untitled",
+            excerpt: stripHTML(i.description || i.content || "").slice(0, 140) + "…",
+            link: i.link || "https://" + PUB + ".substack.com",
+            date: fmtDate(i.pubDate)
+          }; });
+          renderCards(items);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 3 — allorigins RSS proxy
+    try {
+      const r = await fetch("https://api.allorigins.win/get?url=" +
+        encodeURIComponent(FEED_URL));
+      if (r.ok) {
+        const d = await r.json();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(d.contents, "text/xml");
+        const xmlItems = Array.from(doc.querySelectorAll("item")).slice(0, 3);
+        if (xmlItems.length) {
+          const items = xmlItems.map(function(item) { return {
+            title: item.querySelector("title") ? item.querySelector("title").textContent : "Untitled",
+            excerpt: stripHTML(item.querySelector("description") ? item.querySelector("description").textContent : "").slice(0, 140) + "…",
+            link: item.querySelector("link") ? item.querySelector("link").textContent : "https://" + PUB + ".substack.com",
+            date: fmtDate(item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "")
+          }; });
+          renderCards(items);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // All failed — show known latest article
+    showFallback();
+  }
+
+  loadHomeFeed();
 </script>
 
 </body>
