@@ -377,26 +377,9 @@
   }
 </style>
 <script>
-  /* ═══════════════════════════════════════════════════
-     SUBSTACK FEED — shared function used by home + articles pages
-     Primary: /substack-feed (Netlify proxy — no CORS, most reliable)
-     Fallback 1: rss2json.com
-     Fallback 2: allorigins.win
-  ═══════════════════════════════════════════════════ */
   window.SubstackFeed = (function() {
-
-    var PUB_URL = "https://neilcatton.substack.com";
-    var PROXY   = "/substack-feed";       // Netlify rewrites this to the RSS feed
-    var RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=" +
-                   encodeURIComponent(PUB_URL + "/feed") + "&count=12";
-    var ALLORIGINS = "https://api.allorigins.win/get?url=" +
-                     encodeURIComponent(PUB_URL + "/feed");
-
-    function strip(str) {
-      var d = document.createElement("div");
-      d.innerHTML = str || "";
-      return (d.textContent || d.innerText || "").replace(/\s+/g, " ").trim();
-    }
+    var ENDPOINT = "/.netlify/functions/substack-feed";
+    var PUB_URL  = "https://neilcatton.substack.com";
 
     function fmt(str) {
       try {
@@ -406,71 +389,27 @@
       } catch(e) { return ""; }
     }
 
-    function parseXML(xml) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(xml, "text/xml");
-      var err = doc.querySelector("parsererror");
-      if (err) return null;
-      var nodes = Array.from(doc.querySelectorAll("item"));
-      if (!nodes.length) return null;
-      return nodes.map(function(n) {
-        var link = n.querySelector("link");
-        var linkText = link ? (link.textContent || link.getAttribute("href") || "") : PUB_URL;
-        // Substack puts link text after the tag — textContent can be empty
-        if (!linkText.trim()) {
-          var sib = link ? link.nextSibling : null;
-          linkText = sib ? sib.textContent.trim() : PUB_URL;
-        }
-        return {
-          title:   (n.querySelector("title") || {}).textContent || "Untitled",
-          excerpt: strip((n.querySelector("description") || {}).textContent || "").slice(0, 155) + "…",
-          link:    linkText.trim() || PUB_URL,
-          date:    fmt((n.querySelector("pubDate") || {}).textContent || "")
-        };
-      });
+    async function fetchItems() {
+      try {
+        var r = await fetch(ENDPOINT);
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        var data = await r.json();
+        if (!data.items || !data.items.length) return null;
+        return data.items.map(function(i) {
+          return {
+            title:   i.title   || "Untitled",
+            excerpt: i.excerpt || "",
+            link:    i.link    || PUB_URL,
+            date:    fmt(i.pubDate)
+          };
+        });
+      } catch(e) {
+        console.warn("SubstackFeed failed:", e);
+        return null;
+      }
     }
 
-    async function fetch3() {
-      // Method 1 — Netlify proxy (same origin, no CORS)
-      try {
-        var r = await fetch(PROXY, { headers: { Accept: "application/rss+xml, application/xml, text/xml" } });
-        if (r.ok) {
-          var xml = await r.text();
-          var items = parseXML(xml);
-          if (items && items.length) { return items; }
-        }
-      } catch(e) {}
-
-      // Method 2 — rss2json
-      try {
-        var r2 = await fetch(RSS2JSON);
-        if (r2.ok) {
-          var d = await r2.json();
-          if (d.status === "ok" && d.items && d.items.length) {
-            return d.items.map(function(i) { return {
-              title:   i.title || "Untitled",
-              excerpt: strip(i.description || i.content || "").slice(0, 155) + "…",
-              link:    i.link || PUB_URL,
-              date:    fmt(i.pubDate)
-            }; });
-          }
-        }
-      } catch(e) {}
-
-      // Method 3 — allorigins
-      try {
-        var r3 = await fetch(ALLORIGINS);
-        if (r3.ok) {
-          var d3 = await r3.json();
-          var items3 = parseXML(d3.contents || "");
-          if (items3 && items3.length) { return items3; }
-        }
-      } catch(e) {}
-
-      return null;
-    }
-
-    return { fetch: fetch3, pubUrl: PUB_URL };
+    return { fetch: fetchItems, pubUrl: PUB_URL };
   })();
 </script>
 </head>
