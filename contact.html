@@ -706,7 +706,7 @@
     btn.textContent = "Sending…";
     btn.disabled = true;
 
-    /* const data = new FormData(form);
+    const data = new FormData(form);
     try {
       const res = await fetch("https://formspree.io/f/mdajdnrq", {
         method: "POST",
@@ -720,7 +720,7 @@
         success.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
         const json = await res.json();
-        const msg = json.errors ? json.errors.map(e => e.message).join(", ") : "Something went wrong.";
+        const msg = json.errors ? json.errors.map(err => err.message).join(", ") : "Something went wrong.";
         btn.textContent = "Send message";
         btn.disabled = false;
         alert(msg + " Please email nc@neilcatton.com directly if the problem persists.");
@@ -730,7 +730,6 @@
       btn.disabled = false;
       alert("Could not send message. Please email nc@neilcatton.com directly.");
     }
-
   });
 </script>
 
