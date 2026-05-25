@@ -7,9 +7,6 @@
   status = 200
   force = true
 
-[build]
-  publish = "public"
-
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
