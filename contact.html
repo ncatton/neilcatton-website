@@ -81,6 +81,9 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-links a[aria-current="page"] { color: #2b4a6f; }
   .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
   /* ── PAGE HEADER ── */
   .page-header { padding-top: 7rem; background: #1a1714; }
@@ -139,6 +142,8 @@
     font-size: 1.0625rem; font-weight: 400; color: #1a1714;
     line-height: 1.85; margin-bottom: 2.5rem; background: transparent;
   }
+  .form-intro-link { color: #1a1714; text-underline-offset: 3px; }
+  .form-intro-link:hover { color: #2b4a6f; }
 
   .form-group { margin-bottom: 1.5rem; }
 
@@ -382,6 +387,32 @@
     .elsewhere-links { grid-template-columns: 1fr; }
   }
 </style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
 </head>
 <body>
 
@@ -391,10 +422,25 @@
   <a href="index.html" class="nav-wordmark">Neil Catton</a>
   <ul class="nav-links" role="list">
     <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="services.html">Overview</a></li>
+        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
     <li><a href="articles.html">Writing</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
     <li><a href="contact.html" aria-current="page">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
   </ul>
 </nav>
 
@@ -430,6 +476,7 @@
       <p class="form-intro">
         Use this form for any enquiry. Every message is read personally.
         If you would prefer to reach out directly, the email address is in the sidebar.
+        Or, if you'd like to talk sooner, <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" target="_blank" rel="noopener noreferrer" class="form-intro-link">book a call directly</a>.
       </p>
 
       <div class="form-success" id="form-success" role="alert" aria-live="polite">
@@ -679,9 +726,9 @@
     <nav aria-label="Footer navigation">
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>

@@ -81,6 +81,9 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-links a[aria-current="page"] { color: #2b4a6f; }
   .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
   /* ── PAGE HEADER ── */
   .page-header { padding-top: 7rem; background: #1a1714; }
@@ -130,6 +133,15 @@
     gap: 1rem; align-items: start;
   }
   .engagement-types li:last-child { border-bottom: 1px solid rgba(212,207,201,0.15); }
+  .btn-panel-book {
+    display: inline-block; margin-top: 1.25rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #f5f2ee; text-decoration: none;
+    border: 1px solid rgba(245,242,238,0.3); padding: 0.4rem 0.9rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-panel-book:hover { border-color: #f5f2ee; background: rgba(245,242,238,0.08); }
   .engagement-dot {
     width: 6px; height: 6px; background: #2b4a6f;
     border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0;
@@ -175,6 +187,71 @@
     border-color: rgba(245,242,238,0.4);
   }
 
+  /* ── CURRENT ENGAGEMENTS ── */
+  .engagements-section {
+    background: #1a1714;
+    padding: 5rem var(--col-pad);
+  }
+  .engagements-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .engagements-header { margin-bottom: 3rem; }
+  .engagements-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.4); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .engagements-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .engagements-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #f5f2ee; margin-bottom: 0.75rem;
+  }
+  .engagements-standfirst {
+    font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.6);
+    line-height: 1.75; max-width: 560px;
+  }
+  .engagements-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+
+  .engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: rgba(212,207,201,0.12);
+    border: 1px solid rgba(212,207,201,0.12);
+  }
+
+  .engagement-item {
+    background: #1a1714;
+    padding: 1.75rem 2rem;
+    transition: background 0.2s;
+  }
+  .engagement-item:hover { background: rgba(43,74,111,0.15); }
+
+  .engagement-item-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #f5f2ee; margin-bottom: 0.3rem; line-height: 1.3;
+  }
+  .engagement-item-name a {
+    color: inherit; text-decoration: none;
+    border-bottom: 1px solid rgba(245,242,238,0.2);
+    transition: border-color 0.2s;
+  }
+  .engagement-item-name a:hover { border-color: rgba(245,242,238,0.6); }
+
+  .engagement-item-role {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #3d6494;
+    margin-bottom: 0.875rem; display: block;
+  }
+  .engagement-item-desc {
+    font-size: 0.875rem; font-weight: 300;
+    color: rgba(245,242,238,0.65); line-height: 1.7;
+  }
+
+  @media (max-width: 700px) {
+    .engagements-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── CLUSTER SECTIONS ── */
   .cluster-section { padding: 5rem var(--col-pad); }
   .cluster-section:nth-child(odd) { background: #f5f2ee; }
@@ -203,6 +280,25 @@
   }
 
   .cluster-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+  .sector-breadth {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem;
+    margin-bottom: 3.5rem; padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sector-breadth-group-label {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: #2b4a6f;
+    display: block; margin-bottom: 0.75rem;
+  }
+  .sector-breadth-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .sector-breadth-list li {
+    font-family: var(--sans); font-size: 0.85rem; font-weight: 400;
+    color: var(--ink-mid); line-height: 1.4;
+  }
+  @media (max-width: 640px) { .sector-breadth { grid-template-columns: 1fr; } }
 
   /* Service cards grid */
   .services-grid {
@@ -219,6 +315,7 @@
     display: flex; flex-direction: column;
   }
   .cluster-section:nth-child(even) .service-card { background: #f5f2ee; }
+  .cluster-section:nth-child(even) .service-card.flagship { background: #1a1714; }
   .service-card:hover { border-color: #2b4a6f; transform: translateY(-2px); }
 
   .service-number {
@@ -343,6 +440,47 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+
+  /* ── SERVICE CARD LINKS ── */
+  .service-links {
+    margin-top: 1rem;
+    font-family: "Source Sans 3", Helvetica, sans-serif;
+    font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .service-links a {
+    color: #2b4a6f; text-decoration: none;
+    border-bottom: 1px solid rgba(43,74,111,0.35);
+    padding-bottom: 2px; transition: border-color 0.2s;
+  }
+  .service-links a:hover { border-color: #2b4a6f; }
+  .service-links .sep { color: #5c5652; margin: 0 0.4rem; }
+</style>
 </head>
 <body>
 
@@ -352,10 +490,25 @@
   <a href="index.html" class="nav-wordmark">Neil Catton</a>
   <ul class="nav-links" role="list">
     <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html" aria-current="page">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="services.html">Overview</a></li>
+        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
     <li><a href="articles.html">Writing</a></li>
-    <li><a href="services.html" aria-current="page">Services</a></li>
+    <li><a href="books.html">Books</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
   </ul>
 </nav>
 
@@ -393,6 +546,13 @@
           <li>
             <span class="engagement-dot" aria-hidden="true"></span>
             <div>
+              <span class="engagement-name">Non-Executive Director</span>
+              <span class="engagement-desc">Independent board-level technology oversight — governance, AI risk, and digital scrutiny</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
               <span class="engagement-name">Interim Leadership</span>
               <span class="engagement-desc">Stepping in to lead through critical transitions or programme recovery</span>
             </div>
@@ -412,6 +572,7 @@
             </div>
           </li>
         </ul>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-panel-book" target="_blank" rel="noopener noreferrer">Book a call →</a>
       </div>
     </div>
   </header>
@@ -421,12 +582,96 @@
     <div class="cluster-nav-inner">
       <span class="cluster-nav-label">Jump to</span>
       <div class="cluster-nav-links">
+        <a href="#current-engagements" class="cluster-nav-link">Current Engagements</a>
         <a href="#leadership-strategy" class="cluster-nav-link">Leadership &amp; Strategy</a>
         <a href="#architecture-delivery" class="cluster-nav-link">Architecture &amp; Delivery</a>
         <a href="#sectors-specialisms" class="cluster-nav-link">Sectors &amp; Specialisms</a>
       </div>
     </div>
   </nav>
+
+  <!-- ── CURRENT ENGAGEMENTS ── -->
+  <section class="engagements-section" id="current-engagements" aria-labelledby="engagements-heading">
+    <div class="engagements-inner">
+
+      <div class="engagements-header">
+        <span class="engagements-label">Current engagements</span>
+        <h2 class="engagements-heading" id="engagements-heading">
+          Where I am working now
+        </h2>
+        <p class="engagements-standfirst">
+          A selection of active and ongoing engagements across advisory, fractional leadership,
+          and specialist collaboration.
+        </p>
+        <hr class="engagements-rule" aria-hidden="true">
+      </div>
+
+      <div class="engagements-grid" role="list">
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.globalconsortiumgroup.com" target="_blank" rel="noopener noreferrer">Global Consortium Group</a>
+          </h3>
+          <span class="engagement-item-role">Technology Advisory</span>
+          <p class="engagement-item-desc">
+            Technology advisory to PE-backed businesses, scale-ups, and executive leadership
+            teams. Engagements include pre-close technology due diligence, post-acquisition
+            technology governance, board-level AI strategy, and architecture review
+            at Series A–C.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.ssgadvisory.com" target="_blank" rel="noopener noreferrer">SSG Advisory Ltd</a>
+          </h3>
+          <span class="engagement-item-role">Chief Technologist &amp; Architect</span>
+          <p class="engagement-item-desc">
+            Supporting procurement activities in the public sector as Chief Technologist
+            and Architect — bringing senior technology leadership into complex government
+            procurement programmes.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.platform-smart.co.uk" target="_blank" rel="noopener noreferrer">Platform Smart</a>
+          </h3>
+          <span class="engagement-item-role">Fractional CTO</span>
+          <p class="engagement-item-desc">
+            Platform through which fractional CTO engagements are structured and delivered —
+            providing organisations with senior technology leadership on a flexible,
+            outcome-focused basis.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://gobby.io" target="_blank" rel="noopener noreferrer">Gobby</a>
+          </h3>
+          <span class="engagement-item-role">Strategic Advisor</span>
+          <p class="engagement-item-desc">
+            Advising on the opportunity space — bringing strategic perspective to
+            product direction, market positioning, and the technology decisions
+            that will shape the next phase of growth.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://white.space" target="_blank" rel="noopener noreferrer">White.space</a>
+          </h3>
+          <span class="engagement-item-role">AI &amp; Data Collaboration</span>
+          <p class="engagement-item-desc">
+            Collaborating on AI data engagements within UK police forces — applying
+            responsible AI design principles in one of the most demanding operational
+            contexts in public sector technology.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ── CLUSTER 1: LEADERSHIP & STRATEGY ── -->
   <section class="cluster-section" id="leadership-strategy" aria-labelledby="cluster1-heading">
@@ -470,6 +715,9 @@
             partners to account. Available for fractional, interim, and advisory
             engagements.
           </p>
+          <p class="service-links">
+            <a href="service-fractional-cto-cio.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-fractional-cto-cio.pdf" download>One-pager (PDF)</a>
+          </p>
         </article>
 
         <!-- 5. AI Strategy -->
@@ -483,6 +731,9 @@
             the internal capability to sustain it — without outsourcing the judgement
             to the vendors selling it.
           </p>
+          <p class="service-links">
+            <a href="service-ai-board-briefing.html">AI Board Briefing</a><span class="sep" aria-hidden="true">&middot;</span><a href="service-ai-readiness-review.html">AI Readiness Review</a>
+          </p>
         </article>
 
         <!-- 9. Due Diligence -->
@@ -494,6 +745,25 @@
             teams evaluating acquisitions, partnerships, or major supplier decisions.
             Fast, clear, and commercially framed — producing an assessment that
             decision-makers can act on rather than file away.
+          </p>
+          <p class="service-links">
+            <a href="service-technology-due-diligence.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-technology-due-diligence.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- NED. Non-Executive Director -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>NED</em></div>
+          <h3 class="service-name">Non-Executive Director</h3>
+          <p class="service-desc">
+            Independent board oversight for organisations navigating technology
+            transformation, AI adoption, or regulatory change. The role is to ensure
+            the board understands the trade-offs it is authorising — not merely the
+            recommendation it is approving. Available for audit and risk committee
+            contributions, M&amp;A technology scrutiny, and ongoing governance oversight.
+          </p>
+          <p class="service-links">
+            <a href="service-non-executive-director.html">Appointment detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-non-executive-director.pdf" download>One-pager (PDF)</a>
           </p>
         </article>
 
@@ -542,6 +812,9 @@
             their technology programme and the business outcome it was supposed to
             deliver.
           </p>
+          <p class="service-links">
+            <a href="service-interim-programme-recovery.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-interim-programme-recovery.pdf" download>One-pager (PDF)</a>
+          </p>
         </article>
 
         <!-- 7. Data Strategy -->
@@ -554,6 +827,9 @@
             architecture, and the organisational structures that make data genuinely
             useful at executive level. This is not a technical conversation. It is a
             business one that requires technical depth to have correctly.
+          </p>
+          <p class="service-links">
+            <a href="service-data-strategy-review.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-data-strategy-review.pdf" download>One-pager (PDF)</a>
           </p>
         </article>
 
@@ -573,6 +849,41 @@
           has produced.
         </p>
         <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="sector-breadth">
+        <div>
+          <span class="sector-breadth-group-label">Founder-led &amp; early-stage</span>
+          <ul class="sector-breadth-list">
+            <li>Business Process Automation</li>
+            <li>Textiles</li>
+            <li>Online Auctions</li>
+            <li>Media Distribution</li>
+            <li>Retail Banking</li>
+            <li>Mortgage Banking</li>
+            <li>MedTech</li>
+            <li>Health &amp; Fitness</li>
+          </ul>
+        </div>
+        <div>
+          <span class="sector-breadth-group-label">Fractional engagements</span>
+          <ul class="sector-breadth-list">
+            <li>Telecommunications</li>
+            <li>Property Management</li>
+            <li>Oil &amp; Gas</li>
+            <li>Utilities</li>
+            <li>Defence</li>
+            <li>Aviation</li>
+            <li>Manufacturing</li>
+            <li>Banking</li>
+            <li>Motor Industry</li>
+            <li>Insurance</li>
+            <li>Investment</li>
+            <li>Higher Education</li>
+            <li>Financial Services</li>
+            <li>Print Media</li>
+          </ul>
+        </div>
       </div>
 
       <div class="services-grid">
@@ -648,6 +959,9 @@
             challenges facing boards. Author of three books on these subjects —
             the writing informs the speaking.
           </p>
+          <p class="service-links">
+            <a href="service-speaking-masterclasses.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-speaking-masterclasses.pdf" download>One-pager (PDF)</a>
+          </p>
         </article>
 
       </div>
@@ -666,6 +980,7 @@
       </p>
       <div>
         <a href="contact.html" class="btn-paper">Get in touch</a>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-ghost-light" target="_blank" rel="noopener noreferrer">Book a call</a>
         <a href="about.html" class="btn-ghost-light">Read the background</a>
       </div>
     </div>
@@ -679,9 +994,9 @@
     <nav aria-label="Footer navigation">
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>

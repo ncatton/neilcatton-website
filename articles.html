@@ -81,6 +81,9 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-links a[aria-current="page"] { color: #2b4a6f; }
   .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
   /* ── PAGE HEADER ── */
   .page-header { padding-top: 7rem; background: #1a1714; }
@@ -412,6 +415,32 @@
     return { fetch: fetchItems, pubUrl: PUB_URL };
   })();
 </script>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
 </head>
 <body>
 
@@ -421,10 +450,25 @@
   <a href="index.html" class="nav-wordmark">Neil Catton</a>
   <ul class="nav-links" role="list">
     <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="services.html">Overview</a></li>
+        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
     <li><a href="articles.html" aria-current="page">Writing</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
   </ul>
 </nav>
 
@@ -580,9 +624,9 @@
     <nav aria-label="Footer navigation">
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -610,12 +654,11 @@
   async function loadFeed() {
     const el = document.getElementById("rss-feed");
 
-    // Method 1 — Substack public API
+    const API_URL = `https://${PUB}.substack.com/api/v1/posts?limit=9&offset=0`;
+
+    // Method 1 — Substack public API direct
     try {
-      const res = await fetch(
-        `https://${PUB}.substack.com/api/v1/posts?limit=9&offset=0`,
-        { headers: { "Accept": "application/json" } }
-      );
+      const res = await fetch(API_URL, { headers: { "Accept": "application/json" } });
       if (res.ok) {
         const posts = await res.json();
         if (Array.isArray(posts) && posts.length > 0) {
@@ -625,10 +668,22 @@
       }
     } catch(e) {}
 
-    // Method 2 — rss2json proxy
+    // Method 2 — corsproxy (bypasses CORS on Substack API)
+    try {
+      const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(API_URL)}`);
+      if (res.ok) {
+        const posts = await res.json();
+        if (Array.isArray(posts) && posts.length > 0) {
+          renderSubstackAPI(el, posts);
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 3 — rss2json proxy
     try {
       const res = await fetch(
-        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}&count=9&api_key=`
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED_URL)}&count=9`
       );
       if (res.ok) {
         const data = await res.json();
@@ -639,24 +694,7 @@
       }
     } catch(e) {}
 
-    // Method 3 — allorigins RSS proxy
-    try {
-      const res = await fetch(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(FEED_URL)}`
-      );
-      if (res.ok) {
-        const data = await res.json();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data.contents, "text/xml");
-        const items = Array.from(doc.querySelectorAll("item")).slice(0, 9);
-        if (items.length > 0) {
-          renderXML(el, items);
-          return;
-        }
-      }
-    } catch(e) {}
-
-    // All failed — show static featured article
+    // All failed — show current articles as static fallback
     showStatic(el);
   }
 
@@ -730,45 +768,37 @@
   }
 
   function showStatic(el) {
-    // Show latest known article + link to archive, stacked cleanly
-    el.innerHTML = `
-      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap:2rem; margin-bottom:2rem;">
-        <article class="feed-card">
-          <span class="feed-card-pub">The Next Evolution &nbsp;·&nbsp; Latest</span>
-          <a class="feed-card-title"
-             href="https://neilcatton.substack.com/p/boredom-was-the-doorway"
-             target="_blank" rel="noopener noreferrer">
-            Boredom Was The Doorway
-          </a>
-          <p class="feed-card-excerpt">
-            We handed children the most effective attention-capture technology ever built.
-            We didn't redesign it for them. A teacher had been watching it happen for
-            three years — children arriving who couldn't reach boredom.
-          </p>
-          <p class="feed-card-date">22 May 2026</p>
-          <a class="feed-card-link"
-             href="https://neilcatton.substack.com/p/boredom-was-the-doorway"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Read Boredom Was The Doorway on Substack">Read</a>
-        </article>
-        <article class="feed-card">
-          <span class="feed-card-pub">The Next Evolution &nbsp;·&nbsp; Archive</span>
-          <p class="feed-card-title" style="font-family:'Playfair Display',Georgia,serif; font-size:1.15rem; color:#1a1714; margin-bottom:0.75rem; display:block; text-decoration:none;">
-            Dozens of essays published
-          </p>
-          <p class="feed-card-excerpt">
-            Articles at the intersection of technology, ethics, and human purpose —
-            from AI governance and cognitive sovereignty to cyber security, policing,
-            and the systems that shape how we live and work.
-          </p>
-          <a href="https://neilcatton.substack.com"
-             class="feed-card-link"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="View all articles on Substack">
-            View all on Substack →
-          </a>
-        </article>
-      </div>`;
+    const staticArticles = [
+      {
+        title: "The Voice That Never Reaches the Room",
+        excerpt: "What organisations lose before the information reaches anyone who can act on it.",
+        link: "https://neilcatton.substack.com/p/the-voice-that-never-reaches-the",
+        date: "5 June 2026"
+      },
+      {
+        title: "The Fraud Was An Event. This is a Condition.",
+        excerpt: "Why recovery from digital crime outlasts the crime by months — and why the system is built for institutional liability, not for the person it is supposed to help.",
+        link: "https://neilcatton.substack.com/p/the-fraud-was-an-event-this-is-a",
+        date: "3 June 2026"
+      },
+      {
+        title: "The Feeling is Real. The Speed is Not",
+        excerpt: "Forty-one percent of all code written globally in 2024 was generated or suggested by AI. The productivity dashboards show dramatic improvements. The downstream costs are accumulating in places the dashboards do not look.",
+        link: "https://neilcatton.substack.com/p/the-feeling-is-real-the-speed-is",
+        date: "1 June 2026"
+      }
+    ];
+    const grid = document.createElement("div");
+    grid.className = "feed-grid";
+    staticArticles.forEach(function(a) {
+      grid.appendChild(makeCard(a.title, a.excerpt, a.link, a.date));
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+    const viewAll = document.createElement("p");
+    viewAll.style.cssText = "text-align:center; margin-top:2rem;";
+    viewAll.innerHTML = '<a href="https://neilcatton.substack.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View all on Substack</a>';
+    el.appendChild(viewAll);
   }
 
   loadFeed();

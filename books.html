@@ -81,6 +81,9 @@
   .nav-links a:hover::after { width: 100%; }
   .nav-links a[aria-current="page"] { color: var(--accent); }
   .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
   /* ── PAGE HEADER ── */
   .page-header {
@@ -677,6 +680,32 @@
     .audience-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
   }
 </style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
 </head>
 <body>
 
@@ -686,10 +715,25 @@
   <a href="index.html" class="nav-wordmark">Neil Catton</a>
   <ul class="nav-links" role="list">
     <li><a href="about.html">About</a></li>
-    <li><a href="books.html" aria-current="page">Books</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="services.html">Overview</a></li>
+        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
     <li><a href="articles.html">Writing</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html" aria-current="page">Books</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
   </ul>
 </nav>
 
@@ -947,11 +991,11 @@
       <div class="framework-download">
         <div class="framework-download-text">
           <div class="framework-download-heading">Full strategy framework — poster format</div>
-          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Next Evolution — free, no sign-up required.</div>
         </div>
-        <a href="https://neilcatton.substack.com" class="btn-download"
-           target="_blank" rel="noopener noreferrer">
-          Subscribe for the download
+        <a href="downloads/BOOK_ONE_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
         </a>
       </div>
 
@@ -1143,11 +1187,11 @@
       <div class="framework-download">
         <div class="framework-download-text">
           <div class="framework-download-heading">Full cognitive sovereignty framework</div>
-          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Cognitive Crucible — free, no sign-up required.</div>
         </div>
-        <a href="https://neilcatton.substack.com" class="btn-download"
-           target="_blank" rel="noopener noreferrer">
-          Subscribe for the download
+        <a href="downloads/BOOK_TWO_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
         </a>
       </div>
 
@@ -1341,12 +1385,65 @@
       <div class="framework-download">
         <div class="framework-download-text">
           <div class="framework-download-heading">Full threat landscape and defence framework</div>
-          <div class="framework-download-sub">Subscribe to The Next Evolution on Substack to receive the complete downloadable framework.</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Shadow System — free, no sign-up required.</div>
         </div>
-        <a href="https://neilcatton.substack.com" class="btn-download"
-           target="_blank" rel="noopener noreferrer">
-          Subscribe for the download
+        <a href="downloads/BOOK_THREE_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
         </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EBOOK — WORKING AS DESIGNED ── -->
+  <section class="book-section" id="working-as-designed" aria-labelledby="ebook1-title" style="background:#ede9e3;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" aria-hidden="true" style="font-size:3.5rem;letter-spacing:-0.02em;font-style:italic;color:#d4cfc9;">e</span>
+        <span class="book-year-tag">June 2026</span>
+        <span class="book-format">Ebook · Amazon Kindle</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker">Ebook — essay collection</span>
+        <h2 class="book-title" id="ebook1-title">Working as Designed</h2>
+        <p class="book-subtitle">Why systems that work still fail the people inside them.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc">
+          Alex's surgery went digital, and collecting a repeat prescription became an ordeal.
+          Jordan's mortgage was declined by a system nobody could explain. Margaret's bank
+          closed the last branch where anyone knew her name. In every case, the system worked
+          exactly as it was designed to. That is the problem.
+        </p>
+        <p class="book-desc">
+          <em>Working as Designed</em> collects ten essays from The Next Evolution, sequenced
+          as a single argument: when technology fails the person in front of it while every
+          metric stays green, the failure is not a malfunction. It was designed in — by
+          organisations that build for an average user who does not exist, test in conditions
+          chosen to succeed, and measure what is easy to count rather than what matters.
+        </p>
+        <p class="book-desc">
+          The essays move from the evidence — three people processed by systems that could not
+          see them — through the diagnosis, the design assumption underneath the failures, to
+          the mechanism: how pilots, departments, management chains and dashboards keep that
+          assumption from ever being examined. The book ends with five words asked in a design
+          review — <em>who is this hardest for?</em> — the cheapest intervention in these
+          pages, and the rarest.
+        </p>
+        <p class="book-desc">
+          For anyone who builds, buys, governs or lives inside large systems. Which is everyone.
+        </p>
+
+        <div class="book-cta" style="background:transparent;">
+          <a href="https://amzn.eu/d/070XjRol" class="btn btn-primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buy Working as Designed on Amazon Kindle">
+            Buy on Amazon Kindle
+          </a>
+        </div>
       </div>
 
     </div>
@@ -1398,10 +1495,11 @@
   <!-- ALL BOOKS CTA -->
   <div class="all-books-cta" style="background:#2b4a6f;">
     <div class="all-books-inner">
-      <h2 class="all-books-heading">All three available on Amazon</h2>
+      <h2 class="all-books-heading">All available on Amazon</h2>
       <p class="all-books-sub">
         Each book stands alone. Read in sequence, they build a complete argument
-        about technology, human agency, and what comes next.
+        about technology, human agency, and what comes next. Plus an essay collection
+        that puts the central argument to work in ten sharp essays.
       </p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;">
         <a href="https://amzn.eu/d/617wKhZ" class="btn-paper" target="_blank" rel="noopener noreferrer"
@@ -1410,6 +1508,8 @@
            aria-label="Buy The Cognitive Crucible on Amazon">The Cognitive Crucible</a>
         <a href="https://amzn.eu/d/0dyQaBbU" class="btn-paper" target="_blank" rel="noopener noreferrer"
            aria-label="Buy The Shadow System on Amazon">The Shadow System</a>
+        <a href="https://amzn.eu/d/070XjRol" class="btn-paper" target="_blank" rel="noopener noreferrer"
+           aria-label="Buy Working as Designed on Amazon Kindle">Working as Designed</a>
       </div>
       <p style="font-size:0.8rem;color:rgba(245,242,238,0.5);margin-top:0.5rem;">All available on Amazon</p>
     </div>
@@ -1423,9 +1523,9 @@
     <nav aria-label="Footer navigation">
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>

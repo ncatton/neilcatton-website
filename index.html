@@ -123,6 +123,9 @@
 
   .nav-links a:hover { color: var(--accent); }
   .nav-links a:hover::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
   /* ── HERO — contained, above the fold ── */
   .hero {
@@ -755,6 +758,32 @@
     return { fetch: fetchItems, pubUrl: PUB_URL };
   })();
 </script>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
 </head>
 <body>
 
@@ -765,10 +794,25 @@
   <a href="index.html" class="nav-wordmark">Neil Catton</a>
   <ul class="nav-links" role="list">
     <li><a href="about.html">About</a></li>
-    <li><a href="books.html">Books</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="services.html">Overview</a></li>
+        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
     <li><a href="articles.html">Writing</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li><a href="books.html">Books</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
   </ul>
 </nav>
 
@@ -823,7 +867,7 @@
       <div>
         <div class="about-roles" aria-label="Roles">
           <span class="role-tag">Group CTO</span>
-          <span class="role-tag">Global Consortium Group</span>
+          <span class="role-tag">Non-Executive Director</span>
           <span class="role-tag">Author</span>
           <span class="role-tag">Speaker</span>
         </div>
@@ -848,7 +892,7 @@
   <section class="books-section section" id="books" aria-labelledby="books-heading">
     <div class="section-inner">
       <span class="section-label" aria-hidden="true">Books</span>
-      <h2 class="section-heading" id="books-heading">Three books. One argument.</h2>
+      <h2 class="section-heading" id="books-heading">Three books. One ebook.</h2>
       <hr class="section-rule" aria-hidden="true">
       <div class="books-grid">
         <article class="book-card">
@@ -874,6 +918,15 @@
           <h3 class="book-title">The Shadow System</h3>
           <p class="book-desc">Every organisation has an unofficial process — the one people actually use. This book asks why it exists, and what it says about the official system that made it necessary.</p>
           <a href="books.html#the-shadow-system"
+             style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;">
+            Learn more →
+          </a>
+        </article>
+        <article class="book-card">
+          <div class="book-number" aria-hidden="true" style="font-style:italic;font-size:1.75rem;letter-spacing:-0.02em;">e</div>
+          <h3 class="book-title">Working as Designed</h3>
+          <p class="book-desc">Ten essays from The Next Evolution, sequenced as one argument: when technology fails the person in front of it while every metric stays green, the failure was designed in.</p>
+          <a href="books.html#working-as-designed"
              style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;">
             Learn more →
           </a>
@@ -927,6 +980,11 @@
           <span class="service-icon" aria-hidden="true">◇</span>
           <h3 class="service-name">Consulting</h3>
           <p class="service-desc">Embedded work with leadership teams on technology strategy, system design, and the organisational conditions that determine whether technology works for people.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon" aria-hidden="true">◉</span>
+          <h3 class="service-name">Non-Executive Director</h3>
+          <p class="service-desc">Independent board oversight for organisations navigating technology transformation, AI adoption, or regulatory change — ensuring the board understands the trade-offs it is authorising, not merely the recommendation it is approving.</p>
         </div>
       </div>
       <div style="margin-top:3rem;text-align:center;">
@@ -997,9 +1055,9 @@
     <nav aria-label="Footer navigation">
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -1062,76 +1120,84 @@
   }
 
   function showFallback() {
-    renderCards([{
-      title: "Boredom Was The Doorway",
-      excerpt: "We handed children the most effective attention-capture technology ever built. We didn't redesign it for them. A teacher had been watching it happen for three years.",
-      link: "https://neilcatton.substack.com/p/boredom-was-the-doorway",
-      date: "22 May 2026"
-    }]);
+    renderCards([
+      {
+        title: "The Voice That Never Reaches the Room",
+        excerpt: "What organisations lose before the information reaches anyone who can act on it.",
+        link: "https://neilcatton.substack.com/p/the-voice-that-never-reaches-the",
+        date: "5 June 2026"
+      },
+      {
+        title: "The Fraud Was An Event. This is a Condition.",
+        excerpt: "Why recovery from digital crime outlasts the crime by months — and why the system is built for institutional liability, not for the person it is supposed to help.",
+        link: "https://neilcatton.substack.com/p/the-fraud-was-an-event-this-is-a",
+        date: "3 June 2026"
+      },
+      {
+        title: "The Feeling is Real. The Speed is Not",
+        excerpt: "Forty-one percent of all code written globally in 2024 was generated or suggested by AI. The productivity dashboards show dramatic improvements. The downstream costs are accumulating in places the dashboards do not look.",
+        link: "https://neilcatton.substack.com/p/the-feeling-is-real-the-speed-is",
+        date: "1 June 2026"
+      }
+    ]);
   }
 
   async function loadHomeFeed() {
-    // Method 1 — Substack API
+    const API_URL = "https://" + PUB + ".substack.com/api/v1/posts?limit=3&offset=0";
+
+    // Method 1 — Substack API direct
     try {
-      const r = await fetch("https://" + PUB + ".substack.com/api/v1/posts?limit=3&offset=0",
-        { headers: { Accept: "application/json" } });
+      const r = await fetch(API_URL, { headers: { Accept: "application/json" } });
       if (r.ok) {
         const posts = await r.json();
         if (Array.isArray(posts) && posts.length) {
-          const items = posts.map(function(p) { return {
+          renderCards(posts.map(function(p) { return {
             title: p.title || "Untitled",
-            excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 140) + "…",
+            excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 160) + "…",
             link: p.canonical_url || "https://" + PUB + ".substack.com/p/" + p.slug,
             date: fmtDate(p.post_date || p.published_at)
-          }; });
-          renderCards(items);
+          }; }));
           return;
         }
       }
     } catch(e) {}
 
-    // Method 2 — rss2json
+    // Method 2 — corsproxy (bypasses CORS on Substack API)
+    try {
+      const r = await fetch("https://corsproxy.io/?" + encodeURIComponent(API_URL));
+      if (r.ok) {
+        const posts = await r.json();
+        if (Array.isArray(posts) && posts.length) {
+          renderCards(posts.map(function(p) { return {
+            title: p.title || "Untitled",
+            excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 160) + "…",
+            link: p.canonical_url || "https://" + PUB + ".substack.com/p/" + p.slug,
+            date: fmtDate(p.post_date || p.published_at)
+          }; }));
+          return;
+        }
+      }
+    } catch(e) {}
+
+    // Method 3 — rss2json
     try {
       const r = await fetch("https://api.rss2json.com/v1/api.json?rss_url=" +
         encodeURIComponent(FEED_URL) + "&count=3");
       if (r.ok) {
         const d = await r.json();
         if (d.status === "ok" && d.items && d.items.length) {
-          const items = d.items.map(function(i) { return {
+          renderCards(d.items.map(function(i) { return {
             title: i.title || "Untitled",
-            excerpt: stripHTML(i.description || i.content || "").slice(0, 140) + "…",
+            excerpt: stripHTML(i.description || i.content || "").slice(0, 160) + "…",
             link: i.link || "https://" + PUB + ".substack.com",
             date: fmtDate(i.pubDate)
-          }; });
-          renderCards(items);
+          }; }));
           return;
         }
       }
     } catch(e) {}
 
-    // Method 3 — allorigins RSS proxy
-    try {
-      const r = await fetch("https://api.allorigins.win/get?url=" +
-        encodeURIComponent(FEED_URL));
-      if (r.ok) {
-        const d = await r.json();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(d.contents, "text/xml");
-        const xmlItems = Array.from(doc.querySelectorAll("item")).slice(0, 3);
-        if (xmlItems.length) {
-          const items = xmlItems.map(function(item) { return {
-            title: item.querySelector("title") ? item.querySelector("title").textContent : "Untitled",
-            excerpt: stripHTML(item.querySelector("description") ? item.querySelector("description").textContent : "").slice(0, 140) + "…",
-            link: item.querySelector("link") ? item.querySelector("link").textContent : "https://" + PUB + ".substack.com",
-            date: fmtDate(item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "")
-          }; });
-          renderCards(items);
-          return;
-        }
-      }
-    } catch(e) {}
-
-    // All failed — show known latest article
+    // All failed — show current articles as static fallback
     showFallback();
   }
 
