@@ -656,6 +656,29 @@
 
     const API_URL = `https://${PUB}.substack.com/api/v1/posts?limit=9&offset=0`;
 
+    // Method 0 — Netlify serverless function (server-side, no CORS issues)
+    try {
+      const res = await fetch("/.netlify/functions/substack-feed");
+      if (res.ok) {
+        const data = await res.json();
+        if (data.items && data.items.length > 0) {
+          const grid = document.createElement("div");
+          grid.className = "feed-grid";
+          data.items.slice(0, 9).forEach(i => {
+            grid.appendChild(makeCard(
+              i.title || "Untitled",
+              (i.excerpt || "").slice(0, 160) + "…",
+              i.link || `https://${PUB}.substack.com`,
+              fmtDate(i.pubDate)
+            ));
+          });
+          el.innerHTML = "";
+          el.appendChild(grid);
+          return;
+        }
+      }
+    } catch(e) {}
+
     // Method 1 — Substack public API direct
     try {
       const res = await fetch(API_URL, { headers: { "Accept": "application/json" } });

@@ -1145,6 +1145,23 @@
   async function loadHomeFeed() {
     const API_URL = "https://" + PUB + ".substack.com/api/v1/posts?limit=3&offset=0";
 
+    // Method 0 — Netlify serverless function (server-side, no CORS issues)
+    try {
+      const r = await fetch("/.netlify/functions/substack-feed");
+      if (r.ok) {
+        const data = await r.json();
+        if (data.items && data.items.length) {
+          renderCards(data.items.slice(0, 3).map(function(i) { return {
+            title: i.title || "Untitled",
+            excerpt: (i.excerpt || "").slice(0, 160) + "…",
+            link: i.link || "https://" + PUB + ".substack.com",
+            date: fmtDate(i.pubDate)
+          }; }));
+          return;
+        }
+      }
+    } catch(e) {}
+
     // Method 1 — Substack API direct
     try {
       const r = await fetch(API_URL, { headers: { Accept: "application/json" } });
