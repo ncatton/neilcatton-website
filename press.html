@@ -211,6 +211,26 @@
   }
   .press-card-link:hover { border-color: #2b4a6f; }
 
+  /* ── SPEAKING LIST ── */
+  .speaking-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .speaking-item {
+    padding: 1.5rem 0;
+    border-top: 1px solid #d4cfc9;
+  }
+  .speaking-item:last-child { border-bottom: 1px solid #d4cfc9; }
+  .speaking-event {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.25rem;
+  }
+  .speaking-topic {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.4rem;
+  }
+  .speaking-desc {
+    font-size: 0.9rem; font-weight: 300; color: #5c5652; line-height: 1.65;
+    max-width: 680px;
+  }
+
   /* ── EXTERNAL ORGS ── */
   .orgs-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
   .org-item {
@@ -307,8 +327,8 @@
       <span class="page-label">Press &amp; Media</span>
       <h1 class="page-title" id="page-title">In the<br><em>conversation.</em></h1>
       <p class="page-standfirst">
-        Interviews, articles, and external contributions — organisations, publications,
-        and initiatives that Neil has been part of or spoken with.
+        Interviews, articles, speaking engagements, and external contributions —
+        organisations, publications, and forums that Neil has been part of or spoken with.
       </p>
     </div>
   </header>
@@ -377,6 +397,47 @@
             <a href="https://www.globalconsortiumgroup.com/news-annoucements/cybercrime-in-todays-world" class="org-link" target="_blank" rel="noopener noreferrer">Cybercrime Today ↗</a>
             <a href="https://www.globalconsortiumgroup.com/news-annoucements/webinar-cybercrime-is-evolving-are-we-truly-ready" class="org-link" target="_blank" rel="noopener noreferrer">Cybercrime Is Evolving ↗</a>
           </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SPEAKING ── -->
+  <section class="press-section" aria-labelledby="speaking-heading">
+    <div class="press-inner">
+      <span class="section-label">Speaking</span>
+      <h2 class="section-heading" id="speaking-heading">On the platform</h2>
+      <p class="section-standfirst">
+        Selected speaking engagements — conferences, leadership forums, and invited presentations
+        across technology strategy, architecture, and the future of digital systems.
+      </p>
+      <hr class="section-rule" aria-hidden="true">
+
+      <ul class="speaking-list" role="list">
+
+        <li class="speaking-item">
+          <div class="speaking-event">IBM Distinguished Engineers Global Leadership</div>
+          <span class="speaking-topic">Invited presentation · Future Telecommunications &amp; Ecosystem Architecture</span>
+          <p class="speaking-desc">The only non-IBM person ever to present at this globally streamed internal leadership event. Invited by the presidents of IBM's Distinguished Engineering team to present on ecosystems architecture — a model for how organisations think about and design capability across interconnected digital ecosystems. Delivered during the BT period.</p>
+        </li>
+
+        <li class="speaking-item">
+          <div class="speaking-event">Confluence Global Telecoms Leadership</div>
+          <span class="speaking-topic">Conference speaker · Future of Telecommunications &amp; Engagement Models</span>
+          <p class="speaking-desc">Speaking on where the telecommunications industry is heading — the structural shift in how telcos create and sustain engagement, and what that means for the technology decisions organisations in the sector are making now.</p>
+        </li>
+
+        <li class="speaking-item">
+          <div class="speaking-event">Google European Banking &amp; Finance</div>
+          <span class="speaking-topic">Fireside chat · Working Models in Financial Services Technology</span>
+          <p class="speaking-desc">Fireside conversation at Google's European Banking and Finance forum — discussing how financial services organisations actually work with technology partners, what good looks like, and the conditions under which transformation programmes succeed or fail.</p>
+        </li>
+
+        <li class="speaking-item">
+          <div class="speaking-event">EU Lifelong Learning &amp; Education Initiative</div>
+          <span class="speaking-topic">UK representative · Pan-European Lifelong Learning Platform</span>
+          <p class="speaking-desc">Represented the UK at an EU-level initiative in Brussels focused on a centralised pan-European capability for employment and lifelong learning — bringing together key data to support a cradle-to-grave platform of information spanning education, employment, skills, and lifelong development.</p>
         </li>
 
       </ul>
