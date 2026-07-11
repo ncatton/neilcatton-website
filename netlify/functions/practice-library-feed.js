@@ -1,31 +1,30 @@
-// Netlify serverless function — fetches the Practice Library section feed
-// from Substack and returns JSON, including each card's image.
+// Netlify serverless function — returns the Practice Library cards as JSON.
 // Companion to substack-feed.js (the main publication feed).
 //
-// The section is now live at https://writing.neilcatton.com/s/the-practice-library
-// (nothing published to it yet). IMPORTANT: FEED_URL below still points at
-// the main publication feed, not the section feed. Substack exposes section
-// feeds at https://writing.neilcatton.com/feed/sections/<section-id> — the
-// id is visible in the section's settings in the Substack dashboard, or in
-// the RSS autodiscovery link on the section page once at least one post is
-// live. Grab the exact URL and swap it in below when the first card is
-// published. Until then this falls back to the main publication feed, which
-// is harmless: the page merges feed items with data/practice-library.json
-// and the front-end guard only accepts feed items titled "How To…", so
-// nothing from the main feed leaks onto the Practice Library page.
+// Why the JSON API and not RSS: Substack does not expose a working RSS feed
+// per section on this publication (verified 2026-07-11 — both
+// /s/the-practice-library/feed and /feed/sections/419813 return nothing).
+// The publication's JSON API does carry the section id on every post, so
+// this function fetches /api/v1/posts and filters to the Practice Library
+// section. It also returns the post's cover image directly, which is the
+// card PNG — better than scraping it out of RSS HTML.
+//
+// SECTION_ID 419813 = the-practice-library (confirmed from the API on
+// 2026-07-11, first card post). If the section is ever deleted and
+// recreated, the id changes — re-check via
+// https://writing.neilcatton.com/api/v1/posts?limit=3 (section_id field).
 
 const https = require("https");
 
-// TODO(Neil): replace with the Practice Library section feed URL once the
-// first card is published — see note above.
-const FEED_URL = "https://writing.neilcatton.com/feed";
+const API_URL = "https://writing.neilcatton.com/api/v1/posts?limit=50&offset=0";
+const SECTION_ID = 419813;
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; NeilCattonSite/1.0)",
-        "Accept": "application/rss+xml, application/xml, text/xml, */*"
+        "Accept": "application/json"
       }
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
@@ -36,58 +35,6 @@ function fetchURL(url) {
       res.on("end", () => resolve(data));
     }).on("error", reject);
   });
-}
-
-function parseXML(xml) {
-  const items = [];
-  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-  let match;
-
-  while ((match = itemRegex.exec(xml)) !== null) {
-    const block = match[1];
-
-    const get = (tag) => {
-      const cdata = new RegExp(`<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>`).exec(block);
-      if (cdata) return cdata[1].trim();
-      const plain = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`).exec(block);
-      return plain ? plain[1].trim() : "";
-    };
-
-    let link = get("link");
-    if (!link) {
-      const linkMatch = /<link\s*\/>([^<]+)/.exec(block) || /<link>([^<]+)/.exec(block);
-      link = linkMatch ? linkMatch[1].trim() : "";
-    }
-
-    const title = get("title");
-    const pubDate = get("pubDate");
-    const description = get("description");
-
-    // Card image: prefer the RSS enclosure, fall back to the first <img>
-    // in the post body — Substack sets the enclosure to the post's cover
-    // image, which for a Practice Library post is the card itself.
-    let image = "";
-    const enclosure = /<enclosure[^>]*url="([^"]+)"/.exec(block);
-    if (enclosure) {
-      image = enclosure[1];
-    } else {
-      const body = get("content:encoded") || description;
-      const img = /<img[^>]*src="([^"]+)"/.exec(body);
-      if (img) image = img[1];
-    }
-
-    const excerpt = description
-      .replace(/<[^>]+>/g, " ")
-      .replace(/\s+/g, " ")
-      .trim()
-      .slice(0, 200);
-
-    if (title && link) {
-      items.push({ title, link, pubDate, excerpt, image });
-    }
-  }
-
-  return items;
 }
 
 exports.handler = async function(event, context) {
@@ -103,13 +50,24 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const xml = await fetchURL(FEED_URL);
-    const items = parseXML(xml);
+    const raw = await fetchURL(API_URL);
+    const posts = JSON.parse(raw);
+
+    const items = (Array.isArray(posts) ? posts : [])
+      .filter(p => p.section_id === SECTION_ID && p.audience === "everyone")
+      .map(p => ({
+        title:   p.title || "Untitled",
+        link:    p.canonical_url || "",
+        pubDate: p.post_date || "",
+        excerpt: (p.subtitle || "").slice(0, 200),
+        image:   p.cover_image || ""
+      }))
+      .filter(i => i.title && i.link);
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ items: items.slice(0, 30) })
+      body: JSON.stringify({ items })
     };
 
   } catch (err) {
