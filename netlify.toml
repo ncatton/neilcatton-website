@@ -6,3 +6,9 @@
   to = "/.netlify/functions/substack-feed"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/practice-library-feed"
+  to = "/.netlify/functions/practice-library-feed"
+  status = 200
+  force = true

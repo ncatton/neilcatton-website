@@ -135,6 +135,34 @@
   .btn-nav::after { display: none !important; }
   .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
 
+  /* ── ANNOUNCEMENTS — slim signpost bar, top of hero ── */
+  .announce-bar {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 1rem var(--col-pad) 0;
+  }
+  .announce-bar[hidden] { display: none; }
+  .announce-item {
+    display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+    background: var(--accent); color: var(--paper);
+    margin-bottom: 0.6rem;
+  }
+  .announce-item:last-child { margin-bottom: 0; }
+  .announce-tag {
+    font-family: var(--sans); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    background: rgba(245,242,238,0.18); padding: 0.28rem 0.6rem; flex-shrink: 0;
+  }
+  .announce-text { font-size: 0.9rem; font-weight: 300; flex: 1; min-width: 200px; }
+  .announce-cta {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--paper); text-decoration: none;
+    border-bottom: 1px solid rgba(245,242,238,0.5); padding-bottom: 2px;
+    white-space: nowrap; transition: border-color 0.2s;
+  }
+  .announce-cta:hover { border-color: var(--paper); }
+
   /* ── HERO — contained, above the fold ── */
   .hero {
     padding-top: 5.5rem; /* nav clearance */
@@ -733,7 +761,7 @@
 <script>
   window.SubstackFeed = (function() {
     var ENDPOINT = "/.netlify/functions/substack-feed";
-    var PUB_URL  = "https://neilcatton.substack.com";
+    var PUB_URL  = "https://writing.neilcatton.com";
 
     function fmt(str) {
       try {
@@ -822,6 +850,7 @@
       </ul>
     </li>
     <li><a href="articles.html">Writing</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
     <li><a href="books.html">Books</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -833,6 +862,10 @@
 
   <!-- ── HERO — photo + text side by side, above the fold ── -->
   <header class="hero">
+
+    <!-- ANNOUNCEMENTS -->
+    <div class="announce-bar" id="announce-bar" role="region" aria-label="Announcements" hidden></div>
+
     <div class="hero-inner">
 
       <!-- Photo — contained portrait, fades at the bottom -->
@@ -857,7 +890,7 @@
         <hr class="hero-divider" aria-hidden="true">
 
         <div class="hero-actions">
-          <a href="https://neilcatton.substack.com"
+          <a href="https://writing.neilcatton.com"
              class="btn btn-primary"
              target="_blank" rel="noopener noreferrer">
             Read the writing
@@ -1015,7 +1048,7 @@
         </p>
         <div style="display:flex; justify-content:center; margin-top:0.5rem;">
           <div style="background:#fff; border-radius:2px; overflow:hidden; max-width:100%; width:480px;">
-            <iframe src="https://neilcatton.substack.com/embed"
+            <iframe src="https://writing.neilcatton.com/embed"
                     width="480" height="200"
                     style="display:block; border:none; max-width:100%;"
                     frameborder="0" scrolling="no"
@@ -1068,9 +1101,11 @@
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
     <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -1085,9 +1120,59 @@
     nav.classList.toggle("scrolled", window.scrollY > 40);
   }, { passive: true });
 
+  /* ── ANNOUNCEMENTS — slim signpost bar, top of hero ──
+     Reads data/announcements.json. Shows the 3 most recent entries whose
+     `expires` date (if set) has not passed, newest first. If there are no
+     current announcements, the bar stays hidden. See data/README.md for
+     the publishing ritual. */
+  async function loadAnnouncements() {
+    const bar = document.getElementById("announce-bar");
+    if (!bar) return;
+    try {
+      const r = await fetch("data/announcements.json");
+      if (!r.ok) return;
+      const data = await r.json();
+      const items = Array.isArray(data.announcements) ? data.announcements : [];
+      const today = new Date().toISOString().slice(0, 10);
+
+      const active = items
+        .filter(a => !a.expires || a.expires >= today)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+      if (!active.length) return;
+
+      bar.innerHTML = active.map(a => {
+        const text = escapeHTML(a.text || "");
+        const linkText = escapeHTML(a.linkText || "Read more");
+        const link = a.link || "#";
+        const external = /^https?:\/\//i.test(link);
+        const attrs = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return (
+          '<div class="announce-item">' +
+            '<span class="announce-tag">Announcement</span>' +
+            '<span class="announce-text">' + text + '</span>' +
+            '<a class="announce-cta" href="' + link + '"' + attrs + '>' + linkText + ' &rarr;</a>' +
+          '</div>'
+        );
+      }).join("");
+      bar.hidden = false;
+    } catch (e) {
+      /* fail silently — bar simply stays hidden */
+    }
+  }
+
+  function escapeHTML(s) {
+    return (s || "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[c]));
+  }
+
+  loadAnnouncements();
+
   /* ── HOME FEED — same three-method approach as articles page ── */
-  const PUB = "neilcatton";
-  const FEED_URL = "https://" + PUB + ".substack.com/feed";
+  const PUB = "writing.neilcatton.com";
+  const FEED_URL = "https://" + PUB + "/feed";
 
   function stripHTML(str) {
     const d = document.createElement("div");
@@ -1137,26 +1222,26 @@
       {
         title: "The Voice That Never Reaches the Room",
         excerpt: "What organisations lose before the information reaches anyone who can act on it.",
-        link: "https://neilcatton.substack.com/p/the-voice-that-never-reaches-the",
+        link: "https://writing.neilcatton.com/p/the-voice-that-never-reaches-the",
         date: "5 June 2026"
       },
       {
         title: "The Fraud Was An Event. This is a Condition.",
         excerpt: "Why recovery from digital crime outlasts the crime by months — and why the system is built for institutional liability, not for the person it is supposed to help.",
-        link: "https://neilcatton.substack.com/p/the-fraud-was-an-event-this-is-a",
+        link: "https://writing.neilcatton.com/p/the-fraud-was-an-event-this-is-a",
         date: "3 June 2026"
       },
       {
         title: "The Feeling is Real. The Speed is Not",
         excerpt: "Forty-one percent of all code written globally in 2024 was generated or suggested by AI. The productivity dashboards show dramatic improvements. The downstream costs are accumulating in places the dashboards do not look.",
-        link: "https://neilcatton.substack.com/p/the-feeling-is-real-the-speed-is",
+        link: "https://writing.neilcatton.com/p/the-feeling-is-real-the-speed-is",
         date: "1 June 2026"
       }
     ]);
   }
 
   async function loadHomeFeed() {
-    const API_URL = "https://" + PUB + ".substack.com/api/v1/posts?limit=3&offset=0";
+    const API_URL = "https://" + PUB + "/api/v1/posts?limit=3&offset=0";
 
     // Method 0 — Netlify serverless function (server-side, no CORS issues)
     try {
@@ -1167,7 +1252,7 @@
           renderCards(data.items.slice(0, 3).map(function(i) { return {
             title: i.title || "Untitled",
             excerpt: (i.excerpt || "").slice(0, 160) + "…",
-            link: i.link || "https://" + PUB + ".substack.com",
+            link: i.link || "https://" + PUB,
             date: fmtDate(i.pubDate)
           }; }));
           return;
@@ -1184,7 +1269,7 @@
           renderCards(posts.map(function(p) { return {
             title: p.title || "Untitled",
             excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 160) + "…",
-            link: p.canonical_url || "https://" + PUB + ".substack.com/p/" + p.slug,
+            link: p.canonical_url || "https://" + PUB + "/p/" + p.slug,
             date: fmtDate(p.post_date || p.published_at)
           }; }));
           return;
@@ -1201,7 +1286,7 @@
           renderCards(posts.map(function(p) { return {
             title: p.title || "Untitled",
             excerpt: stripHTML(p.subtitle || p.body_html || "").slice(0, 160) + "…",
-            link: p.canonical_url || "https://" + PUB + ".substack.com/p/" + p.slug,
+            link: p.canonical_url || "https://" + PUB + "/p/" + p.slug,
             date: fmtDate(p.post_date || p.published_at)
           }; }));
           return;
@@ -1219,7 +1304,7 @@
           renderCards(d.items.map(function(i) { return {
             title: i.title || "Untitled",
             excerpt: stripHTML(i.description || i.content || "").slice(0, 160) + "…",
-            link: i.link || "https://" + PUB + ".substack.com",
+            link: i.link || "https://" + PUB,
             date: fmtDate(i.pubDate)
           }; }));
           return;

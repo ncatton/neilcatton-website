@@ -1,0 +1,4 @@
+{
+  "_about": "Permanent register of every published Practice Library card. The practice-library.html page merges this file with the live Substack section feed — the feed shows the newest cards automatically, this file keeps every card visible after it falls off the RSS window (feeds only carry the most recent ~20 posts). This is also the provenance record: one entry per card, version-controlled, dated. Add an entry here as part of publishing each card. See data/README.md.",
+  "cards": []
+}

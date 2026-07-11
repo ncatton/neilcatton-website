@@ -397,7 +397,7 @@
 <script>
   window.SubstackFeed = (function() {
     var ENDPOINT = "/.netlify/functions/substack-feed";
-    var PUB_URL  = "https://neilcatton.substack.com";
+    var PUB_URL  = "https://writing.neilcatton.com";
 
     function fmt(str) {
       try {
@@ -485,6 +485,7 @@
       </ul>
     </li>
     <li><a href="articles.html" aria-current="page">Writing</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
     <li><a href="books.html">Books</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -514,7 +515,7 @@
           Written for CTOs, board members, and anyone navigating systems that
           weren't built with them in mind.
         </p>
-        <a href="https://neilcatton.substack.com" class="btn-subscribe"
+        <a href="https://writing.neilcatton.com" class="btn-subscribe"
            target="_blank" rel="noopener noreferrer">
           Subscribe on Substack
         </a>
@@ -554,7 +555,7 @@
       </div>
 
       <div class="feed-cta" style="margin-top:1rem;">
-        <a href="https://neilcatton.substack.com" class="btn btn-primary"
+        <a href="https://writing.neilcatton.com" class="btn btn-primary"
            target="_blank" rel="noopener noreferrer">
           Read all essays on Substack
         </a>
@@ -587,7 +588,7 @@
           Each essay makes one argument. Clearly. Anchored in a specific
           human consequence. It does not end with a rallying call.
         </p>
-        <a href="https://neilcatton.substack.com" class="btn btn-secondary"
+        <a href="https://writing.neilcatton.com" class="btn btn-secondary"
            target="_blank" rel="noopener noreferrer"
            style="margin-top:0.5rem;">
           Follow on Substack
@@ -626,7 +627,7 @@
           </p>
           <div style="display:flex; justify-content:center; margin-top:0.5rem;">
             <div style="background:#fff; border-radius:2px; overflow:hidden; max-width:100%; width:480px;">
-              <iframe src="https://neilcatton.substack.com/embed"
+              <iframe src="https://writing.neilcatton.com/embed"
                       width="480" height="200"
                       style="display:block; border:none; max-width:100%;"
                       frameborder="0" scrolling="no"
@@ -636,7 +637,7 @@
           </div>
           <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
         </div>
-        <a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer" class="subscribe-qr" aria-label="Scan to subscribe to The Next Evolution on Substack">
+        <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="subscribe-qr" aria-label="Scan to subscribe to The Next Evolution on Substack">
           <img src="images/qr-code-substack.svg" width="180" height="180" alt="QR code linking to The Next Evolution Substack" style="display:block; width:180px; height:180px; background:#fff; padding:14px; border-radius:4px;">
           <span class="subscribe-qr-label">Scan to subscribe</span>
         </a>
@@ -653,9 +654,11 @@
       <ul class="footer-links" role="list">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="https://neilcatton.substack.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
     <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -677,13 +680,13 @@
      3. DOMParser on raw RSS via allorigins proxy
      If all fail, shows the static featured article  */
 
-  const PUB = "neilcatton";
-  const FEED_URL = `https://${PUB}.substack.com/feed`;
+  const PUB = "writing.neilcatton.com";
+  const FEED_URL = `https://${PUB}/feed`;
 
   async function loadFeed() {
     const el = document.getElementById("rss-feed");
 
-    const API_URL = `https://${PUB}.substack.com/api/v1/posts?limit=9&offset=0`;
+    const API_URL = `https://${PUB}/api/v1/posts?limit=9&offset=0`;
 
     // Method 0 — Netlify serverless function (server-side, no CORS issues)
     try {
@@ -697,7 +700,7 @@
             grid.appendChild(makeCard(
               i.title || "Untitled",
               (i.excerpt || "").slice(0, 160) + "…",
-              i.link || `https://${PUB}.substack.com`,
+              i.link || `https://${PUB}`,
               fmtDate(i.pubDate)
             ));
           });
@@ -783,7 +786,7 @@
     posts.slice(0, 9).forEach(p => {
       const title   = p.title || "Untitled";
       const excerpt = (stripHTML(p.subtitle || p.body_html || "")).slice(0, 160) + "…";
-      const link    = p.canonical_url || `https://${PUB}.substack.com/p/${p.slug}`;
+      const link    = p.canonical_url || `https://${PUB}/p/${p.slug}`;
       const date    = fmtDate(p.post_date || p.published_at);
       grid.appendChild(makeCard(title, excerpt, link, date));
     });
@@ -797,7 +800,7 @@
     items.forEach(item => {
       const title   = item.title || "Untitled";
       const excerpt = stripHTML(item.description || item.content || "").slice(0, 160) + "…";
-      const link    = item.link || `https://${PUB}.substack.com`;
+      const link    = item.link || `https://${PUB}`;
       const date    = fmtDate(item.pubDate);
       grid.appendChild(makeCard(title, excerpt, link, date));
     });
@@ -811,7 +814,7 @@
     items.forEach(item => {
       const title   = item.querySelector("title")?.textContent || "Untitled";
       const excerpt = stripHTML(item.querySelector("description")?.textContent || "").slice(0, 160) + "…";
-      const link    = item.querySelector("link")?.textContent || `https://${PUB}.substack.com`;
+      const link    = item.querySelector("link")?.textContent || `https://${PUB}`;
       const date    = fmtDate(item.querySelector("pubDate")?.textContent);
       grid.appendChild(makeCard(title, excerpt, link, date));
     });
@@ -824,19 +827,19 @@
       {
         title: "The Voice That Never Reaches the Room",
         excerpt: "What organisations lose before the information reaches anyone who can act on it.",
-        link: "https://neilcatton.substack.com/p/the-voice-that-never-reaches-the",
+        link: "https://writing.neilcatton.com/p/the-voice-that-never-reaches-the",
         date: "5 June 2026"
       },
       {
         title: "The Fraud Was An Event. This is a Condition.",
         excerpt: "Why recovery from digital crime outlasts the crime by months — and why the system is built for institutional liability, not for the person it is supposed to help.",
-        link: "https://neilcatton.substack.com/p/the-fraud-was-an-event-this-is-a",
+        link: "https://writing.neilcatton.com/p/the-fraud-was-an-event-this-is-a",
         date: "3 June 2026"
       },
       {
         title: "The Feeling is Real. The Speed is Not",
         excerpt: "Forty-one percent of all code written globally in 2024 was generated or suggested by AI. The productivity dashboards show dramatic improvements. The downstream costs are accumulating in places the dashboards do not look.",
-        link: "https://neilcatton.substack.com/p/the-feeling-is-real-the-speed-is",
+        link: "https://writing.neilcatton.com/p/the-feeling-is-real-the-speed-is",
         date: "1 June 2026"
       }
     ];
@@ -849,7 +852,7 @@
     el.appendChild(grid);
     const viewAll = document.createElement("p");
     viewAll.style.cssText = "text-align:center; margin-top:2rem;";
-    viewAll.innerHTML = '<a href="https://neilcatton.substack.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View all on Substack</a>';
+    viewAll.innerHTML = '<a href="https://writing.neilcatton.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View all on Substack</a>';
     el.appendChild(viewAll);
   }
 
