@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYSNBQKTCV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BYSNBQKTCV');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.neilcatton.com/practice-library.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
 <title>The Practice Library — Neil Catton</title>
+<meta name="description" content="The Practice Library — practical How To reference cards from The Next Evolution trilogy, rebuilt as standalone guidance and published on Substack.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/practice-library.html">
+<meta property="og:title" content="The Practice Library — Neil Catton">
+<meta property="og:description" content="The Practice Library — practical How To reference cards from The Next Evolution trilogy, rebuilt as standalone guidance and published on Substack.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Practice Library — Neil Catton">
+<meta name="twitter:description" content="The Practice Library — practical How To reference cards from The Next Evolution trilogy, rebuilt as standalone guidance and published on Substack.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -564,6 +591,7 @@
         <li><a href="press.html">Press</a></li>
         <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
         <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
     <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
@@ -582,8 +610,9 @@
      1. data/practice-library.json — the permanent register. Every published
         card lives here forever; this is what keeps the collection complete
         after posts fall off the RSS window (feeds only carry ~20 items).
-     2. The live section feed via the Netlify function — surfaces the newest
-        cards automatically, even before the register has been updated.
+     2. The live section posts via the Netlify function (Substack JSON API
+        filtered by section id) — surfaces the newest cards automatically,
+        even before the register has been updated.
      De-duplicated by link. The register wins on metadata (book, image)
      because it is curated; the feed fills in anything the register does
      not know about yet. */
@@ -650,11 +679,10 @@
         if (!c.image && i.image) c.image = i.image;
         return;
       }
-      // Until the Netlify function points at the dedicated section feed it
-      // may return the whole publication — only accept items that are
-      // recognisably cards. Remove this guard once FEED_URL is the section
-      // feed (see netlify/functions/practice-library-feed.js).
-      if (!/^how to\b/i.test(i.title || "")) return;
+      // The Netlify function filters by the Practice Library section id
+      // (Substack exposes no per-section RSS; the function uses the JSON
+      // API instead), so everything it returns is a card — including the
+      // Book II situation-titled ones that don't start with "How to".
       byLink.set(key, {
         title: i.title, link: i.link, date: i.pubDate,
         book: "", image: i.image || ""
