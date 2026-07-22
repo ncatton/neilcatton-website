@@ -12,3 +12,9 @@
   to = "/.netlify/functions/practice-library-feed"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/search-feed"
+  to = "/.netlify/functions/search-feed"
+  status = 200
+  force = true

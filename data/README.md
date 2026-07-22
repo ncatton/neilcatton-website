@@ -56,3 +56,31 @@ Field notes:
 - `expires` — ISO date, or `null` for no expiry. Once today's date passes `expires`, the entry stops showing automatically — no need to remove it manually, though tidying the file occasionally is still good practice.
 
 The homepage shows the three most recent non-expired announcements. If the array is empty (or every entry has expired), the bar does not render at all.
+
+---
+
+# data/search-pages.json — the site search index
+
+Powers the site-wide search overlay (`search.js`, loaded on every page). This file is the static half of the search dataset — one entry per page in the Website folder. The dynamic half (Substack articles) comes live from `/.netlify/functions/search-feed`, which pulls the full archive across every section, so no publishing ritual is needed on that side.
+
+## Publishing ritual
+
+When a new page is added to the site, add one entry to the `pages` array:
+
+```json
+{
+  "title": "Page Title",
+  "url": "/new-page.html",
+  "section": "Services",
+  "description": "The same one- or two-sentence description used in the page's <meta name=\"description\">."
+}
+```
+
+Field notes:
+
+- `title` — shown as the result heading. Match the page's `<title>` (minus the "— Neil Catton" suffix reads better in results).
+- `url` — root-relative, leading slash, matching the file name exactly.
+- `section` — a rough category (Home, Company, Services, Writing, Books, Press, Programmes). Not currently shown in the UI but kept for future grouping.
+- `description` — reuse the page's meta description; keeps this file and the page itself from drifting apart.
+
+`404.html` is deliberately excluded — it isn't a real destination. Everything else in the folder should have an entry.
