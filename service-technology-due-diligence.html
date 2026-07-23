@@ -127,6 +127,25 @@
   .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
   .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
 
+  /* ── BREADCRUMB ── */
+  .breadcrumb { margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 0.6s ease 0.1s forwards; }
+  .breadcrumb ol {
+    list-style: none; display: flex; flex-wrap: wrap; align-items: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .breadcrumb li { display: flex; align-items: center; }
+  .breadcrumb li:not(:last-child)::after {
+    content: "/"; margin: 0 0.6rem; color: rgba(245,242,238,0.3);
+  }
+  .breadcrumb a {
+    color: rgba(245,242,238,0.55); text-decoration: none;
+    padding: 0.25rem 0; min-height: 24px; display: inline-flex; align-items: center;
+    border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .breadcrumb a:hover { color: #f5f2ee; border-color: rgba(245,242,238,0.5); }
+  .breadcrumb [aria-current="page"] { color: rgba(245,242,238,0.85); }
+
   /* ── DETAIL HEADER ── */
   .detail-header { padding-top: 7rem; background: var(--ink); }
   .detail-header-inner {
@@ -420,6 +439,13 @@
 
 <header class="detail-header">
   <div class="detail-header-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li aria-current="page">Technology Due Diligence</li>
+      </ol>
+    </nav>
     <span class="detail-label">Transaction Engagement</span>
     <h1 class="detail-title">Technology Due Diligence</h1>
     <p class="detail-standfirst">An independent technology assessment a deal team can act on&nbsp;&mdash; inside the deal window.</p>
