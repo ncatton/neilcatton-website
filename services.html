@@ -176,6 +176,65 @@
     color: rgba(245,242,238,0.55); line-height: 1.5;
   }
 
+  /* ── SERVICE SELECTOR ── */
+  .selector-section { background: var(--paper-mid); padding: 4rem var(--col-pad); border-bottom: 1px solid var(--rule); }
+  .selector-inner { max-width: 720px; margin: 0 auto; }
+  .selector-section .selector-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.75rem;
+  }
+  .selector-heading { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }
+  .selector-intro { font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 2rem; max-width: 560px; }
+
+  .selector-widget { background: #f5f2ee; border: 1px solid #d4cfc9; padding: 2rem; }
+  .selector-question {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: #1a1714; margin-bottom: 1.25rem;
+  }
+  .selector-options { display: flex; flex-direction: column; gap: 0.6rem; }
+  .selector-option {
+    display: block; width: 100%; text-align: left;
+    font-family: var(--sans); font-size: 0.9375rem; color: #1a1714;
+    background: #f5f2ee; border: 2px solid #d4cfc9;
+    padding: 0.9rem 1.25rem; min-height: 44px; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .selector-option:hover { border-color: #2b4a6f; background: #ede9e3; }
+  .selector-option:focus-visible { outline: 3px solid #2b4a6f; outline-offset: 2px; }
+
+  .selector-back {
+    display: inline-flex; align-items: center; margin-bottom: 1.25rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px;
+  }
+  .selector-back:hover { color: #2b4a6f; }
+
+  .selector-result-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #5c5652; margin-bottom: 1rem;
+  }
+  .selector-result-card { border-left: 3px solid #2b4a6f; padding: 0.25rem 0 0.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .selector-result-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: #1a1714; margin-bottom: 0.5rem; }
+  .selector-result-desc { font-size: 0.9375rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.25rem; }
+  .selector-result-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); padding-bottom: 2px;
+    margin-right: 1.5rem; display: inline-block; margin-bottom: 0.5rem; min-height: 44px;
+  }
+  .selector-result-links a:hover { border-color: #2b4a6f; }
+  .selector-restart {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px;
+  }
+  .selector-restart:hover { color: #2b4a6f; }
+
+  .selector-noscript {
+    font-size: 0.875rem; color: #5c5652; margin-top: 1.5rem; padding: 1rem; border: 1px dashed #d4cfc9;
+  }
+
+  @media (max-width: 580px) {
+    .selector-widget { padding: 1.5rem; }
+  }
+
   /* ── CLUSTER NAVIGATION ── */
   .cluster-nav {
     background: #2b4a6f;
@@ -617,6 +676,71 @@
       </div>
     </div>
   </header>
+
+  <!-- ── SERVICE SELECTOR ── -->
+  <section class="selector-section" aria-labelledby="selector-heading">
+    <div class="selector-inner">
+      <span class="selector-label" aria-hidden="true">Not sure where to start?</span>
+      <h2 class="selector-heading" id="selector-heading">Find the right engagement</h2>
+      <p class="selector-intro">Two short questions. Nothing is saved or sent anywhere — just a pointer to the service page that fits, in under a minute.</p>
+
+      <div class="selector-widget" id="selector-widget">
+
+        <div class="selector-step" id="step-1">
+          <h3 class="selector-question" id="q1-heading" tabindex="-1">What are you looking for?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q1-heading">
+            <button type="button" class="selector-option" data-goto="step-leadership">Ongoing senior leadership, in the room over time</button>
+            <button type="button" class="selector-option" data-goto="step-review">An independent review, with a written recommendation</button>
+            <button type="button" class="selector-option" data-goto="step-session">A single session — a board briefing or a talk</button>
+            <button type="button" class="selector-option" data-result="public-sector">This is specifically a public sector organisation</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-leadership" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2a-heading" tabindex="-1">What's the situation?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2a-heading">
+            <button type="button" class="selector-option" data-result="interim">There's a vacancy or a crisis, and it can't wait</button>
+            <button type="button" class="selector-option" data-result="fractional">It's planned — we want the role filled on an ongoing fractional basis</button>
+            <button type="button" class="selector-option" data-result="ned">We want board-level oversight, not day-to-day leadership</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-review" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2b-heading" tabindex="-1">What's the review about?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2b-heading">
+            <button type="button" class="selector-option" data-result="strategy">Our overall technology strategy or roadmap</button>
+            <button type="button" class="selector-option" data-result="ai-readiness">Whether we're actually ready for AI</button>
+            <button type="button" class="selector-option" data-result="data">Our data estate and architecture</button>
+            <button type="button" class="selector-option" data-result="architecture">Our systems architecture more broadly</button>
+            <button type="button" class="selector-option" data-result="cyber">Our cybersecurity and risk exposure</button>
+            <button type="button" class="selector-option" data-result="due-diligence">A company we're acquiring or investing in</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-session" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2c-heading" tabindex="-1">What kind of session?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2c-heading">
+            <button type="button" class="selector-option" data-result="ai-briefing">A board session specifically about AI</button>
+            <button type="button" class="selector-option" data-result="speaking">A keynote, masterclass, or offsite session</button>
+          </div>
+        </div>
+
+        <div class="selector-result" id="selector-result" hidden aria-live="polite">
+          <p class="selector-result-label">This sounds like</p>
+          <div class="selector-result-card" id="selector-result-card" tabindex="-1"></div>
+          <button type="button" class="selector-restart" id="selector-restart">Start over</button>
+        </div>
+
+      </div>
+
+      <noscript>
+        <p class="selector-noscript">This selector needs JavaScript to work. Every service is listed directly below, or use the Services menu in the navigation above.</p>
+      </noscript>
+    </div>
+  </section>
 
   <!-- CLUSTER NAV -->
   <nav class="cluster-nav" aria-label="Service clusters">
@@ -1084,6 +1208,139 @@
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   }, { passive: true });
+</script>
+
+<script>
+  /* ── SERVICE SELECTOR — no network requests, nothing stored ── */
+  (function () {
+    var SERVICES = {
+      "strategy": {
+        name: "Technology Strategy & Roadmapping",
+        desc: "A sequenced technology direction the executive team can own, communicate, and deliver.",
+        href: "service-technology-strategy-roadmapping.html",
+        pdf: "downloads/neil-catton-technology-strategy-roadmapping.pdf"
+      },
+      "fractional": {
+        name: "Fractional CTO / CIO",
+        desc: "Senior technology leadership for organisations that need it — without the full-time appointment.",
+        href: "service-fractional-cto-cio.html",
+        pdf: "downloads/neil-catton-fractional-cto-cio.pdf"
+      },
+      "ai-briefing": {
+        name: "AI Board Briefing",
+        desc: "What the board is actually authorising when it says yes to AI — in one prepared half-day.",
+        href: "service-ai-board-briefing.html",
+        pdf: "downloads/neil-catton-ai-board-briefing.pdf"
+      },
+      "ai-readiness": {
+        name: "AI Readiness Review",
+        desc: "Where the organisation actually stands on AI — and the decisions, in order, that follow.",
+        href: "service-ai-readiness-review.html",
+        pdf: "downloads/neil-catton-ai-readiness-review.pdf"
+      },
+      "due-diligence": {
+        name: "Technology Due Diligence",
+        desc: "An independent technology assessment a deal team can act on — inside the deal window.",
+        href: "service-technology-due-diligence.html",
+        pdf: "downloads/neil-catton-technology-due-diligence.pdf"
+      },
+      "ned": {
+        name: "Non-Executive Director",
+        desc: "Independent board-level scrutiny of technology, AI risk, and digital change.",
+        href: "service-non-executive-director.html",
+        pdf: "downloads/neil-catton-non-executive-director.pdf"
+      },
+      "architecture": {
+        name: "Enterprise Architecture",
+        desc: "An architecture that serves the organisation using it — not one that exists to be admired.",
+        href: "service-enterprise-architecture.html",
+        pdf: "downloads/neil-catton-enterprise-architecture.pdf"
+      },
+      "interim": {
+        name: "Interim Leadership & Programme Recovery",
+        desc: "Senior leadership for the period the organisation cannot afford to get wrong.",
+        href: "service-interim-programme-recovery.html",
+        pdf: "downloads/neil-catton-interim-programme-recovery.pdf"
+      },
+      "data": {
+        name: "Data Strategy & Architecture Review",
+        desc: "From a fragmented data estate to a strategy the executive team can own.",
+        href: "service-data-strategy-review.html",
+        pdf: "downloads/neil-catton-data-strategy-review.pdf"
+      },
+      "cyber": {
+        name: "Cybersecurity & Risk Strategy",
+        desc: "A risk posture that matches actual exposure — not a compliance exercise dressed as security.",
+        href: "service-cybersecurity-risk-strategy.html",
+        pdf: "downloads/neil-catton-cybersecurity-risk-strategy.pdf"
+      },
+      "public-sector": {
+        name: "Public Sector Technology",
+        desc: "Senior technology leadership shaped by three decades inside how public sector decisions actually get made.",
+        href: "service-public-sector-technology.html",
+        pdf: "downloads/neil-catton-public-sector-technology.pdf"
+      },
+      "speaking": {
+        name: "Keynote Speaking & Executive Masterclasses",
+        desc: "Talks on what technology decisions do to the people on the other side of them.",
+        href: "service-speaking-masterclasses.html",
+        pdf: "downloads/neil-catton-speaking-masterclasses.pdf"
+      }
+    };
+
+    var widget = document.getElementById("selector-widget");
+    if (!widget) return;
+
+    var steps = widget.querySelectorAll(".selector-step");
+    var resultEl = document.getElementById("selector-result");
+    var resultCard = document.getElementById("selector-result-card");
+
+    function escapeHTML(s) {
+      return (s || "").replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    }
+
+    function showStep(id) {
+      resultEl.hidden = true;
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].hidden = (steps[i].id !== id);
+      }
+      var target = document.getElementById(id);
+      var heading = target ? target.querySelector(".selector-question") : null;
+      if (heading) heading.focus();
+    }
+
+    function showResult(key) {
+      var svc = SERVICES[key];
+      if (!svc) return;
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].hidden = true;
+      }
+      resultCard.innerHTML =
+        '<h4 class="selector-result-name">' + escapeHTML(svc.name) + "</h4>" +
+        '<p class="selector-result-desc">' + escapeHTML(svc.desc) + "</p>" +
+        '<p class="selector-result-links">' +
+          '<a href="' + svc.href + '">Read the engagement detail</a>' +
+          '<a href="' + svc.pdf + '" download>One-pager (PDF)</a>' +
+        "</p>";
+      resultEl.hidden = false;
+      resultCard.focus();
+    }
+
+    widget.addEventListener("click", function (e) {
+      var btn = e.target.closest("button");
+      if (!btn) return;
+
+      if (btn.id === "selector-restart") {
+        showStep("step-1");
+      } else if (btn.hasAttribute("data-goto")) {
+        showStep(btn.getAttribute("data-goto"));
+      } else if (btn.hasAttribute("data-result")) {
+        showResult(btn.getAttribute("data-result"));
+      }
+    });
+  })();
 </script>
 
 <script src="/search.js" defer></script>
