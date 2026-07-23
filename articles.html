@@ -144,7 +144,7 @@
     opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards;
   }
   .substack-panel-label {
-    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em;
     text-transform: uppercase; color: rgba(245,242,238,0.55);
     margin-bottom: 0.75rem; display: block;
   }
@@ -184,7 +184,7 @@
   }
   .pub-stat-label {
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: rgba(245,242,238,0.6);
+    text-transform: uppercase; color: rgba(245,242,238,0.78);
   }
 
   /* ── LIVE FEED SECTION ── */
@@ -221,7 +221,7 @@
   .feed-card:hover { border-color: #2b4a6f; }
 
   .feed-card-pub {
-    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
     text-transform: uppercase; color: #5c5652;
     margin-bottom: 0.75rem; display: block;
   }
@@ -291,7 +291,7 @@
 
   /* Topic tags */
   .topics-label {
-    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652;
     margin-bottom: 1.25rem; display: block;
   }
@@ -470,7 +470,7 @@
   .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
   .dropdown-menu li a {
     display: block; padding: 0.48rem 1.4rem;
-    font-size: 0.66rem; letter-spacing: 0.08em; white-space: nowrap;
+    font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap;
   }
   .dropdown-menu li a::after { display: none; }
   .dropdown-menu li a:hover { background: #ede9e3; }
@@ -503,8 +503,6 @@
     <li class="nav-dropdown">
       <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
       <ul class="dropdown-menu" role="list">
-        <li><a href="services.html">Overview</a></li>
-        <li class="dropdown-divider" role="presentation" aria-hidden="true"></li>
         <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
         <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
         <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
@@ -579,7 +577,7 @@
   <!-- LIVE RSS FEED -->
   <section class="feed-section" aria-labelledby="feed-heading">
     <div class="feed-inner">
-      <span class="section-label" aria-hidden="true">Latest essays</span>
+      <span class="section-label">Latest essays</span>
       <h2 class="section-heading" id="feed-heading">From the Substack</h2>
       <hr class="section-rule" aria-hidden="true">
 
@@ -665,7 +663,7 @@
               <iframe src="https://writing.neilcatton.com/embed"
                       width="480" height="200"
                       style="display:block; border:none; max-width:100%;"
-                      frameborder="0" scrolling="no"
+                      frameborder="0" scrolling="no" loading="lazy"
                       title="Subscribe to The Next Evolution on Substack">
               </iframe>
             </div>
