@@ -136,7 +136,7 @@
   }
   .breadcrumb li { display: flex; align-items: center; }
   .breadcrumb li:not(:last-child)::after {
-    content: "/"; margin: 0 0.6rem; color: rgba(245,242,238,0.3);
+    content: "/"; margin: 0 0.6rem; color: rgba(245,242,238,0.55);
   }
   .breadcrumb a {
     color: rgba(245,242,238,0.55); text-decoration: none;
@@ -155,7 +155,7 @@
   .detail-label {
     font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
     letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(245,242,238,0.45); margin-bottom: 1.25rem;
+    color: rgba(245,242,238,0.55); margin-bottom: 1.25rem;
     display: flex; align-items: center; gap: 0.75rem;
     opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
   }
@@ -279,7 +279,7 @@
     color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--paper); }
-  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.3); width: 100%; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
 
   @keyframes fadeInUp {
     from { opacity:0; transform:translateY(14px); }
