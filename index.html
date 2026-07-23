@@ -455,7 +455,7 @@
     font-family: var(--serif);
     font-size: 2.75rem;
     font-weight: 400;
-    color: var(--rule);
+    color: #7f7c79;
     line-height: 1;
     margin-bottom: 1rem;
     font-style: italic;
@@ -548,7 +548,7 @@
     margin-bottom: 1rem;
     display: block;
     color: var(--accent);
-    opacity: 0.7;
+    opacity: 0.85;
   }
 
   .service-name {
@@ -1084,12 +1084,14 @@
         </p>
         <div style="display:flex; justify-content:center; margin-top:0.5rem;">
           <div style="background:#fff; border-radius:2px; overflow:hidden; max-width:100%; width:480px;">
-            <iframe src="https://writing.neilcatton.com/embed"
+            <iframe data-src="https://writing.neilcatton.com/embed"
                     width="480" height="200"
                     style="display:block; border:none; max-width:100%;"
                     frameborder="0" scrolling="no" loading="lazy"
+                    class="lazy-embed"
                     title="Subscribe to The Next Evolution on Substack">
             </iframe>
+            <noscript><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" style="display:block;padding:1rem;text-align:center;">Subscribe on Substack</a></noscript>
           </div>
         </div>
         <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
@@ -1245,7 +1247,7 @@
       '<a href="' + link + '" class="btn-ghost" target="_blank" rel="noopener noreferrer" ' +
       'style="font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;' +
       'text-transform:uppercase;color:var(--accent);text-decoration:none;" ' +
-      'aria-label="Read ' + title + ' on Substack">Read →</a>';
+      'aria-hidden="true" tabindex="-1">Read →</a>';
     return card;
   }
 
@@ -1402,6 +1404,34 @@
         btn.disabled = false;
         alert("Could not send message. Please email nc@neilcatton.com directly.");
       }
+    });
+  }
+</script>
+
+<script>
+  /* ── LAZY-LOAD THIRD-PARTY EMBEDS ──
+     The Substack subscribe iframe sits below the fold. Rather than rely on
+     the browser's native `loading="lazy"` (which can still preload a good
+     distance ahead of the viewport), only set `src` once the element is
+     genuinely visible — this keeps the embed's cookies and JS out of the
+     initial page load entirely for anyone who doesn't scroll to it. */
+  if ("IntersectionObserver" in window) {
+    const lazyEmbeds = document.querySelectorAll("iframe.lazy-embed[data-src]");
+    const embedObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.src = el.dataset.src;
+          el.removeAttribute("data-src");
+          obs.unobserve(el);
+        }
+      });
+    }, { rootMargin: "0px" });
+    lazyEmbeds.forEach(el => embedObserver.observe(el));
+  } else {
+    // No IntersectionObserver support — fall back to loading immediately.
+    document.querySelectorAll("iframe.lazy-embed[data-src]").forEach(el => {
+      el.src = el.dataset.src;
     });
   }
 </script>

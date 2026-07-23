@@ -169,7 +169,7 @@
   .book-num {
     font-family: var(--serif);
     font-size: 5rem; font-style: italic; font-weight: 400;
-    color: #d4cfc9; line-height: 1;
+    color: #7f7c79; line-height: 1;
     margin-bottom: 1rem;
     display: block;
   }
@@ -699,6 +699,22 @@
     .pillars-row { grid-template-columns: 1fr; }
     .audience-row { grid-template-columns: 1fr; }
     .audience-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
+  }
+
+  /* ── FOLLOW ON SUBSTACK BUTTON ── */
+  .btn-follow-substack {
+    background: transparent; color: rgba(245,242,238,0.7);
+    border: 2px solid rgba(245,242,238,0.25);
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    display: inline-flex; align-items: center;
+    transition: all 0.2s;
+  }
+  .btn-follow-substack:hover,
+  .btn-follow-substack:focus-visible {
+    border-color: rgba(245,242,238,0.6);
+    color: #f5f2ee;
   }
 </style>
 <style>
@@ -1478,7 +1494,7 @@
     <div class="book-inner">
 
       <div class="book-spine">
-        <span class="book-num" aria-hidden="true" style="font-size:3.5rem;letter-spacing:-0.02em;font-style:italic;color:#d4cfc9;">e</span>
+        <span class="book-num" aria-hidden="true" style="font-size:3.5rem;letter-spacing:-0.02em;font-style:italic;color:#7f7c79;">e</span>
         <span class="book-year-tag">June 2026</span>
         <span class="book-format">Ebook · Amazon Kindle</span>
       </div>
@@ -1531,7 +1547,7 @@
     <div class="book-inner">
 
       <div class="book-spine">
-        <span class="book-num" style="color:rgba(212,207,201,0.2);" aria-hidden="true"><em>IV</em></span>
+        <span class="book-num" style="color:rgba(212,207,201,0.45);" aria-hidden="true"><em>IV</em></span>
         <span class="book-year-tag" style="background:rgba(43,74,111,0.6);">Coming Soon</span>
       </div>
 
@@ -1553,14 +1569,8 @@
         </p>
 
         <div class="book-cta" style="background:transparent; margin-top:2rem;">
-          <a href="https://writing.neilcatton.com" class="btn"
-             style="background:transparent;color:rgba(245,242,238,0.7);border:2px solid rgba(245,242,238,0.25);
-                    font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;
-                    text-transform:uppercase;text-decoration:none;padding:0.875rem 1.75rem;
-                    min-height:44px;display:inline-flex;align-items:center;transition:all 0.2s;"
-             target="_blank" rel="noopener noreferrer"
-             onmouseover="this.style.borderColor='rgba(245,242,238,0.6)';this.style.color='#f5f2ee'"
-             onmouseout="this.style.borderColor='rgba(245,242,238,0.25)';this.style.color='rgba(245,242,238,0.7)'">
+          <a href="https://writing.neilcatton.com" class="btn btn-follow-substack"
+             target="_blank" rel="noopener noreferrer">
             Follow on Substack
           </a>
         </div>

@@ -542,7 +542,7 @@
       </div>
       <div class="substack-panel" aria-label="Substack publication details">
         <span class="substack-panel-label">Publication</span>
-        <p class="substack-panel-name">The Next Evolution</p>
+        <h2 class="substack-panel-name">The Next Evolution</h2>
         <p class="substack-panel-desc">
           Essays at the intersection of technology, ethics, and human purpose.
           Written for CTOs, board members, and anyone navigating systems that
@@ -660,12 +660,14 @@
           </p>
           <div style="display:flex; justify-content:center; margin-top:0.5rem;">
             <div style="background:#fff; border-radius:2px; overflow:hidden; max-width:100%; width:480px;">
-              <iframe src="https://writing.neilcatton.com/embed"
+              <iframe data-src="https://writing.neilcatton.com/embed"
                       width="480" height="200"
                       style="display:block; border:none; max-width:100%;"
                       frameborder="0" scrolling="no" loading="lazy"
+                      class="lazy-embed"
                       title="Subscribe to The Next Evolution on Substack">
               </iframe>
+              <noscript><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" style="display:block;padding:1rem;text-align:center;">Subscribe on Substack</a></noscript>
             </div>
           </div>
           <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
@@ -798,7 +800,7 @@
       <p class="feed-card-excerpt">${excerpt}</p>
       <p class="feed-card-date">${dateStr}</p>
       <a class="feed-card-link" href="${link}" target="_blank" rel="noopener noreferrer"
-         aria-label="Read ${title} on Substack">Read</a>`;
+         aria-hidden="true" tabindex="-1">Read</a>`;
     return a;
   }
 
@@ -893,6 +895,34 @@
   }
 
   loadFeed();
+</script>
+
+<script>
+  /* ── LAZY-LOAD THIRD-PARTY EMBEDS ──
+     The Substack subscribe iframe sits below the fold. Rather than rely on
+     the browser's native `loading="lazy"` (which can still preload a good
+     distance ahead of the viewport), only set `src` once the element is
+     genuinely visible — this keeps the embed's cookies and JS out of the
+     initial page load entirely for anyone who doesn't scroll to it. */
+  if ("IntersectionObserver" in window) {
+    const lazyEmbeds = document.querySelectorAll("iframe.lazy-embed[data-src]");
+    const embedObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.src = el.dataset.src;
+          el.removeAttribute("data-src");
+          obs.unobserve(el);
+        }
+      });
+    }, { rootMargin: "0px" });
+    lazyEmbeds.forEach(el => embedObserver.observe(el));
+  } else {
+    // No IntersectionObserver support — fall back to loading immediately.
+    document.querySelectorAll("iframe.lazy-embed[data-src]").forEach(el => {
+      el.src = el.dataset.src;
+    });
+  }
 </script>
 
 <script src="/search.js" defer></script>

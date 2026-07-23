@@ -465,7 +465,7 @@
       </div>
       <div class="substack-panel" aria-label="Where the cards are published">
         <span class="substack-panel-label">Published on</span>
-        <p class="substack-panel-name">The Next Evolution</p>
+        <h2 class="substack-panel-name">The Next Evolution</h2>
         <p class="substack-panel-desc">
           Each card is released on its own dated Substack post, with a short
           note on the situation it is for. The posts are the record;
@@ -745,12 +745,12 @@
         : `<span class="library-card-placeholder">${escapeHTML(c.title)}</span>`;
       art.innerHTML = `
         <a class="library-card-imgwrap" href="${c.link}" target="_blank" rel="noopener noreferrer"
-           aria-label="Open ${escapeHTML(c.title)} on Substack">${img}</a>
+           aria-hidden="true" tabindex="-1">${img}</a>
         <span class="library-card-book">${escapeHTML(bookName)}</span>
         <a class="library-card-title" href="${c.link}" target="_blank" rel="noopener noreferrer">${escapeHTML(c.title)}</a>
         <p class="library-card-date">${fmtDate(c.date)}</p>
         <a class="library-card-link" href="${c.link}" target="_blank" rel="noopener noreferrer"
-           aria-label="Read the post for ${escapeHTML(c.title)}">View on Substack</a>`;
+           aria-hidden="true" tabindex="-1">View on Substack</a>`;
       grid.appendChild(art);
     });
     el.innerHTML = "";
