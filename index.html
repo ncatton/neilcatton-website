@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYSNBQKTCV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BYSNBQKTCV');
-</script>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://www.neilcatton.com/">
@@ -853,6 +847,14 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/"
+}
+</script>
 </head>
 <body>
 
@@ -903,9 +905,12 @@
 
       <!-- Photo — contained portrait, fades at the bottom -->
       <div class="hero-photo-wrap">
-        <img src="images/neil-catton-headshot.jpg"
-             alt="Neil Catton, Group CTO and author"
-             width="680" height="680">
+        <picture>
+          <source srcset="images/neil-catton-headshot.webp" type="image/webp">
+          <img src="images/neil-catton-headshot.jpg"
+               alt="Neil Catton, Group CTO and author"
+               width="680" height="680" loading="eager">
+        </picture>
       </div>
 
       <!-- Text -->
@@ -1102,14 +1107,18 @@
       <p style="font-size:1rem;color:var(--ink-mid);line-height:1.8;margin-bottom:2.5rem;">
         For advisory, speaking, or consulting enquiries — or if something in the writing has prompted a thought worth sharing.
       </p>
-      <form action="#" method="post" novalidate>
+      <div class="form-success" id="home-form-success" role="alert" aria-live="polite" style="display:none;background:var(--paper-mid);border:1px solid var(--rule);padding:2rem;text-align:center;margin-bottom:1.5rem;">
+        <h3 style="font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:0.5rem;">Message received.</h3>
+        <p style="font-size:0.9375rem;color:var(--ink-mid);">Thank you for getting in touch. Every message is read personally — expect a response within two working days.</p>
+      </div>
+      <form id="home-contact-form" action="https://formspree.io/f/mdajdnrq" method="post" novalidate aria-label="Contact Neil Catton">
         <div class="form-field">
           <label class="form-label" for="contact-name">Name</label>
-          <input class="form-input" type="text" id="contact-name" name="name" autocomplete="name" required>
+          <input class="form-input" type="text" id="contact-name" name="name" autocomplete="name" required aria-required="true">
         </div>
         <div class="form-field">
           <label class="form-label" for="contact-email">Email</label>
-          <input class="form-input" type="email" id="contact-email" name="email" autocomplete="email" required>
+          <input class="form-input" type="email" id="contact-email" name="email" autocomplete="email" required aria-required="true">
         </div>
         <div class="form-field">
           <label class="form-label" for="contact-subject">Subject</label>
@@ -1117,7 +1126,7 @@
         </div>
         <div class="form-field">
           <label class="form-label" for="contact-message">Message</label>
-          <textarea class="form-input" id="contact-message" name="message" rows="5" required></textarea>
+          <textarea class="form-input" id="contact-message" name="message" rows="5" required aria-required="true"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send message</button>
       </form>
@@ -1140,7 +1149,9 @@
         <li><a href="press.html">Press</a></li>
         <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
     <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
@@ -1351,6 +1362,50 @@
   }
 
   loadHomeFeed();
+
+  /* ── HOME CONTACT FORM — Formspree, with real validation ── */
+  const homeForm = document.getElementById("home-contact-form");
+  const homeSuccess = document.getElementById("home-form-success");
+  if (homeForm) {
+    homeForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!homeForm.checkValidity()) {
+        homeForm.reportValidity();
+        return;
+      }
+
+      const btn = homeForm.querySelector("button[type=submit]");
+      const originalText = btn.textContent;
+      btn.textContent = "Sending…";
+      btn.disabled = true;
+
+      const data = new FormData(homeForm);
+      try {
+        const res = await fetch(homeForm.action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        });
+
+        if (res.ok) {
+          homeForm.style.display = "none";
+          homeSuccess.style.display = "block";
+          homeSuccess.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          const json = await res.json();
+          const msg = json.errors ? json.errors.map(err => err.message).join(", ") : "Something went wrong.";
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert(msg + " Please email nc@neilcatton.com directly if the problem persists.");
+        }
+      } catch (err) {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert("Could not send message. Please email nc@neilcatton.com directly.");
+      }
+    });
+  }
 </script>
 
 <script src="/search.js" defer></script>

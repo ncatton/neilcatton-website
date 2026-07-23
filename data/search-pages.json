@@ -21,6 +21,8 @@
     { "title": "Press & Media", "url": "/press.html", "section": "Press", "description": "Interviews, articles, and external contributions from Neil Catton — technology strategist, author, and Group CTO." },
     { "title": "CTO Grand Rounds", "url": "/cto-grand-rounds.html", "section": "Programmes", "description": "Neil Catton's sessions on CTO Grand Rounds — a curated panel of senior fractional CTOs reviewing real technical problems for founders and scale-up leadership teams, live." },
     { "title": "Contact", "url": "/contact.html", "section": "Company", "description": "Start a conversation with Neil Catton — for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation." },
-    { "title": "Privacy Policy", "url": "/privacy.html", "section": "Company", "description": "How Neil Catton's website collects, uses, and protects personal data — including the contact form, analytics, and third-party services in use." }
+    { "title": "Privacy Policy", "url": "/privacy.html", "section": "Company", "description": "How Neil Catton's website collects, uses, and protects personal data — including the contact form, analytics, and third-party services in use." },
+    { "title": "Accessibility Statement", "url": "/accessibility.html", "section": "Company", "description": "How this website approaches accessibility, its current WCAG 2.2 AA conformance target, known limitations, and how to report an accessibility issue." },
+    { "title": "Sitemap", "url": "/sitemap.html", "section": "Company", "description": "Every page on neilcatton.com in one place — services, writing, books, press, and contact." }
   ]
 }

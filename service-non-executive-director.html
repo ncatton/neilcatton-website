@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYSNBQKTCV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BYSNBQKTCV');
-</script>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://www.neilcatton.com/service-non-executive-director.html">
@@ -19,17 +13,17 @@
 <link rel="manifest" href="/images/favicon/site.webmanifest">
 <meta name="theme-color" content="#2b4a6f">
 <title>Non-Executive Director — Neil Catton</title>
-<meta name="description" content="Independent board-level scrutiny of technology, AI risk, and digital change.">
+<meta name="description" content="Independent board-level scrutiny of technology, AI risk, and digital change — a non-executive directorship, typically one to two days a month plus committees.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.neilcatton.com/service-non-executive-director.html">
 <meta property="og:title" content="Non-Executive Director — Neil Catton">
-<meta property="og:description" content="Independent board-level scrutiny of technology, AI risk, and digital change.">
+<meta property="og:description" content="Independent board-level scrutiny of technology, AI risk, and digital change — a non-executive directorship, typically one to two days a month plus committees.">
 <meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Non-Executive Director — Neil Catton">
-<meta name="twitter:description" content="Independent board-level scrutiny of technology, AI risk, and digital change.">
+<meta name="twitter:description" content="Independent board-level scrutiny of technology, AI risk, and digital change — a non-executive directorship, typically one to two days a month plus committees.">
 <meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +186,34 @@
   }
   .details-grid .v { font-size: 0.92rem; color: var(--ink); line-height: 1.45; }
 
+  /* ── FAQ ── */
+  .faq-section { max-width: var(--max-wide); margin: 0 auto; padding: 0 var(--col-pad) 4.5rem; }
+  .faq-section .section-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 1.25rem;
+  }
+  .faq-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400; color: var(--ink); margin-bottom: 1.75rem; max-width: 680px;
+  }
+  .faq-list { max-width: 720px; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:first-child { border-top: 1px solid var(--rule); }
+  .faq-item summary {
+    font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink);
+    padding: 1.1rem 2.25rem 1.1rem 0; cursor: pointer; list-style: none; position: relative;
+    min-height: 44px; display: flex; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
+    font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--accent); font-weight: 400;
+  }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .faq-item p { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; padding: 0 2.25rem 1.25rem 0; margin: 0; }
+
   /* ── CTA ── */
   .engagement-cta { background: var(--accent); padding: 5rem var(--col-pad); text-align: center; }
   .engagement-cta-inner { max-width: 600px; margin: 0 auto; }
@@ -259,6 +281,106 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/",
+  "image": "https://www.neilcatton.com/images/neil-catton-headshot.jpg",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
+  "sameAs": [
+    "https://writing.neilcatton.com"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Non-Executive Director",
+      "description": "Independent board-level scrutiny of technology, AI risk, and digital change.",
+      "url": "https://www.neilcatton.com/service-non-executive-director.html",
+      "provider": {
+        "@type": "Person",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.neilcatton.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Non-Executive Director",
+          "item": "https://www.neilcatton.com/service-non-executive-director.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the time commitment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically one to two days a month, plus committee work — audit and risk, or technology scrutiny on M&A activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the board actually gain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technology stops arriving at the board as a finished recommendation and starts arriving as a decision the board can genuinely interrogate — with risks named before they're authorised, not after they've matured."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a technical role or a governance one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Governance, informed by technical depth. The value is independent scrutiny at board level, not a technologist sitting in on meetings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of organisations is this suited to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boards where technology has become material to the risk register — through AI adoption, an acquisition, a transformation programme, or regulatory change — but no one at the table can interrogate it independently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is it commercially structured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An annual fee, agreed as part of the appointment."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -341,6 +463,33 @@
     </div>
   </div>
 
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="section-label" aria-hidden="true">Frequently asked</div>
+    <h2 class="faq-heading" id="faq-heading">Questions people ask before booking</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+          <summary>What's the time commitment?</summary>
+          <p>Typically one to two days a month, plus committee work — audit and risk, or technology scrutiny on M&A activity.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does the board actually gain?</summary>
+          <p>Technology stops arriving at the board as a finished recommendation and starts arriving as a decision the board can genuinely interrogate — with risks named before they're authorised, not after they've matured.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this a technical role or a governance one?</summary>
+          <p>Governance, informed by technical depth. The value is independent scrutiny at board level, not a technologist sitting in on meetings.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What kind of organisations is this suited to?</summary>
+          <p>Boards where technology has become material to the risk register — through AI adoption, an acquisition, a transformation programme, or regulatory change — but no one at the table can interrogate it independently.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is it commercially structured?</summary>
+          <p>An annual fee, agreed as part of the appointment.</p>
+        </details>
+    </div>
+  </section>
+
   <section class="engagement-cta" aria-labelledby="cta-heading">
     <div class="engagement-cta-inner">
       <h2 class="engagement-cta-heading" id="cta-heading">Ready to start a conversation?</h2>
@@ -367,7 +516,9 @@
         <li><a href="press.html">Press</a></li>
         <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
     <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>

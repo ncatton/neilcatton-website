@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYSNBQKTCV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BYSNBQKTCV');
-</script>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://www.neilcatton.com/service-ai-readiness-review.html">
@@ -19,17 +13,17 @@
 <link rel="manifest" href="/images/favicon/site.webmanifest">
 <meta name="theme-color" content="#2b4a6f">
 <title>AI Readiness Review — Neil Catton</title>
-<meta name="description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow.">
+<meta name="description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.neilcatton.com/service-ai-readiness-review.html">
 <meta property="og:title" content="AI Readiness Review — Neil Catton">
-<meta property="og:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow.">
+<meta property="og:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
 <meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Readiness Review — Neil Catton">
-<meta name="twitter:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow.">
+<meta name="twitter:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
 <meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,6 +186,34 @@
   }
   .details-grid .v { font-size: 0.92rem; color: var(--ink); line-height: 1.45; }
 
+  /* ── FAQ ── */
+  .faq-section { max-width: var(--max-wide); margin: 0 auto; padding: 0 var(--col-pad) 4.5rem; }
+  .faq-section .section-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 1.25rem;
+  }
+  .faq-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400; color: var(--ink); margin-bottom: 1.75rem; max-width: 680px;
+  }
+  .faq-list { max-width: 720px; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:first-child { border-top: 1px solid var(--rule); }
+  .faq-item summary {
+    font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink);
+    padding: 1.1rem 2.25rem 1.1rem 0; cursor: pointer; list-style: none; position: relative;
+    min-height: 44px; display: flex; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
+    font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--accent); font-weight: 400;
+  }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .faq-item p { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; padding: 0 2.25rem 1.25rem 0; margin: 0; }
+
   /* ── CTA ── */
   .engagement-cta { background: var(--accent); padding: 5rem var(--col-pad); text-align: center; }
   .engagement-cta-inner { max-width: 600px; margin: 0 auto; }
@@ -259,6 +281,106 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/",
+  "image": "https://www.neilcatton.com/images/neil-catton-headshot.jpg",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
+  "sameAs": [
+    "https://writing.neilcatton.com"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "AI Readiness Review",
+      "description": "Where the organisation actually stands on AI — and the decisions, in order, that follow.",
+      "url": "https://www.neilcatton.com/service-ai-readiness-review.html",
+      "provider": {
+        "@type": "Person",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.neilcatton.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Readiness Review",
+          "item": "https://www.neilcatton.com/service-ai-readiness-review.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the review take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four to six weeks, run as a fixed-scope engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between this and an AI strategy document?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A strategy document sets ambition. This states the organisation's actual position — what data it holds, who governs it, which decisions AI is already shaping — and sequences the decisions that follow, so it can be acted on the week it arrives rather than filed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do we receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A written assessment in language an executive team and board can both read, a sequenced set of decisions — what to do first, what to leave until later — and a plain statement of the real risk exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this only for organisations already using AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — it's equally useful before committing to a pilot, when ambition is ahead of the organisation's actual knowledge of itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is it commercially structured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fixed fee, agreed before the review starts."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -341,6 +463,33 @@
     </div>
   </div>
 
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="section-label" aria-hidden="true">Frequently asked</div>
+    <h2 class="faq-heading" id="faq-heading">Questions people ask before booking</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+          <summary>How long does the review take?</summary>
+          <p>Four to six weeks, run as a fixed-scope engagement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's the difference between this and an AI strategy document?</summary>
+          <p>A strategy document sets ambition. This states the organisation's actual position — what data it holds, who governs it, which decisions AI is already shaping — and sequences the decisions that follow, so it can be acted on the week it arrives rather than filed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What do we receive?</summary>
+          <p>A written assessment in language an executive team and board can both read, a sequenced set of decisions — what to do first, what to leave until later — and a plain statement of the real risk exposure.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this only for organisations already using AI?</summary>
+          <p>No — it's equally useful before committing to a pilot, when ambition is ahead of the organisation's actual knowledge of itself.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is it commercially structured?</summary>
+          <p>A fixed fee, agreed before the review starts.</p>
+        </details>
+    </div>
+  </section>
+
   <section class="engagement-cta" aria-labelledby="cta-heading">
     <div class="engagement-cta-inner">
       <h2 class="engagement-cta-heading" id="cta-heading">Ready to start a conversation?</h2>
@@ -367,7 +516,9 @@
         <li><a href="press.html">Press</a></li>
         <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
     <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>

@@ -5,25 +5,25 @@
 <script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://www.neilcatton.com/privacy.html">
+<link rel="canonical" href="https://www.neilcatton.com/sitemap.html">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/images/favicon/site.webmanifest">
 <meta name="theme-color" content="#2b4a6f">
-<title>Privacy Policy — Neil Catton</title>
-<meta name="description" content="How Neil Catton's website collects, uses, and protects personal data — including the contact form, analytics, and third-party services in use.">
+<title>Sitemap — Neil Catton</title>
+<meta name="description" content="Every page on neilcatton.com in one place — services, writing, books, press, and contact.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.neilcatton.com/privacy.html">
-<meta property="og:title" content="Privacy Policy — Neil Catton">
-<meta property="og:description" content="How this website collects, uses, and protects personal data.">
+<meta property="og:url" content="https://www.neilcatton.com/sitemap.html">
+<meta property="og:title" content="Sitemap — Neil Catton">
+<meta property="og:description" content="Every page on neilcatton.com in one place.">
 <meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privacy Policy — Neil Catton">
-<meta name="twitter:description" content="How this website collects, uses, and protects personal data.">
+<meta name="twitter:title" content="Sitemap — Neil Catton">
+<meta name="twitter:description" content="Every page on neilcatton.com in one place.">
 <meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,20 +120,21 @@
   .page-title em { font-style: italic; color: var(--accent); }
   .page-standfirst { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 620px; }
 
-  /* ── PROSE ── */
-  .prose-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }
-  .prose-inner { max-width: 720px; margin: 0 auto; }
-  .prose-inner p, .prose-inner ul { margin-bottom: 1.25rem; color: var(--ink-mid); }
-  .prose-inner ul { padding-left: 1.4rem; }
-  .prose-inner li { margin-bottom: 0.5rem; }
-  .prose-inner h2 {
-    font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--ink);
-    margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.01em;
+  /* ── SITEMAP LIST ── */
+  .sitemap-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }
+  .sitemap-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .sitemap-group h2 {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent);
+    border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 1.25rem;
   }
-  .prose-inner h2:first-child { margin-top: 0; }
-  .prose-inner a { color: var(--accent); }
-  .prose-inner strong { color: var(--ink); }
-  .updated-note { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 2.5rem; }
+  .sitemap-group ul { list-style: none; }
+  .sitemap-group li { margin-bottom: 0.75rem; }
+  .sitemap-group a {
+    font-size: 0.9375rem; color: var(--ink-mid); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .sitemap-group a:hover { color: var(--accent); border-color: var(--accent); }
 
   /* ── FOOTER ── */
   .site-footer { background: var(--ink); padding: 2.75rem var(--col-pad); }
@@ -144,8 +145,12 @@
   .footer-links a:hover { color: var(--paper); }
   .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.3); width: 100%; }
 
+  @media (max-width: 860px) {
+    .sitemap-inner { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 580px) {
     .nav-links { display: none; }
+    .sitemap-inner { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
@@ -204,96 +209,64 @@
 
   <header class="page-header" aria-labelledby="page-title">
     <div class="page-header-inner">
-      <span class="page-label">Legal</span>
-      <h1 class="page-title" id="page-title">Privacy <em>Policy</em></h1>
+      <span class="page-label">Sitemap</span>
+      <h1 class="page-title" id="page-title">Every page,<br><em>in one place.</em></h1>
       <p class="page-standfirst">
-        What this website collects, why, and how it's handled.
+        A plain list of everything on neilcatton.com, for people and search engines alike.
       </p>
     </div>
   </header>
 
-  <section class="prose-section" aria-labelledby="page-title">
-    <div class="prose-inner">
-      <p class="updated-note">Last updated: 23 July 2026</p>
+  <section class="sitemap-section" aria-labelledby="page-title">
+    <div class="sitemap-inner">
 
-      <h2>Who this policy covers</h2>
-      <p>
-        This website (neilcatton.com) is operated by Neil Catton. For any question about this
-        policy or the data described below, contact <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a>.
-      </p>
+      <div class="sitemap-group">
+        <h2>Main</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/articles.html">Writing</a></li>
+          <li><a href="/practice-library.html">Practice Library</a></li>
+          <li><a href="/books.html">Books</a></li>
+          <li><a href="/press.html">Press</a></li>
+          <li><a href="/cto-grand-rounds.html">CTO Grand Rounds</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-      <h2>What data is collected</h2>
-      <p><strong>Contact form.</strong> When you submit the form on the <a href="/contact.html">Contact page</a>,
-      the name, email address, subject, and message you enter are sent to Formspree, a third-party
-      form-handling service, and forwarded by email. This data is used only to respond to your enquiry.</p>
-      <p><strong>Analytics.</strong> This site uses Plausible Analytics and Netlify Web Analytics to
-      understand how visitors use the site — which pages are viewed, where visitors come from, and
-      general usage patterns. Both are cookie-free: Plausible aggregates visits without setting a
-      cookie or storing any data that identifies you individually, and Netlify Web Analytics works
-      from server request logs rather than a script running in your browser. This site does not use
-      Google Analytics.</p>
-      <p><strong>Newsletter embed.</strong> The homepage embeds a Substack subscription form. If you
-      interact with it, Substack (a third party) handles that data directly under its own privacy policy.</p>
-      <p><strong>Booking.</strong> The "Book a call" link takes you to TidyCal, a third-party scheduling
-      service. TidyCal may set its own cookies or session data once you're on its site; this site has no
-      access to that data, and TidyCal's own privacy policy governs it.</p>
-      <p><strong>Fonts.</strong> This site loads typefaces from Google Fonts. Loading a font from Google's
-      servers means your browser makes a request to Google, which can involve your IP address being
-      visible to Google as part of that request.</p>
+      <div class="sitemap-group">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/services.html">Overview</a></li>
+          <li><a href="/service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+          <li><a href="/service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+          <li><a href="/service-ai-board-briefing.html">AI Board Briefing</a></li>
+          <li><a href="/service-ai-readiness-review.html">AI Readiness Review</a></li>
+          <li><a href="/service-technology-due-diligence.html">Technology Due Diligence</a></li>
+          <li><a href="/service-non-executive-director.html">Non-Executive Director</a></li>
+          <li><a href="/service-enterprise-architecture.html">Enterprise Architecture</a></li>
+          <li><a href="/service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+          <li><a href="/service-data-strategy-review.html">Data Strategy Review</a></li>
+          <li><a href="/service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+          <li><a href="/service-public-sector-technology.html">Public Sector Technology</a></li>
+          <li><a href="/service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+        </ul>
+      </div>
 
-      <h2>Cookies</h2>
-      <p>
-        This site does not set any analytics cookies — Plausible and Netlify Web Analytics are both
-        cookie-free by design, so no cookie banner or consent prompt is needed for them. The only
-        cookies or session data set on this site come from third-party services you actively choose to
-        use: Formspree (when you submit the contact form) and TidyCal (once you leave this site to book
-        a call). You can block or delete cookies through your browser settings at any time; doing so
-        won't affect your ability to use the site.
-      </p>
+      <div class="sitemap-group">
+        <h2>Legal &amp; policies</h2>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/accessibility.html">Accessibility Statement</a></li>
+          <li><a href="/sitemap.html">Sitemap</a></li>
+        </ul>
+        <h2 style="margin-top:2.5rem;">Elsewhere</h2>
+        <ul>
+          <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">The Next Evolution (Substack)</a></li>
+          <li><a href="https://tidycal.com/nc1?utm_source=tidycal&amp;utm_medium=growth_action&amp;utm_campaign=share_link" target="_blank" rel="noopener noreferrer">Book a call (TidyCal)</a></li>
+        </ul>
+      </div>
 
-      <h2>Legal basis and your rights</h2>
-      <p>
-        Where UK GDPR applies, data from the contact form is processed on the basis of legitimate
-        interest (responding to your enquiry) or, where applicable, consent. Analytics data is
-        processed on the basis of legitimate interest in understanding and improving the site.
-      </p>
-      <p>You have the right to:</p>
-      <ul>
-        <li>Ask what personal data is held about you and request a copy of it</li>
-        <li>Ask for inaccurate data to be corrected</li>
-        <li>Ask for your data to be deleted</li>
-        <li>Object to how your data is used</li>
-        <li>Withdraw consent at any time, where consent is the basis for processing</li>
-      </ul>
-      <p>To exercise any of these rights, email <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a>.</p>
-
-      <h2>Third parties this site relies on</h2>
-      <ul>
-        <li><strong>Netlify</strong> — website hosting and Web Analytics</li>
-        <li><strong>Plausible Analytics</strong> — cookie-free usage analytics</li>
-        <li><strong>Google Fonts</strong> — typefaces</li>
-        <li><strong>Formspree</strong> — contact form processing and delivery</li>
-        <li><strong>Substack</strong> — newsletter subscription and publishing</li>
-        <li><strong>TidyCal</strong> — call booking, linked from the site's "Book a call" button</li>
-      </ul>
-      <p>
-        Some of these providers are based outside the UK/EEA, including in the United States. Where
-        that's the case, they are relied upon to provide appropriate safeguards for international data
-        transfers under their own compliance frameworks.
-      </p>
-
-      <h2>Data retention</h2>
-      <p>
-        Contact form submissions are kept only as long as needed to handle the enquiry and any
-        follow-up. Analytics data is retained according to each provider's own default retention
-        settings.
-      </p>
-
-      <h2>Changes to this policy</h2>
-      <p>
-        This policy may be updated from time to time to reflect changes to the site or the services it
-        uses. The date at the top of this page shows when it was last revised.
-      </p>
     </div>
   </section>
 
