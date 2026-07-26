@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.neilcatton.com/services.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
+<title>Services — Neil Catton</title>
+<meta name="description" content="Fractional CTO/CIO, advisory, NED, and interim leadership — three decades across 20+ sectors, from a single board conversation to multi-year programmes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/services.html">
+<meta property="og:title" content="Services — Neil Catton">
+<meta property="og:description" content="Fractional CTO/CIO, advisory, NED, and interim leadership — three decades across 20+ sectors, from a single board conversation to multi-year programmes.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services — Neil Catton">
+<meta name="twitter:description" content="Fractional CTO/CIO, advisory, NED, and interim leadership — three decades across 20+ sectors, from a single board conversation to multi-year programmes.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: #f5f2ee;
+    color: #1a1714;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid #2b4a6f; outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: #1a1714; color: #f5f2ee;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d4cfc9;
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+    color: #1a1714; text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #3d3935; text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 1.5px; background: #2b4a6f; transition: width 0.25s ease;
+  }
+  .nav-links a:hover { color: #2b4a6f; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: #2b4a6f; }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
+
+  /* ── PAGE HEADER ── */
+  .page-header { padding-top: 7rem; background: #1a1714; }
+  .page-header-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 3rem var(--col-pad) 3.5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: end;
+  }
+  .page-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+  .page-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 0.95; letter-spacing: -0.03em;
+    color: #f5f2ee; margin-bottom: 2rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards;
+  }
+  .page-title em { font-style: italic; color: #d4cfc9; }
+  .page-standfirst {
+    font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+    color: rgba(245,242,238,0.72); max-width: 520px;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
+  }
+
+  /* Engagement types — right column of header */
+  .engagement-panel {
+    opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards;
+    padding-bottom: 0.5rem;
+  }
+  .engagement-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(245,242,238,0.55);
+    margin-bottom: 1.25rem; display: block;
+  }
+  .engagement-types { list-style: none; }
+  .engagement-types li {
+    padding: 0.875rem 0;
+    border-top: 1px solid rgba(212,207,201,0.15);
+    display: grid; grid-template-columns: 1.5rem 1fr;
+    gap: 1rem; align-items: start;
+  }
+  .engagement-types li:last-child { border-bottom: 1px solid rgba(212,207,201,0.15); }
+  .btn-panel-book {
+    display: inline-block; margin-top: 1.25rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #f5f2ee; text-decoration: none;
+    border: 1px solid rgba(245,242,238,0.3); padding: 0.4rem 0.9rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-panel-book:hover { border-color: #f5f2ee; background: rgba(245,242,238,0.08); }
+  .engagement-dot {
+    width: 6px; height: 6px; background: #2b4a6f;
+    border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0;
+  }
+  .engagement-name {
+    font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+    color: #f5f2ee; display: block; margin-bottom: 0.15rem;
+  }
+  .engagement-desc {
+    font-size: 0.8rem; font-weight: 300;
+    color: rgba(245,242,238,0.55); line-height: 1.5;
+  }
+
+  /* ── SERVICE SELECTOR ── */
+  .selector-section { background: var(--paper-mid); padding: 4rem var(--col-pad); border-bottom: 1px solid var(--rule); }
+  .selector-inner { max-width: 720px; margin: 0 auto; }
+  .selector-section .selector-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.75rem;
+  }
+  .selector-heading { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }
+  .selector-intro { font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 2rem; max-width: 560px; }
+
+  .selector-widget { background: #f5f2ee; border: 1px solid #d4cfc9; padding: 2rem; }
+  .selector-question {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: #1a1714; margin-bottom: 1.25rem;
+  }
+  .selector-options { display: flex; flex-direction: column; gap: 0.6rem; }
+  .selector-option {
+    display: block; width: 100%; text-align: left;
+    font-family: var(--sans); font-size: 0.9375rem; color: #1a1714;
+    background: #f5f2ee; border: 2px solid #d4cfc9;
+    padding: 0.9rem 1.25rem; min-height: 44px; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .selector-option:hover { border-color: #2b4a6f; background: #ede9e3; }
+  .selector-option:focus-visible { outline: 3px solid #2b4a6f; outline-offset: 2px; }
+
+  .selector-back {
+    display: inline-flex; align-items: center; margin-bottom: 1.25rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px;
+  }
+  .selector-back:hover { color: #2b4a6f; }
+
+  .selector-result-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #5c5652; margin-bottom: 1rem;
+  }
+  .selector-result-card { border-left: 3px solid #2b4a6f; padding: 0.25rem 0 0.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .selector-result-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: #1a1714; margin-bottom: 0.5rem; }
+  .selector-result-desc { font-size: 0.9375rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.25rem; }
+  .selector-result-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); padding-bottom: 2px;
+    margin-right: 1.5rem; display: inline-block; margin-bottom: 0.5rem; min-height: 44px;
+  }
+  .selector-result-links a:hover { border-color: #2b4a6f; }
+  .selector-restart {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px;
+  }
+  .selector-restart:hover { color: #2b4a6f; }
+
+  .selector-noscript {
+    font-size: 0.875rem; color: #5c5652; margin-top: 1.5rem; padding: 1rem; border: 1px dashed #d4cfc9;
+  }
+
+  @media (max-width: 580px) {
+    .selector-widget { padding: 1.5rem; }
+  }
+
+  /* ── CLUSTER NAVIGATION ── */
+  .cluster-nav {
+    background: #2b4a6f;
+    padding: 1.25rem var(--col-pad);
+    position: sticky; top: 57px; z-index: 90;
+    border-bottom: 1px solid rgba(212,207,201,0.2);
+  }
+  .cluster-nav-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; gap: 2rem; align-items: center;
+    flex-wrap: wrap;
+  }
+  .cluster-nav-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(245,242,238,0.78);
+    flex-shrink: 0;
+  }
+  .cluster-nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .cluster-nav-link {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(245,242,238,0.7); text-decoration: none;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(245,242,238,0.2);
+    transition: all 0.2s;
+  }
+  .cluster-nav-link:hover {
+    background: rgba(245,242,238,0.12);
+    color: #f5f2ee;
+    border-color: rgba(245,242,238,0.4);
+  }
+
+  /* ── CURRENT ENGAGEMENTS ── */
+  .engagements-section {
+    background: #1a1714;
+    padding: 5rem var(--col-pad);
+  }
+  .engagements-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .engagements-header { margin-bottom: 3rem; }
+  .engagements-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .engagements-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .engagements-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #f5f2ee; margin-bottom: 0.75rem;
+  }
+  .engagements-standfirst {
+    font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.6);
+    line-height: 1.75; max-width: 560px;
+  }
+  .engagements-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+
+  .engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: rgba(212,207,201,0.12);
+    border: 1px solid rgba(212,207,201,0.12);
+  }
+
+  .engagement-item {
+    background: #1a1714;
+    padding: 1.75rem 2rem;
+    transition: background 0.2s;
+  }
+  .engagement-item:hover { background: rgba(43,74,111,0.15); }
+
+  .engagement-item-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #f5f2ee; margin-bottom: 0.3rem; line-height: 1.3;
+  }
+  .engagement-item-name a {
+    color: inherit; text-decoration: none;
+    border-bottom: 1px solid rgba(245,242,238,0.2);
+    transition: border-color 0.2s;
+  }
+  .engagement-item-name a:hover { border-color: rgba(245,242,238,0.6); }
+
+  .engagement-item-role {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #6a94c4;
+    margin-bottom: 0.875rem; display: block;
+  }
+  .engagement-item-desc {
+    font-size: 0.875rem; font-weight: 300;
+    color: rgba(245,242,238,0.65); line-height: 1.7;
+  }
+
+  @media (max-width: 700px) {
+    .engagements-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── CLUSTER SECTIONS ── */
+  .cluster-section { padding: 5rem var(--col-pad); }
+  .cluster-section:nth-child(odd) { background: #f5f2ee; }
+  .cluster-section:nth-child(even) { background: #ede9e3; }
+
+  .cluster-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .cluster-header { margin-bottom: 3.5rem; }
+
+  .cluster-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652;
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .cluster-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+
+  .cluster-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714;
+    margin-bottom: 0.75rem;
+  }
+  .cluster-standfirst {
+    font-size: 1rem; font-weight: 300; color: #3d3935;
+    line-height: 1.75; max-width: 620px;
+  }
+
+  .cluster-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+  .sector-breadth {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem;
+    margin-bottom: 3.5rem; padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sector-breadth-group-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: #2b4a6f;
+    display: block; margin-bottom: 0.75rem;
+  }
+  .sector-breadth-list {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .sector-breadth-list li {
+    font-family: var(--sans); font-size: 0.85rem; font-weight: 400;
+    color: var(--ink-mid); line-height: 1.4;
+  }
+  @media (max-width: 640px) { .sector-breadth { grid-template-columns: 1fr; } }
+
+  /* Service cards grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    padding: 2rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .cluster-section:nth-child(even) .service-card { background: #f5f2ee; }
+  .cluster-section:nth-child(even) .service-card.flagship { background: #1a1714; }
+  .service-card:hover { border-color: #2b4a6f; transform: translateY(-2px); }
+
+  .service-number {
+    font-family: var(--serif); font-size: 2rem; font-style: italic;
+    color: #7f7c79; line-height: 1; margin-bottom: 1rem;
+  }
+
+  .service-name {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+
+  .service-credential {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 1rem; display: block;
+  }
+
+  .service-desc {
+    font-size: 0.9375rem; font-weight: 400; color: #1a1714;
+    line-height: 1.75; flex: 1; background: transparent;
+  }
+
+  /* Flagship / featured service card */
+  .service-card.flagship {
+    background: #1a1714;
+    border-color: #1a1714;
+    grid-column: 1 / -1;
+  }
+  .service-card.flagship:hover { border-color: #2b4a6f; }
+  .service-card.flagship .service-number { color: rgba(212,207,201,0.45); }
+  .service-card.flagship .service-name { color: #f5f2ee; }
+  .service-card.flagship .service-credential { color: #6a94c4; }
+  .service-card.flagship .service-desc { color: rgba(245,242,238,0.8); }
+
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.25rem;
+  }
+  .flagship-point {
+    border-left: 2px solid rgba(43,74,111,0.5);
+    padding: 0.5rem 1rem;
+  }
+  .flagship-point-title {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: rgba(245,242,238,0.55);
+    margin-bottom: 0.3rem; display: block;
+  }
+  .flagship-point-text {
+    font-size: 0.875rem; color: rgba(245,242,238,0.72); line-height: 1.65;
+  }
+
+  /* ── ENGAGEMENT CTA ── */
+  .engagement-cta {
+    background: #2b4a6f;
+    padding: 5rem var(--col-pad);
+    text-align: center;
+  }
+  .engagement-cta-inner { max-width: 600px; margin: 0 auto; }
+  .engagement-cta-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem;
+  }
+  .engagement-cta-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.75);
+    line-height: 1.75; margin-bottom: 2.5rem;
+  }
+  .btn-paper {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: #f5f2ee; color: #2b4a6f;
+    border: 2px solid #f5f2ee; transition: all 0.2s;
+    margin: 0 0.5rem 0.75rem;
+  }
+  .btn-paper:hover { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }
+  .btn-ghost-light {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: transparent; color: rgba(245,242,238,0.8);
+    border: 2px solid rgba(245,242,238,0.35); transition: all 0.2s;
+    margin: 0 0.5rem 0.75rem;
+  }
+  .btn-ghost-light:hover { border-color: rgba(245,242,238,0.8); color: #f5f2ee; }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #1a1714; padding: 2.75rem var(--col-pad); }
+  .footer-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.25rem;
+  }
+  .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; text-decoration: none; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #f5f2ee; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
+
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .page-header-inner { grid-template-columns: 1fr; }
+    .engagement-panel { display: none; }
+    .flagship-grid { grid-template-columns: 1fr; }
+    .cluster-nav { top: 55px; }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .cluster-nav-label { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+
+  /* ── SERVICE CARD LINKS ── */
+  .service-links {
+    margin-top: 1rem;
+    font-family: "Source Sans 3", Helvetica, sans-serif;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .service-links a {
+    color: #2b4a6f; text-decoration: none;
+    border-bottom: 1px solid rgba(43,74,111,0.35);
+    padding-bottom: 2px; transition: border-color 0.2s;
+  }
+  .service-links a:hover { border-color: #2b4a6f; }
+  .service-links .sep { color: #5c5652; margin: 0 0.4rem; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/",
+  "image": "https://www.neilcatton.com/images/neil-catton-headshot.jpg",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
+  "sameAs": [
+    "https://writing.neilcatton.com"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html" aria-current="page">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-enterprise-architecture.html">Enterprise Architecture</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+        <li><a href="service-public-sector-technology.html">Public Sector Technology</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a href="articles.html">Writing</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Services</span>
+        <h1 class="page-title" id="page-title">Working<br><em>together.</em></h1>
+        <p class="page-standfirst">
+          A career spanning more than three decades across 20+ industry sectors.
+          Available for fractional, interim, advisory, and project engagements —
+          from a single board conversation to a multi-year transformation programme.
+        </p>
+      </div>
+      <div class="engagement-panel" aria-label="Engagement types">
+        <span class="engagement-label">How we can work together</span>
+        <ul class="engagement-types" role="list">
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Fractional CTO/CIO</span>
+              <span class="engagement-desc">Ongoing senior technology leadership without a full-time appointment</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Advisory & Board</span>
+              <span class="engagement-desc">A trusted senior voice for boards, investors, and leadership teams</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Non-Executive Director</span>
+              <span class="engagement-desc">Independent board-level technology oversight — governance, AI risk, and digital scrutiny</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Interim Leadership</span>
+              <span class="engagement-desc">Stepping in to lead through critical transitions or programme recovery</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Project & Programme</span>
+              <span class="engagement-desc">Defined-scope engagements with clear outcomes and deliverables</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Speaking & Masterclasses</span>
+              <span class="engagement-desc">Conferences, leadership offsites, and bespoke executive programmes</span>
+            </div>
+          </li>
+        </ul>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-panel-book" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── SERVICE SELECTOR ── -->
+  <section class="selector-section" aria-labelledby="selector-heading">
+    <div class="selector-inner">
+      <span class="selector-label">Not sure where to start?</span>
+      <h2 class="selector-heading" id="selector-heading">Find the right engagement</h2>
+      <p class="selector-intro">Two short questions. Nothing is saved or sent anywhere — just a pointer to the service page that fits, in under a minute.</p>
+
+      <div class="selector-widget" id="selector-widget">
+
+        <div class="selector-step" id="step-1">
+          <h3 class="selector-question" id="q1-heading" tabindex="-1">What are you looking for?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q1-heading">
+            <button type="button" class="selector-option" data-goto="step-leadership">Ongoing senior leadership, in the room over time</button>
+            <button type="button" class="selector-option" data-goto="step-review">An independent review, with a written recommendation</button>
+            <button type="button" class="selector-option" data-goto="step-session">A single session — a board briefing or a talk</button>
+            <button type="button" class="selector-option" data-result="public-sector">This is specifically a public sector organisation</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-leadership" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2a-heading" tabindex="-1">What's the situation?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2a-heading">
+            <button type="button" class="selector-option" data-result="interim">There's a vacancy or a crisis, and it can't wait</button>
+            <button type="button" class="selector-option" data-result="fractional">It's planned — we want the role filled on an ongoing fractional basis</button>
+            <button type="button" class="selector-option" data-result="ned">We want board-level oversight, not day-to-day leadership</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-review" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2b-heading" tabindex="-1">What's the review about?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2b-heading">
+            <button type="button" class="selector-option" data-result="strategy">Our overall technology strategy or roadmap</button>
+            <button type="button" class="selector-option" data-result="ai-readiness">Whether we're actually ready for AI</button>
+            <button type="button" class="selector-option" data-result="data">Our data estate and architecture</button>
+            <button type="button" class="selector-option" data-result="architecture">Our systems architecture more broadly</button>
+            <button type="button" class="selector-option" data-result="cyber">Our cybersecurity and risk exposure</button>
+            <button type="button" class="selector-option" data-result="due-diligence">A company we're acquiring or investing in</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-session" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2c-heading" tabindex="-1">What kind of session?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2c-heading">
+            <button type="button" class="selector-option" data-result="ai-briefing">A board session specifically about AI</button>
+            <button type="button" class="selector-option" data-result="speaking">A keynote, masterclass, or offsite session</button>
+          </div>
+        </div>
+
+        <div class="selector-result" id="selector-result" hidden aria-live="polite">
+          <p class="selector-result-label">This sounds like</p>
+          <div class="selector-result-card" id="selector-result-card" tabindex="-1"></div>
+          <button type="button" class="selector-restart" id="selector-restart">Start over</button>
+        </div>
+
+      </div>
+
+      <noscript>
+        <p class="selector-noscript">This selector needs JavaScript to work. Every service is listed directly below, or use the Services menu in the navigation above.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- CLUSTER NAV -->
+  <nav class="cluster-nav" aria-label="Service clusters">
+    <div class="cluster-nav-inner">
+      <span class="cluster-nav-label">Jump to</span>
+      <div class="cluster-nav-links">
+        <a href="#current-engagements" class="cluster-nav-link">Current Engagements</a>
+        <a href="#leadership-strategy" class="cluster-nav-link">Leadership &amp; Strategy</a>
+        <a href="#architecture-delivery" class="cluster-nav-link">Architecture &amp; Delivery</a>
+        <a href="#sectors-specialisms" class="cluster-nav-link">Sectors &amp; Specialisms</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── CURRENT ENGAGEMENTS ── -->
+  <section class="engagements-section" id="current-engagements" aria-labelledby="engagements-heading">
+    <div class="engagements-inner">
+
+      <div class="engagements-header">
+        <span class="engagements-label">Current engagements</span>
+        <h2 class="engagements-heading" id="engagements-heading">
+          Where I am working now
+        </h2>
+        <p class="engagements-standfirst">
+          A selection of active and ongoing engagements across advisory, fractional leadership,
+          and specialist collaboration.
+        </p>
+        <hr class="engagements-rule" aria-hidden="true">
+      </div>
+
+      <div class="engagements-grid" role="list">
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.globalconsortiumgroup.com" target="_blank" rel="noopener noreferrer">Global Consortium Group</a>
+          </h3>
+          <span class="engagement-item-role">Technology Advisory</span>
+          <p class="engagement-item-desc">
+            Technology advisory to PE-backed businesses, scale-ups, and executive leadership
+            teams. Engagements include pre-close technology due diligence, post-acquisition
+            technology governance, board-level AI strategy, and architecture review
+            at Series A–C.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.ssgadvisory.com" target="_blank" rel="noopener noreferrer">SSG Advisory Ltd</a>
+          </h3>
+          <span class="engagement-item-role">Chief Technologist &amp; Architect</span>
+          <p class="engagement-item-desc">
+            Supporting procurement activities in the public sector as Chief Technologist
+            and Architect — bringing senior technology leadership into complex government
+            procurement programmes.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://www.platform-smart.co.uk" target="_blank" rel="noopener noreferrer">Platform Smart</a>
+          </h3>
+          <span class="engagement-item-role">Fractional CTO</span>
+          <p class="engagement-item-desc">
+            Platform through which fractional CTO engagements are structured and delivered —
+            providing organisations with senior technology leadership on a flexible,
+            outcome-focused basis.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://gobby.io" target="_blank" rel="noopener noreferrer">Gobby</a>
+          </h3>
+          <span class="engagement-item-role">Strategic Advisor</span>
+          <p class="engagement-item-desc">
+            Advising on the opportunity space — bringing strategic perspective to
+            product direction, market positioning, and the technology decisions
+            that will shape the next phase of growth.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://white.space" target="_blank" rel="noopener noreferrer">White.space</a>
+          </h3>
+          <span class="engagement-item-role">AI &amp; Data Collaboration</span>
+          <p class="engagement-item-desc">
+            Collaborating on AI data engagements within UK police forces — applying
+            responsible AI design principles in one of the most demanding operational
+            contexts in public sector technology.
+          </p>
+        </article>
+
+        <article class="engagement-item" role="listitem">
+          <h3 class="engagement-item-name">
+            <a href="https://grandrounds.tech" target="_blank" rel="noopener noreferrer">CTO Grand Rounds</a>
+          </h3>
+          <span class="engagement-item-role">Panel CTO</span>
+          <p class="engagement-item-desc">
+            Peer review for hard technology problems. A curated panel of senior
+            fractional CTOs reviews real technical challenges from founders and
+            scale-ups — live, without a script. Modelled on the medical grand rounds
+            format: diagnosis by disagreement, not consensus.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 1: LEADERSHIP & STRATEGY ── -->
+  <section class="cluster-section" id="leadership-strategy" aria-labelledby="cluster1-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster one</span>
+        <h2 class="cluster-heading" id="cluster1-heading">Leadership &amp; Strategy</h2>
+        <p class="cluster-standfirst">
+          Senior technology leadership and strategic counsel — for boards that need a
+          trusted voice, executives navigating ambiguous decisions, and organisations
+          that need the clarity to act. The experience behind every engagement spans
+          more than three decades across 20+ sectors, from computer operator
+          to Group CTO.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1. Technology Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>01</em></div>
+          <h3 class="service-name">Technology Strategy &amp; Roadmapping</h3>
+          <p class="service-desc">
+            When technology decisions feel ambiguous, the consequences of getting them
+            wrong are not. Working with executive teams to define where technology
+            needs to go, why, and in what sequence — grounded in commercial reality,
+            not architectural idealism. The output is a strategy that can be owned,
+            communicated, and delivered.
+          </p>
+          <p class="service-links">
+            <a href="service-technology-strategy-roadmapping.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-technology-strategy-roadmapping.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 2. CTO/CIO Advisory -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>02</em></div>
+          <h3 class="service-name">CTO &amp; CIO Advisory</h3>
+          <p class="service-desc">
+            Senior technology leadership, available to the organisations that need it most. Working alongside CEOs, boards, and
+            existing leadership teams as a trusted senior voice — helping make better
+            technology decisions, navigate complex programmes, and hold delivery
+            partners to account. Available for fractional, interim, and advisory
+            engagements.
+          </p>
+          <p class="service-links">
+            <a href="service-fractional-cto-cio.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-fractional-cto-cio.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 5. AI Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>05</em></div>
+          <h3 class="service-name">AI Strategy &amp; Governance</h3>
+          <p class="service-desc">
+            This is a leadership and risk conversation that happens to involve
+            technology. Helping boards and executive teams define what AI they should
+            be deploying, under what conditions, with what controls, and how to build
+            the internal capability to sustain it — without outsourcing the judgement
+            to the vendors selling it.
+          </p>
+          <p class="service-links">
+            <a href="service-ai-board-briefing.html">AI Board Briefing</a><span class="sep" aria-hidden="true">&middot;</span><a href="service-ai-readiness-review.html">AI Readiness Review</a>
+          </p>
+          <p class="service-links">
+            <a href="downloads/neil-catton-ai-board-briefing.pdf" download>Board Briefing one-pager (PDF)</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-ai-readiness-review.pdf" download>Readiness Review one-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 9. Due Diligence -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>09</em></div>
+          <h3 class="service-name">Technology Due Diligence</h3>
+          <p class="service-desc">
+            Independent technology due diligence for investors, boards, and leadership
+            teams evaluating acquisitions, partnerships, or major supplier decisions.
+            Fast, clear, and commercially framed — producing an assessment that
+            decision-makers can act on rather than file away.
+          </p>
+          <p class="service-links">
+            <a href="service-technology-due-diligence.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-technology-due-diligence.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- NED. Non-Executive Director -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>NED</em></div>
+          <h3 class="service-name">Non-Executive Director</h3>
+          <p class="service-desc">
+            Independent board oversight for organisations navigating technology
+            transformation, AI adoption, or regulatory change. The role is to ensure
+            the board understands the trade-offs it is authorising — not merely the
+            recommendation it is approving. Available for audit and risk committee
+            contributions, M&amp;A technology scrutiny, and ongoing governance oversight.
+          </p>
+          <p class="service-links">
+            <a href="service-non-executive-director.html">Appointment detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-non-executive-director.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 2: ARCHITECTURE & DELIVERY ── -->
+  <section class="cluster-section" id="architecture-delivery" aria-labelledby="cluster2-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster two</span>
+        <h2 class="cluster-heading" id="cluster2-heading">Architecture &amp; Delivery</h2>
+        <p class="cluster-standfirst">
+          From coherent data estates to large-scale transformation programmes —
+          the technical depth to understand what organisations actually have,
+          and the leadership experience to close the gap between that and what they need.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 3. Enterprise Architecture -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>03</em></div>
+          <h3 class="service-name">Enterprise Architecture</h3>
+          <p class="service-desc">
+            Deep experience in enterprise architecture across public sector,
+            health, finance, telecoms, and retail. Helping organisations understand
+            what they have, what they need, and how to close the gap without
+            unnecessary complexity — building architectures that serve the
+            organisation rather than constrain it.
+          </p>
+          <p class="service-links">
+            <a href="service-enterprise-architecture.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-enterprise-architecture.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 4. Digital Transformation -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>04</em></div>
+          <h3 class="service-name">Digital Transformation Leadership</h3>
+          <span class="service-credential">Programme experience up to £1.5bn</span>
+          <p class="service-desc">
+            Large-scale transformation programmes succeed or fail on clarity of
+            direction and quality of leadership. Specialising in organisations that
+            have stalled, are accelerating too fast, or have lost the thread between
+            their technology programme and the business outcome it was supposed to
+            deliver.
+          </p>
+          <p class="service-links">
+            <a href="service-interim-programme-recovery.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-interim-programme-recovery.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 7. Data Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>07</em></div>
+          <h3 class="service-name">Data Strategy &amp; Architecture</h3>
+          <p class="service-desc">
+            Helping organisations move from fragmented data estates and competing
+            platforms to coherent data strategy — including governance, platform
+            architecture, and the organisational structures that make data genuinely
+            useful at executive level. This is not a technical conversation. It is a
+            business one that requires technical depth to have correctly.
+          </p>
+          <p class="service-links">
+            <a href="service-data-strategy-review.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-data-strategy-review.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 3: SECTORS & SPECIALISMS ── -->
+  <section class="cluster-section" id="sectors-specialisms" aria-labelledby="cluster3-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster three</span>
+        <h2 class="cluster-heading" id="cluster3-heading">Sectors &amp; Specialisms</h2>
+        <p class="cluster-standfirst">
+          Deep sector knowledge, rare specialisms, and a platform for sharing what
+          thirty-seven years at the intersection of technology and organisations
+          has produced.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="sector-breadth">
+        <div>
+          <span class="sector-breadth-group-label">Founder-led &amp; early-stage</span>
+          <ul class="sector-breadth-list">
+            <li>Business Process Automation</li>
+            <li>Textiles</li>
+            <li>Online Auctions</li>
+            <li>Media Distribution</li>
+            <li>Retail Banking</li>
+            <li>Mortgage Banking</li>
+            <li>MedTech</li>
+            <li>Health &amp; Fitness</li>
+          </ul>
+        </div>
+        <div>
+          <span class="sector-breadth-group-label">Fractional engagements</span>
+          <ul class="sector-breadth-list">
+            <li>Telecommunications</li>
+            <li>Property Management</li>
+            <li>Oil &amp; Gas</li>
+            <li>Utilities</li>
+            <li>Defence</li>
+            <li>Aviation</li>
+            <li>Manufacturing</li>
+            <li>Banking</li>
+            <li>Motor Industry</li>
+            <li>Insurance</li>
+            <li>Investment</li>
+            <li>Higher Education</li>
+            <li>Financial Services</li>
+            <li>Print Media</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 11. Public Safety & AI in Policing — FLAGSHIP -->
+        <article class="service-card flagship" aria-label="Featured specialism">
+          <div class="service-number" aria-hidden="true"><em>11</em></div>
+          <h3 class="service-name">Public Safety &amp; AI in Policing</h3>
+          <span class="service-credential">Current Group CTO advisory — Global Consortium Group</span>
+          <p class="service-desc">
+            Advising UK police forces and government agencies on the strategic and
+            ethical use of AI in real-time operations — one of the most demanding
+            environments in which technology decisions are made. Where speed and
+            accuracy are non-negotiable, where bias is not a theoretical concern,
+            and where the consequences of system failure are immediate and human.
+          </p>
+          <div class="flagship-grid" role="list">
+            <div class="flagship-point" role="listitem">
+              <span class="flagship-point-title">AI-enabled operations</span>
+              <span class="flagship-point-text">Real-time AI strategy for policing and public safety — balancing operational effectiveness with ethical governance.</span>
+            </div>
+            <div class="flagship-point" role="listitem">
+              <span class="flagship-point-title">Custody analytics</span>
+              <span class="flagship-point-text">Architecting AI Data Mesh platforms for custody and case management — structured for auditability and accountability.</span>
+            </div>
+            <div class="flagship-point" role="listitem">
+              <span class="flagship-point-title">Forensics capability</span>
+              <span class="flagship-point-text">Supporting the introduction of next-generation forensics platforms into UK law enforcement.</span>
+            </div>
+            <div class="flagship-point" role="listitem">
+              <span class="flagship-point-title">Critical infrastructure</span>
+              <span class="flagship-point-text">Enterprise network strategy for high-risk industrial and government operational environments.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Cybersecurity -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>06</em></div>
+          <h3 class="service-name">Cybersecurity &amp; Risk Strategy</h3>
+          <span class="service-credential">Former CISO, Capita Consulting</span>
+          <p class="service-desc">
+            Strategic risk posture, not just technical controls. Experience across
+            government, justice, and financial services — building security strategy
+            that is proportionate, sustainable, and embedded in the organisation
+            rather than bolted on. The question is not whether you have the right
+            tools. It is whether your risk posture matches your actual exposure.
+          </p>
+          <p class="service-links">
+            <a href="service-cybersecurity-risk-strategy.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-cybersecurity-risk-strategy.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 8. Public Sector -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>08</em></div>
+          <h3 class="service-name">Public Sector Technology</h3>
+          <span class="service-credential">Central Government · Health · Justice · Education · Home Affairs</span>
+          <p class="service-desc">
+            Three decades of senior technology leadership across the full breadth
+            of UK public sector. Deep understanding of how public sector technology
+            decisions are made, what makes them succeed, and what makes them fail —
+            including the political and organisational dynamics that technical
+            consultants without that history consistently underestimate.
+          </p>
+          <p class="service-links">
+            <a href="service-public-sector-technology.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-public-sector-technology.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 10. Speaking -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>10</em></div>
+          <h3 class="service-name">Keynote Speaking &amp; Executive Masterclasses</h3>
+          <p class="service-desc">
+            Available for conferences, leadership offsites, and bespoke executive
+            programmes. Topics include AI adoption and governance, the future of
+            work, human-centred technology design, and the strategic and ethical
+            challenges facing boards. Author of three books on these subjects —
+            the writing informs the speaking.
+          </p>
+          <p class="service-links">
+            <a href="service-speaking-masterclasses.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="downloads/neil-catton-speaking-masterclasses.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT CTA -->
+  <section class="engagement-cta" aria-labelledby="cta-heading">
+    <div class="engagement-cta-inner">
+      <h2 class="engagement-cta-heading" id="cta-heading">
+        Ready to start a conversation?
+      </h2>
+      <p class="engagement-cta-sub">
+        Most engagements begin with a single conversation. No obligation.
+        The right fit matters more than the right brochure.
+      </p>
+      <div>
+        <a href="contact.html" class="btn-paper">Get in touch</a>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-ghost-light" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a href="about.html" class="btn-ghost-light">Read the background</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+<script>
+  /* ── SERVICE SELECTOR — no network requests, nothing stored ── */
+  (function () {
+    var SERVICES = {
+      "strategy": {
+        name: "Technology Strategy & Roadmapping",
+        desc: "A sequenced technology direction the executive team can own, communicate, and deliver.",
+        href: "service-technology-strategy-roadmapping.html",
+        pdf: "downloads/neil-catton-technology-strategy-roadmapping.pdf"
+      },
+      "fractional": {
+        name: "Fractional CTO / CIO",
+        desc: "Senior technology leadership for organisations that need it — without the full-time appointment.",
+        href: "service-fractional-cto-cio.html",
+        pdf: "downloads/neil-catton-fractional-cto-cio.pdf"
+      },
+      "ai-briefing": {
+        name: "AI Board Briefing",
+        desc: "What the board is actually authorising when it says yes to AI — in one prepared half-day.",
+        href: "service-ai-board-briefing.html",
+        pdf: "downloads/neil-catton-ai-board-briefing.pdf"
+      },
+      "ai-readiness": {
+        name: "AI Readiness Review",
+        desc: "Where the organisation actually stands on AI — and the decisions, in order, that follow.",
+        href: "service-ai-readiness-review.html",
+        pdf: "downloads/neil-catton-ai-readiness-review.pdf"
+      },
+      "due-diligence": {
+        name: "Technology Due Diligence",
+        desc: "An independent technology assessment a deal team can act on — inside the deal window.",
+        href: "service-technology-due-diligence.html",
+        pdf: "downloads/neil-catton-technology-due-diligence.pdf"
+      },
+      "ned": {
+        name: "Non-Executive Director",
+        desc: "Independent board-level scrutiny of technology, AI risk, and digital change.",
+        href: "service-non-executive-director.html",
+        pdf: "downloads/neil-catton-non-executive-director.pdf"
+      },
+      "architecture": {
+        name: "Enterprise Architecture",
+        desc: "An architecture that serves the organisation using it — not one that exists to be admired.",
+        href: "service-enterprise-architecture.html",
+        pdf: "downloads/neil-catton-enterprise-architecture.pdf"
+      },
+      "interim": {
+        name: "Interim Leadership & Programme Recovery",
+        desc: "Senior leadership for the period the organisation cannot afford to get wrong.",
+        href: "service-interim-programme-recovery.html",
+        pdf: "downloads/neil-catton-interim-programme-recovery.pdf"
+      },
+      "data": {
+        name: "Data Strategy & Architecture Review",
+        desc: "From a fragmented data estate to a strategy the executive team can own.",
+        href: "service-data-strategy-review.html",
+        pdf: "downloads/neil-catton-data-strategy-review.pdf"
+      },
+      "cyber": {
+        name: "Cybersecurity & Risk Strategy",
+        desc: "A risk posture that matches actual exposure — not a compliance exercise dressed as security.",
+        href: "service-cybersecurity-risk-strategy.html",
+        pdf: "downloads/neil-catton-cybersecurity-risk-strategy.pdf"
+      },
+      "public-sector": {
+        name: "Public Sector Technology",
+        desc: "Senior technology leadership shaped by three decades inside how public sector decisions actually get made.",
+        href: "service-public-sector-technology.html",
+        pdf: "downloads/neil-catton-public-sector-technology.pdf"
+      },
+      "speaking": {
+        name: "Keynote Speaking & Executive Masterclasses",
+        desc: "Talks on what technology decisions do to the people on the other side of them.",
+        href: "service-speaking-masterclasses.html",
+        pdf: "downloads/neil-catton-speaking-masterclasses.pdf"
+      }
+    };
+
+    var widget = document.getElementById("selector-widget");
+    if (!widget) return;
+
+    var steps = widget.querySelectorAll(".selector-step");
+    var resultEl = document.getElementById("selector-result");
+    var resultCard = document.getElementById("selector-result-card");
+
+    function escapeHTML(s) {
+      return (s || "").replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    }
+
+    function showStep(id) {
+      resultEl.hidden = true;
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].hidden = (steps[i].id !== id);
+      }
+      var target = document.getElementById(id);
+      var heading = target ? target.querySelector(".selector-question") : null;
+      if (heading) heading.focus();
+    }
+
+    function showResult(key) {
+      var svc = SERVICES[key];
+      if (!svc) return;
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].hidden = true;
+      }
+      resultCard.innerHTML =
+        '<h4 class="selector-result-name">' + escapeHTML(svc.name) + "</h4>" +
+        '<p class="selector-result-desc">' + escapeHTML(svc.desc) + "</p>" +
+        '<p class="selector-result-links">' +
+          '<a href="' + svc.href + '">Read the engagement detail</a>' +
+          '<a href="' + svc.pdf + '" download>One-pager (PDF)</a>' +
+        "</p>";
+      resultEl.hidden = false;
+      resultCard.focus();
+    }
+
+    widget.addEventListener("click", function (e) {
+      var btn = e.target.closest("button");
+      if (!btn) return;
+
+      if (btn.id === "selector-restart") {
+        showStep("step-1");
+      } else if (btn.hasAttribute("data-goto")) {
+        showStep(btn.getAttribute("data-goto"));
+      } else if (btn.hasAttribute("data-result")) {
+        showResult(btn.getAttribute("data-result"));
+      }
+    });
+  })();
+</script>
+
+<script src="/search.js" defer></script>
+</body>
+</html>

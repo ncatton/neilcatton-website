@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.neilcatton.com/contact.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
+<title>Contact — Neil Catton</title>
+<meta name="description" content="Start a conversation with Neil Catton — for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/contact.html">
+<meta property="og:title" content="Contact — Neil Catton">
+<meta property="og:description" content="Start a conversation with Neil Catton — for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Neil Catton">
+<meta name="twitter:description" content="Start a conversation with Neil Catton — for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: #f5f2ee;
+    color: #1a1714;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid #2b4a6f; outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: #1a1714; color: #f5f2ee;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d4cfc9;
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+    color: #1a1714; text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #3d3935; text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 1.5px; background: #2b4a6f; transition: width 0.25s ease;
+  }
+  .nav-links a:hover { color: #2b4a6f; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: #2b4a6f; }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
+
+  /* ── PAGE HEADER ── */
+  .page-header { padding-top: 7rem; background: #1a1714; }
+  .page-header-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 3rem var(--col-pad) 0;
+    display: grid; grid-template-columns: 1fr 280px;
+    gap: 4rem; align-items: end;
+  }
+  .page-header-text { padding-bottom: 3.5rem; }
+  .page-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+  .page-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 0.95; letter-spacing: -0.03em;
+    color: #f5f2ee; margin-bottom: 2rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards;
+  }
+  .page-title em { font-style: italic; color: #d4cfc9; }
+  .page-standfirst {
+    font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+    color: rgba(245,242,238,0.72); max-width: 520px;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
+  }
+  .page-header-photo {
+    align-self: end;
+    opacity: 0; animation: photoRise 0.8s ease 0.3s forwards;
+  }
+  .page-header-photo img {
+    display: block; width: 100%; height: 320px;
+    object-fit: cover; object-position: center 12%;
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .contact-wrap {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 5rem var(--col-pad);
+    display: grid; grid-template-columns: 1fr 400px;
+    gap: 5rem; align-items: start;
+    background: #f5f2ee;
+  }
+
+  /* ── FORM ── */
+  .form-section { background: #f5f2ee; }
+
+  .form-intro {
+    font-size: 1.0625rem; font-weight: 400; color: #1a1714;
+    line-height: 1.85; margin-bottom: 2.5rem; background: transparent;
+  }
+  .form-intro-link { color: #1a1714; text-underline-offset: 3px; }
+  .form-intro-link:hover { color: #2b4a6f; }
+
+  .form-group { margin-bottom: 1.5rem; }
+
+  .form-label {
+    display: block; font-family: var(--sans);
+    font-size: 0.8rem; font-weight: 600; color: #1a1714;
+    margin-bottom: 0.5rem; letter-spacing: 0.03em;
+  }
+
+  .form-label .optional {
+    font-weight: 400; color: #5c5652; font-size: 0.75rem;
+  }
+
+  .form-input {
+    width: 100%; font-family: var(--sans); font-size: 1rem;
+    padding: 0.875rem 1rem; background: #f5f2ee;
+    border: 2px solid #3d3935; color: #1a1714;
+    outline: none; min-height: 44px; transition: border-color 0.2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .form-input:focus {
+    border-color: #2b4a6f;
+    box-shadow: 0 0 0 3px rgba(43,74,111,0.12);
+  }
+  .form-input::placeholder { color: #5c5652; }
+
+  textarea.form-input {
+    resize: vertical; min-height: 160px; line-height: 1.65;
+  }
+
+  /* Enquiry type radio group */
+  .enquiry-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .enquiry-option { position: relative; }
+
+  .enquiry-option input[type="radio"] {
+    position: absolute; opacity: 0; width: 0; height: 0;
+  }
+
+  .enquiry-label {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #d4cfc9; cursor: pointer;
+    font-size: 0.875rem; font-weight: 400; color: #1a1714;
+    transition: all 0.2s; background: #f5f2ee;
+    min-height: 44px;
+  }
+
+  .enquiry-label::before {
+    content: ""; width: 14px; height: 14px; flex-shrink: 0;
+    border: 2px solid #d4cfc9; border-radius: 50%;
+    transition: all 0.2s;
+  }
+
+  .enquiry-option input:checked + .enquiry-label {
+    border-color: #2b4a6f; background: rgba(43,74,111,0.05); color: #2b4a6f;
+  }
+  .enquiry-option input:checked + .enquiry-label::before {
+    background: #2b4a6f; border-color: #2b4a6f;
+  }
+  .enquiry-option input:focus-visible + .enquiry-label {
+    outline: 3px solid #2b4a6f; outline-offset: 2px;
+  }
+
+  /* Submit */
+  .form-submit {
+    display: flex; align-items: center; gap: 1.5rem;
+    flex-wrap: wrap; margin-top: 2rem;
+  }
+
+  .btn-submit {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 2rem; min-height: 44px;
+    background: #1a1714; color: #f5f2ee;
+    border: 2px solid #1a1714; cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-submit:hover { background: #2b4a6f; border-color: #2b4a6f; }
+
+  .form-note {
+    font-size: 0.8rem; color: #5c5652; line-height: 1.6;
+  }
+
+  /* Success state */
+  .form-success {
+    display: none;
+    background: #ede9e3; border: 1px solid #d4cfc9;
+    padding: 2rem; text-align: center;
+  }
+  .form-success-heading {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+    color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .form-success p {
+    font-size: 0.9375rem; color: #3d3935; line-height: 1.7;
+  }
+
+  /* ── SIDEBAR ── */
+  .contact-sidebar { background: transparent; }
+
+  .sidebar-block {
+    margin-bottom: 2.5rem; padding-bottom: 2.5rem;
+    border-bottom: 1px solid #d4cfc9;
+  }
+  .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .sidebar-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #5c5652; margin-bottom: 1.25rem; display: block;
+  }
+
+  /* Response commitments */
+  .commitment-list { list-style: none; }
+  .commitment-list li {
+    display: flex; align-items: flex-start; gap: 0.875rem;
+    padding: 0.75rem 0; border-bottom: 1px solid #ede9e3;
+    font-size: 0.9rem; color: #1a1714; line-height: 1.6;
+  }
+  .commitment-list li:last-child { border-bottom: none; }
+  .commitment-dot {
+    width: 6px; height: 6px; background: #2b4a6f;
+    border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem;
+  }
+
+  /* Direct links */
+  .direct-links { list-style: none; }
+  .direct-links li { margin-bottom: 0.875rem; }
+  .direct-links a {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.9rem; font-weight: 600; color: #1a1714;
+    text-decoration: none; transition: color 0.2s;
+    padding: 0.5rem 0;
+  }
+  .direct-links a:hover { color: #2b4a6f; text-decoration: underline; }
+  .direct-links .link-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #5c5652; display: block;
+    margin-bottom: 0.1rem;
+  }
+  .direct-links .link-value {
+    font-size: 0.9rem; font-weight: 400; color: #1a1714;
+  }
+
+  /* What to expect */
+  .expect-box {
+    background: #1a1714; padding: 1.75rem;
+  }
+  .expect-heading {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+    color: #f5f2ee; margin-bottom: 1rem;
+  }
+  .expect-list { list-style: none; }
+  .expect-list li {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 0.6rem 0; border-bottom: 1px solid rgba(212,207,201,0.15);
+    font-size: 0.875rem; color: rgba(245,242,238,0.75); line-height: 1.6;
+  }
+  .expect-list li:last-child { border-bottom: none; }
+  .expect-dot {
+    width: 5px; height: 5px; background: #2b4a6f;
+    border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem;
+  }
+
+  /* ── ELSEWHERE STRIP ── */
+  .elsewhere-section {
+    background: #ede9e3;
+    padding: 4rem var(--col-pad);
+    border-top: 1px solid #d4cfc9;
+  }
+  .elsewhere-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: 4rem; align-items: center;
+  }
+  .elsewhere-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400; color: #1a1714; line-height: 1.2;
+  }
+  .elsewhere-links {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .elsewhere-link {
+    display: block; padding: 1.25rem;
+    background: #f5f2ee; border: 1px solid #d4cfc9;
+    text-decoration: none; transition: border-color 0.2s;
+  }
+  .elsewhere-link:hover { border-color: #2b4a6f; }
+  .elsewhere-link-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.35rem;
+  }
+  .elsewhere-link-name {
+    font-family: var(--serif); font-size: 1rem; font-weight: 400;
+    color: #1a1714; display: block;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #1a1714; padding: 2.75rem var(--col-pad); }
+  .footer-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.25rem;
+  }
+  .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; text-decoration: none; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #f5f2ee; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
+
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes photoRise {
+    from { opacity:0; transform:translateY(18px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .page-header-inner { grid-template-columns: 1fr; }
+    .page-header-photo { display: none; }
+    .contact-wrap { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-sidebar { border-top: 1px solid #d4cfc9; padding-top: 3rem; }
+    .elsewhere-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .elsewhere-links { grid-template-columns: 1fr 1fr; }
+    .enquiry-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .elsewhere-links { grid-template-columns: 1fr; }
+  }
+</style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/",
+  "image": "https://www.neilcatton.com/images/neil-catton-headshot.jpg",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
+  "sameAs": [
+    "https://writing.neilcatton.com"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-enterprise-architecture.html">Enterprise Architecture</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+        <li><a href="service-public-sector-technology.html">Public Sector Technology</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a href="articles.html">Writing</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="contact.html" aria-current="page">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div class="page-header-text">
+        <span class="page-label">Contact</span>
+        <h1 class="page-title" id="page-title">Start a<br><em>conversation.</em></h1>
+        <p class="page-standfirst">
+          Most engagements begin with a single conversation. For advisory,
+          speaking, consulting, or book enquiries — or if something in the
+          writing prompted a thought worth sharing.
+        </p>
+      </div>
+      <div class="page-header-photo" aria-hidden="true">
+        <picture>
+          <source srcset="images/neil-catton-headshot.webp" type="image/webp">
+          <img src="images/neil-catton-headshot.jpg" alt="Neil Catton, Group CTO and author" width="680" height="680" loading="eager">
+        </picture>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT BODY -->
+  <div class="contact-wrap" style="background:#f5f2ee;">
+
+    <!-- FORM -->
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 class="sr-only" id="form-heading" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">
+        Contact form
+      </h2>
+
+      <p class="form-intro">
+        Use this form for any enquiry. Every message is read personally.
+        If you would prefer to reach out directly, the email address is in the sidebar.
+        Or, if you'd like to talk sooner, <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" target="_blank" rel="noopener noreferrer" class="form-intro-link">book a call directly</a>.
+      </p>
+
+      <div class="form-success" id="form-success" role="alert" aria-live="polite">
+        <h2 class="form-success-heading">Message received.</h2>
+        <p>Thank you for getting in touch. Every message is read personally — expect a response within two working days.</p>
+      </div>
+
+      <form id="contact-form" action="#" method="post" novalidate
+            aria-label="Contact Neil Catton">
+
+        <!-- Enquiry type -->
+        <div class="form-group">
+          <fieldset style="border:none;padding:0;margin:0;">
+            <legend class="form-label">
+              Type of enquiry
+            </legend>
+            <div class="enquiry-grid" role="group">
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-advisory" value="Advisory" checked>
+                <label class="enquiry-label" for="eq-advisory">Advisory</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-speaking" value="Speaking">
+                <label class="enquiry-label" for="eq-speaking">Speaking</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-consulting" value="Consulting">
+                <label class="enquiry-label" for="eq-consulting">Consulting</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-books" value="Books">
+                <label class="enquiry-label" for="eq-books">Books</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-press" value="Press">
+                <label class="enquiry-label" for="eq-press">Press</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-other" value="Other">
+                <label class="enquiry-label" for="eq-other">Other</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Name</label>
+          <input class="form-input" type="text" id="contact-name" name="name"
+                 autocomplete="name" required
+                 aria-required="true"
+                 placeholder="Your name">
+        </div>
+
+        <!-- Organisation -->
+        <div class="form-group">
+          <label class="form-label" for="contact-org">
+            Organisation <span class="optional">(optional)</span>
+          </label>
+          <input class="form-input" type="text" id="contact-org" name="organisation"
+                 autocomplete="organization"
+                 placeholder="Your organisation or role">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email</label>
+          <input class="form-input" type="email" id="contact-email" name="email"
+                 autocomplete="email" required
+                 aria-required="true"
+                 placeholder="your@email.com">
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Message</label>
+          <textarea class="form-input" id="contact-message" name="message"
+                    rows="6" required aria-required="true"
+                    placeholder="What would you like to discuss?"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Send message</button>
+          <p class="form-note">
+            Responses within two working days.<br>
+            No unsolicited sales or marketing.
+          </p>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="contact-sidebar" aria-label="Contact details and information">
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Direct contact</span>
+        <ul class="direct-links" role="list">
+          <li>
+            <a href="mailto:nc@neilcatton.com" aria-label="Send email to Neil Catton">
+              <div>
+                <span class="link-label">Email</span>
+                <span class="link-value">nc@neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+447803795606" aria-label="Call Neil Catton">
+              <div>
+                <span class="link-label">Phone</span>
+                <span class="link-value">+44 7803 795606</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer"
+               aria-label="Visit The Next Evolution on Substack">
+              <div>
+                <span class="link-label">Substack</span>
+                <span class="link-value">writing.neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://neilcatton.com" target="_blank" rel="noopener noreferrer"
+               aria-label="Visit neilcatton.com">
+              <div>
+                <span class="link-label">Website</span>
+                <span class="link-value">neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">What to expect</span>
+        <div class="expect-box">
+          <h3 class="expect-heading">Every message is read personally.</h3>
+          <ul class="expect-list" role="list">
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Response within two working days for all enquiries
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              No automated replies or sales sequences
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Initial conversations are without obligation
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Confidentiality respected as standard
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              If the fit isn't right, that will be said plainly
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Good reasons to get in touch</span>
+        <ul class="commitment-list" role="list">
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A technology decision that needs a senior independent voice
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A transformation programme that has stalled or lost direction
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            An AI or data strategy that needs grounding in commercial reality
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A speaking slot that needs someone who has done the work
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            Something in the writing that prompted a thought worth sharing
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ELSEWHERE -->
+  <section class="elsewhere-section" aria-labelledby="elsewhere-heading">
+    <div class="elsewhere-inner">
+      <div>
+        <h2 class="elsewhere-heading" id="elsewhere-heading">
+          Find Neil<br>elsewhere.
+        </h2>
+      </div>
+      <div class="elsewhere-links">
+        <a href="https://writing.neilcatton.com" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Next Evolution on Substack">
+          <span class="elsewhere-link-label">Writing</span>
+          <span class="elsewhere-link-name">The Next Evolution</span>
+        </a>
+        <a href="https://amzn.eu/d/617wKhZ" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Next Evolution on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Next Evolution</span>
+        </a>
+        <a href="https://amzn.eu/d/c8e7gAx" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Cognitive Crucible on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Cognitive Crucible</span>
+        </a>
+        <a href="https://amzn.eu/d/0dyQaBbU" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Shadow System on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Shadow System</span>
+        </a>
+        <a href="https://neilcatton.com" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="neilcatton.com">
+          <span class="elsewhere-link-label">Website</span>
+          <span class="elsewhere-link-name">neilcatton.com</span>
+        </a>
+        <a href="mailto:nc@neilcatton.com" class="elsewhere-link"
+           aria-label="Email Neil Catton directly">
+          <span class="elsewhere-link-label">Email directly</span>
+          <span class="elsewhere-link-name">nc@neilcatton.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+
+  /* Form submission handler — replace with your form service endpoint */
+  const form = document.getElementById("contact-form");
+  const success = document.getElementById("form-success");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const btn = form.querySelector(".btn-submit");
+    btn.textContent = "Sending…";
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch("https://formspree.io/f/mdajdnrq", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+
+      if (res.ok) {
+        form.style.display = "none";
+        success.style.display = "block";
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        const json = await res.json();
+        const msg = json.errors ? json.errors.map(err => err.message).join(", ") : "Something went wrong.";
+        btn.textContent = "Send message";
+        btn.disabled = false;
+        alert(msg + " Please email nc@neilcatton.com directly if the problem persists.");
+      }
+    } catch(err) {
+      btn.textContent = "Send message";
+      btn.disabled = false;
+      alert("Could not send message. Please email nc@neilcatton.com directly.");
+    }
+  });
+</script>
+
+<script src="/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/substack-feed"
+  to = "/.netlify/functions/substack-feed"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/practice-library-feed"
+  to = "/.netlify/functions/practice-library-feed"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/search-feed"
+  to = "/.netlify/functions/search-feed"
+  status = 200
+  force = true
+
+# ── Security headers ──
+# Content-Security-Policy allowlist built from every third-party origin
+# referenced in the codebase as of 23 July 2026 (Plausible, Google Fonts,
+# Formspree, the Substack embed/API, and the corsproxy.io/rss2json.com
+# feed-fallback fetches in index.html/articles.html). If a new embed or
+# script is added to the site later, its origin needs adding here too, or
+# it will silently fail rather than error loudly — check the browser
+# console on a deploy preview after any change that adds a new external
+# script, iframe, or fetch target.
+#
+# script-src and style-src both need 'unsafe-inline' because every page
+# carries inline <style> and <script> blocks rather than external files
+# with nonces/hashes — this is a known limitation, not an oversight. It
+# means the policy doesn't stop inline-script injection the way a
+# nonce-based CSP would; tightening that properly would mean externalising
+# every page's inline CSS/JS, which is a larger rebuild, not a header change.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://plausible.io https://corsproxy.io https://api.rss2json.com https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    X-Frame-Options = "SAMEORIGIN"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# ── Cache lifetimes ──
+# HTML pages above are left on Netlify's default (short) caching since content
+# changes without a filename/hash change. Static assets below are safe to cache
+# hard because a content change means a new filename in practice (images/PDFs
+# are replaced by editing the file in place only rarely, and CSS/JS lives inline
+# in the HTML, not as separate cached files, so search.js is the one exception).
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/search.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/apple-touch-icon.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
