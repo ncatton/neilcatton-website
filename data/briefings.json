@@ -26,6 +26,19 @@
       "pages": 16,
       "page": "briefing-ai-uk-social-housing.html",
       "pdf": "downloads/briefings/ai-in-uk-social-housing.pdf"
+    },
+    {
+      "id": "SAR-005",
+      "sector": "Energy retail",
+      "technology": "AI",
+      "title": "AI in UK Energy Retail",
+      "standfirst": "Satisfaction is at a record high and complaints at their lowest since 2022, while debt hits £4.79bn and arrears without a repayment plan run at three times managed debt. Ofgem has twice this year found the customer record itself unreliable — and that record is what an AI system would learn from.",
+      "regulator": "Ofgem",
+      "humanMoment": "Self-disconnection on a smart prepayment meter",
+      "date": "2026-08-04",
+      "pages": 17,
+      "page": "briefing-ai-uk-energy-retail.html",
+      "pdf": "downloads/briefings/ai-in-uk-energy-retail.pdf"
     }
   ]
 }

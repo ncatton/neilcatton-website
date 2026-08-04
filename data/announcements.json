@@ -2,6 +2,14 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "briefing-ai-uk-energy-retail",
+      "text": "New briefing: AI in UK Energy Retail. Ofgem's call for input on AI assurance closes 12 August.",
+      "link": "briefing-ai-uk-energy-retail.html",
+      "linkText": "Read the briefing",
+      "date": "2026-08-04",
+      "expires": "2026-08-12"
+    },
+    {
       "id": "cto-grand-rounds-launch",
       "text": "Now taking part in CTO Grand Rounds — live technical case reviews for founders and scale-up leadership teams.",
       "link": "cto-grand-rounds.html",
