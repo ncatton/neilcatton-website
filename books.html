@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.neilcatton.com/books.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
+<title>Books — Neil Catton</title>
+<meta name="description" content="Three books, one argument: what happens when technology outpaces the human systems around it. The Next Evolution trilogy, by Neil Catton.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/books.html">
+<meta property="og:title" content="Books — Neil Catton">
+<meta property="og:description" content="Three books, one argument: what happens when technology outpaces the human systems around it. The Next Evolution trilogy, by Neil Catton.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Books — Neil Catton">
+<meta name="twitter:description" content="Three books, one argument: what happens when technology outpaces the human systems around it. The Next Evolution trilogy, by Neil Catton.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: #f5f2ee;
+    color: #1a1714;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: #1a1714; color: #f5f2ee;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+    color: #1a1714; text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #3d3935; text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 1.5px; background: var(--accent); transition: width 0.25s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: var(--accent); }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding-top: 7rem;
+    background: #1a1714;
+  }
+  .page-header-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 3rem var(--col-pad) 3.5rem;
+  }
+  .page-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55);
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+  .page-label::before {
+    content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0;
+  }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 0.95; letter-spacing: -0.03em;
+    color: #f5f2ee; margin-bottom: 1.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards;
+  }
+  .page-title em { font-style: italic; color: #d4cfc9; }
+  .page-standfirst {
+    font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8;
+    color: rgba(245,242,238,0.72); max-width: 600px;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
+  }
+
+  /* ── BOOK SECTIONS ── each book gets its own full section ── */
+  .book-section {
+    background: #f5f2ee;
+    padding: 5rem var(--col-pad);
+    border-bottom: 1px solid var(--rule);
+  }
+  .book-section:nth-child(even) {
+    background: #ede9e3;
+  }
+
+  .book-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* Book spine / number column */
+  .book-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+  }
+
+  .book-num {
+    font-family: var(--serif);
+    font-size: 5rem; font-style: italic; font-weight: 400;
+    color: #7f7c79; line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .book-year-tag {
+    font-family: var(--sans);
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #f5f2ee; background: #2b4a6f;
+    padding: 0.35rem 0.75rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .book-format {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #5c5652;
+  }
+
+  /* Book content column */
+  .book-content { background: transparent; }
+
+  .book-kicker {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .book-kicker::before {
+    content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0;
+  }
+
+  .book-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
+    color: #1a1714; margin-bottom: 0.5rem;
+  }
+
+  .book-subtitle {
+    font-family: var(--sans);
+    font-size: 1rem; font-weight: 300; font-style: italic;
+    color: #5c5652; margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .book-rule {
+    width: 48px; height: 2px;
+    background: #2b4a6f; border: none; margin-bottom: 2rem;
+  }
+
+  .book-desc {
+    font-size: 1.0625rem; font-weight: 400; line-height: 1.85;
+    color: #1a1714; margin-bottom: 1.25rem;
+    background: transparent;
+  }
+
+  .book-desc:last-of-type { margin-bottom: 2rem; }
+
+  /* What the book covers */
+  .book-themes {
+    background: transparent;
+    border-top: 1px solid #d4cfc9;
+    padding-top: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .book-themes-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #5c5652; margin-bottom: 1rem; display: block;
+    background: transparent;
+  }
+
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    background: transparent;
+  }
+
+  .theme-item {
+    font-size: 0.875rem; font-weight: 400; color: #1a1714;
+    padding: 0.5rem 0;
+    border-top: 1px solid #ede9e3;
+    background: transparent;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .theme-item::before {
+    content: ""; width: 4px; height: 4px;
+    background: #2b4a6f; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* Reviews */
+  .book-reviews {
+    margin-top: 2rem;
+    background: transparent;
+  }
+
+  .reviews-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #5c5652; margin-bottom: 1.25rem; display: block;
+  }
+
+  .review-item {
+    border-left: 2px solid #d4cfc9;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .review-item:hover { border-color: #2b4a6f; }
+  .review-item:last-child { margin-bottom: 0; }
+
+  .review-text {
+    font-family: var(--serif); font-size: 0.975rem; font-style: italic;
+    line-height: 1.65; color: #1a1714;
+    margin-bottom: 0.5rem; background: transparent;
+  }
+
+  .review-source {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #5c5652;
+  }
+
+  /* CTA row */
+  .book-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-top: 2.5rem; align-items: center;
+    background: transparent;
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px; min-width: 44px;
+    transition: all 0.2s ease; cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: #1a1714; color: #f5f2ee; border: 2px solid #1a1714;
+  }
+  .btn-primary:hover { background: #2b4a6f; border-color: #2b4a6f; }
+  .btn-secondary {
+    background: transparent; color: #1a1714; border: 2px solid #1a1714;
+  }
+  .btn-secondary:hover { border-color: #2b4a6f; color: #2b4a6f; }
+  .btn-ghost {
+    background: transparent; color: #2b4a6f;
+    border: 2px solid transparent; padding-left: 0;
+    letter-spacing: 0.08em; font-size: 0.75rem;
+  }
+  .btn-ghost::after { content: " →"; }
+  .btn-ghost:hover { color: #1a1714; text-decoration: underline; }
+
+  /* ── ALL BOOKS CTA ── */
+  .all-books-cta {
+    background: #2b4a6f;
+    padding: 4rem var(--col-pad);
+    text-align: center;
+  }
+  .all-books-inner { max-width: 560px; margin: 0 auto; }
+  .all-books-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; color: #f5f2ee; line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .all-books-sub {
+    font-size: 1rem; font-weight: 300;
+    color: rgba(245,242,238,0.75); margin-bottom: 2rem; line-height: 1.7;
+  }
+  .btn-paper {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: #f5f2ee; color: #2b4a6f;
+    border: 2px solid #f5f2ee; transition: all 0.2s;
+  }
+  .btn-paper:hover { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #1a1714; padding: 2.75rem var(--col-pad); }
+  .footer-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.25rem;
+  }
+  .footer-wordmark {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
+    color: #f5f2ee; text-decoration: none;
+  }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #f5f2ee; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
+
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 760px) {
+    .page-header-inner { padding-bottom: 3rem; }
+    .book-inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .book-spine {
+      flex-direction: row; align-items: center; gap: 1.5rem;
+    }
+    .book-num { font-size: 3.5rem; margin-bottom: 0; }
+    .themes-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .themes-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ══════════════════════════════════════
+     FRAMEWORK SECTIONS
+  ══════════════════════════════════════ */
+  .framework-section {
+    padding: 4rem var(--col-pad);
+    border-top: 2px solid #1a1714;
+  }
+  .framework-section-1 { background: #f0ece6; }
+  .framework-section-2 { background: #e8e2da; }
+  .framework-section-3 { background: #f0ece6; }
+
+  .framework-inner { max-width: var(--max-wide); margin: 0 auto; }
+
+  .framework-header { margin-bottom: 3rem; }
+
+  .framework-kicker {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .framework-kicker::before {
+    content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0;
+  }
+  .framework-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .framework-standfirst {
+    font-size: 1rem; font-weight: 300; color: #3d3935;
+    line-height: 1.8; max-width: 640px;
+  }
+  .framework-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+
+  /* ── FIVE IS GRID ── */
+  .five-is-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-bottom: 3rem;
+    border: 1px solid #d4cfc9;
+  }
+  .i-card {
+    padding: 1.75rem 1.25rem;
+    border-right: 1px solid #d4cfc9;
+    background: #f5f2ee;
+    position: relative;
+    overflow: hidden;
+  }
+  .i-card:last-child { border-right: none; }
+  .i-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+  }
+  .i-card-1::before { background: #2E6B8A; }
+  .i-card-2::before { background: #7B5F3A; }
+  .i-card-3::before { background: #6B3FA0; }
+  .i-card-4::before { background: #B03A2E; }
+  .i-card-5::before { background: #2b4a6f; }
+
+  .i-card-num {
+    font-family: var(--serif); font-size: 2.5rem; font-style: italic;
+    line-height: 1; margin-bottom: 0.75rem; color: #7f7c79;
+  }
+  .i-card-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.75rem; display: block;
+  }
+  .i-card-1 .i-card-label { color: #2E6B8A; }
+  .i-card-2 .i-card-label { color: #7B5F3A; }
+  .i-card-3 .i-card-label { color: #6B3FA0; }
+  .i-card-4 .i-card-label { color: #B03A2E; }
+  .i-card-5 .i-card-label { color: #2b4a6f; }
+
+  .i-card-title {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #1a1714; line-height: 1.3; margin-bottom: 0.75rem;
+  }
+  .i-card-desc {
+    font-size: 0.8125rem; color: #3d3935; line-height: 1.7; background: transparent;
+  }
+
+  /* ── ACTION PATHS ── */
+  .paths-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .path-card {
+    background: #1a1714; padding: 1.75rem;
+    border-left: 3px solid #2b4a6f;
+  }
+  .path-num {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 0.4rem;
+  }
+  .path-name {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+    color: #f5f2ee; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .path-desc {
+    font-size: 0.8125rem; color: rgba(245,242,238,0.6);
+    line-height: 1.65; margin-bottom: 1rem; background: transparent;
+  }
+  .path-actions {
+    list-style: none; padding: 0;
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.875rem;
+  }
+  .path-actions li {
+    font-size: 0.8rem; color: rgba(245,242,238,0.72);
+    line-height: 1.6; padding: 0.3rem 0;
+    padding-left: 0.875rem; position: relative; background: transparent;
+  }
+  .path-actions li::before {
+    content: ""; position: absolute; left: 0; top: 0.7rem;
+    width: 4px; height: 4px; background: #2b4a6f; border-radius: 50%;
+  }
+
+  /* ── RIGHTS / PRINCIPLES GRID ── */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .principle-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    border-top: 3px solid #2b4a6f;
+    padding: 1.25rem;
+  }
+  .principle-code {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: #2b4a6f; margin-bottom: 0.5rem; display: block;
+  }
+  .principle-title {
+    font-family: var(--serif); font-size: 1rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .principle-desc {
+    font-size: 0.8rem; color: #3d3935; line-height: 1.65; background: transparent;
+  }
+
+  /* ── THREAT / PILLAR ROWS ── */
+  .pillars-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .pillar-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-card::before {
+    content: ""; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+  }
+  .pillar-p1::before { background: #2E6B8A; }
+  .pillar-p2::before { background: #B03A2E; }
+  .pillar-p3::before { background: #2b4a6f; }
+  .pillar-p4::before { background: #5c5652; }
+
+  .pillar-icon {
+    font-size: 1.25rem; margin-bottom: 0.75rem; display: block; opacity: 0.6;
+  }
+  .pillar-name {
+    font-family: var(--serif); font-size: 1rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem;
+  }
+  .pillar-desc {
+    font-size: 0.8rem; color: #3d3935; line-height: 1.65; background: transparent;
+  }
+
+  /* ── THREE TESTS INLINE ── */
+  .tests-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #d4cfc9;
+    margin-bottom: 3rem;
+  }
+  .test-fw-card {
+    padding: 1.75rem;
+    border-right: 1px solid #d4cfc9;
+    background: #1a1714;
+  }
+  .test-fw-card:last-child { border-right: none; }
+  .test-fw-num {
+    font-family: var(--serif); font-size: 2rem; font-style: italic;
+    color: rgba(212,207,201,0.2); line-height: 1; margin-bottom: 0.75rem;
+  }
+  .test-fw-name {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+    color: #f5f2ee; margin-bottom: 0.5rem;
+  }
+  .test-fw-question {
+    font-size: 0.8rem; font-style: italic; color: rgba(245,242,238,0.55);
+    margin-bottom: 0.75rem; line-height: 1.5; background: transparent;
+  }
+  .test-fw-desc {
+    font-size: 0.8rem; color: rgba(245,242,242,0.7);
+    line-height: 1.65; background: transparent;
+  }
+
+  /* ── AUDIENCE CARDS (bottom band) ── */
+  .audience-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid #d4cfc9;
+  }
+  .audience-card {
+    padding: 1.5rem;
+    border-right: 1px solid #d4cfc9;
+    background: #f5f2ee;
+  }
+  .audience-card:last-child { border-right: none; }
+  .audience-num {
+    font-family: var(--serif); font-size: 1.75rem; font-style: italic;
+    color: #7f7c79; line-height: 1; margin-bottom: 0.5rem;
+  }
+  .audience-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #2b4a6f;
+    margin-bottom: 0.5rem; display: block;
+  }
+  .audience-title {
+    font-family: var(--serif); font-size: 0.975rem; font-weight: 500;
+    color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .audience-items {
+    list-style: none; padding: 0; margin-top: 0.75rem;
+    border-top: 1px solid #d4cfc9; padding-top: 0.75rem;
+  }
+  .audience-items li {
+    font-size: 0.775rem; color: #3d3935; line-height: 1.6;
+    padding: 0.2rem 0; padding-left: 0.75rem; position: relative;
+    background: transparent;
+  }
+  .audience-items li::before {
+    content: ""; position: absolute; left: 0; top: 0.65rem;
+    width: 3px; height: 3px; background: #2b4a6f; border-radius: 50%;
+  }
+
+  /* ── DOWNLOAD PROMPT ── */
+  .framework-download {
+    background: #2b4a6f;
+    padding: 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .framework-download-text { }
+  .framework-download-heading {
+    font-family: var(--serif); font-size: 1.25rem; font-weight: 400;
+    color: #f5f2ee; margin-bottom: 0.3rem;
+  }
+  .framework-download-sub {
+    font-size: 0.875rem; color: rgba(245,242,238,0.78); line-height: 1.5;
+  }
+  .btn-download {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: #f5f2ee; color: #2b4a6f;
+    border: 2px solid #f5f2ee; transition: all 0.2s; flex-shrink: 0;
+  }
+  .btn-download:hover { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .five-is-grid { grid-template-columns: 1fr 1fr; }
+    .i-card:nth-child(5) { border-right: none; }
+    .paths-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: 1fr 1fr; }
+    .pillars-row { grid-template-columns: 1fr 1fr; }
+    .tests-row { grid-template-columns: 1fr; }
+    .test-fw-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .test-fw-card:last-child { border-bottom: none; }
+    .audience-row { grid-template-columns: 1fr 1fr; }
+    .audience-card:nth-child(2) { border-right: none; }
+    .audience-card:nth-child(3) { border-top: 1px solid #d4cfc9; }
+    .audience-card:nth-child(4) { border-right: none; border-top: 1px solid #d4cfc9; }
+    .framework-download { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 580px) {
+    .five-is-grid { grid-template-columns: 1fr; }
+    .i-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .pillars-row { grid-template-columns: 1fr; }
+    .audience-row { grid-template-columns: 1fr; }
+    .audience-card { border-right: none; border-bottom: 1px solid #d4cfc9; }
+  }
+
+  /* ── FOLLOW ON SUBSTACK BUTTON ── */
+  .btn-follow-substack {
+    background: transparent; color: rgba(245,242,238,0.7);
+    border: 2px solid rgba(245,242,238,0.25);
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    display: inline-flex; align-items: center;
+    transition: all 0.2s;
+  }
+  .btn-follow-substack:hover,
+  .btn-follow-substack:focus-visible {
+    border-color: rgba(245,242,238,0.6);
+    color: #f5f2ee;
+  }
+</style>
+<style>
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "name": "The Next Evolution",
+      "description": "Designing the Future Before it Designs Us \u2014 becoming an active architect of our digital future.",
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      },
+      "datePublished": "2025-07",
+      "url": "https://www.neilcatton.com/books.html"
+    },
+    {
+      "@type": "Book",
+      "name": "The Cognitive Crucible",
+      "description": "Reclaiming Attention, Agency, and Meaning in an Engineered World.",
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      },
+      "datePublished": "2025-09",
+      "url": "https://www.neilcatton.com/books.html"
+    },
+    {
+      "@type": "Book",
+      "name": "The Shadow System",
+      "description": "Criminality, Compromise, and the Strategic Mandate for a New Digital State.",
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      },
+      "datePublished": "2026-01",
+      "url": "https://www.neilcatton.com/books.html"
+    },
+    {
+      "@type": "Book",
+      "name": "Working as Designed",
+      "description": "Why systems that work still fail the people inside them.",
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      },
+      "datePublished": "2026-06",
+      "url": "https://www.neilcatton.com/books.html",
+      "bookFormat": "https://schema.org/EBook"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-enterprise-architecture.html">Enterprise Architecture</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+        <li><a href="service-public-sector-technology.html">Public Sector Technology</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a href="articles.html">Writing</a></li>
+    <li><a href="briefings.html">Briefings</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
+    <li><a href="books.html" aria-current="page">Books</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Books</span>
+      <h1 class="page-title" id="page-title">Three books.<br><em>One argument.</em></h1>
+      <p class="page-standfirst">
+        What happens when technology outpaces the human systems around it.
+        Written in sequence — each book builds on the last, sharpening the same
+        central question: who is technology actually designed for?
+      </p>
+    </div>
+  </header>
+
+  <!-- ── BOOK I — THE NEXT EVOLUTION ── -->
+  <section class="book-section" id="the-next-evolution" aria-labelledby="book1-title" style="background:#f5f2ee;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" aria-hidden="true"><em>I</em></span>
+        <span class="book-year-tag">July 2025</span>
+        <span class="book-format">Available on Amazon</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker">Book one</span>
+        <h2 class="book-title" id="book1-title">The Next Evolution</h2>
+        <p class="book-subtitle">Designing the Future Before it Designs Us — becoming an active architect of our digital future.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc">
+          Technology is no longer a passive tool — it is an active force shaping our
+          lives. The Next Evolution explores how we can move beyond being passive users
+          to become active architects of our digital future, offering a vision for
+          individuals and institutions adapting to a world increasingly defined by AI,
+          digital identity, and ubiquitous computing.
+        </p>
+        <p class="book-desc">
+          Drawing on career spanning more than three decades in business and technology —
+          from computer operator to Group CTO — the book provides a practical blueprint
+          for navigating technological change, arguing that by building systems with
+          integrity, foresight, and a focus on human purpose, we can drive a more
+          sustainable and equitable future. It introduces the concept of the
+          "three-foot world": a reframing of agency in an age of overwhelm, grounding
+          the argument in what people can actually influence rather than what systems
+          demand of them.
+        </p>
+        <p class="book-desc">
+          The book is structured in five parts: Interfaces, Institutions, Identity,
+          Intelligence, and Integrity — each building the case for designing the
+          future before it designs us.
+        </p>
+
+        <div class="book-themes" style="background:transparent;">
+          <span class="book-themes-label">What the book covers</span>
+          <div class="themes-grid">
+            <div class="theme-item">Interfaces</div>
+            <div class="theme-item">Institutions</div>
+            <div class="theme-item">Identity</div>
+            <div class="theme-item">Intelligence</div>
+            <div class="theme-item">Integrity</div>
+            <div class="theme-item">The three-foot world framework</div>
+            <div class="theme-item">Society 5.0 vision</div>
+            <div class="theme-item">Human-centred architecture</div>
+          </div>
+        </div>
+
+        <div class="book-reviews">
+          <span class="reviews-label">Reader responses</span>
+          <div class="review-item">
+            <p class="review-text">"This book is akin to an awakening. It gently walks you into a world with AI unlike anything I have read before — challenging the reader to examine what kind of world we want to live in. Neil has sparked much internal debate without imprinting his own vision of a future."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+          <div class="review-item">
+            <p class="review-text">"A timely and grounding exploration of how we design the future without losing ourselves in it. The Next Evolution isn't about resisting technology — it's about designing with intention, boundaries, and human dignity at the centre."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+          <div class="review-item">
+            <p class="review-text">"A balanced and insightful book which, as a non-technical person, I found to be both thought-provoking and accessible."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+        </div>
+
+        <div class="book-cta" style="background:transparent;">
+          <a href="https://amzn.eu/d/617wKhZ" class="btn btn-primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buy The Next Evolution on Amazon">
+            Buy on Amazon
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── FRAMEWORK: THE NEXT EVOLUTION ── -->
+  <section class="framework-section framework-section-1" aria-labelledby="fw1-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw1-heading">
+          Putting The Next Evolution to work
+        </h2>
+        <p class="framework-standfirst">
+          The book is structured around five lenses — each one a domain where technology
+          is reshaping what it means to be human. Below each lens is the argument, and
+          below the argument are the actions. For individuals, organisations, leaders,
+          and builders.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five Is -->
+      <div class="five-is-grid" role="list">
+        <div class="i-card i-card-1" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>I</em></div>
+          <span class="i-card-label">Interfaces</span>
+          <h3 class="i-card-title">How we interact with technology is changing faster than we are adapting to it</h3>
+          <p class="i-card-desc">Screens are disappearing into environments. The interface becomes invisible — and with invisibility comes uncritical acceptance. Design determines behaviour, and most design is not designed with you in mind.</p>
+        </div>
+        <div class="i-card i-card-2" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>II</em></div>
+          <span class="i-card-label">Institutions</span>
+          <h3 class="i-card-title">Our foundational institutions were built for a slower, more stable world</h3>
+          <p class="i-card-desc">Government, education, healthcare, justice — each built for conditions that no longer exist. Technology does not wait for institutions to adapt. The gap between what organisations can do and what they are set up to do grows every year.</p>
+        </div>
+        <div class="i-card i-card-3" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>III</em></div>
+          <span class="i-card-label">Identity</span>
+          <h3 class="i-card-title">Who we are is increasingly defined, inferred, and stored by systems we do not control</h3>
+          <p class="i-card-desc">Digital identity is not a record of who you are. It is a model of who someone else thinks you are — built from data you did not knowingly provide, optimised for purposes that are not yours.</p>
+        </div>
+        <div class="i-card i-card-4" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>IV</em></div>
+          <span class="i-card-label">Intelligence</span>
+          <h3 class="i-card-title">AI is not a tool. It is an environment — one we are designing without sufficient intention</h3>
+          <p class="i-card-desc">The question is not whether AI is intelligent. It is what values are encoded in its decisions, whose interests it serves, and whether the humans it affects have any meaningful way to contest its outputs.</p>
+        </div>
+        <div class="i-card i-card-5" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>V</em></div>
+          <span class="i-card-label">Integrity</span>
+          <h3 class="i-card-title">The future is not something that happens to us. It is something we design — or fail to</h3>
+          <p class="i-card-desc">Integrity in this context means coherence between values and decisions — at every scale, from individual choices to institutional policy. Technology built without integrity is just acceleration toward consequences no one intended.</p>
+        </div>
+      </div>
+
+      <!-- Four Paths -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Four paths from insight to action
+      </h3>
+      <div class="paths-grid">
+        <div class="path-card">
+          <div class="path-num">Path 01</div>
+          <div class="path-name">Institutional Evolution</div>
+          <p class="path-desc">Foundational institutions must embrace systemic reinvention — not incremental improvement. The frameworks were written for a different world.</p>
+          <ul class="path-actions">
+            <li>Audit for legacy traps — what worked yesterday may prevent progress today</li>
+            <li>Redesign around purpose, not inherited process</li>
+            <li>Embed ethical impact assessment into governance from the start</li>
+            <li>Foster collaborative ecosystems across sector boundaries</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 02</div>
+          <div class="path-name">Human-Centred Technology Leadership</div>
+          <p class="path-desc">Those building and deploying technology carry the most direct responsibility for its human consequences.</p>
+          <ul class="path-actions">
+            <li>Mandate ethical design from conception — not as a late-stage review</li>
+            <li>Invest in Explainable AI and real accountability structures</li>
+            <li>Measure social and ecological impact alongside commercial outcomes</li>
+            <li>Champion human oversight in all high-stakes automated decisions</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 03</div>
+          <div class="path-name">Cultural &amp; Societal Shifts</div>
+          <p class="path-desc">Technology is a reflection of culture — and culture shapes how technology is used, perceived, and contested.</p>
+          <ul class="path-actions">
+            <li>Champion media literacy and narrative diversity</li>
+            <li>Teach futures literacy — in schools, workplaces, leadership programmes</li>
+            <li>Reclaim digital agency: move from passive consumption to active participation</li>
+          </ul>
+        </div>
+        <div class="path-card">
+          <div class="path-num">Path 04</div>
+          <div class="path-name">Personal Evolution</div>
+          <p class="path-desc">The future is not built by grand pronouncements. It is built by individual choices — including yours, whatever your role.</p>
+          <ul class="path-actions">
+            <li>Stay curious, not cynical — every constraint is also a design problem</li>
+            <li>Lead from your locus: your decisions create ripples at every level</li>
+            <li>Practice ethical imagination — ask "What if?" to stretch possibility, not induce fear</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- For whom -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        What this means for you
+      </h3>
+      <div class="audience-row" role="list">
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>I</em></div>
+          <span class="audience-label">For individuals</span>
+          <div class="audience-title">Cultivate digital self-awareness</div>
+          <ul class="audience-items">
+            <li>Audit the permissions you have granted — regularly</li>
+            <li>Learn to recognise persuasive design patterns</li>
+            <li>Exercise your right to opt out, disengage, have data deleted</li>
+            <li>Measure engagement by insight gained, not time captured</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>II</em></div>
+          <span class="audience-label">For organisations</span>
+          <div class="audience-title">Adopt a human-first design ethos</div>
+          <ul class="audience-items">
+            <li>Design is never neutral — own the assumptions in every default</li>
+            <li>Build in explainability and control from day one</li>
+            <li>Implement opt-in by default for significant data collection</li>
+            <li>Ensure human intervention is always possible</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>III</em></div>
+          <span class="audience-label">For leaders &amp; policymakers</span>
+          <div class="audience-title">Govern for an equitable digital future</div>
+          <ul class="audience-items">
+            <li>Develop adaptive regulatory frameworks that evolve with technology</li>
+            <li>Mandate algorithmic audits for high-stakes decisions</li>
+            <li>Ensure digital services are never the only option while a divide exists</li>
+            <li>Grant citizens the right to understand automated decisions affecting them</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>IV</em></div>
+          <span class="audience-label">For technology builders</span>
+          <div class="audience-title">Build with Most Valuable Ethics</div>
+          <ul class="audience-items">
+            <li>Not minimum viable product — Most Valuable Ethics from day one</li>
+            <li>Conduct bias audits on all predictive or anticipatory algorithms</li>
+            <li>Prioritise human override: no automated system should be uncontestable</li>
+            <li>Build clear redress mechanisms for harmful or inaccurate decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Download prompt -->
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full strategy framework — poster format</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Next Evolution — free, no sign-up required.</div>
+        </div>
+        <a href="downloads/BOOK_ONE_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BOOK II — THE COGNITIVE CRUCIBLE ── -->
+  <section class="book-section" id="the-cognitive-crucible" aria-labelledby="book2-title" style="background:#ede9e3;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" aria-hidden="true"><em>II</em></span>
+        <span class="book-year-tag">September 2025</span>
+        <span class="book-format">Available on Amazon</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker">Book two</span>
+        <h2 class="book-title" id="book2-title">The Cognitive Crucible</h2>
+        <p class="book-subtitle">Reclaiming Attention, Agency, and Meaning in an Engineered World.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc">
+          In a world where technology is evolving faster than our ability to comprehend
+          its impact, The Cognitive Crucible is a critical guide for leaders, strategists,
+          and everyday citizens. It explores the profound ethical and structural challenges
+          posed by artificial intelligence, ubiquitous computing, and weaponised messaging.
+        </p>
+        <p class="book-desc">
+          Moving beyond the hype, the book offers a pragmatic framework for building
+          resilient organisations and shaping technology for human flourishing. It
+          examines algorithmic transparency, the fight for human attention, and what
+          cognitive sovereignty looks like in practice — including a framework for
+          digital sovereignty and the principles that should govern any system operating
+          in the mental environment.
+        </p>
+        <p class="book-desc">
+          Structured across five parts — Origins of Attention, The Attention Engine,
+          Contested Focus, Weaponised Messaging, and Designing for Human Sovereignty —
+          this is not a book of crisis. It is a pathway to balance alongside future technologies.
+        </p>
+
+        <div class="book-themes" style="background:transparent;">
+          <span class="book-themes-label">What the book covers</span>
+          <div class="themes-grid">
+            <div class="theme-item">Origins of attention</div>
+            <div class="theme-item">The attention engine</div>
+            <div class="theme-item">Weaponised messaging</div>
+            <div class="theme-item">Algorithmic transparency</div>
+            <div class="theme-item">Cognitive sovereignty</div>
+            <div class="theme-item">Zero-knowledge proofs &amp; privacy</div>
+            <div class="theme-item">Digital sovereignty framework</div>
+            <div class="theme-item">Resilient organisations</div>
+          </div>
+        </div>
+
+        <div class="book-reviews">
+          <span class="reviews-label">Reader responses</span>
+          <div class="review-item">
+            <p class="review-text">"An eye-opening analysis and deep awareness of how algorithms are shaping us. A must-read — taking back control of your mental environment."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+          <div class="review-item">
+            <p class="review-text">"A brilliantly written book that truly focuses the mind and makes you look again at the role technology plays in your day-to-day life. This isn't a book of crisis — more of a pathway to balance and harmony alongside future technologies."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+        </div>
+
+        <div class="book-cta" style="background:transparent;">
+          <a href="https://amzn.eu/d/c8e7gAx" class="btn btn-primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buy The Cognitive Crucible on Amazon">
+            Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── FRAMEWORK: THE COGNITIVE CRUCIBLE ── -->
+  <section class="framework-section framework-section-2" aria-labelledby="fw2-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw2-heading">
+          Reclaiming your cognitive sovereignty
+        </h2>
+        <p class="framework-standfirst">
+          The Cognitive Crucible maps how intelligent systems are reshaping attention,
+          belief formation, and decision-making — often invisibly. The framework
+          below sets out the five domains of cognitive risk, six rights every digital
+          citizen holds, and the three tests to apply to any system operating in your mental environment.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five pillars of cognitive risk -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Five domains of cognitive risk
+      </h3>
+      <div class="pillars-row" role="list">
+        <div class="pillar-card pillar-p1" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◈</span>
+          <div class="pillar-name">The Attention Engine</div>
+          <p class="pillar-desc">Platforms are not designed to inform. They are designed to capture and hold attention — using variable reward mechanisms that exploit the same neurological pathways as addiction.</p>
+        </div>
+        <div class="pillar-card pillar-p2" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◎</span>
+          <div class="pillar-name">Weaponised Messaging</div>
+          <p class="pillar-desc">Influence operations have industrialised. The same tools that power recommendation engines power disinformation campaigns — the distinction is intent, not mechanism.</p>
+        </div>
+        <div class="pillar-card pillar-p3" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◇</span>
+          <div class="pillar-name">Algorithmic Bias</div>
+          <p class="pillar-desc">Algorithms are not neutral. They encode the values, assumptions, and blind spots of those who built them — and they apply those values at scale, to decisions that affect individual lives.</p>
+        </div>
+        <div class="pillar-card pillar-p4" role="listitem">
+          <span class="pillar-icon" aria-hidden="true">◆</span>
+          <div class="pillar-name">Identity Erosion</div>
+          <p class="pillar-desc">When systems infer who you are from behavioural data, they produce a version of you optimised for their purposes — not yours. That model then shapes what you see, what you're offered, and what decisions are made about you.</p>
+        </div>
+      </div>
+
+      <!-- Six digital rights -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Six rights of the digital citizen
+      </h3>
+      <div class="principles-grid" role="list">
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R1</span>
+          <div class="principle-title">The Right to Know</div>
+          <p class="principle-desc">When interacting with an automated or AI system, you have the right to be told. Simulated humans must be disclosed. Algorithmic curation must be declared.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R2</span>
+          <div class="principle-title">The Right to Understand</div>
+          <p class="principle-desc">Algorithmic decisions affecting you must be explainable in plain language — not buried in legal terms, not obscured by claims of proprietary complexity.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R3</span>
+          <div class="principle-title">The Right to Challenge</div>
+          <p class="principle-desc">Any decision made about you by an automated system must be contestable. There must always be a human in the loop — and that human must have genuine authority to act.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R4</span>
+          <div class="principle-title">The Right to Disengage</div>
+          <p class="principle-desc">Disengagement must be as intuitive as engagement. Systems must be built with withdrawal in mind — not as an afterthought, not as a dark pattern, but as a fundamental design requirement.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R5</span>
+          <div class="principle-title">The Right to Data Sovereignty</div>
+          <p class="principle-desc">You own your data. You have the right to access, correct, port, and delete it — on your terms, not the platform's. Data sovereignty is not a technical feature. It is a right.</p>
+        </div>
+        <div class="principle-card" role="listitem">
+          <span class="principle-code">R6</span>
+          <div class="principle-title">The Right to Opt Out</div>
+          <p class="principle-desc">The right to prioritise depth over convenience, and meaning over speed. Cognitive sovereignty demands that persuasion be transparent — and that opting out be genuinely possible.</p>
+        </div>
+      </div>
+
+      <!-- Three tests -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Three tests for any system in your mental environment
+      </h3>
+      <div class="tests-row" role="list">
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>1</em></div>
+          <div class="test-fw-name">Assistive</div>
+          <p class="test-fw-question">"Does this help me do something I couldn't do, or couldn't do easily, without it?"</p>
+          <p class="test-fw-desc">Not does it automate the thing — does it help the person. There is a meaningful difference between a system that extends human capability and one that replaces human judgement without accountability.</p>
+        </div>
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>2</em></div>
+          <div class="test-fw-name">Augmentive</div>
+          <p class="test-fw-question">"Does this genuinely add something — insight, capability, possibility?"</p>
+          <p class="test-fw-desc">Or does it merely replace one constraint with a different one? Augmentation means the human is more capable with the system than without it — not that the system has become the human.</p>
+        </div>
+        <div class="test-fw-card" role="listitem">
+          <div class="test-fw-num" aria-hidden="true"><em>3</em></div>
+          <div class="test-fw-name">Adaptive</div>
+          <p class="test-fw-question">"Does this respond to my specific context and circumstance?"</p>
+          <p class="test-fw-desc">Or does it serve the average and call that good enough? A system that cannot adapt to the individual in front of it is not serving that individual — it is serving a statistical model of them.</p>
+        </div>
+      </div>
+
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full cognitive sovereignty framework</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Cognitive Crucible — free, no sign-up required.</div>
+        </div>
+        <a href="downloads/BOOK_TWO_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BOOK III — THE SHADOW SYSTEM ── -->
+  <section class="book-section" id="the-shadow-system" aria-labelledby="book3-title" style="background:#f5f2ee;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" aria-hidden="true"><em>III</em></span>
+        <span class="book-year-tag">January 2026</span>
+        <span class="book-format">Available on Amazon</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker">Book three</span>
+        <h2 class="book-title" id="book3-title">The Shadow System</h2>
+        <p class="book-subtitle">Criminality, Compromise, and the Strategic Mandate for a New Digital State.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc">
+          Beneath the surface of innovation and convenience, a shadow economy thrives.
+          Cybercrime has evolved from isolated attacks into a sophisticated global
+          industry, and our traditional defences are being outpaced. From the anonymous
+          networks of ransomware gangs to the cunning tactics of social engineering,
+          the threats are more complex and personal than ever before.
+        </p>
+        <p class="book-desc">
+          Drawing on Neil's advisory work with police forces and government agencies,
+          The Shadow System provides a clear, accessible guide to understanding the
+          threats we face — exposing the anatomy of a cyberattack, revealing the
+          economics of exploitation, and explaining how to build a robust defence
+          for yourself, your business, and your community.
+        </p>
+        <p class="book-desc">
+          This is more than a warning — it is a practical roadmap. Whether you are
+          a business leader, a student, or a concerned citizen, the book empowers
+          you to move beyond fear and into a proactive stance. Structured across
+          five parts: It's Criminal, It's Personal, It's Business, It's Political,
+          and It's the Future.
+        </p>
+
+        <div class="book-themes" style="background:transparent;">
+          <span class="book-themes-label">What the book covers</span>
+          <div class="themes-grid">
+            <div class="theme-item">Anatomy of a cyberattack</div>
+            <div class="theme-item">Economics of exploitation</div>
+            <div class="theme-item">Personal digital security</div>
+            <div class="theme-item">Business cyber resilience</div>
+            <div class="theme-item">Nation state &amp; geopolitical cyber</div>
+            <div class="theme-item">Ransomware &amp; criminal networks</div>
+            <div class="theme-item">Critical national infrastructure</div>
+            <div class="theme-item">The future of digital defence</div>
+          </div>
+        </div>
+
+        <div class="book-reviews">
+          <span class="reviews-label">Reader responses</span>
+          <div class="review-item">
+            <p class="review-text">"Neil's extensive expertise of the digital world makes this book both enlightening and an essential reference for both my business and personal online security. Neil sets out many practical steps — many that I hadn't thought of addressing."</p>
+            <span class="review-source">Amazon reader</span>
+          </div>
+        </div>
+
+        <div class="book-cta" style="background:transparent;">
+          <a href="https://amzn.eu/d/0dyQaBbU" class="btn btn-primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buy The Shadow System on Amazon">
+            Buy on Amazon
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ── FRAMEWORK: THE SHADOW SYSTEM ── -->
+  <section class="framework-section framework-section-3" aria-labelledby="fw3-heading">
+    <div class="framework-inner">
+
+      <div class="framework-header">
+        <span class="framework-kicker">Framework</span>
+        <h2 class="framework-heading" id="fw3-heading">
+          Understanding and defending against the shadow system
+        </h2>
+        <p class="framework-standfirst">
+          The Shadow System maps the evolution of cyber criminality from opportunistic
+          intrusion to geopolitical instrument — and sets out what defence looks like
+          at each scale. The framework operates at four levels: individual, organisation,
+          critical infrastructure, and nation state.
+        </p>
+        <hr class="framework-rule" aria-hidden="true">
+      </div>
+
+      <!-- Five parts of the threat landscape -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        The five-part threat landscape
+      </h3>
+      <div class="five-is-grid" role="list">
+        <div class="i-card i-card-1" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>I</em></div>
+          <span class="i-card-label" style="color:#2E6B8A;">It's Criminal</span>
+          <h3 class="i-card-title">The anatomy of a cyberattack and the economics of exploitation</h3>
+          <p class="i-card-desc">Cybercrime is an industry — with supply chains, specialisation, customer service, and profit margins. Understanding its structure is the first step to building effective defence.</p>
+        </div>
+        <div class="i-card i-card-2" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>II</em></div>
+          <span class="i-card-label" style="color:#7B5F3A;">It's Personal</span>
+          <h3 class="i-card-title">The individual as target, vector, and first line of defence</h3>
+          <p class="i-card-desc">Most attacks begin with a person — a click, a credential, a moment of inattention. Individual digital hygiene is not a nice-to-have. It is the perimeter.</p>
+        </div>
+        <div class="i-card i-card-3" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>III</em></div>
+          <span class="i-card-label" style="color:#6B3FA0;">It's Business</span>
+          <h3 class="i-card-title">Organisational exposure, resilience, and the true cost of a breach</h3>
+          <p class="i-card-desc">The question is not whether your organisation will be targeted. It is whether your risk posture matches your actual exposure — and whether your recovery capability has been tested before it needs to work.</p>
+        </div>
+        <div class="i-card i-card-4" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>IV</em></div>
+          <span class="i-card-label" style="color:#B03A2E;">It's Political</span>
+          <h3 class="i-card-title">State-sponsored operations and the rewriting of the rules of conflict</h3>
+          <p class="i-card-desc">Cyber has become the domain of first contact in geopolitical conflict — deniable, scalable, and capable of effects that would previously have required military action.</p>
+        </div>
+        <div class="i-card i-card-5" role="listitem">
+          <div class="i-card-num" aria-hidden="true"><em>V</em></div>
+          <span class="i-card-label">It's the Future</span>
+          <h3 class="i-card-title">AI-enabled threats, quantum risk, and the shape of what is coming</h3>
+          <p class="i-card-desc">The threat landscape is not static. AI is industrialising attack capability at a rate that outpaces most defensive investment. The organisations and individuals who survive are those who treat security as a continuously evolving discipline.</p>
+        </div>
+      </div>
+
+      <!-- Four levels of defence -->
+      <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#1a1714;margin-bottom:1.5rem;">
+        Four levels of defence
+      </h3>
+      <div class="audience-row" role="list">
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>I</em></div>
+          <span class="audience-label">Individual</span>
+          <div class="audience-title">Your digital perimeter</div>
+          <ul class="audience-items">
+            <li>Use a password manager — unique credentials for every service</li>
+            <li>Enable multi-factor authentication on everything that matters</li>
+            <li>Treat every unsolicited link or attachment as hostile until verified</li>
+            <li>Review app permissions and connected accounts at least annually</li>
+            <li>Know what you would do the moment you suspect a breach</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>II</em></div>
+          <span class="audience-label">Organisation</span>
+          <div class="audience-title">Proportionate, embedded security</div>
+          <ul class="audience-items">
+            <li>Security strategy proportionate to actual risk exposure — not compliance minimum</li>
+            <li>Test recovery capability before you need it: backup, restore, incident response</li>
+            <li>People are the perimeter — invest in culture, not just controls</li>
+            <li>Third-party risk is your risk: audit your supply chain</li>
+            <li>Board-level ownership of cyber risk, not delegation to IT</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>III</em></div>
+          <span class="audience-label">Critical infrastructure</span>
+          <div class="audience-title">Resilience as a design principle</div>
+          <ul class="audience-items">
+            <li>Assume breach — design for containment and recovery, not just prevention</li>
+            <li>Operational technology and IT networks require separate security disciplines</li>
+            <li>Nation-state threat intelligence must inform defensive posture</li>
+            <li>Sector coordination: attacks on one are lessons for all</li>
+            <li>Continuity planning for scenarios where digital systems are unavailable</li>
+          </ul>
+        </div>
+        <div class="audience-card" role="listitem">
+          <div class="audience-num" aria-hidden="true"><em>IV</em></div>
+          <span class="audience-label">Nation state</span>
+          <div class="audience-title">Doctrine for the fifth domain</div>
+          <ul class="audience-items">
+            <li>Cyber doctrine requires the same rigour as military doctrine — and the same clarity on escalation</li>
+            <li>Attribution is political as much as technical: act accordingly</li>
+            <li>Offensive capability must be matched by defensive investment</li>
+            <li>International norms in cyberspace require active, not passive, diplomacy</li>
+            <li>Democratic societies must hold state cyber capability to democratic standards</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="framework-download">
+        <div class="framework-download-text">
+          <div class="framework-download-heading">Full threat landscape and defence framework</div>
+          <div class="framework-download-sub">Download the complete A2 framework poster for The Shadow System — free, no sign-up required.</div>
+        </div>
+        <a href="downloads/BOOK_THREE_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf"
+           class="btn-download" download>
+          ↓ Download poster
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EBOOK — WORKING AS DESIGNED ── -->
+  <section class="book-section" id="working-as-designed" aria-labelledby="ebook1-title" style="background:#ede9e3;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" aria-hidden="true" style="font-size:3.5rem;letter-spacing:-0.02em;font-style:italic;color:#7f7c79;">e</span>
+        <span class="book-year-tag">June 2026</span>
+        <span class="book-format">Ebook · Amazon Kindle</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker">Ebook — essay collection</span>
+        <h2 class="book-title" id="ebook1-title">Working as Designed</h2>
+        <p class="book-subtitle">Why systems that work still fail the people inside them.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc">
+          Alex's surgery went digital, and collecting a repeat prescription became an ordeal.
+          Jordan's mortgage was declined by a system nobody could explain. Margaret's bank
+          closed the last branch where anyone knew her name. In every case, the system worked
+          exactly as it was designed to. That is the problem.
+        </p>
+        <p class="book-desc">
+          <em>Working as Designed</em> collects ten essays from The Next Evolution, sequenced
+          as a single argument: when technology fails the person in front of it while every
+          metric stays green, the failure is not a malfunction. It was designed in — by
+          organisations that build for an average user who does not exist, test in conditions
+          chosen to succeed, and measure what is easy to count rather than what matters.
+        </p>
+        <p class="book-desc">
+          The essays move from the evidence — three people processed by systems that could not
+          see them — through the diagnosis, the design assumption underneath the failures, to
+          the mechanism: how pilots, departments, management chains and dashboards keep that
+          assumption from ever being examined. The book ends with five words asked in a design
+          review — <em>who is this hardest for?</em> — the cheapest intervention in these
+          pages, and the rarest.
+        </p>
+        <p class="book-desc">
+          For anyone who builds, buys, governs or lives inside large systems. Which is everyone.
+        </p>
+
+        <div class="book-cta" style="background:transparent;">
+          <a href="https://amzn.eu/d/070XjRol" class="btn btn-primary"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Buy Working as Designed on Amazon Kindle">
+            Buy on Amazon Kindle
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BOOK IV — COMING SOON ── -->
+  <section class="book-section" id="predictive-purpose" aria-labelledby="book4-title" style="background:#1a1714; border-bottom:none;">
+    <div class="book-inner">
+
+      <div class="book-spine">
+        <span class="book-num" style="color:rgba(212,207,201,0.45);" aria-hidden="true"><em>IV</em></span>
+        <span class="book-year-tag" style="background:rgba(43,74,111,0.6);">Coming Soon</span>
+      </div>
+
+      <div class="book-content">
+        <span class="book-kicker" style="color:#6a94c4;">Book four — in development</span>
+        <h2 class="book-title" id="book4-title" style="color:#f5f2ee;">Predictive Purpose</h2>
+        <p class="book-subtitle" style="color:rgba(245,242,238,0.5);">The fourth book in the sequence — laying the foundations for what comes after intelligent systems.</p>
+        <hr class="book-rule" aria-hidden="true">
+
+        <p class="book-desc" style="color:rgba(245,242,238,0.65);">
+          The first three books examined how technology shapes individuals, organisations,
+          and society — through the lens of design, cognition, and the shadow economy of
+          crime. The fourth asks what comes next: when systems become predictive rather
+          than reactive, when purpose can be modelled and optimised, what does that mean
+          for human agency, identity, and the structures we have built to protect both?
+        </p>
+        <p class="book-desc" style="color:rgba(245,242,238,0.65);">
+          <em style="color: rgba(245,242,238,0.55);">Subscribe to The Next Evolution to follow the thinking as the book develops.</em>
+        </p>
+
+        <div class="book-cta" style="background:transparent; margin-top:2rem;">
+          <a href="https://writing.neilcatton.com" class="btn btn-follow-substack"
+             target="_blank" rel="noopener noreferrer">
+            Follow on Substack
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALL BOOKS CTA -->
+  <div class="all-books-cta" style="background:#2b4a6f;">
+    <div class="all-books-inner">
+      <h2 class="all-books-heading">All available on Amazon</h2>
+      <p class="all-books-sub">
+        Each book stands alone. Read in sequence, they build a complete argument
+        about technology, human agency, and what comes next. Plus an essay collection
+        that puts the central argument to work in ten sharp essays.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;">
+        <a href="https://amzn.eu/d/617wKhZ" class="btn-paper" target="_blank" rel="noopener noreferrer"
+           aria-label="Buy The Next Evolution on Amazon">The Next Evolution</a>
+        <a href="https://amzn.eu/d/c8e7gAx" class="btn-paper" target="_blank" rel="noopener noreferrer"
+           aria-label="Buy The Cognitive Crucible on Amazon">The Cognitive Crucible</a>
+        <a href="https://amzn.eu/d/0dyQaBbU" class="btn-paper" target="_blank" rel="noopener noreferrer"
+           aria-label="Buy The Shadow System on Amazon">The Shadow System</a>
+        <a href="https://amzn.eu/d/070XjRol" class="btn-paper" target="_blank" rel="noopener noreferrer"
+           aria-label="Buy Working as Designed on Amazon Kindle">Working as Designed</a>
+      </div>
+      <p style="font-size:0.85rem;color:rgba(245,242,238,0.78);margin-top:0.5rem;">All available on Amazon</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="briefings.html">Briefings</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+<script src="/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://www.neilcatton.com/service-ai-readiness-review.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
+<title>AI Readiness Review — Neil Catton</title>
+<meta name="description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/service-ai-readiness-review.html">
+<meta property="og:title" content="AI Readiness Review — Neil Catton">
+<meta property="og:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Readiness Review — Neil Catton">
+<meta name="twitter:description" content="Where the organisation actually stands on AI — and the decisions, in order, that follow. A fixed-scope review, four to six weeks, fixed fee.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 1rem; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark {
+    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-mid); text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px;
+    width: 0; height: 1.5px; background: var(--accent); transition: width 0.25s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: var(--accent); }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
+
+  /* ── SERVICES DROPDOWN ── */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a {
+    display: block; padding: 0.48rem 1.4rem;
+    font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap;
+  }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+  .dropdown-menu li a[aria-current="page"] { color: #2b4a6f; }
+  .dropdown-divider { border-top: 1px solid #d4cfc9; margin: 0.45rem 0; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb { margin-bottom: 1.5rem; opacity: 0; animation: fadeInUp 0.6s ease 0.1s forwards; }
+  .breadcrumb ol {
+    list-style: none; display: flex; flex-wrap: wrap; align-items: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .breadcrumb li { display: flex; align-items: center; }
+  .breadcrumb li:not(:last-child)::after {
+    content: "/"; margin: 0 0.6rem; color: rgba(245,242,238,0.55);
+  }
+  .breadcrumb a {
+    color: rgba(245,242,238,0.55); text-decoration: none;
+    padding: 0.25rem 0; min-height: 24px; display: inline-flex; align-items: center;
+    border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .breadcrumb a:hover { color: #f5f2ee; border-color: rgba(245,242,238,0.5); }
+  .breadcrumb [aria-current="page"] { color: rgba(245,242,238,0.85); }
+
+  /* ── DETAIL HEADER ── */
+  .detail-header { padding-top: 7rem; background: var(--ink); }
+  .detail-header-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    padding: 3rem var(--col-pad) 3.25rem;
+  }
+  .detail-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards;
+  }
+  .detail-label::before { content: ""; width: 24px; height: 1px; background: var(--accent); flex-shrink: 0; }
+  .detail-title {
+    font-family: var(--serif);
+    font-size: clamp(2.3rem, 4.5vw, 3.9rem);
+    font-weight: 400; line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--paper); margin-bottom: 1.5rem; max-width: 820px;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards;
+  }
+  .detail-standfirst {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem); font-weight: 400; line-height: 1.6;
+    color: rgba(245,242,238,0.72); max-width: 620px;
+    opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
+  }
+
+  /* ── BODY SECTIONS ── */
+  .detail-main { max-width: var(--max-wide); margin: 0 auto; padding: 4rem var(--col-pad) 4.5rem; }
+  .detail-prose { max-width: 680px; }
+  .detail-section { margin-bottom: 2.75rem; }
+  .section-label {
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent);
+    border-top: 1px solid var(--rule);
+    padding-top: 0.9rem; margin-bottom: 0.75rem;
+  }
+  .detail-section p { color: var(--ink-mid); margin-bottom: 0.85rem; }
+  .detail-section p:last-child { margin-bottom: 0; }
+  .detail-section strong { color: var(--ink); font-weight: 600; }
+
+  /* ── DETAILS GRID ── */
+  .details-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--paper-mid);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+  .details-grid .cell { padding: 1.4rem 1.5rem; border-left: 1px solid var(--rule); }
+  .details-grid .cell:first-child { border-left: none; }
+  .details-grid .k {
+    font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-light); margin-bottom: 0.3rem;
+  }
+  .details-grid .v { font-size: 0.92rem; color: var(--ink); line-height: 1.45; }
+
+  /* ── FAQ ── */
+  .faq-section { max-width: var(--max-wide); margin: 0 auto; padding: 0 var(--col-pad) 4.5rem; }
+  .faq-section .section-label {
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 1.25rem;
+  }
+  .faq-heading {
+    font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400; color: var(--ink); margin-bottom: 1.75rem; max-width: 680px;
+  }
+  .faq-list { max-width: 720px; }
+  .faq-item { border-bottom: 1px solid var(--rule); }
+  .faq-item:first-child { border-top: 1px solid var(--rule); }
+  .faq-item summary {
+    font-family: var(--sans); font-size: 1rem; font-weight: 600; color: var(--ink);
+    padding: 1.1rem 2.25rem 1.1rem 0; cursor: pointer; list-style: none; position: relative;
+    min-height: 44px; display: flex; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
+    font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--accent); font-weight: 400;
+  }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .faq-item p { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; padding: 0 2.25rem 1.25rem 0; margin: 0; }
+
+  /* ── CTA ── */
+  .engagement-cta { background: var(--accent); padding: 5rem var(--col-pad); text-align: center; }
+  .engagement-cta-inner { max-width: 600px; margin: 0 auto; }
+  .engagement-cta-heading {
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; color: var(--paper); line-height: 1.2; margin-bottom: 1rem;
+  }
+  .engagement-cta-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.75);
+    line-height: 1.75; margin-bottom: 2.5rem;
+  }
+  .btn-paper {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: var(--paper); color: var(--accent);
+    border: 2px solid var(--paper); transition: all 0.2s;
+    margin: 0 0.5rem 0.75rem;
+  }
+  .btn-paper:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .btn-ghost-light {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px;
+    background: transparent; color: rgba(245,242,238,0.8);
+    border: 2px solid rgba(245,242,238,0.35); transition: all 0.2s;
+    margin: 0 0.5rem 0.75rem;
+  }
+  .btn-ghost-light:hover { border-color: rgba(245,242,238,0.8); color: var(--paper); }
+
+  /* ── FOOTER ── */
+  .site-footer { background: var(--ink); padding: 2.75rem var(--col-pad); }
+  .footer-inner {
+    max-width: var(--max-wide); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.25rem;
+  }
+  .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--paper); text-decoration: none; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--paper); }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
+
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .details-grid { grid-template-columns: 1fr 1fr; }
+    .details-grid .cell:nth-child(odd) { border-left: none; }
+    .details-grid .cell:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .details-grid { grid-template-columns: 1fr; }
+    .details-grid .cell { border-left: none; }
+    .details-grid .cell:nth-child(n+2) { border-top: 1px solid var(--rule); }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Neil Catton",
+  "url": "https://www.neilcatton.com/",
+  "image": "https://www.neilcatton.com/images/neil-catton-headshot.jpg",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
+  "sameAs": [
+    "https://writing.neilcatton.com"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "AI Readiness Review",
+      "description": "Where the organisation actually stands on AI — and the decisions, in order, that follow.",
+      "url": "https://www.neilcatton.com/service-ai-readiness-review.html",
+      "provider": {
+        "@type": "Person",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.neilcatton.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Readiness Review",
+          "item": "https://www.neilcatton.com/service-ai-readiness-review.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the review take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Four to six weeks, run as a fixed-scope engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between this and an AI strategy document?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A strategy document sets ambition. This states the organisation's actual position — what data it holds, who governs it, which decisions AI is already shaping — and sequences the decisions that follow, so it can be acted on the week it arrives rather than filed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do we receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A written assessment in language an executive team and board can both read, a sequenced set of decisions — what to do first, what to leave until later — and a plain statement of the real risk exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this only for organisations already using AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — it's equally useful before committing to a pilot, when ambition is ahead of the organisation's actual knowledge of itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is it commercially structured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fixed fee, agreed before the review starts."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html" aria-current="page">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html" aria-current="page">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-enterprise-architecture.html">Enterprise Architecture</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+        <li><a href="service-public-sector-technology.html">Public Sector Technology</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a href="articles.html">Writing</a></li>
+    <li><a href="briefings.html">Briefings</a></li>
+    <li><a href="practice-library.html">Practice Library</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+  </ul>
+</nav>
+
+<header class="detail-header">
+  <div class="detail-header-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li aria-current="page">AI Readiness Review</li>
+      </ol>
+    </nav>
+    <span class="detail-label">Fixed-Scope Engagement</span>
+    <h1 class="detail-title">AI Readiness Review</h1>
+    <p class="detail-standfirst">Where the organisation actually stands on AI&nbsp;&mdash; and the decisions, in order, that follow.</p>
+  </div>
+</header>
+
+<main id="main">
+  <div class="detail-main">
+    <div class="detail-prose">
+      <div class="detail-section">
+        <div class="section-label">When you need this</div>
+        <p>AI ambition has outrun the organisation's knowledge of itself. There are pilots in flight and a strategy with AI on every page, but no one can say with confidence what data the organisation actually holds, who governs it, which decisions are already being shaped by models, or what would happen if a regulator asked.</p>
+        <p>The executive team does not need more ambition. It needs an accurate position.</p>
+      </div>
+      <div class="detail-section">
+        <div class="section-label">The engagement</div>
+        <p>A fixed-scope review over four to six weeks. Structured conversations with the executive team and with the people who actually run the data. A review of the estate as it is &mdash; data, governance, capability, supplier commitments, regulatory exposure &mdash; not as the strategy assumes it to be. Findings are tested with the sponsor before they are written down, so nothing in the final assessment arrives as a surprise.</p>
+      </div>
+      <div class="detail-section">
+        <div class="section-label">What you receive</div>
+        <p>A written assessment of where the organisation stands, in language an executive team and a board can both read. A sequenced set of decisions &mdash; what to do first, what depends on what, what not to do yet. A plain statement of the real risk exposure. This is not a transformation roadmap. It is a decision document the executive team can act on the week it arrives.</p>
+      </div>
+      <div class="detail-section">
+        <div class="section-label">What it changes</div>
+        <p>The AI conversation moves from opinion to position. The executive team can say what it is doing, in what order, and why &mdash; and can show the reasoning to the board, a regulator, or an investor without preparing a defence first.</p>
+      </div>
+      <div class="detail-section">
+        <div class="section-label">Experience</div>
+        <p>Currently architecting an AI and data programme for UK policing custody data &mdash; one of the most demanding accountability environments in which AI decisions are made. Thirty-seven years in technology across 20+ sectors, from computer operator to Group CTO. Author of three books on technology, judgement, and the human consequence of systems.</p>
+      </div>
+    </div>
+
+    <div class="detail-section" style="margin-top:3rem; margin-bottom:0;">
+      <div class="section-label">Engagement details</div>
+    </div>
+    <div class="details-grid">
+      <div class="cell"><div class="k">Format</div><div class="v">Fixed-scope review</div></div>
+      <div class="cell"><div class="k">Duration</div><div class="v">Four to six weeks</div></div>
+      <div class="cell"><div class="k">Output</div><div class="v">Written assessment and decision sequence</div></div>
+      <div class="cell"><div class="k">Commercial basis</div><div class="v">Fixed fee</div></div>
+    </div>
+  </div>
+
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="section-label">Frequently asked</div>
+    <h2 class="faq-heading" id="faq-heading">Questions people ask before booking</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+          <summary>How long does the review take?</summary>
+          <p>Four to six weeks, run as a fixed-scope engagement.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's the difference between this and an AI strategy document?</summary>
+          <p>A strategy document sets ambition. This states the organisation's actual position — what data it holds, who governs it, which decisions AI is already shaping — and sequences the decisions that follow, so it can be acted on the week it arrives rather than filed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What do we receive?</summary>
+          <p>A written assessment in language an executive team and board can both read, a sequenced set of decisions — what to do first, what to leave until later — and a plain statement of the real risk exposure.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this only for organisations already using AI?</summary>
+          <p>No — it's equally useful before committing to a pilot, when ambition is ahead of the organisation's actual knowledge of itself.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is it commercially structured?</summary>
+          <p>A fixed fee, agreed before the review starts.</p>
+        </details>
+    </div>
+  </section>
+
+  <section class="engagement-cta" aria-labelledby="cta-heading">
+    <div class="engagement-cta-inner">
+      <h2 class="engagement-cta-heading" id="cta-heading">Ready to start a conversation?</h2>
+      <p class="engagement-cta-sub">
+        Most engagements begin with a single conversation. No obligation —
+        the right fit matters more than the right brochure.
+      </p>
+      <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-paper" target="_blank" rel="noopener noreferrer">Book a meeting</a>
+      <a href="downloads/neil-catton-ai-readiness-review.pdf" class="btn-ghost-light" download>Download the one-pager (PDF)</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="briefings.html">Briefings</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+<script src="/search.js" defer></script>
+</body>
+</html>

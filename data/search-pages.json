@@ -1,0 +1,31 @@
+{
+  "pages": [
+    { "title": "Home", "url": "/index.html", "section": "Home", "description": "Group CTO, author, and independent technology strategist. Writing at the intersection of technology, ethics, and human purpose." },
+    { "title": "About", "url": "/about.html", "section": "Company", "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions." },
+    { "title": "Services", "url": "/services.html", "section": "Services", "description": "Fractional CTO/CIO, advisory, NED, and interim leadership — three decades across 20+ sectors, from a single board conversation to multi-year programmes." },
+    { "title": "Technology Strategy & Roadmapping", "url": "/service-technology-strategy-roadmapping.html", "section": "Services", "description": "A sequenced technology direction the executive team can own, communicate, and deliver." },
+    { "title": "Fractional CTO / CIO", "url": "/service-fractional-cto-cio.html", "section": "Services", "description": "Senior technology leadership for organisations that need it — without the full-time appointment." },
+    { "title": "AI Board Briefing", "url": "/service-ai-board-briefing.html", "section": "Services", "description": "What the board is actually authorising when it says yes to AI — in one prepared half-day." },
+    { "title": "AI Readiness Review", "url": "/service-ai-readiness-review.html", "section": "Services", "description": "Where the organisation actually stands on AI — and the decisions, in order, that follow." },
+    { "title": "Technology Due Diligence", "url": "/service-technology-due-diligence.html", "section": "Services", "description": "An independent technology assessment a deal team can act on — inside the deal window." },
+    { "title": "Non-Executive Director", "url": "/service-non-executive-director.html", "section": "Services", "description": "Independent board-level scrutiny of technology, AI risk, and digital change." },
+    { "title": "Enterprise Architecture", "url": "/service-enterprise-architecture.html", "section": "Services", "description": "An architecture that serves the organisation using it — not one that exists to be admired." },
+    { "title": "Interim Leadership & Programme Recovery", "url": "/service-interim-programme-recovery.html", "section": "Services", "description": "Senior leadership for the period the organisation cannot afford to get wrong." },
+    { "title": "Data Strategy & Architecture Review", "url": "/service-data-strategy-review.html", "section": "Services", "description": "From a fragmented data estate to a strategy the executive team can own." },
+    { "title": "Cybersecurity & Risk Strategy", "url": "/service-cybersecurity-risk-strategy.html", "section": "Services", "description": "A risk posture that matches actual exposure — not a compliance exercise dressed as security." },
+    { "title": "Public Sector Technology", "url": "/service-public-sector-technology.html", "section": "Services", "description": "Senior technology leadership shaped by three decades inside how public sector decisions actually get made." },
+    { "title": "Keynote Speaking & Executive Masterclasses", "url": "/service-speaking-masterclasses.html", "section": "Services", "description": "Talks on what technology decisions do to the people on the other side of them." },
+    { "title": "Writing — The Next Evolution", "url": "/articles.html", "section": "Writing", "description": "Essays on technology, ethics, and human purpose from The Next Evolution — Neil Catton's Substack for CTOs, board members, and system shapers." },
+    { "title": "The Practice Library", "url": "/practice-library.html", "section": "Writing", "description": "Practical How To reference cards from The Next Evolution trilogy, rebuilt as standalone guidance and published on Substack." },
+    { "title": "Briefings", "url": "/briefings.html", "section": "Briefings", "description": "Free, sourced briefings on AI in UK sectors — the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time." },
+    { "title": "AI in UK Insurance Claims", "url": "/briefing-ai-uk-insurance-claims.html", "section": "Briefings", "description": "A free, sourced briefing on AI in UK insurance claims — the FCA's top 2026 priority, verified fraud cases, and where the opportunity is defensible today." },
+    { "title": "AI in UK Social Housing", "url": "/briefing-ai-uk-social-housing.html", "section": "Briefings", "description": "A free, sourced briefing on AI in UK social housing — Awaab's Law Phase 2, the data-quality thesis, and where the opportunity is defensible today." },
+    { "title": "Books", "url": "/books.html", "section": "Books", "description": "Three books, one argument: what happens when technology outpaces the human systems around it. The Next Evolution trilogy, by Neil Catton." },
+    { "title": "Press & Media", "url": "/press.html", "section": "Press", "description": "Interviews, articles, and external contributions from Neil Catton — technology strategist, author, and Group CTO." },
+    { "title": "CTO Grand Rounds", "url": "/cto-grand-rounds.html", "section": "Programmes", "description": "Neil Catton's sessions on CTO Grand Rounds — a curated panel of senior fractional CTOs reviewing real technical problems for founders and scale-up leadership teams, live." },
+    { "title": "Contact", "url": "/contact.html", "section": "Company", "description": "Start a conversation with Neil Catton — for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation." },
+    { "title": "Privacy Policy", "url": "/privacy.html", "section": "Company", "description": "How Neil Catton's website collects, uses, and protects personal data — including the contact form, analytics, and third-party services in use." },
+    { "title": "Accessibility Statement", "url": "/accessibility.html", "section": "Company", "description": "How this website approaches accessibility, its current WCAG 2.2 AA conformance target, known limitations, and how to report an accessibility issue." },
+    { "title": "Sitemap", "url": "/sitemap.html", "section": "Company", "description": "Every page on neilcatton.com in one place — services, writing, books, press, and contact." }
+  ]
+}

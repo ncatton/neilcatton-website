@@ -1,0 +1,13 @@
+{
+  "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
+  "announcements": [
+    {
+      "id": "cto-grand-rounds-launch",
+      "text": "Now taking part in CTO Grand Rounds — live technical case reviews for founders and scale-up leadership teams.",
+      "link": "cto-grand-rounds.html",
+      "linkText": "View sessions",
+      "date": "2026-07-11",
+      "expires": null
+    }
+  ]
+}

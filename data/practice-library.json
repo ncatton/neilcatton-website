@@ -1,0 +1,12 @@
+{
+  "_about": "Permanent register of every published Practice Library card. The practice-library.html page merges this file with the live Substack section feed — the feed shows the newest cards automatically, this file keeps every card visible after it falls off the feed window. This is also the provenance record: one entry per card, version-controlled, dated. Add an entry INSIDE the cards array as part of publishing each card. See data/README.md.",
+  "cards": [
+    {
+      "title": "How to Address the Ghost in the Machine",
+      "link": "https://writing.neilcatton.com/p/how-to-address-the-ghost-in-the-machine",
+      "date": "2026-07-11",
+      "book": "I",
+      "image": "https://substackcdn.com/image/fetch/$s_!Y_cw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd388b10f-a221-4bb0-a988-a1b57a4da8af_2480x3508.png"
+    }
+  ]
+}
