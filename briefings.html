@@ -5,25 +5,25 @@
 <script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://www.neilcatton.com/cto-grand-rounds.html">
+<link rel="canonical" href="https://www.neilcatton.com/briefings.html">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/images/favicon/site.webmanifest">
 <meta name="theme-color" content="#2b4a6f">
-<title>CTO Grand Rounds — Neil Catton</title>
-<meta name="description" content="Neil Catton's sessions on CTO Grand Rounds — a curated panel of senior fractional CTOs reviewing real technical problems for founders and scale-up leadership teams, live.">
+<title>Briefings — Neil Catton</title>
+<meta name="description" content="Free, sourced briefings on AI in UK sectors — the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.neilcatton.com/cto-grand-rounds.html">
-<meta property="og:title" content="CTO Grand Rounds — Neil Catton">
-<meta property="og:description" content="Neil Catton's sessions on CTO Grand Rounds — a curated panel of senior fractional CTOs reviewing real technical problems for founders and scale-up leadership teams, live.">
+<meta property="og:url" content="https://www.neilcatton.com/briefings.html">
+<meta property="og:title" content="Briefings — Neil Catton">
+<meta property="og:description" content="Free, sourced briefings on AI in UK sectors — the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.">
 <meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CTO Grand Rounds — Neil Catton">
-<meta name="twitter:description" content="Neil Catton's sessions on CTO Grand Rounds — a curated panel of senior fractional CTOs reviewing real technical problems for founders and scale-up leadership teams, live.">
+<meta name="twitter:title" content="Briefings — Neil Catton">
+<meta name="twitter:description" content="Free, sourced briefings on AI in UK sectors — the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.">
 <meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,36 +160,27 @@
     opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards;
   }
 
-  .gr-panel {
+  .method-panel {
     background: rgba(245,242,238,0.06);
     border: 1px solid rgba(212,207,201,0.2);
     padding: 2rem;
     opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards;
   }
-  .gr-panel-label {
+  .method-panel-label {
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em;
     text-transform: uppercase; color: rgba(245,242,238,0.55);
     margin-bottom: 0.75rem; display: block;
   }
-  .gr-panel-name {
+  .method-panel-name {
     font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
     color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem;
   }
-  .gr-panel-desc {
+  .method-panel-desc {
     font-size: 0.9rem; font-weight: 300; line-height: 1.7;
-    color: rgba(245,242,238,0.65); margin-bottom: 1.5rem;
+    color: rgba(245,242,238,0.65);
   }
-  .btn-subscribe {
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-    padding: 0.875rem 1.75rem; min-height: 44px;
-    background: #2b4a6f; color: #f5f2ee;
-    border: 2px solid #2b4a6f; transition: all 0.2s;
-  }
-  .btn-subscribe:hover { background: #f5f2ee; color: #2b4a6f; border-color: #f5f2ee; }
 
-  /* ── FORMAT STRIP ── */
+  /* ── PRINCIPLES STRIP ── */
   .publication-strip { background: #2b4a6f; padding: 3rem var(--col-pad); }
   .publication-inner {
     max-width: var(--max-wide); margin: 0 auto;
@@ -206,71 +197,95 @@
     text-transform: uppercase; color: rgba(245,242,238,0.78);
   }
 
-  /* ── SECTIONS ── */
-  .press-section { padding: 5rem var(--col-pad); }
-  .press-section:nth-child(odd) { background: #f5f2ee; }
-  .press-section:nth-child(even) { background: #ede9e3; }
-  .press-inner { max-width: var(--max-wide); margin: 0 auto; }
+  /* ── BRIEFINGS SECTION ── */
+  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }
+  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }
 
   .section-label {
     font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
     letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652;
-    margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1rem; display: block;
   }
-  .section-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
   .section-heading {
-    font-family: var(--serif);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 0.75rem;
+    font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem;
   }
-  .section-standfirst {
-    font-size: 1rem; font-weight: 300; color: #3d3935;
-    line-height: 1.75; max-width: 640px; margin-bottom: 2.5rem;
-  }
-  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }
+  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2rem; }
 
-  /* ── SESSIONS LIST ── */
-  .rounds-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-  .round-item {
-    padding: 2rem 0;
-    border-top: 1px solid #d4cfc9;
+  /* Search + count row */
+  .library-filters {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;
+    align-items: center;
   }
-  .round-item:last-child { border-bottom: 1px solid #d4cfc9; }
-  .round-name {
-    font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
-    color: #1a1714; margin-bottom: 0.35rem;
+  .briefing-search {
+    flex: 1 1 280px; max-width: 420px;
+    font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
+    background: #fff; border: 1.5px solid #d4cfc9;
+    padding: 0.65rem 1rem; min-height: 44px;
   }
-  .round-meta {
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
-    text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.9rem;
+  .briefing-search:focus-visible { outline: 3px solid #2b4a6f; outline-offset: 1px; }
+  .briefing-search-label {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652;
   }
-  .round-desc {
-    font-size: 0.95rem; font-weight: 400; color: #3d3935; line-height: 1.75;
-    max-width: 720px; margin-bottom: 1rem;
+  .library-count {
+    margin-left: auto; font-size: 0.8rem; color: #5c5652;
   }
-  .round-quote {
-    font-family: var(--serif); font-style: italic; font-size: 1.05rem;
-    color: #1a1714; line-height: 1.6; max-width: 640px;
-    border-left: 2px solid #2b4a6f; padding-left: 1.25rem; margin-bottom: 1.25rem;
+
+  /* Card grid */
+  .briefing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
   }
-  .round-quote cite {
-    display: block; font-family: var(--sans); font-style: normal;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
-    text-transform: uppercase; color: #5c5652; margin-top: 0.6rem;
+  .briefing-card {
+    display: flex; flex-direction: column;
+    background: #fff; border: 1px solid #d4cfc9;
+    padding: 1.75rem 1.75rem 1.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .round-link {
-    display: inline-block;
+  .briefing-card:hover { border-color: #2b4a6f; box-shadow: 0 10px 26px rgba(26,23,20,0.1); }
+  .briefing-card-tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .briefing-tag {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #2b4a6f; border: 1px solid #2b4a6f;
+    padding: 0.2rem 0.55rem;
+  }
+  .briefing-card-title {
+    font-family: var(--serif); font-size: 1.35rem; font-weight: 400;
+    line-height: 1.3; color: #1a1714; text-decoration: none; display: block;
+    margin-bottom: 0.75rem;
+  }
+  .briefing-card-title:hover { color: #2b4a6f; }
+  .briefing-card-standfirst {
+    font-size: 0.92rem; color: #3d3935; line-height: 1.65; margin-bottom: 1.25rem; flex-grow: 1;
+  }
+  .briefing-card-meta {
+    font-size: 0.78rem; color: #5c5652; margin-bottom: 1rem;
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .briefing-card-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .briefing-card-link {
     font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.08em; text-transform: uppercase;
     color: #2b4a6f; text-decoration: none;
-    border-bottom: 1px solid rgba(43,74,111,0.35);
-    padding-bottom: 2px; transition: border-color 0.2s;
   }
-  .round-link:hover { border-color: #2b4a6f; }
+  .briefing-card-link::after { content: " →"; }
+  .briefing-card-link:hover { color: #1a1714; text-decoration: underline; }
+  .briefing-card-download { color: #5c5652; }
+  .briefing-card-download::after { content: " ↓"; }
+  .briefing-card-download:hover { color: #1a1714; text-decoration: underline; }
 
-  .rounds-empty-note {
-    font-size: 0.9rem; color: #5c5652; font-style: italic; padding-top: 1.5rem;
+  .feed-empty {
+    background: #ede9e3; border: 1px solid #d4cfc9;
+    padding: 3rem; text-align: center;
   }
+  .feed-empty-heading {
+    font-family: var(--serif); font-size: 1.5rem; font-weight: 400;
+    color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; max-width: 560px; margin: 0 auto; }
 
   /* ── ABOUT ── */
   .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }
@@ -288,24 +303,17 @@
     color: #1a1714; margin-bottom: 1.25rem;
   }
 
-  .interview-box { margin-top: 0.5rem; }
-  .interview-label {
+  .roadmap-key { margin-top: 0.5rem; }
+  .roadmap-key-label {
     font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
     letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652;
     margin-bottom: 1.25rem; display: block;
   }
-  .interview-card {
-    border: 1px dashed #b8b0a6; padding: 1.75rem;
-    background: rgba(245,242,238,0.5);
-  }
-  .interview-card-title {
-    font-family: var(--serif); font-size: 1.15rem; color: #1a1714; margin-bottom: 0.5rem;
-  }
-  .interview-card-desc {
-    font-size: 0.9rem; color: #5c5652; line-height: 1.65;
+  .roadmap-key p {
+    font-size: 0.95rem; color: #3d3935; line-height: 1.75; margin-bottom: 1.25rem;
   }
 
-  /* ── SUBSCRIBE ── */
+  /* ── SUBSCRIBE / CTA ── */
   .subscribe-section { background: #1a1714; padding: 5rem var(--col-pad); text-align: center; }
   .subscribe-inner { max-width: 860px; margin: 0 auto; }
   .subscribe-heading {
@@ -316,7 +324,6 @@
     font-size: 1rem; font-weight: 300;
     color: rgba(245,242,238,0.7); margin-bottom: 2rem; line-height: 1.7;
   }
-  .subscribe-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
   /* ── BUTTONS ── */
   .btn {
@@ -341,7 +348,7 @@
     flex-wrap: wrap; gap: 1.25rem;
   }
   .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; text-decoration: none; }
-  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
   .footer-links a {
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
     color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s;
@@ -356,14 +363,16 @@
 
   @media (max-width: 860px) {
     .page-header-inner { grid-template-columns: 1fr; }
-    .gr-panel { display: none; }
+    .method-panel { display: none; }
     .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }
     .pub-stat { text-align: left; }
     .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .library-count { margin-left: 0; width: 100%; }
   }
   @media (max-width: 580px) {
     .nav-links { display: none; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
+    .briefing-grid { grid-template-columns: 1fr; }
   }
 </style>
 <script type="application/ld+json">
@@ -377,6 +386,26 @@
   "description": "Group CTO, Non-Executive Director, and author. Over three decades working where large organisations meet complex technology decisions.",
   "sameAs": [
     "https://writing.neilcatton.com"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Briefings",
+      "description": "Free, sourced briefings on AI in UK sectors — the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.",
+      "url": "https://www.neilcatton.com/briefings.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.neilcatton.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Briefings", "item": "https://www.neilcatton.com/briefings.html" }
+      ]
+    }
   ]
 }
 </script>
@@ -407,7 +436,7 @@
       </ul>
     </li>
     <li><a href="articles.html">Writing</a></li>
-    <li><a href="briefings.html">Briefings</a></li>
+    <li><a href="briefings.html" aria-current="page">Briefings</a></li>
     <li><a href="practice-library.html">Practice Library</a></li>
     <li><a href="books.html">Books</a></li>
     <li><a href="press.html">Press</a></li>
@@ -422,118 +451,102 @@
   <header class="page-header" aria-labelledby="page-title">
     <div class="page-header-inner">
       <div>
-        <span class="page-label">Peer review &amp; community</span>
-        <h1 class="page-title" id="page-title">CTO Grand<br><em>Rounds</em></h1>
+        <span class="page-label">Briefings</span>
+        <h1 class="page-title">Sector<br><em>Briefings</em></h1>
         <p class="page-standfirst">
-          A curated panel of senior fractional CTOs reviewing real technical and
-          organisational problems for founders and scale-up leadership teams, live.
-          Neil sits on the Attending Panel for selected sessions.
+          One technology, one sector, one report — the regulatory pressure,
+          the verified threats, and where the opportunity is actually
+          defensible today. Free to read, built only on sources you can
+          check yourself.
         </p>
       </div>
-      <div class="gr-panel" aria-label="About CTO Grand Rounds">
-        <span class="gr-panel-label">Curated by</span>
-        <h2 class="gr-panel-name">CTO Grand Rounds</h2>
-        <p class="gr-panel-desc">
-          A monthly session where independent senior fractional CTOs diagnose real
-          technical problems for founders — live, on camera, with a written follow-up
-          within forty-eight hours.
+      <div class="method-panel" aria-label="How these are built">
+        <span class="method-panel-label">The discipline</span>
+        <h2 class="method-panel-name">Primary sources only</h2>
+        <p class="method-panel-desc">
+          Every figure is checked against a regulator, trade body, ombudsman,
+          legislation, or an operator's own statement. Where a widely-quoted
+          statistic could not be sourced, it was left out — and the
+          exclusion is stated in the briefing itself.
         </p>
-        <a href="https://grandrounds.tech" class="btn-subscribe"
-           target="_blank" rel="noopener noreferrer">
-          View Grand Rounds ↗
-        </a>
       </div>
     </div>
   </header>
 
-  <!-- FORMAT STRIP -->
-  <div class="publication-strip" role="region" aria-label="Session format">
+  <!-- PRINCIPLES STRIP -->
+  <div class="publication-strip" role="region" aria-label="About the briefings">
     <div class="publication-inner">
       <div class="pub-stat">
-        <span class="pub-stat-word">Two cases</span>
-        <span class="pub-stat-label">Reviewed per session</span>
+        <span class="pub-stat-word">Sourced, not sold</span>
+        <span class="pub-stat-label">Vendor statistics excluded on the record</span>
       </div>
       <div class="pub-stat">
-        <span class="pub-stat-word">45 minutes</span>
-        <span class="pub-stat-label">Live, per case</span>
+        <span class="pub-stat-word">One at a time</span>
+        <span class="pub-stat-label">A new sector as each is researched and verified</span>
       </div>
       <div class="pub-stat">
-        <span class="pub-stat-word">48 hours</span>
-        <span class="pub-stat-label">Written follow-up</span>
+        <span class="pub-stat-word">Free, no form</span>
+        <span class="pub-stat-label">Direct download, nothing to fill in</span>
       </div>
     </div>
   </div>
 
-  <!-- SESSIONS -->
-  <section class="press-section" aria-labelledby="sessions-heading">
-    <div class="press-inner">
-      <span class="section-label">Sessions</span>
-      <h2 class="section-heading" id="sessions-heading">Cases reviewed</h2>
-      <p class="section-standfirst">
-        Each session brings two or three independent fractional CTOs together to
-        question a live technical or organisational problem — the panel is free to
-        disagree with each other, and the founder leaves with a written diagnosis
-        rather than a single unchallenged opinion. This page collects the sessions
-        Neil has taken part in.
-      </p>
+  <!-- BRIEFINGS -->
+  <section class="feed-section" aria-labelledby="briefings-heading">
+    <div class="feed-inner">
+      <span class="section-label">Artificial intelligence</span>
+      <h2 class="section-heading" id="briefings-heading">AI across UK sectors</h2>
       <hr class="section-rule" aria-hidden="true">
 
-      <ul class="rounds-list" role="list">
+      <div class="library-filters">
+        <label class="briefing-search-label" for="briefing-search">Search by sector or regulator</label>
+        <input type="search" id="briefing-search" class="briefing-search" placeholder="e.g. insurance, FCA, claims…" autocomplete="off">
+        <span class="library-count" id="briefing-count" aria-live="polite"></span>
+      </div>
 
-        <li class="round-item">
-          <div class="round-name">EURYAN — Engineering AI Validation</div>
-          <span class="round-meta">First virtual session · 7 July 2026 · Founder: David Carroll</span>
-          <p class="round-desc">
-            David Carroll, founder of EURYAN (engineering backgrounds spanning
-            Jaguar Land Rover, Lotus, and McLaren), brought a live case to the panel —
-            contingency planning for enterprise clients, and whether customers will
-            accept the technical moat EURYAN is building around. Neil Catton and
-            Edoardo Turelli reviewed the case together, curated by Jane Vyshnova,
-            Founder of CTO Grand Rounds.
-          </p>
-          <blockquote class="round-quote">
-            &ldquo;The level of seniority and experience the fractional CTOs
-            brought stood out most.&rdquo;
-            <cite>David Carroll, Founder, EURYAN</cite>
-          </blockquote>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7481346616285880320/"
-             class="round-link" target="_blank" rel="noopener noreferrer">Read the session write-up ↗</a>
-        </li>
-
-      </ul>
-
-      <p class="rounds-empty-note">More sessions are added here as they happen.</p>
+      <div id="briefings" aria-live="polite">
+        <div class="feed-empty">
+          <p class="feed-empty-heading">Loading the briefings…</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT / WHY -->
+  <!-- ABOUT -->
   <section class="about-writing" aria-labelledby="about-heading">
     <div class="about-writing-inner">
       <div>
         <h2 class="about-writing-heading" id="about-heading">
-          Why this fits.
+          Why these exist.
         </h2>
         <p>
-          Fractional and interim technology leadership depends on judgement formed
-          outside any single organisation. Grand Rounds sessions are one place that
-          judgement gets tested in the open — a live case, a panel that disagrees
-          where it disagrees, and a founder who leaves with something usable rather
-          than a verdict agreed before the call started.
+          Almost every published statistic about AI in a given sector is
+          produced by a company selling AI into that sector. A briefing that
+          repeats those numbers is indistinguishable from the vendor material
+          a senior stakeholder already ignores.
         </p>
         <p>
-          Neil takes part as one of the Attending Panel's fractional CTOs, alongside
-          a rotating group of senior technology leaders drawn from across the
-          network. Sessions vary case to case — this page collects the ones he has
-          been part of, as they happen.
+          Each report is built the other way round: primary sources first,
+          confidence marked on every claim, exclusions named in the document
+          itself. The reader is assumed to know their sector well and their
+          AI options less well — and to check one figure before trusting the
+          rest.
+        </p>
+        <p>
+          Take the one for your sector. If it isn't here yet, ask.
         </p>
       </div>
 
-      <div class="interview-box">
-        <span class="interview-label">Elsewhere</span>
-        <div class="interview-card">
-          <p class="interview-card-title">Interview / podcast</p>
-          <p class="interview-card-desc">A recorded conversation with CTO Grand Rounds is in the works. Details to follow once it's confirmed.</p>
-        </div>
+      <div class="roadmap-key">
+        <span class="roadmap-key-label">What's coming</span>
+        <p>
+          The first tranche covers AI, sector by sector, across UK financial
+          services, housing, public services, and beyond. Later tranches will
+          take the same discipline to other emerging technologies as they
+          reach the same bar: a named regulator, a public evidence base, and
+          a real human consequence.
+        </p>
+        <a href="contact.html" class="btn btn-secondary" style="margin-top:0.5rem;">Ask about a sector</a>
       </div>
     </div>
   </section>
@@ -541,20 +554,15 @@
   <!-- CTA -->
   <section class="subscribe-section" aria-labelledby="subscribe-heading">
     <div class="subscribe-inner">
-      <h2 class="subscribe-heading" id="subscribe-heading">Facing a technical problem you can't get unstuck?</h2>
+      <h2 class="subscribe-heading" id="subscribe-heading">Want to talk through what it means for you?</h2>
       <p class="subscribe-sub">
-        CTO Grand Rounds selects two cases per session for review by the Attending
-        Panel. Applications and upcoming sessions are on their site.
+        Most engagements begin with a single conversation, after someone has
+        already read the briefing.
       </p>
-      <div class="subscribe-btns">
-        <a href="https://grandrounds.tech" class="btn btn-inverse"
-           target="_blank" rel="noopener noreferrer">
-          View Grand Rounds ↗
-        </a>
-        <a href="contact.html" class="btn btn-secondary" style="border-color:#f5f2ee;color:#f5f2ee;">
-          Talk to Neil directly
-        </a>
-      </div>
+      <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn btn-inverse"
+         target="_blank" rel="noopener noreferrer">
+        Book a meeting
+      </a>
     </div>
   </section>
 
@@ -572,9 +580,9 @@
         <li><a href="practice-library.html">Practice Library</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="press.html">Press</a></li>
-        <li><a href="cto-grand-rounds.html" aria-current="page">CTO Grand Rounds</a></li>
+        <li><a href="cto-grand-rounds.html">CTO Grand Rounds</a></li>
         <li><a href="contact.html">Contact</a></li>
-    <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
         <li><a href="accessibility.html">Accessibility</a></li>
         <li><a href="privacy.html">Privacy</a></li>
       </ul>
@@ -589,6 +597,106 @@
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   }, { passive: true });
+
+  /* ── BRIEFINGS ──
+     Reads data/briefings.json — the permanent register of published sector
+     briefings. Unlike the Practice Library, there is no live feed to merge:
+     each entry is added by hand when a sector report is published. */
+
+  let allBriefings = [];
+
+  function fmtDate(str) {
+    try {
+      const d = new Date(str);
+      if (isNaN(d)) return "";
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    } catch(e) { return ""; }
+  }
+
+  function escapeHTML(s) {
+    return (s || "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[c]));
+  }
+
+  async function loadBriefings() {
+    try {
+      const r = await fetch("data/briefings.json");
+      if (!r.ok) { allBriefings = []; render(""); return; }
+      const data = await r.json();
+      allBriefings = Array.isArray(data.briefings) ? data.briefings : [];
+    } catch(e) {
+      allBriefings = [];
+    }
+    render("");
+  }
+
+  function render(query) {
+    const el = document.getElementById("briefings");
+    const countEl = document.getElementById("briefing-count");
+    const q = (query || "").trim().toLowerCase();
+
+    const items = !q ? allBriefings : allBriefings.filter(b =>
+      (b.sector + " " + b.regulator + " " + b.title + " " + b.technology)
+        .toLowerCase().includes(q)
+    );
+
+    if (!allBriefings.length) {
+      countEl.textContent = "";
+      el.innerHTML = `
+        <div class="feed-empty">
+          <p class="feed-empty-heading">The first briefing is on its way.</p>
+          <p class="feed-empty-body">
+            Each one takes real research time, sector by sector. This page
+            picks them up as soon as they're published.
+          </p>
+        </div>`;
+      return;
+    }
+
+    countEl.textContent = items.length === 1 ? "1 briefing" : items.length + " briefings";
+
+    if (!items.length) {
+      el.innerHTML = `
+        <div class="feed-empty">
+          <p class="feed-empty-heading">Nothing matches that search.</p>
+          <p class="feed-empty-body">Try a sector name, a regulator, or clear the search to see everything published so far.</p>
+        </div>`;
+      return;
+    }
+
+    const grid = document.createElement("div");
+    grid.className = "briefing-grid";
+    items.forEach(b => {
+      const art = document.createElement("article");
+      art.className = "briefing-card";
+      art.innerHTML = `
+        <div class="briefing-card-tags">
+          <span class="briefing-tag">${escapeHTML(b.technology)}</span>
+          <span class="briefing-tag">${escapeHTML(b.regulator)}</span>
+        </div>
+        <a class="briefing-card-title" href="${b.page}">${escapeHTML(b.title)}</a>
+        <p class="briefing-card-standfirst">${escapeHTML(b.standfirst)}</p>
+        <p class="briefing-card-meta">
+          <span>${b.pages} pages</span>
+          <span>&middot;</span>
+          <span>Published ${fmtDate(b.date)}</span>
+        </p>
+        <div class="briefing-card-links">
+          <a class="briefing-card-link" href="${b.page}">Read the briefing</a>
+          <a class="briefing-card-link briefing-card-download" href="${b.pdf}" download>Download PDF</a>
+        </div>`;
+      grid.appendChild(art);
+    });
+    el.innerHTML = "";
+    el.appendChild(grid);
+  }
+
+  document.getElementById("briefing-search").addEventListener("input", (e) => {
+    render(e.target.value);
+  });
+
+  loadBriefings();
 </script>
 
 <script src="/search.js" defer></script>
