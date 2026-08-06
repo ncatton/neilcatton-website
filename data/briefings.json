@@ -1,5 +1,5 @@
 {
-  "_about": "Permanent register of every published Briefings sector report. One entry per published sector — add an entry here when a sector's status in the AI Landscape sector-report-tracker.md moves to Published. The briefings.html page reads this file directly (no live feed, unlike the Practice Library — these are not Substack posts).",
+  "_about": "Permanent register of every published Briefings sector report. One entry per published sector — add an entry here when a sector's status in the AI Landscape sector-report-tracker.md moves to Published. The briefings.html page reads this file directly (no live feed, unlike the Practice Library — these are not Substack posts). 'image' is optional — a card thumbnail from the sector's Data Poster series (gold/Cormorant sub-brand); cards render fine without one.",
   "briefings": [
     {
       "id": "SAR-001",
@@ -12,7 +12,9 @@
       "date": "2026-08-02",
       "pages": 16,
       "page": "briefing-ai-uk-insurance-claims.html",
-      "pdf": "downloads/briefings/ai-in-uk-insurance-claims.pdf"
+      "pdf": "downloads/briefings/ai-in-uk-insurance-claims.pdf",
+      "image": "images/briefings/insurance-claims-card.jpg",
+      "imageAlt": "The first mover on AI in UK claims wasn't the insurer — 95% of insurers already use AI, 46% report only partial understanding, £174m in fraud cases combatted"
     },
     {
       "id": "SAR-002",
