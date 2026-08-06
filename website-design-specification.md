@@ -120,6 +120,7 @@ Validate every new template with the Rich Results Test before treating it as don
 - **Social share image.** A single, properly sized (1200×630px) Open Graph image served over HTTPS — already correct.
 - **Favicon set.** A full modern favicon set (`.ico`, 16×16, 32×32, apple-touch-icon, `site.webmanifest`) — already present and correct.
 - **Rights.** No image goes live without confirmed usage rights — Neil's own photography and headshots, so not currently a risk area.
+- **Rendered/generated graphics (Data Poster figures, framework diagrams, etc.).** Any raster image derived from an HTML artefact must be produced by rendering the source HTML directly to a high-resolution raster — never by screenshotting a browser window and cropping or scaling it. Screenshot-based capture visibly softens text at any zoom or crop step; it produced blurry, barely-legible in-article and social images on the first attempt at the AI-in-UK-insurance-claims briefing (August 2026) and was fully rebuilt as a result. See the `briefing-infographic` skill for the exact pipeline (weasyprint + locally embedded brand fonts + PyMuPDF rasterisation) — it applies to every Data Poster image this site publishes, not just that one.
 
 ---
 
