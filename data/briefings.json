@@ -1,5 +1,6 @@
 {
   "_about": "Permanent register of every published Briefings sector report. One entry per published sector — add an entry here when a sector's status in the AI Landscape sector-report-tracker.md moves to Published. The briefings.html page reads this file directly (no live feed, unlike the Practice Library — these are not Substack posts). 'image' is optional — a card thumbnail from the sector's Data Poster series (gold/Cormorant sub-brand); cards render fine without one.",
+  "_aboutCollaborations": "Second, separate register for briefings co-authored with a named industry practitioner — same card fields as 'briefings' above, plus two more: 'collaboratorName' (required to trigger the byline) and 'collaboratorTitle' (optional, appended after a comma — e.g. 'Head of Claims Transformation, XYZ Insurance'). Rendered in its own Collaborations section on briefings.html with its own empty-state copy. Add an entry here, not to 'briefings', when a collaboration is published.",
   "briefings": [
     {
       "id": "SAR-001",
@@ -42,5 +43,6 @@
       "page": "briefing-ai-uk-energy-retail.html",
       "pdf": "downloads/briefings/ai-in-uk-energy-retail.pdf"
     }
-  ]
+  ],
+  "collaborations": []
 }
