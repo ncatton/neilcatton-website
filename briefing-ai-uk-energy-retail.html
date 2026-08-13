@@ -18,13 +18,13 @@
 <meta property="og:url" content="https://www.neilcatton.com/briefing-ai-uk-energy-retail.html">
 <meta property="og:title" content="AI in UK Energy Retail — Briefing — Neil Catton">
 <meta property="og:description" content="A free, sourced briefing on AI in UK energy retail — Ofgem's open AI assurance consultation, the customer record behind every decision, and where the opportunity is defensible today.">
-<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/briefing-energy-retail-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI in UK Energy Retail — Briefing — Neil Catton">
 <meta name="twitter:description" content="A free, sourced briefing on AI in UK energy retail — Ofgem's open AI assurance consultation, the customer record behind every decision, and where the opportunity is defensible today.">
-<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/briefing-energy-retail-og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -177,6 +177,12 @@
   .detail-main { max-width: var(--max-wide); margin: 0 auto; padding: 4rem var(--col-pad) 4.5rem; }
   .detail-prose { max-width: 680px; }
   .detail-section { margin-bottom: 2.75rem; }
+  .detail-figure { margin: 2rem 0; }
+  .detail-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+  .detail-figure figcaption {
+    font-family: var(--sans); font-size: 0.8rem; color: var(--ink-light);
+    line-height: 1.6; margin-top: 0.6rem;
+  }
   .section-label {
     font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
     letter-spacing: 0.18em; text-transform: uppercase;
@@ -459,6 +465,15 @@
         <p>Domestic satisfaction with energy suppliers reached an all-time high of 82% in August 2025. Complaints are at their lowest level since 2022. The Energy Ombudsman accepted 14% fewer cases in 2025 than in 2024. Over the same period, domestic debt and arrears reached a record £4.79bn, arrears with no repayment plan grew to roughly three times the size of managed debt, and more than 279,000 electricity customers on prepayment meters went over three hours without power in a single quarter.</p>
         <p>Both sets of numbers are Ofgem's. They are not in conflict — they are measuring different people. Satisfaction runs at 88% among consumers doing well and 67% among those behind on their bills. Suppliers correctly signposted consumers to the Ombudsman in an average of 48% of cases, and the Chief Ombudsman has said publicly that up to 75% of those who could use the service never do. The measures look best precisely where the customer is least likely to be in trouble, and a model trained on that record inherits the blindness and applies it at scale.</p>
       </div>
+
+      <figure class="detail-figure">
+        <picture>
+          <source srcset="images/briefings/energy-retail-full-briefing.webp" type="image/webp">
+          <img src="images/briefings/energy-retail-full-briefing.jpg" alt="Every service measure is improving. Every measure of debt is getting worse — 82% satisfaction, £4.79bn domestic debt and arrears up 15% on the year, 48% of eligible cases correctly signposted to the Energy Ombudsman, satisfaction by cohort from 88% doing well to 67% behind on bills, Ofgem's compensation price list from £40–60 up to £1,000, and 279,430 electricity customers self-disconnected for over three hours in Q1 2026" width="680" height="986" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>From the full briefing's market and debt data — sources listed in the document.</figcaption>
+      </figure>
+
       <div class="detail-section">
         <div class="section-label">The human moment</div>
         <p>A household on a smart prepayment meter runs out of credit. The meter tells the supplier. Nothing happens. In its June 2026 settlement with OVO, Ofgem found that the supplier "did not consistently support customers who self-disconnected from their energy supply" and that in some cases customers who had run out of credit received no communication or follow-up at all. No domestic customer has been formally disconnected for non-payment since the first quarter of 2023 — which is not the same as saying nobody's supply stops. The technology to detect this has existed for years. Detection was never the problem.</p>
