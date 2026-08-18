@@ -306,6 +306,54 @@
   }
   .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; max-width: 560px; margin: 0 auto; }
 
+  /* ── TOOLS ── */
+  .tools-section { background: #ede9e3; padding: 5rem var(--col-pad); }
+  .tools-inner { max-width: var(--max-wide); margin: 0 auto; }
+  .tools-intro {
+    font-size: 1.0625rem; font-weight: 400; line-height: 1.8;
+    color: #3d3935; max-width: 640px; margin-bottom: 3rem;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .tool-card {
+    background: #f5f2ee;
+    border: 1px solid #d4cfc9;
+    padding: 2.25rem 2rem;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .tool-card--live:hover {
+    border-color: #2b4a6f; box-shadow: 0 10px 26px rgba(26,23,20,0.1);
+    transform: translateY(-2px);
+  }
+  .tool-card--soon { border-style: dashed; }
+  .tool-card-status {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    margin-bottom: 1.25rem; color: #2b4a6f;
+  }
+  .tool-card-status::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: #2b4a6f; flex-shrink: 0;
+  }
+  .tool-card--soon .tool-card-status { color: #5c5652; }
+  .tool-card--soon .tool-card-status::before { background: #a8a29b; }
+  .tool-card-title {
+    font-family: var(--serif); font-size: 1.4rem; font-weight: 400;
+    line-height: 1.3; color: #1a1714; margin-bottom: 0.75rem;
+  }
+  .tool-card--soon .tool-card-title { color: #5c5652; }
+  .tool-card-desc {
+    font-size: 0.92rem; line-height: 1.7; color: #3d3935;
+    margin-bottom: 1.75rem; flex-grow: 1;
+  }
+  .tool-card--soon .tool-card-desc { color: #5c5652; }
+  .tool-card-cta { align-self: flex-start; }
+
   /* ── ABOUT ── */
   .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }
   .about-writing-inner {
@@ -391,6 +439,7 @@
     .pub-stat { text-align: left; }
     .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }
     .library-count { margin-left: 0; width: 100%; }
+    .tools-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 580px) {
     .nav-links { display: none; }
@@ -440,7 +489,13 @@
     </li>
     <li><a href="articles.html">Writing</a></li>
     <li><a href="briefings.html">Briefings</a></li>
-    <li><a href="practice-library.html" aria-current="page">Practice Library</a></li>
+    <li class="nav-dropdown">
+      <a href="practice-library.html" aria-current="page">Practice Library <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="practice-library.html#collection">The Collection</a></li>
+        <li><a href="practice-library.html#tools">Tools</a></li>
+      </ul>
+    </li>
     <li><a href="books.html">Books</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -499,7 +554,7 @@
   </div>
 
   <!-- LIBRARY -->
-  <section class="feed-section" aria-labelledby="library-heading">
+  <section class="feed-section" id="collection" aria-labelledby="library-heading">
     <div class="feed-inner">
       <span class="section-label">The collection</span>
       <h2 class="section-heading" id="library-heading">Every card, as published</h2>
@@ -515,6 +570,49 @@
 
       <div id="library" aria-live="polite">
         <div class="feed-loading">Loading the collection…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="tools-section" id="tools" aria-labelledby="tools-heading">
+    <div class="tools-inner">
+      <span class="section-label">Beyond the page</span>
+      <h2 class="section-heading" id="tools-heading">Some cards became tools.</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <p class="tools-intro">
+        A few of the books' instruments are built to run themselves —
+        completed on screen, scored live, with a result handed back in
+        minutes rather than after buying the book. This is where those live.
+      </p>
+
+      <div class="tools-grid">
+        <article class="tool-card tool-card--live">
+          <span class="tool-card-status">Live</span>
+          <h3 class="tool-card-title">Predictive Purpose</h3>
+          <p class="tool-card-desc">
+            The self-assessment diagnostic from the book — eight dimensions,
+            forty statements, a profile and a result in about fifteen minutes.
+          </p>
+          <a href="https://tool.neilcatton.com" class="btn btn-secondary tool-card-cta"
+             target="_blank" rel="noopener noreferrer">Open the tool</a>
+        </article>
+
+        <article class="tool-card tool-card--soon" aria-disabled="true">
+          <span class="tool-card-status">Coming soon</span>
+          <h3 class="tool-card-title">New tool coming soon</h3>
+          <p class="tool-card-desc">
+            Another instrument from the books, built the same way.
+          </p>
+        </article>
+
+        <article class="tool-card tool-card--soon" aria-disabled="true">
+          <span class="tool-card-status">Coming soon</span>
+          <h3 class="tool-card-title">New tool coming soon</h3>
+          <p class="tool-card-desc">
+            Another instrument from the books, built the same way.
+          </p>
+        </article>
       </div>
     </div>
   </section>
