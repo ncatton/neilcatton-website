@@ -48,5 +48,21 @@
       "imageAlt": "Every service measure is improving. Every measure of debt is getting worse — 82% satisfaction, £4.79bn debt and arrears, 48% Ombudsman signposting rate"
     }
   ],
-  "collaborations": []
+  "collaborations": [
+    {
+      "id": "COL-001",
+      "sector": "Model risk management",
+      "technology": "AI",
+      "title": "When the Model Said It Was Fine",
+      "standfirst": "The US has just excluded agentic AI from its flagship model risk framework. European supervisors have answered by restating the frameworks they already have. A joint examination of the discipline financial services built to govern models — and why, on its own terms, it no longer reaches what AI now deploys.",
+      "regulator": "PRA / Fed / ECB",
+      "humanMoment": "The named signature on the annual MRM attestation",
+      "date": "2026-08-07",
+      "pages": 21,
+      "page": "briefing-model-risk-management-ai.html",
+      "pdf": "downloads/briefings/when-the-model-said-it-was-fine.pdf",
+      "collaboratorName": "Lukas Ziewer",
+      "collaboratorTitle": "Senior Advisor, Risk Strategists, Regulatory Solutions"
+    }
+  ]
 }
