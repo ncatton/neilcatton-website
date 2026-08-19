@@ -34,8 +34,12 @@ import { dirname, join } from "node:path";
 // Read (rather than `import ... with { type: "json" }`) so this doesn't
 // depend on a specific Node version's support for JSON import attributes —
 // Netlify's Functions runtime version can change independently of this code.
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const corpus = JSON.parse(readFileSync(join(__dirname, "lib", "practice-corpus.json"), "utf8"));
+// NOTE: not named `__dirname` — Netlify's esbuild bundler injects its own
+// `__dirname` shim into bundled ESM functions, and a second `const
+// __dirname` at module scope collides with it ("Identifier '__dirname' has
+// already been declared"). Own name, no collision.
+const moduleDir = dirname(fileURLToPath(import.meta.url));
+const corpus = JSON.parse(readFileSync(join(moduleDir, "lib", "practice-corpus.json"), "utf8"));
 
 const MODEL = "claude-sonnet-5";
 const MAX_INPUT_CHARS = 3000;
