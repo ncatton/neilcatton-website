@@ -1,6 +1,14 @@
 [build]
   functions = "netlify/functions"
 
+[functions]
+  # generate-plan.mjs reads netlify/functions/lib/practice-corpus.json via
+  # fs.readFileSync at runtime rather than a static import, so esbuild's
+  # dependency scan won't pick it up on its own — it has to be listed here
+  # explicitly or the deployed function 404s trying to read a file that
+  # never made it into the bundle.
+  included_files = ["netlify/functions/lib/*.json"]
+
 [[redirects]]
   from = "/substack-feed"
   to = "/.netlify/functions/substack-feed"
@@ -19,6 +27,11 @@
   status = 200
   force = true
 
+# generate-plan.mjs is a v2 (Streaming) function and declares its own route
+# via `export const config = { path: "/generate-plan" }` in the function
+# file itself, so — unlike the classic functions above — it needs no
+# corresponding [[redirects]] entry here.
+
 # ── Security headers ──
 # Content-Security-Policy allowlist built from every third-party origin
 # referenced in the codebase as of 23 July 2026 (Plausible, Google Fonts,
@@ -35,6 +48,11 @@
 # means the policy doesn't stop inline-script injection the way a
 # nonce-based CSP would; tightening that properly would mean externalising
 # every page's inline CSS/JS, which is a larger rebuild, not a header change.
+#
+# connect-src does NOT need an AI Gateway / Anthropic origin added — the
+# browser only ever calls same-origin /generate-plan (covered by 'self');
+# the call to Claude happens server-side inside the Netlify Function, which
+# isn't subject to the page's CSP at all.
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,0 +1,8 @@
+{
+  "name": "neilcatton-website",
+  "private": true,
+  "description": "Static site + Netlify Functions for neilcatton.com. No frontend build step — this package.json exists solely so Netlify installs the dependency the plan-generator function needs before bundling.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1"
+  }
+}
