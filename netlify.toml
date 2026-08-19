@@ -27,10 +27,26 @@
   status = 200
   force = true
 
-# generate-plan.mjs is a v2 (Streaming) function and declares its own route
-# via `export const config = { path: "/generate-plan" }` in the function
-# file itself, so — unlike the classic functions above — it needs no
-# corresponding [[redirects]] entry here.
+# generate-plan.mjs calls Claude twice per request via paid AI Gateway
+# credits, so this route carries Netlify's native rate limiting rather than
+# a bare redirect — 6 requests per IP per 60 seconds. That's generous enough
+# for a genuine reader plus a couple of "different angle" regenerations, but
+# stops a script from running the meter up. Deliberately routed through this
+# redirect (rather than the function's own path) since rate_limit is a
+# redirects-only feature — see the note at the top of generate-plan.mjs.
+# Tune window_limit up if real usage turns out to hit this in normal use.
+[[redirects]]
+  from = "/generate-plan"
+  to = "/.netlify/functions/generate-plan"
+  status = 200
+  force = true
+
+  [redirects.rate_limit]
+    window_limit = 6
+    window_size = 60
+    aggregate_by = ["ip", "domain"]
+    action = "rewrite"
+    to = "/rate-limited.html"
 
 # ── Security headers ──
 # Content-Security-Policy allowlist built from every third-party origin

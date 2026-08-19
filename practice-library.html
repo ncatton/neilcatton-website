@@ -243,6 +243,23 @@
     margin-left: auto; font-size: 0.8rem; color: #5c5652;
   }
 
+  /* Book groups — the collection is grouped by book rather than shown as
+     one flat "All" grid, so the page stays scannable as it grows past a
+     handful of cards toward the full 62. */
+  .book-group { margin-bottom: 4rem; }
+  .book-group:last-child { margin-bottom: 0; }
+  .book-group-header {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem 1rem;
+    margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1px solid #d4cfc9;
+  }
+  .book-group-swatch { width: 13px; height: 13px; flex-shrink: 0; transform: translateY(1px); }
+  .book-group-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: #1a1714; }
+  .book-group-tagline {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #5c5652;
+  }
+  .book-group-count { margin-left: auto; font-size: 0.8rem; color: #5c5652; }
+
   /* Card grid — portrait tiles, the cards are A4 */
   .library-grid {
     display: grid;
@@ -492,8 +509,8 @@
     <li class="nav-dropdown">
       <a href="practice-library.html" aria-current="page">Practice Library <span class="caret" aria-hidden="true">&#9662;</span></a>
       <ul class="dropdown-menu" role="list">
-        <li><a href="practice-library.html#collection">The Collection</a></li>
         <li><a href="practice-library.html#tools">Tools</a></li>
+        <li><a href="practice-library.html#collection">The Collection</a></li>
       </ul>
     </li>
     <li><a href="books.html">Books</a></li>
@@ -553,27 +570,6 @@
     </div>
   </div>
 
-  <!-- LIBRARY -->
-  <section class="feed-section" id="collection" aria-labelledby="library-heading">
-    <div class="feed-inner">
-      <span class="section-label">The collection</span>
-      <h2 class="section-heading" id="library-heading">Every card, as published</h2>
-      <hr class="section-rule" aria-hidden="true">
-
-      <div class="library-filters" role="group" aria-label="Filter cards by book">
-        <button class="filter-btn" data-book="all" aria-pressed="true">All</button>
-        <button class="filter-btn" data-book="I" aria-pressed="false">The Next Evolution</button>
-        <button class="filter-btn" data-book="II" aria-pressed="false">The Cognitive Crucible</button>
-        <button class="filter-btn" data-book="III" aria-pressed="false">The Shadow System</button>
-        <span class="library-count" id="library-count" aria-live="polite"></span>
-      </div>
-
-      <div id="library" aria-live="polite">
-        <div class="feed-loading">Loading the collection…</div>
-      </div>
-    </div>
-  </section>
-
   <!-- TOOLS -->
   <section class="tools-section" id="tools" aria-labelledby="tools-heading">
     <div class="tools-inner">
@@ -616,6 +612,27 @@
             Another instrument from the books, built the same way.
           </p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section class="feed-section" id="collection" aria-labelledby="library-heading">
+    <div class="feed-inner">
+      <span class="section-label">The collection</span>
+      <h2 class="section-heading" id="library-heading">Every card, as published</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="library-filters" role="group" aria-label="Filter cards by book">
+        <button class="filter-btn" data-book="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-book="I" aria-pressed="false">The Next Evolution</button>
+        <button class="filter-btn" data-book="II" aria-pressed="false">The Cognitive Crucible</button>
+        <button class="filter-btn" data-book="III" aria-pressed="false">The Shadow System</button>
+        <span class="library-count" id="library-count" aria-live="polite"></span>
+      </div>
+
+      <div id="library" aria-live="polite">
+        <div class="feed-loading">Loading the collection…</div>
       </div>
     </div>
   </section>
@@ -733,6 +750,11 @@
     "II":  "The Cognitive Crucible",
     "III": "The Shadow System"
   };
+  const BOOK_TAGLINES = { "I": "Awareness", "II": "Agency", "III": "Action" };
+  // Display order for book groups — matches the books' own reading order,
+  // not chronological. "" (feed items not yet in the register — see the
+  // loadLibrary comment below) sorts last as "Not yet catalogued".
+  const BOOK_ORDER = ["I", "II", "III", ""];
 
   let allCards = [];
   let activeBook = "all";
@@ -804,6 +826,54 @@
     render();
   }
 
+  function buildCardArticle(c) {
+    const art = document.createElement("article");
+    art.className = "library-card";
+    if (c.book) art.setAttribute("data-book", c.book);
+    const bookName = BOOK_NAMES[c.book] || "The Practice Library";
+    const img = c.image
+      ? `<img src="${c.image}" alt="${escapeHTML(c.title)} — reference card" loading="lazy">`
+      : `<span class="library-card-placeholder">${escapeHTML(c.title)}</span>`;
+    art.innerHTML = `
+      <a class="library-card-imgwrap" href="${c.link}" target="_blank" rel="noopener noreferrer"
+         aria-hidden="true" tabindex="-1">${img}</a>
+      <span class="library-card-book">${escapeHTML(bookName)}</span>
+      <a class="library-card-title" href="${c.link}" target="_blank" rel="noopener noreferrer">${escapeHTML(c.title)}</a>
+      <p class="library-card-date">${fmtDate(c.date)}</p>
+      <a class="library-card-link" href="${c.link}" target="_blank" rel="noopener noreferrer"
+         aria-hidden="true" tabindex="-1">View on Substack</a>`;
+    return art;
+  }
+
+  // Renders one book's section — heading (swatch, title, tagline, count)
+  // plus its own card grid. Kept separate from render() so the "All" view
+  // can just call this once per book rather than duplicating the markup.
+  function buildBookGroup(book, cards) {
+    const wrap = document.createElement("div");
+    wrap.className = "book-group";
+    wrap.setAttribute("data-book", book || "uncatalogued");
+
+    const bookName = BOOK_NAMES[book] || "Not yet catalogued";
+    const tagline = BOOK_TAGLINES[book];
+    const swatch = book ? `<span class="book-group-swatch" style="background:var(--book-${book === "I" ? 1 : book === "II" ? 2 : 3});" aria-hidden="true"></span>` : "";
+
+    const header = document.createElement("div");
+    header.className = "book-group-header";
+    header.innerHTML = `
+      ${swatch}
+      <h3 class="book-group-title">${escapeHTML(bookName)}</h3>
+      ${tagline ? `<span class="book-group-tagline">${escapeHTML(tagline)}</span>` : ""}
+      <span class="book-group-count">${cards.length === 1 ? "1 card" : cards.length + " cards"}</span>`;
+    wrap.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "library-grid";
+    cards.forEach(c => grid.appendChild(buildCardArticle(c)));
+    wrap.appendChild(grid);
+
+    return wrap;
+  }
+
   function render() {
     const el = document.getElementById("library");
     const countEl = document.getElementById("library-count");
@@ -836,28 +906,33 @@
       return;
     }
 
-    const grid = document.createElement("div");
-    grid.className = "library-grid";
-    cards.forEach(c => {
-      const art = document.createElement("article");
-      art.className = "library-card";
-      if (c.book) art.setAttribute("data-book", c.book);
-      const bookName = BOOK_NAMES[c.book] || "The Practice Library";
-      const img = c.image
-        ? `<img src="${c.image}" alt="${escapeHTML(c.title)} — reference card" loading="lazy">`
-        : `<span class="library-card-placeholder">${escapeHTML(c.title)}</span>`;
-      art.innerHTML = `
-        <a class="library-card-imgwrap" href="${c.link}" target="_blank" rel="noopener noreferrer"
-           aria-hidden="true" tabindex="-1">${img}</a>
-        <span class="library-card-book">${escapeHTML(bookName)}</span>
-        <a class="library-card-title" href="${c.link}" target="_blank" rel="noopener noreferrer">${escapeHTML(c.title)}</a>
-        <p class="library-card-date">${fmtDate(c.date)}</p>
-        <a class="library-card-link" href="${c.link}" target="_blank" rel="noopener noreferrer"
-           aria-hidden="true" tabindex="-1">View on Substack</a>`;
-      grid.appendChild(art);
-    });
     el.innerHTML = "";
-    el.appendChild(grid);
+
+    if (activeBook !== "all") {
+      // A single book is already its own group — no need for a second
+      // heading on top of the filter that's already showing which one.
+      const grid = document.createElement("div");
+      grid.className = "library-grid";
+      cards.forEach(c => grid.appendChild(buildCardArticle(c)));
+      el.appendChild(grid);
+      return;
+    }
+
+    // "All" — group by book (Next Evolution, Cognitive Crucible, Shadow
+    // System, then anything not yet matched to a book) rather than one
+    // flat chronological grid, so the page stays scannable as the
+    // collection grows toward the full 62 cards.
+    const byBook = new Map();
+    cards.forEach(c => {
+      const key = c.book || "";
+      if (!byBook.has(key)) byBook.set(key, []);
+      byBook.get(key).push(c);
+    });
+
+    BOOK_ORDER.forEach(book => {
+      const group = byBook.get(book);
+      if (group && group.length) el.appendChild(buildBookGroup(book, group));
+    });
   }
 
   function escapeHTML(s) {

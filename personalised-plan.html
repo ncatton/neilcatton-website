@@ -215,7 +215,19 @@
     font-size: 1rem; color: #3d3935; line-height: 1.8; margin-top: 2.5rem;
     padding-top: 2rem; border-top: 1px solid #d4cfc9;
   }
-  .plan-again { margin-top: 2.5rem; }
+  .plan-again { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }
+  .plan-copy-feedback {
+    font-size: 0.8rem; color: #2b4a6f; font-weight: 600;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .plan-copy-feedback.is-visible { opacity: 1; }
+
+  .plan-shared-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #2b4a6f; margin-bottom: 1.5rem;
+  }
+  .plan-shared-badge::before { content: ""; width: 8px; height: 8px; background: #2b4a6f; flex-shrink: 0; }
 
   .plan-declined, .plan-error {
     background: #ede9e3; border: 1px solid #d4cfc9; padding: 2.25rem;
@@ -350,11 +362,15 @@
       </div>
 
       <div class="plan-result" id="plan-result" aria-live="polite">
+        <p class="plan-shared-badge" id="plan-shared-badge" style="display:none;">Someone shared this plan with you</p>
         <p class="plan-summary" id="plan-summary"></p>
         <ul class="plan-items" id="plan-items"></ul>
         <p class="plan-closing" id="plan-closing"></p>
         <div class="plan-again">
+          <button type="button" class="btn btn-secondary" id="plan-regenerate">Show a different angle</button>
+          <button type="button" class="btn btn-secondary" id="plan-copy">Copy link to this plan</button>
           <button type="button" class="btn btn-secondary" id="plan-restart">Describe something else</button>
+          <span class="plan-copy-feedback" id="plan-copy-feedback">Link copied</span>
         </div>
       </div>
     </div>
@@ -401,10 +417,20 @@
   const errorEl = document.getElementById("plan-error");
   const errorText = document.getElementById("plan-error-text");
   const resultEl = document.getElementById("plan-result");
+  const sharedBadge = document.getElementById("plan-shared-badge");
   const summaryEl = document.getElementById("plan-summary");
   const itemsEl = document.getElementById("plan-items");
   const closingEl = document.getElementById("plan-closing");
   const restartBtn = document.getElementById("plan-restart");
+  const regenerateBtn = document.getElementById("plan-regenerate");
+  const copyBtn = document.getElementById("plan-copy");
+  const copyFeedback = document.getElementById("plan-copy-feedback");
+
+  // Tracks the situation behind the plan currently on screen, so "show a
+  // different angle" can resubmit it — null when viewing a shared plan
+  // (share links carry the finished plan, not the original free text).
+  let currentSituation = null;
+  let currentPlan = null;
 
   function escapeHTML(s) {
     return (s || "").replace(/[&<>"']/g, c => ({
@@ -427,7 +453,41 @@
     } catch(e) { return ""; }
   }
 
-  function renderPlan(plan) {
+  // ── Share-link encoding ──
+  // The plan already only contains items validated against the real corpus
+  // server-side, so a share link can carry the finished result directly —
+  // reopening it just re-renders, no new Claude call, no cost.
+  function encodePlanState(plan) {
+    const compact = {
+      v: 1,
+      summary: plan.summary || "",
+      closing: plan.closing || "",
+      items: (plan.items || []).map(i => ({
+        id: i.id, why: i.why, lead: i.lead, card_title: i.card_title,
+        book: i.book, link: i.link, date: i.date
+      }))
+    };
+    try {
+      return btoa(encodeURIComponent(JSON.stringify(compact)).replace(/%([0-9A-F]{2})/g,
+        (_, hex) => String.fromCharCode("0x" + hex)));
+    } catch (e) { return null; }
+  }
+
+  function decodePlanState(encoded) {
+    try {
+      const json = decodeURIComponent(Array.prototype.map.call(atob(encoded),
+        c => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2)).join(""));
+      const parsed = JSON.parse(json);
+      if (parsed && parsed.v === 1 && Array.isArray(parsed.items)) return parsed;
+      return null;
+    } catch (e) { return null; }
+  }
+
+  function renderPlan(plan, opts) {
+    opts = opts || {};
+    currentPlan = plan;
+    sharedBadge.style.display = opts.shared ? "" : "none";
+    regenerateBtn.style.display = currentSituation ? "" : "none";
     summaryEl.textContent = plan.summary || "";
     itemsEl.innerHTML = "";
     plan.items.forEach(item => {
@@ -448,24 +508,41 @@
     closingEl.textContent = plan.closing || "";
     hideAll();
     resultEl.classList.add("is-visible");
+
+    // Reflect the plan in the URL (without reloading) so the browser's own
+    // address bar is itself always a valid share link for what's on screen.
+    if (!opts.fromURL) {
+      const encoded = encodePlanState(plan);
+      if (encoded) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("p", encoded);
+        window.history.replaceState(null, "", url.toString());
+      }
+    }
   }
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const situation = textarea.value.trim();
-    if (!situation) return;
-
+  async function submitPlan(situation, excludeIds, statusMessage) {
     submitBtn.disabled = true;
+    regenerateBtn.disabled = true;
     hideAll();
-    statusEl.textContent = "Reading the library and building your plan — this can take a little while…";
+    statusEl.textContent = statusMessage;
     statusEl.classList.add("is-visible");
 
     try {
       const res = await fetch("/generate-plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ situation })
+        body: JSON.stringify({ situation, exclude_ids: excludeIds || [] })
       });
+
+      const contentType = res.headers.get("content-type") || "";
+      if (res.status === 429 || !contentType.includes("application/json")) {
+        hideAll();
+        errorText.textContent = "This page has had a lot of requests just now — please wait a minute and try again.";
+        errorEl.classList.add("is-visible");
+        return;
+      }
+
       const data = await res.json();
 
       if (!res.ok || data.status === "error") {
@@ -489,6 +566,7 @@
         return;
       }
 
+      currentSituation = situation;
       renderPlan(data.plan);
     } catch (err) {
       hideAll();
@@ -496,14 +574,61 @@
       errorEl.classList.add("is-visible");
     } finally {
       submitBtn.disabled = false;
+      regenerateBtn.disabled = false;
+    }
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const situation = textarea.value.trim();
+    if (!situation) return;
+    // Fresh submission — clear any shared-plan state in the URL.
+    window.history.replaceState(null, "", window.location.pathname);
+    submitPlan(situation, [], "Reading the library and building your plan — this can take a little while…");
+  });
+
+  regenerateBtn.addEventListener("click", () => {
+    if (!currentSituation || !currentPlan) return;
+    const excludeIds = currentPlan.items.map(i => i.id);
+    submitPlan(currentSituation, excludeIds, "Looking for a different angle…");
+  });
+
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      copyFeedback.classList.add("is-visible");
+      setTimeout(() => copyFeedback.classList.remove("is-visible"), 2000);
+    } catch (e) {
+      // Clipboard API can be blocked (older browser, permissions) — fall
+      // back to selecting the URL isn't practical without a visible input,
+      // so just tell them plainly rather than fail silently.
+      copyFeedback.textContent = "Copy failed — the address bar already has the link";
+      copyFeedback.classList.add("is-visible");
+      setTimeout(() => {
+        copyFeedback.classList.remove("is-visible");
+        copyFeedback.textContent = "Link copied";
+      }, 3000);
     }
   });
 
   restartBtn.addEventListener("click", () => {
     hideAll();
+    currentSituation = null;
+    currentPlan = null;
+    window.history.replaceState(null, "", window.location.pathname);
     textarea.value = "";
     textarea.focus();
   });
+
+  // ── Load a shared plan straight from the URL, if there is one ──
+  (function loadFromURL() {
+    const encoded = new URLSearchParams(window.location.search).get("p");
+    if (!encoded) return;
+    const decoded = decodePlanState(encoded);
+    if (!decoded) return;
+    currentSituation = null; // shared plans don't carry the original free text
+    renderPlan(decoded, { shared: true, fromURL: true });
+  })();
 </script>
 
 <script src="/search.js" defer></script>

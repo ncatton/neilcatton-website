@@ -25,6 +25,17 @@
 // generation call, with the full item corpus as context, needs the room.
 // The client does not receive partial/unvalidated tokens: the stream carries
 // exactly one enqueue, the finished and validated payload, then closes.
+//
+// Routed via netlify.toml (from "/generate-plan" -> this function), NOT via
+// this file's own `config.path` — routing through the classic redirect is
+// what lets netlify.toml attach a [redirects.rate_limit] block to the path.
+// A function-declared path and a netlify.toml redirect to the same path
+// would be redundant/ambiguous, so this function deliberately has no
+// `export const config` at the bottom.
+//
+// Accepts an optional `exclude_ids` array in the request body (used by the
+// page's "show a different angle" button) — item ids already shown to this
+// reader that Claude should avoid repeating unless nothing else fits.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { readFileSync } from "node:fs";
@@ -136,11 +147,19 @@ async function runScopeCheck(anthropic, situation) {
   return parsed;
 }
 
-async function runPlanGeneration(anthropic, situation) {
+async function runPlanGeneration(anthropic, situation, excludeIds = []) {
   const itemsForPrompt = corpus.items.map(i => ({
     id: i.id, card: i.card, book: i.book, type: i.type, aud: i.aud,
     lead: i.lead, body: i.body, tag: i.tag, tag2: i.tag2,
   }));
+
+  const excludeNote = excludeIds.length
+    ? "\n\nThe reader has already seen this plan once and asked for a " +
+      "different angle. These item ids were already shown — avoid repeating " +
+      "them unless nothing else in the list genuinely fits the situation, in " +
+      "which case it's fine to reuse one rather than force a worse match: " +
+      JSON.stringify(excludeIds)
+    : "";
 
   const system =
     "You write short, grounded personal plans for The Practice Library, drawn " +
@@ -156,7 +175,8 @@ async function runPlanGeneration(anthropic, situation) {
     "an item, a card, or advice not present in it. Choose 3 to 6 items that " +
     "genuinely fit the situation (fewer is better than padding). For each, " +
     "write one or two sentences on why it applies to THIS reader's situation " +
-    "specifically, in your own words — not a copy of the lead/body text.\n\n" +
+    "specifically, in your own words — not a copy of the lead/body text." +
+    excludeNote + "\n\n" +
     "Respond with strict JSON only, no prose outside it, no markdown fences:\n" +
     "{\"summary\": \"2-3 sentence framing of the situation, in voice\", " +
     "\"selections\": [{\"id\": \"<exact item id from the list>\", \"why\": \"...\"}], " +
@@ -231,6 +251,13 @@ export default async (req) => {
     return jsonResponse({ status: "error", message: "That's a lot — could you say it in a couple of sentences?" }, 400);
   }
 
+  // Defensive: only ever a small array of strings, ignore anything else
+  // rather than error — this is a UX nicety (better "different angle"
+  // results), not something the citation validation step depends on.
+  const excludeIds = Array.isArray(body?.exclude_ids)
+    ? body.exclude_ids.filter(id => typeof id === "string").slice(0, 20)
+    : [];
+
   const encoder = new TextEncoder();
 
   const body_stream = new ReadableStream({
@@ -248,7 +275,7 @@ export default async (req) => {
           return;
         }
 
-        const planJSON = await runPlanGeneration(anthropic, situation);
+        const planJSON = await runPlanGeneration(anthropic, situation, excludeIds);
         const plan = validateAndEnrich(planJSON);
 
         if (!plan || plan.items.length === 0) {
@@ -277,8 +304,4 @@ export default async (req) => {
   });
 
   return new Response(body_stream, { status: 200, headers: corsHeaders() });
-};
-
-export const config = {
-  path: "/generate-plan",
 };
