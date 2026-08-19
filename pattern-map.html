@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Plausible Analytics — cookie-free, no consent banner required -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://www.neilcatton.com/pattern-map.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#2b4a6f">
+<title>The Pattern Map — The Practice Library — Neil Catton</title>
+<meta name="description" content="See whether the problem in front of you has already been named — and traced across sectors. The same structural failures, linked back to where they were written about.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neilcatton.com/pattern-map.html">
+<meta property="og:title" content="The Pattern Map — The Practice Library — Neil Catton">
+<meta property="og:description" content="See whether the problem in front of you has already been named — and traced across sectors. The same structural failures, linked back to where they were written about.">
+<meta property="og:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Pattern Map — The Practice Library — Neil Catton">
+<meta name="twitter:description" content="See whether the problem in front of you has already been named — and traced across sectors. The same structural failures, linked back to where they were written about.">
+<meta name="twitter:image" content="https://www.neilcatton.com/images/social/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:        #1a1714;
+    --ink-mid:    #3d3935;
+    --ink-light:  #5c5652;
+    --paper:      #f5f2ee;
+    --paper-mid:  #ede9e3;
+    --accent:     #2b4a6f;
+    --rule:       #d4cfc9;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans:  "Source Sans 3", Helvetica, sans-serif;
+    --col-pad: clamp(1.5rem, 5vw, 4rem);
+    --max-wide: 1080px;
+    --book-1: #2b4a6f;
+    --book-2: #6b3fa0;
+    --book-3: #b03a2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background: #f5f2ee;
+    color: #1a1714;
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 3px solid #2b4a6f; outline-offset: 3px; }
+  :focus:not(:focus-visible) { outline: none; }
+
+  .skip-link {
+    position: absolute; top: -100%; left: 1rem;
+    background: #1a1714; color: #f5f2ee;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+    padding: 0.75rem 1.5rem; text-decoration: none;
+    z-index: 9999; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem var(--col-pad);
+    background: rgba(245,242,238,0.96); backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d4cfc9;
+    transition: box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled { box-shadow: 0 2px 20px rgba(26,23,20,0.08); }
+  .nav-wordmark { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: #1a1714; text-decoration: none; letter-spacing: -0.01em; }
+  .nav-wordmark:hover { text-decoration: underline; }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #3d3935; text-decoration: none;
+    position: relative; transition: color 0.2s;
+  }
+  .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1.5px; background: #2b4a6f; transition: width 0.25s ease; }
+  .nav-links a:hover { color: #2b4a6f; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a[aria-current="page"] { color: #2b4a6f; }
+  .nav-links a[aria-current="page"]::after { width: 100%; }
+  .btn-nav { border: 1.5px solid var(--ink); padding: 0.38rem 0.85rem; transition: background 0.2s, color 0.2s; }
+  .btn-nav::after { display: none !important; }
+  .btn-nav:hover { background: var(--ink); color: var(--paper) !important; }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a .caret { font-size: 0.55rem; margin-left: 0.25rem; display: inline-block; transform: translateY(-1px); }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1.4rem;
+    min-width: 252px; padding: 0.55rem 0;
+    background: rgba(245,242,238,0.98);
+    border: 1px solid #d4cfc9; border-top: 2px solid #2b4a6f;
+    box-shadow: 0 14px 30px rgba(26,23,20,0.12);
+    list-style: none;
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+  }
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-menu li a { display: block; padding: 0.48rem 1.4rem; font-size: 0.72rem; letter-spacing: 0.08em; white-space: nowrap; }
+  .dropdown-menu li a::after { display: none; }
+  .dropdown-menu li a:hover { background: #ede9e3; }
+
+  /* ── PAGE HEADER (subpage variant — single column) ── */
+  .page-header { padding-top: 7rem; background: #1a1714; }
+  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; }
+  .page-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,242,238,0.55); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .page-label::before { content: ""; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 400; line-height: 1.05; letter-spacing: -0.03em;
+    color: #f5f2ee; margin-bottom: 1.5rem; max-width: 20ch;
+  }
+  .page-title em { font-style: italic; color: #d4cfc9; }
+  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 680px; }
+
+  /* ── INTRO ── */
+  .intro-section { background: #ede9e3; padding: 4rem var(--col-pad); }
+  .intro-inner { max-width: var(--max-wide); margin: 0 auto; }
+  .intro-inner p { font-size: 1.0625rem; line-height: 1.85; color: #1a1714; max-width: 720px; }
+  .intro-inner p + p { margin-top: 1.1rem; }
+
+  /* ── PATTERNS ── */
+  .patterns-section { background: #f5f2ee; padding: 5rem var(--col-pad); }
+  .patterns-inner { max-width: var(--max-wide); margin: 0 auto; }
+  .section-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652;
+    margin-bottom: 1rem; display: block;
+  }
+  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }
+  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2.5rem; }
+
+  .filter-bar { margin-bottom: 3.5rem; }
+  .filter-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.85rem; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em;
+    color: #3d3935; background: #ede9e3; border: 1.5px solid #d4cfc9;
+    padding: 0.45rem 0.95rem; cursor: pointer; transition: all 0.2s; min-height: 36px;
+  }
+  .chip:hover { border-color: #2b4a6f; color: #2b4a6f; }
+  .chip.is-active { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }
+  .chip[data-reset] { background: transparent; }
+  .chip[data-reset].is-active { background: #1a1714; }
+  .filter-status { font-family: var(--sans); font-size: 0.85rem; color: #5c5652; margin-top: 1rem; min-height: 1.2em; }
+
+  .pattern { border-top: 1px solid #d4cfc9; padding: 3rem 0; }
+  .pattern:first-of-type { border-top: none; padding-top: 0; }
+  .pattern.is-pattern-hidden { display: none; }
+
+  .pattern-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }
+  .pattern-id { font-family: var(--serif); font-style: italic; font-size: 1.6rem; color: #2b4a6f; flex-shrink: 0; }
+  .pattern-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; line-height: 1.25; color: #1a1714; }
+  .pattern-def { font-size: 0.98rem; line-height: 1.75; color: #3d3935; max-width: 700px; margin-bottom: 1.5rem; }
+
+  .card-companion {
+    display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+    background: #ede9e3; border-left: 3px solid #2b4a6f;
+    padding: 0.8rem 1.1rem; margin-bottom: 1.75rem; font-size: 0.88rem; color: #1a1714;
+  }
+  .card-companion-label {
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #5c5652; flex-shrink: 0;
+  }
+  .card-companion a { color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); }
+  .card-companion a:hover { border-color: #2b4a6f; }
+  .card-companion.is-coming { border-left-color: #a8a29b; background: transparent; padding-left: 1rem; }
+  .card-companion.is-coming .card-companion-label { color: #a8a29b; }
+  .card-companion.is-empty { border-left-color: #d4cfc9; background: transparent; padding-left: 1rem; font-style: italic; color: #5c5652; }
+
+  .instances { list-style: none; }
+  .instance { display: grid; grid-template-columns: 160px 1fr; gap: 0.5rem 1.5rem; padding: 0.9rem 0; border-bottom: 1px dotted #d4cfc9; }
+  .instance:last-child { border-bottom: none; }
+  .instance.is-hidden { display: none; }
+  .instance-sector { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #2b4a6f; padding-top: 0.15rem; }
+  .instance-title { font-family: var(--sans); font-weight: 600; color: #1a1714; }
+  .instance-title a { color: #1a1714; text-decoration: none; border-bottom: 1px solid #d4cfc9; }
+  .instance-title a:hover { color: #2b4a6f; border-color: #2b4a6f; }
+  .instance-note { color: #3d3935; font-size: 0.94rem; display: block; margin-top: 0.2rem; }
+  .instance-status { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #b03a2e; margin-left: 0.5rem; }
+
+  .tracking-note { font-size: 0.88rem; font-style: italic; color: #5c5652; margin-top: 1.25rem; max-width: 700px; }
+
+  @media (max-width: 640px) {
+    .instance { grid-template-columns: 1fr; }
+    .instance-sector { padding-top: 0; }
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 0.875rem 1.75rem; min-height: 44px; min-width: 44px;
+    transition: all 0.2s ease; cursor: pointer; border: none;
+  }
+  .btn-secondary { background: transparent; color: #1a1714; border: 2px solid #1a1714; }
+  .btn-secondary:hover { border-color: #2b4a6f; color: #2b4a6f; }
+
+  /* ── FOOTER ── */
+  .site-footer { background: #1a1714; padding: 2.75rem var(--col-pad); }
+  .footer-inner { max-width: var(--max-wide); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+  .footer-wordmark { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; text-decoration: none; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,242,238,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #f5f2ee; }
+  .footer-copy { font-size: 0.75rem; color: rgba(245,242,238,0.55); width: 100%; }
+
+  @media (max-width: 860px) {
+    .page-header-inner { padding-bottom: 3rem; }
+  }
+  @media (max-width: 580px) {
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav class="site-nav" aria-label="Site navigation" id="site-nav">
+  <a href="index.html" class="nav-wordmark">Neil Catton</a>
+  <ul class="nav-links" role="list">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="service-technology-strategy-roadmapping.html">Technology Strategy &amp; Roadmapping</a></li>
+        <li><a href="service-fractional-cto-cio.html">Fractional CTO / CIO</a></li>
+        <li><a href="service-ai-board-briefing.html">AI Board Briefing</a></li>
+        <li><a href="service-ai-readiness-review.html">AI Readiness Review</a></li>
+        <li><a href="service-technology-due-diligence.html">Technology Due Diligence</a></li>
+        <li><a href="service-non-executive-director.html">Non-Executive Director</a></li>
+        <li><a href="service-enterprise-architecture.html">Enterprise Architecture</a></li>
+        <li><a href="service-interim-programme-recovery.html">Interim &amp; Programme Recovery</a></li>
+        <li><a href="service-data-strategy-review.html">Data Strategy Review</a></li>
+        <li><a href="service-cybersecurity-risk-strategy.html">Cybersecurity &amp; Risk Strategy</a></li>
+        <li><a href="service-public-sector-technology.html">Public Sector Technology</a></li>
+        <li><a href="service-speaking-masterclasses.html">Speaking &amp; Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a href="articles.html">Writing</a></li>
+    <li><a href="briefings.html">Briefings</a></li>
+    <li class="nav-dropdown">
+      <a href="practice-library.html">Practice Library <span class="caret" aria-hidden="true">&#9662;</span></a>
+      <ul class="dropdown-menu" role="list">
+        <li><a href="practice-library.html#collection">The Collection</a></li>
+        <li><a href="practice-library.html#tools">Tools</a></li>
+        <li><a href="personalised-plan.html">Your Plan</a></li>
+        <li><a href="pattern-map.html" aria-current="page">The Pattern Map</a></li>
+      </ul>
+    </li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-cta"><a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Practice Library &mdash; The Pattern Map</span>
+      <h1 class="page-title" id="page-title">The Pattern <em>Map.</em></h1>
+      <p class="page-standfirst">
+        The same handful of structural failures, traced wherever they've shown
+        up across thirty-nine years and more than twenty sectors — each one
+        linked back to where it was written about, and to the card that gives
+        you something to do about it, where one exists.
+      </p>
+    </div>
+  </header>
+
+  <section class="intro-section" aria-label="About this map">
+    <div class="intro-inner">
+      <p>
+        These aren't a list of unrelated observations. They're the same small
+        set of structural failures, recurring under different names in
+        different industries — the same mechanism that fails a fraud victim
+        in banking also fails a patient in the NHS, and a candidate applying
+        for a job. Seeing the pattern is the first step; the sector instances
+        below are the evidence, not the argument.
+      </p>
+      <p>
+        Built from what's actually been published, not from theory. Some
+        patterns already have a Practice Library card attached — something
+        you can act on. Others don't, because not every pattern resolves into
+        a checklist. Recognising the shape of a problem is not the same as
+        fixing it, and this map doesn't pretend otherwise.
+      </p>
+    </div>
+  </section>
+
+  <section class="patterns-section" id="patterns" aria-labelledby="patterns-heading">
+    <div class="patterns-inner">
+      <span class="section-label">The map</span>
+      <h2 class="section-heading" id="patterns-heading">Trace a pattern across sectors</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="filter-bar">
+        <span class="filter-label">Filter by sector</span>
+        <div class="chip-row" id="chipRow"></div>
+        <p class="filter-status" id="filterStatus"></p>
+      </div>
+
+      <div id="patternsContainer"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wordmark">Neil Catton</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li><a href="briefings.html">Briefings</a></li>
+        <li><a href="practice-library.html">Practice Library</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Neil Catton. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+
+  const R = "?r=7x2n6b";
+  const PATTERNS = [
+    {
+      id: "A",
+      name: "Correct at every step, wrong at the end",
+      def: "No individual part of the system fails — every department, every agent, every board process does exactly what it was designed to do — and the outcome is still wrong, with nobody positioned to own the gap.",
+      cardComing: ["Reimagine Governance"],
+      instances: [
+        { sector: "AI / Tech", title: "The Orchestration Crisis", note: "Multi-agent systems where every agent does its job and nobody is accountable between them.", url: "https://neilcatton.substack.com/p/the-orchestration-crisis-why-your"+R },
+        { sector: "Public Sector", title: "Every Department Did Its Job", note: "Every part functions correctly; the outcome is still wrong and nobody owns it.", url: "https://neilcatton.substack.com/p/every-department-did-its-job"+R },
+        { sector: "Public Sector", title: "The KPI That Measured the Wrong Thing", note: "Digital services measurement that makes failure invisible while the dashboard stays green.", url: "https://writing.neilcatton.com/p/the-kpi-that-measured-the-wrong-thing"+R },
+        { sector: "Financial Services", title: "The Decision Nobody Made", note: "Automated lending decisions accountable to no one.", url: "https://neilcatton.substack.com/p/the-decision-nobody-made"+R },
+        { sector: "Corporate Governance", title: "The Board That Didn't Understand What It Had Approved", note: "AI accountability dispersing across the governance chain.", url: "https://neilcatton.substack.com/p/the-board-that-didnt-understand-what"+R },
+        { sector: "Corporate Governance", title: "The Leader Who Listened First", note: "Counter-example: mediation layers process out what matters before it reaches the decision-maker.", url: "https://writing.neilcatton.com/p/the-leader-who-listened-first"+R },
+      ]
+    },
+    {
+      id: "B",
+      name: "The dashboard stays green",
+      def: "Measurement and consultation substitute for genuine understanding. The organisation collects a number or a response, treats the collecting as the work, and never asks whether it changed anything.",
+      instances: [
+        { sector: "HR / People", title: "The number that tells you nothing", note: "Engagement scores measure the temperature of the room, not why it's cold.", url: "https://neilcatton.substack.com/p/the-number-that-tells-you-nothing"+R },
+        { sector: "Public Sector", title: "The consultation that changed nothing", note: "Consultation designed to produce a record of having asked, not to change course.", url: "https://neilcatton.substack.com/p/the-consultation-that-changed-nothing"+R },
+        { sector: "Corporate Governance", title: "The Company That Measured What Mattered", note: "Organisations optimise for the first slide; the second slide rarely reaches the board.", url: "https://neilcatton.substack.com/p/the-company-that-measured-what-mattered"+R },
+        { sector: "Corporate Governance", title: "When the board asks the wrong question", note: "Engagement scores mistaken for people intelligence at board level.", url: "https://neilcatton.substack.com/p/when-the-board-asks-the-wrong-question"+R },
+        { sector: "Product / Tech", title: "The data you already have and never read", note: "Years of qualitative data collected and treated as unanalysable.", url: "https://neilcatton.substack.com/p/the-data-you-already-have-and-never"+R },
+        { sector: "Product / Tech", title: "The Feedback Loop That Actually Worked", note: "Counter-example: visibility is the condition most feedback systems skip.", url: "https://writing.neilcatton.com/p/the-feedback-loop-that-actually-worked"+R },
+        { sector: "Cross-cutting", title: "The voice that never reaches the room", note: "The connective mechanism: intelligence degrades as it moves up the chain.", url: "https://neilcatton.substack.com/p/the-voice-that-never-reaches-the"+R },
+      ]
+    },
+    {
+      id: "C",
+      name: "Built to be defensible, not to help",
+      def: "Institutional response systems — fraud, breach, cybersecurity — are built to produce a record that the institution acted, not to close the exposure or protect the person living inside it.",
+      cardComing: ["Protect Yourself", "Build Your Digital Fortress", "Fortify the Enterprise", "Defend Your Identity from Theft and Impersonation"],
+      instances: [
+        { sector: "Financial Services", title: "Why the Victim Is Always Wrong", note: "Fraud response designed to protect the institution, burden placed on the victim.", url: "https://neilcatton.substack.com/p/why-the-victim-is-always-wrong"+R },
+        { sector: "Financial Services", title: "The fraud was an event. This is a condition.", note: "Recovery infrastructure built for institutional liability, not the person it's meant to help.", url: "https://neilcatton.substack.com/p/the-fraud-was-an-event-this-is-a"+R },
+        { sector: "Financial Services", title: "It Cannot Automate Trust", note: "Security advice that transfers the burden of defence to the least-equipped person.", url: "https://neilcatton.substack.com/p/it-cannot-automate-trust"+R },
+        { sector: "Cybersecurity", title: "The company that knew and said nothing", note: "Breach disclosure designed to serve the institution managing it, not the person whose data was taken.", url: "https://neilcatton.substack.com/p/the-company-that-knew-and-said-nothing"+R },
+        { sector: "Cybersecurity", title: "It can be managed", note: "Governance built to document exposure, not close it.", url: "https://writing.neilcatton.com/p/it-can-be-managed"+R },
+        { sector: "Cybersecurity", title: "Crime with a support desk", note: "Criminal support infrastructure built to reduce friction better than legitimate response systems.", url: "https://writing.neilcatton.com/p/crime-with-a-support-desk"+R },
+        { sector: "National Security", title: "Nobody Decided This Was Acceptable", note: "Stuxnet and the absence of updated international frameworks.", url: "https://neilcatton.substack.com/p/nobody-decided-this-was-acceptable"+R },
+        { sector: "National Security", title: "They Already Have It", note: "Harvest-now-decrypt-later, active while migration hasn't started.", url: "https://writing.neilcatton.com/p/they-already-have-it"+R },
+      ]
+    },
+    {
+      id: "D",
+      name: "Designed for the person who isn't there",
+      def: "Systems are built around the capable, average, organised user, and fail exactly at the point where the person in front of them is least able to advocate for themselves.",
+      cardComing: ["Design for the Human OS"],
+      instances: [
+        { sector: "Healthcare", title: "The Screen That Broke the Trust", note: "An NHS digital prescription system that worked exactly as designed — for a patient it wasn't designed for.", url: "https://neilcatton.substack.com/p/the-screen-that-broke-the-trust"+R },
+        { sector: "Healthcare", title: "The Body That Remembers", note: "Systems built around emergency response, not the person living inside the risk every day after.", url: "https://neilcatton.substack.com/p/the-body-that-remembers"+R },
+        { sector: "Healthcare", title: "The App That Actually Helped", note: "Counter-example: designed from what it feels like to manage a condition.", url: "https://writing.neilcatton.com/p/the-app-that-actually-helped"+R },
+        { sector: "Healthcare", title: "While patients wait", note: "Proven AI diagnostics, blocked by funding and infrastructure from the people who need them most.", url: "https://writing.neilcatton.com/p/while-patients-wait"+R },
+        { sector: "Public Services", title: "The Last Person in the Queue", note: "Digital-by-default makes people who can't use digital invisible.", url: "https://neilcatton.substack.com/p/the-last-person-in-the-queue"+R },
+        { sector: "Public Services", title: "The Bin Hasn't Changed (Only the Lorry)", note: "Digital-first layered onto analogue problems, indistinguishable from designed exclusion.", url: "https://neilcatton.substack.com/p/the-bin-hasnt-changed-only-the-lorry"+R },
+        { sector: "Design", title: "Designing for the Person Who Isn't Coping", note: "Design assumptions that fail precisely when the person is least able to advocate for themselves.", url: "https://neilcatton.substack.com/p/designing-for-the-person-who-isnt"+R },
+        { sector: "Design", title: "The Question That Changed the Design", note: "“Who is this hardest for?” — almost never asked at the point it could change the outcome.", url: "https://neilcatton.substack.com/p/the-question-that-changed-the-design"+R },
+        { sector: "Agriculture", title: "The Land the Data Missed", note: "Precision agriculture designed for a farm most farmers don't have.", url: "https://writing.neilcatton.com/p/the-land-the-data-missed"+R },
+        { sector: "Accessibility", title: "The Standard That Raised the Bar", note: "Counter-example: the curb-cut effect — raising the floor for excluded users raises it for everyone.", url: "https://writing.neilcatton.com/p/the-standard-that-raised-the-bar"+R },
+      ]
+    },
+    {
+      id: "E1",
+      name: "The science works; access hasn't followed",
+      def: "The scientific or clinical capability is real and proven — the barrier is who gets to it, at what cost, and on whose terms.",
+      instances: [
+        { sector: "Biotech / Health", title: "The Body as a Lab", note: "In-vivo gene editing; governance decides who gets access.", url: "https://neilcatton.substack.com/p/the-body-as-a-lab"+R },
+        { sector: "Biotech / Health", title: "The Machine That Designs Medicines", note: "AI drug discovery outpacing the access question.", url: "https://neilcatton.substack.com/p/the-machine-that-designs-medicines"+R },
+        { sector: "Biotech / Health", title: "What the Cold Chain Cannot Reach", note: "Biological medicine manufacturing concentrated in wealthy countries.", url: "https://neilcatton.substack.com/p/what-the-cold-chain-cannot-reach"+R },
+        { sector: "Biotech / Health", title: "Reading the Map Inside the Cell", note: "Spatial diagnostics confined to specialist centres.", url: "https://neilcatton.substack.com/p/reading-the-map-inside-the-cell"+R },
+        { sector: "Biotech / Health", title: "The instruction in the injection", note: "Personalised mRNA cancer vaccines, where personalisation itself is the access barrier.", url: "https://neilcatton.substack.com/p/the-instruction-in-the-injection"+R },
+        { sector: "Biotech / Health", title: "The bottleneck moved", note: "Drug discovery compressed to eighteen months; trial and regulatory pace hasn't moved.", url: "https://writing.neilcatton.com/p/the-bottleneck-moved"+R },
+      ]
+    },
+    {
+      id: "E2",
+      name: "The science works; deployment infrastructure hasn't followed",
+      def: "The engineering or technology is real and works at scale in principle — the barrier is the manufacturing capacity, regulatory pathway, or physical infrastructure needed to actually build and run it.",
+      instances: [
+        { sector: "Energy", title: "Too Cheap to Meter, Too Slow to Build", note: "No SMR has been built on time or on budget yet.", url: "https://neilcatton.substack.com/p/too-cheap-to-meter-too-slow-to-build"+R },
+        { sector: "Energy", title: "Three Days Earlier", note: "AI weather forecasting outruns the observational network it depends on.", url: "https://neilcatton.substack.com/p/three-days-earlier"+R },
+        { sector: "Space", title: "Coverage Is Not Access", note: "Satellite coverage reaches billions; subscribers number in the millions.", url: "https://neilcatton.substack.com/p/coverage-is-not-access"+R },
+        { sector: "Space", title: "What gets funded in space", note: "Commercial orbital platforms changing who decides what science gets funded.", url: "https://writing.neilcatton.com/p/what-gets-funded-in-space"+R },
+        { sector: "Materials Science", title: "It Remembers What Shape to Be", note: "Shape-memory alloys constrained by regulatory and manufacturing scale-up.", url: "https://neilcatton.substack.com/p/it-remembers-what-shape-to-be"+R },
+        { sector: "Materials Science", title: "The Science Is Not the Problem", note: "Self-healing concrete, deployed since 2011, invisible to procurement that prices only the initial build.", url: "https://writing.neilcatton.com/p/the-science-is-not-the-problem"+R },
+        { sector: "Computing", title: "Twenty Watts", note: "The brain does in 20 watts what GPU-based AI vision burns thousands of times more energy to match.", url: "https://neilcatton.substack.com/p/twenty-watts"+R },
+        { sector: "Computing", title: "The Error is the Point", note: "Quantum error correction confirmed; the cryptographic migration hasn't started.", url: "https://neilcatton.substack.com/p/the-error-is-the-point"+R },
+        { sector: "Computing", title: "They Already Have It", note: "Post-quantum standards published in 2024; most organisations still have no cryptographic inventory. Also in “Built to be defensible, not to help.”", url: "https://writing.neilcatton.com/p/they-already-have-it"+R },
+      ],
+      trackingNote: "A new case — data centre energy demand colliding with grid capacity and local housing supply — is already being tracked for a future piece."
+    },
+    {
+      id: "F",
+      name: "The permanent record you didn't choose",
+      def: "Data about a person is captured once and becomes a durable, portable record used to make decisions about them, with no mechanism for the person to see it, correct it, or reclaim it.",
+      cardComing: ["Manage Your Algorithmic Reputation", "Shape Your Networked Self"],
+      instances: [
+        { sector: "Consumer Tech", title: "The Thing You Gave Away for Free", note: "Personal data shared online creates a permanent, portable record that can't be reclaimed.", url: "https://neilcatton.substack.com/p/the-thing-you-gave-away-for-free"+R },
+        { sector: "Consumer Tech", title: "The Anticipatory Trap", note: "The model built of you is owned by the platform, not by you.", url: "https://neilcatton.substack.com/p/the-anticipatory-trap"+R },
+        { sector: "Financial Services", title: "Permanent, Portable, Wrong", note: "Data profiles determine credit, job screening and insurance terms before the decision is even made.", url: "https://neilcatton.substack.com/p/permanent-portable-wrong"+R },
+        { sector: "Government / Data", title: "Sovereign is Not a Postcode", note: "Datacentre location is not the same as control over the data in it.", url: "https://neilcatton.substack.com/p/sovereign-is-not-a-postcode"+R },
+      ]
+    },
+    {
+      id: "G",
+      name: "Engineered compulsion",
+      def: "Attention and agency are captured by design, not accident — mechanisms borrowed from behavioural psychology that produce a compulsion the person experiences as their own failing.",
+      card: [
+        { title: "Your Smartphone's Grip", url: "https://writing.neilcatton.com/p/your-smartphones-grip" },
+        { title: "Shielding Your Focus", url: "https://writing.neilcatton.com/p/shielding-your-focus" },
+      ],
+      instances: [
+        { sector: "Consumer / Platforms", title: "The Campfire Problem", note: "The evolutionary pull to share attention, captured and redirected by design.", url: "https://neilcatton.substack.com/p/the-campfire-problem"+R },
+        { sector: "Consumer / Platforms", title: "The Stage With Too Many Actors", note: "Digital environments systematically exceed finite attention capacity.", url: "https://neilcatton.substack.com/p/the-stage-with-too-many-actors"+R },
+        { sector: "Consumer / Platforms", title: "Technically Present", note: "Inattentional blindness as a designed operating condition, not a concentration problem.", url: "https://neilcatton.substack.com/p/technically-present"+R },
+        { sector: "Consumer / Platforms", title: "A Reflex That Was Installed", note: "The compulsion to check your phone, engineered on slot-machine mechanics.", url: "https://writing.neilcatton.com/p/a-reflex-that-was-installed"+R },
+        { sector: "Children / Education", title: "Boredom Was the Doorway", note: "The absence of boredom is the first thing the design took away from children.", url: "https://neilcatton.substack.com/p/boredom-was-the-doorway"+R },
+        { sector: "Children / Education", title: "Why Helpful Isn't the Same as Good", note: "Technically helpful, entirely wrong — a voice assistant answering a child about death.", url: "https://neilcatton.substack.com/p/why-helpful-isnt-the-same-as-good"+R },
+      ]
+    },
+    {
+      id: "H",
+      name: "The application serves the pipeline metric, not the candidate",
+      def: "Recruitment and hiring technology is optimised for the volume and manageability of the process on the organisation's side — the candidate's chance of being seen by a person is not the thing it was built to protect.",
+      instances: [
+        { sector: "Recruitment", title: "Apply. Wait. Disappear.", note: "Easy Apply generates volume that serves recruiter pipeline metrics, not candidate chances.", url: "https://neilcatton.substack.com/p/apply-wait-disappear"+R },
+        { sector: "Recruitment", title: "The Application That Went Nowhere", note: "The process structurally redesigned to serve the organisation, not the candidate experience.", url: "https://neilcatton.substack.com/p/the-application-that-went-nowhere"+R },
+      ],
+      trackingNote: "Two further cases — correlated rejection across employers using the same screening model, and CV-screening that reads a career gap for childcare or caring like any other gap — are already being tracked for future pieces."
+    },
+  ];
+
+  const container = document.getElementById("patternsContainer");
+  const chipRow = document.getElementById("chipRow");
+  const filterStatus = document.getElementById("filterStatus");
+
+  const sectorSet = new Set();
+  PATTERNS.forEach(p => p.instances.forEach(i => sectorSet.add(i.sector)));
+  const sectors = Array.from(sectorSet).sort();
+
+  const resetChip = document.createElement("button");
+  resetChip.className = "chip is-active";
+  resetChip.textContent = "All sectors";
+  resetChip.dataset.reset = "true";
+  resetChip.addEventListener("click", () => applyFilter(null));
+  chipRow.appendChild(resetChip);
+
+  sectors.forEach(s => {
+    const chip = document.createElement("button");
+    chip.className = "chip";
+    chip.textContent = s;
+    chip.addEventListener("click", () => applyFilter(s));
+    chipRow.appendChild(chip);
+  });
+
+  PATTERNS.forEach(p => {
+    const section = document.createElement("section");
+    section.className = "pattern";
+    section.dataset.patternId = p.id;
+
+    let cardHtml;
+    if (p.card) {
+      const links = p.card.map(c => `<a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.title}</a>`).join(", ");
+      cardHtml = `<div class="card-companion"><span class="card-companion-label">Practice Library card</span><span>${links}.</span></div>`;
+    } else if (p.cardComing) {
+      cardHtml = `<div class="card-companion is-coming"><span class="card-companion-label">Coming to the Practice Library</span><span>${p.cardComing.join(", ")}.</span></div>`;
+    } else {
+      cardHtml = `<div class="card-companion is-empty">No Practice Library card for this one — recognising the pattern is the point; not every pattern resolves into a checklist.</div>`;
+    }
+
+    const instancesHtml = p.instances.map(i => {
+      const statusHtml = i.status === "pipeline" ? `<span class="instance-status">Not yet published</span>` : "";
+      const titleHtml = i.url
+        ? `<a href="${i.url}" target="_blank" rel="noopener noreferrer">${i.title}</a>`
+        : `${i.title}`;
+      return `<li class="instance" data-sector="${i.sector}">
+        <span class="instance-sector">${i.sector}</span>
+        <span><span class="instance-title">${titleHtml}</span>${statusHtml}<span class="instance-note">${i.note}</span></span>
+      </li>`;
+    }).join("");
+
+    const trackingHtml = p.trackingNote ? `<p class="tracking-note">${p.trackingNote}</p>` : "";
+
+    section.innerHTML = `
+      <div class="pattern-head">
+        <span class="pattern-id">${p.id}</span>
+        <h3 class="pattern-name">${p.name}</h3>
+      </div>
+      <p class="pattern-def">${p.def}</p>
+      ${cardHtml}
+      <ul class="instances">${instancesHtml}</ul>
+      ${trackingHtml}
+    `;
+    container.appendChild(section);
+  });
+
+  function applyFilter(sector) {
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("is-active"));
+    if (sector === null) {
+      document.querySelector('[data-reset]').classList.add("is-active");
+    } else {
+      Array.from(document.querySelectorAll(".chip")).find(c => c.textContent === sector).classList.add("is-active");
+    }
+
+    let visibleInstances = 0;
+    let visiblePatterns = 0;
+
+    document.querySelectorAll(".pattern").forEach(section => {
+      let matchesInSection = 0;
+      section.querySelectorAll(".instance").forEach(row => {
+        const match = sector === null || row.dataset.sector === sector;
+        row.classList.toggle("is-hidden", !match);
+        if (match) { matchesInSection++; visibleInstances++; }
+      });
+      const hideSection = matchesInSection === 0;
+      section.classList.toggle("is-pattern-hidden", hideSection);
+      if (!hideSection) visiblePatterns++;
+    });
+
+    filterStatus.textContent = sector === null
+      ? ""
+      : `Showing ${visibleInstances} instance${visibleInstances === 1 ? "" : "s"} across ${visiblePatterns} pattern${visiblePatterns === 1 ? "" : "s"} tagged "${sector}".`;
+  }
+
+  applyFilter(null);
+</script>
+
+<script src="/search.js" defer></script>
+</body>
+</html>

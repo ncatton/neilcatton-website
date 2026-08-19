@@ -100,13 +100,19 @@
       "title": "The Practice Library",
       "url": "/practice-library.html",
       "section": "Writing",
-      "description": "Practical How To reference cards from The Next Evolution trilogy, rebuilt as standalone guidance and published on Substack."
+      "description": "Where the trilogy and the Substack turn into cards, tools, and a map you can actually use."
     },
     {
       "title": "Your Plan \u2014 The Practice Library",
       "url": "/personalised-plan.html",
       "section": "Writing",
       "description": "Describe a challenge and get a short personalised plan built only from real, published Practice Library cards."
+    },
+    {
+      "title": "The Pattern Map \u2014 The Practice Library",
+      "url": "/pattern-map.html",
+      "section": "Writing",
+      "description": "See whether the problem in front of you has already been named \u2014 and traced across sectors. The same structural failures, linked back to where they were written about."
     },
     {
       "title": "Briefings",
