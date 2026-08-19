@@ -45,15 +45,16 @@ const MODEL = "claude-sonnet-5";
 const MAX_INPUT_CHARS = 3000;
 const MIN_INPUT_CHARS = 8;
 
-// NOTE: this exact wording is a placeholder pending Neil's sign-off — see the
-// project README. Do not treat this copy as final.
+// Approved copy (19 Aug 2026) — combination of two drafted options, chosen
+// and adjusted by Neil.
 const POLITE_STOP_FALLBACK =
-  "This library is built for practical, technology-and-life challenges — " +
-  "attention, identity, digital safety, work, meaning, and the rest of what " +
-  "the cards cover. What you've described doesn't look like a match for it, " +
-  "so rather than force a fit, I'd rather say so plainly. If it's something " +
-  "urgent or personal, a professional or someone you trust is a better next " +
-  "step than a library of reference cards.";
+  "Thanks for sharing that. It's just outside what this particular library " +
+  "is built to help with — these cards cover practical technology-and-life " +
+  "territory, attention, identity, digital safety, work, meaning, not " +
+  "everything a person might be carrying. That's not a judgement on the " +
+  "situation, just an honest limit on what this tool can actually do. If " +
+  "it's something more personal or urgent, a professional or someone you " +
+  "trust is the better next step.";
 
 const NO_GROUNDED_PLAN_MESSAGE =
   "I wasn't able to put together a plan grounded in real cards for this one. " +
