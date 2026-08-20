@@ -7,6 +7,11 @@
 # going stale on 1 January.
 # ═══════════════════════════════════════════════════════════════════
 
+# The functions are bundled from netlify/functions and resolve their imports
+# against package.json. generate-plan.mjs imports @anthropic-ai/sdk, which
+# must therefore stay in "dependencies" — dropping it does not fail the build,
+# it returns 502 at request time. package.json must also NOT declare
+# "type": "module": three of the functions are CommonJS.
 [build]
   command = "npm run build"
   publish = "dist"
@@ -14,6 +19,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # playwright and axe-core are devDependencies used only by tools/check-*.mjs.
+  # Netlify installs devDependencies before running the build, and playwright's
+  # postinstall would otherwise download a browser on every deploy.
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
 
 [functions]
   # generate-plan.mjs reads netlify/functions/lib/practice-corpus.json via

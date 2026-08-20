@@ -2,8 +2,15 @@
   "name": "neilcatton-website",
   "version": "2.0.0",
   "private": true,
-  "type": "module",
-  "description": "neilcatton.com \u2014 static site. Templates and data in src/, generated output in dist/.",
+  "description": "neilcatton.com — static site. Templates and data in src/, generated output in dist/. Netlify runs `npm run build`.",
+
+  "_comment_type": "Deliberately NOT \"type\": \"module\". build.mjs and everything in tools/ use the .mjs extension, so they are ESM regardless. Three of the Netlify Functions (substack-feed.js, search-feed.js, practice-library-feed.js) are CommonJS — they use require() and exports.handler — and declaring the package as ESM makes Node parse those .js files as modules, which breaks all three at load time.",
+
+  "_comment_deps": "@anthropic-ai/sdk is a runtime dependency, not a build one: netlify/functions/generate-plan.mjs imports it, and Netlify resolves function imports from this file when it bundles. Removing it does not fail the build — it fails the function, with a 502 at request time.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1"
+  },
+
   "scripts": {
     "build": "node build.mjs",
     "serve": "node build.mjs && npx --yes http-server dist -p 8080 -c-1",
@@ -11,6 +18,8 @@
     "check:csp": "node build.mjs && node tools/probe-csp.mjs",
     "check:links:external": "node build.mjs && node tools/check-links.mjs --external"
   },
+
+  "_comment_dev": "Test-only. build.mjs itself imports nothing but node: builtins, and the webfonts are committed under src/assets/fonts, so a deploy needs none of these. PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD is set in netlify.toml so installing playwright here does not pull a browser into every deploy.",
   "devDependencies": {
     "@fontsource/playfair-display": "^5.2.6",
     "@fontsource/source-sans-3": "^5.2.6",
