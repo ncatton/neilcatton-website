@@ -1,5 +1,19 @@
+# ═══════════════════════════════════════════════════════════════════
+# neilcatton.com — Netlify configuration
+#
+# The site is generated. `npm run build` turns src/ into dist/; Netlify
+# runs that on every deploy, so the generated HTML is not committed and
+# the "N years in technology" figure recalculates itself rather than
+# going stale on 1 January.
+# ═══════════════════════════════════════════════════════════════════
+
 [build]
+  command = "npm run build"
+  publish = "dist"
   functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
 
 [functions]
   # generate-plan.mjs reads netlify/functions/lib/practice-corpus.json via
@@ -8,6 +22,11 @@
   # explicitly or the deployed function 404s trying to read a file that
   # never made it into the bundle.
   included_files = ["netlify/functions/lib/*.json"]
+
+# ── Function routes ──
+# The old _redirects file also mapped /substack-feed, straight through to
+# neilcatton.substack.com. Two live rules for one path is a trap; that file
+# has been removed and this is now the only definition.
 
 [[redirects]]
   from = "/substack-feed"
@@ -34,7 +53,6 @@
 # stops a script from running the meter up. Deliberately routed through this
 # redirect (rather than the function's own path) since rate_limit is a
 # redirects-only feature — see the note at the top of generate-plan.mjs.
-# Tune window_limit up if real usage turns out to hit this in normal use.
 [[redirects]]
   from = "/generate-plan"
   to = "/.netlify/functions/generate-plan"
@@ -49,42 +67,64 @@
     to = "/rate-limited.html"
 
 # ── Security headers ──
-# Content-Security-Policy allowlist built from every third-party origin
-# referenced in the codebase as of 23 July 2026 (Plausible, Google Fonts,
-# Formspree, the Substack embed/API, and the corsproxy.io/rss2json.com
-# feed-fallback fetches in index.html/articles.html). If a new embed or
-# script is added to the site later, its origin needs adding here too, or
-# it will silently fail rather than error loudly — check the browser
-# console on a deploy preview after any change that adds a new external
-# script, iframe, or fetch target.
 #
-# script-src and style-src both need 'unsafe-inline' because every page
-# carries inline <style> and <script> blocks rather than external files
-# with nonces/hashes — this is a known limitation, not an oversight. It
-# means the policy doesn't stop inline-script injection the way a
-# nonce-based CSP would; tightening that properly would mean externalising
-# every page's inline CSS/JS, which is a larger rebuild, not a header change.
+# script-src and style-src no longer need 'unsafe-inline'. Every page's
+# CSS and JavaScript is an external file under /assets now, including the
+# per-page blocks, which the old single-file-per-page structure made
+# impossible. That was recorded in this file as a known limitation; it is
+# closed.
 #
-# connect-src does NOT need an AI Gateway / Anthropic origin added — the
-# browser only ever calls same-origin /generate-plan (covered by 'self');
-# the call to Claude happens server-side inside the Netlify Function, which
-# isn't subject to the page's CSP at all.
+# This exact policy was tested locally against every built page before it
+# was written here: nothing was blocked, both scripts ran, the stylesheet
+# and the self-hosted fonts applied, and all 109 application/ld+json
+# blocks parsed. (JSON-LD is data rather than executable script, so
+# script-src does not apply to it — but that was verified rather than
+# assumed.) Re-run it after any CSP change:  node tools/probe-csp.mjs
+#
+# Note that style-src 'self' also blocks style="" attributes, not just
+# inline <style> blocks. The site has none; if you add one, this policy
+# will silently drop the styling. Use a class.
+#
+# Removed from connect-src: corsproxy.io and api.rss2json.com. Those were
+# fallback paths for the Substack feed. They routed reader requests, and
+# Neil's own content, through two third parties in a position to modify
+# what came back — for a failure case the site's own Netlify function and
+# the direct Substack API already cover.
+#
+# Removed entirely: fonts.googleapis.com and fonts.gstatic.com. Both
+# families are self-hosted under /assets/fonts now, so no visitor request
+# reaches Google and nothing external blocks the render.
+#
+# img-src still allows https: because the Practice Library card thumbnails
+# come from substackcdn.com and change as cards are published.
+
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://plausible.io https://corsproxy.io https://api.rss2json.com https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://plausible.io https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-Frame-Options = "SAMEORIGIN"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Cross-Origin-Opener-Policy = "same-origin"
 
 # ── Cache lifetimes ──
-# HTML pages above are left on Netlify's default (short) caching since content
-# changes without a filename/hash change. Static assets below are safe to cache
-# hard because a content change means a new filename in practice (images/PDFs
-# are replaced by editing the file in place only rarely, and CSS/JS lives inline
-# in the HTML, not as separate cached files, so search.js is the one exception).
+# HTML stays on Netlify's short default: content changes without the
+# filename changing. Everything under /assets is a shared file now rather
+# than markup inlined into every page, so it is worth caching properly —
+# though not immutably, since site.css keeps its name across edits.
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
 [[headers]]
   for = "/images/*"
   [headers.values]
@@ -96,11 +136,6 @@
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/search.js"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
   for = "/favicon.ico"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
@@ -109,3 +144,14 @@
   for = "/apple-touch-icon.png"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/.well-known/security.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/briefings.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"

@@ -1,0 +1,191 @@
+<!--page
+{
+  "title": "Briefings \u2014 Neil Catton",
+  "description": "Free, sourced briefings on AI in UK sectors \u2014 the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.",
+  "slug": "briefings",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .method-panel { background: rgba(245,242,238,0.06); border: 1px solid rgba(212,207,201,0.2); padding: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards; }\n  .method-panel-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.86); margin-bottom: 0.75rem; display: block; }\n  .method-panel-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem; }\n  .method-panel-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(245,242,238,0.65); }\n  .publication-strip { background: #2b4a6f; padding: 3rem var(--col-pad); }\n  .publication-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .pub-stat { text-align: center; }\n  .pub-stat-word { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; font-style: italic; color: #f5f2ee; display: block; margin-bottom: 0.35rem; }\n  .pub-stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.78); }\n  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2rem; }\n  .library-filters { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; align-items: center; }\n  .briefing-search { flex: 1 1 280px; max-width: 420px; font-family: var(--sans); font-size: 0.9rem; color: var(--ink); background: #fff; border: 1.5px solid #d4cfc9; padding: 0.65rem 1rem; min-height: 44px; }\n  .briefing-search:focus-visible { outline: 3px solid #2b4a6f; outline-offset: 1px; }\n  .briefing-search-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; }\n  .library-count { margin-left: auto; font-size: 0.8rem; color: #5c5652; }\n  .briefing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }\n  .briefing-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #d4cfc9; padding: 0 0 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; overflow: hidden; }\n  .briefing-card:hover { border-color: #2b4a6f; box-shadow: 0 10px 26px rgba(26,23,20,0.1); }\n  .briefing-card-image-wrap { aspect-ratio: 16 / 10; overflow: hidden; background: #ede9e3; border-bottom: 1px solid #d4cfc9; }\n  .briefing-card-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }\n  .briefing-card-body { padding: 1.75rem 1.75rem 0; display: flex; flex-direction: column; flex-grow: 1; }\n  .briefing-card-tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }\n  .briefing-tag { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; border: 1px solid #2b4a6f; padding: 0.2rem 0.55rem; }\n  .briefing-card-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; line-height: 1.3; color: #1a1714; text-decoration: none; display: block; margin-bottom: 0.75rem; }\n  .briefing-card-title:hover { color: #2b4a6f; }\n  .briefing-card-standfirst { font-size: 0.92rem; color: #3d3935; line-height: 1.65; margin-bottom: 1.25rem; flex-grow: 1; }\n  .briefing-card-meta { font-size: 0.78rem; color: #5c5652; margin-bottom: 1rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }\n  .briefing-card-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }\n  .briefing-card-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; }\n  .briefing-card-link::after { content: \" \u2192\"; }\n  .briefing-card-link:hover { color: #1a1714; text-decoration: underline; }\n  .briefing-card-download { color: #5c5652; }\n  .briefing-card-download::after { content: \" \u2193\"; }\n  .briefing-card-download:hover { color: #1a1714; text-decoration: underline; }\n  .feed-empty { background: #ede9e3; border: 1px solid #d4cfc9; padding: 3rem; text-align: center; }\n  .feed-empty-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }\n  .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; max-width: 560px; margin: 0 auto; }\n  .feed-section + .feed-section { border-top: 1px solid #d4cfc9; }\n  .section-intro { max-width: 680px; color: #3d3935; font-size: 0.95rem; line-height: 1.75; margin-bottom: 2.5rem; }\n  .briefing-card-byline { font-family: var(--sans); font-size: 0.8rem; font-style: italic; color: #5c5652; margin-bottom: 0.75rem; }\n  .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }\n  .about-writing-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }\n  .about-writing-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .about-writing p { font-size: 1.0625rem; font-weight: 400; line-height: 1.85; color: #1a1714; margin-bottom: 1.25rem; }\n  .roadmap-key { margin-top: 0.5rem; }\n  .roadmap-key-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652; margin-bottom: 1.25rem; display: block; }\n  .roadmap-key p { font-size: 0.95rem; color: #3d3935; line-height: 1.75; margin-bottom: 1.25rem; }\n  .subscribe-section { background: #1a1714; padding: 5rem var(--col-pad); text-align: center; }\n  .subscribe-inner { max-width: 860px; margin: 0 auto; }\n  .subscribe-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem; }\n  .subscribe-sub { font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.7); margin-bottom: 2rem; line-height: 1.7; }\n  .btn-inverse { background: #f5f2ee; color: #1a1714; border: 2px solid #f5f2ee; }\n  .btn-inverse:hover { background: transparent; color: #f5f2ee; }\n@media (max-width: 860px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .method-panel { display: none; }\n  .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }\n  .pub-stat { text-align: left; }\n  .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }\n  .library-count { margin-left: 0; width: 100%; }\n}\n@media (max-width: 580px) {\n  .briefing-grid { grid-template-columns: 1fr; }\n}\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-briefings-1.x-briefings-1.x-briefings-1 { margin-top:0.5rem; }",
+  "layout": "layouts/briefings.html",
+  "data": [
+    "briefings"
+  ],
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Sector Briefings",
+      "description": "Free, sourced briefings on AI in UK sectors \u2014 the regulatory pressure, the verified threats, and where the opportunity is defensible, one sector at a time.",
+      "url": "https://www.neilcatton.com/briefings.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Briefings",
+          "item": "https://www.neilcatton.com/briefings.html"
+        }
+      ]
+    }
+  ],
+  "js": "/* Briefings \u2014 client-side filter over server-rendered cards. */\n(function () {\n  \"use strict\";\n  var input = document.getElementById(\"briefing-search\");\n  var countEl = document.getElementById(\"briefing-count\");\n  var noMatch = document.getElementById(\"briefings-no-match\");\n  var grid = document.querySelector(\"#briefings .briefing-grid\");\n  if (!input || !grid) return;\n  var cards = [].slice.call(grid.querySelectorAll(\".briefing-card\"));\n\n  function apply(q) {\n    q = (q || \"\").trim().toLowerCase();\n    var shown = 0;\n    cards.forEach(function (c) {\n      var match = !q || (c.dataset.search || \"\").indexOf(q) !== -1;\n      c.hidden = !match;\n      if (match) shown++;\n    });\n    grid.hidden = shown === 0;\n    if (noMatch) noMatch.hidden = shown !== 0;\n    if (countEl) countEl.textContent = shown === 1 ? \"1 briefing\" : shown + \" briefings\";\n  }\n\n  var timer = null;\n  input.addEventListener(\"input\", function () {\n    clearTimeout(timer);\n    timer = setTimeout(function () { apply(input.value); }, 120);\n  });\n})();\n",
+  "searchTitle": "Sector briefings"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Briefings</span>
+        <h1 class="page-title" id="page-title">Sector<br><em>Briefings</em></h1>
+        <p class="page-standfirst">
+          One technology, one sector, one report — the regulatory pressure,
+          the verified threats, and where the opportunity is actually
+          defensible today. Free to read, built only on sources you can
+          check yourself.
+        </p>
+      </div>
+      <div class="method-panel" aria-label="How these are built">
+        <span class="method-panel-label">The discipline</span>
+        <h2 class="method-panel-name">Primary sources only</h2>
+        <p class="method-panel-desc">
+          Every figure is checked against a regulator, trade body, ombudsman,
+          legislation, or an operator's own statement. Where a widely-quoted
+          statistic could not be sourced, it was left out — and the
+          exclusion is stated in the briefing itself.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRINCIPLES STRIP -->
+  <div class="publication-strip" role="region" aria-label="About the briefings">
+    <div class="publication-inner">
+      <div class="pub-stat">
+        <span class="pub-stat-word">Sourced, not sold</span>
+        <span class="pub-stat-label">Vendor statistics excluded on the record</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">One at a time</span>
+        <span class="pub-stat-label">A new sector as each is researched and verified</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">Free, no form</span>
+        <span class="pub-stat-label">Direct download, nothing to fill in</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIEFINGS -->
+  <section class="feed-section" aria-labelledby="briefings-heading">
+    <div class="feed-inner">
+      <span class="section-label">Artificial intelligence</span>
+      <h2 class="section-heading" id="briefings-heading">AI across UK sectors</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="library-filters">
+        <label class="briefing-search-label" for="briefing-search">Search by sector or regulator</label>
+        <input type="search" id="briefing-search" class="briefing-search" placeholder="e.g. insurance, FCA, claims…" autocomplete="off">
+        <span class="library-count" id="briefing-count" aria-live="polite"></span>
+      </div>
+
+      <div id="briefings" aria-live="polite">
+        <div class="feed-empty">
+          <p class="feed-empty-heading">Loading the briefings…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATIONS -->
+  <section class="feed-section" aria-labelledby="collaborations-heading">
+    <div class="feed-inner">
+      <span class="section-label">Collaborations</span>
+      <h2 class="section-heading" id="collaborations-heading">Built with people who work inside the sector</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <p class="section-intro">
+        Some briefings are co-authored with a named industry practitioner —
+        someone working inside the sector, credited by name, whose
+        operational knowledge goes beyond what desk research alone can
+        verify. The discipline doesn't change: primary sources only,
+        confidence marked on every claim, exclusions stated in the document
+        itself.
+      </p>
+
+      <div id="collaborations" aria-live="polite">
+        <div class="feed-empty">
+          <p class="feed-empty-heading">Loading…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-writing" aria-labelledby="about-heading">
+    <div class="about-writing-inner">
+      <div>
+        <h2 class="about-writing-heading" id="about-heading">
+          Why these exist.
+        </h2>
+        <p>
+          Almost every published statistic about AI in a given sector is
+          produced by a company selling AI into that sector. A briefing that
+          repeats those numbers is indistinguishable from the vendor material
+          a senior stakeholder already ignores.
+        </p>
+        <p>
+          Each report is built the other way round: primary sources first,
+          confidence marked on every claim, exclusions named in the document
+          itself. The reader is assumed to know their sector well and their
+          AI options less well — and to check one figure before trusting the
+          rest.
+        </p>
+        <p>
+          Take the one for your sector. If it isn't here yet, ask.
+        </p>
+      </div>
+
+      <div class="roadmap-key">
+        <span class="roadmap-key-label">What's coming</span>
+        <p>
+          The first tranche covers AI, sector by sector, across UK financial
+          services, housing, public services, and beyond. Later tranches will
+          take the same discipline to other emerging technologies as they
+          reach the same bar: a named regulator, a public evidence base, and
+          a real human consequence.
+        </p>
+        <a href="/contact.html" class="btn btn-secondary x-briefings-1">Ask about a sector</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="subscribe-section" aria-labelledby="subscribe-heading">
+    <div class="subscribe-inner">
+      <h2 class="subscribe-heading" id="subscribe-heading">Want to talk through what it means for you?</h2>
+      <p class="subscribe-sub">
+        Most engagements begin with a single conversation, after someone has
+        already read the briefing.
+      </p>
+      <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn btn-inverse"
+         target="_blank" rel="noopener noreferrer">
+        Book a meeting
+      </a>
+    </div>
+  </section>

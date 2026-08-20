@@ -1,0 +1,54 @@
+# Accessibility, reflow, target-size and link checks.
+#
+# This exists because four manual audit passes missed a one-line CSS bug
+# that left 26 of 33 pages scrolling sideways on a phone, with eight
+# footer links rendering at 1.06:1 contrast off-canvas. A machine would
+# have caught it the day it was introduced. Now one does.
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Monthly link rot check, 07:00 UTC on the first of the month.
+    - cron: "0 7 1 * *"
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Accessibility, reflow and target size
+        run: node tools/check-a11y.mjs
+
+      - name: Internal links and fragments
+        run: node tools/check-links.mjs
+
+  external-links:
+    # Someone else's server having a bad minute should not fail a deploy,
+    # so outbound links are checked on a schedule rather than on push.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node tools/check-links.mjs --external

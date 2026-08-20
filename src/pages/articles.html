@@ -1,0 +1,194 @@
+<!--page
+{
+  "title": "Writing \u2014 Neil Catton",
+  "description": "Essays on technology, ethics, and human purpose from The Next Evolution \u2014 Neil Catton's Substack for CTOs, board members, and system shapers.",
+  "slug": "articles",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .substack-panel { background: rgba(245,242,238,0.06); border: 1px solid rgba(212,207,201,0.2); padding: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards; }\n  .substack-panel-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.86); margin-bottom: 0.75rem; display: block; }\n  .substack-panel-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem; }\n  .substack-panel-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(245,242,238,0.65); margin-bottom: 1.5rem; }\n  .btn-subscribe { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.875rem 1.75rem; min-height: 44px; background: #2b4a6f; color: #f5f2ee; border: 2px solid #2b4a6f; transition: all 0.2s; }\n  .btn-subscribe:hover { background: #f5f2ee; color: #2b4a6f; border-color: #f5f2ee; }\n  .publication-strip { background: #2b4a6f; padding: 3rem var(--col-pad); }\n  .publication-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .pub-stat { text-align: center; }\n  .pub-stat-word { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; font-style: italic; color: #f5f2ee; display: block; margin-bottom: 0.35rem; }\n  .pub-stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.78); }\n  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 3rem; }\n  #rss-feed { min-height: 200px; }\n  .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }\n  .feed-card { border-top: 2px solid #d4cfc9; padding-top: 1.5rem; transition: border-color 0.2s; background: transparent; }\n  .feed-card:hover { border-color: #2b4a6f; }\n  .feed-card-pub { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5652; margin-bottom: 0.75rem; display: block; }\n  .feed-card-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; line-height: 1.35; color: #1a1714; margin-bottom: 0.75rem; text-decoration: none; display: block; }\n  .feed-card-title:hover { color: #2b4a6f; }\n  .feed-card-excerpt { font-size: 0.9rem; color: #3d3935; line-height: 1.65; margin-bottom: 1rem; background: transparent; }\n  .feed-card-date { font-size: 0.75rem; color: #5c5652; margin-bottom: 1rem; }\n  .feed-card-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; }\n  .feed-card-link::after { content: \" \u2192\"; }\n  .feed-card-link:hover { color: #1a1714; text-decoration: underline; }\n  .feed-loading { grid-column: 1 / -1; text-align: center; padding: 3rem; color: #5c5652; font-size: 0.9rem; }\n  .feed-empty { grid-column: 1 / -1; background: #ede9e3; border: 1px solid #d4cfc9; padding: 3rem; text-align: center; }\n  .feed-empty-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }\n  .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.5rem; }\n  .feed-cta { text-align: center; }\n  .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }\n  .about-writing-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }\n  .about-writing-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .about-writing p { font-size: 1.0625rem; font-weight: 400; line-height: 1.85; color: #1a1714; margin-bottom: 1.25rem; background: transparent; }\n  .topics-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652; margin-bottom: 1.25rem; display: block; }\n  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }\n  .topic-item { font-size: 0.9375rem; font-weight: 400; color: #1a1714; padding: 0.75rem 0; border-bottom: 1px solid #d4cfc9; display: flex; align-items: center; gap: 0.75rem; background: transparent; }\n  .topic-item::before { content: \"\"; width: 4px; height: 4px; background: #2b4a6f; border-radius: 50%; flex-shrink: 0; }\n  .subscribe-section { background: #1a1714; padding: 5rem var(--col-pad); text-align: center; }\n  .subscribe-inner { max-width: 860px; margin: 0 auto; }\n  .subscribe-flex { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3.5rem; align-items: center; text-align: left; }\n  .subscribe-text { text-align: center; }\n  .subscribe-qr { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; text-decoration: none; }\n  .subscribe-qr-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.55); }\n  .subscribe-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem; }\n  .subscribe-sub { font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.7); margin-bottom: 2.5rem; line-height: 1.7; }\n  .subscribe-form { display: flex; max-width: 440px; margin: 0 auto; }\n  .subscribe-label { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }\n  .subscribe-input { flex: 1; font-family: var(--sans); font-size: 1rem; padding: 0.875rem 1.25rem; background: rgba(245,242,238,0.1); border: 2px solid rgba(245,242,238,0.3); border-right: none; color: #f5f2ee; outline: none; min-height: 44px; transition: border-color 0.2s; }\n  .subscribe-input::placeholder { color: rgba(245,242,238,0.55); }\n  .subscribe-input:focus { border-color: rgba(245,242,238,0.75); }\n  .subscribe-btn { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: #f5f2ee; color: #2b4a6f; border: 2px solid #f5f2ee; padding: 0.875rem 1.5rem; min-height: 44px; cursor: pointer; transition: all 0.2s; }\n  .subscribe-btn:hover { background: #2b4a6f; border-color: #2b4a6f; color: #f5f2ee; }\n  .subscribe-note { font-size: 0.78rem; color: rgba(245,242,238,0.55); margin-top: 1.25rem; }\n@media (max-width: 860px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .substack-panel { display: none; }\n  .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }\n  .pub-stat { text-align: left; }\n  .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }\n  .topics-grid { grid-template-columns: 1fr; }\n  .subscribe-flex { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 2.5rem; }\n}\n@media (max-width: 580px) {\n  .subscribe-form { flex-direction: column; }\n  .subscribe-input { border-right: 2px solid rgba(245,242,238,0.3); }\n}\n  .embed-row { display: flex; justify-content: center; margin-top: 0.5rem; min-width: 0; }\n  .embed-frame { background: #fff; border-radius: 2px; overflow: hidden; width: 100%; max-width: 480px; }\n  .embed-frame iframe { width: 100%; }\n  /* A flex item will not shrink below its content unless told to; the\n     480px iframe was forcing 504px of horizontal scroll on a phone. */\n  .subscribe-flex, .subscribe-text { min-width: 0; }\n  .subscribe-flex > * { min-width: 0; }\n\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-articles-1.x-articles-1.x-articles-1 { margin-top:1rem; }\n  .x-articles-2.x-articles-2.x-articles-2 { margin-top:0.5rem; }\n  .x-articles-3.x-articles-3.x-articles-3 { display:block; border:none; max-width:100%; }\n  .x-articles-4.x-articles-4.x-articles-4 { display:block;padding:1rem;text-align:center; }\n  .x-articles-5.x-articles-5.x-articles-5 { display:block; width:180px; height:180px; background:#fff; padding:14px; border-radius:4px; }",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Writing",
+      "url": "https://www.neilcatton.com/articles.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://www.neilcatton.com/articles.html"
+        }
+      ]
+    }
+  ],
+  "searchTitle": "Writing"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Writing</span>
+        <h1 class="page-title" id="page-title">The Next<br><em>Evolution</em></h1>
+        <p class="page-standfirst">
+          A strategic briefing for leaders and system shapers — moving from
+          accidental evolution to the intentional design of trust, agency,
+          and moral architecture. Published when there is something worth saying.
+        </p>
+      </div>
+      <div class="substack-panel" aria-label="Substack publication details">
+        <span class="substack-panel-label">Publication</span>
+        <h2 class="substack-panel-name">The Next Evolution</h2>
+        <p class="substack-panel-desc">
+          Essays at the intersection of technology, ethics, and human purpose.
+          Written for CTOs, board members, and anyone navigating systems that
+          weren't built with them in mind.
+        </p>
+        <a href="https://writing.neilcatton.com" class="btn-subscribe"
+           target="_blank" rel="noopener noreferrer">
+          Subscribe on Substack
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PUBLICATION PILLARS -->
+  <div class="publication-strip" role="region" aria-label="Publication principles">
+    <div class="publication-inner">
+      <div class="pub-stat">
+        <span class="pub-stat-word">When it matters</span>
+        <span class="pub-stat-label">Published to no schedule</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">Free to read</span>
+        <span class="pub-stat-label">No paywall</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">One argument</span>
+        <span class="pub-stat-label">Per essay, clearly made</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE RSS FEED -->
+  <section class="feed-section" aria-labelledby="feed-heading">
+    <div class="feed-inner">
+      <span class="section-label">Latest essays</span>
+      <h2 class="section-heading" id="feed-heading">From the Substack</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div id="rss-feed" data-substack-feed="9" data-feed-grid-class="feed-grid">
+        <div class="feed-fallback">
+          <p class="feed-fallback-body">The most recent essays load here from <em>{{substackName}}</em>. If you are reading this, they have not — the full archive is on Substack.</p>
+          <a href="{{substack}}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read the essays on Substack</a>
+        </div>
+      </div>
+
+      <div class="feed-cta x-articles-1">
+        <a href="https://writing.neilcatton.com" class="btn btn-primary"
+           target="_blank" rel="noopener noreferrer">
+          Read all essays on Substack
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE WRITING -->
+  <section class="about-writing" aria-labelledby="about-writing-heading">
+    <div class="about-writing-inner">
+      <div>
+        <h2 class="about-writing-heading" id="about-writing-heading">
+          Why Substack.<br>Why no schedule.
+        </h2>
+        <p>
+          The Next Evolution publishes when there is something worth saying.
+          Not to a content calendar. Not to an algorithm. The form is deliberate:
+          if the writing argues that technology should adapt to the individual
+          rather than the other way around, it would be a poor advertisement
+          for itself if it chased engagement metrics instead.
+        </p>
+        <p>
+          The essays are read by CTOs, board members, and product leaders —
+          and by people who have nothing to do with technology professionally
+          but find themselves navigating systems that were not built with them
+          in mind. That range is not accidental. The argument is the same
+          whoever is reading it.
+        </p>
+        <p>
+          Each essay makes one argument. Clearly. Anchored in a specific
+          human consequence. It does not end with a rallying call.
+        </p>
+        <a href="https://writing.neilcatton.com" class="btn btn-secondary x-articles-2"
+           target="_blank" rel="noopener noreferrer">
+          Follow on Substack
+        </a>
+      </div>
+
+      <div>
+        <span class="topics-label">Territory</span>
+        <div class="topics-grid" role="list">
+          <div class="topic-item" role="listitem">AI ethics &amp; governance</div>
+          <div class="topic-item" role="listitem">Human agency in technology</div>
+          <div class="topic-item" role="listitem">Organisational systems</div>
+          <div class="topic-item" role="listitem">Cognitive sovereignty</div>
+          <div class="topic-item" role="listitem">Cyber security &amp; risk</div>
+          <div class="topic-item" role="listitem">Digital identity</div>
+          <div class="topic-item" role="listitem">Public sector technology</div>
+          <div class="topic-item" role="listitem">Trust &amp; moral architecture</div>
+          <div class="topic-item" role="listitem">System design &amp; failure</div>
+          <div class="topic-item" role="listitem">Leadership &amp; strategy</div>
+          <div class="topic-item" role="listitem">Society 5.0</div>
+          <div class="topic-item" role="listitem">The future of policing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe-section" aria-labelledby="subscribe-heading">
+    <div class="subscribe-inner">
+      <div class="subscribe-flex">
+        <div class="subscribe-text">
+          <h2 class="subscribe-heading" id="subscribe-heading">One essay.<br>When it matters.</h2>
+          <p class="subscribe-sub">
+            No noise. No schedule. Published when there is something
+            worth saying — and not before.
+          </p>
+          <div class="embed-row">
+            <div class="embed-frame">
+              <iframe data-src="https://writing.neilcatton.com/embed"
+                      width="480" height="200" class="x-articles-3 lazy-embed"
+                      frameborder="0" scrolling="no" loading="lazy"
+                     
+                      title="Subscribe to The Next Evolution on Substack">
+              </iframe>
+              <noscript><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="x-articles-4">Subscribe on Substack</a></noscript>
+            </div>
+          </div>
+          <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
+        </div>
+        <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="subscribe-qr" aria-label="Scan to subscribe to The Next Evolution on Substack">
+          <img src="/images/qr-code-substack.svg" width="180" height="180" alt="QR code linking to The Next Evolution Substack" class="x-articles-5">
+          <span class="subscribe-qr-label">Scan to subscribe</span>
+        </a>
+      </div>
+    </div>
+  </section>

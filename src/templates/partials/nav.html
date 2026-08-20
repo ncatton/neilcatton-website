@@ -1,0 +1,45 @@
+<!-- Site navigation.
+
+     One <ul> serves both the desktop bar and the mobile panel, so
+     aria-current can never disagree between the two. Dropdown parents
+     are <button aria-expanded>, not links: a link parent navigates
+     instead of opening the menu on touch, reports no state to
+     assistive technology, and duplicates the first item in its own
+     menu. The section index is the first item inside the menu instead.
+
+     Before this rebuild there was no mobile navigation at all — below
+     580px .nav-links was set to display:none and nothing replaced it,
+     taking the search control and the "Book a call" button with it. -->
+<nav class="site-nav" aria-label="Site navigation" id="site-nav" data-nav-open="false">
+  <a href="/" class="nav-wordmark"${d.path === "/" ? ' aria-current="page"' : ""}>${s.name}</a>
+
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel">
+    <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+    <span class="nav-toggle-text">Menu</span>
+  </button>
+
+  <div class="nav-panel" id="nav-panel">
+    <ul class="nav-links" role="list">
+${s.nav.map((group) => {
+  if (!group.items) {
+    const current = group.href === d.path;
+    return `      <li><a href="${group.href}"${current ? ' aria-current="page"' : ""}>${group.label}</a></li>`;
+  }
+  const inSection = d.section === group.id;
+  return `      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" id="navbtn-${group.id}"
+                aria-expanded="false" aria-controls="navmenu-${group.id}"${inSection ? ' data-section-current' : ""}>
+          ${group.label} <span class="caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <ul class="dropdown-menu" id="navmenu-${group.id}" role="list" aria-labelledby="navbtn-${group.id}">
+${group.items.map((item) => item.divider
+    ? `          <li class="dropdown-divider" role="presentation"></li>`
+    : `          <li><a href="${item.href}"${item.href === d.path ? ' aria-current="page"' : ""}${h.ext(item.href)}>${item.label}</a></li>`
+).join("\n")}
+        </ul>
+      </li>`;
+}).join("\n")}
+      <li class="nav-cta"><a href="${s.booking}" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
+    </ul>
+  </div>
+</nav>

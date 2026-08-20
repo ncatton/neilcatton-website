@@ -1,0 +1,35 @@
+<!-- Briefings index layout.
+
+     The cards used to be built in the browser from a fetch of
+     data/briefings.json, so the page carried no briefing content in its
+     HTML. They are rendered here at build time from the same file; the
+     search box still filters, but only over cards that already exist.
+     The card title is now the only link per card — the "Read the
+     briefing" duplicate was removed rather than hidden. -->
+${d.body
+  .replace('<div id="briefings" aria-live="polite">\n        <div class="feed-empty">\n          <p class="feed-empty-heading">Loading the briefings…</p>\n        </div>\n      </div>',
+`<div id="briefings">
+${d.data.briefings.briefings.length ? `        <div class="briefing-grid">
+${d.data.briefings.briefings.map((b) => partial("partials/briefing-card.html", { b })).join("\n")}
+        </div>` : `        <div class="feed-empty">
+          <p class="feed-empty-heading">The first briefing is on its way.</p>
+          <p class="feed-empty-body">Each one takes real research time, sector by sector. This page picks them up as soon as they are published.</p>
+        </div>`}
+        <div class="feed-empty" id="briefings-no-match" hidden>
+          <p class="feed-empty-heading">Nothing matches that search.</p>
+          <p class="feed-empty-body">Try a sector name, a regulator, or clear the search to see everything published so far.</p>
+        </div>
+      </div>`)
+  .replace('<span class="library-count" id="briefing-count" aria-live="polite"></span>',
+`<span class="library-count" id="briefing-count" role="status" aria-live="polite">${d.data.briefings.briefings.length === 1 ? "1 briefing" : d.data.briefings.briefings.length + " briefings"}</span>`)
+  .replace(/<div id="collaborations"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/,
+`<div id="collaborations">
+${d.data.briefings.collaborations.length ? `        <div class="briefing-grid">
+${d.data.briefings.collaborations.map((b) => partial("partials/briefing-card.html", { b })).join("\n")}
+        </div>` : `        <div class="feed-empty">
+          <p class="feed-empty-heading">The first collaboration is in progress.</p>
+          <p class="feed-empty-body">Finding the right co-author takes as long as the research does. This section fills in once that work is ready to publish.</p>
+        </div>`}
+      </div>
+    </div>
+  </section>`)}

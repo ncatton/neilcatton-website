@@ -1,0 +1,65 @@
+<!-- Practice Library layout.
+
+     The card grid used to be assembled in the browser from two fetches.
+     The permanent register (src/data/practice-library.json) is now
+     rendered at build time, so the collection is in the HTML; the page's
+     script still merges in anything the live Substack feed knows about
+     that the register does not yet. -->
+${(() => {
+  const BOOK_NAMES = { "I": "The Next Evolution", "II": "The Cognitive Crucible", "III": "The Shadow System" };
+  const BOOK_TAGLINE = { "I": "Awareness", "II": "Agency", "III": "Action" };
+  const ORDER = ["I", "II", "III", ""];
+
+  const cards = (d.data["practice-library"].cards || [])
+    .slice()
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+  const fmt = (iso) => {
+    const dt = new Date(iso + "T00:00:00Z");
+    return isNaN(dt.getTime()) ? "" : dt.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  };
+
+  const card = (c) => `            <article class="library-card"${c.book ? ` data-book="${c.book}"` : ""}>
+              <a class="library-card-imgwrap" href="${h.esc(c.link)}" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+${c.image
+  ? `                <img src="${h.esc(c.image)}" alt="" loading="lazy" decoding="async" width="210" height="297">`
+  : `                <span class="library-card-placeholder">${h.esc(c.title)}</span>`}
+              </a>
+              <p class="library-card-book">${h.esc(BOOK_NAMES[c.book] || "The Practice Library")}</p>
+              <h4 class="library-card-heading"><a class="library-card-title" href="${h.esc(c.link)}" target="_blank" rel="noopener noreferrer">${h.esc(c.title)}</a></h4>
+              <p class="library-card-date"><time datetime="${h.esc(c.date)}">${fmt(c.date)}</time></p>
+            </article>`;
+
+  const groups = ORDER
+    .map((book) => [book, cards.filter((c) => (c.book || "") === book)])
+    .filter(([, list]) => list.length);
+
+  const rendered = groups.map(([book, list]) => `        <div class="book-group" data-book="${book || "uncatalogued"}">
+          <div class="book-group-header">
+${book ? `            <span class="book-group-swatch" data-book="${book}" aria-hidden="true"></span>` : ""}
+            <h3 class="book-group-title">${h.esc(BOOK_NAMES[book] || "Not yet catalogued")}</h3>
+${BOOK_TAGLINE[book] ? `            <span class="book-group-tagline">${BOOK_TAGLINE[book]}</span>` : ""}
+            <span class="book-group-count">${list.length === 1 ? "1 card" : list.length + " cards"}</span>
+          </div>
+          <div class="library-grid">
+${list.map(card).join("\n")}
+          </div>
+        </div>`).join("\n");
+
+  return d.body
+    .replace(/<div id="library"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/,
+`<div id="library">
+${cards.length ? rendered : `        <div class="feed-empty">
+          <p class="feed-empty-heading">The first cards are on their way.</p>
+          <p class="feed-empty-body">The collection builds one card at a time, each published on the Substack with a note on the situation it is for. This page picks them up as they arrive.</p>
+        </div>`}
+        <div class="feed-empty" id="library-no-match" hidden>
+          <p class="feed-empty-heading">Nothing from this book yet.</p>
+          <p class="feed-empty-body">Cards from all three books arrive over time — this one's turn is coming.</p>
+        </div>
+      </div>
+    </div>
+  </section>`)
+    .replace('<span class="library-count" id="library-count" aria-live="polite"></span>',
+      `<span class="library-count" id="library-count" role="status" aria-live="polite">${cards.length === 1 ? "1 card" : cards.length + " cards"}</span>`);
+})()}

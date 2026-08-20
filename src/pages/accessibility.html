@@ -1,0 +1,93 @@
+<!--page
+{
+  "title": "Accessibility Statement \u2014 Neil Catton",
+  "description": "How this website approaches accessibility, its current WCAG 2.2 AA conformance target, known limitations, and how to report an accessibility issue.",
+  "slug": "accessibility",
+  "css": ".page-header { padding: 9rem var(--col-pad) 3rem; background: var(--paper); border-bottom: 1px solid var(--rule); }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); display: block; margin-bottom: 1rem; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }\n  .page-title em { font-style: italic; color: var(--accent); }\n  .page-standfirst { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 620px; }\n  .prose-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }\n  .prose-inner { max-width: 720px; margin: 0 auto; }\n  .prose-inner p, .prose-inner ul { margin-bottom: 1.25rem; color: var(--ink-mid); }\n  .prose-inner ul { padding-left: 1.4rem; }\n  .prose-inner li { margin-bottom: 0.5rem; }\n  .prose-inner h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--ink); margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.01em; }\n  .prose-inner h2:first-child { margin-top: 0; }\n  .prose-inner a { color: var(--accent); }\n  .prose-inner strong { color: var(--ink); }\n  .updated-note { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 2.5rem; }",
+  "searchTitle": "Accessibility statement"
+}
+-->
+<!-- NAV -->
+
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Legal</span>
+      <h1 class="page-title" id="page-title">Accessibility <em>Statement</em></h1>
+      <p class="page-standfirst">
+        What this site targets, what hasn't been independently tested yet, and how to report a problem.
+      </p>
+    </div>
+  </header>
+
+  <section class="prose-section" aria-labelledby="page-title">
+    <div class="prose-inner">
+      <p class="updated-note">Last reviewed: {{buildDate}}</p>
+
+      <h2>Conformance target</h2>
+      <p>
+        This site is built to meet <strong>WCAG 2.2, Level AA</strong>. That's a target, not a
+        certification: the site has been built and reviewed against those criteria — semantic
+        heading structure, colour contrast, keyboard operability, visible focus indicators, alt
+        text, labelled form fields, reduced-motion support — but it has not been through an
+        independent, professional accessibility audit, and no manual screen-reader pass has been
+        run against the live site. Treat this as a considered, self-assessed statement of intent
+        rather than a guarantee of full conformance.
+      </p>
+
+      <h2>What's already in place</h2>
+      <ul>
+        <li>A "Skip to main content" link as the first focusable element on every page</li>
+        <li>One logical heading per page, in order, with native landmark elements (header, nav, main, footer)</li>
+        <li>Descriptive alt text on every meaningful image, and no decorative images that would need <code>alt=""</code></li>
+        <li>Every form field has a visible, associated label — not a placeholder standing in for one</li>
+        <li>Both contact forms validate properly and report errors in text before submitting</li>
+        <li><code>prefers-reduced-motion</code> is respected sitewide — no animation plays for visitors who have that preference set</li>
+        <li>The ink-on-paper colour palette used throughout comfortably clears WCAG's 4.5:1 contrast minimum for body text</li>
+        <li><code>lang="en-GB"</code> is set on every page</li>
+        <li>Navigation works on a phone. Until August 2026 it did not: below 580px the menu was
+          hidden and nothing replaced it, and a footer that could not wrap pushed most of its links
+          off-screen. Both are fixed, and a check now runs on every change to stop either
+          recurring</li>
+        <li>Every page reflows to a 320px viewport with no sideways scrolling</li>
+        <li>Menus open on click rather than hover, so they work by touch, and report their open or
+          closed state to assistive technology</li>
+        <li>Section headings on the service and briefing pages are real headings. They used to be
+          styled <code>div</code> elements, which meant a screen reader user navigating by heading
+          skipped the whole argument</li>
+        <li>Every in-page link lands clear of the fixed navigation bar rather than underneath it</li>
+        <li>An automated axe-core scan runs against every page at 375px and 1280px on every change,
+          and the change is blocked if it introduces a WCAG 2.2 A or AA violation, any horizontal
+          overflow, or a control smaller than 24 by 24 pixels</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <p>
+        Being specific about what hasn't been checked matters more than a general assurance that
+        everything is fine. As of this review:
+      </p>
+      <ul>
+        <li>No independent screen-reader testing (NVDA, VoiceOver, or similar) has been carried out.
+          The automated scan below catches what a machine can catch, which is not the same thing</li>
+        <li>The automated scan is axe-core only. It reports no violations, but automated testing
+          reaches roughly a third of WCAG criteria — a clean scan is a floor, not a pass</li>
+        <li>Formal validation against the W3C Nu HTML Checker and CSS Validator has not yet been completed for every page</li>
+        <li>Three embedded third-party services — the Substack subscription form, the TidyCal booking page, and the Formspree-handled contact submission — are outside this site's direct control, and their own accessibility is governed by their respective providers, not by this statement</li>
+      </ul>
+
+      <h2>Reporting a problem</h2>
+      <p>
+        If you hit a genuine barrier using this site with a keyboard, a screen reader, or any other
+        assistive technology, that's useful to know about directly rather than through a form. Email
+        <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a> with what happened and, if you can,
+        what page you were on — it will be looked at and, where reasonable, fixed.
+      </p>
+
+      <h2>Review cadence</h2>
+      <p>
+        This statement is reviewed whenever the site's templates change materially, and at least
+        once a year regardless. The date at the top of this page shows when it was last revised.
+      </p>
+    </div>
+  </section>
+
+<!-- FOOTER -->

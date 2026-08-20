@@ -1,0 +1,33 @@
+<!--page
+{
+  "title": "Please wait a moment \u2014 Neil Catton",
+  "description": "The plan generator is rate limited to six requests a minute. Give it a moment and try again.",
+  "slug": "rate-limited",
+  "robots": "noindex, nofollow",
+  "canonical": false,
+  "searchable": false,
+  "css": "/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-rate-limited-1.x-rate-limited-1.x-rate-limited-1 { max-width:var(--max-prose); }\n  .x-rate-limited-2.x-rate-limited-2.x-rate-limited-2 { margin-top:1.75rem; }\n  .x-rate-limited-3.x-rate-limited-3.x-rate-limited-3 { margin-left:0.75rem; }"
+}
+-->
+<header class="page-header page-header--light">
+  <div class="page-header-inner">
+    <p class="page-label">Your Plan</p>
+    <h1 class="page-title">A moment, <em>please.</em></h1>
+    <p class="page-standfirst">
+      This page has had a lot of requests in a short space of time, so it's
+      pausing briefly rather than letting them all through at once. Nothing's
+      wrong on your end — give it a minute and try again.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-inner x-rate-limited-1">
+    <p>Nothing was lost. The plan generator does not store what you typed,
+      so there is no draft sitting somewhere waiting for you.</p>
+    <p class="x-rate-limited-2">
+      <a class="btn btn-primary" href="/personalised-plan.html">Back to Your Plan</a>
+      <a class="btn btn-secondary x-rate-limited-3" href="/practice-library.html">Browse the collection instead</a>
+    </p>
+  </div>
+</section>

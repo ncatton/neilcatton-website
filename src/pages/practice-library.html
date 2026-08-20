@@ -1,0 +1,231 @@
+<!--page
+{
+  "title": "The Practice Library \u2014 Neil Catton",
+  "description": "The Practice Library \u2014 where the trilogy and the Substack turn into cards, tools, and a map you can actually use.",
+  "slug": "practice-library",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .substack-panel { background: rgba(245,242,238,0.06); border: 1px solid rgba(212,207,201,0.2); padding: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards; }\n  .substack-panel-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.86); margin-bottom: 0.75rem; display: block; }\n  .substack-panel-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem; }\n  .substack-panel-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(245,242,238,0.65); margin-bottom: 1.5rem; }\n  .btn-subscribe { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.875rem 1.75rem; min-height: 44px; background: #2b4a6f; color: #f5f2ee; border: 2px solid #2b4a6f; transition: all 0.2s; }\n  .btn-subscribe:hover { background: #f5f2ee; color: #2b4a6f; border-color: #f5f2ee; }\n  .publication-strip { background: #2b4a6f; padding: 3rem var(--col-pad); }\n  .publication-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .pub-stat { text-align: center; }\n  .pub-stat-word { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; font-style: italic; color: #f5f2ee; display: block; margin-bottom: 0.35rem; }\n  .pub-stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.78); }\n  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2rem; }\n  .library-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; align-items: center; }\n  .filter-btn { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; background: transparent; color: #3d3935; border: 1.5px solid #d4cfc9; padding: 0.5rem 1.1rem; cursor: pointer; transition: all 0.2s; min-height: 38px; }\n  .filter-btn:hover { border-color: #2b4a6f; color: #2b4a6f; }\n  .filter-btn[aria-pressed=\"true\"] { background: #1a1714; color: #f5f2ee; border-color: #1a1714; }\n  .library-count { margin-left: auto; font-size: 0.8rem; color: #5c5652; }\n  .book-group { margin-bottom: 4rem; }\n  .book-group:last-child { margin-bottom: 0; }\n  .book-group-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem 1rem; margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1px solid #d4cfc9; }\n  .book-group-swatch { width: 13px; height: 13px; flex-shrink: 0; transform: translateY(1px); }\n  .book-group-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: #1a1714; }\n  .book-group-tagline { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5c5652; }\n  .book-group-count { margin-left: auto; font-size: 0.8rem; color: #5c5652; }\n  .library-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2.5rem 2rem; }\n  .library-card { display: flex; flex-direction: column; }\n  .library-card-imgwrap { display: block; position: relative; aspect-ratio: 210 / 297; background: #ede9e3; border: 1px solid #d4cfc9; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; }\n  .library-card-imgwrap:hover { border-color: #2b4a6f; box-shadow: 0 10px 26px rgba(26,23,20,0.12); }\n  .library-card-imgwrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }\n  .library-card-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-style: italic; color: #5c5652; font-size: 0.95rem; padding: 1.5rem; text-align: center; }\n  .library-card-book { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin: 1rem 0 0.4rem; display: flex; align-items: center; gap: 0.5rem; color: #5c5652; }\n  .library-card-book::before { content: \"\"; width: 10px; height: 10px; flex-shrink: 0; background: var(--dot, #5c5652); }\n  .library-card[data-book=\"I\"] { --dot: var(--book-1); }\n  .library-card[data-book=\"II\"] { --dot: var(--book-2); }\n  .library-card[data-book=\"III\"] { --dot: var(--book-3); }\n  .library-card-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; line-height: 1.35; color: #1a1714; text-decoration: none; display: block; margin-bottom: 0.4rem; }\n  .library-card-title:hover { color: #2b4a6f; }\n  .library-card-date { font-size: 0.75rem; color: #5c5652; margin-bottom: 0.6rem; }\n  .library-card-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; }\n  .library-card-link::after { content: \" \u2192\"; }\n  .library-card-link:hover { color: #1a1714; text-decoration: underline; }\n  .feed-loading { text-align: center; padding: 3rem; color: #5c5652; font-size: 0.9rem; }\n  .feed-empty { background: #ede9e3; border: 1px solid #d4cfc9; padding: 3rem; text-align: center; }\n  .feed-empty-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }\n  .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; max-width: 560px; margin: 0 auto; }\n  .tools-section { background: #ede9e3; padding: 5rem var(--col-pad); }\n  .tools-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .tools-intro { font-size: 1.0625rem; font-weight: 400; line-height: 1.8; color: #3d3935; max-width: 640px; margin-bottom: 3rem; }\n  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .tool-card { background: #f5f2ee; border: 1px solid #d4cfc9; padding: 2.25rem 2rem; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }\n  .tool-card--live:hover { border-color: #2b4a6f; box-shadow: 0 10px 26px rgba(26,23,20,0.1); transform: translateY(-2px); }\n  .tool-card--soon { border-style: dashed; }\n  .tool-card-status { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1.25rem; color: #2b4a6f; }\n  .tool-card-status::before { content: \"\"; width: 7px; height: 7px; border-radius: 50%; background: #2b4a6f; flex-shrink: 0; }\n  .tool-card--soon .tool-card-status { color: #5c5652; }\n  .tool-card--soon .tool-card-status::before { background: #a8a29b; }\n  .tool-card-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; line-height: 1.3; color: #1a1714; margin-bottom: 0.75rem; }\n  .tool-card--soon .tool-card-title { color: #5c5652; }\n  .tool-card-desc { font-size: 0.92rem; line-height: 1.7; color: #3d3935; margin-bottom: 1.75rem; flex-grow: 1; }\n  .tool-card--soon .tool-card-desc { color: #5c5652; }\n  .tool-card-cta { align-self: flex-start; }\n  .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }\n  .about-writing-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }\n  .about-writing-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .about-writing p { font-size: 1.0625rem; font-weight: 400; line-height: 1.85; color: #1a1714; margin-bottom: 1.25rem; }\n  .books-key { margin-top: 0.5rem; }\n  .books-key-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652; margin-bottom: 1.25rem; display: block; }\n  .book-key-item { display: flex; align-items: baseline; gap: 0.85rem; padding: 0.85rem 0; border-bottom: 1px solid #d4cfc9; }\n  .book-key-swatch { width: 12px; height: 12px; flex-shrink: 0; transform: translateY(1px); }\n  .book-key-title { font-family: var(--serif); font-size: 1.05rem; color: #1a1714; }\n  .book-key-note { font-size: 0.8rem; color: #5c5652; margin-left: auto; text-align: right; }\n  .subscribe-section { background: #1a1714; padding: 5rem var(--col-pad); text-align: center; }\n  .subscribe-inner { max-width: 860px; margin: 0 auto; }\n  .subscribe-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem; }\n  .subscribe-sub { font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.7); margin-bottom: 2rem; line-height: 1.7; }\n  .btn-inverse { background: #f5f2ee; color: #1a1714; border: 2px solid #f5f2ee; }\n  .btn-inverse:hover { background: transparent; color: #f5f2ee; }\n@media (max-width: 860px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .substack-panel { display: none; }\n  .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }\n  .pub-stat { text-align: left; }\n  .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }\n  .library-count { margin-left: 0; width: 100%; }\n  .tools-grid { grid-template-columns: 1fr; }\n}\n@media (max-width: 580px) {\n  .library-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem 1.25rem; }\n}\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-practice-library-1.x-practice-library-1.x-practice-library-1 { background:var(--book-1); }\n  .x-practice-library-2.x-practice-library-2.x-practice-library-2 { background:var(--book-2); }\n  .x-practice-library-3.x-practice-library-3.x-practice-library-3 { background:var(--book-3); }\n  .x-practice-library-4.x-practice-library-4.x-practice-library-4 { margin-top:1.75rem; }\n  .book-group-swatch[data-book=\"I\"]   { background: var(--book-1); }\n  .book-group-swatch[data-book=\"II\"]  { background: var(--book-2); }\n  .book-group-swatch[data-book=\"III\"] { background: var(--book-3); }",
+  "layout": "layouts/practice-library.html",
+  "data": [
+    "practice-library"
+  ],
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "The Practice Library",
+      "description": "The Practice Library \u2014 where the trilogy and the Substack turn into cards, tools, and a map you can actually use.",
+      "url": "https://www.neilcatton.com/practice-library.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Practice Library",
+          "item": "https://www.neilcatton.com/practice-library.html"
+        }
+      ]
+    }
+  ],
+  "js": "/* Practice Library \u2014 book filter over server-rendered cards, plus a\n   merge of anything the live Substack feed knows that the permanent\n   register does not yet. */\n(function () {\n  \"use strict\";\n  var buttons = [].slice.call(document.querySelectorAll(\".filter-btn\"));\n  var countEl = document.getElementById(\"library-count\");\n  var noMatch = document.getElementById(\"library-no-match\");\n  var libraryEl = document.getElementById(\"library\");\n  if (!libraryEl) return;\n\n  function allCards() { return [].slice.call(libraryEl.querySelectorAll(\".library-card\")); }\n\n  function apply(book) {\n    var shown = 0;\n    [].slice.call(libraryEl.querySelectorAll(\".book-group\")).forEach(function (group) {\n      var visible = 0;\n      [].slice.call(group.querySelectorAll(\".library-card\")).forEach(function (c) {\n        var match = book === \"all\" || (c.dataset.book || \"\") === book;\n        c.hidden = !match;\n        if (match) { visible++; shown++; }\n      });\n      group.hidden = visible === 0;\n    });\n    if (noMatch) noMatch.hidden = shown !== 0;\n    if (countEl) countEl.textContent = shown === 1 ? \"1 card\" : shown + \" cards\";\n  }\n\n  buttons.forEach(function (btn) {\n    btn.addEventListener(\"click\", function () {\n      buttons.forEach(function (b) { b.setAttribute(\"aria-pressed\", String(b === btn)); });\n      apply(btn.getAttribute(\"data-book\"));\n    });\n  });\n\n  /* Merge in newly published cards the register has not caught up with. */\n  function normLink(url) {\n    try { var u = new URL(url); return (u.origin + u.pathname).replace(/\\/+$/, \"\"); }\n    catch (e) { return (url || \"\").replace(/\\/+$/, \"\"); }\n  }\n\n  fetch(\"/.netlify/functions/practice-library-feed\")\n    .then(function (r) { return r.ok ? r.json() : null; })\n    .then(function (data) {\n      if (!data || !Array.isArray(data.items) || !data.items.length) return;\n      var known = {};\n      allCards().forEach(function (c) {\n        var a = c.querySelector(\".library-card-title\");\n        if (a) known[normLink(a.getAttribute(\"href\"))] = true;\n      });\n      var fresh = data.items.filter(function (i) { return i.link && !known[normLink(i.link)]; });\n      if (!fresh.length) return;\n\n      var group = libraryEl.querySelector('.book-group[data-book=\"uncatalogued\"]');\n      if (!group) {\n        group = document.createElement(\"div\");\n        group.className = \"book-group\";\n        group.dataset.book = \"uncatalogued\";\n        group.innerHTML =\n          '<div class=\"book-group-header\">' +\n            '<h3 class=\"book-group-title\">Not yet catalogued</h3>' +\n            '<span class=\"book-group-count\"></span>' +\n          \"</div><div class=\\\"library-grid\\\"></div>\";\n        libraryEl.appendChild(group);\n      }\n      var grid = group.querySelector(\".library-grid\");\n\n      fresh.forEach(function (i) {\n        var art = document.createElement(\"article\");\n        art.className = \"library-card\";\n        var img = document.createElement(\"img\");\n        img.loading = \"lazy\"; img.decoding = \"async\"; img.width = 210; img.height = 297; img.alt = \"\";\n        var wrap = document.createElement(\"a\");\n        wrap.className = \"library-card-imgwrap\";\n        wrap.href = i.link; wrap.target = \"_blank\"; wrap.rel = \"noopener noreferrer\";\n        wrap.setAttribute(\"aria-hidden\", \"true\"); wrap.tabIndex = -1;\n        if (i.image) { img.src = i.image; wrap.appendChild(img); }\n        else {\n          var ph = document.createElement(\"span\");\n          ph.className = \"library-card-placeholder\";\n          ph.textContent = i.title || \"\";\n          wrap.appendChild(ph);\n        }\n        var book = document.createElement(\"p\");\n        book.className = \"library-card-book\";\n        book.textContent = \"The Practice Library\";\n        var hd = document.createElement(\"h4\");\n        hd.className = \"library-card-heading\";\n        var a = document.createElement(\"a\");\n        a.className = \"library-card-title\";\n        a.href = i.link; a.target = \"_blank\"; a.rel = \"noopener noreferrer\";\n        a.textContent = i.title || \"Untitled\";\n        hd.appendChild(a);\n        var date = document.createElement(\"p\");\n        date.className = \"library-card-date\";\n        try {\n          var dt = new Date(i.pubDate);\n          date.textContent = isNaN(dt.getTime()) ? \"\" : dt.toLocaleDateString(\"en-GB\", { day: \"numeric\", month: \"long\", year: \"numeric\" });\n        } catch (e) { date.textContent = \"\"; }\n        art.appendChild(wrap); art.appendChild(book); art.appendChild(hd); art.appendChild(date);\n        grid.appendChild(art);\n      });\n\n      var n = grid.querySelectorAll(\".library-card\").length;\n      group.querySelector(\".book-group-count\").textContent = n === 1 ? \"1 card\" : n + \" cards\";\n      var active = document.querySelector('.filter-btn[aria-pressed=\"true\"]');\n      apply(active ? active.getAttribute(\"data-book\") : \"all\");\n    })\n    .catch(function () { /* register-only view is a complete page */ });\n})();\n",
+  "searchTitle": "The Practice Library"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Practice Library</span>
+        <h1 class="page-title" id="page-title">The Practice<br><em>Library</em></h1>
+        <p class="page-standfirst">
+          The trilogy and the Substack make the argument. This is where it
+          turns into something you can use — a card pulled from the books,
+          a tool that runs against your own situation, a map that shows
+          where a pattern has already been named. Collected here as they're
+          built.
+        </p>
+      </div>
+      <div class="substack-panel" aria-label="Where the cards are published">
+        <span class="substack-panel-label">Published on</span>
+        <h2 class="substack-panel-name">The Next Evolution</h2>
+        <p class="substack-panel-desc">
+          Each card is released on its own dated Substack post, with a short
+          note on the situation it is for. The posts are the record;
+          this page is the collection.
+        </p>
+        <a href="https://writing.neilcatton.com/s/the-practice-library" class="btn-subscribe"
+           target="_blank" rel="noopener noreferrer">
+          Follow on Substack
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRINCIPLES STRIP -->
+  <div class="publication-strip" role="region" aria-label="About the cards">
+    <div class="publication-inner">
+      <div class="pub-stat">
+        <span class="pub-stat-word">From the books</span>
+        <span class="pub-stat-label">All three, one family</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">Built to be used</span>
+        <span class="pub-stat-label">Print it, pin it, pass it on</span>
+      </div>
+      <div class="pub-stat">
+        <span class="pub-stat-word">Dated and signed</span>
+        <span class="pub-stat-label">Every card a public record</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <section class="tools-section" id="tools" aria-labelledby="tools-heading">
+    <div class="tools-inner">
+      <span class="section-label">Beyond the page</span>
+      <h2 class="section-heading" id="tools-heading">Some cards became tools.</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <p class="tools-intro">
+        A few of the books' arguments are built to run themselves —
+        completed on screen, checked against your own situation, with
+        something concrete handed back rather than left as an idea on the
+        page. This is where those live.
+      </p>
+
+      <div class="tools-grid">
+        <article class="tool-card tool-card--live">
+          <span class="tool-card-status">Live</span>
+          <h3 class="tool-card-title">Predictive Purpose</h3>
+          <p class="tool-card-desc">
+            The self-assessment diagnostic from the book — eight dimensions,
+            forty statements, a profile and a result in about fifteen minutes.
+          </p>
+          <a href="https://tool.neilcatton.com" class="btn btn-secondary tool-card-cta"
+             target="_blank" rel="noopener noreferrer">Open the tool</a>
+        </article>
+
+        <article class="tool-card tool-card--live">
+          <span class="tool-card-status">Live</span>
+          <h3 class="tool-card-title">Your Plan</h3>
+          <p class="tool-card-desc">
+            Describe what you're actually dealing with. Get back a short plan
+            built only from cards already published in the collection, each
+            one linked to the real thing.
+          </p>
+          <a href="/personalised-plan.html" class="btn btn-secondary tool-card-cta">Build my plan</a>
+        </article>
+
+        <article class="tool-card tool-card--live">
+          <span class="tool-card-status">Live</span>
+          <h3 class="tool-card-title">The Pattern Map</h3>
+          <p class="tool-card-desc">
+            See whether the problem in front of you has already been named
+            — and traced somewhere else.
+          </p>
+          <a href="/pattern-map.html" class="btn btn-secondary tool-card-cta">Open the map</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section class="feed-section" id="collection" aria-labelledby="library-heading">
+    <div class="feed-inner">
+      <span class="section-label">The collection</span>
+      <h2 class="section-heading" id="library-heading">Every card, as published</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="library-filters" role="group" aria-label="Filter cards by book">
+        <button class="filter-btn" data-book="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-book="I" aria-pressed="false">The Next Evolution</button>
+        <button class="filter-btn" data-book="II" aria-pressed="false">The Cognitive Crucible</button>
+        <button class="filter-btn" data-book="III" aria-pressed="false">The Shadow System</button>
+        <span class="library-count" id="library-count" aria-live="polite"></span>
+      </div>
+
+      <div id="library" aria-live="polite">
+        <div class="feed-loading">Loading the collection…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-writing" aria-labelledby="about-heading">
+    <div class="about-writing-inner">
+      <div>
+        <h2 class="about-writing-heading" id="about-heading">
+          Why these exist.
+        </h2>
+        <p>
+          The books argue. The cards are where the argument becomes something
+          you can do. Inside each book, the How To sections sat between
+          chapters — and a reader carried by the argument tended to move past
+          them, meaning the most usable pages were the least used. Pulling
+          them out and giving each one its own card fixes that.
+        </p>
+        <p>
+          Each card stands alone. It does not need the book to make sense,
+          though the book is where the thinking behind it lives. Each carries
+          its number of practice areas, its book's signature colour, and a
+          provenance line — the book it came from, the author, the date it
+          was published. What is on the card was written first in the books,
+          and the dated post it arrived on says so.
+        </p>
+        <p>
+          Take the ones you need.
+        </p>
+      </div>
+
+      <div class="books-key">
+        <span class="books-key-label">The three books</span>
+        <div class="book-key-item">
+          <span class="book-key-swatch x-practice-library-1" aria-hidden="true"></span>
+          <span class="book-key-title">The Next Evolution</span>
+          <span class="book-key-note">Awareness</span>
+        </div>
+        <div class="book-key-item">
+          <span class="book-key-swatch x-practice-library-2" aria-hidden="true"></span>
+          <span class="book-key-title">The Cognitive Crucible</span>
+          <span class="book-key-note">Agency</span>
+        </div>
+        <div class="book-key-item">
+          <span class="book-key-swatch x-practice-library-3" aria-hidden="true"></span>
+          <span class="book-key-title">The Shadow System</span>
+          <span class="book-key-note">Action</span>
+        </div>
+        <a href="/books.html" class="btn btn-secondary x-practice-library-4">About the books</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe-section" aria-labelledby="subscribe-heading">
+    <div class="subscribe-inner">
+      <h2 class="subscribe-heading" id="subscribe-heading">New cards arrive on the Substack first.</h2>
+      <p class="subscribe-sub">
+        Each one lands with a note on the situation it is for.
+        This page catches up on its own.
+      </p>
+      <a href="https://writing.neilcatton.com/s/the-practice-library" class="btn btn-inverse"
+         target="_blank" rel="noopener noreferrer">
+        Follow on Substack
+      </a>
+    </div>
+  </section>

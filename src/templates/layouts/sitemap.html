@@ -1,0 +1,37 @@
+<!-- Human-readable sitemap.
+
+     Generated from the page list the build produced, so it cannot drift
+     the way the hand-maintained version did. Ordering inside each group
+     follows the order of src/data/site.json's nav where a page appears
+     there, and alphabetical otherwise. -->
+${d.body.replace(/<div class="sitemap-inner">[\s\S]*?<\/div>\s*<\/section>/, (() => {
+  if (!d.allPages.length) return '<div class="sitemap-inner"></div></section>';
+  const ORDER = ["Main", "Briefings", "Services", "This site"];
+  const navOrder = [];
+  for (const g of s.nav) {
+    if (g.href) navOrder.push(g.href);
+    for (const i of (g.items || [])) if (i.href && i.href.startsWith("/")) navOrder.push(i.href);
+  }
+  const rank = (p) => { if (p.path === "/") return -1; const i = navOrder.indexOf(p.path); return i === -1 ? 999 : i; };
+  const groups = ORDER.map((name) => [name, d.allPages
+    .filter((p) => p.group === name)
+    .sort((a, b) => rank(a) - rank(b) || a.title.localeCompare(b.title))]).filter(([, list]) => list.length);
+
+  return '<div class="sitemap-inner">\n' + groups.map(([name, list]) => `        <div class="sitemap-group">
+          <h2>${name}</h2>
+          <ul>
+${list.map((p) => `            <li><a href="${p.path}">${p.title}</a></li>`).join("\n")}
+          </ul>
+        </div>`).join("\n") + `
+        <div class="sitemap-group">
+          <h2>Elsewhere</h2>
+          <ul>
+            <li><a href="${s.substack}" target="_blank" rel="noopener noreferrer">${s.substackName} on Substack</a></li>
+            <li><a href="${s.predictiveTool}" target="_blank" rel="noopener noreferrer">Predictive Purpose</a></li>
+            <li><a href="/briefings.xml">Sector Briefings feed (RSS)</a></li>
+            <li><a href="/.well-known/security.txt">security.txt</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>`;
+})())}

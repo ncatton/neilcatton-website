@@ -1,0 +1,441 @@
+[
+  {
+    "id": "A",
+    "name": "Correct at every step, wrong at the end",
+    "def": "No individual part of the system fails — every department, every agent, every board process does exactly what it was designed to do — and the outcome is still wrong, with nobody positioned to own the gap.",
+    "cardComing": [
+      "Reimagine Governance"
+    ],
+    "instances": [
+      {
+        "sector": "AI / Tech",
+        "title": "The Orchestration Crisis",
+        "note": "Multi-agent systems where every agent does its job and nobody is accountable between them.",
+        "url": "https://writing.neilcatton.com/p/the-orchestration-crisis-why-your?r=7x2n6b"
+      },
+      {
+        "sector": "Public Sector",
+        "title": "Every Department Did Its Job",
+        "note": "Every part functions correctly; the outcome is still wrong and nobody owns it.",
+        "url": "https://writing.neilcatton.com/p/every-department-did-its-job?r=7x2n6b"
+      },
+      {
+        "sector": "Public Sector",
+        "title": "The KPI That Measured the Wrong Thing",
+        "note": "Digital services measurement that makes failure invisible while the dashboard stays green.",
+        "url": "https://writing.neilcatton.com/p/the-kpi-that-measured-the-wrong-thing?r=7x2n6b"
+      },
+      {
+        "sector": "Financial Services",
+        "title": "The Decision Nobody Made",
+        "note": "Automated lending decisions accountable to no one.",
+        "url": "https://writing.neilcatton.com/p/the-decision-nobody-made?r=7x2n6b"
+      },
+      {
+        "sector": "Corporate Governance",
+        "title": "The Board That Didn't Understand What It Had Approved",
+        "note": "AI accountability dispersing across the governance chain.",
+        "url": "https://writing.neilcatton.com/p/the-board-that-didnt-understand-what?r=7x2n6b"
+      },
+      {
+        "sector": "Corporate Governance",
+        "title": "The Leader Who Listened First",
+        "note": "Counter-example: mediation layers process out what matters before it reaches the decision-maker.",
+        "url": "https://writing.neilcatton.com/p/the-leader-who-listened-first?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "name": "The dashboard stays green",
+    "def": "Measurement and consultation substitute for genuine understanding. The organisation collects a number or a response, treats the collecting as the work, and never asks whether it changed anything.",
+    "instances": [
+      {
+        "sector": "HR / People",
+        "title": "The number that tells you nothing",
+        "note": "Engagement scores measure the temperature of the room, not why it's cold.",
+        "url": "https://writing.neilcatton.com/p/the-number-that-tells-you-nothing?r=7x2n6b"
+      },
+      {
+        "sector": "Public Sector",
+        "title": "The consultation that changed nothing",
+        "note": "Consultation designed to produce a record of having asked, not to change course.",
+        "url": "https://writing.neilcatton.com/p/the-consultation-that-changed-nothing?r=7x2n6b"
+      },
+      {
+        "sector": "Corporate Governance",
+        "title": "The Company That Measured What Mattered",
+        "note": "Organisations optimise for the first slide; the second slide rarely reaches the board.",
+        "url": "https://writing.neilcatton.com/p/the-company-that-measured-what-mattered?r=7x2n6b"
+      },
+      {
+        "sector": "Corporate Governance",
+        "title": "When the board asks the wrong question",
+        "note": "Engagement scores mistaken for people intelligence at board level.",
+        "url": "https://writing.neilcatton.com/p/when-the-board-asks-the-wrong-question?r=7x2n6b"
+      },
+      {
+        "sector": "Product / Tech",
+        "title": "The data you already have and never read",
+        "note": "Years of qualitative data collected and treated as unanalysable.",
+        "url": "https://writing.neilcatton.com/p/the-data-you-already-have-and-never?r=7x2n6b"
+      },
+      {
+        "sector": "Product / Tech",
+        "title": "The Feedback Loop That Actually Worked",
+        "note": "Counter-example: visibility is the condition most feedback systems skip.",
+        "url": "https://writing.neilcatton.com/p/the-feedback-loop-that-actually-worked?r=7x2n6b"
+      },
+      {
+        "sector": "Cross-cutting",
+        "title": "The voice that never reaches the room",
+        "note": "The connective mechanism: intelligence degrades as it moves up the chain.",
+        "url": "https://writing.neilcatton.com/p/the-voice-that-never-reaches-the?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "C",
+    "name": "Built to be defensible, not to help",
+    "def": "Institutional response systems — fraud, breach, cybersecurity — are built to produce a record that the institution acted, not to close the exposure or protect the person living inside it.",
+    "cardComing": [
+      "Protect Yourself",
+      "Build Your Digital Fortress",
+      "Fortify the Enterprise",
+      "Defend Your Identity from Theft and Impersonation"
+    ],
+    "instances": [
+      {
+        "sector": "Financial Services",
+        "title": "Why the Victim Is Always Wrong",
+        "note": "Fraud response designed to protect the institution, burden placed on the victim.",
+        "url": "https://writing.neilcatton.com/p/why-the-victim-is-always-wrong?r=7x2n6b"
+      },
+      {
+        "sector": "Financial Services",
+        "title": "The fraud was an event. This is a condition.",
+        "note": "Recovery infrastructure built for institutional liability, not the person it's meant to help.",
+        "url": "https://writing.neilcatton.com/p/the-fraud-was-an-event-this-is-a?r=7x2n6b"
+      },
+      {
+        "sector": "Financial Services",
+        "title": "It Cannot Automate Trust",
+        "note": "Security advice that transfers the burden of defence to the least-equipped person.",
+        "url": "https://writing.neilcatton.com/p/it-cannot-automate-trust?r=7x2n6b"
+      },
+      {
+        "sector": "Cybersecurity",
+        "title": "The company that knew and said nothing",
+        "note": "Breach disclosure designed to serve the institution managing it, not the person whose data was taken.",
+        "url": "https://writing.neilcatton.com/p/the-company-that-knew-and-said-nothing?r=7x2n6b"
+      },
+      {
+        "sector": "Cybersecurity",
+        "title": "It can be managed",
+        "note": "Governance built to document exposure, not close it.",
+        "url": "https://writing.neilcatton.com/p/it-can-be-managed?r=7x2n6b"
+      },
+      {
+        "sector": "Cybersecurity",
+        "title": "Crime with a support desk",
+        "note": "Criminal support infrastructure built to reduce friction better than legitimate response systems.",
+        "url": "https://writing.neilcatton.com/p/crime-with-a-support-desk?r=7x2n6b"
+      },
+      {
+        "sector": "National Security",
+        "title": "Nobody Decided This Was Acceptable",
+        "note": "Stuxnet and the absence of updated international frameworks.",
+        "url": "https://writing.neilcatton.com/p/nobody-decided-this-was-acceptable?r=7x2n6b"
+      },
+      {
+        "sector": "National Security",
+        "title": "They Already Have It",
+        "note": "Harvest-now-decrypt-later, active while migration hasn't started.",
+        "url": "https://writing.neilcatton.com/p/they-already-have-it?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "D",
+    "name": "Designed for the person who isn't there",
+    "def": "Systems are built around the capable, average, organised user, and fail exactly at the point where the person in front of them is least able to advocate for themselves.",
+    "cardComing": [
+      "Design for the Human OS"
+    ],
+    "instances": [
+      {
+        "sector": "Healthcare",
+        "title": "The Screen That Broke the Trust",
+        "note": "An NHS digital prescription system that worked exactly as designed — for a patient it wasn't designed for.",
+        "url": "https://writing.neilcatton.com/p/the-screen-that-broke-the-trust?r=7x2n6b"
+      },
+      {
+        "sector": "Healthcare",
+        "title": "The Body That Remembers",
+        "note": "Systems built around emergency response, not the person living inside the risk every day after.",
+        "url": "https://writing.neilcatton.com/p/the-body-that-remembers?r=7x2n6b"
+      },
+      {
+        "sector": "Healthcare",
+        "title": "The App That Actually Helped",
+        "note": "Counter-example: designed from what it feels like to manage a condition.",
+        "url": "https://writing.neilcatton.com/p/the-app-that-actually-helped?r=7x2n6b"
+      },
+      {
+        "sector": "Healthcare",
+        "title": "While patients wait",
+        "note": "Proven AI diagnostics, blocked by funding and infrastructure from the people who need them most.",
+        "url": "https://writing.neilcatton.com/p/while-patients-wait?r=7x2n6b"
+      },
+      {
+        "sector": "Public Services",
+        "title": "The Last Person in the Queue",
+        "note": "Digital-by-default makes people who can't use digital invisible.",
+        "url": "https://writing.neilcatton.com/p/the-last-person-in-the-queue?r=7x2n6b"
+      },
+      {
+        "sector": "Public Services",
+        "title": "The Bin Hasn't Changed (Only the Lorry)",
+        "note": "Digital-first layered onto analogue problems, indistinguishable from designed exclusion.",
+        "url": "https://writing.neilcatton.com/p/the-bin-hasnt-changed-only-the-lorry?r=7x2n6b"
+      },
+      {
+        "sector": "Design",
+        "title": "Designing for the Person Who Isn't Coping",
+        "note": "Design assumptions that fail precisely when the person is least able to advocate for themselves.",
+        "url": "https://writing.neilcatton.com/p/designing-for-the-person-who-isnt?r=7x2n6b"
+      },
+      {
+        "sector": "Design",
+        "title": "The Question That Changed the Design",
+        "note": "“Who is this hardest for?” — almost never asked at the point it could change the outcome.",
+        "url": "https://writing.neilcatton.com/p/the-question-that-changed-the-design?r=7x2n6b"
+      },
+      {
+        "sector": "Agriculture",
+        "title": "The Land the Data Missed",
+        "note": "Precision agriculture designed for a farm most farmers don't have.",
+        "url": "https://writing.neilcatton.com/p/the-land-the-data-missed?r=7x2n6b"
+      },
+      {
+        "sector": "Accessibility",
+        "title": "The Standard That Raised the Bar",
+        "note": "Counter-example: the curb-cut effect — raising the floor for excluded users raises it for everyone.",
+        "url": "https://writing.neilcatton.com/p/the-standard-that-raised-the-bar?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "E1",
+    "name": "The science works; access hasn't followed",
+    "def": "The scientific or clinical capability is real and proven — the barrier is who gets to it, at what cost, and on whose terms.",
+    "instances": [
+      {
+        "sector": "Biotech / Health",
+        "title": "The Body as a Lab",
+        "note": "In-vivo gene editing; governance decides who gets access.",
+        "url": "https://writing.neilcatton.com/p/the-body-as-a-lab?r=7x2n6b"
+      },
+      {
+        "sector": "Biotech / Health",
+        "title": "The Machine That Designs Medicines",
+        "note": "AI drug discovery outpacing the access question.",
+        "url": "https://writing.neilcatton.com/p/the-machine-that-designs-medicines?r=7x2n6b"
+      },
+      {
+        "sector": "Biotech / Health",
+        "title": "What the Cold Chain Cannot Reach",
+        "note": "Biological medicine manufacturing concentrated in wealthy countries.",
+        "url": "https://writing.neilcatton.com/p/what-the-cold-chain-cannot-reach?r=7x2n6b"
+      },
+      {
+        "sector": "Biotech / Health",
+        "title": "Reading the Map Inside the Cell",
+        "note": "Spatial diagnostics confined to specialist centres.",
+        "url": "https://writing.neilcatton.com/p/reading-the-map-inside-the-cell?r=7x2n6b"
+      },
+      {
+        "sector": "Biotech / Health",
+        "title": "The instruction in the injection",
+        "note": "Personalised mRNA cancer vaccines, where personalisation itself is the access barrier.",
+        "url": "https://writing.neilcatton.com/p/the-instruction-in-the-injection?r=7x2n6b"
+      },
+      {
+        "sector": "Biotech / Health",
+        "title": "The bottleneck moved",
+        "note": "Drug discovery compressed to eighteen months; trial and regulatory pace hasn't moved.",
+        "url": "https://writing.neilcatton.com/p/the-bottleneck-moved?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "E2",
+    "name": "The science works; deployment infrastructure hasn't followed",
+    "def": "The engineering or technology is real and works at scale in principle — the barrier is the manufacturing capacity, regulatory pathway, or physical infrastructure needed to actually build and run it.",
+    "instances": [
+      {
+        "sector": "Energy",
+        "title": "Too Cheap to Meter, Too Slow to Build",
+        "note": "No SMR has been built on time or on budget yet.",
+        "url": "https://writing.neilcatton.com/p/too-cheap-to-meter-too-slow-to-build?r=7x2n6b"
+      },
+      {
+        "sector": "Energy",
+        "title": "Three Days Earlier",
+        "note": "AI weather forecasting outruns the observational network it depends on.",
+        "url": "https://writing.neilcatton.com/p/three-days-earlier?r=7x2n6b"
+      },
+      {
+        "sector": "Space",
+        "title": "Coverage Is Not Access",
+        "note": "Satellite coverage reaches billions; subscribers number in the millions.",
+        "url": "https://writing.neilcatton.com/p/coverage-is-not-access?r=7x2n6b"
+      },
+      {
+        "sector": "Space",
+        "title": "What gets funded in space",
+        "note": "Commercial orbital platforms changing who decides what science gets funded.",
+        "url": "https://writing.neilcatton.com/p/what-gets-funded-in-space?r=7x2n6b"
+      },
+      {
+        "sector": "Materials Science",
+        "title": "It Remembers What Shape to Be",
+        "note": "Shape-memory alloys constrained by regulatory and manufacturing scale-up.",
+        "url": "https://writing.neilcatton.com/p/it-remembers-what-shape-to-be?r=7x2n6b"
+      },
+      {
+        "sector": "Materials Science",
+        "title": "The Science Is Not the Problem",
+        "note": "Self-healing concrete, deployed since 2011, invisible to procurement that prices only the initial build.",
+        "url": "https://writing.neilcatton.com/p/the-science-is-not-the-problem?r=7x2n6b"
+      },
+      {
+        "sector": "Computing",
+        "title": "Twenty Watts",
+        "note": "The brain does in 20 watts what GPU-based AI vision burns thousands of times more energy to match.",
+        "url": "https://writing.neilcatton.com/p/twenty-watts?r=7x2n6b"
+      },
+      {
+        "sector": "Computing",
+        "title": "The Error is the Point",
+        "note": "Quantum error correction confirmed; the cryptographic migration hasn't started.",
+        "url": "https://writing.neilcatton.com/p/the-error-is-the-point?r=7x2n6b"
+      },
+      {
+        "sector": "Computing",
+        "title": "They Already Have It",
+        "note": "Post-quantum standards published in 2024; most organisations still have no cryptographic inventory. Also in “Built to be defensible, not to help.”",
+        "url": "https://writing.neilcatton.com/p/they-already-have-it?r=7x2n6b"
+      }
+    ],
+    "trackingNote": "A new case — data centre energy demand colliding with grid capacity and local housing supply — is already being tracked for a future piece."
+  },
+  {
+    "id": "F",
+    "name": "The permanent record you didn't choose",
+    "def": "Data about a person is captured once and becomes a durable, portable record used to make decisions about them, with no mechanism for the person to see it, correct it, or reclaim it.",
+    "cardComing": [
+      "Manage Your Algorithmic Reputation",
+      "Shape Your Networked Self"
+    ],
+    "instances": [
+      {
+        "sector": "Consumer Tech",
+        "title": "The Thing You Gave Away for Free",
+        "note": "Personal data shared online creates a permanent, portable record that can't be reclaimed.",
+        "url": "https://writing.neilcatton.com/p/the-thing-you-gave-away-for-free?r=7x2n6b"
+      },
+      {
+        "sector": "Consumer Tech",
+        "title": "The Anticipatory Trap",
+        "note": "The model built of you is owned by the platform, not by you.",
+        "url": "https://writing.neilcatton.com/p/the-anticipatory-trap?r=7x2n6b"
+      },
+      {
+        "sector": "Financial Services",
+        "title": "Permanent, Portable, Wrong",
+        "note": "Data profiles determine credit, job screening and insurance terms before the decision is even made.",
+        "url": "https://writing.neilcatton.com/p/permanent-portable-wrong?r=7x2n6b"
+      },
+      {
+        "sector": "Government / Data",
+        "title": "Sovereign is Not a Postcode",
+        "note": "Datacentre location is not the same as control over the data in it.",
+        "url": "https://writing.neilcatton.com/p/sovereign-is-not-a-postcode?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "G",
+    "name": "Engineered compulsion",
+    "def": "Attention and agency are captured by design, not accident — mechanisms borrowed from behavioural psychology that produce a compulsion the person experiences as their own failing.",
+    "card": [
+      {
+        "title": "Your Smartphone's Grip",
+        "url": "https://writing.neilcatton.com/p/your-smartphones-grip"
+      },
+      {
+        "title": "Shielding Your Focus",
+        "url": "https://writing.neilcatton.com/p/shielding-your-focus"
+      }
+    ],
+    "instances": [
+      {
+        "sector": "Consumer / Platforms",
+        "title": "The Campfire Problem",
+        "note": "The evolutionary pull to share attention, captured and redirected by design.",
+        "url": "https://writing.neilcatton.com/p/the-campfire-problem?r=7x2n6b"
+      },
+      {
+        "sector": "Consumer / Platforms",
+        "title": "The Stage With Too Many Actors",
+        "note": "Digital environments systematically exceed finite attention capacity.",
+        "url": "https://writing.neilcatton.com/p/the-stage-with-too-many-actors?r=7x2n6b"
+      },
+      {
+        "sector": "Consumer / Platforms",
+        "title": "Technically Present",
+        "note": "Inattentional blindness as a designed operating condition, not a concentration problem.",
+        "url": "https://writing.neilcatton.com/p/technically-present?r=7x2n6b"
+      },
+      {
+        "sector": "Consumer / Platforms",
+        "title": "A Reflex That Was Installed",
+        "note": "The compulsion to check your phone, engineered on slot-machine mechanics.",
+        "url": "https://writing.neilcatton.com/p/a-reflex-that-was-installed?r=7x2n6b"
+      },
+      {
+        "sector": "Children / Education",
+        "title": "Boredom Was the Doorway",
+        "note": "The absence of boredom is the first thing the design took away from children.",
+        "url": "https://writing.neilcatton.com/p/boredom-was-the-doorway?r=7x2n6b"
+      },
+      {
+        "sector": "Children / Education",
+        "title": "Why Helpful Isn't the Same as Good",
+        "note": "Technically helpful, entirely wrong — a voice assistant answering a child about death.",
+        "url": "https://writing.neilcatton.com/p/why-helpful-isnt-the-same-as-good?r=7x2n6b"
+      }
+    ]
+  },
+  {
+    "id": "H",
+    "name": "The application serves the pipeline metric, not the candidate",
+    "def": "Recruitment and hiring technology is optimised for the volume and manageability of the process on the organisation's side — the candidate's chance of being seen by a person is not the thing it was built to protect.",
+    "instances": [
+      {
+        "sector": "Recruitment",
+        "title": "Apply. Wait. Disappear.",
+        "note": "Easy Apply generates volume that serves recruiter pipeline metrics, not candidate chances.",
+        "url": "https://writing.neilcatton.com/p/apply-wait-disappear?r=7x2n6b"
+      },
+      {
+        "sector": "Recruitment",
+        "title": "The Application That Went Nowhere",
+        "note": "The process structurally redesigned to serve the organisation, not the candidate experience.",
+        "url": "https://writing.neilcatton.com/p/the-application-that-went-nowhere?r=7x2n6b"
+      }
+    ],
+    "trackingNote": "Two further cases — correlated rejection across employers using the same screening model, and CV-screening that reads a career gap for childcare or caring like any other gap — are already being tracked for future pieces."
+  }
+]

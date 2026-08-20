@@ -1,0 +1,315 @@
+<!--page
+{
+  "title": "Contact \u2014 Neil Catton",
+  "description": "Start a conversation with Neil Catton \u2014 for advisory, speaking, consulting, or book enquiries. Most engagements begin with a single conversation.",
+  "slug": "contact",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 0; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: end; }\n  .page-header-text { padding-bottom: 3.5rem; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 520px; opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .page-header-photo { align-self: end; opacity: 0; animation: photoRise 0.8s ease 0.3s forwards; }\n  .page-header-photo img { display: block; width: 100%; height: 320px; object-fit: cover; object-position: center 12%; -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%); mask-image: linear-gradient(to bottom, black 55%, transparent 100%); }\n  .contact-wrap { max-width: var(--max-wide); margin: 0 auto; padding: 5rem var(--col-pad); display: grid; grid-template-columns: 1fr 400px; gap: 5rem; align-items: start; background: #f5f2ee; }\n  .form-section { background: #f5f2ee; }\n  .form-intro { font-size: 1.0625rem; font-weight: 400; color: #1a1714; line-height: 1.85; margin-bottom: 2.5rem; background: transparent; }\n  .form-intro-link { color: #1a1714; text-underline-offset: 3px; }\n  .form-intro-link:hover { color: #2b4a6f; }\n  .form-group { margin-bottom: 1.5rem; }\n  .enquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }\n  .enquiry-option { position: relative; }\n  .enquiry-option input[type=\"radio\"] { position: absolute; opacity: 0; width: 0; height: 0; }\n  .enquiry-label { display: flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1rem; border: 2px solid #d4cfc9; cursor: pointer; font-size: 0.875rem; font-weight: 400; color: #1a1714; transition: all 0.2s; background: #f5f2ee; min-height: 44px; }\n  .enquiry-label::before { content: \"\"; width: 14px; height: 14px; flex-shrink: 0; border: 2px solid #d4cfc9; border-radius: 50%; transition: all 0.2s; }\n  .enquiry-option input:checked + .enquiry-label { border-color: #2b4a6f; background: rgba(43,74,111,0.05); color: #2b4a6f; }\n  .enquiry-option input:checked + .enquiry-label::before { background: #2b4a6f; border-color: #2b4a6f; }\n  .enquiry-option input:focus-visible + .enquiry-label { outline: 3px solid #2b4a6f; outline-offset: 2px; }\n  .form-submit { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }\n  .btn-submit { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.875rem 2rem; min-height: 44px; background: #1a1714; color: #f5f2ee; border: 2px solid #1a1714; cursor: pointer; transition: all 0.2s ease; }\n  .btn-submit:hover { background: #2b4a6f; border-color: #2b4a6f; }\n  .form-note { font-size: 0.8rem; color: #5c5652; line-height: 1.6; }\n  .contact-sidebar { background: transparent; }\n  .sidebar-block { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #d4cfc9; }\n  .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }\n  .sidebar-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652; margin-bottom: 1.25rem; display: block; }\n  .commitment-list { list-style: none; }\n  .commitment-list li { display: flex; align-items: flex-start; gap: 0.875rem; padding: 0.75rem 0; border-bottom: 1px solid #ede9e3; font-size: 0.9rem; color: #1a1714; line-height: 1.6; }\n  .commitment-list li:last-child { border-bottom: none; }\n  .commitment-dot { width: 6px; height: 6px; background: #2b4a6f; border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem; }\n  .direct-links { list-style: none; }\n  .direct-links li { margin-bottom: 0.875rem; }\n  .direct-links a { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; font-weight: 600; color: #1a1714; text-decoration: none; transition: color 0.2s; padding: 0.5rem 0; }\n  .direct-links a:hover { color: #2b4a6f; text-decoration: underline; }\n  .direct-links .link-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.1rem; }\n  .direct-links .link-value { font-size: 0.9rem; font-weight: 400; color: #1a1714; }\n  .expect-box { background: #1a1714; padding: 1.75rem; }\n  .expect-heading { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #f5f2ee; margin-bottom: 1rem; }\n  .expect-list { list-style: none; }\n  .expect-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(212,207,201,0.15); font-size: 0.875rem; color: rgba(245,242,238,0.75); line-height: 1.6; }\n  .expect-list li:last-child { border-bottom: none; }\n  .expect-dot { width: 5px; height: 5px; background: #2b4a6f; border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; }\n  .elsewhere-section { background: #ede9e3; padding: 4rem var(--col-pad); border-top: 1px solid #d4cfc9; }\n  .elsewhere-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }\n  .elsewhere-heading { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; color: #1a1714; line-height: 1.2; }\n  .elsewhere-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }\n  .elsewhere-link { display: block; padding: 1.25rem; background: #f5f2ee; border: 1px solid #d4cfc9; text-decoration: none; transition: border-color 0.2s; }\n  .elsewhere-link:hover { border-color: #2b4a6f; }\n  .elsewhere-link-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.35rem; }\n  .elsewhere-link-name { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: #1a1714; display: block; }\n@media (max-width: 900px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .page-header-photo { display: none; }\n  .contact-wrap { grid-template-columns: 1fr; gap: 3rem; }\n  .contact-sidebar { border-top: 1px solid #d4cfc9; padding-top: 3rem; }\n  .elsewhere-inner { grid-template-columns: 1fr; gap: 2rem; }\n  .elsewhere-links { grid-template-columns: 1fr 1fr; }\n  .enquiry-grid { grid-template-columns: 1fr; }\n}\n@media (max-width: 580px) {\n  .elsewhere-links { grid-template-columns: 1fr; }\n}\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-contact-1.x-contact-1.x-contact-1 { background:#f5f2ee; }\n  .x-contact-2.x-contact-2.x-contact-2 { position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0); }\n  .x-contact-3.x-contact-3.x-contact-3 { border:none;padding:0;margin:0; }",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://www.neilcatton.com/contact.html"
+        }
+      ]
+    }
+  ],
+  "searchTitle": "Contact"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div class="page-header-text">
+        <span class="page-label">Contact</span>
+        <h1 class="page-title" id="page-title">Start a<br><em>conversation.</em></h1>
+        <p class="page-standfirst">
+          Most engagements begin with a single conversation. For advisory,
+          speaking, consulting, or book enquiries — or if something in the
+          writing prompted a thought worth sharing.
+        </p>
+      </div>
+      <div class="page-header-photo" aria-hidden="true">
+        <picture>
+          <source srcset="/images/neil-catton-headshot.webp" type="image/webp">
+          <img src="/images/neil-catton-headshot.jpg" alt="Neil Catton, Group CTO and author" width="680" height="680" loading="eager">
+        </picture>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT BODY -->
+  <div class="contact-wrap x-contact-1">
+
+    <!-- FORM -->
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 class="sr-only x-contact-2" id="form-heading">
+        Contact form
+      </h2>
+
+      <p class="form-intro">
+        Use this form for any enquiry. Every message is read personally.
+        If you would prefer to reach out directly, the email address is in the sidebar.
+        Or, if you'd like to talk sooner, <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" target="_blank" rel="noopener noreferrer" class="form-intro-link">book a call directly</a>.
+      </p>
+
+      <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
+        <h2 class="form-success-heading">Message received.</h2>
+        <p>Thank you for getting in touch. Every message is read personally — expect a response within two working days.</p>
+      </div>
+      <div class="form-error" id="form-error" role="alert" tabindex="-1" hidden></div>
+
+      <!-- action was "#", with the real endpoint hard-coded in the page's
+           JavaScript. With JavaScript off this form submitted to nowhere —
+           the exact dead end the site's own design specification names as
+           its standing example of what not to repeat. It was fixed on the
+           homepage in July and never propagated here. -->
+      <form id="contact-form" action="{{formspree}}" method="post" novalidate
+            aria-label="Contact Neil Catton"
+            data-contact-form data-success="form-success" data-error="form-error">
+
+        <div class="form-hp" aria-hidden="true">
+          <label for="contact-hp">Leave this field empty</label>
+          <input type="text" id="contact-hp" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Enquiry type -->
+        <div class="form-group">
+          <fieldset class="x-contact-3">
+            <legend class="form-label">
+              Type of enquiry
+            </legend>
+            <div class="enquiry-grid" role="group">
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-advisory" value="Advisory" checked>
+                <label class="enquiry-label" for="eq-advisory">Advisory</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-speaking" value="Speaking">
+                <label class="enquiry-label" for="eq-speaking">Speaking</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-consulting" value="Consulting">
+                <label class="enquiry-label" for="eq-consulting">Consulting</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-books" value="Books">
+                <label class="enquiry-label" for="eq-books">Books</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-press" value="Press">
+                <label class="enquiry-label" for="eq-press">Press</label>
+              </div>
+              <div class="enquiry-option">
+                <input type="radio" name="enquiry_type" id="eq-other" value="Other">
+                <label class="enquiry-label" for="eq-other">Other</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Name</label>
+          <input class="form-input" type="text" id="contact-name" name="name"
+                 autocomplete="name" required
+                 aria-required="true"
+                 placeholder="Your name">
+        </div>
+
+        <!-- Organisation -->
+        <div class="form-group">
+          <label class="form-label" for="contact-org">
+            Organisation <span class="optional">(optional)</span>
+          </label>
+          <input class="form-input" type="text" id="contact-org" name="organisation"
+                 autocomplete="organization"
+                 placeholder="Your organisation or role">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email</label>
+          <input class="form-input" type="email" id="contact-email" name="email"
+                 autocomplete="email" required
+                 aria-required="true"
+                 placeholder="your@email.com">
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Message</label>
+          <textarea class="form-input" id="contact-message" name="message"
+                    rows="6" required aria-required="true"
+                    placeholder="What would you like to discuss?"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-submit">Send message</button>
+          <p class="form-note">
+            Responses within two working days.<br>
+            No unsolicited sales or marketing.
+          </p>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="contact-sidebar" aria-label="Contact details and information">
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Direct contact</span>
+        <ul class="direct-links" role="list">
+          <li>
+            <a href="mailto:nc@neilcatton.com" aria-label="Send email to Neil Catton">
+              <div>
+                <span class="link-label">Email</span>
+                <span class="link-value">nc@neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+447803795606" aria-label="Call Neil Catton">
+              <div>
+                <span class="link-label">Phone</span>
+                <span class="link-value">+44 7803 795606</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer"
+               aria-label="Visit The Next Evolution on Substack">
+              <div>
+                <span class="link-label">Substack</span>
+                <span class="link-value">writing.neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://neilcatton.com" target="_blank" rel="noopener noreferrer"
+               aria-label="Visit neilcatton.com">
+              <div>
+                <span class="link-label">Website</span>
+                <span class="link-value">neilcatton.com</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">What to expect</span>
+        <div class="expect-box">
+          <h3 class="expect-heading">Every message is read personally.</h3>
+          <ul class="expect-list" role="list">
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Response within two working days for all enquiries
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              No automated replies or sales sequences
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Initial conversations are without obligation
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              Confidentiality respected as standard
+            </li>
+            <li>
+              <span class="expect-dot" aria-hidden="true"></span>
+              If the fit isn't right, that will be said plainly
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Good reasons to get in touch</span>
+        <ul class="commitment-list" role="list">
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A technology decision that needs a senior independent voice
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A transformation programme that has stalled or lost direction
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            An AI or data strategy that needs grounding in commercial reality
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            A speaking slot that needs someone who has done the work
+          </li>
+          <li>
+            <span class="commitment-dot" aria-hidden="true"></span>
+            Something in the writing that prompted a thought worth sharing
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ELSEWHERE -->
+  <section class="elsewhere-section" aria-labelledby="elsewhere-heading">
+    <div class="elsewhere-inner">
+      <div>
+        <h2 class="elsewhere-heading" id="elsewhere-heading">
+          Find Neil<br>elsewhere.
+        </h2>
+      </div>
+      <div class="elsewhere-links">
+        <a href="https://writing.neilcatton.com" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Next Evolution on Substack">
+          <span class="elsewhere-link-label">Writing</span>
+          <span class="elsewhere-link-name">The Next Evolution</span>
+        </a>
+        <a href="https://amzn.eu/d/617wKhZ" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Next Evolution on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Next Evolution</span>
+        </a>
+        <a href="https://amzn.eu/d/c8e7gAx" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Cognitive Crucible on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Cognitive Crucible</span>
+        </a>
+        <a href="https://amzn.eu/d/0dyQaBbU" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="The Shadow System on Amazon">
+          <span class="elsewhere-link-label">Book</span>
+          <span class="elsewhere-link-name">The Shadow System</span>
+        </a>
+        <a href="https://neilcatton.com" class="elsewhere-link"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="neilcatton.com">
+          <span class="elsewhere-link-label">Website</span>
+          <span class="elsewhere-link-name">neilcatton.com</span>
+        </a>
+        <a href="mailto:nc@neilcatton.com" class="elsewhere-link"
+           aria-label="Email Neil Catton directly">
+          <span class="elsewhere-link-label">Email directly</span>
+          <span class="elsewhere-link-name">nc@neilcatton.com</span>
+        </a>
+      </div>
+    </div>
+  </section>

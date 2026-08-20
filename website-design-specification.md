@@ -312,3 +312,66 @@ All fixes re-verified programmatically (contrast calculator, BeautifulSoup focus
 ---
 
 This specification should sit alongside the site itself as a living reference — update it when a standard changes (a new WCAG version, a Core Web Vitals metric change, a new page added to the site) rather than treating it as fixed at today's date.
+
+---
+
+## 21. Fifth pass — full rebuild (20 August 2026)
+
+Neil commissioned an independent design and build review (`../Reviews/neilcatton-com-design-review-2026-08-20.md`), then asked for every finding in it to be actioned. This section records what changed and, more usefully, what it means for how the site is edited from now on.
+
+### 21.1 What the review found that four previous passes had not
+
+Two defects, both mobile, both severe, both invisible from a desktop browser.
+
+- **There was no navigation below 580px.** `.nav-links { display: none }` fired and nothing replaced it. No hamburger existed anywhere in the codebase. The search control and the "Book a call" button lived inside that list and disappeared with it.
+- **Twenty-six of the thirty-three pages scrolled sideways on a phone.** `.footer-links` was a twelve-item flex row with no `flex-wrap`, measuring 1093px against a 375px viewport. Eight of the twelve links spilled past the footer's dark background and rendered near-white on the paper ground — measured at **1.06:1**. Between the two, a phone visitor could see four destinations on the whole site. Contact was not one of them.
+
+The second is the important one, because of *why* it survived. `flex-wrap: wrap` had been added to that rule on six pages and never reached the other twenty-six. With 33 copies of the stylesheet, a fix is 33 fixes and a partial fix looks exactly like a complete one.
+
+### 21.2 The structural change
+
+The site is now generated. `src/` holds templates and data; `npm run build` produces `dist/`; Netlify runs the build on deploy. `README.md` is the working reference.
+
+| | Before | After |
+|---|---|---|
+| Inline CSS | 10,122 lines across 33 files | 0 — one shared stylesheet plus per-page files |
+| Duplicated CSS rule instances | 69% | none |
+| Service pages | 12 documents differing in 47 lines | 1 template + `services.json` |
+| `sitemap.xml`, `sitemap.html`, search index | hand-maintained | generated from the page list |
+| Years-in-technology figure | "thirty-seven" on 12 pages, "thirty-nine" on 1 | computed from 1987 every build |
+| Substack host | two (`writing.` and `.substack.com`) | one |
+| Fonts | Google Fonts CDN | self-hosted (both OFL) |
+| CSP | `'unsafe-inline'` on script and style | `'self'` on both |
+| Accessibility testing | manual passes | axe-core, reflow and target-size gate on every push |
+
+Section 18's note that externalising the CSS "is a build-approach change, not a header or markup fix — flagged for Neil's decision rather than actioned unasked" is now closed. So is Section 19 item 4 (the orphaned images are still there and still worth a decision) and the `security.txt` item — the file existed but sat one directory above the git root and had never been deployed. It returned 404 on the live site until this pass.
+
+### 21.3 Rules this pass adds
+
+These belong in Section 17's acceptance checklist for every new page.
+
+1. **No shared style or script gets written into a page.** If it belongs to the site, it goes in `src/assets/site.css` or `site.js`. This is the whole point.
+2. **A fact that appears twice is a token.** `src/data/site.json` plus `{{token}}`. An unknown token fails the build.
+3. **A styled `div` is not a heading.** Every service and briefing page had five content sections marked up as `<div class="section-label">` — visually headings, semantically nothing, so a screen reader user navigating by heading went straight from the `h1` to the FAQ. They are `h2` elements now.
+4. **The `h1` goes inside `<main>`.** Sixteen pages had it in a second body-level `<header>`, which reads as a second banner landmark and let the skip link jump past the page title.
+5. **Menus open on click, not hover.** Hover-only cannot be operated by touch and reports no state. Dropdown parents are `<button aria-expanded>`; the section index is the first item inside the menu rather than a duplicate link beside the parent.
+6. **`npm run check` passes before publishing.** Zero axe violations, zero horizontal overflow at 375px, no control under 24×24.
+
+### 21.4 Contrast note, extending Section 18's
+
+Two more failures were found that the earlier alpha sweeps had missed, both because they were computed against the wrong ground:
+
+- `.card-companion-label` on the Pattern Map — `#a8a29b` on paper, **2.26:1** at 10.9px. The Pattern Map was built after the previous sweeps ran.
+- Three translucent panel labels (`.substack-panel-label`, `.method-panel-label`, `.gr-panel-label`) at 0.55 alpha. They sit on a 0.06-alpha paper wash over `--ink`, which lightens the ground enough that 0.55 no longer clears 4.5:1. Raised to 0.86.
+
+The lesson is the same one Section 18 drew and worth restating: check the composited result on the ground the text actually sits on, not the base colour and not the ground you assume. The tokens `--on-dark` (0.78), `--accent-lift` and `--marker` now carry the safe values so they do not have to be rederived.
+
+### 21.5 Still open
+
+1. **A manual screen-reader pass.** VoiceOver on Safari, thirty minutes, once. The automated gate reaches roughly a third of the WCAG criteria; `accessibility.html` says so and should keep saying so until this is done.
+2. **W3C Nu HTML Checker and CSS Validator** against the deployed site. Still not run.
+3. **Verify the tightened CSP on the first deploy preview.** `script-src` and `style-src` are now `'self'`. JSON-LD blocks are data rather than executable script and browsers do not apply `script-src` to them, but confirm in the console and run a service page through the Rich Results Test. If something is blocked, add hashes rather than restoring `'unsafe-inline'`.
+4. **The LinkedIn URL** for `Person.sameAs`. The field exists in `site.json` and is empty; nothing on the site sources it. One line, and it is the strongest entity signal a solo practice has.
+5. **The two orphaned images** (`neil-catton-photo.jpg`, `NC-logo.png`). Still unreferenced, still uncompressed, still flagged since July.
+6. **Print-resolution headshot.** The new press pack offers the 680×680 web file and says a high-resolution one is available on request. Putting one in `/downloads` would close that loop.
+7. **"Three decades."** The bare year counts are tokenised, but the phrase "three decades" survives in prose on several pages. At thirty-nine years it understates rather than misleads, so it was left rather than rewritten mechanically — worth an editorial pass.

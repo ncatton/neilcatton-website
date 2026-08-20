@@ -1,0 +1,22 @@
+<article class="briefing-card" data-search="${h.esc([d.b.sector, d.b.regulator, d.b.title, d.b.technology, d.b.collaboratorName || ""].join(" ").toLowerCase())}">
+${d.b.image ? `          <a class="briefing-card-image-wrap" href="/${d.b.page}" tabindex="-1" aria-hidden="true">
+            <img src="/${d.b.image}" alt="" loading="lazy" decoding="async" width="800" height="500">
+          </a>` : ""}
+          <div class="briefing-card-body">
+            <p class="briefing-card-tags">
+              <span class="briefing-tag">${h.esc(d.b.technology)}</span>
+              <span class="briefing-tag">${h.esc(d.b.regulator)}</span>
+            </p>
+            <h3 class="briefing-card-heading"><a class="briefing-card-title" href="/${d.b.page}">${h.esc(d.b.title)}</a></h3>
+${d.b.collaboratorName ? `            <p class="briefing-card-byline">With ${h.esc(d.b.collaboratorName)}${d.b.collaboratorTitle ? ", " + h.esc(d.b.collaboratorTitle) : ""}</p>` : ""}
+            <p class="briefing-card-standfirst">${h.esc(d.b.standfirst)}</p>
+            <p class="briefing-card-meta">
+              <span>${d.b.pages} pages</span>
+              <span aria-hidden="true">&middot;</span>
+              <span>Published <time datetime="${d.b.date}">${new Date(d.b.date + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time></span>
+            </p>
+            <p class="briefing-card-links">
+              <a class="briefing-card-link briefing-card-download" href="/${d.b.pdf}" download>Download the PDF</a>
+            </p>
+          </div>
+        </article>

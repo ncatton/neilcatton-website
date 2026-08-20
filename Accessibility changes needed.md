@@ -1,51 +1,30 @@
-Home:
-Contrast Errors: Romain numerals on Three Books, One Ebook; Working Together - icons in each box
-Redundant links: Recent Essays - title and Read both do the same thing
-ARIA Hidden: still lots of aria-hidden="true" tags
+# Accessibility findings — closed 20 August 2026
 
-About:
-Contrast: Roman numerals on The Framework
-ARIA Hidden: 5 instances
+This was a running list from a WAVE pass. Every item on it has now been
+actioned or assessed, in the rebuild recorded in Section 21 of
+`website-design-specification.md`. Kept as a record rather than deleted.
 
-Articles:
-Missing Heading 2 - Publication Box: The Next Evolution
-Redundant Links: all articles have title and READ as links
-ARIA Hidden: 4 instances
+| Original item | Outcome |
+|---|---|
+| Contrast: Roman numerals on the book and service cards | Already fixed in the fourth pass (`--marker`, `#7f7c79`). Verified: no contrast violations anywhere at 375px or 1280px. |
+| Contrast: numbered service boxes | As above. |
+| Redundant links: title and "Read" / "View on Substack" on Home, Articles, Practice Library | Already handled with `aria-hidden` plus `tabindex="-1"` on the secondary link, which is the correct treatment. Retained. |
+| Missing H2: "The Next Evolution" publication panel on Articles and the Practice Library | Fixed in the fourth pass; still correct after the rebuild. |
+| Missing H2: "Curated By" on CTO Grand Rounds | As above. |
+| Very small text: "Engagement details" headings on the service pages | Fixed. Every page-level label below 0.75rem was raised to 0.75rem sitewide — 111 declarations. |
+| Device-dependent event handler: "Follow on Substack" on Books | Fixed in the fourth pass. A site-wide check confirms no `onmouseover`/`onmouseout` remains. |
+| ARIA hidden: instance counts across every page | Not defects. WAVE reports every `aria-hidden="true"` as an item to review, not an error. A scripted check for focusable descendants inside hidden elements returns zero across the whole site. Stop tracking this number. |
 
-The Practice Library:
-Missing Heading 2 - Published On: The Next Evolution
-Redundant Links: articles have title  and view on substack as links
-ARIA Hidden: 7 instances
+## What the same review found that this list did not
 
-Books:
-Contrast Errors: Romain Numerals throughout
-Follow on Substack button is device dependent event handler
-ARIA Hidden: 41 instances
+- No navigation at all below 580px, and no hamburger anywhere in the codebase.
+- Twenty-six of thirty-three pages scrolling sideways on a phone, with eight
+  footer links rendering off-canvas at 1.06:1.
+- Five content sections per service page marked up as `div` rather than headings.
+- Every in-page anchor, including the skip link, landing underneath the fixed nav.
+- `security.txt` returning 404 on the live site.
+- The contact page's form posting to `action="#"` with the real endpoint only in
+  JavaScript — a dead end with JavaScript disabled.
 
-Press:
-ARIA Hidden: 7 instances
-
-Contact:
-ARIA Hidden: 14 instances
-
-Servies:
-Contrast Errors: Numbered service boxes
-ARIA Hidden: 37 instances
-
-Individual Services - every page:
-Very small text: Engagement Details - headings
-AIRA Hidden: 3 instances
-
-CTO Grand Rounds:
-Possible Heading 2: Curated By: CTO Grand Rounds (H2)
-ARIA Hidden: 4 instances
-
-Site Map:
-ARIA Hidden: 3 instances
-
-Accessibility:
-ARIA Hidden: 3 instances
-
-Privacy:
-ARIA Hidden: 3 instances
-
+All actioned. An automated check now runs on every change so that the first two
+categories cannot recur silently: `node tools/check-a11y.mjs`.

@@ -1,0 +1,113 @@
+<!--page
+{
+  "title": "Your Plan \u2014 The Practice Library \u2014 Neil Catton",
+  "description": "Describe what you're dealing with and get a short plan built only from real, published Practice Library cards.",
+  "slug": "personalised-plan",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 1.5rem; max-width: 20ch; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 640px; }\n  .plan-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .plan-inner { max-width: 760px; margin: 0 auto; }\n  .plan-form { margin-bottom: 1rem; }\n  .plan-label { display: block; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; color: #1a1714; margin-bottom: 0.75rem; }\n  .plan-textarea { width: 100%; min-height: 140px; padding: 1rem 1.1rem; font-family: var(--sans); font-size: 1rem; line-height: 1.6; color: #1a1714; background: #fff; border: 1.5px solid #d4cfc9; resize: vertical; }\n  .plan-textarea:focus { border-color: #2b4a6f; }\n  .plan-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 0.85rem; gap: 1rem; }\n  .plan-hint { font-size: 0.8rem; color: #5c5652; }\n  .plan-note { font-size: 0.85rem; color: #5c5652; line-height: 1.7; margin: 1.5rem 0 2.5rem; padding: 1.25rem 1.5rem; background: #ede9e3; border-left: 2px solid #2b4a6f; }\n  .plan-status { padding: 2.5rem 0; text-align: center; color: #5c5652; font-size: 0.95rem; display: none; }\n  .plan-status.is-visible { display: block; }\n  .plan-result { display: none; margin-top: 1rem; }\n  .plan-result.is-visible { display: block; }\n  .plan-summary { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; line-height: 1.5; color: #1a1714; margin-bottom: 2.5rem; }\n  .plan-items { list-style: none; }\n  .plan-item { padding: 1.75rem 0; border-top: 1px solid #d4cfc9; display: flex; flex-direction: column; gap: 0.5rem; }\n  .plan-items li:last-child { border-bottom: 1px solid #d4cfc9; }\n  .plan-item-book { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; color: #5c5652; }\n  .plan-item-book::before { content: \"\"; width: 9px; height: 9px; flex-shrink: 0; background: var(--dot, #5c5652); }\n  .plan-item[data-book=\"I\"] { --dot: var(--book-1); }\n  .plan-item[data-book=\"II\"] { --dot: var(--book-2); }\n  .plan-item[data-book=\"III\"] { --dot: var(--book-3); }\n  .plan-item-lead { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: #1a1714; line-height: 1.4; }\n  .plan-item-why { font-size: 0.95rem; color: #3d3935; line-height: 1.7; }\n  .plan-item-link { align-self: flex-start; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; margin-top: 0.25rem; }\n  .plan-item-link::after { content: \" \u2192\"; }\n  .plan-item-link:hover { color: #1a1714; text-decoration: underline; }\n  .plan-closing { font-size: 1rem; color: #3d3935; line-height: 1.8; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #d4cfc9; }\n  .plan-again { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }\n  .plan-copy-feedback { font-size: 0.8rem; color: #2b4a6f; font-weight: 600; opacity: 0; transition: opacity 0.2s; }\n  .plan-copy-feedback.is-visible { opacity: 1; }\n  .plan-shared-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; margin-bottom: 1.5rem; }\n  .plan-shared-badge::before { content: \"\"; width: 8px; height: 8px; background: #2b4a6f; flex-shrink: 0; }\n  .plan-declined, .plan-error { background: #ede9e3; border: 1px solid #d4cfc9; padding: 2.25rem; display: none; }\n  .plan-declined.is-visible, .plan-error.is-visible { display: block; }\n  .plan-declined p, .plan-error p { font-size: 0.98rem; color: #3d3935; line-height: 1.8; }\n@media (max-width: 580px) {\n  .plan-meta { flex-direction: column; align-items: flex-start; }\n}\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-personalised-plan-1.x-personalised-plan-1.x-personalised-plan-1 { position:absolute;left:-9999px; }\n  .x-personalised-plan-2.x-personalised-plan-2.x-personalised-plan-2 { display:none; }",
+  "js": "const BOOK_NAMES = { \"I\": \"The Next Evolution\", \"II\": \"The Cognitive Crucible\", \"III\": \"The Shadow System\" };\n\n  const form = document.getElementById(\"plan-form\");\n  const textarea = document.getElementById(\"situation\");\n  const submitBtn = document.getElementById(\"plan-submit\");\n  const statusEl = document.getElementById(\"plan-status\");\n  const declinedEl = document.getElementById(\"plan-declined\");\n  const declinedText = document.getElementById(\"plan-declined-text\");\n  const errorEl = document.getElementById(\"plan-error\");\n  const errorText = document.getElementById(\"plan-error-text\");\n  const resultEl = document.getElementById(\"plan-result\");\n  const sharedBadge = document.getElementById(\"plan-shared-badge\");\n  const summaryEl = document.getElementById(\"plan-summary\");\n  const itemsEl = document.getElementById(\"plan-items\");\n  const closingEl = document.getElementById(\"plan-closing\");\n  const restartBtn = document.getElementById(\"plan-restart\");\n  const regenerateBtn = document.getElementById(\"plan-regenerate\");\n  const copyBtn = document.getElementById(\"plan-copy\");\n  const copyFeedback = document.getElementById(\"plan-copy-feedback\");\n\n  // Tracks the situation behind the plan currently on screen, so \"show a\n  // different angle\" can resubmit it \u2014 null when viewing a shared plan\n  // (share links carry the finished plan, not the original free text).\n  let currentSituation = null;\n  let currentPlan = null;\n\n  function escapeHTML(s) {\n    return (s || \"\").replace(/[&<>\"']/g, c => ({\n      \"&\": \"&amp;\", \"<\": \"&lt;\", \">\": \"&gt;\", '\"': \"&quot;\", \"'\": \"&#39;\"\n    }[c]));\n  }\n\n  function hideAll() {\n    statusEl.classList.remove(\"is-visible\");\n    declinedEl.classList.remove(\"is-visible\");\n    errorEl.classList.remove(\"is-visible\");\n    resultEl.classList.remove(\"is-visible\");\n  }\n\n  function fmtDate(str) {\n    try {\n      const d = new Date(str);\n      if (isNaN(d)) return \"\";\n      return d.toLocaleDateString(\"en-GB\", { day: \"numeric\", month: \"long\", year: \"numeric\" });\n    } catch(e) { return \"\"; }\n  }\n\n  // \u2500\u2500 Share-link encoding \u2500\u2500\n  // The plan already only contains items validated against the real corpus\n  // server-side, so a share link can carry the finished result directly \u2014\n  // reopening it just re-renders, no new Claude call, no cost.\n  function encodePlanState(plan) {\n    const compact = {\n      v: 1,\n      summary: plan.summary || \"\",\n      closing: plan.closing || \"\",\n      items: (plan.items || []).map(i => ({\n        id: i.id, why: i.why, lead: i.lead, card_title: i.card_title,\n        book: i.book, link: i.link, date: i.date\n      }))\n    };\n    try {\n      return btoa(encodeURIComponent(JSON.stringify(compact)).replace(/%([0-9A-F]{2})/g,\n        (_, hex) => String.fromCharCode(\"0x\" + hex)));\n    } catch (e) { return null; }\n  }\n\n  function decodePlanState(encoded) {\n    try {\n      const json = decodeURIComponent(Array.prototype.map.call(atob(encoded),\n        c => \"%\" + (\"00\" + c.charCodeAt(0).toString(16)).slice(-2)).join(\"\"));\n      const parsed = JSON.parse(json);\n      if (parsed && parsed.v === 1 && Array.isArray(parsed.items)) return parsed;\n      return null;\n    } catch (e) { return null; }\n  }\n\n  function renderPlan(plan, opts) {\n    opts = opts || {};\n    currentPlan = plan;\n    sharedBadge.style.display = opts.shared ? \"\" : \"none\";\n    regenerateBtn.style.display = currentSituation ? \"\" : \"none\";\n    summaryEl.textContent = plan.summary || \"\";\n    itemsEl.innerHTML = \"\";\n    plan.items.forEach(item => {\n      const li = document.createElement(\"li\");\n      li.className = \"plan-item\";\n      if (item.book) li.setAttribute(\"data-book\", item.book);\n      const bookName = BOOK_NAMES[item.book] || \"\";\n      const linkHTML = item.link\n        ? `<a class=\"plan-item-link\" href=\"${item.link}\" target=\"_blank\" rel=\"noopener noreferrer\">Read \u201c${escapeHTML(item.card_title)}\u201d</a>`\n        : \"\";\n      li.innerHTML = `\n        <span class=\"plan-item-book\">${escapeHTML(bookName)}${item.date ? \" \u00b7 \" + fmtDate(item.date) : \"\"}</span>\n        <span class=\"plan-item-lead\">${escapeHTML(item.lead)}</span>\n        <span class=\"plan-item-why\">${escapeHTML(item.why)}</span>\n        ${linkHTML}`;\n      itemsEl.appendChild(li);\n    });\n    closingEl.textContent = plan.closing || \"\";\n    hideAll();\n    resultEl.classList.add(\"is-visible\");\n\n    // Reflect the plan in the URL (without reloading) so the browser's own\n    // address bar is itself always a valid share link for what's on screen.\n    if (!opts.fromURL) {\n      const encoded = encodePlanState(plan);\n      if (encoded) {\n        const url = new URL(window.location.href);\n        url.searchParams.set(\"p\", encoded);\n        window.history.replaceState(null, \"\", url.toString());\n      }\n    }\n  }\n\n  async function submitPlan(situation, excludeIds, statusMessage) {\n    submitBtn.disabled = true;\n    regenerateBtn.disabled = true;\n    hideAll();\n    statusEl.textContent = statusMessage;\n    statusEl.classList.add(\"is-visible\");\n\n    try {\n      const res = await fetch(\"/generate-plan\", {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({ situation, exclude_ids: excludeIds || [] })\n      });\n\n      const contentType = res.headers.get(\"content-type\") || \"\";\n      if (res.status === 429 || !contentType.includes(\"application/json\")) {\n        hideAll();\n        errorText.textContent = \"This page has had a lot of requests just now \u2014 please wait a minute and try again.\";\n        errorEl.classList.add(\"is-visible\");\n        return;\n      }\n\n      const data = await res.json();\n\n      if (!res.ok || data.status === \"error\") {\n        hideAll();\n        errorText.textContent = (data && data.message) || \"Something went wrong. Please try again in a moment.\";\n        errorEl.classList.add(\"is-visible\");\n        return;\n      }\n\n      if (data.status === \"declined\") {\n        hideAll();\n        declinedText.textContent = data.message;\n        declinedEl.classList.add(\"is-visible\");\n        return;\n      }\n\n      if (data.status === \"no_match\") {\n        hideAll();\n        errorText.textContent = data.message;\n        errorEl.classList.add(\"is-visible\");\n        return;\n      }\n\n      currentSituation = situation;\n      renderPlan(data.plan);\n    } catch (err) {\n      hideAll();\n      errorText.textContent = \"Couldn't reach the plan generator. Please check your connection and try again.\";\n      errorEl.classList.add(\"is-visible\");\n    } finally {\n      submitBtn.disabled = false;\n      regenerateBtn.disabled = false;\n    }\n  }\n\n  form.addEventListener(\"submit\", (e) => {\n    e.preventDefault();\n    const situation = textarea.value.trim();\n    if (!situation) return;\n    // Fresh submission \u2014 clear any shared-plan state in the URL.\n    window.history.replaceState(null, \"\", window.location.pathname);\n    submitPlan(situation, [], \"Reading the library and building your plan \u2014 this can take a little while\u2026\");\n  });\n\n  regenerateBtn.addEventListener(\"click\", () => {\n    if (!currentSituation || !currentPlan) return;\n    const excludeIds = currentPlan.items.map(i => i.id);\n    submitPlan(currentSituation, excludeIds, \"Looking for a different angle\u2026\");\n  });\n\n  copyBtn.addEventListener(\"click\", async () => {\n    try {\n      await navigator.clipboard.writeText(window.location.href);\n      copyFeedback.classList.add(\"is-visible\");\n      setTimeout(() => copyFeedback.classList.remove(\"is-visible\"), 2000);\n    } catch (e) {\n      // Clipboard API can be blocked (older browser, permissions) \u2014 fall\n      // back to selecting the URL isn't practical without a visible input,\n      // so just tell them plainly rather than fail silently.\n      copyFeedback.textContent = \"Copy failed \u2014 the address bar already has the link\";\n      copyFeedback.classList.add(\"is-visible\");\n      setTimeout(() => {\n        copyFeedback.classList.remove(\"is-visible\");\n        copyFeedback.textContent = \"Link copied\";\n      }, 3000);\n    }\n  });\n\n  restartBtn.addEventListener(\"click\", () => {\n    hideAll();\n    currentSituation = null;\n    currentPlan = null;\n    window.history.replaceState(null, \"\", window.location.pathname);\n    textarea.value = \"\";\n    textarea.focus();\n  });\n\n  // \u2500\u2500 Load a shared plan straight from the URL, if there is one \u2500\u2500\n  (function loadFromURL() {\n    const encoded = new URLSearchParams(window.location.search).get(\"p\");\n    if (!encoded) return;\n    const decoded = decodePlanState(encoded);\n    if (!decoded) return;\n    currentSituation = null; // shared plans don't carry the original free text\n    renderPlan(decoded, { shared: true, fromURL: true });\n  })();\n",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Your Plan \u2014 the Practice Library",
+      "url": "https://www.neilcatton.com/personalised-plan.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "description": "Describe what you're dealing with and get a short plan built only from real, published Practice Library cards.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Practice Library",
+          "item": "https://www.neilcatton.com/practice-library.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Your Plan",
+          "item": "https://www.neilcatton.com/personalised-plan.html"
+        }
+      ]
+    }
+  ],
+  "searchTitle": "Your Plan"
+}
+-->
+<header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Practice Library — Your Plan</span>
+      <h1 class="page-title" id="page-title">Tell me what you're dealing with.</h1>
+      <p class="page-standfirst">
+        Describe the situation in your own words — no need to frame it as a
+        question. The plan that comes back is built only from cards actually
+        published in the collection, each one linked back to the original.
+      </p>
+    </div>
+  </header>
+
+  <section class="plan-section" aria-labelledby="plan-heading">
+    <div class="plan-inner">
+      <h2 class="visually-hidden x-personalised-plan-1" id="plan-heading">Describe your situation</h2>
+
+      <form class="plan-form" id="plan-form">
+        <label class="plan-label" for="situation">What's going on?</label>
+        <textarea class="plan-textarea" id="situation" name="situation"
+          placeholder="For example: I run a small team and I'm not sure how much to trust the AI tools we've started using for decisions that affect people…"
+          maxlength="3000" required></textarea>
+        <div class="plan-meta">
+          <span class="plan-hint">A sentence or two is plenty.</span>
+          <button type="submit" class="btn btn-primary" id="plan-submit">Build my plan</button>
+        </div>
+      </form>
+
+      <p class="plan-note">
+        This only draws on cards that are actually published — currently
+        <strong id="corpus-count">a growing set</strong> of them, more added
+        weekly. It won't invent advice, and it isn't a substitute for
+        professional help if that's what the situation actually needs.
+      </p>
+
+      <div class="plan-status" id="plan-status" role="status" aria-live="polite">Reading the library…</div>
+
+      <div class="plan-declined" id="plan-declined" role="status" aria-live="polite">
+        <p id="plan-declined-text"></p>
+      </div>
+
+      <div class="plan-error" id="plan-error" role="alert">
+        <p id="plan-error-text"></p>
+      </div>
+
+      <div class="plan-result" id="plan-result" aria-live="polite">
+        <p class="plan-shared-badge x-personalised-plan-2" id="plan-shared-badge">Someone shared this plan with you</p>
+        <p class="plan-summary" id="plan-summary"></p>
+        <ul class="plan-items" id="plan-items"></ul>
+        <p class="plan-closing" id="plan-closing"></p>
+        <div class="plan-again">
+          <button type="button" class="btn btn-secondary" id="plan-regenerate">Show a different angle</button>
+          <button type="button" class="btn btn-secondary" id="plan-copy">Copy link to this plan</button>
+          <button type="button" class="btn btn-secondary" id="plan-restart">Describe something else</button>
+          <span class="plan-copy-feedback" id="plan-copy-feedback">Link copied</span>
+        </div>
+      </div>
+    </div>
+  </section>

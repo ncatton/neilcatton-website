@@ -1,0 +1,781 @@
+<!--page
+{
+  "title": "Services \u2014 Neil Catton",
+  "description": "Fractional CTO/CIO, advisory, NED, and interim leadership \u2014 three decades across 20+ sectors, from a single board conversation to multi-year programmes.",
+  "slug": "services",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 520px; opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .engagement-panel { opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards; padding-bottom: 0.5rem; }\n  .engagement-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: block; }\n  .engagement-types { list-style: none; }\n  .engagement-types li { padding: 0.875rem 0; border-top: 1px solid rgba(212,207,201,0.15); display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; align-items: start; }\n  .engagement-types li:last-child { border-bottom: 1px solid rgba(212,207,201,0.15); }\n  .btn-panel-book { display: inline-block; margin-top: 1.25rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #f5f2ee; text-decoration: none; border: 1px solid rgba(245,242,238,0.3); padding: 0.4rem 0.9rem; transition: border-color 0.2s, background 0.2s; }\n  .btn-panel-book:hover { border-color: #f5f2ee; background: rgba(245,242,238,0.08); }\n  .engagement-dot { width: 6px; height: 6px; background: #2b4a6f; border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0; }\n  .engagement-name { font-family: var(--sans); font-size: 0.9rem; font-weight: 600; color: #f5f2ee; display: block; margin-bottom: 0.15rem; }\n  .engagement-desc { font-size: 0.8rem; font-weight: 300; color: rgba(245,242,238,0.55); line-height: 1.5; }\n  .selector-section { background: var(--paper-mid); padding: 4rem var(--col-pad); border-bottom: 1px solid var(--rule); }\n  .selector-inner { max-width: 720px; margin: 0 auto; }\n  .selector-section .selector-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.75rem; }\n  .selector-heading { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }\n  .selector-intro { font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 2rem; max-width: 560px; }\n  .selector-widget { background: #f5f2ee; border: 1px solid #d4cfc9; padding: 2rem; }\n  .selector-question { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: #1a1714; margin-bottom: 1.25rem; }\n  .selector-options { display: flex; flex-direction: column; gap: 0.6rem; }\n  .selector-option { display: block; width: 100%; text-align: left; font-family: var(--sans); font-size: 0.9375rem; color: #1a1714; background: #f5f2ee; border: 2px solid #d4cfc9; padding: 0.9rem 1.25rem; min-height: 44px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }\n  .selector-option:hover { border-color: #2b4a6f; background: #ede9e3; }\n  .selector-option:focus-visible { outline: 3px solid #2b4a6f; outline-offset: 2px; }\n  .selector-back { display: inline-flex; align-items: center; margin-bottom: 1.25rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px; }\n  .selector-back:hover { color: #2b4a6f; }\n  .selector-result-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; }\n  .selector-result-card { border-left: 3px solid #2b4a6f; padding: 0.25rem 0 0.25rem 1.5rem; margin-bottom: 1.5rem; }\n  .selector-result-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: #1a1714; margin-bottom: 0.5rem; }\n  .selector-result-desc { font-size: 0.9375rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.25rem; }\n  .selector-result-links a { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); padding-bottom: 2px; margin-right: 1.5rem; display: inline-block; margin-bottom: 0.5rem; min-height: 44px; }\n  .selector-result-links a:hover { border-color: #2b4a6f; }\n  .selector-restart { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; background: none; border: none; cursor: pointer; padding: 0.4rem 0; min-height: 44px; }\n  .selector-restart:hover { color: #2b4a6f; }\n  .selector-noscript { font-size: 0.875rem; color: #5c5652; margin-top: 1.5rem; padding: 1rem; border: 1px dashed #d4cfc9; }\n@media (max-width: 580px) {\n  .selector-widget { padding: 1.5rem; }\n}\n  .cluster-nav { background: #2b4a6f; padding: 1.25rem var(--col-pad); position: sticky; top: 57px; z-index: 90; border-bottom: 1px solid rgba(212,207,201,0.2); }\n  .cluster-nav-inner { max-width: var(--max-wide); margin: 0 auto; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }\n  .cluster-nav-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.78); flex-shrink: 0; }\n  .cluster-nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }\n  .cluster-nav-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,242,238,0.7); text-decoration: none; padding: 0.4rem 1rem; border: 1px solid rgba(245,242,238,0.2); transition: all 0.2s; }\n  .cluster-nav-link:hover { background: rgba(245,242,238,0.12); color: #f5f2ee; border-color: rgba(245,242,238,0.4); }\n  .engagements-section { background: #1a1714; padding: 5rem var(--col-pad); }\n  .engagements-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .engagements-header { margin-bottom: 3rem; }\n  .engagements-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }\n  .engagements-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .engagements-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #f5f2ee; margin-bottom: 0.75rem; }\n  .engagements-standfirst { font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.6); line-height: 1.75; max-width: 560px; }\n  .engagements-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }\n  .engagements-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: rgba(212,207,201,0.12); border: 1px solid rgba(212,207,201,0.12); }\n  .engagement-item { background: #1a1714; padding: 1.75rem 2rem; transition: background 0.2s; }\n  .engagement-item:hover { background: rgba(43,74,111,0.15); }\n  .engagement-item-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: #f5f2ee; margin-bottom: 0.3rem; line-height: 1.3; }\n  .engagement-item-name a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(245,242,238,0.2); transition: border-color 0.2s; }\n  .engagement-item-name a:hover { border-color: rgba(245,242,238,0.6); }\n  .engagement-item-role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6a94c4; margin-bottom: 0.875rem; display: block; }\n  .engagement-item-desc { font-size: 0.875rem; font-weight: 300; color: rgba(245,242,238,0.65); line-height: 1.7; }\n@media (max-width: 700px) {\n  .engagements-grid { grid-template-columns: 1fr; }\n}\n  .cluster-section { padding: 5rem var(--col-pad); }\n  .cluster-section:nth-child(odd) { background: #f5f2ee; }\n  .cluster-section:nth-child(even) { background: #ede9e3; }\n  .cluster-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .cluster-header { margin-bottom: 3.5rem; }\n  .cluster-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }\n  .cluster-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .cluster-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 0.75rem; }\n  .cluster-standfirst { font-size: 1rem; font-weight: 300; color: #3d3935; line-height: 1.75; max-width: 620px; }\n  .cluster-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin: 1.5rem 0 2.5rem; }\n  .sector-breadth { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; margin-bottom: 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); }\n  .sector-breadth-group-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #2b4a6f; display: block; margin-bottom: 0.75rem; }\n  .sector-breadth-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; }\n  .sector-breadth-list li { font-family: var(--sans); font-size: 0.85rem; font-weight: 400; color: var(--ink-mid); line-height: 1.4; }\n@media (max-width: 640px) {\n  .sector-breadth { grid-template-columns: 1fr; }\n}\n  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }\n  .service-card { background: #f5f2ee; border: 1px solid #d4cfc9; padding: 2rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }\n  .cluster-section:nth-child(even) .service-card { background: #f5f2ee; }\n  .cluster-section:nth-child(even) .service-card.flagship { background: #1a1714; }\n  .service-card:hover { border-color: #2b4a6f; transform: translateY(-2px); }\n  .service-number { font-family: var(--serif); font-size: 2rem; font-style: italic; color: #7f7c79; line-height: 1; margin-bottom: 1rem; }\n  .service-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: #1a1714; margin-bottom: 0.5rem; line-height: 1.3; }\n  .service-credential { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; margin-bottom: 1rem; display: block; }\n  .service-desc { font-size: 0.9375rem; font-weight: 400; color: #1a1714; line-height: 1.75; flex: 1; background: transparent; }\n  .service-card.flagship { background: #1a1714; border-color: #1a1714; grid-column: 1 / -1; }\n  .service-card.flagship:hover { border-color: #2b4a6f; }\n  .service-card.flagship .service-number { color: rgba(212,207,201,0.45); }\n  .service-card.flagship .service-name { color: #f5f2ee; }\n  .service-card.flagship .service-credential { color: #6a94c4; }\n  .service-card.flagship .service-desc { color: rgba(245,242,238,0.8); }\n  .flagship-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.25rem; }\n  .flagship-point { border-left: 2px solid rgba(43,74,111,0.5); padding: 0.5rem 1rem; }\n  .flagship-point-title { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 0.3rem; display: block; }\n  .flagship-point-text { font-size: 0.875rem; color: rgba(245,242,238,0.72); line-height: 1.65; }\n@media (max-width: 860px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .engagement-panel { display: none; }\n  .flagship-grid { grid-template-columns: 1fr; }\n  .cluster-nav { top: 55px; }\n}\n@media (max-width: 580px) {\n  .cluster-nav-label { display: none; }\n}\n  .service-links { margin-top: 1rem; font-family: \"Source Sans 3\", Helvetica, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }\n  .service-links a { color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); padding-bottom: 2px; transition: border-color 0.2s; }\n  .service-links a:hover { border-color: #2b4a6f; }\n  .service-links .sep { color: #5c5652; margin: 0 0.4rem; }",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Services",
+      "description": "Fractional CTO/CIO, advisory, NED, and interim leadership \u2014 three decades across 20+ sectors, from a single board conversation to multi-year programmes.",
+      "url": "https://www.neilcatton.com/services.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.neilcatton.com/services.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Advisory services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Fractional CTO&thinsp;/&thinsp;CIO",
+            "url": "https://www.neilcatton.com/service-fractional-cto-cio.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Non-Executive Director",
+            "url": "https://www.neilcatton.com/service-non-executive-director.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Technology Strategy &amp;&nbsp;Roadmapping",
+            "url": "https://www.neilcatton.com/service-technology-strategy-roadmapping.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "AI Board Briefing",
+            "url": "https://www.neilcatton.com/service-ai-board-briefing.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "AI Readiness Review",
+            "url": "https://www.neilcatton.com/service-ai-readiness-review.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "Technology Due Diligence",
+            "url": "https://www.neilcatton.com/service-technology-due-diligence.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Enterprise Architecture",
+            "url": "https://www.neilcatton.com/service-enterprise-architecture.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Interim Leadership &amp;&nbsp;Programme Recovery",
+            "url": "https://www.neilcatton.com/service-interim-programme-recovery.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "name": "Data Strategy &amp;&nbsp;Architecture Review",
+            "url": "https://www.neilcatton.com/service-data-strategy-review.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Service",
+            "name": "Cybersecurity &amp;&nbsp;Risk Strategy",
+            "url": "https://www.neilcatton.com/service-cybersecurity-risk-strategy.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Service",
+            "name": "Public Sector Technology",
+            "url": "https://www.neilcatton.com/service-public-sector-technology.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Service",
+            "name": "Keynote Speaking &amp;&nbsp;Executive Masterclasses",
+            "url": "https://www.neilcatton.com/service-speaking-masterclasses.html",
+            "provider": {
+              "@type": "Person",
+              "name": "Neil Catton",
+              "url": "https://www.neilcatton.com/"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "js": "/* Service selector \u2014 no network requests, nothing stored.\n   The result heading was an <h4> under an <h2>, skipping a level. */\n/* \u2500\u2500 SERVICE SELECTOR \u2014 no network requests, nothing stored \u2500\u2500 */\n  (function () {\n    var SERVICES = {\n      \"strategy\": {\n        name: \"Technology Strategy & Roadmapping\",\n        desc: \"A sequenced technology direction the executive team can own, communicate, and deliver.\",\n        href: \"/service-technology-strategy-roadmapping.html\",\n        pdf: \"/downloads/neil-catton-technology-strategy-roadmapping.pdf\"\n      },\n      \"fractional\": {\n        name: \"Fractional CTO / CIO\",\n        desc: \"Senior technology leadership for organisations that need it \u2014 without the full-time appointment.\",\n        href: \"/service-fractional-cto-cio.html\",\n        pdf: \"/downloads/neil-catton-fractional-cto-cio.pdf\"\n      },\n      \"ai-briefing\": {\n        name: \"AI Board Briefing\",\n        desc: \"What the board is actually authorising when it says yes to AI \u2014 in one prepared half-day.\",\n        href: \"/service-ai-board-briefing.html\",\n        pdf: \"/downloads/neil-catton-ai-board-briefing.pdf\"\n      },\n      \"ai-readiness\": {\n        name: \"AI Readiness Review\",\n        desc: \"Where the organisation actually stands on AI \u2014 and the decisions, in order, that follow.\",\n        href: \"/service-ai-readiness-review.html\",\n        pdf: \"/downloads/neil-catton-ai-readiness-review.pdf\"\n      },\n      \"due-diligence\": {\n        name: \"Technology Due Diligence\",\n        desc: \"An independent technology assessment a deal team can act on \u2014 inside the deal window.\",\n        href: \"/service-technology-due-diligence.html\",\n        pdf: \"/downloads/neil-catton-technology-due-diligence.pdf\"\n      },\n      \"ned\": {\n        name: \"Non-Executive Director\",\n        desc: \"Independent board-level scrutiny of technology, AI risk, and digital change.\",\n        href: \"/service-non-executive-director.html\",\n        pdf: \"/downloads/neil-catton-non-executive-director.pdf\"\n      },\n      \"architecture\": {\n        name: \"Enterprise Architecture\",\n        desc: \"An architecture that serves the organisation using it \u2014 not one that exists to be admired.\",\n        href: \"/service-enterprise-architecture.html\",\n        pdf: \"/downloads/neil-catton-enterprise-architecture.pdf\"\n      },\n      \"interim\": {\n        name: \"Interim Leadership & Programme Recovery\",\n        desc: \"Senior leadership for the period the organisation cannot afford to get wrong.\",\n        href: \"/service-interim-programme-recovery.html\",\n        pdf: \"/downloads/neil-catton-interim-programme-recovery.pdf\"\n      },\n      \"data\": {\n        name: \"Data Strategy & Architecture Review\",\n        desc: \"From a fragmented data estate to a strategy the executive team can own.\",\n        href: \"/service-data-strategy-review.html\",\n        pdf: \"/downloads/neil-catton-data-strategy-review.pdf\"\n      },\n      \"cyber\": {\n        name: \"Cybersecurity & Risk Strategy\",\n        desc: \"A risk posture that matches actual exposure \u2014 not a compliance exercise dressed as security.\",\n        href: \"/service-cybersecurity-risk-strategy.html\",\n        pdf: \"/downloads/neil-catton-cybersecurity-risk-strategy.pdf\"\n      },\n      \"public-sector\": {\n        name: \"Public Sector Technology\",\n        desc: \"Senior technology leadership shaped by three decades inside how public sector decisions actually get made.\",\n        href: \"/service-public-sector-technology.html\",\n        pdf: \"/downloads/neil-catton-public-sector-technology.pdf\"\n      },\n      \"speaking\": {\n        name: \"Keynote Speaking & Executive Masterclasses\",\n        desc: \"Talks on what technology decisions do to the people on the other side of them.\",\n        href: \"/service-speaking-masterclasses.html\",\n        pdf: \"/downloads/neil-catton-speaking-masterclasses.pdf\"\n      }\n    };\n\n    var widget = document.getElementById(\"selector-widget\");\n    if (!widget) return;\n\n    var steps = widget.querySelectorAll(\".selector-step\");\n    var resultEl = document.getElementById(\"selector-result\");\n    var resultCard = document.getElementById(\"selector-result-card\");\n\n    function escapeHTML(s) {\n      return (s || \"\").replace(/[&<>\"']/g, function (c) {\n        return { \"&\": \"&amp;\", \"<\": \"&lt;\", \">\": \"&gt;\", '\"': \"&quot;\", \"'\": \"&#39;\" }[c];\n      });\n    }\n\n    function showStep(id) {\n      resultEl.hidden = true;\n      for (var i = 0; i < steps.length; i++) {\n        steps[i].hidden = (steps[i].id !== id);\n      }\n      var target = document.getElementById(id);\n      var heading = target ? target.querySelector(\".selector-question\") : null;\n      if (heading) heading.focus();\n    }\n\n    function showResult(key) {\n      var svc = SERVICES[key];\n      if (!svc) return;\n      for (var i = 0; i < steps.length; i++) {\n        steps[i].hidden = true;\n      }\n      resultCard.innerHTML =\n        '<h3 class=\"selector-result-name\">' + escapeHTML(svc.name) + \"</h3>\" +\n        '<p class=\"selector-result-desc\">' + escapeHTML(svc.desc) + \"</p>\" +\n        '<p class=\"selector-result-links\">' +\n          '<a href=\"' + svc.href + '\">Read the engagement detail</a>' +\n          '<a href=\"' + svc.pdf + '\" download>One-pager (PDF)</a>' +\n        \"</p>\";\n      resultEl.hidden = false;\n      resultCard.focus();\n    }\n\n    widget.addEventListener(\"click\", function (e) {\n      var btn = e.target.closest(\"button\");\n      if (!btn) return;\n\n      if (btn.id === \"selector-restart\") {\n        showStep(\"step-1\");\n      } else if (btn.hasAttribute(\"data-goto\")) {\n        showStep(btn.getAttribute(\"data-goto\"));\n      } else if (btn.hasAttribute(\"data-result\")) {\n        showResult(btn.getAttribute(\"data-result\"));\n      }\n    });\n  })();\n",
+  "searchTitle": "All services"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div>
+        <span class="page-label">Services</span>
+        <h1 class="page-title" id="page-title">Working<br><em>together.</em></h1>
+        <p class="page-standfirst">
+          A career spanning more than three decades across 20+ industry sectors.
+          Available for fractional, interim, advisory, and project engagements —
+          from a single board conversation to a multi-year transformation programme.
+        </p>
+      </div>
+      <div class="engagement-panel" aria-label="Engagement types">
+        <span class="engagement-label">How we can work together</span>
+        <ul class="engagement-types" role="list">
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Fractional CTO/CIO</span>
+              <span class="engagement-desc">Ongoing senior technology leadership without a full-time appointment</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Advisory & Board</span>
+              <span class="engagement-desc">A trusted senior voice for boards, investors, and leadership teams</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Non-Executive Director</span>
+              <span class="engagement-desc">Independent board-level technology oversight — governance, AI risk, and digital scrutiny</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Interim Leadership</span>
+              <span class="engagement-desc">Stepping in to lead through critical transitions or programme recovery</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Project & Programme</span>
+              <span class="engagement-desc">Defined-scope engagements with clear outcomes and deliverables</span>
+            </div>
+          </li>
+          <li>
+            <span class="engagement-dot" aria-hidden="true"></span>
+            <div>
+              <span class="engagement-name">Speaking & Masterclasses</span>
+              <span class="engagement-desc">Conferences, leadership offsites, and bespoke executive programmes</span>
+            </div>
+          </li>
+        </ul>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-panel-book" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── SERVICE SELECTOR ── -->
+  <section class="selector-section" aria-labelledby="selector-heading">
+    <div class="selector-inner">
+      <span class="selector-label">Not sure where to start?</span>
+      <h2 class="selector-heading" id="selector-heading">Find the right engagement</h2>
+      <p class="selector-intro">Two short questions. Nothing is saved or sent anywhere — just a pointer to the service page that fits, in under a minute.</p>
+
+      <div class="selector-widget" id="selector-widget">
+
+        <div class="selector-step" id="step-1">
+          <h3 class="selector-question" id="q1-heading" tabindex="-1">What are you looking for?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q1-heading">
+            <button type="button" class="selector-option" data-goto="step-leadership">Ongoing senior leadership, in the room over time</button>
+            <button type="button" class="selector-option" data-goto="step-review">An independent review, with a written recommendation</button>
+            <button type="button" class="selector-option" data-goto="step-session">A single session — a board briefing or a talk</button>
+            <button type="button" class="selector-option" data-result="public-sector">This is specifically a public sector organisation</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-leadership" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2a-heading" tabindex="-1">What's the situation?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2a-heading">
+            <button type="button" class="selector-option" data-result="interim">There's a vacancy or a crisis, and it can't wait</button>
+            <button type="button" class="selector-option" data-result="fractional">It's planned — we want the role filled on an ongoing fractional basis</button>
+            <button type="button" class="selector-option" data-result="ned">We want board-level oversight, not day-to-day leadership</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-review" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2b-heading" tabindex="-1">What's the review about?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2b-heading">
+            <button type="button" class="selector-option" data-result="strategy">Our overall technology strategy or roadmap</button>
+            <button type="button" class="selector-option" data-result="ai-readiness">Whether we're actually ready for AI</button>
+            <button type="button" class="selector-option" data-result="data">Our data estate and architecture</button>
+            <button type="button" class="selector-option" data-result="architecture">Our systems architecture more broadly</button>
+            <button type="button" class="selector-option" data-result="cyber">Our cybersecurity and risk exposure</button>
+            <button type="button" class="selector-option" data-result="due-diligence">A company we're acquiring or investing in</button>
+          </div>
+        </div>
+
+        <div class="selector-step" id="step-session" hidden>
+          <button type="button" class="selector-back" data-goto="step-1">&larr; Back</button>
+          <h3 class="selector-question" id="q2c-heading" tabindex="-1">What kind of session?</h3>
+          <div class="selector-options" role="group" aria-labelledby="q2c-heading">
+            <button type="button" class="selector-option" data-result="ai-briefing">A board session specifically about AI</button>
+            <button type="button" class="selector-option" data-result="speaking">A keynote, masterclass, or offsite session</button>
+          </div>
+        </div>
+
+        <div class="selector-result" id="selector-result" hidden aria-live="polite">
+          <p class="selector-result-label">This sounds like</p>
+          <div class="selector-result-card" id="selector-result-card" tabindex="-1"></div>
+          <button type="button" class="selector-restart" id="selector-restart">Start over</button>
+        </div>
+
+      </div>
+
+      <noscript>
+        <p class="selector-noscript">This selector needs JavaScript to work. Every service is listed directly below, or use the Services menu in the navigation above.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- CLUSTER NAV -->
+  <nav class="cluster-nav" aria-label="Service clusters">
+    <div class="cluster-nav-inner">
+      <span class="cluster-nav-label">Jump to</span>
+      <div class="cluster-nav-links">
+        <a href="#current-engagements" class="cluster-nav-link">Current Engagements</a>
+        <a href="#leadership-strategy" class="cluster-nav-link">Leadership &amp; Strategy</a>
+        <a href="#architecture-delivery" class="cluster-nav-link">Architecture &amp; Delivery</a>
+        <a href="#sectors-specialisms" class="cluster-nav-link">Sectors &amp; Specialisms</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── CURRENT ENGAGEMENTS ── -->
+  <section class="engagements-section" id="current-engagements" aria-labelledby="engagements-heading">
+    <div class="engagements-inner">
+
+      <div class="engagements-header">
+        <span class="engagements-label">Current engagements</span>
+        <h2 class="engagements-heading" id="engagements-heading">
+          Where I am working now
+        </h2>
+        <p class="engagements-standfirst">
+          A selection of active and ongoing engagements across advisory, fractional leadership,
+          and specialist collaboration.
+        </p>
+        <hr class="engagements-rule" aria-hidden="true">
+      </div>
+
+      <ul class="engagements-grid" role="list">
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://www.globalconsortiumgroup.com" target="_blank" rel="noopener noreferrer">Global Consortium Group</a>
+          </h3>
+          <span class="engagement-item-role">Technology Advisory</span>
+          <p class="engagement-item-desc">
+            Technology advisory to PE-backed businesses, scale-ups, and executive leadership
+            teams. Engagements include pre-close technology due diligence, post-acquisition
+            technology governance, board-level AI strategy, and architecture review
+            at Series A–C.
+          </p>
+        </li>
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://www.ssgadvisory.com" target="_blank" rel="noopener noreferrer">SSG Advisory Ltd</a>
+          </h3>
+          <span class="engagement-item-role">Chief Technologist &amp; Architect</span>
+          <p class="engagement-item-desc">
+            Supporting procurement activities in the public sector as Chief Technologist
+            and Architect — bringing senior technology leadership into complex government
+            procurement programmes.
+          </p>
+        </li>
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://www.platform-smart.co.uk" target="_blank" rel="noopener noreferrer">Platform Smart</a>
+          </h3>
+          <span class="engagement-item-role">Fractional CTO</span>
+          <p class="engagement-item-desc">
+            Platform through which fractional CTO engagements are structured and delivered —
+            providing organisations with senior technology leadership on a flexible,
+            outcome-focused basis.
+          </p>
+        </li>
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://gobby.io" target="_blank" rel="noopener noreferrer">Gobby</a>
+          </h3>
+          <span class="engagement-item-role">Strategic Advisor</span>
+          <p class="engagement-item-desc">
+            Advising on the opportunity space — bringing strategic perspective to
+            product direction, market positioning, and the technology decisions
+            that will shape the next phase of growth.
+          </p>
+        </li>
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://white.space" target="_blank" rel="noopener noreferrer">White.space</a>
+          </h3>
+          <span class="engagement-item-role">AI &amp; Data Collaboration</span>
+          <p class="engagement-item-desc">
+            Collaborating on AI data engagements within UK police forces — applying
+            responsible AI design principles in one of the most demanding operational
+            contexts in public sector technology.
+          </p>
+        </li>
+
+        <li class="engagement-item">
+          <h3 class="engagement-item-name">
+            <a href="https://grandrounds.tech" target="_blank" rel="noopener noreferrer">CTO Grand Rounds</a>
+          </h3>
+          <span class="engagement-item-role">Panel CTO</span>
+          <p class="engagement-item-desc">
+            Peer review for hard technology problems. A curated panel of senior
+            fractional CTOs reviews real technical challenges from founders and
+            scale-ups — live, without a script. Modelled on the medical grand rounds
+            format: diagnosis by disagreement, not consensus.
+          </p>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 1: LEADERSHIP & STRATEGY ── -->
+  <section class="cluster-section" id="leadership-strategy" aria-labelledby="cluster1-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster one</span>
+        <h2 class="cluster-heading" id="cluster1-heading">Leadership &amp; Strategy</h2>
+        <p class="cluster-standfirst">
+          Senior technology leadership and strategic counsel — for boards that need a
+          trusted voice, executives navigating ambiguous decisions, and organisations
+          that need the clarity to act. The experience behind every engagement spans
+          more than three decades across 20+ sectors, from computer operator
+          to Group CTO.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1. Technology Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>01</em></div>
+          <h3 class="service-name">Technology Strategy &amp; Roadmapping</h3>
+          <p class="service-desc">
+            When technology decisions feel ambiguous, the consequences of getting them
+            wrong are not. Working with executive teams to define where technology
+            needs to go, why, and in what sequence — grounded in commercial reality,
+            not architectural idealism. The output is a strategy that can be owned,
+            communicated, and delivered.
+          </p>
+          <p class="service-links">
+            <a href="/service-technology-strategy-roadmapping.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-technology-strategy-roadmapping.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 2. CTO/CIO Advisory -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>02</em></div>
+          <h3 class="service-name">CTO &amp; CIO Advisory</h3>
+          <p class="service-desc">
+            Senior technology leadership, available to the organisations that need it most. Working alongside CEOs, boards, and
+            existing leadership teams as a trusted senior voice — helping make better
+            technology decisions, navigate complex programmes, and hold delivery
+            partners to account. Available for fractional, interim, and advisory
+            engagements.
+          </p>
+          <p class="service-links">
+            <a href="/service-fractional-cto-cio.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-fractional-cto-cio.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 5. AI Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>05</em></div>
+          <h3 class="service-name">AI Strategy &amp; Governance</h3>
+          <p class="service-desc">
+            This is a leadership and risk conversation that happens to involve
+            technology. Helping boards and executive teams define what AI they should
+            be deploying, under what conditions, with what controls, and how to build
+            the internal capability to sustain it — without outsourcing the judgement
+            to the vendors selling it.
+          </p>
+          <p class="service-links">
+            <a href="/service-ai-board-briefing.html">AI Board Briefing</a><span class="sep" aria-hidden="true">&middot;</span><a href="/service-ai-readiness-review.html">AI Readiness Review</a>
+          </p>
+          <p class="service-links">
+            <a href="/downloads/neil-catton-ai-board-briefing.pdf" download>Board Briefing one-pager (PDF)</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-ai-readiness-review.pdf" download>Readiness Review one-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 9. Due Diligence -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>09</em></div>
+          <h3 class="service-name">Technology Due Diligence</h3>
+          <p class="service-desc">
+            Independent technology due diligence for investors, boards, and leadership
+            teams evaluating acquisitions, partnerships, or major supplier decisions.
+            Fast, clear, and commercially framed — producing an assessment that
+            decision-makers can act on rather than file away.
+          </p>
+          <p class="service-links">
+            <a href="/service-technology-due-diligence.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-technology-due-diligence.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- NED. Non-Executive Director -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>NED</em></div>
+          <h3 class="service-name">Non-Executive Director</h3>
+          <p class="service-desc">
+            Independent board oversight for organisations navigating technology
+            transformation, AI adoption, or regulatory change. The role is to ensure
+            the board understands the trade-offs it is authorising — not merely the
+            recommendation it is approving. Available for audit and risk committee
+            contributions, M&amp;A technology scrutiny, and ongoing governance oversight.
+          </p>
+          <p class="service-links">
+            <a href="/service-non-executive-director.html">Appointment detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-non-executive-director.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 2: ARCHITECTURE & DELIVERY ── -->
+  <section class="cluster-section" id="architecture-delivery" aria-labelledby="cluster2-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster two</span>
+        <h2 class="cluster-heading" id="cluster2-heading">Architecture &amp; Delivery</h2>
+        <p class="cluster-standfirst">
+          From coherent data estates to large-scale transformation programmes —
+          the technical depth to understand what organisations actually have,
+          and the leadership experience to close the gap between that and what they need.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 3. Enterprise Architecture -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>03</em></div>
+          <h3 class="service-name">Enterprise Architecture</h3>
+          <p class="service-desc">
+            Deep experience in enterprise architecture across public sector,
+            health, finance, telecoms, and retail. Helping organisations understand
+            what they have, what they need, and how to close the gap without
+            unnecessary complexity — building architectures that serve the
+            organisation rather than constrain it.
+          </p>
+          <p class="service-links">
+            <a href="/service-enterprise-architecture.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-enterprise-architecture.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 4. Digital Transformation -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>04</em></div>
+          <h3 class="service-name">Digital Transformation Leadership</h3>
+          <span class="service-credential">Programme experience up to £1.5bn</span>
+          <p class="service-desc">
+            Large-scale transformation programmes succeed or fail on clarity of
+            direction and quality of leadership. Specialising in organisations that
+            have stalled, are accelerating too fast, or have lost the thread between
+            their technology programme and the business outcome it was supposed to
+            deliver.
+          </p>
+          <p class="service-links">
+            <a href="/service-interim-programme-recovery.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-interim-programme-recovery.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 7. Data Strategy -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>07</em></div>
+          <h3 class="service-name">Data Strategy &amp; Architecture</h3>
+          <p class="service-desc">
+            Helping organisations move from fragmented data estates and competing
+            platforms to coherent data strategy — including governance, platform
+            architecture, and the organisational structures that make data genuinely
+            useful at executive level. This is not a technical conversation. It is a
+            business one that requires technical depth to have correctly.
+          </p>
+          <p class="service-links">
+            <a href="/service-data-strategy-review.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-data-strategy-review.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLUSTER 3: SECTORS & SPECIALISMS ── -->
+  <section class="cluster-section" id="sectors-specialisms" aria-labelledby="cluster3-heading">
+    <div class="cluster-inner">
+      <div class="cluster-header">
+        <span class="cluster-label">Cluster three</span>
+        <h2 class="cluster-heading" id="cluster3-heading">Sectors &amp; Specialisms</h2>
+        <p class="cluster-standfirst">
+          Deep sector knowledge, rare specialisms, and a platform for sharing what
+          {{years.words}} years at the intersection of technology and organisations
+          has produced.
+        </p>
+        <hr class="cluster-rule" aria-hidden="true">
+      </div>
+
+      <div class="sector-breadth">
+        <div>
+          <span class="sector-breadth-group-label">Founder-led &amp; early-stage</span>
+          <ul class="sector-breadth-list">
+            <li>Business Process Automation</li>
+            <li>Textiles</li>
+            <li>Online Auctions</li>
+            <li>Media Distribution</li>
+            <li>Retail Banking</li>
+            <li>Mortgage Banking</li>
+            <li>MedTech</li>
+            <li>Health &amp; Fitness</li>
+          </ul>
+        </div>
+        <div>
+          <span class="sector-breadth-group-label">Fractional engagements</span>
+          <ul class="sector-breadth-list">
+            <li>Telecommunications</li>
+            <li>Property Management</li>
+            <li>Oil &amp; Gas</li>
+            <li>Utilities</li>
+            <li>Defence</li>
+            <li>Aviation</li>
+            <li>Manufacturing</li>
+            <li>Banking</li>
+            <li>Motor Industry</li>
+            <li>Insurance</li>
+            <li>Investment</li>
+            <li>Higher Education</li>
+            <li>Financial Services</li>
+            <li>Print Media</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 11. Public Safety & AI in Policing — FLAGSHIP -->
+        <article class="service-card flagship" aria-label="Featured specialism">
+          <div class="service-number" aria-hidden="true"><em>11</em></div>
+          <h3 class="service-name">Public Safety &amp; AI in Policing</h3>
+          <span class="service-credential">Current Group CTO advisory — Global Consortium Group</span>
+          <p class="service-desc">
+            Advising UK police forces and government agencies on the strategic and
+            ethical use of AI in real-time operations — one of the most demanding
+            environments in which technology decisions are made. Where speed and
+            accuracy are non-negotiable, where bias is not a theoretical concern,
+            and where the consequences of system failure are immediate and human.
+          </p>
+          <ul class="flagship-grid" role="list">
+            <li class="flagship-point">
+              <span class="flagship-point-title">AI-enabled operations</span>
+              <span class="flagship-point-text">Real-time AI strategy for policing and public safety — balancing operational effectiveness with ethical governance.</span>
+            </li>
+            <li class="flagship-point">
+              <span class="flagship-point-title">Custody analytics</span>
+              <span class="flagship-point-text">Architecting AI Data Mesh platforms for custody and case management — structured for auditability and accountability.</span>
+            </li>
+            <li class="flagship-point">
+              <span class="flagship-point-title">Forensics capability</span>
+              <span class="flagship-point-text">Supporting the introduction of next-generation forensics platforms into UK law enforcement.</span>
+            </li>
+            <li class="flagship-point">
+              <span class="flagship-point-title">Critical infrastructure</span>
+              <span class="flagship-point-text">Enterprise network strategy for high-risk industrial and government operational environments.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- 6. Cybersecurity -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>06</em></div>
+          <h3 class="service-name">Cybersecurity &amp; Risk Strategy</h3>
+          <span class="service-credential">Former CISO, Capita Consulting</span>
+          <p class="service-desc">
+            Strategic risk posture, not just technical controls. Experience across
+            government, justice, and financial services — building security strategy
+            that is proportionate, sustainable, and embedded in the organisation
+            rather than bolted on. The question is not whether you have the right
+            tools. It is whether your risk posture matches your actual exposure.
+          </p>
+          <p class="service-links">
+            <a href="/service-cybersecurity-risk-strategy.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-cybersecurity-risk-strategy.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 8. Public Sector -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>08</em></div>
+          <h3 class="service-name">Public Sector Technology</h3>
+          <span class="service-credential">Central Government · Health · Justice · Education · Home Affairs</span>
+          <p class="service-desc">
+            Three decades of senior technology leadership across the full breadth
+            of UK public sector. Deep understanding of how public sector technology
+            decisions are made, what makes them succeed, and what makes them fail —
+            including the political and organisational dynamics that technical
+            consultants without that history consistently underestimate.
+          </p>
+          <p class="service-links">
+            <a href="/service-public-sector-technology.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-public-sector-technology.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+        <!-- 10. Speaking -->
+        <article class="service-card">
+          <div class="service-number" aria-hidden="true"><em>10</em></div>
+          <h3 class="service-name">Keynote Speaking &amp; Executive Masterclasses</h3>
+          <p class="service-desc">
+            Available for conferences, leadership offsites, and bespoke executive
+            programmes. Topics include AI adoption and governance, the future of
+            work, human-centred technology design, and the strategic and ethical
+            challenges facing boards. Author of three books on these subjects —
+            the writing informs the speaking.
+          </p>
+          <p class="service-links">
+            <a href="/service-speaking-masterclasses.html">Engagement detail</a><span class="sep" aria-hidden="true">&middot;</span><a href="/downloads/neil-catton-speaking-masterclasses.pdf" download>One-pager (PDF)</a>
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT CTA -->
+  <section class="engagement-cta" aria-labelledby="cta-heading">
+    <div class="engagement-cta-inner">
+      <h2 class="engagement-cta-heading" id="cta-heading">
+        Ready to start a conversation?
+      </h2>
+      <p class="engagement-cta-sub">
+        Most engagements begin with a single conversation. No obligation.
+        The right fit matters more than the right brochure.
+      </p>
+      <div>
+        <a href="/contact.html" class="btn-paper">Get in touch</a>
+        <a href="https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link" class="btn-ghost-light" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a href="/about.html" class="btn-ghost-light">Read the background</a>
+      </div>
+    </div>
+  </section>

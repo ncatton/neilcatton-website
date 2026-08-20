@@ -1,0 +1,29 @@
+<!-- Site footer.
+
+     Grouped into four columns rather than a single flex row of twelve
+     links. The old row had no flex-wrap, so at a 375px viewport it was
+     1093px wide: eight of the twelve links sat off-canvas, rendering
+     near-white on the paper background at 1.06:1, and every page they
+     appeared on scrolled sideways. -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-wordmark">${s.name}</a>
+      <p class="footer-tagline">Technology, ethics, human purpose.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+${s.footer.map((col, i) => `      <div class="footer-col">
+        <h2 class="footer-col-heading" id="footer-col-${i}">${col.heading}</h2>
+        <ul class="footer-links" role="list" aria-labelledby="footer-col-${i}">
+${col.items.map((item) => `          <li><a href="${item.href}"${h.ext(item.href)}>${item.label}</a></li>`).join("\n")}
+        </ul>
+      </div>`).join("\n")}
+    </nav>
+
+    <p class="footer-copy">&copy; ${f.year} ${s.name}. All rights reserved.
+      <a href="/accessibility.html">Accessibility</a> &middot;
+      <a href="/privacy.html">Privacy</a> &middot;
+      <a href="/sitemap.html">Sitemap</a></p>
+  </div>
+</footer>

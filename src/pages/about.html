@@ -1,0 +1,400 @@
+<!--page
+{
+  "title": "About \u2014 Neil Catton",
+  "description": "Group CTO, Non-Executive Director, and author. {{years.Words}} years working where large organisations meet complex technology decisions.",
+  "slug": "about",
+  "css": ".page-header { padding-top: 7rem; background: var(--ink); }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 0; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: end; }\n  .page-header-text { padding-bottom: 3.5rem; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: var(--accent); flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: var(--paper); margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: var(--rule); }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.7); max-width: 520px; opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .page-header-photo { align-self: end; opacity: 0; animation: photoRise 0.8s ease 0.3s forwards; }\n  .page-header-photo img { display: block; width: 100%; height: 360px; object-fit: cover; object-position: center 12%; -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%); }\n  .stat-bar { background: var(--accent); padding: 2rem var(--col-pad); }\n  .stat-bar-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }\n  .stat-item { text-align: center; }\n  .stat-number { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; color: var(--paper); line-height: 1; display: block; margin-bottom: 0.35rem; }\n  .stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.78); }\n  .content-wrap { max-width: var(--max-wide); margin: 0 auto; padding: 5rem var(--col-pad); display: grid; grid-template-columns: var(--max-prose) 1fr; gap: 5rem; align-items: start; background: var(--paper); }\n  .prose-section { margin-bottom: 3.5rem; }\n  .prose-section:last-child { margin-bottom: 0; }\n  .prose-kicker { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #2b4a6f; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; background: transparent; }\n  .prose-kicker::before { content: \"\"; width: 24px; height: 1px; background: var(--accent); flex-shrink: 0; }\n  .prose-heading { font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 1.875rem); font-weight: 400; line-height: 1.25; letter-spacing: -0.01em; color: #1a1714; background: transparent; margin-bottom: 1.25rem; }\n  .prose p { font-size: 1.0625rem; font-weight: 400; line-height: 1.85; color: #1a1714; background: transparent; margin-bottom: 1.2rem; }\n  .prose p:last-child { margin-bottom: 0; }\n  .pull-quote { border-left: 3px solid var(--accent); padding: 1rem 2rem; margin: 2.5rem 0; }\n  .pull-quote p { font-family: var(--serif) !important; font-size: 1.3rem !important; font-style: italic; font-weight: 400 !important; line-height: 1.5 !important; color: var(--ink) !important; margin-bottom: 0 !important; }\n  .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-top: 1px solid var(--rule); }\n  .timeline-item:last-child { border-bottom: 1px solid var(--rule); }\n  .timeline-dates { font-size: 0.75rem; font-weight: 600; color: var(--ink-light); padding-top: 0.2rem; line-height: 1.5; }\n  .timeline-org { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: #1a1714; background: transparent; margin-bottom: 0.2rem; }\n  .timeline-role { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.65rem; }\n  .timeline-desc { font-size: 0.9375rem; font-weight: 400; color: #1a1714; background: transparent; line-height: 1.75; }\n  .sidebar { position: sticky; top: 6rem; }\n  .sidebar-block { margin-bottom: 2.75rem; padding-bottom: 2.75rem; border-bottom: 1px solid var(--rule); }\n  .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }\n  .sidebar-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.25rem; display: block; }\n  .sector-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }\n  .sector-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; color: var(--ink-mid); background: var(--paper-mid); border: 1px solid var(--rule); padding: 0.3rem 0.75rem; }\n  .book-list { list-style: none; }\n  .book-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--paper-mid); }\n  .book-list li:last-child { border-bottom: none; }\n  .book-list-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 500; color: var(--ink); display: block; margin-bottom: 0.15rem; }\n  .book-list-meta { font-size: 0.8rem; font-weight: 400; color: var(--ink-mid); }\n  .testimonial-snippet { background: var(--paper-mid); border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; }\n  .testimonial-snippet p { font-family: var(--serif); font-size: 0.975rem; font-style: italic; line-height: 1.65; color: var(--ink); margin-bottom: 0.5rem; }\n  .testimonial-snippet cite { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); font-style: normal; }\n  .sidebar-cta { background: var(--paper-mid); border: 1px solid var(--rule); padding: 1.5rem; }\n  .sidebar-cta p { font-size: 0.9375rem; font-weight: 400; color: var(--ink); line-height: 1.7; margin-bottom: 1.25rem; }\n  .tests-section { background: var(--ink); padding: 5rem var(--col-pad); }\n  .tests-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .tests-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }\n  .tests-label::before { content: \"\"; width: 24px; height: 1px; background: var(--accent); flex-shrink: 0; }\n  .tests-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: var(--paper); margin-bottom: 3rem; max-width: 560px; }\n  .tests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(212,207,201,0.2); }\n  .test-item { padding: 2.5rem 2rem 2.5rem 0; border-right: 1px solid rgba(212,207,201,0.2); }\n  .test-item:last-child { border-right: none; padding-right: 0; }\n  .test-item:not(:first-child) { padding-left: 2rem; }\n  .test-number { font-family: var(--serif); font-size: 3rem; font-style: italic; color: rgba(212,207,201,0.2); line-height: 1; margin-bottom: 1rem; }\n  .test-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--paper); margin-bottom: 0.75rem; }\n  .test-desc { font-size: 0.9rem; font-weight: 300; color: rgba(245,242,238,0.65); line-height: 1.75; }\n  .testimonials-section { background: var(--paper-mid); padding: 5rem var(--col-pad); }\n  .testimonials-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 2.5rem; }\n  .section-rule { width: 48px; height: 2px; background: var(--accent); border: none; margin-bottom: 2.5rem; }\n  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .tcard { background: var(--paper); border: 1px solid var(--rule); padding: 2rem; }\n  .tcard blockquote { font-family: var(--serif); font-size: 1rem; font-style: italic; line-height: 1.7; color: var(--ink); margin-bottom: 1.25rem; }\n  .tcard cite { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); font-style: normal; }\n@media (max-width: 960px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .page-header-photo { display: none; }\n  .content-wrap { grid-template-columns: 1fr; gap: 3rem; }\n  .sidebar { position: static; }\n  .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }\n  .tests-grid { grid-template-columns: 1fr; }\n  .test-item { border-right: none; border-bottom: 1px solid rgba(212,207,201,0.2); padding: 2rem 0; }\n  .test-item:last-child { border-bottom: none; }\n  .test-item:not(:first-child) { padding-left: 0; }\n  .testimonials-grid { grid-template-columns: 1fr; }\n  .timeline-item { grid-template-columns: 1fr; gap: 0.4rem; }\n}\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-about-1.x-about-1.x-about-1 { background:var(--paper); }\n  .x-about-2.x-about-2.x-about-2 { margin-top:1.25rem; }\n  .x-about-3.x-about-3.x-about-3 { color:#2b4a6f; }\n  .x-about-4.x-about-4.x-about-4 { font-family:var(--serif);font-size:2rem;font-style:italic;color:rgba(212,207,201,0.45);margin-right:0.5rem; }",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.neilcatton.com/about.html"
+        }
+      ]
+    }
+  ],
+  "searchTitle": "About Neil"
+}
+-->
+<!-- PAGE HEADER -->
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <div class="page-header-text">
+        <span class="page-label">About</span>
+        <h1 class="page-title" id="page-title">Three decades.<br>One persistent<br><em>question.</em></h1>
+        <p class="page-standfirst">
+          A career spanning public sector, enterprise, and the emerging edges of
+          technology. The same observation keeps arriving: the problem is systemic. Not the people.
+        </p>
+      </div>
+      <div class="page-header-photo" aria-hidden="true">
+        <picture>
+          <source srcset="/images/neil-catton-headshot.webp" type="image/webp">
+          <img src="/images/neil-catton-headshot.jpg" alt="Neil Catton, Group CTO and author" width="680" height="680" loading="eager">
+        </picture>
+      </div>
+    </div>
+  </header>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar" role="region" aria-label="Key figures">
+    <div class="stat-bar-inner">
+      <div class="stat-item">
+        <span class="stat-number">{{years}}+</span>
+        <span class="stat-label">Years of experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Industry sectors</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">£800M</span>
+        <span class="stat-label">Savings &amp; revenue identified</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Published books &amp; ebooks</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="content-wrap x-about-1">
+
+    <article class="prose" aria-label="Neil Catton biography">
+
+      <div class="prose-section">
+        <span class="prose-kicker">The starting point</span>
+        <h2 class="prose-heading">A pattern that wouldn't leave</h2>
+        <p>
+          Neil Catton's career began as a computer operator — and progressed through systems
+          architect, chief digital officer, and group CTO across more than three decades.
+          Not by design, but by following a consistent instinct: go where the hardest
+          problems are. The titles changed. The question didn't.
+        </p>
+        <p>
+          Organisations spend years and significant resource building systems that their
+          own people quietly route around. Not because the people are difficult. Because
+          the systems don't fit the actual shape of the work. The workaround always reveals
+          more than the system. It shows you exactly what the official process failed to
+          account for.
+        </p>
+        <p>
+          That observation has driven every role since: at BT leading a team of 100+
+          architects defining the foundations of a £1.5bn digital transformation; at Wipro
+          architecting a national health programme serving 400 million people; at Fujitsu
+          leading Home Affairs transformation for UK Government; and now working fractionally
+          across organisations where the same question applies — what does it actually take
+          to build technology that serves the people using it.
+        </p>
+      </div>
+
+      <blockquote class="pull-quote">
+        <p>"The problem is almost always systemic, not individual. People are not
+        failing to use the system correctly. The system is failing them."</p>
+      </blockquote>
+
+      <div class="prose-section">
+        <span class="prose-kicker">The work now</span>
+        <h2 class="prose-heading">Fractional and advisory by design</h2>
+        <p>
+          The current work spans four engagement types: fractional CTO and CIO, advisory
+          and board, Non-Executive Director, and interim leadership. Each draws on the same
+          foundation — the ability to see what the technology is actually doing to the
+          organisation around it. Current fractional work includes strategic technology
+          leadership at Global Consortium Group across global public safety: AI-enabled
+          real-time operations for police forces and government agencies, forensics
+          platforms, and the modernisation of security and operational capabilities.
+        </p>
+        <p>
+          The work is rarely about the technology itself. It is about the conditions —
+          organisational design, incentive structures, assumptions baked into the brief —
+          that determine whether any technology can actually do what is claimed for it.
+        </p>
+        <p>
+          That has meant working at every scale: from pre-revenue startups in medtech,
+          retail banking, and media distribution, through to national infrastructure
+          programmes serving hundreds of millions. The problems are the same. The stakes
+          and the timelines differ.
+        </p>
+        <p>
+          Alongside advisory and fractional work, Neil is actively seeking Non-Executive
+          Director appointments — bringing independent technology governance to boards
+          navigating AI adoption, digital risk, and the oversight obligations that come
+          with both.
+        </p>
+      </div>
+
+      <div class="prose-section">
+        <span class="prose-kicker">The writing</span>
+        <h2 class="prose-heading">Three books. One ebook. One Substack. The same argument.</h2>
+        <p>
+          Three books examine what happens when technology outpaces the human systems
+          around it. <em>The Next Evolution</em> (July 2025) is a strategic analysis of
+          where enterprise technology must go, anchored in human agency and the question
+          of who design actually serves. <em>The Cognitive Crucible</em> (September 2025)
+          goes deep into the intersection of data, human behaviour, and the ethical
+          deployment of machine learning. <em>The Shadow System</em> (January 2026)
+          traces the evolution of cyber criminality and what it means for individuals,
+          businesses, and nation states. <em>Working as Designed</em> (June 2026) is a
+          Kindle essay collection making the central argument plain: when technology fails
+          the person in front of it while every metric stays green, the failure was designed in.
+        </p>
+        <p>
+          The Substack — The Next Evolution, at <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="x-about-3">writing.neilcatton.com</a> — runs alongside
+          the books. It publishes when there is something worth saying. Not to a schedule.
+          It is read by CTOs, board members, and product leaders, and by people navigating
+          systems that were not built with them in mind. That range is deliberate.
+          The argument is the same whoever is reading it.
+        </p>
+      </div>
+
+      <!-- CAREER TIMELINE -->
+      <div class="prose-section">
+        <span class="prose-kicker">Career</span>
+        <h2 class="prose-heading">Selected roles, 1987–present</h2>
+        <div class="timeline" role="list">
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Sept 2024<br>— Present</div>
+            <div>
+              <div class="timeline-org">Independent · Fractional Practice</div>
+              <div class="timeline-role">Fractional CTO &amp; Technology Strategist</div>
+              <div class="timeline-desc">An independent fractional technology practice spanning multiple concurrent client engagements. Clients include Global Consortium Group (Group CTO — AI strategy and public safety technology across police forces and government agencies), SSG Advisory (Chief Technologist — public sector procurement), CTO Grand Rounds (panel CTO), an insurance startup (nominated COO), and a small number of early-stage startup advisory engagements across health technology and SaaS.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Feb 2024<br>— Present</div>
+            <div>
+              <div class="timeline-org">Independent</div>
+              <div class="timeline-role">Author</div>
+              <div class="timeline-desc">Three books and an essay collection examining what happens when technology outpaces the human systems around it: <em>The Next Evolution</em> (July 2025), <em>The Cognitive Crucible</em> (September 2025), <em>The Shadow System</em> (January 2026), <em>Working as Designed</em> (June 2026). Weekly Substack at writing.neilcatton.com.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Nov 2022<br>— Feb 2024</div>
+            <div>
+              <div class="timeline-org">Fujitsu</div>
+              <div class="timeline-role">CTO for Home Affairs</div>
+              <div class="timeline-desc">Strategic technology leadership across Fujitsu's UK Government Home Affairs portfolio. Led the Get to Green recovery programme restoring SLA compliance for a major government client. Five-year digital transformation roadmap for UK Government departments. Advisory to police forces on the strategic and ethical use of AI in real-time operations.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Aug 2021<br>— Nov 2022</div>
+            <div>
+              <div class="timeline-org">Wipro iDEAS</div>
+              <div class="timeline-role">Chief Architect</div>
+              <div class="timeline-desc">Strategic architecture and CTO/CIO advisory across manufacturing, retail, motor industry, and sustainability clients. New data platform resolving chronic quality issues across 100+ insurance companies. Digital-first As a Service model creating new recurring revenue for a European manufacturer. Legacy transformation reducing technical debt 30% for a European food retailer. Sustainability capability framework aligned to UN SDGs.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Feb 2019<br>— Aug 2021</div>
+            <div>
+              <div class="timeline-org">BT</div>
+              <div class="timeline-role">Director, Digital, Data &amp; Integration Architecture</div>
+              <div class="timeline-desc">Part of a 100+ person enterprise architecture team, leading a specialist 15-person architecture function covering Digital, Data, Integration, Cloud, AI, and Emerging Technology — defining the technology foundations of BT's £1.5bn+ digital transformation. Benefit realisation modelling identifying over £800m in savings and new revenue. Strategic data and AI partnership negotiated with Google (GCP).</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Jan 2018<br>— Feb 2019</div>
+            <div>
+              <div class="timeline-org">Wipro Digital</div>
+              <div class="timeline-role">Chief Global Digital Architect</div>
+              <div class="timeline-desc">CTO and CDO across multi-million-dollar programmes. Flagship: a $1bn country-wide health service across India — 11 medical cities, 6,500 remote clinics, healthcare for 400 million people. Also CTO for a challenger mortgage banking platform.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Jun 2014<br>— Jul 2017</div>
+            <div>
+              <div class="timeline-org">Sopra Steria</div>
+              <div class="timeline-role">Sector CTO &amp; Head of Architecture</div>
+              <div class="timeline-desc">CTO and architecture lead across Government, Healthcare, Finance, and Justice. Matrix-managed DevOps practice of 250+ people. Technology integration strategy for the Sopra/Steria merger. Challenger retail banking platform for financial inclusion. Justice probation management platform.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Feb 2009<br>— May 2014</div>
+            <div>
+              <div class="timeline-org">Capita</div>
+              <div class="timeline-role">Sector CTO &amp; Head of Architecture / Business Development Strategic Architect</div>
+              <div class="timeline-desc">Application architecture practice of 100+ architects across public sector, education, insurance, financial services, and health. CISO establishing cybersecurity and risk frameworks from scratch. Industry-first partnerships with Apple, IBM, and Microsoft. M&amp;A technology due diligence advisory.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">2005<br>— Dec 2008</div>
+            <div>
+              <div class="timeline-org">Hotcourses Ltd</div>
+              <div class="timeline-role">Chief Technology Officer</div>
+              <div class="timeline-desc">Joined as Head of IT, grew into the CTO role as the business expanded its global education platform. 20% improvement in operational efficiency; 10–15% reduction in IT expenditure. Clients included LSC, Learndirect, and the British Council. Delivered UKRLP (DfE) and Unistats (HEFCE).</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">2002<br>— 2004</div>
+            <div>
+              <div class="timeline-org">Accenture</div>
+              <div class="timeline-role">Chief Architect</div>
+              <div class="timeline-desc">Chief Architect in Accenture's Networks division on the Imagine Broadband Product Suite. End-to-end broadband provisioning and monitoring for major European telecoms operators including Telewest, NTL, Cable &amp; Wireless, France Telecom, and Swisscom. Zero service disruption during migrations.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item" role="listitem">
+            <div class="timeline-dates">Jan 1987<br>— Jan 2002</div>
+            <div>
+              <div class="timeline-org">Fractional, Interim &amp; Contract</div>
+              <div class="timeline-role">Chief Architect / Oracle Specialist / Technical Advisor</div>
+              <div class="timeline-desc">Fifteen years of independent technical work across banking (Barclays), higher education (Cambridge University, Derby University), financial services (London Market Claims, Logica CMG), media (United News), telecoms (Cable &amp; Wireless, Telecom Australia), defence, and others. This period built the cross-sector pattern recognition that has shaped every leadership role since.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Quick reference">
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Sectors served</span>
+        <div class="sector-tags" role="list">
+          <span class="sector-tag" role="listitem">Central Government</span>
+          <span class="sector-tag" role="listitem">Local Government</span>
+          <span class="sector-tag" role="listitem">Policing</span>
+          <span class="sector-tag" role="listitem">Justice</span>
+          <span class="sector-tag" role="listitem">Emergency Services</span>
+          <span class="sector-tag" role="listitem">Health</span>
+          <span class="sector-tag" role="listitem">Finance</span>
+          <span class="sector-tag" role="listitem">Banking</span>
+          <span class="sector-tag" role="listitem">Telco</span>
+          <span class="sector-tag" role="listitem">Retail</span>
+          <span class="sector-tag" role="listitem">Education</span>
+          <span class="sector-tag" role="listitem">Manufacturing</span>
+          <span class="sector-tag" role="listitem">Motor Industry</span>
+          <span class="sector-tag" role="listitem">Construction</span>
+          <span class="sector-tag" role="listitem">Insurance</span>
+          <span class="sector-tag" role="listitem">Media</span>
+          <span class="sector-tag" role="listitem">Energy</span>
+          <span class="sector-tag" role="listitem">Utilities</span>
+          <span class="sector-tag" role="listitem">Defence</span>
+          <span class="sector-tag" role="listitem">Transport</span>
+          <span class="sector-tag" role="listitem">Charity</span>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Books &amp; ebooks — in sequence</span>
+        <ul class="book-list" role="list">
+          <li>
+            <span class="book-list-title">The Next Evolution</span>
+            <span class="book-list-meta">July 2025 &nbsp;·&nbsp; AI, digital scaling &amp; operating models</span>
+          </li>
+          <li>
+            <span class="book-list-title">The Cognitive Crucible</span>
+            <span class="book-list-meta">September 2025 &nbsp;·&nbsp; Data, behaviour &amp; ethical AI</span>
+          </li>
+          <li>
+            <span class="book-list-title">The Shadow System</span>
+            <span class="book-list-meta">January 2026 &nbsp;·&nbsp; Cyber criminality &amp; digital security</span>
+          </li>
+          <li>
+            <span class="book-list-title">Working as Designed</span>
+            <span class="book-list-meta">June 2026 &nbsp;·&nbsp; Ebook · Why systems fail the people inside them</span>
+          </li>
+        </ul>
+        <a href="/books.html" class="btn btn-secondary x-about-2">View all books</a>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">What colleagues say</span>
+        <div class="testimonial-snippet">
+          <p>"Neil is the most forward-looking, visionary leader I have worked with. He led the biggest data initiative BT had ever undertaken — and is the best people manager I have worked with."</p>
+          <cite>Principal Enterprise Integration Architect, BT</cite>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <span class="sidebar-label">Speaking &amp; advisory</span>
+        <div class="sidebar-cta">
+          <p>Available for keynotes, panel contributions, and strategic advisory on AI governance, technology ethics, and human-centred system design.</p>
+          <a href="/contact.html" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- THREE TESTS -->
+  <section class="tests-section" aria-labelledby="tests-heading">
+    <div class="tests-inner">
+      <span class="tests-label">The framework</span>
+      <h2 class="tests-heading" id="tests-heading">Three questions applied to every technology claim.</h2>
+      <div class="tests-grid" role="list">
+        <div class="test-item" role="listitem">
+          <h3 class="test-name"><em class="x-about-4">1.</em> Assistive</h3>
+          <p class="test-desc">Does it help people do things they could not do, or do with difficulty, without it? Not does it automate the thing — does it help the person.</p>
+        </div>
+        <div class="test-item" role="listitem">
+          <h3 class="test-name"><em class="x-about-4">2.</em> Augmentive</h3>
+          <p class="test-desc">Does it genuinely add something — capability, insight, possibility — or does it merely replace one constraint with a different one?</p>
+        </div>
+        <div class="test-item" role="listitem">
+          <h3 class="test-name"><em class="x-about-4">3.</em> Adaptive</h3>
+          <p class="test-desc">Does it respond to individual context and circumstance — to the specific human in front of it — or does it serve the average and call that good enough?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="testimonials-inner">
+      <span class="section-label">Colleagues &amp; clients</span>
+      <h2 class="section-heading" id="testimonials-heading">What people say about working with Neil</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <div class="testimonials-grid">
+        <div class="tcard">
+          <blockquote>"Neil's capacity to handle challenging project requirements and consistently deliver solutions that surpass client expectations made him a standout leader. His ability to mentor and inspire has consistently enhanced our capabilities."</blockquote>
+          <cite>Senior colleague, Wipro</cite>
+        </div>
+        <div class="tcard">
+          <blockquote>"He excelled in growing a diverse and talented team, fostering new thinking, and developing roadmaps that set the strategic direction. His ability to bring outside-in and cross-industry perspectives is a real strength."</blockquote>
+          <cite>Colleague, BT Architecture &amp; Strategy Office</cite>
+        </div>
+        <div class="tcard">
+          <blockquote>"His visionary leadership paved the way for a landmark deal with Google — one of BT's flagship projects. His empathy made him stand out, guiding the team through the challenges of Covid with real skill."</blockquote>
+          <cite>Principal Enterprise Architect, BT</cite>
+        </div>
+        <div class="tcard">
+          <blockquote>"Not only is Neil a visionary architect but he is also a brilliant team leader — he had the knack of creating exactly the right circumstances for people to excel, even in the most challenging circumstances."</blockquote>
+          <cite>Colleague, BT Digital, Data &amp; Integration</cite>
+        </div>
+        <div class="tcard">
+          <blockquote>"Neil has exceptional vision around new technology and how it drives direct benefit to an organisation. His ability to understand the business need and architect the appropriate solution is unequalled."</blockquote>
+          <cite>Colleague, BT</cite>
+        </div>
+        <div class="tcard">
+          <blockquote>"Extremely professional, a great communicator with a strong technical background — able to think across the whole enterprise and apply business intellect to develop a compelling technical solution."</blockquote>
+          <cite>Colleague, Fujitsu</cite>
+        </div>
+      </div>
+    </div>
+  </section>

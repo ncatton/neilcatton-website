@@ -1,0 +1,75 @@
+<!-- Service page layout. Twelve pages, one template, one data file.
+
+     The header sits inside <main>, which the base template supplies —
+     it used to sit outside, giving the page a second banner landmark
+     and letting the skip link jump straight past the h1.
+
+     Section headings are real <h2> elements. They used to be
+     <div class="section-label">: visually headings, semantically
+     nothing, so the five sections carrying the argument were invisible
+     to anyone navigating by heading. -->
+<header class="detail-header">
+  <div class="detail-header-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li aria-current="page">${d.svc.breadcrumb || d.svc.name}</li>
+      </ol>
+    </nav>
+    <p class="detail-label">${d.svc.label}</p>
+    <h1 class="detail-title">${d.svc.name}</h1>
+    <p class="detail-standfirst">${d.svc.standfirst}</p>
+  </div>
+</header>
+
+<div class="detail-main">
+  <div class="detail-prose">
+${d.svc.sections.map((sec) => `    <section class="detail-section">
+      <h2 class="detail-section-heading">${sec.heading}</h2>
+      ${sec.html}
+    </section>`).join("\n")}
+  </div>
+
+${d.svc.details && d.svc.details.length ? `  <section class="detail-section detail-section--grid">
+    <h2 class="detail-section-heading">${d.svc.detailsHeading || "Engagement details"}</h2>
+    <div class="details-grid">
+${d.svc.details.map((c) => `      <div class="cell"><div class="k">${c.k}</div><div class="v">${c.v}</div></div>`).join("\n")}
+    </div>
+  </section>` : ""}
+</div>
+
+${d.svc.faq && d.svc.faq.length ? `<section class="faq-section" aria-labelledby="faq-heading">
+  <p class="section-label">Frequently asked</p>
+  <h2 class="faq-heading" id="faq-heading">${d.svc.faqHeading || "Questions people ask before booking"}</h2>
+  <div class="faq-list">
+${d.svc.faq.map((q) => `    <details class="faq-item">
+      <summary>${q.q}</summary>
+      <p>${q.a}</p>
+    </details>`).join("\n")}
+  </div>
+</section>` : ""}
+
+${d.svc.related && d.svc.related.length ? `<aside class="related" aria-labelledby="related-heading">
+  <div class="related-inner">
+    <h2 class="related-heading" id="related-heading">Where this comes from</h2>
+    <p class="related-sub">The advisory work and the writing are the same argument. These are the pieces this engagement draws on.</p>
+    <div class="related-grid">
+${d.svc.related.map((r) => `      <article class="related-item">
+        <p class="related-kind">${r.kind}</p>
+        <h3 class="related-title"><a href="${r.href}"${h.ext(r.href)}>${r.title}</a></h3>
+        <p class="related-note">${r.note}</p>
+      </article>`).join("\n")}
+    </div>
+  </div>
+</aside>` : ""}
+
+<section class="engagement-cta" aria-labelledby="cta-heading">
+  <div class="engagement-cta-inner">
+    <h2 class="engagement-cta-heading" id="cta-heading">${d.svc.ctaHeading || "Ready to start a conversation?"}</h2>
+    <p class="engagement-cta-sub">${d.svc.ctaSub || "Most engagements begin with a single conversation. No obligation — the right fit matters more than the right brochure."}</p>
+    <a href="${s.booking}" class="btn-paper" target="_blank" rel="noopener noreferrer">Book a meeting</a>
+    <a href="/contact.html" class="btn-ghost-light">Send a message</a>
+${d.svc.download ? `    <a href="${d.svc.download}" class="btn-ghost-light" download>Download the one-pager (PDF)</a>` : ""}
+  </div>
+</section>

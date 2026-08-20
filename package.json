@@ -1,8 +1,20 @@
 {
   "name": "neilcatton-website",
+  "version": "2.0.0",
   "private": true,
-  "description": "Static site + Netlify Functions for neilcatton.com. No frontend build step — this package.json exists solely so Netlify installs the dependency the plan-generator function needs before bundling.",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.117.1"
+  "type": "module",
+  "description": "neilcatton.com \u2014 static site. Templates and data in src/, generated output in dist/.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && npx --yes http-server dist -p 8080 -c-1",
+    "check": "node build.mjs && node tools/check-a11y.mjs && node tools/check-links.mjs",
+    "check:csp": "node build.mjs && node tools/probe-csp.mjs",
+    "check:links:external": "node build.mjs && node tools/check-links.mjs --external"
+  },
+  "devDependencies": {
+    "@fontsource/playfair-display": "^5.2.6",
+    "@fontsource/source-sans-3": "^5.2.6",
+    "axe-core": "^4.13.0",
+    "playwright": "^1.62.1"
   }
 }

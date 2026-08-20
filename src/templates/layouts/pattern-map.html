@@ -1,0 +1,33 @@
+<!-- Pattern Map layout.
+
+     The nine patterns and their fifty-eight instances used to be an
+     inline JavaScript array rendered into an empty <div> in the
+     browser. With JavaScript off the page carried 1,066 characters of
+     text and no content at all — and nothing for a crawler or an
+     answer engine that does not execute JavaScript. They are rendered
+     here at build time from src/data/patterns.json; the sector filter
+     still runs in the browser, but only to hide rows that already
+     exist in the HTML. -->
+${d.body.replace('<div class="chip-row" id="chipRow"></div>', `<div class="chip-row" id="chipRow" role="group" aria-label="Filter instances by sector">
+          <button type="button" class="chip is-active" data-sector="" aria-pressed="true">All sectors</button>
+${[...new Set(d.data.patterns.flatMap((p) => p.instances.map((i) => i.sector)))].sort().map((sector) =>
+`          <button type="button" class="chip" data-sector="${h.esc(sector)}" aria-pressed="false">${h.esc(sector)}</button>`).join("\n")}
+        </div>`).replace('<p class="filter-status" id="filterStatus"></p>', '<p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>').replace('<div id="patternsContainer"></div>', d.data.patterns.map((p) => `<section class="pattern" data-pattern-id="${p.id}">
+          <div class="pattern-head">
+            <span class="pattern-id" aria-hidden="true">${p.id}</span>
+            <h3 class="pattern-name">${p.name}</h3>
+          </div>
+          <p class="pattern-def">${p.def}</p>
+${p.card
+  ? `          <p class="card-companion"><span class="card-companion-label">Practice Library card</span> <span>${p.card.map((c) => `<a href="${c.url}"${h.ext(c.url)}>${c.title}</a>`).join(", ")}.</span></p>`
+  : p.cardComing
+  ? `          <p class="card-companion is-coming"><span class="card-companion-label">Coming to the Practice Library</span> <span>${p.cardComing.join(", ")}.</span></p>`
+  : `          <p class="card-companion is-empty">No Practice Library card for this one — recognising the pattern is the point; not every pattern resolves into a checklist.</p>`}
+          <ul class="instances">
+${p.instances.map((i) => `            <li class="instance" data-sector="${h.esc(i.sector)}">
+              <span class="instance-sector">${h.esc(i.sector)}</span>
+              <span><span class="instance-title">${i.url ? `<a href="${i.url}"${h.ext(i.url)}>${i.title}</a>` : i.title}</span>${i.status === "pipeline" ? `<span class="instance-status">Not yet published</span>` : ""}<span class="instance-note">${i.note}</span></span>
+            </li>`).join("\n")}
+          </ul>
+${p.trackingNote ? `          <p class="tracking-note">${p.trackingNote}</p>` : ""}
+        </section>`).join("\n"))}

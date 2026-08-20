@@ -1,0 +1,104 @@
+<!--page
+{
+  "title": "The Pattern Map \u2014 The Practice Library \u2014 Neil Catton",
+  "description": "See whether the problem in front of you has already been named \u2014 and traced across sectors. The same structural failures, linked back to where they were written about.",
+  "slug": "pattern-map",
+  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 1.5rem; max-width: 20ch; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 680px; }\n  .intro-section { background: #ede9e3; padding: 4rem var(--col-pad); }\n  .intro-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .intro-inner p { font-size: 1.0625rem; line-height: 1.85; color: #1a1714; max-width: 720px; }\n  .intro-inner p + p { margin-top: 1.1rem; }\n  .patterns-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .patterns-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2.5rem; }\n  .filter-bar { margin-bottom: 3.5rem; }\n  .filter-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.85rem; }\n  .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }\n  .chip { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; color: #3d3935; background: #ede9e3; border: 1.5px solid #d4cfc9; padding: 0.45rem 0.95rem; cursor: pointer; transition: all 0.2s; min-height: 36px; }\n  .chip:hover { border-color: #2b4a6f; color: #2b4a6f; }\n  .chip.is-active { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }\n  .chip[data-reset] { background: transparent; }\n  .chip[data-reset].is-active { background: #1a1714; }\n  .filter-status { font-family: var(--sans); font-size: 0.85rem; color: #5c5652; margin-top: 1rem; min-height: 1.2em; }\n  .pattern { border-top: 1px solid #d4cfc9; padding: 3rem 0; }\n  .pattern:first-of-type { border-top: none; padding-top: 0; }\n  .pattern.is-pattern-hidden { display: none; }\n  .pattern-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }\n  .pattern-id { font-family: var(--serif); font-style: italic; font-size: 1.6rem; color: #2b4a6f; flex-shrink: 0; }\n  .pattern-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; line-height: 1.25; color: #1a1714; }\n  .pattern-def { font-size: 0.98rem; line-height: 1.75; color: #3d3935; max-width: 700px; margin-bottom: 1.5rem; }\n  .card-companion { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; background: #ede9e3; border-left: 3px solid #2b4a6f; padding: 0.8rem 1.1rem; margin-bottom: 1.75rem; font-size: 0.88rem; color: #1a1714; }\n  .card-companion-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; flex-shrink: 0; }\n  .card-companion a { color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); }\n  .card-companion a:hover { border-color: #2b4a6f; }\n  .card-companion.is-coming { border-left-color: var(--ink-light); background: transparent; padding-left: 1rem; }\n  .card-companion.is-coming .card-companion-label { color: var(--ink-light); }\n  .card-companion.is-empty { border-left-color: #d4cfc9; background: transparent; padding-left: 1rem; font-style: italic; color: #5c5652; }\n  .instances { list-style: none; }\n  .instance { display: grid; grid-template-columns: 160px 1fr; gap: 0.5rem 1.5rem; padding: 0.9rem 0; border-bottom: 1px dotted #d4cfc9; }\n  .instance:last-child { border-bottom: none; }\n  .instance.is-hidden { display: none; }\n  .instance-sector { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #2b4a6f; padding-top: 0.15rem; }\n  .instance-title { font-family: var(--sans); font-weight: 600; color: #1a1714; }\n  .instance-title a { color: #1a1714; text-decoration: none; border-bottom: 1px solid #d4cfc9; }\n  .instance-title a:hover { color: #2b4a6f; border-color: #2b4a6f; }\n  .instance-note { color: #3d3935; font-size: 0.94rem; display: block; margin-top: 0.2rem; }\n  .instance-status { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #b03a2e; margin-left: 0.5rem; }\n  .tracking-note { font-size: 0.88rem; font-style: italic; color: #5c5652; margin-top: 1.25rem; max-width: 700px; }\n@media (max-width: 640px) {\n  .instance { grid-template-columns: 1fr; }\n  .instance-sector { padding-top: 0; }\n}\n@media (max-width: 860px) {\n  .page-header-inner { padding-bottom: 3rem; }\n}",
+  "layout": "layouts/pattern-map.html",
+  "data": [
+    "patterns"
+  ],
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "The Pattern Map",
+      "description": "See whether the problem in front of you has already been named \u2014 and traced across sectors. The same structural failures, linked back to where they were written about.",
+      "url": "https://www.neilcatton.com/pattern-map.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Practice Library",
+          "item": "https://www.neilcatton.com/practice-library.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Pattern Map",
+          "item": "https://www.neilcatton.com/pattern-map.html"
+        }
+      ]
+    }
+  ],
+  "js": "/* Pattern Map \u2014 sector filter.\n\n   The patterns are server-rendered; this only shows and hides rows\n   that are already in the HTML. Chips carry aria-pressed (the Practice\n   Library filter already did; this one did not), and the result count\n   goes into a live region so a screen reader user hears what changed. */\n(function () {\n  \"use strict\";\n  var chips = [].slice.call(document.querySelectorAll(\".chip[data-sector]\"));\n  var status = document.getElementById(\"filterStatus\");\n  if (!chips.length) return;\n\n  function applyFilter(sector) {\n    chips.forEach(function (c) {\n      var on = c.dataset.sector === sector;\n      c.classList.toggle(\"is-active\", on);\n      c.setAttribute(\"aria-pressed\", on ? \"true\" : \"false\");\n    });\n\n    var visibleInstances = 0, visiblePatterns = 0;\n    [].slice.call(document.querySelectorAll(\".pattern\")).forEach(function (section) {\n      var matches = 0;\n      [].slice.call(section.querySelectorAll(\".instance\")).forEach(function (row) {\n        var match = !sector || row.dataset.sector === sector;\n        row.classList.toggle(\"is-hidden\", !match);\n        row.hidden = !match;\n        if (match) { matches++; visibleInstances++; }\n      });\n      var hide = matches === 0;\n      section.classList.toggle(\"is-pattern-hidden\", hide);\n      section.hidden = hide;\n      if (!hide) visiblePatterns++;\n    });\n\n    if (status) {\n      status.textContent = !sector ? \"\" :\n        \"Showing \" + visibleInstances + \" instance\" + (visibleInstances === 1 ? \"\" : \"s\") +\n        \" across \" + visiblePatterns + \" pattern\" + (visiblePatterns === 1 ? \"\" : \"s\") +\n        \" tagged \" + sector + \".\";\n    }\n  }\n\n  chips.forEach(function (c) {\n    c.addEventListener(\"click\", function () { applyFilter(c.dataset.sector); });\n  });\n})();\n",
+  "searchTitle": "The Pattern Map"
+}
+-->
+<header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Practice Library &mdash; The Pattern Map</span>
+      <h1 class="page-title" id="page-title">The Pattern <em>Map.</em></h1>
+      <p class="page-standfirst">
+        The same handful of structural failures, traced wherever they've shown
+        up across {{years.words}} years and more than twenty sectors — each one
+        linked back to where it was written about, and to the card that gives
+        you something to do about it, where one exists.
+      </p>
+    </div>
+  </header>
+
+  <section class="intro-section" aria-label="About this map">
+    <div class="intro-inner">
+      <p>
+        These aren't a list of unrelated observations. They're the same small
+        set of structural failures, recurring under different names in
+        different industries — the same mechanism that fails a fraud victim
+        in banking also fails a patient in the NHS, and a candidate applying
+        for a job. Seeing the pattern is the first step; the sector instances
+        below are the evidence, not the argument.
+      </p>
+      <p>
+        Built from what's actually been published, not from theory. Some
+        patterns already have a Practice Library card attached — something
+        you can act on. Others don't, because not every pattern resolves into
+        a checklist. Recognising the shape of a problem is not the same as
+        fixing it, and this map doesn't pretend otherwise.
+      </p>
+    </div>
+  </section>
+
+  <section class="patterns-section" id="patterns" aria-labelledby="patterns-heading">
+    <div class="patterns-inner">
+      <span class="section-label">The map</span>
+      <h2 class="section-heading" id="patterns-heading">Trace a pattern across sectors</h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="filter-bar">
+        <span class="filter-label">Filter by sector</span>
+        <div class="chip-row" id="chipRow"></div>
+        <p class="filter-status" id="filterStatus"></p>
+      </div>
+
+      <div id="patternsContainer"></div>
+    </div>
+  </section>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${d.title}</title>
+<meta name="description" content="${h.esc(d.description || "")}">
+${d.canonical ? `<link rel="canonical" href="${d.canonical}">` : ""}
+${d.robots ? `<meta name="robots" content="${d.robots}">` : ""}
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="${s.themeColor}">
+
+<meta property="og:type" content="${d.ogType}">
+<meta property="og:url" content="${h.abs(d.path)}">
+<meta property="og:title" content="${h.esc(d.ogTitle || d.title)}">
+<meta property="og:description" content="${h.esc(d.ogDescription || d.description || "")}">
+<meta property="og:image" content="${d.ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="${s.name}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${h.esc(d.ogTitle || d.title)}">
+<meta name="twitter:description" content="${h.esc(d.ogDescription || d.description || "")}">
+<meta name="twitter:image" content="${d.ogImage}">
+
+<link rel="alternate" type="application/rss+xml" title="Sector Briefings — ${s.name}" href="/briefings.xml">
+
+<!-- Fonts are self-hosted. No request reaches Google, nothing external
+     blocks the render, and fonts.googleapis.com / fonts.gstatic.com are
+     both out of the Content-Security-Policy. -->
+<link rel="preload" href="/assets/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
+${d.hasPageCss ? `<link rel="stylesheet" href="/assets/pages/${d.slug}.css">` : ""}
+
+<!-- Plausible — cookie-free, no consent banner required under PECR. -->
+<script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
+
+<!-- Structured data. Person is emitted on every page from src/data/site.json. -->
+${[{ "@context": "https://schema.org", "@type": "Person", name: s.name, url: s.origin + "/", image: h.abs(s.image), jobTitle: s.jobTitle, description: s.description, sameAs: Object.values(s.sameAs).filter(Boolean) }].concat(d.jsonld).map((o) => `<script type="application/ld+json">${h.json(o)}</script>`).join("\n")}
+</head>
+<body${d.bodyClass ? ` class="${d.bodyClass}"` : ""}>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+${partial("partials/nav.html")}
+
+<main id="main" tabindex="-1">
+${d.content}
+</main>
+
+${partial("partials/footer.html")}
+
+<!-- No inline script anywhere on the site, which is what lets the CSP
+     drop 'unsafe-inline' from script-src and style-src. -->
+<script src="/assets/site.js" defer></script>
+<script src="/assets/search.js" defer></script>
+${d.hasPageJs ? `<script src="/assets/pages/${d.slug}.js" defer></script>` : ""}
+</body>
+</html>

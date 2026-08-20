@@ -1,0 +1,121 @@
+{
+  "_comment": "Canonical facts for neilcatton.com. Anything that appears on more than one page belongs here, not retyped into the page. build.mjs resolves the tokens.",
+
+  "name": "Neil Catton",
+  "origin": "https://www.neilcatton.com",
+  "email": "nc@neilcatton.com",
+  "jobTitle": "Group CTO, Non-Executive Director, and Author",
+  "description": "Independent technology strategist and author. {{years.Words}} years working where large organisations meet complex technology decisions.",
+  "image": "/images/neil-catton-headshot.jpg",
+  "ogImage": "/images/social/og-image.jpg",
+  "themeColor": "#2b4a6f",
+
+  "_facts": "careerStartYear drives every 'N years in technology' figure on the site. Before this the site said 'thirty-seven years' on twelve pages and 'thirty-nine years' on one. Build recalculates it, so it can never drift again and never goes stale on 1 January.",
+  "careerStartYear": 1987,
+  "sectorCount": "20+",
+
+  "_substack": "One canonical Substack host. neilcatton.substack.com appeared in 43 places and writing.neilcatton.com in 107; both resolve, but split citation splits link equity and confuses entity consolidation.",
+  "substack": "https://writing.neilcatton.com",
+  "substackName": "The Next Evolution",
+
+  "booking": "https://tidycal.com/nc1?utm_source=tidycal&utm_medium=growth_action&utm_campaign=share_link",
+  "formspree": "https://formspree.io/f/mdajdnrq",
+  "predictiveTool": "https://tool.neilcatton.com",
+  "grandRounds": "https://grandrounds.tech",
+
+  "_sameAs": "Person schema sameAs. linkedin is empty because the URL is not referenced anywhere on the site and was not supplied — build omits empty entries rather than guessing one. Add it here and it appears on every page.",
+  "sameAs": {
+    "substack": "https://writing.neilcatton.com",
+    "linkedin": "https://www.linkedin.com/in/neilcatton/"
+  },
+
+  "_nav": "Four content groups plus About and Contact. Was nine top-level items with two hover dropdowns, which did not fit a tablet and disappeared entirely below 580px. Dropdown parents render as <button aria-expanded>, so the section index sits inside the menu as its first item rather than as a duplicate link beside the parent.",
+  "nav": [
+    {
+      "id": "writing",
+      "label": "Writing",
+      "items": [
+        { "label": "Essays and articles", "href": "/articles.html" },
+        { "label": "Sector briefings", "href": "/briefings.html" },
+        { "label": "Books", "href": "/books.html" },
+        { "label": "Press and speaking", "href": "/press.html" }
+      ]
+    },
+    {
+      "id": "practice",
+      "label": "Practice Library",
+      "items": [
+        { "label": "The Collection", "href": "/practice-library.html" },
+        { "label": "Predictive Purpose", "href": "https://tool.neilcatton.com", "external": true },
+        { "label": "Your Plan", "href": "/personalised-plan.html" },
+        { "label": "The Pattern Map", "href": "/pattern-map.html" }
+      ]
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "items": [
+        { "label": "All services", "href": "/services.html" },
+        { "label": "Fractional CTO / CIO", "href": "/service-fractional-cto-cio.html" },
+        { "label": "Non-Executive Director", "href": "/service-non-executive-director.html" },
+        { "label": "Technology Strategy & Roadmapping", "href": "/service-technology-strategy-roadmapping.html" },
+        { "label": "AI Board Briefing", "href": "/service-ai-board-briefing.html" },
+        { "label": "AI Readiness Review", "href": "/service-ai-readiness-review.html" },
+        { "label": "Technology Due Diligence", "href": "/service-technology-due-diligence.html" },
+        { "label": "Enterprise Architecture", "href": "/service-enterprise-architecture.html" },
+        { "label": "Interim & Programme Recovery", "href": "/service-interim-programme-recovery.html" },
+        { "label": "Data Strategy Review", "href": "/service-data-strategy-review.html" },
+        { "label": "Cybersecurity & Risk Strategy", "href": "/service-cybersecurity-risk-strategy.html" },
+        { "label": "Public Sector Technology", "href": "/service-public-sector-technology.html" },
+        { "label": "Speaking & Masterclasses", "href": "/service-speaking-masterclasses.html" },
+        { "divider": true },
+        { "label": "CTO Grand Rounds", "href": "/cto-grand-rounds.html" },
+        { "label": "Board Appointments", "href": "/board-appointments.html" }
+      ]
+    },
+    { "id": "about", "label": "About", "href": "/about.html" },
+    { "id": "contact", "label": "Contact", "href": "/contact.html" }
+  ],
+
+  "_footer": "Grouped rather than a flat row of twelve. Includes articles.html, which the old footer omitted — its 'Substack' link went off-site, leaving the site's own Writing index unreachable from the footer.",
+  "footer": [
+    {
+      "heading": "Writing",
+      "items": [
+        { "label": "Essays and articles", "href": "/articles.html" },
+        { "label": "Sector briefings", "href": "/briefings.html" },
+        { "label": "Books", "href": "/books.html" },
+        { "label": "Press and speaking", "href": "/press.html" },
+        { "label": "The Next Evolution on Substack", "href": "https://writing.neilcatton.com", "external": true }
+      ]
+    },
+    {
+      "heading": "Practice Library",
+      "items": [
+        { "label": "The Collection", "href": "/practice-library.html" },
+        { "label": "Predictive Purpose", "href": "https://tool.neilcatton.com", "external": true },
+        { "label": "Your Plan", "href": "/personalised-plan.html" },
+        { "label": "The Pattern Map", "href": "/pattern-map.html" }
+      ]
+    },
+    {
+      "heading": "Working together",
+      "items": [
+        { "label": "All services", "href": "/services.html" },
+        { "label": "Board appointments", "href": "/board-appointments.html" },
+        { "label": "CTO Grand Rounds", "href": "/cto-grand-rounds.html" },
+        { "label": "About Neil", "href": "/about.html" },
+        { "label": "Contact", "href": "/contact.html" }
+      ]
+    },
+    {
+      "heading": "This site",
+      "items": [
+        { "label": "Sitemap", "href": "/sitemap.html" },
+        { "label": "Accessibility", "href": "/accessibility.html" },
+        { "label": "Privacy", "href": "/privacy.html" },
+        { "label": "Security", "href": "/.well-known/security.txt" }
+      ]
+    }
+  ]
+}
