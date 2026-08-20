@@ -979,8 +979,8 @@
     "label": "Public Sector Engagement",
     "breadcrumb": "Public Sector Technology",
     "title": "Public Sector Technology \u2014 Neil Catton",
-    "description": "Senior technology leadership shaped by three decades inside how public sector decisions actually get made \u2014 fractional, interim, or advisory, UK-wide.",
-    "standfirst": "Senior technology leadership shaped by three decades inside how public sector decisions actually get made.",
+    "description": "Senior technology leadership shaped by {{years.words}} years inside how public sector decisions actually get made \u2014 fractional, interim, or advisory, UK-wide.",
+    "standfirst": "Senior technology leadership shaped by {{years.words}} years inside how public sector decisions actually get made.",
     "sections": [
       {
         "heading": "When you need this",
@@ -1000,7 +1000,7 @@
       },
       {
         "heading": "Experience",
-        "html": "<p>Three decades of senior technology leadership across the full breadth of UK public sector &mdash; central government, health, justice, education, and home affairs. Current Group CTO advisory to the Global Consortium Group on AI and data strategy for public safety and justice organisations. {{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO.</p>"
+        "html": "<p>Senior technology leadership across the full breadth of UK public sector &mdash; central government, health, justice, education, and home affairs &mdash; spanning {{years.words}} years, from computer operator to Group CTO and across 20+ industry sectors. Current Group CTO advisory to the Global Consortium Group on AI and data strategy for public safety and justice organisations.</p>"
       }
     ],
     "detailsHeading": "Engagement details",

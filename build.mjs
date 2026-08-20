@@ -88,6 +88,22 @@ function resolveFacts(html) {
   });
 }
 
+/* jsonld is a JS object, not a rendered string, so resolveFacts never saw
+   it — a token in a description feeding structured data (a service's
+   schema.org Service.description, for one) was shipping as the literal
+   text "{{years.words}}" rather than resolving. Walk it and resolve every
+   string leaf. */
+function resolveFactsDeep(value) {
+  if (typeof value === "string") return resolveFacts(value);
+  if (Array.isArray(value)) return value.map(resolveFactsDeep);
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) out[k] = resolveFactsDeep(v);
+    return out;
+  }
+  return value;
+}
+
 /* site.json may use the same tokens — the Person description, for one. */
 for (const key of ["description", "jobTitle"]) {
   if (site[key]) site[key] = resolveFacts(site[key]);
@@ -258,7 +274,11 @@ function buildPage(meta) {
      'unsafe-inline' from both script-src and style-src, and an external
      file gets cached instead of being re-sent with every page view. */
   const pageCss = (meta.css || "").trim();
-  const pageJs = (meta.js || "").trim();
+  /* Page JS is written straight to a file rather than rendered through
+     the ${...} template engine, so it needs its own resolveFacts pass —
+     without it, a token used in page-level JS (the service selector's
+     hardcoded descriptions, for one) shipped as literal "{{...}}" text. */
+  const pageJs = resolveFacts((meta.js || "").trim());
   if (pageCss || pageJs) mkdirSync(join(DIST, "assets/pages"), { recursive: true });
   if (pageCss) writeFileSync(join(DIST, `assets/pages/${slug}.css`), pageCss + "\n");
   if (pageJs) writeFileSync(join(DIST, `assets/pages/${slug}.js`), pageJs + "\n");
@@ -270,7 +290,7 @@ function buildPage(meta) {
     section: meta.section !== undefined ? meta.section : sectionFor(slug),
     ogType: meta.ogType || "website",
     ogImage: helpers.abs(meta.ogImage || site.ogImage),
-    jsonld: meta.jsonld || [],
+    jsonld: resolveFactsDeep(meta.jsonld || []),
     hasPageCss: !!pageCss,
     hasPageJs: !!pageJs,
     content: resolveFacts(meta.content),
