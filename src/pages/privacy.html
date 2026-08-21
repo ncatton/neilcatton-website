@@ -30,9 +30,12 @@
       </p>
 
       <h2>What data is collected</h2>
-      <p><strong>Contact form.</strong> When you submit the form on the <a href="/contact.html">Contact page</a>,
-      the name, email address, subject, and message you enter are sent to Formspree, a third-party
-      form-handling service, and forwarded by email. This data is used only to respond to your enquiry.</p>
+      <p><strong>Contact form.</strong> When you submit the form on the <a href="/contact.html">Contact page</a>
+      or the shorter form on the homepage, the name, email address, and message you enter are sent to a
+      function running on this site's own hosting (Netlify) and delivered as an email to Neil's Microsoft 365
+      mailbox via the Microsoft Graph API. No separate third-party form-processing service sees this data —
+      it passes only through the infrastructure already used to run and host this site. This data is used
+      only to respond to your enquiry.</p>
       <p><strong>Analytics.</strong> This site uses Plausible Analytics and Netlify Web Analytics to
       understand how visitors use the site — which pages are viewed, where visitors come from, and
       general usage patterns. Both are cookie-free: Plausible aggregates visits without setting a
@@ -53,10 +56,10 @@
       <h2>Cookies</h2>
       <p>
         This site does not set any analytics cookies — Plausible and Netlify Web Analytics are both
-        cookie-free by design, so no cookie banner or consent prompt is needed for them. The only
-        cookies or session data set on this site come from third-party services you actively choose to
-        use: Formspree (when you submit the contact form) and Microsoft (once you leave this site to book
-        a call via Microsoft Bookings). You can block or delete cookies through your browser settings at any time; doing so
+        cookie-free by design, so no cookie banner or consent prompt is needed for them. The contact form
+        no longer involves a third party at all, so it sets no cookies either. The only cookies or session
+        data set on this site come from Microsoft, once you leave this site to book a call via Microsoft
+        Bookings. You can block or delete cookies through your browser settings at any time; doing so
         won't affect your ability to use the site.
       </p>
 
@@ -78,10 +81,10 @@
 
       <h2>Third parties this site relies on</h2>
       <ul>
-        <li><strong>Netlify</strong> — website hosting and Web Analytics</li>
+        <li><strong>Netlify</strong> — website hosting, Web Analytics, and the contact form's server-side function</li>
         <li><strong>Plausible Analytics</strong> — cookie-free usage analytics</li>
-        <li><strong>Formspree</strong> — contact form processing and delivery</li>
         <li><strong>Substack</strong> — newsletter subscription and publishing</li>
+        <li><strong>Microsoft 365</strong> — contact form delivery, via Neil's own mailbox</li>
         <li><strong>Microsoft Bookings</strong> — call booking, linked from the site's "Book a call" button</li>
       </ul>
       <p>

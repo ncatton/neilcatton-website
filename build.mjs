@@ -73,7 +73,6 @@ const FACTS = {
   "substack": site.substack,
   "substackName": site.substackName,
   "booking": site.booking,
-  "formspree": site.formspree,
   "email": site.email,
   "origin": site.origin,
   "year": String(NOW.getFullYear()),

@@ -131,7 +131,7 @@ front matter, or `site.json` itself.
 | `{{years}}` / `{{years.words}}` / `{{years.Words}}` | `39` / `thirty-nine` / `Thirty-nine` |
 | `{{sectors}}` | `20+` |
 | `{{substack}}` / `{{substackName}}` | the Substack URL and title |
-| `{{booking}}` / `{{formspree}}` / `{{email}}` | the third-party endpoints |
+| `{{booking}}` / `{{email}}` | the third-party endpoint / the canonical address |
 | `{{year}}` / `{{buildDate}}` | build time |
 
 The years figure is computed as `currentYear − careerStartYear` (1987), so

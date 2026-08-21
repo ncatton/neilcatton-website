@@ -75,6 +75,26 @@
     action = "rewrite"
     to = "/rate-limited.html"
 
+# contact-form.mjs relays both contact forms (contact.html and the
+# homepage's shorter one) to Neil's own Microsoft 365 mailbox via Microsoft
+# Graph — replacing Formspree. Rate-limited for the same reason
+# generate-plan is: a public POST endpoint that triggers a real send
+# (subject to Exchange Online's own throttling on top of this) needs a
+# floor under it. Deliberately routed through this redirect rather than
+# the function's own path, for the same rate_limit reason noted above.
+[[redirects]]
+  from = "/contact-submit"
+  to = "/.netlify/functions/contact-form"
+  status = 200
+  force = true
+
+  [redirects.rate_limit]
+    window_limit = 5
+    window_size = 60
+    aggregate_by = ["ip", "domain"]
+    action = "rewrite"
+    to = "/rate-limited.html"
+
 # ── Security headers ──
 #
 # script-src and style-src no longer need 'unsafe-inline'. Every page's
@@ -110,7 +130,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://plausible.io https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://plausible.io https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"

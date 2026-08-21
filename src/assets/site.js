@@ -307,7 +307,14 @@
         }
       }
 
-      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      var payload = {};
+      new FormData(form).forEach(function (value, key) { payload[key] = value; });
+
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      })
         .then(function (res) {
           if (res.ok) {
             form.hidden = true;
@@ -316,6 +323,10 @@
               successEl.focus();
               successEl.scrollIntoView({ behavior: "smooth", block: "center" });
             }
+            return;
+          }
+          if (res.status === 429) {
+            fail("This form has had a lot of submissions just now — please wait a minute and try again.");
             return;
           }
           return res.json().then(function (json) {

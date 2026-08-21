@@ -121,8 +121,8 @@ const ok = (name, pass, note = "") => { results.push({ name, pass, note }); };
   await p.goto("http://localhost:8899/contact.html", { waitUntil: "load" });
   await p.waitForTimeout(500);
 
-  ok("form: posts to a real endpoint without JavaScript",
-     (await p.getAttribute("#contact-form", "action") || "").startsWith("https://formspree.io/"));
+  ok("form: posts to a same-origin endpoint",
+     (await p.getAttribute("#contact-form", "action") || "").endsWith("/contact-submit"));
   ok("form: honeypot present and out of the tab order", await p.evaluate(() => {
     const hp = document.querySelector('input[name="_gotcha"]');
     return !!hp && hp.tabIndex === -1 && !!hp.closest('[aria-hidden="true"]');
@@ -136,7 +136,7 @@ const ok = (name, pass, note = "") => { results.push({ name, pass, note }); };
      failure path renders in the page rather than through alert(). */
   let alerted = false;
   p.on("dialog", async (d) => { alerted = true; await d.dismiss(); });
-  await p.route("https://formspree.io/**", (route) => route.fulfill({ status: 500, body: "{}" }));
+  await p.route("**/contact-submit", (route) => route.fulfill({ status: 500, body: "{}" }));
   await p.fill("#contact-name", "Test Person");
   await p.fill("#contact-email", "test@example.com");
   await p.fill("#contact-message", "This is a test message long enough to be realistic.");
