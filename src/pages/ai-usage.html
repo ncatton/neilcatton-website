@@ -1,0 +1,102 @@
+<!--page
+{
+  "title": "AI Usage Statement \u2014 Neil Catton",
+  "description": "How this site is built and maintained with Claude, what its one live AI feature does with what you type, and what deliberately doesn't use AI at all.",
+  "slug": "ai-usage",
+  "css": ".page-header { padding: 9rem var(--col-pad) 3rem; background: var(--paper); border-bottom: 1px solid var(--rule); }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); display: block; margin-bottom: 1rem; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }\n  .page-title em { font-style: italic; color: var(--accent); }\n  .page-standfirst { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 620px; }\n  .prose-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }\n  .prose-inner { max-width: 720px; margin: 0 auto; }\n  .prose-inner p, .prose-inner ul { margin-bottom: 1.25rem; color: var(--ink-mid); }\n  .prose-inner ul { padding-left: 1.4rem; }\n  .prose-inner li { margin-bottom: 0.5rem; }\n  .prose-inner h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--ink); margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.01em; }\n  .prose-inner h2:first-child { margin-top: 0; }\n  .prose-inner a { color: var(--accent); }\n  .prose-inner strong { color: var(--ink); }\n  .updated-note { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 2.5rem; }",
+  "searchTitle": "AI usage statement"
+}
+-->
+<!-- NAV -->
+
+  <header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Legal</span>
+      <h1 class="page-title" id="page-title">AI Usage <em>Statement</em></h1>
+      <p class="page-standfirst">
+        Where AI does the work on this site, where it deliberately doesn't, and how the whole
+        thing gets built.
+      </p>
+    </div>
+  </header>
+
+  <section class="prose-section" aria-labelledby="page-title">
+    <div class="prose-inner">
+      <p class="updated-note">Last updated: {{buildDate}}</p>
+
+      <h2>How this site is built and maintained</h2>
+      <p>
+        This site is built and maintained with Claude, Anthropic's AI assistant — including
+        the August 2026 rebuild that replaced thirty-three hand-edited pages with the templated
+        site you're reading now. Claude writes the templates, the build tooling, and most of the
+        code in this repository, and works alongside Neil on the copy across the service pages,
+        the sector briefings, and pages like this one.
+      </p>
+      <p>
+        None of it publishes itself. Every change — code or copy — is directed by Neil,
+        reviewed by Neil, and approved by Neil before it goes anywhere near the live site. The
+        ideas, the research, the argument, and the final sign-off are his.
+      </p>
+
+      <h2>Where AI actually runs on this site</h2>
+      <p>
+        One feature calls an AI model directly, live, while you're using it: <a
+        href="/personalised-plan.html">Your Plan</a>, in the Practice Library.
+      </p>
+      <p>
+        You describe a situation in a sentence or two. That description is sent to Claude
+        (Anthropic's AI model — currently one of its Sonnet-generation models), via
+        Netlify's AI Gateway, in two steps:
+      </p>
+      <ul>
+        <li><strong>A scope check first.</strong> A quick call decides whether what you've
+        described is something the Practice Library's actual published content can help with. If
+        it isn't — or if it reads as needing real professional support rather than a reading
+        list — the tool says so plainly and stops there, before generating anything</li>
+        <li><strong>Then, only if that passes, a plan.</strong> Claude is given your description
+        and the complete list of items currently published in the library, and asked to select
+        three to six that genuinely fit and explain why, in each case, in its own words</li>
+      </ul>
+      <p>
+        Before anything reaches your screen, every item Claude selects is checked against the
+        real, published library. <strong>Anything that doesn't resolve to a card that actually
+        exists is dropped.</strong> The tool cannot show you advice it invented — only advice
+        already published here, chosen and explained for your situation.
+      </p>
+      <p>
+        What you type is used to generate that one response and isn't stored by this site
+        afterwards. Netlify and Anthropic may keep standard request logs for a limited period
+        under their own infrastructure policies, the same as any API call — see the <a
+        href="/privacy.html">Privacy Policy</a> for how third-party providers are treated more
+        generally.
+      </p>
+
+      <h2>Where it deliberately doesn't</h2>
+      <p>Two things on this site that might look AI-powered aren't:</p>
+      <ul>
+        <li><strong>The contact form.</strong> Nothing you send through it is read, sorted, or
+        drafted by AI. It goes straight to Neil's own inbox as plain email, via Microsoft Graph
+        — no AI is involved at any point</li>
+        <li><strong><a href="https://tool.neilcatton.com">Predictive Purpose</a></strong>, the
+        self-assessment diagnostic linked from the Practice Library, runs entirely in your own
+        browser. Its forty statements and its scoring are fixed — transcribed from the
+        book's appendix — and every calculation happens on your device. Nothing is sent to a
+        server at all: your answers are saved only to your own browser's local storage, so you
+        can close the page and come back to it later, and no AI is used anywhere in it</li>
+      </ul>
+
+      <h2>Questions</h2>
+      <p>
+        If anything here is unclear, or you want more detail on how a specific part of this site
+        works, email <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a>.
+      </p>
+
+      <h2>Review cadence</h2>
+      <p>
+        This statement is reviewed whenever how the site uses AI changes materially, and at least
+        once a year regardless. The date at the top of this page shows when it was last revised.
+      </p>
+    </div>
+  </section>
+
+<!-- FOOTER -->

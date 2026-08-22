@@ -113,7 +113,8 @@
         { "label": "Sitemap", "href": "/sitemap.html" },
         { "label": "Accessibility", "href": "/accessibility.html" },
         { "label": "Privacy", "href": "/privacy.html" },
-        { "label": "Security", "href": "/.well-known/security.txt" }
+        { "label": "Security", "href": "/.well-known/security.txt" },
+        { "label": "AI Usage", "href": "/ai-usage.html" }
       ]
     }
   ]
