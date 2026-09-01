@@ -307,6 +307,18 @@
         }
       }
 
+      // Cloudflare Turnstile solves in the background as soon as the
+      // widget script loads — normally well before a human finishes
+      // filling the form — but on a very fast submit or a slow network
+      // it can still be unset. Server-side rejects a missing/invalid
+      // token anyway; this just avoids a doomed round-trip and gives a
+      // clearer message than the generic failure.
+      var tsField = form.querySelector('[name="cf-turnstile-response"]');
+      if (!tsField || !tsField.value) {
+        fail("Verification is still loading \u2014 please wait a moment and press Send again.");
+        return;
+      }
+
       var payload = {};
       new FormData(form).forEach(function (value, key) { payload[key] = value; });
 

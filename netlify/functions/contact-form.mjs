@@ -3,12 +3,16 @@
 // sends the message as an email via Microsoft Graph, using Neil's own
 // Microsoft 365 mailbox. Replaces Formspree.
 //
-// Requires three Netlify environment variables (Site settings > Environment
+// Requires four Netlify environment variables (Site settings > Environment
 // variables, or `netlify env:set`):
 //
 //   MSGRAPH_TENANT_ID      Entra ID (Azure AD) tenant ID or domain
 //   MSGRAPH_CLIENT_ID      Application (client) ID of the app registration
 //   MSGRAPH_CLIENT_SECRET  A client secret created for that app registration
+//   TURNSTILE_SECRET_KEY   Secret key from the Cloudflare Turnstile widget
+//                          (Cloudflare dashboard > Turnstile > Add site).
+//                          The matching site key is public and lives in the
+//                          page HTML (src/pages/contact.html, index.html).
 //
 // The app registration needs the Microsoft Graph *application* permission
 // Mail.Send, with tenant admin consent granted — see the setup notes
@@ -25,8 +29,8 @@
 // Exchange Online (which has its own throttling) needs a floor under it
 // regardless of Graph's own limits.
 //
-// Accepts two request shapes, so the form keeps degrading gracefully with
-// JavaScript disabled exactly as it did pointed at Formspree:
+// Still accepts two request shapes — both get a Turnstile check now, so
+// this is about response format, not a surviving no-JS path:
 //   - Content-Type: application/json                  (site.js's fetch path)
 //   - Content-Type: application/x-www-form-urlencoded (a plain
 //     <form method="post"> submit with no enctype set — the browser default
@@ -35,10 +39,19 @@
 // handler reads. A plain form submission has no script to read a JSON body,
 // so it gets a 302 redirect back to the referring page with ?sent=1 or
 // ?error=1 instead.
+//
+// The plain-POST path no longer actually completes for a real visitor:
+// Turnstile requires JavaScript to solve, so with JS disabled the widget
+// never renders and cf-turnstile-response is never set — the request
+// below fails verification and comes back ?error=1. That's a deliberate
+// trade-off (added 2026-09) to close the contact-form spam this replaced
+// Formspree over; a JS-disabled visitor now needs the mailto: link in the
+// sidebar instead.
 
 const MAILBOX = "nc@neilcatton.com";
 const SENDMAIL_URL = `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(MAILBOX)}/sendMail`;
 const tokenURL = (tenant) => `https://login.microsoftonline.com/${encodeURIComponent(tenant)}/oauth2/v2.0/token`;
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 const MAX_LEN = { name: 200, organisation: 200, email: 254, enquiry_type: 40, subject: 200, message: 5000 };
 
@@ -56,6 +69,33 @@ function redirectTo(url, status = 302) {
 function clean(value, max) {
   if (typeof value !== "string") return "";
   return value.trim().slice(0, max);
+}
+
+// Verifies the token the widget put in cf-turnstile-response. Returns
+// true/false rather than throwing: an unreachable Turnstile API or a bad
+// token are both just "this submission doesn't pass", not a server error
+// worth a 502 — that stays reserved for the Graph send itself failing.
+async function verifyTurnstile(token) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) {
+    console.error("contact-form: TURNSTILE_SECRET_KEY is not configured.");
+    return false;
+  }
+  if (!token) return false;
+
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token }),
+    });
+    if (!res.ok) return false;
+    const json = await res.json();
+    return json.success === true;
+  } catch (err) {
+    console.error("contact-form: Turnstile verify request failed:", err.message);
+    return false;
+  }
 }
 
 async function getGraphToken() {
@@ -165,6 +205,17 @@ export default async (req) => {
   // fill it, and a bot that does gets no signal its submission was caught.
   if (clean(raw._gotcha, 100)) {
     return isJSON ? jsonResponse({}, 200) : redirectTo(referer + "?sent=1");
+  }
+
+  // Turnstile — the actual anti-bot check (the honeypot above catches only
+  // the crudest scripts). No token, an expired one, or a failed verify
+  // call are all treated the same: reject, generic message, no hint to a
+  // bot about which check it tripped.
+  const turnstileOK = await verifyTurnstile(clean(raw["cf-turnstile-response"], 2000));
+  if (!turnstileOK) {
+    return isJSON
+      ? jsonResponse({ errors: [{ message: "Verification failed. Please try again." }] }, 400)
+      : redirectTo(referer + "?error=1");
   }
 
   const fields = {

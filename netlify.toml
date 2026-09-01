@@ -127,10 +127,16 @@
 # img-src still allows https: because the Practice Library card thumbnails
 # come from substackcdn.com and change as cards are published.
 
+# Added for the contact-form CAPTCHA (2026-09): challenges.cloudflare.com
+# to script-src (loads the Turnstile widget script), frame-src (the
+# widget itself renders in an iframe from that origin) and connect-src
+# (the widget's own verification calls). Re-run tools/probe-csp.mjs
+# after this change too.
+
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://plausible.io https://writing.neilcatton.com; frame-src https://writing.neilcatton.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io https://challenges.cloudflare.com; style-src 'self'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://plausible.io https://writing.neilcatton.com https://challenges.cloudflare.com; frame-src https://writing.neilcatton.com https://challenges.cloudflare.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"

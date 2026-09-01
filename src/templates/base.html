@@ -42,6 +42,12 @@ ${d.hasPageCss ? `<link rel="stylesheet" href="/assets/pages/${d.slug}.css">` : 
 <!-- Plausible — cookie-free, no consent banner required under PECR. -->
 <script defer data-domain="neilcatton.com" src="https://plausible.io/js/script.js"></script>
 
+<!-- Cloudflare Turnstile — only on pages with a contact form
+     (meta.turnstile: true in the page frontmatter). Renders the
+     widget referenced by the .cf-turnstile div in that page's
+     form; site.js holds submission until it has a token. -->
+${d.turnstile ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ""}
+
 <!-- Structured data. Person is emitted on every page from src/data/site.json. -->
 ${[{ "@context": "https://schema.org", "@type": "Person", name: s.name, url: s.origin + "/", image: h.abs(s.image), jobTitle: s.jobTitle, description: s.description, sameAs: Object.values(s.sameAs).filter(Boolean) }].concat(d.jsonld).map((o) => `<script type="application/ld+json">${h.json(o)}</script>`).join("\n")}
 </head>
