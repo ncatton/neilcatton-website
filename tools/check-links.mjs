@@ -88,15 +88,67 @@ if (orphans.length) console.log(`orphan pages (nothing links to them): ${orphans
 
 if (EXTERNAL) {
   console.log(`checking ${external.size} external URLs…`);
-  const list = [...external];
-  for (let i = 0; i < list.length; i += 6) {
-    await Promise.all(list.slice(i, i + 6).map(async (url) => {
+
+  // 2026-09: a plain "6 at once, whatever they are" batch put ~20
+  // requests to writing.neilcatton.com in the same few seconds and got
+  // every one of them 429'd by Substack, plus a UA-less server-side
+  // HEAD tripped Amazon's bot detection (404 instead of a real block).
+  // Grouping by host means a burst against one site can no longer look
+  // like a flood to that site, a browser UA stops the more naive bot
+  // checks, falling back to GET on ANY bad HEAD status (not just
+  // 403/405) covers hosts that just handle HEAD badly, and a 429 gets
+  // one retry with backoff (honouring Retry-After) before it counts as
+  // a real failure.
+  const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  const byHost = new Map();
+  for (const url of external) {
+    let host;
+    try { host = new URL(url).host; } catch { host = url; }
+    if (!byHost.has(host)) byHost.set(host, []);
+    byHost.get(host).push(url);
+  }
+
+  async function attempt(url, method) {
+    return fetch(url, {
+      method,
+      redirect: "follow",
+      signal: AbortSignal.timeout(15000),
+      headers: { "User-Agent": UA, Accept: "text/html,application/xhtml+xml,*/*" },
+    });
+  }
+
+  async function checkURL(url) {
+    const maxTries = 3;
+    for (let tries = 1; tries <= maxTries; tries++) {
       try {
-        let r = await fetch(url, { method: "HEAD", redirect: "follow", signal: AbortSignal.timeout(15000) });
-        if (r.status === 405 || r.status === 403) r = await fetch(url, { method: "GET", redirect: "follow", signal: AbortSignal.timeout(15000) });
-        if (!r.ok) problems.push(`external ${url} -> HTTP ${r.status}`);
+        let r = await attempt(url, "HEAD");
+        if (!r.ok) r = await attempt(url, "GET");
+        if (r.ok) return null;
+        if (r.status === 429 && tries < maxTries) {
+          const retryAfter = Number(r.headers.get("retry-after"));
+          await sleep(Number.isFinite(retryAfter) ? retryAfter * 1000 : tries * 2000);
+          continue;
+        }
+        return `external ${url} -> HTTP ${r.status}`;
       } catch (e) {
-        problems.push(`external ${url} -> ${e.name}: ${e.message}`);
+        if (tries < maxTries) { await sleep(tries * 1500); continue; }
+        return `external ${url} -> ${e.name}: ${e.message}`;
+      }
+    }
+  }
+
+  // Up to 6 hosts checked at once (same overall throughput as before),
+  // but every host's own URLs run one at a time with a polite gap —
+  // the part that actually stops a single site being flooded.
+  const hosts = [...byHost.keys()];
+  for (let i = 0; i < hosts.length; i += 6) {
+    await Promise.all(hosts.slice(i, i + 6).map(async (host) => {
+      for (const url of byHost.get(host)) {
+        const problem = await checkURL(url);
+        if (problem) problems.push(problem);
+        await sleep(300);
       }
     }));
   }

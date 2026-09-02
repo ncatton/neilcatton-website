@@ -111,11 +111,27 @@ for (const page of pages) {
         if (el.getAttribute("tabindex") === "-1") return;
         if (el.closest('[aria-hidden="true"], [hidden]')) return;
         if (r.height >= 24 && r.width >= 24) return;
-        /* SC 2.5.8 exempts links whose target is inline in a sentence. */
-        const parent = el.parentElement;
-        if (el.tagName === "A" && parent && /^(P|LI|SPAN|EM|STRONG|TD)$/.test(parent.tagName)) {
-          const txt = (parent.textContent || "").trim();
-          if (txt.length > (el.textContent || "").trim().length + 12) return;
+        /* SC 2.5.8 exempts links whose target is inline in a sentence.
+           Found via ai-usage.html (2026-09): a link's *immediate*
+           parent can be a pure formatting wrapper — <strong><a>Predictive
+           Purpose</a></strong> — that holds no text of its own, so
+           checking only that parent for "more text than the link" always
+           came back false even though the wrapper sits inside a normal
+           running sentence one level up. Walk past any such text-less
+           inline wrapper first, then apply the same check to the real
+           container. */
+        const linkText = (el.textContent || "").trim();
+        let container = el.parentElement;
+        while (
+          container &&
+          /^(STRONG|EM|B|I|SPAN)$/.test(container.tagName) &&
+          (container.textContent || "").trim().length === linkText.length
+        ) {
+          container = container.parentElement;
+        }
+        if (el.tagName === "A" && container && /^(P|LI|SPAN|EM|STRONG|TD|DIV)$/.test(container.tagName)) {
+          const txt = (container.textContent || "").trim();
+          if (txt.length > linkText.length + 12) return;
         }
         out.push(`${el.tagName.toLowerCase()}.${(el.className || "").toString().split(" ")[0]} "${(el.textContent || "").trim().slice(0, 28)}" ${Math.round(r.width)}x${Math.round(r.height)}`);
       });
