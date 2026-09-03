@@ -33,6 +33,21 @@
       "imageAlt": "It doesn't ask what you fixed, it asks what you knew — 30 Nov Awaab's Law Phase 2, +43% Ombudsman property-condition findings, 31% of staff using AI vs 22% given access"
     },
     {
+      "id": "SAR-004",
+      "sector": "Construction & building safety",
+      "technology": "AI",
+      "title": "AI in UK Construction & Building Safety",
+      "standfirst": "The golden thread is a legal duty with no named technical standard attached to it. The standard the duty needs already exists — ISO 19650, seven years in the making — and is compelled for public sector clients and optional for everyone else. 74% of architecture professionals use BIM; 36% describe that as conforming to the standard.",
+      "regulator": "BSR / HSE",
+      "humanMoment": "The golden thread and the gateway approval",
+      "date": "2026-08-13",
+      "pages": 16,
+      "page": "briefing-ai-uk-construction.html",
+      "pdf": "downloads/briefings/ai-in-uk-construction.pdf",
+      "image": "images/briefings/construction-card.jpg",
+      "imageAlt": "Most of the industry has the tool. Far fewer have the discipline — 74% of architecture professionals using BIM against 36% describing it as ISO 19650 conformance, and 37% of the construction products market regulated on the government's own central estimate"
+    },
+    {
       "id": "SAR-005",
       "sector": "Energy retail",
       "technology": "AI",

@@ -2,6 +2,14 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "briefing-ai-uk-construction",
+      "text": "New briefing: AI in UK Construction & Building Safety. Second staircases become mandatory 30 September; the Building Safety Levy commences the day after.",
+      "link": "briefing-ai-uk-construction.html",
+      "linkText": "Read the briefing",
+      "date": "2026-09-03",
+      "expires": "2026-10-01"
+    },
+    {
       "id": "briefing-ai-uk-grocery-retail",
       "text": "New briefing: AI in UK Grocery Retail. Sainsbury's facial recognition reaches around 200 stores by Christmas.",
       "link": "briefing-ai-uk-grocery-retail.html",
