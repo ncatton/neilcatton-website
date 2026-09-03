@@ -46,6 +46,21 @@
       "pdf": "downloads/briefings/ai-in-uk-energy-retail.pdf",
       "image": "images/briefings/energy-retail-card.jpg",
       "imageAlt": "Every service measure is improving. Every measure of debt is getting worse — 82% satisfaction, £4.79bn debt and arrears, 48% Ombudsman signposting rate"
+    },
+    {
+      "id": "SAR-018",
+      "sector": "Grocery retail",
+      "technology": "AI",
+      "title": "AI in UK Grocery Retail",
+      "standfirst": "Four regulators hold a position on AI in or around this sector and none is aimed at its largest deployments. Facial recognition is reaching around two hundred stores on the strength of a two-store trial, while machine learning forecasting already sits inside a statutory duty requiring due care, consultation and an explainable basis.",
+      "regulator": "ICO / GCA / CMA",
+      "humanMoment": "The tap on the shoulder at the self-checkout",
+      "date": "2026-09-03",
+      "pages": 15,
+      "page": "briefing-ai-uk-grocery-retail.html",
+      "pdf": "downloads/briefings/ai-in-uk-grocery-retail.pdf",
+      "image": "images/briefings/grocery-retail-card.jpg",
+      "imageAlt": "Every regulator has a position. None of them is aimed here — five ICO priorities with retail not among them, zero mentions of technology or AI across two 2026 Groceries Code Adjudicator publications, and Sainsbury's facial recognition going from two stores to around two hundred"
     }
   ],
   "collaborations": [
