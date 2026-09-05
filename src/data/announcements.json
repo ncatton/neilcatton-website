@@ -2,6 +2,14 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "cto-grand-rounds-linkedtohome",
+      "text": "New CTO Grand Rounds session: scaling, safeguarding and AI governance, reviewed with the founders of LinkEDtohome.",
+      "link": "cto-grand-rounds.html",
+      "linkText": "View sessions",
+      "date": "2026-09-05",
+      "expires": "2026-10-05"
+    },
+    {
       "id": "briefing-ai-uk-construction",
       "text": "New briefing: AI in UK Construction & Building Safety. Second staircases become mandatory 30 September; the Building Safety Levy commences the day after.",
       "link": "briefing-ai-uk-construction.html",
