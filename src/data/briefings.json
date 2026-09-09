@@ -76,6 +76,36 @@
       "pdf": "downloads/briefings/ai-in-uk-grocery-retail.pdf",
       "image": "images/briefings/grocery-retail-card.jpg",
       "imageAlt": "Every regulator has a position. None of them is aimed here — five ICO priorities with retail not among them, zero mentions of technology or AI across two 2026 Groceries Code Adjudicator publications, and Sainsbury's facial recognition going from two stores to around two hundred"
+    },
+    {
+      "id": "SAR-023",
+      "sector": "BioTech",
+      "technology": "AI",
+      "title": "AI in UK BioTech",
+      "standfirst": "UK biotech venture investment hit a five-year high in Q2 2026. One company's round accounts for three quarters of it, the MHRA is now receiving AI-drafted inspection responses that cite guidance which doesn't exist, and four named companies' outcomes over two years run from a verified drug-discovery success to outright absorption into a US competitor.",
+      "regulator": "MHRA",
+      "humanMoment": "The named signature on an AI-drafted inspection response",
+      "date": "2026-09-08",
+      "pages": 19,
+      "page": "briefing-ai-uk-biotech.html",
+      "pdf": "downloads/briefings/ai-in-uk-biotech.pdf",
+      "image": "images/briefings/biotech-card.jpg",
+      "imageAlt": "One deal made the quarter a record. Three companies complicate it — £2.05bn in UK biotech venture investment against £498m excluding the one deal, and $2.9bn in combined milestone potential behind Isomorphic Labs' two pharma deals"
+    },
+    {
+      "id": "SAR-022",
+      "sector": "HealthTech",
+      "technology": "AI",
+      "title": "AI in UK HealthTech",
+      "standfirst": "The same AI ambient-voice product was measured twice in 2026 — once by the NHS as a productivity gain, once by the regulator as a source of undetected errors. The £10bn rollout is built on the first measurement, and nothing yet exists to count what the second one found.",
+      "regulator": "MHRA / NHS England",
+      "humanMoment": "The clinician who has stopped reading the note before signing it",
+      "date": "2026-09-08",
+      "pages": 17,
+      "page": "briefing-ai-uk-healthtech.html",
+      "pdf": "downloads/briefings/ai-in-uk-healthtech.pdf",
+      "image": "images/briefings/healthtech-card.jpg",
+      "imageAlt": "The NHS measured the time it saved. The regulator measured what it missed — 23.5% relative increase in direct care time against 39% of real-world notes flagged out-of-scope by the MHRA's own sandbox"
     }
   ],
   "collaborations": [

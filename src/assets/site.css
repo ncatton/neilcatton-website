@@ -728,6 +728,16 @@ img { height: auto; }
   margin-bottom: 0.75rem;
 }
 
+/* Data Poster figures embedded in briefing pages — see the
+   briefing-infographic skill. CSP is style-src 'self' with no
+   'unsafe-inline', so this lives here rather than inline on the page. */
+.detail-figure { margin: 2rem 0; }
+.detail-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.detail-figure figcaption {
+  font-family: var(--sans); font-size: 0.8rem; color: var(--ink-light);
+  line-height: 1.6; margin-top: 0.6rem;
+}
+
 /* ── 9. DETAILS GRID ───────────────────────────────────────────── */
 
 .details-grid {
