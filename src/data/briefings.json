@@ -151,6 +151,21 @@
       "pdf": "downloads/briefings/ai-in-uk-legal-services.pdf",
       "image": "images/briefings/legal-services-card.jpg",
       "imageAlt": "The tools got better, the supervision requirement did not move — 42 reports of potential AI misuse counted by the regulator, a best benchmark score rising from 4.4 to 6.4 out of ten, and a 37% rise in complaints to the Legal Ombudsman"
+    },
+    {
+      "id": "SAR-010",
+      "sector": "Justice, courts & probation",
+      "technology": "AI",
+      "title": "AI in UK Justice, Courts & Probation",
+      "standfirst": "Justice has filed twelve algorithmic transparency records, including an exemplary one for a prison violence estimator. Search the same register for the scoring that helps decide recall and release, and it returns nothing — while the department's own revalidation reports miscalibration by ethnicity.",
+      "regulator": "MoJ / HMPPS",
+      "humanMoment": "The risk assessment score",
+      "date": "2026-09-20",
+      "pages": 15,
+      "page": "briefing-ai-uk-justice.html",
+      "pdf": "downloads/briefings/ai-in-uk-justice.pdf",
+      "image": "images/briefings/justice-card.jpg",
+      "imageAlt": "The new tools are on the register, the ones that score you are not — 152 records on the transparency register, 12 from the justice family, 0 returned for OASys, recidivism or parole"
     }
   ],
   "collaborations": [
