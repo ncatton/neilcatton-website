@@ -106,6 +106,51 @@
       "pdf": "downloads/briefings/ai-in-uk-healthtech.pdf",
       "image": "images/briefings/healthtech-card.jpg",
       "imageAlt": "The NHS measured the time it saved. The regulator measured what it missed — 23.5% relative increase in direct care time against 39% of real-world notes flagged out-of-scope by the MHRA's own sandbox"
+    },
+    {
+      "id": "SAR-003",
+      "sector": "Policing & public safety",
+      "technology": "AI",
+      "title": "AI in UK Policing & Public Safety",
+      "standfirst": "Policing is nationalising the capability faster than it is nationalising the accountability. A national AI centre, a national facial recognition system and national procurement are funded and moving, while the legal framework is, on the Home Secretary's own account, still being refined.",
+      "regulator": "Home Office / HMICFRS / IOPC",
+      "humanMoment": "The stop, and the custody decision",
+      "date": "2026-09-14",
+      "pages": 20,
+      "page": "briefing-ai-uk-policing.html",
+      "pdf": "downloads/briefings/ai-in-uk-policing.pdf",
+      "image": "images/briefings/policing-card.jpg",
+      "imageAlt": "Bought nationally, answered for locally — £75m for a national AI centre over three years, 43 territorial forces each answering to a locally elected commissioner, and more than 25,000 retrospective facial recognition searches a month"
+    },
+    {
+      "id": "SAR-006",
+      "sector": "Banking & consumer lending",
+      "technology": "AI",
+      "title": "AI in UK Banking & Consumer Lending",
+      "standfirst": "The regulator has decided not to write rules for AI and has said so in terms. That decision has already moved the accountability onto named individuals under the Senior Managers regime — against the regulators' own finding that 46 per cent of firms only partly understand the AI systems they are running.",
+      "regulator": "FCA / Bank of England",
+      "humanMoment": "The affordability decline and the arrears call",
+      "date": "2026-09-15",
+      "pages": 20,
+      "page": "briefing-ai-uk-banking.html",
+      "pdf": "downloads/briefings/ai-in-uk-banking.pdf",
+      "image": "images/briefings/banking-card.jpg",
+      "imageAlt": "The sector adopted it, then told the regulator it did not understand it — 75% of firms already using AI, 46% reporting only partial understanding, and one in three use cases bought in from third parties"
+    },
+    {
+      "id": "SAR-021",
+      "sector": "Legal services",
+      "technology": "AI",
+      "title": "AI in UK Legal Services",
+      "standfirst": "The one sector where the regulator can count the harm — 42 reports of potential AI misuse in twelve months. Every referral the courts actually made was about supervision, not about the technology, and the service gap driving firms to buy lands on the same junior review layer.",
+      "regulator": "SRA / the judiciary",
+      "humanMoment": "The filing, the disclosure exercise, the cited case",
+      "date": "2026-09-19",
+      "pages": 16,
+      "page": "briefing-ai-uk-legal-services.html",
+      "pdf": "downloads/briefings/ai-in-uk-legal-services.pdf",
+      "image": "images/briefings/legal-services-card.jpg",
+      "imageAlt": "The tools got better, the supervision requirement did not move — 42 reports of potential AI misuse counted by the regulator, a best benchmark score rising from 4.4 to 6.4 out of ten, and a 37% rise in complaints to the Legal Ombudsman"
     }
   ],
   "collaborations": [
