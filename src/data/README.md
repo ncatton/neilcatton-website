@@ -52,10 +52,10 @@ Field notes:
 - `text` — the announcement copy. Keep it to one sentence.
 - `link` — where the "read more" link goes. Relative (`cto-grand-rounds.html`) or absolute (`https://…`).
 - `linkText` — the link label, e.g. "View sessions", "Read more", "Register".
-- `date` — ISO format. Announcements are shown newest first.
+- `date` — ISO format. Announcements are shown newest first. An entry dated in the future stays hidden until that date, so a launch-day announcement can be committed in advance.
 - `expires` — ISO date, or `null` for no expiry. Once today's date passes `expires`, the entry stops showing automatically — no need to remove it manually, though tidying the file occasionally is still good practice.
 
-The homepage shows the three most recent non-expired announcements. If the array is empty (or every entry has expired), the bar does not render at all.
+The homepage shows the three most recent announcements that have reached their `date` and not passed their `expires`. If the array is empty (or every entry has expired), the bar does not render at all.
 
 ---
 

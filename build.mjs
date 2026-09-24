@@ -79,9 +79,21 @@ const FACTS = {
   "buildDate": BUILD_DATE
 };
 
+/* Predictive Purpose's Amazon links, as {{pp.kindleUK}} and friends.
+   Several pages carry the Buy buttons; keeping the URLs here makes the
+   launch-day swap one edit in site.json instead of a hunt. An empty link
+   that a page actually uses fails the build: a dead Buy button that
+   deploys cleanly is worse than a deploy that stops and says why. */
+for (const [k, v] of Object.entries(site.predictivePurpose || {})) {
+  if (!k.startsWith("_")) FACTS[`pp.${k}`] = v;
+}
+
 /** Resolve {{token}} references in page content and site strings. */
 function resolveFacts(html) {
   return String(html).replace(/\{\{\s*([a-zA-Z.]+)\s*\}\}/g, (whole, key) => {
+    if (key.startsWith("pp.") && key in FACTS && !FACTS[key]) {
+      throw new Error(`{{${key}}} is used on a page but predictivePurpose.${key.slice(3)} in src/data/site.json is empty. Paste the Amazon link in, then build again.`);
+    }
     if (key in FACTS) return FACTS[key];
     throw new Error(`Unknown fact token {{${key}}}`);
   });

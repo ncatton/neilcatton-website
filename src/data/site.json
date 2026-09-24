@@ -18,6 +18,14 @@
   "substack": "https://writing.neilcatton.com",
   "substackName": "The Next Evolution",
 
+  "_predictivePurpose": "Amazon links for the book Predictive Purpose, used as {{pp.kindleUK}} etc. on the book page, the books page and the contact page, so the launch-day swap is one edit here. Kindle links go in when pre-order opens; paperback links on launch day (23 October 2026). A link a page uses that is still empty FAILS the build, so no page can ship with a dead Buy button. The tool at predictiveTool is a different thing: the self-assessment.",
+  "predictivePurpose": {
+    "kindleUK": "https://amzn.eu/d/02kxQXi3",
+    "kindleUS": "",
+    "paperbackUK": "",
+    "paperbackUS": ""
+  },
+
   "booking": "https://outlook.office.com/book/NeilCatton1@neilcatton.com/?ismsaljsauthenabled",
   "predictiveTool": "https://tool.neilcatton.com",
   "grandRounds": "https://grandrounds.tech",
@@ -45,7 +53,7 @@
       "label": "Practice Library",
       "items": [
         { "label": "The Collection", "href": "/practice-library.html" },
-        { "label": "Predictive Purpose", "href": "https://tool.neilcatton.com", "external": true },
+        { "label": "Predictive Purpose self-assessment", "href": "https://tool.neilcatton.com", "external": true },
         { "label": "Your Plan", "href": "/personalised-plan.html" },
         { "label": "The Pattern Map", "href": "/pattern-map.html" }
       ]
@@ -92,7 +100,7 @@
       "heading": "Practice Library",
       "items": [
         { "label": "The Collection", "href": "/practice-library.html" },
-        { "label": "Predictive Purpose", "href": "https://tool.neilcatton.com", "external": true },
+        { "label": "Predictive Purpose self-assessment", "href": "https://tool.neilcatton.com", "external": true },
         { "label": "Your Plan", "href": "/personalised-plan.html" },
         { "label": "The Pattern Map", "href": "/pattern-map.html" }
       ]

@@ -162,8 +162,9 @@
   }
 
   /* ── 2. ANNOUNCEMENTS ─────────────────────────────────────────── */
-  /* Reads data/announcements.json. Shows up to three current entries,
-     newest first. No current announcements, no bar. */
+  /* Reads data/announcements.json. Shows up to three current entries
+     (dated today or earlier, not expired), newest first. No current
+     announcements, no bar. */
 
   (function loadAnnouncements() {
     var bar = document.getElementById("announce-bar");
@@ -175,7 +176,9 @@
       var items = Array.isArray(data.announcements) ? data.announcements : [];
       var today = new Date().toISOString().slice(0, 10);
       var active = items
-        .filter(function (a) { return !a.expires || a.expires >= today; })
+        /* An entry dated in the future waits for its date, so a launch
+           announcement can be committed ahead of launch day. */
+        .filter(function (a) { return (!a.date || a.date <= today) && (!a.expires || a.expires >= today); })
         .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
         .slice(0, 3);
       if (!active.length) return;

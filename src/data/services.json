@@ -93,9 +93,9 @@
       },
       {
         "kind": "Book",
-        "title": "The Shadow System",
-        "href": "/books.html#the-shadow-system",
-        "note": "Every organisation has an unofficial process. This book asks what that says about the official one."
+        "title": "Predictive Purpose",
+        "href": "/book-predictive-purpose.html",
+        "note": "The value a brief never asked about, and how to count it."
       }
     ],
     "shortName": "Fractional CTO / CIO"
@@ -127,7 +127,7 @@
       },
       {
         "heading": "Experience",
-        "html": "<p>{{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. A former CISO. Active fractional CTO practice advising PE-backed businesses and scale-ups at Series A&ndash;C. Author of a published trilogy on technology governance, human agency, and digital security.</p>"
+        "html": "<p>{{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. A former CISO. Active fractional CTO practice advising PE-backed businesses and scale-ups at Series A&ndash;C. Author of a published trilogy on technology governance, human agency, and digital security, and of <em>Predictive Purpose</em> (2026).</p>"
       }
     ],
     "detailsHeading": "Appointment details",
@@ -280,10 +280,10 @@
         "note": "Why the next phase of technology must place the individual human at the centre of every design decision."
       },
       {
-        "kind": "Practice Library",
-        "title": "The Collection",
-        "href": "/practice-library.html",
-        "note": "The How To sections from the trilogy, rebuilt as standalone reference cards."
+        "kind": "Book",
+        "title": "Predictive Purpose",
+        "href": "/book-predictive-purpose.html",
+        "note": "The value a brief never asked about, and how to count it."
       },
       {
         "kind": "Practice Library",
@@ -321,7 +321,7 @@
       },
       {
         "heading": "Experience",
-        "html": "<p>Group CTO advising boards and executive teams on AI strategy and governance, including some of the most demanding operational environments in UK public service. {{years.Words}} years in technology across 20+ sectors. Author of three books on technology, judgement, and the human consequence of systems.</p>"
+        "html": "<p>Group CTO advising boards and executive teams on AI strategy and governance, including some of the most demanding operational environments in UK public service. {{years.Words}} years in technology across 20+ sectors. Author of four books on technology, judgement, and the human consequence of systems.</p>"
       }
     ],
     "detailsHeading": "Engagement details",
@@ -418,7 +418,7 @@
       },
       {
         "heading": "Experience",
-        "html": "<p>Currently architecting an AI and data programme for UK policing custody data &mdash; one of the most demanding accountability environments in which AI decisions are made. {{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. Author of three books on technology, judgement, and the human consequence of systems.</p>"
+        "html": "<p>Currently architecting an AI and data programme for UK policing custody data &mdash; one of the most demanding accountability environments in which AI decisions are made. {{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. Author of four books on technology, judgement, and the human consequence of systems.</p>"
       }
     ],
     "detailsHeading": "Engagement details",
@@ -474,10 +474,10 @@
         "note": "Regulatory pressure, verified threats, and where the opportunity is defensible today."
       },
       {
-        "kind": "Briefing",
-        "title": "AI in UK Energy Retail",
-        "href": "/briefing-ai-uk-energy-retail.html",
-        "note": "One technology, one sector, one report \u2014 built only on sources that can be checked."
+        "kind": "Book",
+        "title": "Predictive Purpose",
+        "href": "/book-predictive-purpose.html",
+        "note": "The value a brief never asked about, and how to count it."
       },
       {
         "kind": "Practice Library",
@@ -869,9 +869,9 @@
       },
       {
         "kind": "Book",
-        "title": "The Shadow System",
-        "href": "/books.html#the-shadow-system",
-        "note": "Every organisation has an unofficial process. This book asks what that says about the official one."
+        "title": "Predictive Purpose",
+        "href": "/book-predictive-purpose.html",
+        "note": "The value a brief never asked about, and how to count it."
       }
     ],
     "shortName": "Data Strategy Review"
@@ -1097,7 +1097,7 @@
       },
       {
         "heading": "Experience",
-        "html": "<p>{{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. Author of three books on technology, judgement, and the human consequence of systems &mdash; the writing informs the speaking. Topics include AI adoption and governance, the future of work, human-centred technology design, and the strategic and ethical questions facing boards.</p>"
+        "html": "<p>{{years.Words}} years in technology across 20+ sectors, from computer operator to Group CTO. Author of four books on technology, judgement, and the human consequence of systems &mdash; the writing informs the speaking. Topics include AI adoption and governance, the future of work, human-centred technology design, and the strategic and ethical questions facing boards.</p>"
       },
       {
         "heading": "Seen in practice",

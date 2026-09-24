@@ -2,6 +2,22 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "predictive-purpose-launch",
+      "text": "Out now: Predictive Purpose. The value a brief never asked about, and how to count it.",
+      "link": "book-predictive-purpose.html",
+      "linkText": "Get the book",
+      "date": "2026-10-23",
+      "expires": "2026-11-23"
+    },
+    {
+      "id": "predictive-purpose-preorder",
+      "text": "New book, out 23 October: Predictive Purpose. What else could your organisation be for, and can you count it?",
+      "link": "book-predictive-purpose.html",
+      "linkText": "Pre-order",
+      "date": "2026-09-25",
+      "expires": "2026-10-22"
+    },
+    {
       "id": "cto-grand-rounds-linkedtohome",
       "text": "New CTO Grand Rounds session: scaling, safeguarding and AI governance, reviewed with the founders of LinkEDtohome.",
       "link": "cto-grand-rounds.html",
