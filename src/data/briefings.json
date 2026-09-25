@@ -166,6 +166,51 @@
       "pdf": "downloads/briefings/ai-in-uk-justice.pdf",
       "image": "images/briefings/justice-card.jpg",
       "imageAlt": "The new tools are on the register, the ones that score you are not — 152 records on the transparency register, 12 from the justice family, 0 returned for OASys, recidivism or parole"
+    },
+    {
+      "id": "SAR-007",
+      "sector": "Mortgages & housing finance",
+      "technology": "AI",
+      "title": "AI in UK Mortgages & Housing Finance",
+      "standfirst": "The FCA's own research shows a machine-learning model ranks borrowers better; its own consultation describes a borrower declined automatically by a filter. From 1 January 2027, Basel 3.1 makes keeping every home's valuation current a standing duty — and the largest lenders say nothing about AI in the mortgage decision.",
+      "regulator": "FCA / PRA",
+      "humanMoment": "The automatic decline and the forbearance decision",
+      "date": "2026-09-24",
+      "pages": 16,
+      "page": "briefing-ai-uk-mortgages.html",
+      "pdf": "downloads/briefings/ai-in-uk-mortgages.pdf",
+      "image": "images/briefings/mortgages-card.jpg",
+      "imageAlt": "The regulator's model ranks borrowers better, its own case study was declined by a filter — an AUC of 0.751 for the machine-learning model against 0.669 for the conventional one, and a 74 per cent higher arrears hazard above 90 per cent loan-to-value"
+    },
+    {
+      "id": "SAR-008",
+      "sector": "Pensions & retirement income",
+      "technology": "AI",
+      "title": "AI in UK Pensions & Retirement Income",
+      "standfirst": "The FCA says it remains comfortable AI can work inside targeted support, a regime built for groups of people. The Pensions Regulator is building defaults to protect members from biased or flawed AI-powered advice. 69.4 per cent of first pension accesses happen without advice.",
+      "regulator": "FCA / TPR",
+      "humanMoment": "The drawdown decision",
+      "date": "2026-09-24",
+      "pages": 16,
+      "page": "briefing-ai-uk-pensions.html",
+      "pdf": "downloads/briefings/ai-in-uk-pensions.pdf",
+      "image": "images/briefings/pensions-card.jpg",
+      "imageAlt": "One decision, two regulators, two answers on AI — 961,575 pension pots accessed for the first time in 2024/25, 69.4 per cent without regulated advice, against 112,000 Pension Wise appointments in the same year"
+    },
+    {
+      "id": "SAR-009",
+      "sector": "Wealth & investment advice",
+      "technology": "AI",
+      "title": "AI in UK Wealth & Investment Advice",
+      "standfirst": "The FCA proposes replacing the annual suitability review with needs-based reviews, and says firms can use technology to assess suitability on an ongoing basis. The review is what 3.7 million clients pay for — and two of the largest advice firms are still remediating reviews they could not evidence.",
+      "regulator": "FCA",
+      "humanMoment": "The suitability review",
+      "date": "2026-09-24",
+      "pages": 16,
+      "page": "briefing-ai-uk-wealth.html",
+      "pdf": "downloads/briefings/ai-in-uk-wealth.pdf",
+      "image": "images/briefings/wealth-card.jpg",
+      "imageAlt": "The annual review is going and the FCA says technology can decide when — 3.7 million clients pay for ongoing advice, ongoing services are 80 per cent of adviser-charge revenue, and 83 per cent of reviews were delivered across 22 large firms"
     }
   ],
   "collaborations": [

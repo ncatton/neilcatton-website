@@ -2,6 +2,14 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "briefings-ai-uk-financial-services-2026-09",
+      "text": "Three new briefings: AI in UK Mortgages, Pensions, and Wealth & Investment Advice. Basel 3.1 revaluation applies from 1 January 2027.",
+      "link": "briefings.html",
+      "linkText": "Read the briefings",
+      "date": "2026-09-24",
+      "expires": "2026-10-31"
+    },
+    {
       "id": "predictive-purpose-launch",
       "text": "Out now: Predictive Purpose. The value a brief never asked about, and how to count it.",
       "link": "book-predictive-purpose.html",
