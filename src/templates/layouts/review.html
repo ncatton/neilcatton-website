@@ -1,0 +1,57 @@
+<!-- The Next Evolution Review index layout.
+
+     The issue blocks are rendered from src/data/review.json, so adding
+     an issue is one entry in that file and nothing on the page. The
+     newest issue is the feature. Earlier issues list beneath it once
+     there are any. -->
+${(() => {
+  const issues = d.data.review.issues.slice().sort((a, b) => b.number - a.number);
+  const next = d.data.review.next;
+  const cur = issues[0];
+  const earlier = issues.slice(1);
+
+  const feature = `<div class="issue">
+        <a class="issue-cover" href="${cur.path}" aria-label="Read ${h.esc(cur.label)}: ${h.esc(cur.title)}">
+          <span class="issue-cover-no" aria-hidden="true">${cur.nn}</span>
+          <span class="issue-cover-mast">The Next<br>Evolution <em>Review</em></span>
+          <span class="issue-cover-period">${h.esc(cur.label)} · ${h.esc(cur.period)}</span>
+          <span class="issue-cover-theme">${h.esc(cur.title)}</span>
+        </a>
+        <div class="issue-body">
+          <p class="eyebrow">${h.esc(cur.label)} · ${h.esc(cur.period)}</p>
+          <h2 class="issue-title" id="current-heading">${h.esc(cur.title)}</h2>
+          <p class="issue-question">${h.esc(cur.question)}</p>
+          <p class="issue-summary">${h.esc(cur.summary)}</p>
+          <dl class="issue-facts">
+${cur.facts.map((x) => `            <div><dt>${h.esc(x.k)}</dt><dd>${h.esc(x.v)}</dd></div>`).join("\n")}
+          </dl>
+          <div class="issue-actions">
+            <a class="btn btn-primary" href="${cur.path}">Read the web edition</a>
+            <a class="btn btn-secondary" href="${cur.path}${cur.pdf}">Download the PDF (${h.esc(cur.pdfSize)})</a>
+          </div>
+          <p class="issue-data">The data behind the figures:
+            <a href="${cur.path}${cur.ledger}">the ledger of cases (CSV)</a> and
+            <a href="${cur.path}${cur.calls}">the calls (CSV)</a>.</p>
+          <p class="issue-cite"><span>Cite as</span> ${h.esc(cur.citeAs)}</p>
+        </div>
+      </div>`;
+
+  const archive = earlier.length ? `<div class="issue-archive">
+        <h3 class="issue-archive-heading">Earlier issues</h3>
+        <ul>
+${earlier.map((i) => `          <li><a href="${i.path}"><span class="ia-label">${h.esc(i.label)} · ${h.esc(i.period)}</span><span class="ia-title">${h.esc(i.title)}</span></a></li>`).join("\n")}
+        </ul>
+      </div>` : "";
+
+  const upcoming = next ? `<p class="eyebrow">${h.esc(next.label)} · ${h.esc(next.period)}</p>
+      <h2 class="section-heading" id="next-heading">${h.esc(next.title)}</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <div class="review-prose">
+        <p>${h.esc(next.summary)}</p>
+        <p>${h.esc(next.also)}</p>
+      </div>` : "";
+
+  return d.body
+    .replace("<!--review:issues-->", feature + "\n      " + archive)
+    .replace("<!--review:next-->", upcoming);
+})()}

@@ -1,0 +1,4 @@
+id,call,resolve_by,likelihood,approx_probability,confidence
+C1,An OPM-MEG brain scanner receives UK medical device approval for clinical use,2027-12-31,About even,about 45%,Low
+C2,Rentosertib is approved for idiopathic pulmonary fibrosis by any national medicines regulator,2028-12-31,Unlikely,about 30%,Moderate
+C3,Linglong One enters commercial operation,2026-12-31,Likely,about 65%,Low

@@ -211,6 +211,21 @@
       "pdf": "downloads/briefings/ai-in-uk-wealth.pdf",
       "image": "images/briefings/wealth-card.jpg",
       "imageAlt": "The annual review is going and the FCA says technology can decide when — 3.7 million clients pay for ongoing advice, ongoing services are 80 per cent of adviser-charge revenue, and 83 per cent of reviews were delivered across 22 large firms"
+    },
+    {
+      "id": "SAR-014",
+      "sector": "Central government services",
+      "technology": "AI",
+      "title": "AI in UK Central Government Services",
+      "standfirst": "DWP's advances model refers non-UK nationals at 3.35 times the rate of UK nationals, and those referrals are correct at about the same rate. The caseworker who decides is not told the model raised the case. Nothing published measures that review — while 60 per cent of benefit appeals heard are overturned for the claimant.",
+      "regulator": "NAO / PAC / ICO",
+      "humanMoment": "The referral a caseworker never knows the model made",
+      "date": "2026-09-29",
+      "pages": 15,
+      "page": "briefing-ai-uk-central-government.html",
+      "pdf": "downloads/briefings/ai-in-uk-central-government.pdf",
+      "image": "images/briefings/central-government-card.jpg",
+      "imageAlt": "The human review is there; whether it means anything is the question — 60 per cent of benefit appeals decided at hearing overturned for the claimant, 45 per cent for Universal Credit and 38 per cent of asylum appeals allowed, April to June 2026"
     }
   ],
   "collaborations": [

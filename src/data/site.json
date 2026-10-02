@@ -43,6 +43,7 @@
       "label": "Writing",
       "items": [
         { "label": "Essays and articles", "href": "/articles.html" },
+        { "label": "The Next Evolution Review", "href": "/review.html" },
         { "label": "Sector briefings", "href": "/briefings.html" },
         { "label": "Books", "href": "/books.html" },
         { "label": "Press and speaking", "href": "/press.html" }
@@ -90,6 +91,7 @@
       "heading": "Writing",
       "items": [
         { "label": "Essays and articles", "href": "/articles.html" },
+        { "label": "The Next Evolution Review", "href": "/review.html" },
         { "label": "Sector briefings", "href": "/briefings.html" },
         { "label": "Books", "href": "/books.html" },
         { "label": "Press and speaking", "href": "/press.html" },

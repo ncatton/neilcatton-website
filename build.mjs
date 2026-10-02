@@ -225,6 +225,10 @@ function clean() {
 function copyStatic() {
   const passthrough = [
     "images", "downloads", ".well-known",
+    /* The Next Evolution Review: one folder per issue, each a standalone
+       web edition with its PDF and data beside it. They are produced by
+       tools/import-review-issue.mjs and published as they are. */
+    "review",
     "robots.txt", "favicon.ico", "apple-touch-icon.png"
   ];
   for (const item of passthrough) {
@@ -420,6 +424,34 @@ function writeBriefingsFeed() {
   return items.length;
 }
 
+/* The Review's web editions are standalone documents, not pages built
+   from src/pages, so nothing above knows they exist. The register in
+   src/data/review.json is what puts them in sitemap.xml, the human
+   sitemap and the search index. A registered issue whose folder is
+   missing fails the build: a card on review.html linking to a 404 is
+   the failure this prevents. */
+function reviewEditions() {
+  const f = join(SRC, "data/review.json");
+  if (!existsSync(f)) return [];
+  return (readJSON(f).issues || []).map((i) => {
+    const dir = join(ROOT, i.path);
+    for (const file of ["index.html", "edition.css", i.pdf, i.ledger, i.calls]) {
+      if (!existsSync(join(dir, file))) {
+        throw new Error(`review.json lists ${i.label}, but ${i.path}${file} does not exist. Run tools/import-review-issue.mjs first.`);
+      }
+    }
+    return {
+      slug: `review-issue-${i.nn}`,
+      path: i.path,
+      canonical: helpers.abs(i.path),
+      title: `The Next Evolution Review, ${i.label}: ${i.title}`,
+      searchTitle: `The Next Evolution Review, ${i.label}: ${i.title}`,
+      description: i.summary,
+      sitemapGroup: "Main"
+    };
+  });
+}
+
 /* ── run ─────────────────────────────────────────────────────────── */
 
 function main() {
@@ -433,6 +465,8 @@ function main() {
   const all = [...metas, ...generated];
 
   let built = all.map(buildPage);
+  const editions = reviewEditions();
+  built = built.concat(editions);
 
   /* Second pass. The human-readable sitemap needs the finished page list,
      which does not exist until every page is built. Generating it removes
@@ -452,8 +486,9 @@ function main() {
 
   const ms = Date.now() - t0;
   console.log(
-    `built ${built.length} pages ` +
+    `built ${built.length - editions.length} pages ` +
     `(${metas.length} authored + ${generated.length} generated) · ` +
+    `review editions ${editions.length} · ` +
     `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · ` +
     `${YEARS_NUM} years since ${site.careerStartYear} · ${ms}ms`
   );

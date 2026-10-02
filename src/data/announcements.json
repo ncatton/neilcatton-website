@@ -2,6 +2,22 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "review-issue-01",
+      "text": "New periodical: The Next Evolution Review. Issue One asks who has to say yes before a working technology reaches people.",
+      "link": "review.html",
+      "linkText": "Read Issue One",
+      "date": "2026-10-02",
+      "expires": "2026-11-30"
+    },
+    {
+      "id": "briefing-ai-uk-central-government-2026-09",
+      "text": "New briefing: AI in UK Central Government Services. The human review is there — whether it means anything is the question.",
+      "link": "briefing-ai-uk-central-government.html",
+      "linkText": "Read the briefing",
+      "date": "2026-09-29",
+      "expires": "2026-11-30"
+    },
+    {
       "id": "briefings-ai-uk-financial-services-2026-09",
       "text": "Three new briefings: AI in UK Mortgages, Pensions, and Wealth & Investment Advice. Basel 3.1 revaluation applies from 1 January 2027.",
       "link": "briefings.html",

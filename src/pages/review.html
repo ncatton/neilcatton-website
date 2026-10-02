@@ -1,0 +1,185 @@
+<!--page
+{
+  "title": "The Next Evolution Review \u2014 Neil Catton",
+  "description": "A free periodical from Neil Catton. Every two months, one question about technology and the people it reaches, argued at length, sourced, and scored.",
+  "slug": "review",
+  "searchTitle": "The Next Evolution Review",
+  "layout": "layouts/review.html",
+  "data": [
+    "review"
+  ],
+  "css": ".review-current { background: var(--paper); padding: 5rem var(--col-pad); border-bottom: 1px solid var(--rule); }\n.review-current-inner, .review-band-inner { max-width: var(--max-wide); margin: 0 auto; }\n.issue { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 4rem; align-items: start; }\n\n/* The cover is drawn, not photographed: the Review's own ink and gold,\n   with the gold bar it carries down its spine. */\n.issue-cover { position: relative; display: flex; flex-direction: column; aspect-ratio: 210 / 297; background: #1a1c22; color: #fdfaf5; padding: 2rem 1.75rem 1.75rem 2.5rem; text-decoration: none; box-shadow: 0 14px 32px rgba(26,23,20,0.22); transition: transform 0.2s ease, box-shadow 0.2s ease; }\n.issue-cover::before { content: \"\"; position: absolute; left: 0; top: 0; bottom: 0; width: 0.75rem; background: #c9973a; }\n.issue-cover:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(26,23,20,0.28); }\n.issue-cover:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }\n.issue-cover-no { font-family: var(--serif); font-size: 3.25rem; font-weight: 700; line-height: 1; color: #e8b75a; align-self: flex-end; }\n.issue-cover-mast { font-family: var(--serif); font-size: 2rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; margin-top: 1.5rem; }\n.issue-cover-mast em { font-style: italic; font-weight: 400; color: #e8b75a; }\n.issue-cover-period { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,250,245,0.78); margin-top: 1rem; }\n.issue-cover-theme { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; line-height: 1.25; margin-top: auto; padding-top: 1.25rem; border-top: 1px solid rgba(232,183,90,0.55); }\n\n.issue-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem; }\n.issue-question { font-family: var(--serif); font-size: 1.2rem; font-style: italic; line-height: 1.55; color: var(--ink-mid); border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-bottom: 1.5rem; max-width: 40rem; }\n.issue-summary { font-size: 1.0625rem; line-height: 1.85; color: var(--ink); margin-bottom: 2rem; max-width: 40rem; }\n.issue-facts { border-top: 1px solid var(--rule); margin-bottom: 2rem; max-width: 40rem; }\n.issue-facts > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); }\n.issue-facts dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); padding-top: 0.2rem; }\n.issue-facts dd { font-size: 0.95rem; line-height: 1.6; color: var(--ink); }\n.issue-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }\n.issue-data { font-size: 0.95rem; line-height: 1.7; color: var(--ink-mid); margin-bottom: 1rem; max-width: 40rem; }\n.issue-data a, .review-prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 0.18em; }\n.issue-data a:hover, .review-prose a:hover { color: var(--ink); }\n.issue-cite { font-size: 0.875rem; line-height: 1.6; color: var(--ink-light); max-width: 40rem; }\n.issue-cite span { font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; margin-right: 0.5rem; }\n\n.issue-archive { margin-top: 4rem; border-top: 2px solid var(--ink); padding-top: 2rem; }\n.issue-archive-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); margin-bottom: 1rem; }\n.issue-archive ul { list-style: none; }\n.issue-archive a { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: 1.5rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }\n.issue-archive a:hover .ia-title { color: var(--accent); text-decoration: underline; }\n.ia-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); padding-top: 0.3rem; }\n.ia-title { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }\n\n.review-band { padding: 5rem var(--col-pad); border-bottom: 1px solid var(--rule); }\n.review-band--mid { background: var(--paper-mid); }\n.review-band--paper { background: var(--paper); }\n.review-prose { max-width: var(--max-prose); }\n.review-prose p { font-size: 1.0625rem; line-height: 1.85; color: var(--ink); margin-bottom: 1.25rem; }\n.review-prose p:last-child { margin-bottom: 0; }\n\n.carries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin-bottom: 2.5rem; }\n.carries > div { padding: 1.75rem 1.5rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--paper); }\n.carries h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; line-height: 1.3; color: var(--ink); margin-bottom: 0.6rem; }\n.carries p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-mid); }\n\n.review-close { background: var(--ink); padding: 5rem var(--col-pad); }\n.review-close-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; }\n.review-close h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; line-height: 1.2; color: var(--paper); margin-bottom: 1rem; }\n.review-close p { font-size: 1rem; line-height: 1.8; color: var(--on-dark); margin-bottom: 1.5rem; }\n.review-close .btn-ghost-light { margin: 0; }\n.review-close :focus-visible { outline-color: var(--paper); }\n\n@media (max-width: 900px) {\n  .issue { grid-template-columns: 1fr; gap: 2.5rem; }\n  .issue-cover { max-width: 300px; }\n  .carries { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n  .review-close-inner { grid-template-columns: 1fr; gap: 3rem; }\n}\n@media (max-width: 580px) {\n  .review-current, .review-band, .review-close { padding-top: 3.5rem; padding-bottom: 3.5rem; }\n  .carries { grid-template-columns: 1fr; }\n  .issue-facts > div { grid-template-columns: 1fr; gap: 0.15rem; }\n  .issue-archive a { grid-template-columns: 1fr; gap: 0.25rem; }\n  .issue-actions .btn { width: 100%; }\n}\n.review-standfirst { max-width: 600px; }",
+  "jsonld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Periodical",
+      "name": "The Next Evolution Review",
+      "url": "https://www.neilcatton.com/review.html",
+      "description": "A bi-monthly periodical on technology, ethics and human purpose. Each issue takes one question.",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "publisher": {
+        "@type": "Person",
+        "name": "Neil Catton",
+        "url": "https://www.neilcatton.com/"
+      },
+      "editor": {
+        "@type": "Person",
+        "name": "Neil Catton"
+      },
+      "hasPart": [
+        {
+          "@type": "PublicationIssue",
+          "issueNumber": "1",
+          "name": "The distance between proven and permitted",
+          "datePublished": "2026-10-02",
+          "url": "https://www.neilcatton.com/review/issue-01/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.neilcatton.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Writing",
+          "item": "https://www.neilcatton.com/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Next Evolution Review",
+          "item": "https://www.neilcatton.com/review.html"
+        }
+      ]
+    }
+  ]
+}
+-->
+<header class="page-header" aria-labelledby="page-title">
+    <div class="page-header-inner">
+      <span class="page-label">Writing</span>
+      <h1 class="page-title" id="page-title">The Next Evolution<br><em>Review</em></h1>
+      <p class="page-standfirst review-standfirst">
+        A periodical. Every two months, one question is given the room a single
+        essay never has. Free to read, sourced throughout, and nothing in it is
+        a reprint.
+      </p>
+    </div>
+  </header>
+
+  <!-- CURRENT ISSUE — rendered from src/data/review.json -->
+  <section class="review-current" aria-labelledby="current-heading">
+    <div class="review-current-inner">
+      <!--review:issues-->
+    </div>
+  </section>
+
+  <!-- WHY A PERIODICAL -->
+  <section class="review-band review-band--mid" aria-labelledby="why-heading">
+    <div class="review-band-inner">
+      <p class="eyebrow">Why a periodical</p>
+      <h2 class="section-heading" id="why-heading">An argument that takes six pieces</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <div class="review-prose">
+        <p>
+          Between July and September 2026, four essays on <em>{{substackName}}</em>
+          made versions of the same argument. The subjects were different and so
+          were the sectors. The point underneath was the same, and the repetition
+          went unrecognised until the fourth.
+        </p>
+        <p>
+          That is the cost of publishing several times a week. Each piece stands
+          alone, and a reader who arrives at the fourth has no way of knowing the
+          first three exist. An argument that takes six pieces to build is never
+          visible in any one of them.
+        </p>
+        <p>
+          The Review is the slower form. Each issue takes one question, sets a
+          long cover story against it, and gathers shorter articles that come at
+          the same question from other sectors. Where an argument first appeared
+          in shorter form on <a href="{{substack}}" target="_blank" rel="noopener noreferrer">the Substack</a>,
+          the fact box at the foot of the article names the original.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT EVERY ISSUE CARRIES -->
+  <section class="review-band review-band--paper" aria-labelledby="carries-heading">
+    <div class="review-band-inner">
+      <p class="eyebrow">How it is built</p>
+      <h2 class="section-heading" id="carries-heading">What every issue carries</h2>
+      <hr class="section-rule" aria-hidden="true">
+      <div class="carries">
+        <div>
+          <h3>Cases where the argument fails</h3>
+          <p>Each issue includes cases its own argument does not explain, and grades them in the open. Issue One has three.</p>
+        </div>
+        <div>
+          <h3>A source for every factual claim</h3>
+          <p>Numbered notes in each article's fact box point to the primary source. Judgements are labelled as judgements.</p>
+        </div>
+        <div>
+          <h3>A corrections page</h3>
+          <p>It appears in every issue, including when it is empty. Issue One carries a correction to an essay published in September.</p>
+        </div>
+        <div>
+          <h3>Dated calls</h3>
+          <p>Forecasts with a stated likelihood and a date. Each is scored in the first issue after its date passes, right or wrong.</p>
+        </div>
+        <div>
+          <h3>A three-line summary on every article</h3>
+          <p>The case, the claim and what it costs, so the whole issue can be skimmed in a few minutes.</p>
+        </div>
+        <div>
+          <h3>The data behind the figures</h3>
+          <p>The ledger of cases and the calls are published as CSV beside each issue, so the arithmetic can be checked.</p>
+        </div>
+      </div>
+      <div class="review-prose">
+        <p>
+          The method page in each issue says how the cases were chosen, what the
+          author declares, and how AI assistance was used in the drafting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT ISSUE — rendered from src/data/review.json -->
+  <section class="review-band review-band--mid" aria-labelledby="next-heading">
+    <div class="review-band-inner">
+      <!--review:next-->
+    </div>
+  </section>
+
+  <!-- CORRECTIONS AND REUSE -->
+  <section class="review-close" aria-label="Corrections, reuse and how to follow">
+    <div class="review-close-inner">
+      <div>
+        <h2>If something is wrong, say so</h2>
+        <p>
+          Corrections are published in the next issue, with the reader credited
+          unless they ask otherwise, and the original is amended with a dated note.
+        </p>
+        <a class="btn-ghost-light" href="/contact.html">Send a correction</a>
+      </div>
+      <div>
+        <h2>Quote it, cite it, send it on</h2>
+        <p>
+          Attribution is the only condition. The Review is published every two
+          months and is free. There is no subscriber target, and no brief set by
+          anyone other than the author. New issues are announced on the Substack.
+        </p>
+        <a class="btn-ghost-light" href="{{substack}}" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
+      </div>
+    </div>
+  </section>

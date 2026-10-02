@@ -120,6 +120,41 @@ Optional front-matter keys:
 
 ---
 
+## The Next Evolution Review
+
+The Review is built outside this repo (`OUTPUTS/The Next Evolution Review/`).
+Its section page is `src/pages/review.html`; each issue is a standalone web
+edition under `review/issue-NN/`, with its PDF and the two CSVs beside it.
+`build.mjs` copies `review/` to `dist/` untouched.
+
+To publish an issue:
+
+```bash
+node tools/import-review-issue.mjs "<folder holding the issue's HTML, PDF and CSVs>" 02
+```
+
+then add the issue to `src/data/review.json` and move `next` on. That file
+drives the issue blocks on `review.html`, and puts the edition in
+`sitemap.xml`, the human sitemap and the search index. A listed issue whose
+files are missing fails the build.
+
+The import exists because the Review's HTML edition is one self-contained
+file: inline `<style>` blocks, `style=""` attributes and fonts on a `file://`
+path. Under this site's CSP (`style-src 'self'`) that arrives as unstyled
+text. The script writes a copy the policy allows (external `edition.css`,
+classes instead of style attributes, fonts from `/assets/fonts`), names the
+empty page-reference links for screen readers, and adds the phone layout.
+Never copy the Review's HTML in by hand, and never edit `review/issue-NN/`
+directly: re-run the import.
+
+Lato, Lora and Cousine (served as Liberation Mono, its metric twin) are in
+`src/assets/fonts` for the editions only. Lato and Lora are OFL, Cousine is
+Apache 2.0, all from the `@fontsource` packages.
+
+`check-a11y.mjs` covers the editions as well as the pages.
+
+---
+
 ## Canonical facts
 
 Anything appearing on more than one page belongs in `src/data/site.json`,

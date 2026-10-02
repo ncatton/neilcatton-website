@@ -1,0 +1,37 @@
+{
+  "_about": "The register of issues of The Next Evolution Review. It drives review.html (the newest issue is the feature, earlier ones are listed beneath it), and build.mjs reads it to put each web edition in sitemap.xml, the human sitemap and the search index. Publishing ritual: run tools/import-review-issue.mjs on the issue's output folder, add an entry here, move 'next' on to the issue after. A listed issue whose files are missing fails the build.",
+
+  "issues": [
+    {
+      "nn": "01",
+      "number": 1,
+      "label": "Issue One",
+      "period": "October–November 2026",
+      "date": "2026-10-02",
+      "version": "1.0",
+      "title": "The distance between proven and permitted",
+      "question": "When something that works does not reach the people it was built for, how many people had to say yes, and who is answerable for the time they took?",
+      "summary": "A naval trial put a new atomic clock to sea on one programme's authority. A brain scanner built from related physics has been in research use since 2021 and is still waiting for approval. Twelve cases, one question: who holds the authority to say yes?",
+      "facts": [
+        { "k": "Extent", "v": "33 pages. A cover story and ten articles across six sections" },
+        { "k": "Cases", "v": "Twelve. Ten graded, two shown for comparison" },
+        { "k": "Verdicts", "v": "Two explained, two partly, three where permission runs the other way, three not explained" },
+        { "k": "Calls", "v": "Three dated forecasts, the first resolving on 31 December 2026" }
+      ],
+      "citeAs": "Catton, N. (2026). The distance between proven and permitted. The Next Evolution Review, Issue 1, October–November 2026.",
+      "path": "/review/issue-01/",
+      "pdf": "The-Next-Evolution-Review-Issue-01.pdf",
+      "pdfSize": "1 MB",
+      "ledger": "The-Next-Evolution-Review-Issue-01-ledger.csv",
+      "calls": "The-Next-Evolution-Review-Issue-01-calls.csv"
+    }
+  ],
+
+  "next": {
+    "label": "Issue Two",
+    "period": "December 2026–January 2027",
+    "title": "The thing that was working before it was measured",
+    "summary": "Issue Two takes the opposite question. What happens when a measurement is introduced to something that was already working, and the measurement changes the thing it was brought in to observe?",
+    "also": "It also carries the first case tracker: every case from Issue One with its status updated, and the calls checked against events."
+  }
+}

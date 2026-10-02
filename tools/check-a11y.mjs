@@ -51,6 +51,15 @@ function serve() {
 }
 
 const pages = readdirSync(DIST).filter((f) => extname(f) === ".html").sort();
+/* The Review's web editions live one level down, as review/issue-NN/.
+   They are whole documents with their own stylesheet, so they get the
+   same three checks as everything else. */
+const reviewDir = join(DIST, "review");
+if (existsSync(reviewDir)) {
+  for (const issue of readdirSync(reviewDir).sort()) {
+    if (existsSync(join(reviewDir, issue, "index.html"))) pages.push(`review/${issue}/`);
+  }
+}
 const axeSrc = readFileSync(join(ROOT, "node_modules/axe-core/axe.min.js"), "utf8");
 
 const server = await serve();
