@@ -183,21 +183,6 @@
       "imageAlt": "The regulator's model ranks borrowers better, its own case study was declined by a filter — an AUC of 0.751 for the machine-learning model against 0.669 for the conventional one, and a 74 per cent higher arrears hazard above 90 per cent loan-to-value"
     },
     {
-      "id": "SAR-008",
-      "sector": "Pensions & retirement income",
-      "technology": "AI",
-      "title": "AI in UK Pensions & Retirement Income",
-      "standfirst": "The FCA says it remains comfortable AI can work inside targeted support, a regime built for groups of people. The Pensions Regulator is building defaults to protect members from biased or flawed AI-powered advice. 69.4 per cent of first pension accesses happen without advice.",
-      "regulator": "FCA / TPR",
-      "humanMoment": "The drawdown decision",
-      "date": "2026-09-24",
-      "pages": 16,
-      "page": "briefing-ai-uk-pensions.html",
-      "pdf": "downloads/briefings/ai-in-uk-pensions.pdf",
-      "image": "images/briefings/pensions-card.jpg",
-      "imageAlt": "One decision, two regulators, two answers on AI — 961,575 pension pots accessed for the first time in 2024/25, 69.4 per cent without regulated advice, against 112,000 Pension Wise appointments in the same year"
-    },
-    {
       "id": "SAR-009",
       "sector": "Wealth & investment advice",
       "technology": "AI",

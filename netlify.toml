@@ -37,6 +37,19 @@
 # neilcatton.substack.com. Two live rules for one path is a trap; that file
 # has been removed and this is now the only definition.
 
+# Pensions briefing (SAR-008) withdrawn 9 Oct 2026 - send old links to the briefings index.
+[[redirects]]
+  from = "/briefing-ai-uk-pensions.html"
+  to = "/briefings.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/downloads/briefings/ai-in-uk-pensions.pdf"
+  to = "/briefings.html"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/substack-feed"
   to = "/.netlify/functions/substack-feed"
