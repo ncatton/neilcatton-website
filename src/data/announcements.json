@@ -2,6 +2,22 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "cto-grand-rounds-neural-deep",
+      "text": "New CTO Grand Rounds session: taking AI innovation into Toyota, reviewed with Tomas Jankauskas of Neural DEEP.",
+      "link": "cto-grand-rounds.html",
+      "linkText": "View sessions",
+      "date": "2026-10-15",
+      "expires": "2026-11-15"
+    },
+    {
+      "id": "briefing-ai-uk-nhs-acute-care-2026-10",
+      "text": "New briefing: AI in NHS Acute Care. The score misses it — the family catches it.",
+      "link": "briefing-ai-uk-nhs-acute-care.html",
+      "linkText": "Read the briefing",
+      "date": "2026-10-15",
+      "expires": "2026-12-31"
+    },
+    {
       "id": "review-issue-01",
       "text": "New periodical: The Next Evolution Review. Issue One asks who has to say yes before a working technology reaches people.",
       "link": "review.html",

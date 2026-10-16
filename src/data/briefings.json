@@ -211,6 +211,21 @@
       "pdf": "downloads/briefings/ai-in-uk-central-government.pdf",
       "image": "images/briefings/central-government-card.jpg",
       "imageAlt": "The human review is there; whether it means anything is the question — 60 per cent of benefit appeals decided at hearing overturned for the claimant, 45 per cent for Universal Credit and 38 per cent of asylum appeals allowed, April to June 2026"
+    },
+    {
+      "id": "SAR-011",
+      "sector": "NHS acute care",
+      "technology": "AI",
+      "title": "AI in NHS Acute Care: Patient Flow and Triage",
+      "standfirst": "In 83 per cent of Martha's Rule deterioration calls where an early warning score had been taken, the score would not have triggered escalation — and 69 per cent of those patients then needed their care changed. AI triage is now reaching every NHS App user, judged so far on phone queues.",
+      "regulator": "CQC / MHRA / NHS England",
+      "humanMoment": "The patient the score did not flag, and the family who did",
+      "date": "2026-10-15",
+      "pages": 16,
+      "page": "briefing-ai-uk-nhs-acute-care.html",
+      "pdf": "downloads/briefings/ai-in-uk-nhs-acute-care.pdf",
+      "image": "images/briefings/nhs-acute-care-card.jpg",
+      "imageAlt": "The score misses it; the family catches it — in 83 per cent of Martha's Rule deterioration calls with an early warning score recorded, the score would not have triggered escalation; 69 per cent of those patients then needed a change in care; 72 per cent of calls came from families and carers"
     }
   ],
   "collaborations": [
