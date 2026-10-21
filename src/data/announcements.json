@@ -2,6 +2,14 @@
   "_about": "Homepage announcements — short signposts to current activity (sessions, talks, launches). Rendered as a slim bar at the top of index.html, newest first, up to 3 shown at once. See data/README.md for the publishing ritual.",
   "announcements": [
     {
+      "id": "briefing-ai-uk-passenger-transport-2026-10",
+      "text": "New briefing: AI in UK Passenger Transport. The claim gets faster — the passenger who needs help waits.",
+      "link": "briefing-ai-uk-passenger-transport.html",
+      "linkText": "Read the briefing",
+      "date": "2026-10-20",
+      "expires": "2027-01-31"
+    },
+    {
       "id": "cto-grand-rounds-neural-deep",
       "text": "New CTO Grand Rounds session: taking AI innovation into Toyota, reviewed with Tomas Jankauskas of Neural DEEP.",
       "link": "cto-grand-rounds.html",

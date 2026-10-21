@@ -226,6 +226,21 @@
       "pdf": "downloads/briefings/ai-in-uk-nhs-acute-care.pdf",
       "image": "images/briefings/nhs-acute-care-card.jpg",
       "imageAlt": "The score misses it; the family catches it — in 83 per cent of Martha's Rule deterioration calls with an early warning score recorded, the score would not have triggered escalation; 69 per cent of those patients then needed a change in care; 72 per cent of calls came from families and carers"
+    },
+    {
+      "id": "SAR-019",
+      "sector": "Passenger transport",
+      "technology": "AI",
+      "title": "AI in UK Passenger Transport: Rail, Aviation and Maritime",
+      "standfirst": "Rail compensation claims are up 55 per cent and the industry's AI plan sets out to automate compensation eligibility. When a train is cancelled, only 67 per cent of passengers with booked assistance are met, against 86 per cent when it runs. The regulators already require case-by-case judgement for them.",
+      "regulator": "ORR / CAA / MCA",
+      "humanMoment": "The passenger whose assistance booking does not survive the cancellation",
+      "date": "2026-10-20",
+      "pages": 17,
+      "page": "briefing-ai-uk-passenger-transport.html",
+      "pdf": "downloads/briefings/ai-in-uk-passenger-transport.pdf",
+      "image": "images/briefings/passenger-transport-card.jpg",
+      "imageAlt": "The claim gets faster; the passenger who needs help waits — 86 per cent of rail passengers with booked assistance were met when their service ran without disruption, 67 per cent when their train was cancelled, and 63 per cent were satisfied with Passenger Assist after a cancellation"
     }
   ],
   "collaborations": [
