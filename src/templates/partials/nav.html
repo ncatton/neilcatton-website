@@ -1,45 +1,19 @@
-<!-- Site navigation.
-
-     One <ul> serves both the desktop bar and the mobile panel, so
-     aria-current can never disagree between the two. Dropdown parents
-     are <button aria-expanded>, not links: a link parent navigates
-     instead of opening the menu on touch, reports no state to
-     assistive technology, and duplicates the first item in its own
-     menu. The section index is the first item inside the menu instead.
-
-     Before this rebuild there was no mobile navigation at all — below
-     580px .nav-links was set to display:none and nothing replaced it,
-     taking the search control and the "Book a call" button with it. -->
-<nav class="site-nav" aria-label="Site navigation" id="site-nav" data-nav-open="false">
-  <a href="/" class="nav-wordmark"${d.path === "/" ? ' aria-current="page"' : ""}>${s.name}</a>
-
-  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel">
-    <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-    <span class="nav-toggle-text">Menu</span>
-  </button>
-
-  <div class="nav-panel" id="nav-panel">
-    <ul class="nav-links" role="list">
-${s.nav.map((group) => {
-  if (!group.items) {
-    const current = group.href === d.path;
-    return `      <li><a href="${group.href}"${current ? ' aria-current="page"' : ""}>${group.label}</a></li>`;
-  }
-  const inSection = d.section === group.id;
-  return `      <li class="nav-dropdown">
-        <button type="button" class="nav-dropdown-toggle" id="navbtn-${group.id}"
-                aria-expanded="false" aria-controls="navmenu-${group.id}"${inSection ? ' data-section-current' : ""}>
-          ${group.label} <span class="caret" aria-hidden="true">&#9662;</span>
-        </button>
-        <ul class="dropdown-menu" id="navmenu-${group.id}" role="list" aria-labelledby="navbtn-${group.id}">
-${group.items.map((item) => item.divider
-    ? `          <li class="dropdown-divider" role="presentation"></li>`
-    : `          <li><a href="${item.href}"${item.href === d.path ? ' aria-current="page"' : ""}${h.ext(item.href)}>${item.label}</a></li>`
-).join("\n")}
-        </ul>
-      </li>`;
-}).join("\n")}
-      <li class="nav-cta"><a href="${s.booking}" class="btn-nav" target="_blank" rel="noopener noreferrer">Book a call</a></li>
-    </ul>
+<!-- Site navigation. Native details elements, so the menus work with no script at all; site.js adds
+     Escape and click-away. Below 1000px the whole set collapses into one Menu. -->
+${(() => {
+  const CHEV = '<svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"></path></svg>';
+  /* A briefing, book or service page marks its index in the menu as the place it belongs. */
+  const parent = d.path.startsWith("/briefing-") ? "/briefings.html" : d.path.startsWith("/book-") ? "/books.html" : d.path.startsWith("/service-") ? "/services.html" : null;
+  const cur = (href) => href === d.path ? ' aria-current="page"' : (href === parent ? ' aria-current="true"' : "");
+  const links = (items) => items.map((i) => `<li><a class="nv-a" href="${i.href}"${cur(i.href)}>${i.label}</a></li>`).join("");
+  const tops = s.nav.map((g) => `<details class="nv-d${d.section === g.id ? " nv-cur" : ""}" name="nv"><summary class="nv-b">${g.label}${CHEV}</summary><div class="nv-panel"><div class="nv-in"><p class="nv-h">${g.label}</p><ul class="nv-grid">${links(g.items)}</ul></div></div></details>`).join("");
+  const groups = s.nav.map((g) => `<div class="nv-m"><p class="nv-h">${g.label}</p><ul>${links(g.items)}</ul></div>`).join("");
+  const search = '<a class="nv-b" href="/sitemap.html" data-search>Search</a>';
+  return `<header class="nv">
+  <div class="nv-row">
+    <a class="nv-brand" href="/"${d.path === "/" ? ' aria-current="page"' : ""}>${s.name}</a>
+    <nav class="nv-main" aria-label="Main">${tops}${search}<a class="nv-b nv-cta" href="${s.booking}">Book a call</a></nav>
+    <nav class="nv-phone" aria-label="Main, small screens">${search}<details class="nv-d nv-mob" name="nv"><summary class="nv-b"><span class="nv-open">Menu</span><span class="nv-close">Close</span></summary><div class="nv-panel"><div class="nv-in">${groups}<a class="nv-book" href="${s.booking}">Book a call</a></div></div></details></nav>
   </div>
-</nav>
+</header>`;
+})()}

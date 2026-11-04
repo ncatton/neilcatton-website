@@ -1,33 +1,33 @@
-<!-- Pattern Map layout.
-
-     The nine patterns and their fifty-eight instances used to be an
-     inline JavaScript array rendered into an empty <div> in the
-     browser. With JavaScript off the page carried 1,066 characters of
-     text and no content at all — and nothing for a crawler or an
-     answer engine that does not execute JavaScript. They are rendered
-     here at build time from src/data/patterns.json; the sector filter
-     still runs in the browser, but only to hide rows that already
-     exist in the HTML. -->
-${d.body.replace('<div class="chip-row" id="chipRow"></div>', `<div class="chip-row" id="chipRow" role="group" aria-label="Filter instances by sector">
-          <button type="button" class="chip is-active" data-sector="" aria-pressed="true">All sectors</button>
-${[...new Set(d.data.patterns.flatMap((p) => p.instances.map((i) => i.sector)))].sort().map((sector) =>
-`          <button type="button" class="chip" data-sector="${h.esc(sector)}" aria-pressed="false">${h.esc(sector)}</button>`).join("\n")}
-        </div>`).replace('<p class="filter-status" id="filterStatus"></p>', '<p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>').replace('<div id="patternsContainer"></div>', d.data.patterns.map((p) => `<section class="pattern" data-pattern-id="${p.id}">
-          <div class="pattern-head">
-            <span class="pattern-id" aria-hidden="true">${p.id}</span>
-            <h3 class="pattern-name">${p.name}</h3>
-          </div>
-          <p class="pattern-def">${p.def}</p>
-${p.card
-  ? `          <p class="card-companion"><span class="card-companion-label">Practice Library card</span> <span>${p.card.map((c) => `<a href="${c.url}"${h.ext(c.url)}>${c.title}</a>`).join(", ")}.</span></p>`
-  : p.cardComing
-  ? `          <p class="card-companion is-coming"><span class="card-companion-label">Coming to the Practice Library</span> <span>${p.cardComing.join(", ")}.</span></p>`
-  : `          <p class="card-companion is-empty">No Practice Library card for this one — recognising the pattern is the point; not every pattern resolves into a checklist.</p>`}
-          <ul class="instances">
-${p.instances.map((i) => `            <li class="instance" data-sector="${h.esc(i.sector)}">
-              <span class="instance-sector">${h.esc(i.sector)}</span>
-              <span><span class="instance-title">${i.url ? `<a href="${i.url}"${h.ext(i.url)}>${i.title}</a>` : i.title}</span>${i.status === "pipeline" ? `<span class="instance-status">Not yet published</span>` : ""}<span class="instance-note">${i.note}</span></span>
-            </li>`).join("\n")}
-          </ul>
-${p.trackingNote ? `          <p class="tracking-note">${p.trackingNote}</p>` : ""}
-        </section>`).join("\n"))}
+<!-- Pattern Map. Rendered at build time from src/data/patterns.json and pattern-groups.json, so the whole map
+     is in the HTML. The sector filter only changes what is already there. -->
+${(() => {
+  const P = d.data.patterns, G = d.data["pattern-groups"];
+  const rowsOf = (p) => p.instances.map((i) => ({ g: G.groups[i.sector] || "Across sectors", t: i.title, n: i.note, u: i.url }));
+  const G2 = G.order;
+  const seen = new Set(P.flatMap((p) => p.instances.map((i) => i.url)));
+  const pip = (n) => { const per = n > 4 ? 3 : (n > 2 ? 2 : n); return `pw-${per} ph-${Math.ceil(n / per)}`; };
+  const chev = '<svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg>';
+  const chips = ["", ...G2].map((n) => `<button class="chip" type="button" aria-pressed="${n ? "false" : "true"}" data-g="${h.esc(n)}">${n || "All sectors"}</button>`).join("");
+  const cols = G2.map((n) => `<div class="mx-ch" role="columnheader" data-g="${h.esc(n)}"><span>${n}</span></div>`).join("");
+  const mrows = P.map((p) => {
+    const rows = rowsOf(p);
+    return `<div class="mx-row" role="row" data-gs="${h.esc(JSON.stringify([...new Set(rows.map((r) => r.g))]))}"><div class="mx-rh" role="rowheader">${p.name}</div>${G2.map((n) => {
+      const k = rows.filter((r) => r.g === n).length;
+      return `<div class="mx-c" role="cell" data-g="${h.esc(n)}"><span class="sr">${k ? k + (k === 1 ? " essay" : " essays") : "None"}</span><span class="pips ${k ? pip(k) : ""}" aria-hidden="true"></span></div>`;
+    }).join("")}</div>`;
+  }).join("");
+  const ess = (r) => `<li><a class="ess" href="${r.u}" data-g="${h.esc(r.g)}"><span class="ess-g">${r.g}</span><span><span class="ess-t">${r.t}</span><span class="ess-n">${r.n}</span></span></a></li>`;
+  const pats = P.map((p) => {
+    const rows = rowsOf(p), cards = p.card || [], coming = p.cardComing || [];
+    const label = cards.length ? "Practice Library cards" : (coming.length ? "Coming to the Practice Library" : "Practice Library");
+    const text = cards.length ? "" : (coming.length ? coming.join(", ") : "No Practice Library card for this one. Recognising the pattern is the point; not every pattern resolves into a checklist.");
+    return `<details class="pat" data-name="${h.esc(p.name)}"><summary><span class="pat-t">${p.name}</span><span class="pat-n"><span class="sum-pips sw-${rows.length}" aria-hidden="true"></span><span>${rows.length} essays</span></span>${chev}</summary><div class="pat-b"><p class="pat-d">${p.def}</p><div class="comp"><b>${label}</b> <span>${text}</span>${cards.map((k) => `<a href="${k.url}">${k.title}</a>`).join("")}</div><ul class="ess-list">${rows.map(ess).join("")}</ul><p class="track">${p.track || ""}</p></div></details>`;
+  }).join("");
+  const total = new Set(P.flatMap((p) => p.instances.map((i) => i.title))).size;
+  return d.body
+    .replace("<!--n-patterns-->", () => String(P.length))
+    .replace("<!--n-essays-->", () => String(total))
+    .replace("<!--n-sectors-->", () => String(G2.length))
+    .replace("<!--chips-->", () => chips).replace("<!--cols-->", () => cols)
+    .replace("<!--mrows-->", () => mrows).replace("<!--pats-->", () => pats);
+})()}

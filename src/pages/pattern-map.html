@@ -1,19 +1,18 @@
 <!--page
 {
-  "title": "The Pattern Map \u2014 The Practice Library \u2014 Neil Catton",
-  "description": "See whether the problem in front of you has already been named \u2014 and traced across sectors. The same structural failures, linked back to where they were written about.",
-  "slug": "pattern-map",
-  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 1.5rem; max-width: 20ch; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); max-width: 680px; }\n  .intro-section { background: #ede9e3; padding: 4rem var(--col-pad); }\n  .intro-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .intro-inner p { font-size: 1.0625rem; line-height: 1.85; color: #1a1714; max-width: 720px; }\n  .intro-inner p + p { margin-top: 1.1rem; }\n  .patterns-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .patterns-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 2.5rem; }\n  .filter-bar { margin-bottom: 3.5rem; }\n  .filter-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5c5652; display: block; margin-bottom: 0.85rem; }\n  .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }\n  .chip { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em; color: #3d3935; background: #ede9e3; border: 1.5px solid #d4cfc9; padding: 0.45rem 0.95rem; cursor: pointer; transition: all 0.2s; min-height: 36px; }\n  .chip:hover { border-color: #2b4a6f; color: #2b4a6f; }\n  .chip.is-active { background: #1a1714; border-color: #1a1714; color: #f5f2ee; }\n  .chip[data-reset] { background: transparent; }\n  .chip[data-reset].is-active { background: #1a1714; }\n  .filter-status { font-family: var(--sans); font-size: 0.85rem; color: #5c5652; margin-top: 1rem; min-height: 1.2em; }\n  .pattern { border-top: 1px solid #d4cfc9; padding: 3rem 0; }\n  .pattern:first-of-type { border-top: none; padding-top: 0; }\n  .pattern.is-pattern-hidden { display: none; }\n  .pattern-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }\n  .pattern-id { font-family: var(--serif); font-style: italic; font-size: 1.6rem; color: #2b4a6f; flex-shrink: 0; }\n  .pattern-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; line-height: 1.25; color: #1a1714; }\n  .pattern-def { font-size: 0.98rem; line-height: 1.75; color: #3d3935; max-width: 700px; margin-bottom: 1.5rem; }\n  .card-companion { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; background: #ede9e3; border-left: 3px solid #2b4a6f; padding: 0.8rem 1.1rem; margin-bottom: 1.75rem; font-size: 0.88rem; color: #1a1714; }\n  .card-companion-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5c5652; flex-shrink: 0; }\n  .card-companion a { color: #2b4a6f; text-decoration: none; border-bottom: 1px solid rgba(43,74,111,0.35); }\n  .card-companion a:hover { border-color: #2b4a6f; }\n  .card-companion.is-coming { border-left-color: var(--ink-light); background: transparent; padding-left: 1rem; }\n  .card-companion.is-coming .card-companion-label { color: var(--ink-light); }\n  .card-companion.is-empty { border-left-color: #d4cfc9; background: transparent; padding-left: 1rem; font-style: italic; color: #5c5652; }\n  .instances { list-style: none; }\n  .instance { display: grid; grid-template-columns: 160px 1fr; gap: 0.5rem 1.5rem; padding: 0.9rem 0; border-bottom: 1px dotted #d4cfc9; }\n  .instance:last-child { border-bottom: none; }\n  .instance.is-hidden { display: none; }\n  .instance-sector { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #2b4a6f; padding-top: 0.15rem; }\n  .instance-title { font-family: var(--sans); font-weight: 600; color: #1a1714; }\n  .instance-title a { color: #1a1714; text-decoration: none; border-bottom: 1px solid #d4cfc9; }\n  .instance-title a:hover { color: #2b4a6f; border-color: #2b4a6f; }\n  .instance-note { color: #3d3935; font-size: 0.94rem; display: block; margin-top: 0.2rem; }\n  .instance-status { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #b03a2e; margin-left: 0.5rem; }\n  .tracking-note { font-size: 0.88rem; font-style: italic; color: #5c5652; margin-top: 1.25rem; max-width: 700px; }\n@media (max-width: 640px) {\n  .instance { grid-template-columns: 1fr; }\n  .instance-sector { padding-top: 0; }\n}\n@media (max-width: 860px) {\n  .page-header-inner { padding-bottom: 3rem; }\n}",
+  "title": "The Pattern Map — The Practice Library — Neil Catton",
+  "description": "See whether the problem in front of you has already been named — and traced across sectors. The same structural failures, linked back to where they were written about.",
   "layout": "layouts/pattern-map.html",
   "data": [
-    "patterns"
+    "patterns",
+    "pattern-groups"
   ],
   "jsonld": [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "The Pattern Map",
-      "description": "See whether the problem in front of you has already been named \u2014 and traced across sectors. The same structural failures, linked back to where they were written about.",
+      "description": "See whether the problem in front of you has already been named — and traced across sectors. The same structural failures, linked back to where they were written about.",
       "url": "https://www.neilcatton.com/pattern-map.html",
       "isPartOf": {
         "@type": "WebSite",
@@ -50,55 +49,60 @@
       ]
     }
   ],
-  "js": "/* Pattern Map \u2014 sector filter.\n\n   The patterns are server-rendered; this only shows and hides rows\n   that are already in the HTML. Chips carry aria-pressed (the Practice\n   Library filter already did; this one did not), and the result count\n   goes into a live region so a screen reader user hears what changed. */\n(function () {\n  \"use strict\";\n  var chips = [].slice.call(document.querySelectorAll(\".chip[data-sector]\"));\n  var status = document.getElementById(\"filterStatus\");\n  if (!chips.length) return;\n\n  function applyFilter(sector) {\n    chips.forEach(function (c) {\n      var on = c.dataset.sector === sector;\n      c.classList.toggle(\"is-active\", on);\n      c.setAttribute(\"aria-pressed\", on ? \"true\" : \"false\");\n    });\n\n    var visibleInstances = 0, visiblePatterns = 0;\n    [].slice.call(document.querySelectorAll(\".pattern\")).forEach(function (section) {\n      var matches = 0;\n      [].slice.call(section.querySelectorAll(\".instance\")).forEach(function (row) {\n        var match = !sector || row.dataset.sector === sector;\n        row.classList.toggle(\"is-hidden\", !match);\n        row.hidden = !match;\n        if (match) { matches++; visibleInstances++; }\n      });\n      var hide = matches === 0;\n      section.classList.toggle(\"is-pattern-hidden\", hide);\n      section.hidden = hide;\n      if (!hide) visiblePatterns++;\n    });\n\n    if (status) {\n      status.textContent = !sector ? \"\" :\n        \"Showing \" + visibleInstances + \" instance\" + (visibleInstances === 1 ? \"\" : \"s\") +\n        \" across \" + visiblePatterns + \" pattern\" + (visiblePatterns === 1 ? \"\" : \"s\") +\n        \" tagged \" + sector + \".\";\n    }\n  }\n\n  chips.forEach(function (c) {\n    c.addEventListener(\"click\", function () { applyFilter(c.dataset.sector); });\n  });\n})();\n",
-  "searchTitle": "The Pattern Map"
+  "searchTitle": "The Pattern Map",
+  "slug": "pattern-map",
+  "css": ".sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }\n\n.stats { display: flex; flex-wrap: wrap; gap: 1rem clamp(2rem, 6vw, 5rem); margin-top: clamp(2rem, 4vw, 3rem); }\n.stat-n { display: block; font-family: var(--serif); font-weight: 300; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; letter-spacing: -0.025em; color: var(--gold); }\n.fl { display: block; margin-bottom: 0.75rem; font-weight: 600; }\n.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }\n.chip { min-height: 44px; padding: 0.375rem 0.875rem; background: transparent; color: var(--paper); border: 1px solid var(--paper); font: 600 0.9375rem/1.2 var(--sans); cursor: pointer; }\n.chip:hover { background: rgba(245,242,238,0.16); }\n.chip[aria-pressed=\"true\"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }\n.status { min-height: 1.75rem; margin-top: 1rem; font-weight: 600; }\n.mx { margin-top: clamp(1.5rem, 3vw, 2.5rem); }\n.mx-row { display: grid; grid-template-columns: minmax(17rem, 1.5fr) repeat(15, minmax(0, 1fr)); align-items: center; border-top: 1px solid var(--on-dark-rule); }\n.mx-row-h { align-items: end; border-top: 0; }\n.mx-ch { display: flex; justify-content: center; padding-bottom: 0.625rem; }\n.mx-ch span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 0.9375rem; font-weight: 600; white-space: nowrap; }\n.mx-ch.off span { color: rgba(245,242,238,0.72); }\n.mx-ch.on span { color: var(--gold); }\n.mx-rh { padding: 0.75rem 1rem 0.75rem 0; font-weight: 600; line-height: 1.2; }\n.mx-rh.off { color: rgba(245,242,238,0.72); font-weight: 400; }\n.mx-c { display: flex; align-items: center; justify-content: center; min-height: 4rem; }\n.mx-c.col { background: rgba(232,183,90,0.14); }\n.pips { display: block; background-image: radial-gradient(circle at 6px 6px, var(--gold) 5px, transparent 5.5px); background-size: 13px 13px; forced-color-adjust: none; }\n.pips.off { opacity: 0.28; }\n.sum-pips { display: block; background-image: radial-gradient(circle at 5px 5px, var(--ink) 4px, transparent 4.5px); background-size: 12px 12px; height: 12px; forced-color-adjust: none; }\n.pat { border-top: 1px solid var(--ink-rule); }\n.pat:last-of-type { border-bottom: 1px solid var(--ink-rule); }\n.pat > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto 20px; gap: 0.5rem 1.5rem; align-items: center; min-height: 84px; padding: 1rem 0; cursor: pointer; list-style: none; }\n.pat > summary::-webkit-details-marker { display: none; }\n.pat > summary:hover .pat-t { color: var(--navy); }\n.pat-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; }\n.pat-n { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; white-space: nowrap; }\n.pat[open] .detail-mark { transform: rotate(45deg); }\n.pat-b { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }\n.pat-d { max-width: 50rem; font-size: clamp(1.125rem, 1.8vw, 1.375rem); line-height: 1.4; }\n.comp { max-width: 50rem; margin-top: 1rem; padding: 0.875rem 1rem; background: var(--paper-mid); }\n.comp b { display: block; font-weight: 600; }\n.comp a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 1.25rem; font-weight: 600; }\n.ess-list { margin-top: 1.25rem; }\n.ess { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0.25rem 1.5rem; padding: 0.875rem 0; border-top: 1px solid var(--stone); color: var(--ink); text-decoration: none; }\n.ess-g { font-size: 0.9375rem; font-weight: 600; color: var(--navy); }\n.ess-t { display: block; font-weight: 600; font-size: 1.125rem; line-height: 1.25; }\n.ess:hover .ess-t { color: var(--navy); text-decoration: underline; text-underline-offset: 0.2em; }\n.ess-n { display: block; color: var(--ink-mid); line-height: 1.35; }\n.track { max-width: 50rem; margin-top: 1rem; font-style: italic; color: var(--ink-mid); }\n.fgroup { margin-bottom: clamp(2rem, 4vw, 3rem); }\n.fgroup-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 0.5rem; }\n.close-row { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; }\n@media (max-width: 1100px) { .mx { display: none; } }\n@media (max-width: 640px) { .ess { grid-template-columns: 1fr; } .pat > summary { grid-template-columns: minmax(0, 1fr) 20px; } .pat-n { grid-row: 2; } .sum-pips { display: none; } }\n@media (forced-colors: active) { .chip[aria-pressed=\"true\"] { border-width: 3px; } .mx-c.col { outline: 1px solid CanvasText; } }\n.pw-1 { width: 13px; }\n.pw-2 { width: 26px; }\n.pw-3 { width: 39px; }\n.ph-1 { height: 13px; }\n.ph-2 { height: 26px; }\n.ph-3 { height: 39px; }\n.ph-4 { height: 52px; }\n.ph-5 { height: 65px; }\n.ph-6 { height: 78px; }\n.ph-7 { height: 91px; }\n.sw-1 { width: 12px; }\n.sw-2 { width: 24px; }\n.sw-3 { width: 36px; }\n.sw-4 { width: 48px; }\n.sw-5 { width: 60px; }\n.sw-6 { width: 72px; }\n.sw-7 { width: 84px; }\n.sw-8 { width: 96px; }\n.sw-9 { width: 108px; }\n.sw-10 { width: 120px; }\n.sw-11 { width: 132px; }\n.sw-12 { width: 144px; }\n.sw-13 { width: 156px; }\n.sw-14 { width: 168px; }\n.sw-15 { width: 180px; }\n.sw-16 { width: 192px; }\n.sw-17 { width: 204px; }\n.sw-18 { width: 216px; }\n.sw-19 { width: 228px; }\n.sw-20 { width: 240px; }\n.sw-21 { width: 252px; }\n.sw-22 { width: 264px; }\n.sw-23 { width: 276px; }\n.sw-24 { width: 288px; }\n.sw-25 { width: 300px; }\n.sw-26 { width: 312px; }\n.sw-27 { width: 324px; }\n.sw-28 { width: 336px; }\n.sw-29 { width: 348px; }\n.sw-30 { width: 360px; }\n.sw-31 { width: 372px; }\n.sw-32 { width: 384px; }\n.sw-33 { width: 396px; }\n.sw-34 { width: 408px; }\n.sw-35 { width: 420px; }\n.sw-36 { width: 432px; }\n.sw-37 { width: 444px; }\n.sw-38 { width: 456px; }\n.sw-39 { width: 468px; }\n.sw-40 { width: 480px; }\n",
+  "sheets": [
+    "shared"
+  ],
+  "js": "/* Pattern Map: the sector filter. Everything it shows is already in the HTML. */\n(function () {\n  \"use strict\";\n  var chips = [].slice.call(document.querySelectorAll(\".chip\"));\n  if (!chips.length) return;\n  var status = document.getElementById(\"pm-status\"), label = document.getElementById(\"pm-label\"), title = document.getElementById(\"list-title\");\n  var all = document.getElementById(\"pm-all\"), some = document.getElementById(\"pm-some\");\n  var ALL = { status: status.textContent, label: label.textContent, title: title.textContent };\n  function set(g) {\n    chips.forEach(function (c) { c.setAttribute(\"aria-pressed\", String(c.getAttribute(\"data-g\") === g)); });\n    [].slice.call(document.querySelectorAll(\".mx-ch\")).forEach(function (h) {\n      h.classList.toggle(\"on\", !!g && h.getAttribute(\"data-g\") === g);\n      h.classList.toggle(\"off\", !!g && h.getAttribute(\"data-g\") !== g);\n    });\n    [].slice.call(document.querySelectorAll(\".mx-row[data-gs]\")).forEach(function (r) {\n      var hit = !g || JSON.parse(r.getAttribute(\"data-gs\")).indexOf(g) !== -1;\n      r.querySelector(\".mx-rh\").classList.toggle(\"off\", !hit);\n    });\n    [].slice.call(document.querySelectorAll(\".mx-c\")).forEach(function (c) {\n      var mine = c.getAttribute(\"data-g\") === g;\n      c.classList.toggle(\"col\", !!g && mine);\n      c.querySelector(\".pips\").classList.toggle(\"off\", !!g && !mine);\n    });\n    if (!g) {\n      status.textContent = ALL.status; label.textContent = ALL.label; title.textContent = ALL.title;\n      all.hidden = false; some.hidden = true; some.textContent = \"\";\n      return;\n    }\n    some.textContent = \"\";\n    var total = 0, pats = 0;\n    [].slice.call(all.querySelectorAll(\".pat\")).forEach(function (p) {\n      var rows = [].slice.call(p.querySelectorAll('.ess[data-g=\"' + g + '\"]'));\n      if (!rows.length) return;\n      pats++; total += rows.length;\n      var box = document.createElement(\"div\"); box.className = \"fgroup\";\n      var h = document.createElement(\"h3\"); h.className = \"fgroup-t\"; h.textContent = p.getAttribute(\"data-name\");\n      var ul = document.createElement(\"ul\");\n      rows.forEach(function (a) { var li = document.createElement(\"li\"); li.appendChild(a.cloneNode(true)); ul.appendChild(li); });\n      box.appendChild(h); box.appendChild(ul); some.appendChild(box);\n    });\n    status.textContent = total + (total === 1 ? \" essay\" : \" essays\") + \" across \" + pats + (pats === 1 ? \" pattern\" : \" patterns\") + \" in \" + g + \".\";\n    label.textContent = g; title.textContent = \"Where this sector shows up\";\n    all.hidden = true; some.hidden = false;\n  }\n  chips.forEach(function (c) { c.addEventListener(\"click\", function () { set(c.getAttribute(\"data-g\")); }); });\n})();\n"
 }
 -->
-<header class="page-header" aria-labelledby="page-title">
-    <div class="page-header-inner">
-      <span class="page-label">Practice Library &mdash; The Pattern Map</span>
-      <h1 class="page-title" id="page-title">The Pattern <em>Map.</em></h1>
-      <p class="page-standfirst">
-        The same handful of structural failures, traced wherever they've shown
-        up across {{years.words}} years and more than twenty sectors — each one
-        linked back to where it was written about, and to the card that gives
-        you something to do about it, where one exists.
-      </p>
+<section class="dark u-cc697f" aria-labelledby="page-title">
+  <div class="inner hero u-97c956">
+    <span class="label">Practice Library: the Pattern Map</span>
+    <h1 id="page-title" class="h1 u-0f7805">The same failures, <em class="u-bd0267">wherever you look.</em></h1>
+    <div class="stats">
+      <p><span class="stat-n"><!--n-patterns--></span>patterns</p>
+      <p><span class="stat-n"><!--n-essays--></span>essays</p>
+      <p><span class="stat-n"><!--n-sectors--></span>sectors</p>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section class="intro-section" aria-label="About this map">
-    <div class="intro-inner">
-      <p>
-        These aren't a list of unrelated observations. They're the same small
-        set of structural failures, recurring under different names in
-        different industries — the same mechanism that fails a fraud victim
-        in banking also fails a patient in the NHS, and a candidate applying
-        for a job. Seeing the pattern is the first step; the sector instances
-        below are the evidence, not the argument.
-      </p>
-      <p>
-        Built from what's actually been published, not from theory. Some
-        patterns already have a Practice Library card attached — something
-        you can act on. Others don't, because not every pattern resolves into
-        a checklist. Recognising the shape of a problem is not the same as
-        fixing it, and this map doesn't pretend otherwise.
-      </p>
-    </div>
-  </section>
-
-  <section class="patterns-section" id="patterns" aria-labelledby="patterns-heading">
-    <div class="patterns-inner">
-      <span class="section-label">The map</span>
-      <h2 class="section-heading" id="patterns-heading">Trace a pattern across sectors</h2>
-      <hr class="section-rule" aria-hidden="true">
-
-      <div class="filter-bar">
-        <span class="filter-label">Filter by sector</span>
-        <div class="chip-row" id="chipRow"></div>
-        <p class="filter-status" id="filterStatus"></p>
+<section class="dark u-cc697f" aria-labelledby="map-title">
+  <div class="inner u-ad15c2">
+    <h2 id="map-title" class="sr">Essays by pattern and sector</h2>
+    <div role="group" aria-labelledby="fl-label">
+      <span class="fl" id="fl-label">Pick a sector</span>
+      <div class="chips">
+        <!--chips-->
       </div>
-
-      <div id="patternsContainer"></div>
     </div>
-  </section>
+    <p class="status" id="pm-status" role="status">Each dot is an essay. Pick a sector to see where it sits.</p>
+    <div class="mx" role="table" aria-label="Essays by pattern and sector">
+      <div class="mx-row mx-row-h" role="row">
+        <span class="sr" role="columnheader">Pattern</span><span aria-hidden="true"></span>
+        <!--cols-->
+      </div>
+      <!--mrows-->
+    </div>
+  </div>
+</section>
+
+<section class="u-183248" aria-labelledby="list-title">
+  <div class="inner pad">
+    <span class="label" id="pm-label">Open a pattern</span>
+    <h2 id="list-title" class="h2 u-10e4c5">Every pattern, and where it was written about</h2>
+    <div id="pm-all"><!--pats--></div><div id="pm-some" hidden></div>
+  </div>
+</section>
+
+<section class="dark u-f40485" aria-labelledby="close-title">
+  <div class="inner pad close-row">
+    <h2 id="close-title" class="h2">Recognising the shape of a problem is not the same as fixing it.</h2>
+    <div class="acts">
+      <a class="btn btn-gold" href="/practice-library.html">The Practice Library</a>
+    </div>
+  </div>
+</section>

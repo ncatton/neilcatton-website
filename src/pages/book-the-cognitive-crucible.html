@@ -1,0 +1,80 @@
+<!--page
+{
+  "slug": "book-the-cognitive-crucible",
+  "sheets": [
+    "shared",
+    "book"
+  ],
+  "js": "(function () {\n\"use strict\";\nclass Component extends DCLogic {\n  constructor(props) { super(props); this.state = { lens: 0, who: 0 }; }\n  renderVals() {\n    var self = this, st = this.state;\n    var L = [[\"The Attention Engine\", \"Designed to capture.\", \"Platforms are not designed to inform. They are designed to capture and hold attention, using variable reward mechanisms that exploit the same neurological pathways as addiction.\"], [\"Weaponised Messaging\", \"Influence has industrialised.\", \"The same tools that power recommendation engines power disinformation campaigns. The distinction is intent, not mechanism.\"], [\"Algorithmic Bias\", \"Algorithms are not neutral.\", \"They encode the values, assumptions, and blind spots of those who built them, and they apply those values at scale, to decisions that affect individual lives.\"], [\"Identity Erosion\", \"A version of you, optimised for them.\", \"When systems infer who you are from behavioural data, they produce a version of you optimised for their purposes, not yours. That model then shapes what you see, what you’re offered, and what decisions are made about you.\"]];\n    var W = [];\n    var out = {};\n    if (L.length) {\n      out.lenses = L.map(function (x, i) { return { name: x[0], pressed: i === st.lens ? 'true' : 'false', pick: function () { self.setState({ lens: i }); } }; });\n      out.lens = { name: L[st.lens][0], head: L[st.lens][1], body: L[st.lens][2] };\n    }\n    if (W.length) {\n      out.whos = W.map(function (x, i) { return { name: x[0], pressed: i === st.who ? 'true' : 'false', pick: function () { self.setState({ who: i }); } }; });\n      out.who = { head: W[st.who][1], items: W[st.who][2].map(function (t) { return { t: t }; }) };\n    }\n    return out;\n  }\n}\nwindow.dcMount(Component, {\"2\": \"<section class=\\\"dark u-cc697f\\\" aria-labelledby=\\\"fw-title\\\">\\n  <div class=\\\"inner pad\\\">\\n    <span class=\\\"label\\\">Cognitive risk</span>\\n    <h2 id=\\\"fw-title\\\" class=\\\"h2\\\">How intelligent systems reshape attention, belief and decision-making, often invisibly.</h2>\\n    <div class=\\\"lenses\\\" role=\\\"group\\\" aria-label=\\\"How intelligent systems reshape attention, belief and decision-making, often invisibly.\\\">\\n      <sc-for list=\\\"[[lenses]]\\\" as=\\\"l\\\" hint-placeholder-count=\\\"4\\\">\\n        <button class=\\\"lens\\\" type=\\\"button\\\" aria-pressed=\\\"[[l.pressed]]\\\" onClick=\\\"[[l.pick]]\\\">[[l.name]]</button>\\n      </sc-for>\\n    </div>\\n    <div class=\\\"lens-p\\\" aria-live=\\\"polite\\\">\\n      <p class=\\\"lens-n\\\">[[lens.name]]</p>\\n      <div><p class=\\\"lens-h\\\">[[lens.head]]</p><p class=\\\"lead\\\">[[lens.body]]</p></div>\\n    </div>\\n  </div>\\n</section>\"});\n})();\n",
+  "usesDc": true,
+  "title": "The Cognitive Crucible — Neil Catton",
+  "searchTitle": "The Cognitive Crucible (book)",
+  "section": "read",
+  "description": "A critical guide for leaders, strategists and everyday citizens. Not a book of crisis: a pathway to balance alongside future technologies."
+}
+-->
+<section class="dark u-6bbd61" aria-labelledby="page-title">
+  <div class="inner hero bk-top">
+    <div>
+      <a class="bk-back" href="/books.html">Books</a>
+      <p class="bk-when">September 2025 · Trilogy II: Agency</p>
+      <h1 id="page-title" class="h1">The Cognitive Crucible</h1>
+      <p class="bk-s">Reclaiming attention, agency, and meaning in an engineered world.</p>
+      <p class="lead bk-hook">A critical guide for leaders, strategists and everyday citizens. Not a book of crisis: a pathway to balance alongside future technologies.</p>
+      <div class="acts"><a class="btn btn-gold" href="https://amzn.eu/d/c8e7gAx">Buy on Amazon</a></div>
+    </div>
+    <img class="bk-cover" src="/images/books/the-cognitive-crucible-cover.jpg" alt="Cover of The Cognitive Crucible" width="700" height="1044">
+  </div>
+</section>
+<section class="u-183248" aria-labelledby="arg-title">
+  <div class="inner pad">
+    <span class="label">Five parts</span>
+    <h2 id="arg-title" class="h2">From where attention comes from, to what sovereignty looks like in practice.</h2>
+    <ol class="dotline parts u-5df08e"><li class="dotstep">Origins of Attention</li><li class="dotstep">The Attention Engine</li><li class="dotstep">Contested Focus</li><li class="dotstep">Weaponised Messaging</li><li class="dotstep">Designing for Human Sovereignty</li></ol>
+  </div>
+</section>
+<section data-dc="2" class="dark u-cc697f" aria-labelledby="fw-title">
+  <div class="inner pad">
+    <span class="label">Cognitive risk</span>
+    <h2 id="fw-title" class="h2">How intelligent systems reshape attention, belief and decision-making, often invisibly.</h2>
+    <div class="lenses" role="group" aria-label="How intelligent systems reshape attention, belief and decision-making, often invisibly.">
+      <button class="lens" type="button" aria-pressed="true">The Attention Engine</button><button class="lens" type="button" aria-pressed="false">Weaponised Messaging</button><button class="lens" type="button" aria-pressed="false">Algorithmic Bias</button><button class="lens" type="button" aria-pressed="false">Identity Erosion</button>
+    </div>
+    <div class="lens-p" aria-live="polite">
+      <p class="lens-n">The Attention Engine</p>
+      <div><p class="lens-h">Designed to capture.</p><p class="lead">Platforms are not designed to inform. They are designed to capture and hold attention, using variable reward mechanisms that exploit the same neurological pathways as addiction.</p></div>
+    </div>
+  </div>
+</section>
+<section class="u-183248" aria-labelledby="r-title">
+  <div class="inner pad">
+    <span class="label">Six rights</span>
+    <h2 id="r-title" class="h2">What every digital citizen holds.</h2>
+    <ol class="rights"><li class="right"><span class="right-t">The Right to Know</span>When interacting with an automated or AI system, you have the right to be told. Simulated humans must be disclosed. Algorithmic curation must be declared.</li><li class="right"><span class="right-t">The Right to Understand</span>Algorithmic decisions affecting you must be explainable in plain language, not buried in legal terms, not obscured by claims of proprietary complexity.</li><li class="right"><span class="right-t">The Right to Challenge</span>Any decision made about you by an automated system must be contestable. There must always be a human in the loop, and that human must have genuine authority to act.</li><li class="right"><span class="right-t">The Right to Disengage</span>Disengagement must be as intuitive as engagement. Systems must be built with withdrawal in mind, as a fundamental design requirement, not as an afterthought or a dark pattern.</li><li class="right"><span class="right-t">The Right to Data Sovereignty</span>You own your data. You have the right to access, correct, port, and delete it, on your terms, not the platform’s. Data sovereignty is not a technical feature. It is a right.</li><li class="right"><span class="right-t">The Right to Opt Out</span>The right to prioritise depth over convenience, and meaning over speed. Cognitive sovereignty demands that persuasion be transparent, and that opting out be genuinely possible.</li></ol>
+  </div>
+</section>
+<section class="dark u-6bbd61" aria-labelledby="t-title">
+  <div class="inner pad">
+    <span class="label">Three tests</span>
+    <h2 id="t-title" class="h2">For any system in your mental environment.</h2>
+    <ol class="tests"><li class="test"><span class="test-t">Assistive</span><span class="test-q">“Does this help me do something I couldn’t do, or couldn’t do easily, without it?”</span>Not does it automate the thing: does it help the person. There is a meaningful difference between a system that extends human capability and one that replaces human judgement without accountability.</li><li class="test"><span class="test-t">Augmentive</span><span class="test-q">“Does this genuinely add something: insight, capability, possibility?”</span>Or does it merely replace one constraint with a different one? Augmentation means the human is more capable with the system than without it, not that the system has become the human.</li><li class="test"><span class="test-t">Adaptive</span><span class="test-q">“Does this respond to my specific context and circumstance?”</span>Or does it serve the average and call that good enough? A system that cannot adapt to the individual in front of it is not serving that individual. It is serving a statistical model of them.</li></ol>
+  </div>
+</section>
+<section class="on-gold u-e35e18" aria-labelledby="rq-title">
+  <div class="inner pad">
+    <h2 id="rq-title" class="label">Reader responses</h2>
+    <p class="rq">“An eye-opening analysis and deep awareness of how algorithms are shaping us. A must-read — taking back control of your mental environment.”<span class="rw">Amazon reader</span></p><p class="rq">“A brilliantly written book that truly focuses the mind and makes you look again at the role technology plays in your day-to-day life. This isn't a book of crisis — more of a pathway to balance and harmony alongside future technologies.”<span class="rw">Amazon reader</span></p>
+  </div>
+</section>
+<section class="dark u-cc697f" aria-labelledby="end-title">
+  <div class="inner pad end">
+    <div><h2 id="end-title" class="h2">The full cognitive sovereignty framework, on one page.</h2><p>The complete A2 framework poster: free, no sign-up required.</p></div>
+    <div class="acts"><a class="btn btn-gold" href="/downloads/BOOK_TWO_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf">Download the poster (PDF)</a><a class="btn btn-line" href="https://amzn.eu/d/c8e7gAx">Buy on Amazon</a></div>
+  </div>
+</section>
+<section class="u-8b410e" aria-labelledby="more-title">
+  <div class="inner pad">
+    <h2 id="more-title" class="label">The other books</h2>
+    <div class="more"><a class="mo" href="/book-the-next-evolution.html"><img src="/images/books/the-next-evolution-cover.jpg" alt="" width="700" height="1122"><span>The Next Evolution</span></a><a class="mo" href="/book-the-shadow-system.html"><img src="/images/books/the-shadow-system-cover.jpg" alt="" width="700" height="1122"><span>The Shadow System</span></a><a class="mo" href="/book-working-as-designed.html"><img src="/images/books/working-as-designed-cover.jpg" alt="" width="536" height="860"><span>Working as Designed</span></a><a class="mo" href="/book-predictive-purpose.html"><img src="/images/books/predictive-purpose-cover.jpg" alt="" width="700" height="1122"><span>Predictive Purpose</span></a></div>
+  </div>
+</section>

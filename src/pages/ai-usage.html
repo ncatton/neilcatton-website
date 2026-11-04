@@ -1,76 +1,28 @@
 <!--page
 {
-  "title": "AI Usage Statement \u2014 Neil Catton",
+  "title": "AI Usage Statement — Neil Catton",
   "description": "How this site is built and maintained with Claude, and why nothing on it calls an AI model while you're using it.",
+  "searchTitle": "AI usage statement",
   "slug": "ai-usage",
-  "css": ".page-header { padding: 9rem var(--col-pad) 3rem; background: var(--paper); border-bottom: 1px solid var(--rule); }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); display: block; margin-bottom: 1rem; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }\n  .page-title em { font-style: italic; color: var(--accent); }\n  .page-standfirst { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 620px; }\n  .prose-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }\n  .prose-inner { max-width: 720px; margin: 0 auto; }\n  .prose-inner p, .prose-inner ul { margin-bottom: 1.25rem; color: var(--ink-mid); }\n  .prose-inner ul { padding-left: 1.4rem; }\n  .prose-inner li { margin-bottom: 0.5rem; }\n  .prose-inner h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--ink); margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.01em; }\n  .prose-inner h2:first-child { margin-top: 0; }\n  .prose-inner a { color: var(--accent); }\n  .prose-inner strong { color: var(--ink); }\n  .updated-note { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 2.5rem; }",
-  "searchTitle": "AI usage statement"
+  "sheets": [
+    "shared",
+    "policy"
+  ]
 }
 -->
-<!-- NAV -->
-
-  <header class="page-header" aria-labelledby="page-title">
-    <div class="page-header-inner">
-      <span class="page-label">Legal</span>
-      <h1 class="page-title" id="page-title">AI Usage <em>Statement</em></h1>
-      <p class="page-standfirst">
-        Where AI does the work on this site, where it deliberately doesn't, and how the whole
-        thing gets built.
-      </p>
-    </div>
-  </header>
-
-  <section class="prose-section" aria-labelledby="page-title">
-    <div class="prose-inner">
-      <p class="updated-note">Last updated: {{buildDate}}</p>
-
-      <h2>How this site is built and maintained</h2>
-      <p>
-        This site is built and maintained with Claude, Anthropic's AI assistant — including
-        the August 2026 rebuild that replaced thirty-three hand-edited pages with the templated
-        site you're reading now. Claude writes the templates, the build tooling, and most of the
-        code in this repository, and works alongside Neil on the copy across the service pages,
-        the sector briefings, and pages like this one.
-      </p>
-      <p>
-        None of it publishes itself. Every change — code or copy — is directed by Neil,
-        reviewed by Neil, and approved by Neil before it goes anywhere near the live site. The
-        ideas, the research, the argument, and the final sign-off are his.
-      </p>
-
-      <h2>Where AI actually runs on this site</h2>
-<p>
-Nothing on this site calls an AI model while you're using it. An earlier tool, Your Plan,
-did. It was removed in November 2026.
-</p>
-
-
-      <h2>Where it deliberately doesn't</h2>
-      <p>Two things on this site that might look AI-powered aren't:</p>
-      <ul>
-        <li><strong>The contact form.</strong> Nothing you send through it is read, sorted, or
-        drafted by AI. It goes straight to Neil's own inbox as plain email, via Microsoft Graph
-        — no AI is involved at any point</li>
-        <li><strong><a href="https://tool.neilcatton.com">Predictive Purpose self-assessment</a></strong>, the
-        diagnostic linked from the Practice Library, runs entirely in your own
-        browser. Its forty statements and its scoring are fixed — transcribed from the
-        appendix of <a href="/book-predictive-purpose.html">the book</a> — and every calculation happens on your device. Nothing is sent to a
-        server at all: your answers are saved only to your own browser's local storage, so you
-        can close the page and come back to it later, and no AI is used anywhere in it</li>
-      </ul>
-
-      <h2>Questions</h2>
-      <p>
-        If anything here is unclear, or you want more detail on how a specific part of this site
-        works, email <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a>.
-      </p>
-
-      <h2>Review cadence</h2>
-      <p>
-        This statement is reviewed whenever how the site uses AI changes materially, and at least
-        once a year regardless. The date at the top of this page shows when it was last revised.
-      </p>
-    </div>
-  </section>
-
-<!-- FOOTER -->
+<section class="dark u-cc697f" aria-labelledby="page-title">
+ <div class="inner hero">
+ <span class="label">Legal</span>
+ <h1 id="page-title" class="h1">AI Usage Statement</h1>
+ <p class="lead u-85d171">Where AI does the work on this site, where it deliberately doesn't, and how the whole thing gets built.</p>
+ <p class="datel">Last updated: 4 November 2026</p>
+ <ul class="glance"><li class="gl"><span class="gl-n">0</span><span>features call an AI model while you use the site</span></li><li class="gl"><span class="gl-n">0</span><span>AI involved in the contact form</span></li><li class="gl"><span class="gl-n">0</span><span>answers sent to a server by the self-assessment</span></li></ul>
+ </div>
+</section>
+<section class="sects" aria-label="The full statement">
+ <div class="inner pad">
+<!--POLICY-->
+<div class="sect"><h2 class="sect-h">How this site is built and maintained</h2><div class="sect-b"><p>This site is built and maintained with Claude, Anthropic's AI assistant — including the August 2026 rebuild that replaced thirty-three hand-edited pages with the templated site you're reading now. Claude writes the templates, the build tooling, and most of the code in this repository, and works alongside Neil on the copy across the service pages, the sector briefings, and pages like this one.</p><p>None of it publishes itself. Every change — code or copy — is directed by Neil, reviewed by Neil, and approved by Neil before it goes anywhere near the live site. The ideas, the research, the argument, and the final sign-off are his.</p></div></div><div class="sect"><h2 class="sect-h">Where AI actually runs on this site</h2><div class="sect-b"><p>Nothing on this site calls an AI model while you’re using it. An earlier tool, Your Plan, did. It was removed in November 2026.</p></div></div><div class="sect"><h2 class="sect-h">Where it deliberately doesn’t</h2><div class="sect-b"><p>Two things on this site that might look AI-powered aren't:</p><ul><li><b>The contact form.</b> Nothing you send through it is read, sorted, or drafted by AI. It goes straight to Neil's own inbox as plain email, via Microsoft Graph — no AI is involved at any point</li><li><b><a href="https://tool.neilcatton.com">Predictive Purpose self-assessment</a></b>, the diagnostic linked from the Practice Library, runs entirely in your own browser. Its forty statements and its scoring are fixed — transcribed from the appendix of <a href="/book-predictive-purpose.html">the book</a> — and every calculation happens on your device. Nothing is sent to a server at all: your answers are saved only to your own browser's local storage, so you can close the page and come back to it later, and no AI is used anywhere in it</li></ul></div></div><div class="sect"><h2 class="sect-h">Questions</h2><div class="sect-b"><p>If anything here is unclear, or you want more detail on how a specific part of this site works, email <a href="mailto:nc@neilcatton.com">nc@neilcatton.com</a>.</p></div></div><div class="sect"><h2 class="sect-h">Review cadence</h2><div class="sect-b"><p>This statement is reviewed whenever how the site uses AI changes materially, and at least once a year regardless. The date at the top of this page shows when it was last revised.</p></div></div>
+<!--/POLICY-->
+ </div>
+</section>

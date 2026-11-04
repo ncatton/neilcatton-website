@@ -11,7 +11,10 @@ Generated static site. Read `README.md` (front-matter keys, canonical-fact token
 - A page: `src/pages/<slug>.html` (JSON front matter in an HTML comment, then body).
 - Shared styling: `src/assets/site.css`, the whole design system. Shared behaviour: `src/assets/site.js`.
 - Nav, footer, canonical facts, booking link: `src/data/site.json`.
-- The twelve service pages: `src/data/services.json` + `src/templates/layouts/service.html`.
+- Page-family styles: `src/assets/shared.css`, `service.css`, `briefing.css`, `sector.css`, `policy.css`, `book.css`, `errors.css`, chosen with `"sheets"` in front matter.
+- Service, briefing, sector and book pages are authored files in `src/pages/`. Tiles and the feed come from `src/data/briefings.json` (`tile`), the deck and card list from `practice-library.json`, the map from `patterns.json` and `pattern-groups.json`.
+- `review.html` is authored for Issue One. When an issue is imported, update that page as well as `review.json`.
+- Recordings: `audio/<slug>-human-moment.mp3` plus `src/data/audio.json`. Nothing shows until the file exists.
 - Data files are under `src/data/`. A bare `data/` folder at the repo root is ignored by the build; flag it, don't write to it.
 - Reviews and audits go in `../Reviews/`, outside the repo, so they're never deployed.
 
@@ -20,7 +23,8 @@ Generated static site. Read `README.md` (front-matter keys, canonical-fact token
 2. A fact that appears twice is a token in `site.json` (`{{years.words}}`, `{{substack}}`, `{{booking}}`…). Years are computed from `careerStartYear: 1987`. An unknown token fails the build.
 3. No inline `style=""` and no `<style>` blocks: the CSP is `style-src 'self'` and drops them silently.
 4. Run `npm run check` before publishing (zero axe violations, no horizontal overflow at 375px, no control under 24×24; it also gates CI). Run `npm run check:csp` after any CSP change in `netlify.toml`.
-5. Contrast: translucent paper fails 4.5:1 below 0.55 alpha on `--ink` and 0.78 on `--accent`. Use the `--on-dark`, `--accent-lift` and `--marker` tokens.
+5. Contrast: translucent paper fails 4.5:1 below 0.55 alpha on `--ink`. Keep to the tokens in `shared.css`.
+7. `transition-ready.js` must stay in the head after the stylesheets. Without it Chromium skips the number transition whenever a deferred script is pending.
 6. `package.json` is load-bearing for the Netlify Functions. Never add `"type": "module"` (`substack-feed.js`, `search-feed.js` and `practice-library-feed.js` are CommonJS; `contact-form.mjs` is ESM). Breaking this still deploys green and then returns 502s.
 
 ## Functions

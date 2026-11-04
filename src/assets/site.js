@@ -44,125 +44,25 @@
     } catch (e) { return ""; }
   }
 
-  /* ── 1. NAV ───────────────────────────────────────────────────── */
-
-  var nav = document.getElementById("site-nav");
-
-  if (nav) {
-    window.addEventListener("scroll", function () {
-      nav.classList.toggle("scrolled", window.scrollY > 40);
-    }, { passive: true });
-  }
-
-  /* Mobile panel.
-     Before this existed, `.nav-links { display: none }` fired below
-     580px and nothing replaced it — no hamburger anywhere on the site.
-     On a phone the only visible destinations were the four footer
-     links that happened to fit. Contact was not among them. */
-  var navToggle = document.getElementById("nav-toggle");
-
-  /* The panel sits below the bar, and the bar's height changes with the
-     viewport. Measure it rather than guessing. */
-  function syncNavHeight() {
-    if (nav) nav.style.setProperty("--nav-h", nav.offsetHeight + "px");
-  }
-  syncNavHeight();
-  window.addEventListener("resize", syncNavHeight, { passive: true });
-
-  function setNavOpen(open) {
-    if (!nav || !navToggle) return;
-    if (open) syncNavHeight();
-    nav.setAttribute("data-nav-open", open ? "true" : "false");
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    navToggle.querySelector(".nav-toggle-text").textContent = open ? "Close" : "Menu";
-    document.body.setAttribute("data-nav-open", open ? "true" : "false");
-  }
-
-  function navIsOpen() {
-    return !!nav && nav.getAttribute("data-nav-open") === "true";
-  }
-
-  if (navToggle) {
-    navToggle.addEventListener("click", function () {
-      var open = !navIsOpen();
-      setNavOpen(open);
-      if (open) {
-        var first = nav.querySelector(".nav-panel a, .nav-panel button");
-        if (first) first.focus();
-      }
+  /* ── 1. MENUS ──────────────────────────────────────────── */
+  /* The menus are native <details name="nv">: they open, close and exclude each other with no
+     script at all. This adds what the platform does not: Escape, and closing on a click elsewhere. */
+  (function () {
+    var menus = [].slice.call(document.querySelectorAll(".nv details"));
+    function closeAll(except) { menus.forEach(function (d) { if (d !== except) d.open = false; }); }
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = menus.filter(function (d) { return d.open; })[0];
+      if (open) { open.open = false; open.querySelector("summary").focus(); }
     });
-  }
-
-  /* Dropdown disclosures. Click rather than hover: a hover-only menu
-     cannot be opened on a touch device (tapping the parent navigates
-     instead) and reports no state to assistive technology. */
-  var dropdownToggles = [].slice.call(document.querySelectorAll(".nav-dropdown-toggle"));
-
-  function closeAllDropdowns(except) {
-    dropdownToggles.forEach(function (t) {
-      if (t !== except) t.setAttribute("aria-expanded", "false");
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest || !e.target.closest(".nv details")) closeAll();
     });
-  }
-
-  dropdownToggles.forEach(function (toggle) {
-    toggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var open = toggle.getAttribute("aria-expanded") === "true";
-      closeAllDropdowns(toggle);
-      toggle.setAttribute("aria-expanded", open ? "false" : "true");
-    });
-
-    /* Left/right arrows move between items inside an open menu. */
-    var menu = toggle.nextElementSibling;
-    if (menu && menu.classList.contains("dropdown-menu")) {
-      menu.addEventListener("keydown", function (e) {
-        var items = [].slice.call(menu.querySelectorAll("a"));
-        var i = items.indexOf(document.activeElement);
-        if (e.key === "ArrowDown" && i > -1) { e.preventDefault(); items[Math.min(i + 1, items.length - 1)].focus(); }
-        else if (e.key === "ArrowUp" && i > -1) { e.preventDefault(); if (i === 0) toggle.focus(); else items[i - 1].focus(); }
-      });
-    }
-
-    toggle.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowDown") {
-        e.preventDefault();
-        toggle.setAttribute("aria-expanded", "true");
-        var first = toggle.nextElementSibling && toggle.nextElementSibling.querySelector("a");
-        if (first) first.focus();
-      }
-    });
-  });
-
-  /* Escape closes the innermost thing that is open. Click outside
-     closes any open dropdown. */
-  document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
-    var openToggle = dropdownToggles.filter(function (t) { return t.getAttribute("aria-expanded") === "true"; })[0];
-    if (openToggle) {
-      openToggle.setAttribute("aria-expanded", "false");
-      openToggle.focus();
-      return;
-    }
-    if (navIsOpen()) {
-      setNavOpen(false);
-      if (navToggle) navToggle.focus();
-    }
-  });
-
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest || !e.target.closest(".nav-dropdown")) closeAllDropdowns(null);
-  });
-
-  /* Keep state honest when the viewport crosses the breakpoint. */
-  if (window.matchMedia) {
-    var mq = window.matchMedia("(min-width: 1080px)");
-    var onChange = function (ev) { if (ev.matches) setNavOpen(false); };
-    if (mq.addEventListener) mq.addEventListener("change", onChange);
-    else if (mq.addListener) mq.addListener(onChange);
-  }
+    window.addEventListener("pagehide", function () { closeAll(); });
+  })();
 
   /* ── 2. ANNOUNCEMENTS ─────────────────────────────────────────── */
-  /* Reads data/announcements.json. Shows up to three current entries
+  /* Reads data/announcements.json. Shows the newest current entry
      (dated today or earlier, not expired), newest first. No current
      announcements, no bar. */
 
@@ -180,7 +80,7 @@
            announcement can be committed ahead of launch day. */
         .filter(function (a) { return (!a.date || a.date <= today) && (!a.expires || a.expires >= today); })
         .sort(function (a, b) { return new Date(b.date) - new Date(a.date); })
-        .slice(0, 3);
+        .slice(0, 1);
       if (!active.length) return;
 
       bar.innerHTML = active.map(function (a) {
@@ -277,6 +177,19 @@
         el.innerHTML = "";
         el.appendChild(grid);
       });
+    });
+  })();
+
+    /* ── Latest essays on the Writing page: replaces the two static links once the feed answers. */
+  (function () {
+    var box = document.querySelector("[data-latest-feed]");
+    if (!box || !window.SubstackFeed) return;
+    window.SubstackFeed.fetch().then(function (items) {
+      if (!items || !items.length) return;
+      box.innerHTML = items.slice(0, 2).map(function (item, i) {
+        return '<a class="late" href="' + esc(item.link) + '"><span class="late-t">' + esc(item.title) + '</span><span class="late-d">' +
+          (i === 0 ? "Latest · " : "") + esc(item.date) + "</span></a>";
+      }).join("");
     });
   })();
 

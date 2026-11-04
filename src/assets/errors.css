@@ -1,0 +1,18 @@
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.full { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; min-height: min(calc(100vh - 3.75rem), 52rem); padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.full .lead { margin-top: clamp(1.25rem, 2.5vw, 2rem); }
+.full .acts { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.waffle { display: grid; grid-template-columns: repeat(10, 1fr); gap: clamp(5px, 1vw, 12px); width: 100%; max-width: min(100%, 30rem, 55vh); justify-self: center; }
+.w { aspect-ratio: 1; border-radius: 50%; background: var(--paper); }
+.w-gap { background: transparent; border: 2px dashed var(--gold); }
+.pause { display: flex; gap: clamp(12px, 2vw, 22px); justify-self: center; }
+.pause span { width: clamp(28px, 5vw, 56px); height: clamp(28px, 5vw, 56px); border-radius: 50%; background: var(--gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .pause span { animation: pulse 1.6s ease-in-out infinite; }
+  .pause span:nth-child(2) { animation-delay: 0.25s; }
+  .pause span:nth-child(3) { animation-delay: 0.5s; }
+}
+@keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+@media (max-width: 760px) { .full { grid-template-columns: 1fr; min-height: 0; } .waffle { max-width: 14rem; justify-self: start; } .pause { justify-self: start; } }
+@media (forced-colors: active) { .w, .pause span { forced-color-adjust: none; } }

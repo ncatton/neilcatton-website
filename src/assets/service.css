@@ -1,0 +1,98 @@
+/* The service-page template. Twelve pages, one layout. */
+.sv-top { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.sv-back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 0.5rem; font-weight: 600; color: var(--paper); }
+.sv-lead { margin: clamp(1.25rem, 2.5vw, 2rem) 0; }
+.sv-motif { width: 100%; height: auto; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); margin: clamp(2.5rem, 5vw, 4.5rem) 0 0; }
+.fact { padding-top: 0.75rem; border-top: 1px solid var(--on-dark-rule); }
+.fact dt { font-weight: 600; margin-bottom: 0.25rem; }
+.fact dd { margin: 0; font-family: var(--serif); font-weight: 300; font-size: clamp(1.25rem, 2.1vw, 1.75rem); line-height: 1.15; letter-spacing: -0.01em; color: var(--gold); }
+.fam { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); }
+.fam-i { display: flex; flex-direction: column; gap: 1rem; font-size: clamp(1.25rem, 2vw, 1.625rem); line-height: 1.25; }
+.fam-d { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); }
+.fam-p { margin-top: clamp(2.5rem, 5vw, 4.5rem); max-width: 62rem; font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 4.8vw, 4rem); line-height: 1.06; letter-spacing: -0.025em; }
+.sv-h2 { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.viz-t { font-weight: 600; font-size: 1.125rem; line-height: 1.3; margin-bottom: 1.25rem; }
+.viz-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.days { display: flex; gap: clamp(0.375rem, 1vw, 0.75rem); }
+.day { display: flex; align-items: center; justify-content: center; width: clamp(2.75rem, 5vw, 4rem); height: clamp(2.75rem, 5vw, 4rem); border-radius: 50%; font-weight: 600; border: 1.5px solid var(--ink); color: var(--ink); }
+.day-on { background: var(--gold); border-color: var(--gold); }
+.day-maybe { border-style: dashed; border-color: var(--ink); }
+.day-off { border-color: var(--stone); }
+.months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0.5rem clamp(0.25rem, 0.8vw, 0.625rem); }
+.mo { aspect-ratio: 1 / 1; border-radius: 50%; border: 1.5px solid var(--ink); }
+.mo-in { background: var(--ink); }
+.mo-q { background: var(--gold); border-color: var(--gold); }
+.mo-l { font-weight: 600; font-size: 0.9375rem; text-align: center; }
+.wds { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: clamp(0.25rem, 0.8vw, 0.625rem); max-width: 28rem; }
+.wd { aspect-ratio: 1 / 1; border-radius: 50%; border: 1.5px solid var(--stone); }
+.wd-on { background: var(--gold); border-color: var(--gold); }
+.wd-maybe { border: 1.5px dashed var(--ink); }
+.viz-big { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; }
+.sv-note { margin: -0.5rem 0 1.75rem; }
+.dotsub { display: block; margin-top: 0.625rem; font-family: var(--sans); font-weight: 400; font-size: 1.0625rem; line-height: 1.4; letter-spacing: 0; }
+.sv-cov { margin: clamp(3rem, 6vw, 5rem) 0 0; }
+.covers { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0 clamp(1rem, 3vw, 2.5rem); margin-top: 1.25rem; }
+.covers li { padding-top: 0.875rem; border-top: 2px solid var(--ink); font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.3vw, 2.125rem); line-height: 1.1; letter-spacing: -0.015em; }
+.ba-head, .ba-r { display: grid; grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1.25fr); gap: clamp(1rem, 3vw, 2.5rem); }
+.ba-head { font-weight: 600; margin-bottom: 0.75rem; }
+.ba-r { align-items: start; padding: clamp(1.25rem, 2.4vw, 1.75rem) 0; border-top: 1px solid var(--on-dark-rule); }
+.ba-r:last-child { border-bottom: 1px solid var(--on-dark-rule); }
+.ba-k { display: none; font-family: var(--sans); font-weight: 600; font-size: 1rem; letter-spacing: 0; margin-bottom: 0.25rem; color: var(--paper); }
+.ba-b { font-size: clamp(1.125rem, 1.8vw, 1.375rem); line-height: 1.3; }
+.ba-a { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.9vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; color: var(--gold); }
+.ba-d { width: 20px; height: 20px; margin-top: 0.2rem; border-radius: 50%; background: var(--gold); }
+.sv-faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.sv-faq-h { font-size: clamp(2rem, 4vw, 3.25rem); }
+.rels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); }
+.rel { display: flex; flex-direction: column; gap: 0.25rem; min-height: 44px; padding-top: 0.875rem; border-top: 2px solid var(--ink); color: var(--ink); text-decoration: none; }
+.rel-k { font-weight: 600; }
+.rel-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.375rem, 2.2vw, 1.875rem); line-height: 1.12; letter-spacing: -0.015em; }
+.rel:hover .rel-t { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.12em; }
+.sv-pdf { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--paper); }
+@media (max-width: 900px) {
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .covers { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem clamp(1rem, 3vw, 2.5rem); }
+}
+@media (max-width: 820px) {
+  .sv-top, .fam, .viz-2, .sv-faq, .rels { grid-template-columns: 1fr; }
+  .sv-motif { order: -1; max-width: 13rem; }
+  .ba-head { display: none; }
+  .ba-r { grid-template-columns: 1fr; gap: 1rem; }
+  .ba-d { display: none; }
+  .ba-k { display: block; }
+}
+
+/* Batch 2: board appointments, Grand Rounds, book page */
+.dotstep-g::after { background: var(--gold); }
+.fits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.fit { padding-top: 0.875rem; border-top: 2px solid var(--ink); }
+.fit-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.4vw, 2.125rem); line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 0.75rem; }
+.nots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3.5rem); }
+.not { padding-top: 1rem; border-top: 1px solid var(--on-dark-rule); }
+.not-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3.2vw, 2.75rem); line-height: 1.08; letter-spacing: -0.02em; color: var(--gold); margin-bottom: 0.75rem; }
+.sess-n { font-size: clamp(1.75rem, 3vw, 2.5rem); flex-grow: 1; }
+.sess-l { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--paper); }
+.proofs li .sess-l { align-self: flex-start; }
+.pp-top { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.pp-sub { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.375rem, 2.5vw, 2rem); line-height: 1.2; margin-top: 0.75rem; }
+.pp-hook { margin: clamp(1.5rem, 3vw, 2.5rem) 0; font-size: clamp(1.75rem, 3.4vw, 3rem); }
+.pp-cover { width: 100%; max-width: 24rem; justify-self: end; }
+.pp-field { width: 100%; height: auto; }
+.pp-for { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.pp-det { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+.pp-dl { margin: 0; }
+.pp-dl div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; padding: 0.625rem 0; border-top: 1px solid var(--ink-rule); }
+.pp-dl dt { font-weight: 600; }
+.pp-dl dd { margin: 0; }
+.pp-others { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(0.5rem, 1.4vw, 1rem); }
+.pp-o { display: block; }
+.pp-o img { width: 100%; aspect-ratio: 16 / 25; object-fit: cover; }
+@media (max-width: 820px) {
+  .fits, .nots, .pp-top, .pp-for, .pp-det { grid-template-columns: 1fr; }
+  .pp-cover { order: -1; max-width: 14rem; justify-self: start; }
+}
+.sess { gap: 0.875rem; }
+.sess-co { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--gold); }
+.sess .proof-c { flex-grow: 0; font-size: 1.0625rem; }
+.sess-q { flex-grow: 1; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.25rem, 1.8vw, 1.5rem); line-height: 1.2; }

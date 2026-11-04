@@ -15,7 +15,15 @@
       "page": "briefing-ai-uk-insurance-claims.html",
       "pdf": "downloads/briefings/ai-in-uk-insurance-claims.pdf",
       "image": "images/briefings/insurance-claims-card.jpg",
-      "imageAlt": "The first mover on AI in UK claims wasn't the insurer — 95% of insurers already use AI, 46% report only partial understanding, £174m in fraud cases combatted"
+      "imageAlt": "The first mover on AI in UK claims wasn't the insurer — 95% of insurers already use AI, 46% report only partial understanding, £174m in fraud cases combatted",
+      "tile": {
+        "n": "95%",
+        "c": "of insurers use AI. 46% of firms only partly understand theirs.",
+        "label": "Insurance claims",
+        "terms": "FCA",
+        "order": 12,
+        "key": "insurance-claims"
+      }
     },
     {
       "id": "SAR-002",
@@ -30,7 +38,15 @@
       "page": "briefing-ai-uk-social-housing.html",
       "pdf": "downloads/briefings/ai-in-uk-social-housing.pdf",
       "image": "images/briefings/social-housing-card.jpg",
-      "imageAlt": "It doesn't ask what you fixed, it asks what you knew — 30 Nov Awaab's Law Phase 2, +43% Ombudsman property-condition findings, 31% of staff using AI vs 22% given access"
+      "imageAlt": "It doesn't ask what you fixed, it asks what you knew — 30 Nov Awaab's Law Phase 2, +43% Ombudsman property-condition findings, 31% of staff using AI vs 22% given access",
+      "tile": {
+        "n": "31%",
+        "c": "of staff use AI. 22% have been given access.",
+        "label": "Social housing",
+        "terms": "RSH Housing Ombudsman",
+        "order": 10,
+        "key": "social-housing"
+      }
     },
     {
       "id": "SAR-004",
@@ -45,7 +61,15 @@
       "page": "briefing-ai-uk-construction.html",
       "pdf": "downloads/briefings/ai-in-uk-construction.pdf",
       "image": "images/briefings/construction-card.jpg",
-      "imageAlt": "Most of the industry has the tool. Far fewer have the discipline — 74% of architecture professionals using BIM against 36% describing it as ISO 19650 conformance, and 37% of the construction products market regulated on the government's own central estimate"
+      "imageAlt": "Most of the industry has the tool. Far fewer have the discipline — 74% of architecture professionals using BIM against 36% describing it as ISO 19650 conformance, and 37% of the construction products market regulated on the government's own central estimate",
+      "tile": {
+        "n": "36%",
+        "c": "of architecture professionals call their BIM use conforming. 74% use it.",
+        "label": "Construction",
+        "terms": "BSR HSE building safety",
+        "order": 13,
+        "key": "construction"
+      }
     },
     {
       "id": "SAR-005",
@@ -60,7 +84,15 @@
       "page": "briefing-ai-uk-energy-retail.html",
       "pdf": "downloads/briefings/ai-in-uk-energy-retail.pdf",
       "image": "images/briefings/energy-retail-card.jpg",
-      "imageAlt": "Every service measure is improving. Every measure of debt is getting worse — 82% satisfaction, £4.79bn debt and arrears, 48% Ombudsman signposting rate"
+      "imageAlt": "Every service measure is improving. Every measure of debt is getting worse — 82% satisfaction, £4.79bn debt and arrears, 48% Ombudsman signposting rate",
+      "tile": {
+        "n": "£4.79bn",
+        "c": "debt and arrears, with satisfaction at a record high",
+        "label": "Energy retail",
+        "terms": "Ofgem utilities",
+        "order": 7,
+        "key": "energy-retail"
+      }
     },
     {
       "id": "SAR-018",
@@ -75,7 +107,15 @@
       "page": "briefing-ai-uk-grocery-retail.html",
       "pdf": "downloads/briefings/ai-in-uk-grocery-retail.pdf",
       "image": "images/briefings/grocery-retail-card.jpg",
-      "imageAlt": "Every regulator has a position. None of them is aimed here — five ICO priorities with retail not among them, zero mentions of technology or AI across two 2026 Groceries Code Adjudicator publications, and Sainsbury's facial recognition going from two stores to around two hundred"
+      "imageAlt": "Every regulator has a position. None of them is aimed here — five ICO priorities with retail not among them, zero mentions of technology or AI across two 2026 Groceries Code Adjudicator publications, and Sainsbury's facial recognition going from two stores to around two hundred",
+      "tile": {
+        "n": "2 → 200",
+        "c": "stores: facial recognition, trial to around two hundred",
+        "label": "Grocery retail",
+        "terms": "ICO GCA CMA",
+        "order": 11,
+        "key": "grocery-retail"
+      }
     },
     {
       "id": "SAR-023",
@@ -90,7 +130,15 @@
       "page": "briefing-ai-uk-biotech.html",
       "pdf": "downloads/briefings/ai-in-uk-biotech.pdf",
       "image": "images/briefings/biotech-card.jpg",
-      "imageAlt": "One deal made the quarter a record. Three companies complicate it — £2.05bn in UK biotech venture investment against £498m excluding the one deal, and $2.9bn in combined milestone potential behind Isomorphic Labs' two pharma deals"
+      "imageAlt": "One deal made the quarter a record. Three companies complicate it — £2.05bn in UK biotech venture investment against £498m excluding the one deal, and $2.9bn in combined milestone potential behind Isomorphic Labs' two pharma deals",
+      "tile": {
+        "n": "£498m",
+        "c": "the record quarter without one deal. £2.05bn with it.",
+        "label": "BioTech",
+        "terms": "MHRA",
+        "order": 16,
+        "key": "biotech"
+      }
     },
     {
       "id": "SAR-022",
@@ -105,7 +153,15 @@
       "page": "briefing-ai-uk-healthtech.html",
       "pdf": "downloads/briefings/ai-in-uk-healthtech.pdf",
       "image": "images/briefings/healthtech-card.jpg",
-      "imageAlt": "The NHS measured the time it saved. The regulator measured what it missed — 23.5% relative increase in direct care time against 39% of real-world notes flagged out-of-scope by the MHRA's own sandbox"
+      "imageAlt": "The NHS measured the time it saved. The regulator measured what it missed — 23.5% relative increase in direct care time against 39% of real-world notes flagged out-of-scope by the MHRA's own sandbox",
+      "tile": {
+        "n": "39%",
+        "c": "of real-world notes flagged out of scope by the MHRA’s sandbox",
+        "label": "HealthTech",
+        "terms": "MHRA NHS England health",
+        "order": 8,
+        "key": "healthtech"
+      }
     },
     {
       "id": "SAR-003",
@@ -120,7 +176,15 @@
       "page": "briefing-ai-uk-policing.html",
       "pdf": "downloads/briefings/ai-in-uk-policing.pdf",
       "image": "images/briefings/policing-card.jpg",
-      "imageAlt": "Bought nationally, answered for locally — £75m for a national AI centre over three years, 43 territorial forces each answering to a locally elected commissioner, and more than 25,000 retrospective facial recognition searches a month"
+      "imageAlt": "Bought nationally, answered for locally — £75m for a national AI centre over three years, 43 territorial forces each answering to a locally elected commissioner, and more than 25,000 retrospective facial recognition searches a month",
+      "tile": {
+        "n": "43",
+        "c": "forces answering locally for AI bought nationally",
+        "label": "Policing",
+        "terms": "Home Office HMICFRS IOPC public safety",
+        "order": 9,
+        "key": "policing"
+      }
     },
     {
       "id": "SAR-006",
@@ -135,7 +199,15 @@
       "page": "briefing-ai-uk-banking.html",
       "pdf": "downloads/briefings/ai-in-uk-banking.pdf",
       "image": "images/briefings/banking-card.jpg",
-      "imageAlt": "The sector adopted it, then told the regulator it did not understand it — 75% of firms already using AI, 46% reporting only partial understanding, and one in three use cases bought in from third parties"
+      "imageAlt": "The sector adopted it, then told the regulator it did not understand it — 75% of firms already using AI, 46% reporting only partial understanding, and one in three use cases bought in from third parties",
+      "tile": {
+        "n": "46%",
+        "c": "of firms only partly understand their AI",
+        "label": "Banking and lending",
+        "terms": "FCA Bank of England finance",
+        "order": 6,
+        "key": "banking"
+      }
     },
     {
       "id": "SAR-021",
@@ -150,7 +222,15 @@
       "page": "briefing-ai-uk-legal-services.html",
       "pdf": "downloads/briefings/ai-in-uk-legal-services.pdf",
       "image": "images/briefings/legal-services-card.jpg",
-      "imageAlt": "The tools got better, the supervision requirement did not move — 42 reports of potential AI misuse counted by the regulator, a best benchmark score rising from 4.4 to 6.4 out of ten, and a 37% rise in complaints to the Legal Ombudsman"
+      "imageAlt": "The tools got better, the supervision requirement did not move — 42 reports of potential AI misuse counted by the regulator, a best benchmark score rising from 4.4 to 6.4 out of ten, and a 37% rise in complaints to the Legal Ombudsman",
+      "tile": {
+        "n": "42",
+        "c": "reports of potential AI misuse in twelve months",
+        "label": "Legal services",
+        "terms": "SRA judiciary law",
+        "order": 5,
+        "key": "legal-services"
+      }
     },
     {
       "id": "SAR-010",
@@ -165,7 +245,15 @@
       "page": "briefing-ai-uk-justice.html",
       "pdf": "downloads/briefings/ai-in-uk-justice.pdf",
       "image": "images/briefings/justice-card.jpg",
-      "imageAlt": "The new tools are on the register, the ones that score you are not — 152 records on the transparency register, 12 from the justice family, 0 returned for OASys, recidivism or parole"
+      "imageAlt": "The new tools are on the register, the ones that score you are not — 152 records on the transparency register, 12 from the justice family, 0 returned for OASys, recidivism or parole",
+      "tile": {
+        "n": "0",
+        "c": "register results for OASys, recidivism or parole",
+        "label": "Justice and probation",
+        "terms": "MoJ HMPPS courts",
+        "order": 3,
+        "key": "justice"
+      }
     },
     {
       "id": "SAR-007",
@@ -180,7 +268,15 @@
       "page": "briefing-ai-uk-mortgages.html",
       "pdf": "downloads/briefings/ai-in-uk-mortgages.pdf",
       "image": "images/briefings/mortgages-card.jpg",
-      "imageAlt": "The regulator's model ranks borrowers better, its own case study was declined by a filter — an AUC of 0.751 for the machine-learning model against 0.669 for the conventional one, and a 74 per cent higher arrears hazard above 90 per cent loan-to-value"
+      "imageAlt": "The regulator's model ranks borrowers better, its own case study was declined by a filter — an AUC of 0.751 for the machine-learning model against 0.669 for the conventional one, and a 74 per cent higher arrears hazard above 90 per cent loan-to-value",
+      "tile": {
+        "n": "74%",
+        "c": "higher arrears hazard above 90% loan-to-value",
+        "label": "Mortgages",
+        "terms": "FCA PRA housing finance",
+        "order": 14,
+        "key": "mortgages"
+      }
     },
     {
       "id": "SAR-009",
@@ -195,7 +291,15 @@
       "page": "briefing-ai-uk-wealth.html",
       "pdf": "downloads/briefings/ai-in-uk-wealth.pdf",
       "image": "images/briefings/wealth-card.jpg",
-      "imageAlt": "The annual review is going and the FCA says technology can decide when — 3.7 million clients pay for ongoing advice, ongoing services are 80 per cent of adviser-charge revenue, and 83 per cent of reviews were delivered across 22 large firms"
+      "imageAlt": "The annual review is going and the FCA says technology can decide when — 3.7 million clients pay for ongoing advice, ongoing services are 80 per cent of adviser-charge revenue, and 83 per cent of reviews were delivered across 22 large firms",
+      "tile": {
+        "n": "3.7m",
+        "c": "clients pay for the review the FCA proposes to replace",
+        "label": "Wealth and advice",
+        "terms": "FCA investment",
+        "order": 15,
+        "key": "wealth"
+      }
     },
     {
       "id": "SAR-014",
@@ -210,7 +314,15 @@
       "page": "briefing-ai-uk-central-government.html",
       "pdf": "downloads/briefings/ai-in-uk-central-government.pdf",
       "image": "images/briefings/central-government-card.jpg",
-      "imageAlt": "The human review is there; whether it means anything is the question — 60 per cent of benefit appeals decided at hearing overturned for the claimant, 45 per cent for Universal Credit and 38 per cent of asylum appeals allowed, April to June 2026"
+      "imageAlt": "The human review is there; whether it means anything is the question — 60 per cent of benefit appeals decided at hearing overturned for the claimant, 45 per cent for Universal Credit and 38 per cent of asylum appeals allowed, April to June 2026",
+      "tile": {
+        "n": "3.35×",
+        "c": "DWP model’s referral rate for non-UK nationals",
+        "label": "Central government",
+        "terms": "NAO PAC ICO public services",
+        "order": 4,
+        "key": "central-government"
+      }
     },
     {
       "id": "SAR-011",
@@ -225,7 +337,15 @@
       "page": "briefing-ai-uk-nhs-acute-care.html",
       "pdf": "downloads/briefings/ai-in-uk-nhs-acute-care.pdf",
       "image": "images/briefings/nhs-acute-care-card.jpg",
-      "imageAlt": "The score misses it; the family catches it — in 83 per cent of Martha's Rule deterioration calls with an early warning score recorded, the score would not have triggered escalation; 69 per cent of those patients then needed a change in care; 72 per cent of calls came from families and carers"
+      "imageAlt": "The score misses it; the family catches it — in 83 per cent of Martha's Rule deterioration calls with an early warning score recorded, the score would not have triggered escalation; 69 per cent of those patients then needed a change in care; 72 per cent of calls came from families and carers",
+      "tile": {
+        "n": "83%",
+        "c": "of scored Martha’s Rule calls: the score would not have escalated. Not a failure rate.",
+        "label": "NHS acute care",
+        "terms": "CQC MHRA NHS England health",
+        "order": 2,
+        "key": "nhs-acute-care"
+      }
     },
     {
       "id": "SAR-019",
@@ -240,7 +360,15 @@
       "page": "briefing-ai-uk-passenger-transport.html",
       "pdf": "downloads/briefings/ai-in-uk-passenger-transport.pdf",
       "image": "images/briefings/passenger-transport-card.jpg",
-      "imageAlt": "The claim gets faster; the passenger who needs help waits — 86 per cent of rail passengers with booked assistance were met when their service ran without disruption, 67 per cent when their train was cancelled, and 63 per cent were satisfied with Passenger Assist after a cancellation"
+      "imageAlt": "The claim gets faster; the passenger who needs help waits — 86 per cent of rail passengers with booked assistance were met when their service ran without disruption, 67 per cent when their train was cancelled, and 63 per cent were satisfied with Passenger Assist after a cancellation",
+      "tile": {
+        "n": "67%",
+        "c": "of passengers with booked assistance are met when their train is cancelled. 86% when it runs.",
+        "label": "Passenger transport",
+        "terms": "ORR CAA MCA rail",
+        "order": 1,
+        "key": "passenger-transport"
+      }
     }
   ],
   "collaborations": [
