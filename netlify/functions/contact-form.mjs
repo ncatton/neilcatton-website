@@ -21,8 +21,8 @@
 // to them without CC'ing anyone else in.
 //
 // Routed via netlify.toml (from "/contact-submit" -> this function), NOT
-// via this file's own `config.path` — the same pattern generate-plan.mjs
-// uses, for the same reason: rate_limit is a redirects-only feature, so the
+// via this file's own `config.path`, because rate_limit is a redirects-only
+// feature, so the
 // friendly path needs to be a netlify.toml redirect for the rate limit
 // block to attach to it. A function-declared path here as well would be
 // redundant. A public POST endpoint that triggers a real send through

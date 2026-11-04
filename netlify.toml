@@ -7,11 +7,8 @@
 # going stale on 1 January.
 # ═══════════════════════════════════════════════════════════════════
 
-# The functions are bundled from netlify/functions and resolve their imports
-# against package.json. generate-plan.mjs imports @anthropic-ai/sdk, which
-# must therefore stay in "dependencies" — dropping it does not fail the build,
-# it returns 502 at request time. package.json must also NOT declare
-# "type": "module": three of the functions are CommonJS.
+# package.json must NOT declare "type": "module": three of the functions are
+# CommonJS.
 [build]
   command = "npm run build"
   publish = "dist"
@@ -24,18 +21,23 @@
   # postinstall would otherwise download a browser on every deploy.
   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
 
-[functions]
-  # generate-plan.mjs reads netlify/functions/lib/practice-corpus.json via
-  # fs.readFileSync at runtime rather than a static import, so esbuild's
-  # dependency scan won't pick it up on its own — it has to be listed here
-  # explicitly or the deployed function 404s trying to read a file that
-  # never made it into the bundle.
-  included_files = ["netlify/functions/lib/*.json"]
-
 # ── Function routes ──
 # The old _redirects file also mapped /substack-feed, straight through to
 # neilcatton.substack.com. Two live rules for one path is a trap; that file
 # has been removed and this is now the only definition.
+
+# Your Plan withdrawn Nov 2026 (no use since deployment) - send old links to the Practice Library.
+[[redirects]]
+  from = "/personalised-plan.html"
+  to = "/practice-library.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personalised-plan"
+  to = "/practice-library.html"
+  status = 301
+  force = true
 
 # Pensions briefing (SAR-008) withdrawn 9 Oct 2026 - send old links to the briefings index.
 [[redirects]]
@@ -68,33 +70,13 @@
   status = 200
   force = true
 
-# generate-plan.mjs calls Claude twice per request via paid AI Gateway
-# credits, so this route carries Netlify's native rate limiting rather than
-# a bare redirect — 6 requests per IP per 60 seconds. That's generous enough
-# for a genuine reader plus a couple of "different angle" regenerations, but
-# stops a script from running the meter up. Deliberately routed through this
-# redirect (rather than the function's own path) since rate_limit is a
-# redirects-only feature — see the note at the top of generate-plan.mjs.
-[[redirects]]
-  from = "/generate-plan"
-  to = "/.netlify/functions/generate-plan"
-  status = 200
-  force = true
-
-  [redirects.rate_limit]
-    window_limit = 6
-    window_size = 60
-    aggregate_by = ["ip", "domain"]
-    action = "rewrite"
-    to = "/rate-limited.html"
-
 # contact-form.mjs relays both contact forms (contact.html and the
 # homepage's shorter one) to Neil's own Microsoft 365 mailbox via Microsoft
-# Graph — replacing Formspree. Rate-limited for the same reason
-# generate-plan is: a public POST endpoint that triggers a real send
-# (subject to Exchange Online's own throttling on top of this) needs a
-# floor under it. Deliberately routed through this redirect rather than
-# the function's own path, for the same rate_limit reason noted above.
+# Graph — replacing Formspree. Rate-limited because a public POST endpoint
+# that triggers a real send (subject to Exchange Online's own throttling on
+# top of this) needs a floor under it. Deliberately routed through this
+# redirect rather than the function's own path, because rate_limit is a
+# redirects-only feature.
 [[redirects]]
   from = "/contact-submit"
   to = "/.netlify/functions/contact-form"

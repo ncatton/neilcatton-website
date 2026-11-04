@@ -55,7 +55,6 @@
       "items": [
         { "label": "The Collection", "href": "/practice-library.html" },
         { "label": "Predictive Purpose self-assessment", "href": "https://tool.neilcatton.com", "external": true },
-        { "label": "Your Plan", "href": "/personalised-plan.html" },
         { "label": "The Pattern Map", "href": "/pattern-map.html" }
       ]
     },
@@ -103,7 +102,6 @@
       "items": [
         { "label": "The Collection", "href": "/practice-library.html" },
         { "label": "Predictive Purpose self-assessment", "href": "https://tool.neilcatton.com", "external": true },
-        { "label": "Your Plan", "href": "/personalised-plan.html" },
         { "label": "The Pattern Map", "href": "/pattern-map.html" }
       ]
     },

@@ -1,7 +1,7 @@
 <!--page
 {
   "title": "AI Usage Statement \u2014 Neil Catton",
-  "description": "How this site is built and maintained with Claude, what its one live AI feature does with what you type, and what deliberately doesn't use AI at all.",
+  "description": "How this site is built and maintained with Claude, and why nothing on it calls an AI model while you're using it.",
   "slug": "ai-usage",
   "css": ".page-header { padding: 9rem var(--col-pad) 3rem; background: var(--paper); border-bottom: 1px solid var(--rule); }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); display: block; margin-bottom: 1rem; }\n  .page-title { font-family: var(--serif); font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }\n  .page-title em { font-style: italic; color: var(--accent); }\n  .page-standfirst { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 620px; }\n  .prose-section { padding: 4rem var(--col-pad) 6rem; background: var(--paper); }\n  .prose-inner { max-width: 720px; margin: 0 auto; }\n  .prose-inner p, .prose-inner ul { margin-bottom: 1.25rem; color: var(--ink-mid); }\n  .prose-inner ul { padding-left: 1.4rem; }\n  .prose-inner li { margin-bottom: 0.5rem; }\n  .prose-inner h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--ink); margin-top: 2.75rem; margin-bottom: 1rem; letter-spacing: -0.01em; }\n  .prose-inner h2:first-child { margin-top: 0; }\n  .prose-inner a { color: var(--accent); }\n  .prose-inner strong { color: var(--ink); }\n  .updated-note { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 2.5rem; }",
   "searchTitle": "AI usage statement"
@@ -39,37 +39,11 @@
       </p>
 
       <h2>Where AI actually runs on this site</h2>
-      <p>
-        One feature calls an AI model directly, live, while you're using it: <a
-        href="/personalised-plan.html">Your Plan</a>, in the Practice Library.
-      </p>
-      <p>
-        You describe a situation in a sentence or two. That description is sent to Claude
-        (Anthropic's AI model — currently one of its Sonnet-generation models), via
-        Netlify's AI Gateway, in two steps:
-      </p>
-      <ul>
-        <li><strong>A scope check first.</strong> A quick call decides whether what you've
-        described is something the Practice Library's actual published content can help with. If
-        it isn't — or if it reads as needing real professional support rather than a reading
-        list — the tool says so plainly and stops there, before generating anything</li>
-        <li><strong>Then, only if that passes, a plan.</strong> Claude is given your description
-        and the complete list of items currently published in the library, and asked to select
-        three to six that genuinely fit and explain why, in each case, in its own words</li>
-      </ul>
-      <p>
-        Before anything reaches your screen, every item Claude selects is checked against the
-        real, published library. <strong>Anything that doesn't resolve to a card that actually
-        exists is dropped.</strong> The tool cannot show you advice it invented — only advice
-        already published here, chosen and explained for your situation.
-      </p>
-      <p>
-        What you type is used to generate that one response and isn't stored by this site
-        afterwards. Netlify and Anthropic may keep standard request logs for a limited period
-        under their own infrastructure policies, the same as any API call — see the <a
-        href="/privacy.html">Privacy Policy</a> for how third-party providers are treated more
-        generally.
-      </p>
+<p>
+Nothing on this site calls an AI model while you're using it. An earlier tool, Your Plan,
+did. It was removed in November 2026.
+</p>
+
 
       <h2>Where it deliberately doesn't</h2>
       <p>Two things on this site that might look AI-powered aren't:</p>

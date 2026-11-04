@@ -5,8 +5,6 @@
   "description": "neilcatton.com — static site. Templates and data in src/, generated output in dist/. Netlify runs `npm run build`.",
 
   "_comment_type": "Deliberately NOT \"type\": \"module\". build.mjs and everything in tools/ use the .mjs extension, so they are ESM regardless. Three of the Netlify Functions (substack-feed.js, search-feed.js, practice-library-feed.js) are CommonJS — they use require() and exports.handler — and declaring the package as ESM makes Node parse those .js files as modules, which breaks all three at load time.",
-
-  "_comment_deps": "@anthropic-ai/sdk is a runtime dependency, not a build one: netlify/functions/generate-plan.mjs imports it, and Netlify resolves function imports from this file when it bundles. Removing it does not fail the build — it fails the function, with a 502 at request time.",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1"
   },
