@@ -1,0 +1,84 @@
+{
+  "_about": "Words for the engagement PDFs: the one-page overview (downloads/neil-catton-how-an-engagement-runs.pdf, linked from Services) and the guide (downloads/neil-catton-engagement-guide.pdf). Carried over from the September 2026 PDFs. {{years}} and {{sectors}} are filled in by tools/build-pdfs.mjs from site.json. Edit here, then npm run pdfs.",
+  "title": "How an engagement runs",
+  "standfirst": "A one-day board briefing and a year-long fractional role run the same arc, at different speeds.",
+  "foundation": "Every phase draws on the same base: {{years}} years across {{sectors}} sectors, working at both ends of the problem. The outside judgement of non-executive and advisory roles, and the inside delivery of fractional and interim leadership. What changes phase to phase is which lens is doing the work.",
+  "phases": [
+    {
+      "name": "Read the system",
+      "sub": "Understanding the organisation as it actually runs",
+      "summary": "Before any recommendation, the real constraints need to be visible: not the org chart, but how decisions actually get made and what's already been tried. Stakeholder conversations across the business, technology and the board, a review of existing strategy, and a diagnostic that maps dependencies rather than assuming them.",
+      "description": "Before any recommendation, the real constraints need to be visible: not the org chart, but how decisions actually get made, where authority sits, and what's already been tried. This phase is about listening long enough to see the system clearly, not confirming what's already assumed.",
+      "when": "Days to weeks",
+      "timeframe": "Days to weeks, depending on engagement scope",
+      "activities": [
+        "Stakeholder conversations across business, technology and the board",
+        "Review of existing strategy, architecture and governance documents",
+        "Mapping of decision rights, dependencies and known constraints",
+        "Technical and operational due diligence where relevant",
+        "Synthesis of findings into a single, shared picture"
+      ],
+      "deliverables": ["Written findings summary", "A single view of the system as it actually operates"]
+    },
+    {
+      "name": "Name what's true",
+      "sub": "An honest assessment, stated plainly",
+      "summary": "The findings go to the board or founder directly, including the parts that are uncomfortable. No softened language, no burying the real risk in a longer list of minor ones. The evidence is structured into the few things that actually matter, and put in front of the people who need to hear them.",
+      "description": "The findings go to the board or founder directly, including the parts that are uncomfortable. No softened language, no burying the real risk in a longer list of minor ones. This is the phase most engagements shorten; it's the one that makes everything after it useful.",
+      "when": "One session",
+      "timeframe": "Typically a single session, once the diagnostic is complete",
+      "activities": [
+        "Structuring findings into a clear, evidenced assessment",
+        "Naming the two or three things that matter most, not twenty",
+        "A direct conversation with the board, founder or sponsor",
+        "Agreeing what \"true\" means before moving to a plan"
+      ],
+      "deliverables": ["Board-ready assessment", "A shared, agreed statement of the real problem"]
+    },
+    {
+      "name": "Set the direction",
+      "sub": "A plan that's sequenced and resourced",
+      "summary": "Direction only means something once it has been tested against what the organisation can actually deliver. The assessment becomes a plan: priorities in order, resourcing made explicit, and a sequence built on real capacity rather than an ideal timeline.",
+      "description": "Direction only means something once it's been tested against what the organisation can actually deliver. This phase turns the assessment into a plan: priorities in order, resourcing implications made explicit, and a sequence that reflects real capacity rather than an ideal timeline.",
+      "when": "1–2 weeks",
+      "timeframe": "One to two weeks",
+      "activities": [
+        "Prioritising against impact, risk and delivery capacity",
+        "Building a phased roadmap with realistic sequencing",
+        "Identifying capability, resourcing and governance gaps",
+        "Testing the plan with the people who'll have to deliver it"
+      ],
+      "deliverables": ["Sequenced roadmap", "Resourcing and capability plan"]
+    },
+    {
+      "name": "Lead the change",
+      "sub": "Embedded leadership, not a handover of slides",
+      "summary": "This is where most technology advice fails: the plan is handed over and the advisor leaves. Here the leadership continues, embedded in the organisation, making the calls, adjusting the plan as reality intervenes, and carrying accountability for the outcome rather than the recommendation.",
+      "description": "This is where most technology advice fails: the plan is handed over and the advisor leaves. Here, the leadership continues: embedded in the organisation, making the calls, adjusting the plan as reality intervenes, and carrying accountability for the outcome rather than the recommendation.",
+      "when": "Ongoing",
+      "timeframe": "Ongoing: weeks to months, set by the mandate",
+      "activities": [
+        "Fractional or interim leadership of the delivery effort",
+        "Day-to-day decision-making within the agreed mandate",
+        "Regular reporting to the board or sponsor",
+        "Course correction as the programme meets reality"
+      ],
+      "deliverables": ["Delivery against the agreed roadmap", "Regular, honest progress reporting"]
+    },
+    {
+      "name": "Leave it capable",
+      "sub": "A deliberate handover, on purpose",
+      "summary": "The engagement ends by design, not by attrition. Decisions, rationale and context are documented and handed back deliberately, so the work doesn't quietly need me again next year. This is what separates fractional leadership from consultancy dependency.",
+      "description": "The engagement ends by design, not by attrition. Capability, decisions and context are handed back to the organisation deliberately, so the work doesn't quietly need me again next year. This is what separates fractional leadership from consultancy dependency.",
+      "when": "Final 1–2 weeks",
+      "timeframe": "Final one to two weeks of the engagement",
+      "activities": [
+        "Documenting decisions, rationale and open risks",
+        "Transferring capability to the team taking over",
+        "Formal handover to the board or successor",
+        "Agreeing what \"done\" looks like before leaving"
+      ],
+      "deliverables": ["Documented handover pack", "A capable team, not a dependency"]
+    }
+  ]
+}

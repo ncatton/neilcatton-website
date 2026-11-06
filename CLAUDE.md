@@ -15,6 +15,8 @@ Generated static site. Read `README.md` (front-matter keys, canonical-fact token
 - Service, briefing, sector and book pages are authored files in `src/pages/`. Tiles and the feed come from `src/data/briefings.json` (`tile`), the deck and card list from `practice-library.json`, the map from `patterns.json` and `pattern-groups.json`.
 - `review.html` is authored for Issue One. When an issue is imported, update that page as well as `review.json`.
 - Recordings: `audio/<slug>-human-moment.mp3` plus `src/data/audio.json`. Nothing shows until the file exists.
+- Downloadable PDFs: `npm run pdfs` rebuilds the twelve service one-pagers (read from the built service pages, so edit the page, not the PDF) and the engagement overview and guide (words in `print/engagement.json`, styles in `print/print.css`). Commit the PDFs in `downloads/`; Netlify doesn't build them.
+- Predictive Purpose self-assessment: `/self-assessment.html`. Statements, key and bands in `src/data/self-assessment.json`, verbatim from the book, never paraphrased. Layout `layouts/self-assessment.html`, behaviour `src/assets/self-assessment.js`, styles `self-assessment.css`. It replaced tool.neilcatton.com.
 - Data files are under `src/data/`. A bare `data/` folder at the repo root is ignored by the build; flag it, don't write to it.
 - Reviews and audits go in `../Reviews/`, outside the repo, so they're never deployed.
 

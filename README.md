@@ -255,3 +255,17 @@ saying so until someone does the manual pass.
 - Relevant JSON-LD (Person is automatic; add Service, FAQPage,
   BreadcrumbList, CollectionPage as they apply)
 - `npm run check` passes
+
+## Downloadable PDFs
+
+`npm run pdfs` builds the site, then writes into `downloads/`:
+
+- `neil-catton-<service>.pdf`: one A4 page per service. There is no separate copy: the script reads each built `service-*.html` page and lays it out for print, so a change to a service page reaches its PDF the next time you run it. If a page grows too long for one sheet, the type steps down a little; below 90% the script stops and names the page.
+- `neil-catton-how-an-engagement-runs.pdf` (one page, linked from Services) and `neil-catton-engagement-guide.pdf` (overview plus a page per phase). Words in `print/engagement.json`.
+
+Styles are in `print/print.css`, with the site's tokens and fonts. It needs the Playwright dev dependency (`npm install`). The PDFs are committed; Netlify doesn't build them.
+
+## Predictive Purpose self-assessment
+
+`/self-assessment.html`, built from `src/data/self-assessment.json` (the forty statements, scoring key, bands and reading guidance, verbatim from the book's appendix) by `layouts/self-assessment.html`. The whole form is in the HTML, so it reads, prints and works as plain radio buttons without script; `src/assets/self-assessment.js` adds one dimension at a time, totals, the profile, notes, print and saving. Answers stay in the visitor's browser (localStorage); nothing is sent anywhere. It replaced the separate tool at tool.neilcatton.com.
+

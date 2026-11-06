@@ -75,5 +75,6 @@ ${partial("partials/footer.html")}
 <script src="/assets/search.js" defer></script>
 ${d.usesDc ? '<script src="/assets/dc-lite.js" defer></script>' : ""}
 ${d.hasPageJs ? `<script src="/assets/pages/${d.slug}.js" defer></script>` : ""}
+${(d.scripts || []).map((n) => `<script src="/assets/${n}.js" defer></script>`).join("\n")}
 </body>
 </html>

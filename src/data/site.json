@@ -22,7 +22,7 @@
     "paperbackUS": ""
   },
   "booking": "https://outlook.office.com/book/NeilCatton1@neilcatton.com/?ismsaljsauthenabled",
-  "predictiveTool": "https://tool.neilcatton.com",
+  "predictiveTool": "/self-assessment.html",
   "grandRounds": "https://grandrounds.tech",
   "_sameAs": "Person schema sameAs. linkedin is empty because the URL is not referenced anywhere on the site and was not supplied — build omits empty entries rather than guessing one. Add it here and it appears on every page.",
   "sameAs": {
@@ -109,7 +109,7 @@
         },
         {
           "label": "Predictive Purpose self-assessment",
-          "href": "https://tool.neilcatton.com"
+          "href": "/self-assessment.html"
         }
       ]
     },

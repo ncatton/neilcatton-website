@@ -1,0 +1,126 @@
+<!-- The Predictive Purpose self-assessment. Everything the reader sees is rendered here at build time from
+     src/data/self-assessment.json, so the statements read, print and index with script off and the form still
+     works as plain radio buttons. /assets/self-assessment.js then turns it into one dimension at a time,
+     adds the running totals and the results, and saves progress in this browser only. -->
+${(() => {
+  const A = d.data["self-assessment"];
+  const N = A.dimensions.length;
+  const groups = [[0, 3, "The three lenses"], [3, 7, "The four conditions"], [7, 8, "People"]];
+  const groupOf = (i) => groups.find((g) => i >= g[0] && i < g[1])[2];
+  const short = (dm) => dm.shortTitle.replace(/^\d+ – /, "");
+  const key = A.scoringKey.map((k) => `<li class="sa-key-i"><span class="sa-key-n">${k.score}</span><span>${h.esc(k.meaning)}</span></li>`).join("");
+  const fields = A.fields.map((f) => `<div class="sa-field"><label for="fm-${f.id}">${h.esc(f.label)}</label><input id="fm-${f.id}" name="fm-${f.id}" type="${f.type}" data-fm="${f.id}" autocomplete="off"></div>`).join("");
+  const steps = [`<li><a class="sa-step" href="#sa-0" data-go="0"><span class="sa-step-n">Start</span><span class="sa-step-t">Details</span></a></li>`]
+    .concat(A.dimensions.map((dm, i) => `<li><a class="sa-step" href="#sa-${i + 1}" data-go="${i + 1}"><span class="sa-step-n">${i + 1}</span><span class="sa-step-t">${h.esc(short(dm))}</span><span class="sa-step-v" data-sub="${i}" hidden></span></a></li>`))
+    .concat([`<li><a class="sa-step" href="#sa-${N + 1}" data-go="${N + 1}"><span class="sa-step-n">End</span><span class="sa-step-t">Results</span></a></li>`]).join("");
+  const opts = (i, j) => A.scoringKey.map((k) => `<label class="sa-opt"><input type="radio" name="d${i}s${j}" value="${k.score}"><span class="sa-opt-n">${k.score}</span><span class="sa-opt-t">${h.esc(k.meaning)}</span></label>`).join("");
+  const dims = A.dimensions.map((dm, i) => `
+<section class="sa-panel sa-dim" id="sa-${i + 1}" data-step="${i + 1}" data-short="${h.esc(dm.shortTitle)}" data-title="${h.esc(dm.title)}" aria-labelledby="sa-h-${i + 1}">
+  <div class="sa-head">
+    <p class="sa-group">${groupOf(i)} · Dimension ${i + 1} of ${N}</p>
+    <h2 id="sa-h-${i + 1}" class="sa-h" tabindex="-1">${h.esc(dm.title.replace(/^Dimension \d+ – /, ""))}</h2>
+    <p class="sa-sub" hidden><span class="visually-hidden">Subtotal for this dimension: </span><span class="sa-sub-n" data-sub="${i}">0</span> / 10</p>
+  </div>
+  <ol class="sa-sts">${dm.statements.map((s, j) => `
+    <li class="sa-st">
+      <fieldset>
+        <legend class="sa-st-t"><span class="sa-st-k">${i + 1}.${j + 1}</span> ${h.esc(s)}</legend>
+        <div class="sa-opts">${opts(i, j)}</div>
+      </fieldset>
+      <details class="sa-note">
+        <summary>Add a note</summary>
+        <label class="sa-note-l" for="note-${i}-${j}">Note, for example where scorers disagree</label>
+        <input class="sa-note-i" id="note-${i}-${j}" type="text" data-note="${i}-${j}" autocomplete="off" placeholder="Scorer A: 1, Scorer B: 2, and why">
+      </details>
+    </li>`).join("")}
+  </ol>
+  <div class="sa-pager" hidden>
+    <button class="btn btn-out" type="button" data-go="${i}">Back</button>
+    <button class="btn btn-ink" type="button" data-go="${i + 2}">${i + 1 < N ? `Next: ${h.esc(short(A.dimensions[i + 1]))}` : "See the results"}</button>
+  </div>
+</section>`).join("");
+  const bands = A.bands.map((b) => `<li class="sa-band" data-min="${b.min}" data-max="${b.max}"><span class="sa-band-r">${b.min}–${b.max}<span class="sa-band-y" hidden>Your total</span></span><span class="sa-band-t">${h.esc(b.text.replace(/^\d+–\d+ – /, ""))}</span></li>`).join("");
+  const bars = groups.map((g) => `<li class="sa-bg"><p class="sa-bg-t">${g[2]}</p><ul>${A.dimensions.slice(g[0], g[1]).map((dm, k) => { const i = g[0] + k; return `<li class="sa-bar"><span class="sa-bar-l">${i + 1}. ${h.esc(short(dm))}</span><span class="sa-bar-t" aria-hidden="true"><span class="sa-bar-f" data-bar="${i}"></span></span><span class="sa-bar-v"><span data-sub="${i}">0</span> / 10</span></li>`; }).join("")}</ul></li>`).join("");
+  return `
+<section class="dark sa-hero" aria-labelledby="page-title">
+  <div class="inner hero">
+    <span class="label">Predictive Purpose · Practice Library tool</span>
+    <h1 id="page-title" class="h1">Self-Assessment <em>Diagnostic.</em></h1>
+    <p class="lead sa-lead">Eight dimensions, forty statements. A profile and a result in about fifteen minutes.</p>
+  </div>
+</section>
+
+<div class="sa" id="tool">
+  <nav class="sa-progress" aria-label="Assessment steps" hidden>
+    <ol class="sa-steps">${steps}</ol>
+    <p class="sa-total"><span class="sa-total-k">Total</span> <span data-total>0</span> / 80</p>
+  </nav>
+
+  <section class="sa-panel sa-start" id="sa-0" data-step="0" aria-labelledby="sa-h-0">
+    <div class="sa-cols">
+      <div>
+        <h2 id="sa-h-0" class="sa-h" tabindex="-1">Before you start</h2>
+        <p class="sa-p">${h.esc(A.intro)}</p>
+        <ul class="sa-key" aria-label="Scoring key">${key}</ul>
+        <p class="sa-p">${h.esc(A.outOf)}</p>
+        <p class="sa-call">${h.esc(A.multiScorer)}</p>
+      </div>
+      <div class="sa-details">
+        <h3 class="sa-h3">Assessment details</h3>
+        <div class="sa-fields">${fields}</div>
+        <p class="sa-priv">Your answers are saved only in this browser. Nothing is sent anywhere, so you can close the page and come back to it on this device.</p>
+        <p class="sa-resume" data-resume hidden></p>
+        <div class="sa-pager" hidden><button class="btn btn-ink" type="button" data-go="1">Start with dimension 1</button></div>
+      </div>
+    </div>
+  </section>
+${dims}
+  <section class="sa-panel sa-results" id="sa-${N + 1}" data-step="${N + 1}" aria-labelledby="sa-h-${N + 1}">
+    <div class="sa-head">
+      <p class="sa-group">Results</p>
+      <h2 id="sa-h-${N + 1}" class="sa-h" tabindex="-1">Your profile</h2>
+      <p class="sa-done" data-done aria-live="polite"></p>
+      <p class="sa-nojs">With JavaScript on, your totals, profile and band appear here as you score. Without it, add up each dimension out of 10 and the whole out of 80, then read the bands below.</p>
+    </div>
+    <dl class="sa-recap" data-recap hidden></dl>
+    <div class="sa-prof" hidden>
+      <figure class="sa-radar">
+        <svg viewBox="-150 -150 300 300" role="img" aria-labelledby="sa-radar-t" data-radar>
+          <title id="sa-radar-t">Profile across the eight dimensions</title>
+        </svg>
+        <figcaption class="visually-hidden">The same scores are listed beside the chart.</figcaption>
+      </figure>
+      <ul class="sa-bars">${bars}</ul>
+    </div>
+    <div class="sa-score on-gold" hidden>
+      <p class="sa-score-n"><span data-total>0</span><span class="sa-score-of"> / 80</span></p>
+      <div class="sa-scale" aria-hidden="true"><span class="sa-scale-m" data-marker></span></div>
+      <p class="sa-low" data-low></p>
+    </div>
+    <ol class="sa-bands" aria-label="What the total means">${bands}</ol>
+    <div class="sa-read">
+      <h3 class="sa-h3">Reading the result</h3>
+      ${A.reading.map((p) => `<p class="sa-p">${h.esc(p)}</p>`).join("")}
+    </div>
+    <div class="sa-notes" data-notes hidden></div>
+    <div class="sa-field sa-gen"><label for="sa-general">Notes</label><textarea id="sa-general" rows="4" data-general placeholder="Overall observations from the assessment"></textarea></div>
+    <div class="sa-acts" hidden>
+      <button class="btn btn-ink" type="button" data-print>Print or save as PDF</button>
+      <button class="btn btn-out" type="button" data-go="${N}">Back to dimension ${N}</button>
+      <button class="sa-reset" type="button" data-reset>Start again</button>
+      <span class="sa-confirm" data-confirm hidden>
+        <span class="sa-confirm-t">This clears every score, note and detail from this browser.</span>
+        <button class="btn btn-ink" type="button" data-reset-yes>Clear it</button>
+        <button class="btn btn-out" type="button" data-reset-no>Keep it</button>
+      </span>
+    </div>
+  </section>
+</div>
+
+<section class="dark sa-dark" aria-labelledby="more-title">
+  <div class="inner pad sa-more">
+    <h2 id="more-title" class="h2">Where it comes from.</h2>
+    <p class="lead">Tool 1 in the appendix of <a href="/book-predictive-purpose.html">Predictive Purpose</a>. More tools and cards are in <a href="/practice-library.html">the Practice Library</a>.</p>
+  </div>
+</section>`;
+})()}

@@ -109,6 +109,7 @@ a.tile:hover:focus-visible { outline-color: var(--ink); }
   .detail-mark { transition: transform 0.25s ease; }
   @supports (animation-timeline: view()) { @media (min-height: 640px) {
     .stage { height: min(320vh, 288rem); view-timeline: --figs block; }
+    .stage-quick { height: min(200vh, 180rem); }
     .pin { position: sticky; top: 0; display: flex; align-items: center; height: min(100vh, 90rem); background: var(--ink); overflow: hidden; }
     .fig { grid-template-areas: "f"; }
     .fig > * { grid-area: f; }
@@ -124,6 +125,10 @@ a.tile:hover:focus-visible { outline-color: var(--ink); }
   } }
 }
 @keyframes fa { 0%, 10% { opacity: 1; } 17%, 100% { opacity: 0; } }
+.stage-quick .fig-a { animation-name: qa; } .stage-quick .fig-b { animation-name: qb; } .stage-quick .fig-c3 { animation-name: qc; }
+@keyframes qa { 0%, 27% { opacity: 1; } 33%, 100% { opacity: 0; } }
+@keyframes qb { 0%, 27% { opacity: 0; } 33%, 60% { opacity: 1; } 66%, 100% { opacity: 0; } }
+@keyframes qc { 0%, 60% { opacity: 0; } 66%, 100% { opacity: 1; } }
 @keyframes fb { 0%, 17% { opacity: 0; } 24%, 54% { opacity: 1; } 60%, 100% { opacity: 0; } }
 @keyframes fc { 0%, 60% { opacity: 0; } 67%, 100% { opacity: 1; } }
 @keyframes k1 { 0%, 12% { background: var(--gold); border-color: var(--gold); } 24%, 100% { background: transparent; border-color: rgba(245,242,238,0.55); } }
