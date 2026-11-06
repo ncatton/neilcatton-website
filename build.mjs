@@ -15,7 +15,7 @@
      src/assets/site.js         shared behaviour
      src/templates/             the document shell, nav and footer
      src/data/site.json         canonical facts and the nav definition
-     src/data/services.json     the twelve service pages, as data
+     src/data/briefings.json    the register behind the tiles and the feed
 
    Run
      npm run build     build once into dist/
@@ -224,7 +224,7 @@ function clean() {
 
 function copyStatic() {
   const passthrough = [
-    "images", "downloads", ".well-known",
+    "images", "downloads", ".well-known", "audio",
     /* The Next Evolution Review: one folder per issue, each a standalone
        web edition with its PDF and data beside it. They are produced by
        tools/import-review-issue.mjs and published as they are. */
@@ -252,21 +252,43 @@ function copyStatic() {
 
 /** Which sitemap section a page belongs to, when it does not say. */
 function groupFor(slug) {
+  if (slug.startsWith("sector-")) return "Sectors";
   if (slug.startsWith("service-")) return "Services";
   if (slug.startsWith("briefing-")) return "Briefings";
-  if (["privacy", "accessibility", "sitemap"].includes(slug)) return "This site";
+  if (["privacy", "accessibility", "ai-usage", "sitemap"].includes(slug)) return "This site";
   return "Main";
 }
 
 /** Which nav group, if any, is the current page inside. */
 function sectionFor(slug) {
   for (const group of site.nav) {
-    if (group.href && group.href === `/${slug}.html`) return group.id;
-    if (group.items && group.items.some((i) => i.href === `/${slug}.html`)) return group.id;
+    if (group.items.some((i) => i.href === `/${slug}.html`)) return group.id;
   }
-  if (slug.startsWith("service-")) return "services";
-  if (slug.startsWith("briefing-")) return "writing";
+  if (slug.startsWith("sector-")) return "sectors";
+  if (slug.startsWith("service-")) return "work";
+  if (slug.startsWith("briefing-") || slug.startsWith("book-")) return "read";
   return null;
+}
+
+/* A recorded human moment appears on a briefing once its file exists at
+   audio/<slug>-human-moment.mp3, with its transcript from src/data/audio.json.
+   Until then the marker renders as nothing: no empty player on a live page. */
+function audioBlocks(html) {
+  return html.replace(/<!--audio:([a-z-]+)-->/g, (_, slug) => {
+    const file = `audio/${slug}-human-moment.mp3`;
+    if (!existsSync(join(ROOT, file))) return "";
+    const paras = readJSON(join(SRC, "data/audio.json")).briefings[slug];
+    if (!paras) throw new Error(`${file} exists but src/data/audio.json has no transcript for ${slug}.`);
+    return `<div class="au"><p class="au-t">Hear Neil read this.</p><audio class="au-p" controls preload="none" src="/${file}" aria-label="Neil Catton reading the human moment"></audio><details class="au-d"><summary>Read the transcript</summary><div class="au-x">${paras.map((p) => `<p>${helpers.esc(p)}</p>`).join("")}</div></details></div>`;
+  });
+}
+
+/* The number on a tile grows into the same number at the top of its briefing.
+   Generated so that a new briefing in the register needs no CSS. */
+function writeTransitions() {
+  const data = readJSON(join(SRC, "data/briefings.json"));
+  const rules = data.briefings.filter((b) => b.tile).map((b) => `  .vt-${b.tile.key} { view-transition-name: fig-${b.tile.key}; view-transition-class: fig; }`);
+  writeFileSync(join(DIST, "assets/transitions.css"), `@media (prefers-reduced-motion: no-preference) {\n${rules.join("\n")}\n}\n`);
 }
 
 function buildPage(meta) {
@@ -308,7 +330,7 @@ function buildPage(meta) {
     jsonld: resolveFactsDeep(meta.jsonld || []),
     hasPageCss: !!pageCss,
     hasPageJs: !!pageJs,
-    content: resolveFacts(meta.content),
+    content: resolveFacts(audioBlocks(meta.content)),
     bodyClass: meta.bodyClass || ""
   };
   if (page.description) page.description = resolveFacts(page.description);
@@ -317,58 +339,6 @@ function buildPage(meta) {
   const html = render("base.html", page);
   writeFileSync(join(DIST, `${slug}.html`), html);
   return page;
-}
-
-/* ── service pages, generated from data ──────────────────────────── */
-/* Twelve near-identical documents differing in 47 lines out of 571.
-   One template and one data file instead. */
-
-function servicePages() {
-  const services = readJSON(join(SRC, "data/services.json"));
-  return services.map((svc) => {
-    const slug = `service-${svc.id}`;
-    const path = `/${slug}.html`;
-    const content = render("layouts/service.html", { svc, slug, path });
-
-    return {
-      slug,
-      title: `${svc.name} — ${site.name}`,
-      searchTitle: svc.shortName || svc.name,
-      description: svc.description,
-      section: "services",
-      ogType: "website",
-      content,
-      jsonld: [
-        {
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: svc.name,
-          description: svc.description,
-          serviceType: svc.serviceType || svc.name,
-          areaServed: svc.areaServed || { "@type": "Country", name: "United Kingdom" },
-          provider: { "@type": "Person", name: site.name, url: site.origin + "/" }
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: site.origin + "/" },
-            { "@type": "ListItem", position: 2, name: "Services", item: site.origin + "/services.html" },
-            { "@type": "ListItem", position: 3, name: svc.name, item: site.origin + path }
-          ]
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: svc.faq.map((q) => ({
-            "@type": "Question",
-            name: q.q,
-            acceptedAnswer: { "@type": "Answer", text: q.a }
-          }))
-        }
-      ]
-    };
-  });
 }
 
 /* ── generated artefacts ─────────────────────────────────────────── */
@@ -458,11 +428,11 @@ function main() {
   const t0 = Date.now();
   clean();
   copyStatic();
+  writeTransitions();
 
   const pageFiles = readdirSync(join(SRC, "pages")).filter((f) => extname(f) === ".html").sort();
   const metas = pageFiles.map((f) => parsePage(join(SRC, "pages", f)));
-  const generated = servicePages();
-  const all = [...metas, ...generated];
+  const all = metas;
 
   let built = all.map(buildPage);
   const editions = reviewEditions();
@@ -487,8 +457,7 @@ function main() {
   const ms = Date.now() - t0;
   console.log(
     `built ${built.length - editions.length} pages ` +
-    `(${metas.length} authored + ${generated.length} generated) · ` +
-    `review editions ${editions.length} · ` +
+        `review editions ${editions.length} · ` +
     `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · ` +
     `${YEARS_NUM} years since ${site.careerStartYear} · ${ms}ms`
   );

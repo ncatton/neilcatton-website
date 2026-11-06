@@ -1,14 +1,8 @@
 <!--page
 {
-  "title": "The Next Evolution Review \u2014 Neil Catton",
+  "title": "The Next Evolution Review — Neil Catton",
   "description": "A free periodical from Neil Catton. Every two months, one question about technology and the people it reaches, argued at length, sourced, and scored.",
-  "slug": "review",
   "searchTitle": "The Next Evolution Review",
-  "layout": "layouts/review.html",
-  "data": [
-    "review"
-  ],
-  "css": ".review-current { background: var(--paper); padding: 5rem var(--col-pad); border-bottom: 1px solid var(--rule); }\n.review-current-inner, .review-band-inner { max-width: var(--max-wide); margin: 0 auto; }\n.issue { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 4rem; align-items: start; }\n\n/* The cover is drawn, not photographed: the Review's own ink and gold,\n   with the gold bar it carries down its spine. */\n.issue-cover { position: relative; display: flex; flex-direction: column; aspect-ratio: 210 / 297; background: #1a1c22; color: #fdfaf5; padding: 2rem 1.75rem 1.75rem 2.5rem; text-decoration: none; box-shadow: 0 14px 32px rgba(26,23,20,0.22); transition: transform 0.2s ease, box-shadow 0.2s ease; }\n.issue-cover::before { content: \"\"; position: absolute; left: 0; top: 0; bottom: 0; width: 0.75rem; background: #c9973a; }\n.issue-cover:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(26,23,20,0.28); }\n.issue-cover:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }\n.issue-cover-no { font-family: var(--serif); font-size: 3.25rem; font-weight: 700; line-height: 1; color: #e8b75a; align-self: flex-end; }\n.issue-cover-mast { font-family: var(--serif); font-size: 2rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; margin-top: 1.5rem; }\n.issue-cover-mast em { font-style: italic; font-weight: 400; color: #e8b75a; }\n.issue-cover-period { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,250,245,0.78); margin-top: 1rem; }\n.issue-cover-theme { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; line-height: 1.25; margin-top: auto; padding-top: 1.25rem; border-top: 1px solid rgba(232,183,90,0.55); }\n\n.issue-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem; }\n.issue-question { font-family: var(--serif); font-size: 1.2rem; font-style: italic; line-height: 1.55; color: var(--ink-mid); border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-bottom: 1.5rem; max-width: 40rem; }\n.issue-summary { font-size: 1.0625rem; line-height: 1.85; color: var(--ink); margin-bottom: 2rem; max-width: 40rem; }\n.issue-facts { border-top: 1px solid var(--rule); margin-bottom: 2rem; max-width: 40rem; }\n.issue-facts > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); }\n.issue-facts dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); padding-top: 0.2rem; }\n.issue-facts dd { font-size: 0.95rem; line-height: 1.6; color: var(--ink); }\n.issue-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }\n.issue-data { font-size: 0.95rem; line-height: 1.7; color: var(--ink-mid); margin-bottom: 1rem; max-width: 40rem; }\n.issue-data a, .review-prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 0.18em; }\n.issue-data a:hover, .review-prose a:hover { color: var(--ink); }\n.issue-cite { font-size: 0.875rem; line-height: 1.6; color: var(--ink-light); max-width: 40rem; }\n.issue-cite span { font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; margin-right: 0.5rem; }\n\n.issue-archive { margin-top: 4rem; border-top: 2px solid var(--ink); padding-top: 2rem; }\n.issue-archive-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); margin-bottom: 1rem; }\n.issue-archive ul { list-style: none; }\n.issue-archive a { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: 1.5rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); }\n.issue-archive a:hover .ia-title { color: var(--accent); text-decoration: underline; }\n.ia-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); padding-top: 0.3rem; }\n.ia-title { font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }\n\n.review-band { padding: 5rem var(--col-pad); border-bottom: 1px solid var(--rule); }\n.review-band--mid { background: var(--paper-mid); }\n.review-band--paper { background: var(--paper); }\n.review-prose { max-width: var(--max-prose); }\n.review-prose p { font-size: 1.0625rem; line-height: 1.85; color: var(--ink); margin-bottom: 1.25rem; }\n.review-prose p:last-child { margin-bottom: 0; }\n\n.carries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin-bottom: 2.5rem; }\n.carries > div { padding: 1.75rem 1.5rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--paper); }\n.carries h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; line-height: 1.3; color: var(--ink); margin-bottom: 0.6rem; }\n.carries p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-mid); }\n\n.review-close { background: var(--ink); padding: 5rem var(--col-pad); }\n.review-close-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; }\n.review-close h2 { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; line-height: 1.2; color: var(--paper); margin-bottom: 1rem; }\n.review-close p { font-size: 1rem; line-height: 1.8; color: var(--on-dark); margin-bottom: 1.5rem; }\n.review-close .btn-ghost-light { margin: 0; }\n.review-close :focus-visible { outline-color: var(--paper); }\n\n@media (max-width: 900px) {\n  .issue { grid-template-columns: 1fr; gap: 2.5rem; }\n  .issue-cover { max-width: 300px; }\n  .carries { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n  .review-close-inner { grid-template-columns: 1fr; gap: 3rem; }\n}\n@media (max-width: 580px) {\n  .review-current, .review-band, .review-close { padding-top: 3.5rem; padding-bottom: 3.5rem; }\n  .carries { grid-template-columns: 1fr; }\n  .issue-facts > div { grid-template-columns: 1fr; gap: 0.15rem; }\n  .issue-archive a { grid-template-columns: 1fr; gap: 0.25rem; }\n  .issue-actions .btn { width: 100%; }\n}\n.review-standfirst { max-width: 600px; }",
   "jsonld": [
     {
       "@context": "https://schema.org",
@@ -61,125 +55,194 @@
         }
       ]
     }
-  ]
+  ],
+  "slug": "review",
+  "sheets": [
+    "shared"
+  ],
+  "css": ".sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }\n\n.issue { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }\n.cover { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; aspect-ratio: 3 / 4; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--gold); color: var(--ink); text-decoration: none; box-shadow: 0 24px 60px rgba(26,23,20,0.45); }\n.cover:hover { background: var(--paper); }\n.cover:focus-visible { outline-offset: 4px; }\n.cover-mast { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.02; letter-spacing: -0.02em; }\n.cover-no { font-family: var(--serif); font-weight: 300; font-size: clamp(6rem, 15vw, 13rem); line-height: 0.85; letter-spacing: -0.04em; }\n.cover-t { font-weight: 600; font-size: clamp(1.0625rem, 1.5vw, 1.25rem); line-height: 1.3; }\n.q { margin-top: 1.5rem; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.375rem, 2.4vw, 2rem); line-height: 1.2; color: var(--gold); max-width: 42rem; }\n.extent { margin-top: 1.5rem; max-width: 42rem; }\n.issue .acts { margin-top: 2rem; }\n.ledger { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(0.75rem, 1.5vw, 1.25rem); align-items: start; margin-top: clamp(2rem, 5vw, 3.5rem); }\n.vhead { display: flex; align-items: baseline; gap: 0.5rem; min-height: 5rem; padding-bottom: 0.75rem; font-weight: 600; font-size: 1.0625rem; line-height: 1.2; }\n.vn { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 4.4vw, 3.75rem); line-height: 1; letter-spacing: -0.02em; }\n.case { margin-bottom: 0.5rem; background: var(--v); color: var(--vt); }\n.case > summary { display: grid; grid-template-columns: minmax(0, 1fr) 20px; gap: 0.5rem; align-items: start; min-height: 7.5rem; padding: 0.875rem; font-weight: 600; line-height: 1.25; cursor: pointer; list-style: none; }\n.case > summary::-webkit-details-marker { display: none; }\n.case > summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }\n.case > summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }\n.case[open] > summary { min-height: 0; }\n.case[open] .detail-mark { transform: rotate(45deg); }\n.case-b { margin: 0; padding: 0.875rem; background: var(--paper); color: var(--ink); border: 1px solid var(--v); border-top: 0; }\n.case-b div { margin-bottom: 0.75rem; }\n.case-b div:last-child { margin-bottom: 0; }\n.case-b dt { font-size: 0.9375rem; font-weight: 600; color: var(--ink-mid); }\n.case-b dd { margin: 0; line-height: 1.35; }\n.v-a { --v: #1a1714; --vt: #f5f2ee; }\n.v-b { --v: #2b4a6f; --vt: #f5f2ee; }\n.v-c { --v: #6b3fa0; --vt: #f5f2ee; }\n.v-d { --v: #b03a2e; --vt: #f5f2ee; }\n.v-e { --v: #d4cfc9; --vt: #1a1714; }\n.datalink { margin-top: clamp(1.5rem, 3vw, 2.5rem); }\n.datalink a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }\n.calls { margin-top: clamp(2rem, 5vw, 3.5rem); border-bottom: 1px solid var(--on-dark-rule); }\n.call { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1rem clamp(1.5rem, 5vw, 5rem); padding: clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid var(--on-dark-rule); }\n.call-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; }\n.call-l { font-weight: 600; color: var(--gold); font-size: 1.125rem; }\n.gauge { display: flex; flex-wrap: wrap; gap: 5px; margin: 0.625rem 0; }\n.g { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(245,242,238,0.55); }\n.g-on { background: var(--gold); border-color: var(--gold); }\n.carries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: clamp(2rem, 5vw, 3.5rem); }\n.carry { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1rem; border-top: 2px solid var(--ink); }\n.carry-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.4vw, 2.125rem); line-height: 1.1; letter-spacing: -0.015em; }\n.state { font-family: var(--serif); font-weight: 300; font-size: clamp(2.25rem, 5.6vw, 5rem); line-height: 1.05; letter-spacing: -0.025em; max-width: 68rem; }\n.nextrow { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; }\n.nextrow p + p { margin-top: 1rem; }\n.nextrow .btn { margin-top: 1.5rem; }\n.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); }\n.two .h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1rem; }\n.two .btn { margin-top: 1.5rem; }\n.cite { margin-top: 2rem; }\n@media (max-width: 1100px) { .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vhead { min-height: 0; } .case > summary { min-height: 5.5rem; } }\n@media (max-width: 860px) { .issue, .call, .nextrow, .two { grid-template-columns: 1fr; } .carries { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cover { max-width: 22rem; } }\n@media (max-width: 560px) { .ledger, .carries { grid-template-columns: 1fr; } .case > summary { min-height: 60px; } }\n@media (forced-colors: active) { .g-on { forced-color-adjust: none; } .case { border: 1px solid CanvasText; } }"
 }
 -->
-<header class="page-header" aria-labelledby="page-title">
-    <div class="page-header-inner">
-      <span class="page-label">Writing</span>
-      <h1 class="page-title" id="page-title">The Next Evolution<br><em>Review</em></h1>
-      <p class="page-standfirst review-standfirst">
-        A periodical. Every two months, one question is given the room a single
-        essay never has. Free to read, sourced throughout, and nothing in it is
-        a reprint.
-      </p>
-    </div>
-  </header>
+<section class="dark u-cc697f" aria-labelledby="page-title">
+  <div class="inner hero">
+    <span class="label">The Next Evolution Review</span>
+    <h1 id="page-title" class="h1 u-0f7805">Every two months, <em class="u-bd0267">one question.</em></h1>
+    <p class="lead u-3695bd">Given the room a single essay never has. Free to read, sourced throughout, and nothing in it is a reprint.</p>
+  </div>
+</section>
 
-  <!-- CURRENT ISSUE — rendered from src/data/review.json -->
-  <section class="review-current" aria-labelledby="current-heading">
-    <div class="review-current-inner">
-      <!--review:issues-->
-    </div>
-  </section>
-
-  <!-- WHY A PERIODICAL -->
-  <section class="review-band review-band--mid" aria-labelledby="why-heading">
-    <div class="review-band-inner">
-      <p class="eyebrow">Why a periodical</p>
-      <h2 class="section-heading" id="why-heading">An argument that takes six pieces</h2>
-      <hr class="section-rule" aria-hidden="true">
-      <div class="review-prose">
-        <p>
-          Between July and September 2026, four essays on <em>{{substackName}}</em>
-          made versions of the same argument. The subjects were different and so
-          were the sectors. The point underneath was the same, and the repetition
-          went unrecognised until the fourth.
-        </p>
-        <p>
-          That is the cost of publishing several times a week. Each piece stands
-          alone, and a reader who arrives at the fourth has no way of knowing the
-          first three exist. An argument that takes six pieces to build is never
-          visible in any one of them.
-        </p>
-        <p>
-          The Review is the slower form. Each issue takes one question, sets a
-          long cover story against it, and gathers shorter articles that come at
-          the same question from other sectors. Where an argument first appeared
-          in shorter form on <a href="{{substack}}" target="_blank" rel="noopener noreferrer">the Substack</a>,
-          the fact box at the foot of the article names the original.
-        </p>
+<section class="dark u-f40485" aria-labelledby="issue-title">
+  <div class="inner pad issue">
+    <a class="cover" href="/review/issue-01/" aria-label="Read Issue One: The distance between proven and permitted">
+      <span class="cover-mast">The Next<br>Evolution <em>Review</em></span>
+      <span class="cover-no" aria-hidden="true">01</span>
+      <span class="cover-t">Issue One · October–November 2026<br>The distance between proven and permitted</span>
+    </a>
+    <div>
+      <span class="label">Issue One · October–November 2026</span>
+      <h2 id="issue-title" class="h2">The distance between proven and permitted</h2>
+      <p class="q">When something that works does not reach the people it was built for, how many people had to say yes, and who is answerable for the time they took?</p>
+      <p class="extent">33 pages. A cover story and ten articles across six sections.</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="/review/issue-01/">Read the web edition</a>
+        <a class="btn btn-line" href="/review/issue-01/The-Next-Evolution-Review-Issue-01.pdf">Download the PDF (1 MB)</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHAT EVERY ISSUE CARRIES -->
-  <section class="review-band review-band--paper" aria-labelledby="carries-heading">
-    <div class="review-band-inner">
-      <p class="eyebrow">How it is built</p>
-      <h2 class="section-heading" id="carries-heading">What every issue carries</h2>
-      <hr class="section-rule" aria-hidden="true">
-      <div class="carries">
-        <div>
-          <h3>Cases where the argument fails</h3>
-          <p>Each issue includes cases its own argument does not explain, and grades them in the open. Issue One has three.</p>
-        </div>
-        <div>
-          <h3>A source for every factual claim</h3>
-          <p>Numbered notes in each article's fact box point to the primary source. Judgements are labelled as judgements.</p>
-        </div>
-        <div>
-          <h3>A corrections page</h3>
-          <p>It appears in every issue, including when it is empty. Issue One carries a correction to an essay published in September.</p>
-        </div>
-        <div>
-          <h3>Dated calls</h3>
-          <p>Forecasts with a stated likelihood and a date. Each is scored in the first issue after its date passes, right or wrong.</p>
-        </div>
-        <div>
-          <h3>A three-line summary on every article</h3>
-          <p>The case, the claim and what it costs, so the whole issue can be skimmed in a few minutes.</p>
-        </div>
-        <div>
-          <h3>The data behind the figures</h3>
-          <p>The ledger of cases and the calls are published as CSV beside each issue, so the arithmetic can be checked.</p>
-        </div>
-      </div>
-      <div class="review-prose">
-        <p>
-          The method page in each issue says how the cases were chosen, what the
-          author declares, and how AI assistance was used in the drafting.
-        </p>
-      </div>
-    </div>
-  </section>
+<section class="u-183248" aria-labelledby="ledger-title">
+  <div class="inner pad">
+    <span class="label">The ledger of cases</span>
+    <h2 id="ledger-title" class="h2">Twelve cases. Who holds the authority to say yes?</h2>
+    <p class="lead u-150a87">Ten graded against the issue’s own argument, including the ones it fails to explain. Two shown for comparison. Open any case.</p>
+    <div class="ledger"><div class="vgroup v-a"><h3 class="vhead"><span class="vn">2</span> Explains</h3><details class="case"><summary><span>OPM-MEG brain scanner</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Research use since 2021; not used clinically; approval hoped for 2027</dd></div>
+          <div><dt>What holds it</dt><dd>Device approval, then evidence assessment, commissioning, trust budget</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Patients who could have been scanned clinically</dd></div>
+          <div><dt>Confidence</dt><dd>High</dd></div>
+          <div><dt>In the issue</dt><dd>Cover story</dd></div>
+          <div><dt>Sources</dt><dd>Wellcome, 7 Jul 2026; UCL News, Oct 2021</dd></div>
+        </dl></details><details class="case"><summary><span>Self-healing concrete</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Full-scale tests from 2011; commercially available; rarely specified</dd></div>
+          <div><dt>What holds it</dt><dd>Tenders scored on build price</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Whoever maintains the asset later</dd></div>
+          <div><dt>Confidence</dt><dd>Low</dd></div>
+          <div><dt>In the issue</dt><dd>Section 2</dd></div>
+          <div><dt>Sources</dt><dd>Ingenia, Mar 2011; NWO, Nov 2021; Cabinet Office Construction Playbook v1.1, Sep 2022</dd></div>
+        </dl></details></div><div class="vgroup v-b"><h3 class="vhead"><span class="vn">2</span> Partly explains</h3><details class="case"><summary><span>AI reading of brain MRI (Prima)</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Validated on 30,000+ studies, published Feb 2026; not in routine care</dd></div>
+          <div><dt>What holds it</dt><dd>Four approvals ahead of it</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Patients far from early adopters</dd></div>
+          <div><dt>Confidence</dt><dd>Low</dd></div>
+          <div><dt>In the issue</dt><dd>Section 1</dd></div>
+          <div><dt>Sources</dt><dd>Michigan Medicine, Feb 2026; NHS England, Jul 2025</dd></div>
+        </dl></details><details class="case"><summary><span>AI-discovered lung drug (rentosertib)</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Target to candidate ~18 months; phase III from Jul 2026</dd></div>
+          <div><dt>What holds it</dt><dd>Trial and approval, deliberately slow</dd></div>
+          <div><dt>Who carries the cost</dt><dd>People with a named disease</dd></div>
+          <div><dt>Confidence</dt><dd>Moderate</dd></div>
+          <div><dt>In the issue</dt><dd>Section 1</dd></div>
+          <div><dt>Sources</dt><dd>Ren et al., Nature Biotechnology, Mar 2024; Insilico, Jun 2025 and 7 Jul 2026</dd></div>
+        </dl></details></div><div class="vgroup v-c"><h3 class="vhead"><span class="vn">3</span> Runs the other way</h3><details class="case"><summary><span>Public consultation</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Routine</dd></div>
+          <div><dt>What holds it</dt><dd>A stage no answer moves</dd></div>
+          <div><dt>Who carries the cost</dt><dd>People with direct experience</dd></div>
+          <div><dt>Confidence</dt><dd>Low</dd></div>
+          <div><dt>In the issue</dt><dd>Section 3</dd></div>
+          <div><dt>Sources</dt><dd>Author’s argument</dd></div>
+        </dl></details><details class="case"><summary><span>Post-quantum cryptography migration</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>NIST standards Aug 2024; NCSC milestones 2028/2031/2035</dd></div>
+          <div><dt>What holds it</dt><dd>An internal decision, deferred</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Owners of long-lived records</dd></div>
+          <div><dt>Confidence</dt><dd>Moderate</dd></div>
+          <div><dt>In the issue</dt><dd>Section 4</dd></div>
+          <div><dt>Sources</dt><dd>NIST, Aug 2024; NCSC, 20 Mar 2025</dd></div>
+        </dl></details><details class="case"><summary><span>Data profiles</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Widespread; rectification limited to inaccuracy</dd></div>
+          <div><dt>What holds it</dt><dd>Nobody’s agreement needed</dd></div>
+          <div><dt>Who carries the cost</dt><dd>The person described</dd></div>
+          <div><dt>Confidence</dt><dd>Moderate</dd></div>
+          <div><dt>In the issue</dt><dd>Section 5</dd></div>
+          <div><dt>Sources</dt><dd>ICO, Right to rectification guidance</dd></div>
+        </dl></details></div><div class="vgroup v-d"><h3 class="vhead"><span class="vn">3</span> Does not explain</h3><details class="case"><summary><span>Small modular reactors</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>First land-based commercial unit (Linglong One) planned for May 2025; not confirmed operating at 2 Oct 2026</dd></div>
+          <div><dt>What holds it</dt><dd>Engineering and unit economics</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Whoever funds the subsidy</dd></div>
+          <div><dt>Confidence</dt><dd>Moderate</dd></div>
+          <div><dt>In the issue</dt><dd>Section 2</dd></div>
+          <div><dt>Sources</dt><dd>NucNet SMR database, accessed Sep 2026; World Nuclear News, 8 Jan 2026</dd></div>
+        </dl></details><details class="case"><summary><span>Precision farming</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Dealer adoption forecasts persistently above actual, 2000-2025</dd></div>
+          <div><dt>What holds it</dt><dd>Designed for the wrong farm</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Farmers it was not built for</dd></div>
+          <div><dt>Confidence</dt><dd>Moderate</dd></div>
+          <div><dt>In the issue</dt><dd>Section 2</dd></div>
+          <div><dt>Sources</dt><dd>Malone, Fiechter et al., Agribusiness, 2026</dd></div>
+        </dl></details><details class="case"><summary><span>Cyber protection for the smallest organisations</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Deployed at scale; distributed by ability to pay</dd></div>
+          <div><dt>What holds it</dt><dd>Price</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Sole traders and the self-employed</dd></div>
+          <div><dt>Confidence</dt><dd>High</dd></div>
+          <div><dt>In the issue</dt><dd>Section 4</dd></div>
+          <div><dt>Sources</dt><dd>DSIT Cyber security breaches survey 2025/2026, 30 Apr 2026</dd></div>
+        </dl></details></div><div class="vgroup v-e"><h3 class="vhead"><span class="vn">2</span> Compared, not graded</h3><details class="case"><summary><span>Optical atomic clock, naval trial</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Trialled at sea aboard the Royal Navy’s uncrewed test submarine XCal; announced Oct 2025</dd></div>
+          <div><dt>What holds it</dt><dd>One authority; nothing further for a trial</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Nobody; it moved</dd></div>
+          
+          <div><dt>In the issue</dt><dd>Cover story</dd></div>
+          <div><dt>Sources</dt><dd>Infleqtion, Oct 2025</dd></div>
+        </dl></details><details class="case"><summary><span>Accessibility standards (kerbs, subtitles)</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><dl class="case-b">
+          <div><dt>Where it stood, September 2026</dt><dd>Established; wider benefit documented</dd></div>
+          <div><dt>What holds it</dt><dd>Permission was imposed</dd></div>
+          <div><dt>Who carries the cost</dt><dd>Nobody; this one arrived</dd></div>
+          
+          <div><dt>In the issue</dt><dd>Section 6</dd></div>
+          <div><dt>Sources</dt><dd>Blackwell, SSIR, Winter 2017; Ofcom, 20 May 2013</dd></div>
+        </dl></details></div></div>
+    <p class="datalink"><a href="/review/issue-01/The-Next-Evolution-Review-Issue-01-ledger.csv">Download the ledger (CSV)</a></p>
+  </div>
+</section>
 
-  <!-- NEXT ISSUE — rendered from src/data/review.json -->
-  <section class="review-band review-band--mid" aria-labelledby="next-heading">
-    <div class="review-band-inner">
-      <!--review:next-->
-    </div>
-  </section>
+<section class="dark u-cc697f" aria-labelledby="calls-title">
+  <div class="inner pad">
+    <span class="label">Dated calls</span>
+    <h2 id="calls-title" class="h2">Three forecasts. Each scored in the first issue after its date, right or wrong.</h2>
+    <ol class="calls"><li class="call"><p class="call-t">Linglong One enters commercial operation</p><div class="call-m"><p class="call-l">Likely, about 65%</p><span class="gauge" aria-hidden="true"><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span></span><p>By 31 December 2026. Confidence: Low.</p></div></li><li class="call"><p class="call-t">An OPM-MEG brain scanner receives UK medical device approval for clinical use</p><div class="call-m"><p class="call-l">About even, about 45%</p><span class="gauge" aria-hidden="true"><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span></span><p>By 31 December 2027. Confidence: Low.</p></div></li><li class="call"><p class="call-t">Rentosertib is approved for idiopathic pulmonary fibrosis by any national medicines regulator</p><div class="call-m"><p class="call-l">Unlikely, about 30%</p><span class="gauge" aria-hidden="true"><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g g-on"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span><span class="g"></span></span><p>By 31 December 2028. Confidence: Moderate.</p></div></li></ol>
+    <p class="datalink"><a href="/review/issue-01/The-Next-Evolution-Review-Issue-01-calls.csv">Download the calls (CSV)</a></p>
+  </div>
+</section>
 
-  <!-- CORRECTIONS AND REUSE -->
-  <section class="review-close" aria-label="Corrections, reuse and how to follow">
-    <div class="review-close-inner">
-      <div>
-        <h2>If something is wrong, say so</h2>
-        <p>
-          Corrections are published in the next issue, with the reader credited
-          unless they ask otherwise, and the original is amended with a dated note.
-        </p>
-        <a class="btn-ghost-light" href="/contact.html">Send a correction</a>
+<section class="u-8b410e" aria-labelledby="carry-title">
+  <div class="inner pad">
+    <span class="label">How it is built</span>
+    <h2 id="carry-title" class="h2">What every issue carries</h2>
+    <ul class="carries"><li class="carry"><span class="carry-t">Cases where the argument fails</span><span>Each issue includes cases its own argument does not explain, and grades them in the open. Issue One has three.</span></li><li class="carry"><span class="carry-t">A source for every factual claim</span><span>Numbered notes in each article’s fact box point to the primary source. Judgements are labelled as judgements.</span></li><li class="carry"><span class="carry-t">A corrections page</span><span>It appears in every issue, including when it is empty. Issue One carries a correction to an essay published in September.</span></li><li class="carry"><span class="carry-t">Dated calls</span><span>Forecasts with a stated likelihood and a date. Each is scored in the first issue after its date passes, right or wrong.</span></li><li class="carry"><span class="carry-t">A three-line summary on every article</span><span>The case, the claim and what it costs, so the whole issue can be skimmed in a few minutes.</span></li><li class="carry"><span class="carry-t">The data behind the figures</span><span>The ledger of cases and the calls are published as CSV beside each issue, so the arithmetic can be checked.</span></li></ul>
+    <p class="datalink">The method page in each issue says how the cases were chosen, what the author declares, and how AI assistance was used in the drafting.</p>
+  </div>
+</section>
+
+<section class="dark u-f40485" aria-labelledby="why-title">
+  <div class="inner pad">
+    <span class="label">Why a periodical</span>
+    <h2 id="why-title" class="state">An argument that takes six pieces to build is never visible in any one of them.</h2>
+    <details class="detail u-2c110b">
+      <summary><span>The longer version</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary>
+      <div class="detail-body u-d8c65b">
+        <p class="u-329a9c">Between July and September 2026, four essays on The Next Evolution made versions of the same argument. The subjects were different and so were the sectors. The point underneath was the same, and the repetition went unrecognised until the fourth.</p>
+        <p class="u-329a9c">That is the cost of publishing several times a week. Each piece stands alone, and a reader who arrives at the fourth has no way of knowing the first three exist.</p>
+        <p>The Review is the slower form. Each issue takes one question, sets a long cover story against it, and gathers shorter articles that come at the same question from other sectors. Where an argument first appeared in shorter form on the Substack, the fact box at the foot of the article names the original.</p>
       </div>
-      <div>
-        <h2>Quote it, cite it, send it on</h2>
-        <p>
-          Attribution is the only condition. The Review is published every two
-          months and is free. There is no subscriber target, and no brief set by
-          anyone other than the author. New issues are announced on the Substack.
-        </p>
-        <a class="btn-ghost-light" href="{{substack}}" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
-      </div>
+    </details>
+  </div>
+</section>
+
+<section class="on-gold u-e35e18" aria-labelledby="next-title">
+  <div class="inner pad nextrow">
+    <div>
+      <span class="label">Next · Issue Two · December 2026–January 2027</span>
+      <h2 id="next-title" class="h2">The thing that was working before it was measured</h2>
     </div>
-  </section>
+    <div>
+      <p>What happens when a measurement is introduced to something that was already working, and the measurement changes the thing it was brought in to observe?</p>
+      <p>It also carries the first case tracker: every case from Issue One with its status updated, and the calls checked against events.</p>
+      <a class="btn btn-ink" href="https://writing.neilcatton.com">Follow on Substack</a>
+    </div>
+  </div>
+</section>
+
+<section class="u-183248" aria-labelledby="wrong-title">
+  <div class="inner pad two">
+    <div>
+      <h2 id="wrong-title" class="h3">If something is wrong, say so.</h2>
+      <p>Corrections are published in the next issue, with the reader credited unless they ask otherwise, and the original is amended with a dated note.</p>
+      <a class="btn btn-ink" href="/contact.html">Send a correction</a>
+    </div>
+    <div>
+      <h2 class="h3">Quote it, cite it, send it on.</h2>
+      <p>Attribution is the only condition. Published every two months and free. There is no subscriber target, and no brief set by anyone other than the author.</p>
+      <p class="cite"><b>Cite as</b><br>Catton, N. (2026). The distance between proven and permitted. <i>The Next Evolution Review</i>, Issue 1, October–November 2026.</p>
+    </div>
+  </div>
+</section>

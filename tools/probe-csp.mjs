@@ -63,10 +63,10 @@ for (const page of pages) {
 
   /* Behaviour that depends on the external scripts actually running. */
   const alive = await p.evaluate(() => ({
-    navJs: !!document.getElementById("nav-toggle") && document.getElementById("site-nav").hasAttribute("data-nav-open"),
+    navJs: !!document.querySelector(".nv details"),
     searchJs: !!document.getElementById("search-overlay"),
-    fontLoaded: document.fonts ? document.fonts.check('16px "Source Sans 3"') : true,
-    styled: getComputedStyle(document.body).backgroundColor === "rgb(245, 242, 238)"
+    fontLoaded: document.fonts ? document.fonts.check('16px "Source Sans 3"') && document.fonts.check('300 40px Fraunces') : true,
+    styled: getComputedStyle(document.body).backgroundColor === "rgb(26, 23, 20)"
   }));
   if (!alive.navJs) violations.push(`${page}: site.js did not run`);
   if (!alive.searchJs) violations.push(`${page}: search.js did not run`);

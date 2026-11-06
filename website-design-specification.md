@@ -375,3 +375,7 @@ The lesson is the same one Section 18 drew and worth restating: check the compos
 5. **The two orphaned images** (`neil-catton-photo.jpg`, `NC-logo.png`). Still unreferenced, still uncompressed, still flagged since July.
 6. **Print-resolution headshot.** The new press pack offers the 680×680 web file and says a high-resolution one is available on request. Putting one in `/downloads` would close that loop.
 7. **"Three decades."** The bare year counts are tokenised, but the phrase "three decades" survives in prose on several pages. At thirty-nine years it understates rather than misleads, so it was left rather than rewritten mechanically — worth an editorial pass.
+
+## 22. Redesign (November 2026)
+
+The approved Design canvas replaced the previous look: Fraunces and Source Sans 3, dark, gold, navy and paper sections, four menus (Sectors, Read, Use, Work with me) built on native `details`, nine sector pages, individual book pages, five flagship briefings with their own visuals, and the tile-to-briefing number transition. Sections above that describe Playfair Display, the old nav or `services.json` record the earlier site. Your Plan was withdrawn in November 2026: no use since deployment. The approved wording is in the pages; design decisions are in `README.md` and `CLAUDE.md`.

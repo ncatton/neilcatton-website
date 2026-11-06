@@ -1,9 +1,7 @@
 <!--page
 {
-  "title": "Writing \u2014 Neil Catton",
-  "description": "Essays on technology, ethics, and human purpose from The Next Evolution \u2014 Neil Catton's Substack for CTOs, board members, and system shapers.",
-  "slug": "articles",
-  "css": ".page-header { padding-top: 7rem; background: #1a1714; }\n  .page-header-inner { max-width: var(--max-wide); margin: 0 auto; padding: 3rem var(--col-pad) 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }\n  .page-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,238,0.55); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; opacity: 0; animation: fadeInUp 0.6s ease 0.2s forwards; }\n  .page-label::before { content: \"\"; width: 24px; height: 1px; background: #2b4a6f; flex-shrink: 0; }\n  .page-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #f5f2ee; margin-bottom: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.35s forwards; }\n  .page-title em { font-style: italic; color: #d4cfc9; }\n  .page-standfirst { font-family: var(--sans); font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: rgba(245,242,238,0.72); opacity: 0; animation: fadeInUp 0.6s ease 0.5s forwards; }\n  .substack-panel { background: rgba(245,242,238,0.06); border: 1px solid rgba(212,207,201,0.2); padding: 2rem; opacity: 0; animation: fadeInUp 0.6s ease 0.55s forwards; }\n  .substack-panel-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,238,0.86); margin-bottom: 0.75rem; display: block; }\n  .substack-panel-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 0.75rem; }\n  .substack-panel-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: rgba(245,242,238,0.65); margin-bottom: 1.5rem; }\n  .btn-subscribe { display: inline-flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.875rem 1.75rem; min-height: 44px; background: #2b4a6f; color: #f5f2ee; border: 2px solid #2b4a6f; transition: all 0.2s; }\n  .btn-subscribe:hover { background: #f5f2ee; color: #2b4a6f; border-color: #f5f2ee; }\n  .publication-strip { background: #2b4a6f; padding: 3rem var(--col-pad); }\n  .publication-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }\n  .pub-stat { text-align: center; }\n  .pub-stat-word { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; font-style: italic; color: #f5f2ee; display: block; margin-bottom: 0.35rem; }\n  .pub-stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.78); }\n  .feed-section { background: #f5f2ee; padding: 5rem var(--col-pad); }\n  .feed-inner { max-width: var(--max-wide); margin: 0 auto; }\n  .section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #5c5652; margin-bottom: 1rem; display: block; }\n  .section-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .section-rule { width: 48px; height: 2px; background: #2b4a6f; border: none; margin-bottom: 3rem; }\n  #rss-feed { min-height: 200px; }\n  .feed-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }\n  .feed-card { border-top: 2px solid #d4cfc9; padding-top: 1.5rem; transition: border-color 0.2s; background: transparent; }\n  .feed-card:hover { border-color: #2b4a6f; }\n  .feed-card-pub { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5c5652; margin-bottom: 0.75rem; display: block; }\n  .feed-card-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; line-height: 1.35; color: #1a1714; margin-bottom: 0.75rem; text-decoration: none; display: block; }\n  .feed-card-title:hover { color: #2b4a6f; }\n  .feed-card-excerpt { font-size: 0.9rem; color: #3d3935; line-height: 1.65; margin-bottom: 1rem; background: transparent; }\n  .feed-card-date { font-size: 0.75rem; color: #5c5652; margin-bottom: 1rem; }\n  .feed-card-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2b4a6f; text-decoration: none; }\n  .feed-card-link::after { content: \" \u2192\"; }\n  .feed-card-link:hover { color: #1a1714; text-decoration: underline; }\n  .feed-loading { grid-column: 1 / -1; text-align: center; padding: 3rem; color: #5c5652; font-size: 0.9rem; }\n  .feed-empty { grid-column: 1 / -1; background: #ede9e3; border: 1px solid #d4cfc9; padding: 3rem; text-align: center; }\n  .feed-empty-heading { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: #1a1714; margin-bottom: 0.75rem; }\n  .feed-empty-body { font-size: 0.95rem; color: #3d3935; line-height: 1.7; margin-bottom: 1.5rem; }\n  .feed-cta { text-align: center; }\n  .about-writing { background: #ede9e3; padding: 5rem var(--col-pad); }\n  .about-writing-inner { max-width: var(--max-wide); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }\n  .about-writing-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.2; color: #1a1714; margin-bottom: 1.5rem; }\n  .about-writing p { font-size: 1.0625rem; font-weight: 400; line-height: 1.85; color: #1a1714; margin-bottom: 1.25rem; background: transparent; }\n  .topics-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #5c5652; margin-bottom: 1.25rem; display: block; }\n  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }\n  .topic-item { font-size: 0.9375rem; font-weight: 400; color: #1a1714; padding: 0.75rem 0; border-bottom: 1px solid #d4cfc9; display: flex; align-items: center; gap: 0.75rem; background: transparent; }\n  .topic-item::before { content: \"\"; width: 4px; height: 4px; background: #2b4a6f; border-radius: 50%; flex-shrink: 0; }\n  .subscribe-section { background: #1a1714; padding: 5rem var(--col-pad); text-align: center; }\n  .subscribe-inner { max-width: 860px; margin: 0 auto; }\n  .subscribe-flex { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3.5rem; align-items: center; text-align: left; }\n  .subscribe-text { text-align: center; }\n  .subscribe-qr { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; text-decoration: none; }\n  .subscribe-qr-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,238,0.55); }\n  .subscribe-heading { font-family: var(--serif); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; color: #f5f2ee; line-height: 1.2; margin-bottom: 1rem; }\n  .subscribe-sub { font-size: 1rem; font-weight: 300; color: rgba(245,242,238,0.7); margin-bottom: 2.5rem; line-height: 1.7; }\n  .subscribe-form { display: flex; max-width: 440px; margin: 0 auto; }\n  .subscribe-label { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }\n  .subscribe-input { flex: 1; font-family: var(--sans); font-size: 1rem; padding: 0.875rem 1.25rem; background: rgba(245,242,238,0.1); border: 2px solid rgba(245,242,238,0.3); border-right: none; color: #f5f2ee; outline: none; min-height: 44px; transition: border-color 0.2s; }\n  .subscribe-input::placeholder { color: rgba(245,242,238,0.55); }\n  .subscribe-input:focus { border-color: rgba(245,242,238,0.75); }\n  .subscribe-btn { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: #f5f2ee; color: #2b4a6f; border: 2px solid #f5f2ee; padding: 0.875rem 1.5rem; min-height: 44px; cursor: pointer; transition: all 0.2s; }\n  .subscribe-btn:hover { background: #2b4a6f; border-color: #2b4a6f; color: #f5f2ee; }\n  .subscribe-note { font-size: 0.78rem; color: rgba(245,242,238,0.55); margin-top: 1.25rem; }\n@media (max-width: 860px) {\n  .page-header-inner { grid-template-columns: 1fr; }\n  .substack-panel { display: none; }\n  .publication-inner { grid-template-columns: 1fr; gap: 1.5rem; }\n  .pub-stat { text-align: left; }\n  .about-writing-inner { grid-template-columns: 1fr; gap: 3rem; }\n  .topics-grid { grid-template-columns: 1fr; }\n  .subscribe-flex { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 2.5rem; }\n}\n@media (max-width: 580px) {\n  .subscribe-form { flex-direction: column; }\n  .subscribe-input { border-right: 2px solid rgba(245,242,238,0.3); }\n}\n  .embed-row { display: flex; justify-content: center; margin-top: 0.5rem; min-width: 0; }\n  .embed-frame { background: #fff; border-radius: 2px; overflow: hidden; width: 100%; max-width: 480px; }\n  .embed-frame iframe { width: 100%; }\n  /* A flex item will not shrink below its content unless told to; the\n     480px iframe was forcing 504px of horizontal scroll on a phone. */\n  .subscribe-flex, .subscribe-text { min-width: 0; }\n  .subscribe-flex > * { min-width: 0; }\n\n/* Former inline style attributes. Moved out so the CSP can drop\n   'unsafe-inline' from style-src \u2014 a style=\"\" attribute is blocked\n   by that directive just as an inline <style> block is. */\n  .x-articles-1.x-articles-1.x-articles-1 { margin-top:1rem; }\n  .x-articles-2.x-articles-2.x-articles-2 { margin-top:0.5rem; }\n  .x-articles-3.x-articles-3.x-articles-3 { display:block; border:none; max-width:100%; }\n  .x-articles-4.x-articles-4.x-articles-4 { display:block;padding:1rem;text-align:center; }\n  .x-articles-5.x-articles-5.x-articles-5 { display:block; width:180px; height:180px; background:#fff; padding:14px; border-radius:4px; }\n  .review-pointer-text { font-size: 1.0625rem; line-height: 1.85; color: #1a1714; max-width: 680px; margin-bottom: 1.5rem; }",
+  "title": "Writing — Neil Catton",
+  "description": "Essays on technology, ethics, and human purpose from The Next Evolution — Neil Catton's Substack for CTOs, board members, and system shapers.",
   "jsonld": [
     {
       "@context": "https://schema.org",
@@ -39,173 +37,65 @@
       ]
     }
   ],
-  "searchTitle": "Writing"
+  "searchTitle": "Writing",
+  "slug": "articles",
+  "sheets": [
+    "shared"
+  ],
+  "css": ".latest { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--on-dark-rule); border-top: 1px solid var(--on-dark-rule); border-bottom: 1px solid var(--on-dark-rule); }\n.late { display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; min-height: 19rem; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--navy); color: var(--paper); text-decoration: none; }\n.late:focus-visible { outline-offset: -6px; }\n.late:hover { background: var(--gold); color: var(--ink); }\n.late:hover:focus-visible { outline-color: var(--ink); }\n.late-t { font-family: var(--serif); font-weight: 300; font-size: clamp(2.25rem, 4.8vw, 4.25rem); line-height: 1.04; letter-spacing: -0.025em; }\n.late-d { font-weight: 600; }\n.explore { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: clamp(1.5rem, 5vw, 5rem); margin-top: clamp(2rem, 4vw, 3.5rem); }\n.pat { display: block; width: 100%; min-height: 60px; padding: 0.75rem 0; background: transparent; color: var(--ink); border: 0; border-top: 1px solid var(--ink-rule); font: 600 1.125rem/1.25 var(--sans); text-align: left; cursor: pointer; }\n.pat:last-child { border-bottom: 1px solid var(--ink-rule); }\n.pat:hover { color: var(--navy); }\n.pat[aria-pressed=\"true\"] { background: var(--ink); color: var(--gold); padding-left: 0.875rem; padding-right: 0.875rem; }\n.essays { min-height: 25rem; }\n.essay { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; min-height: 96px; padding: 1rem 0; border-top: 1px solid var(--ink-rule); color: var(--ink); text-decoration: none; }\n.essay:last-child { border-bottom: 1px solid var(--ink-rule); }\n.essay-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; }\n.essay:hover .essay-t { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.12em; }\n.essay-s { font-size: 0.9375rem; font-weight: 600; color: var(--ink-mid); }\n.rv { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; }\n@media (max-width: 820px) {\n  .latest, .explore, .rv { grid-template-columns: 1fr; }\n  .late { min-height: 14rem; }\n  .essays { min-height: 30rem; }\n}",
+  "js": "(function () {\n\"use strict\";\nclass Component extends DCLogic {\n  constructor(props) {\n    super(props);\n    this.state = { pat: 0 };\n  }\n  renderVals() {\n    var self = this;\n    var base = 'https://writing.neilcatton.com/p/';\n    var P = [\n      ['The dashboard stays green', [\n        ['The number that tells you nothing', 'HR and people', 'the-number-that-tells-you-nothing'],\n        ['The consultation that changed nothing', 'Public sector', 'the-consultation-that-changed-nothing'],\n        ['The voice that never reaches the room', 'Across sectors', 'the-voice-that-never-reaches-the'],\n        ['When the board asks the wrong question', 'Corporate governance', 'when-the-board-asks-the-wrong-question']\n      ]],\n      ['Correct at every step, wrong at the end', [\n        ['The Decision Nobody Made', 'Financial services', 'the-decision-nobody-made'],\n        ['The Board That Didn’t Understand What It Had Approved', 'Corporate governance', 'the-board-that-didnt-understand-what'],\n        ['Every Department Did Its Job', 'Public sector', 'every-department-did-its-job'],\n        ['The Orchestration Crisis', 'AI and technology', 'the-orchestration-crisis-why-your']\n      ]],\n      ['Built to be defensible, not to help', [\n        ['Why the Victim Is Always Wrong', 'Financial services', 'why-the-victim-is-always-wrong'],\n        ['The company that knew and said nothing', 'Cybersecurity', 'the-company-that-knew-and-said-nothing'],\n        ['Crime with a support desk', 'Cybersecurity', 'crime-with-a-support-desk'],\n        ['They Already Have It', 'National security', 'they-already-have-it']\n      ]],\n      ['Designed for the person who isn’t there', [\n        ['The Last Person in the Queue', 'Public services', 'the-last-person-in-the-queue'],\n        ['Designing for the Person Who Isn’t Coping', 'Design', 'designing-for-the-person-who-isnt'],\n        ['The Screen That Broke the Trust', 'Healthcare', 'the-screen-that-broke-the-trust'],\n        ['The Land the Data Missed', 'Agriculture', 'the-land-the-data-missed']\n      ]],\n      ['The permanent record you didn’t choose', [\n        ['Permanent, Portable, Wrong', 'Financial services', 'permanent-portable-wrong'],\n        ['The Thing You Gave Away for Free', 'Consumer technology', 'the-thing-you-gave-away-for-free'],\n        ['The Anticipatory Trap', 'Consumer technology', 'the-anticipatory-trap'],\n        ['Sovereign is Not a Postcode', 'Government and data', 'sovereign-is-not-a-postcode']\n      ]],\n      ['Engineered compulsion', [\n        ['Technically Present', 'Consumer platforms', 'technically-present'],\n        ['A Reflex That Was Installed', 'Consumer platforms', 'a-reflex-that-was-installed'],\n        ['Boredom Was the Doorway', 'Children and education', 'boredom-was-the-doorway'],\n        ['Why Helpful Isn’t the Same as Good', 'Children and education', 'why-helpful-isnt-the-same-as-good']\n      ]]\n    ];\n    var st = this.state;\n    return {\n      patterns: P.map(function (p, i) {\n        return { name: p[0], pressed: i === st.pat ? 'true' : 'false', pick: function () { self.setState({ pat: i }); } };\n      }),\n      essays: P[st.pat][1].map(function (e) {\n        return { t: e[0], s: e[1], href: base + e[2] };\n      })\n    };\n  }\n}\nwindow.dcMount(Component, {\"1\": \"<section class=\\\"u-183248\\\" aria-labelledby=\\\"pat-title\\\">\\n  <div class=\\\"inner pad\\\">\\n    <span class=\\\"label\\\">Find your way in</span>\\n    <h2 id=\\\"pat-title\\\" class=\\\"h2\\\">Different sectors. The same failures.</h2>\\n    <div class=\\\"explore\\\">\\n      <div role=\\\"group\\\" aria-label=\\\"Choose a pattern\\\">\\n        <sc-for list=\\\"[[patterns]]\\\" as=\\\"p\\\" hint-placeholder-count=\\\"6\\\">\\n          <button class=\\\"pat\\\" type=\\\"button\\\" aria-pressed=\\\"[[p.pressed]]\\\" onClick=\\\"[[p.pick]]\\\">[[p.name]]</button>\\n        </sc-for>\\n      </div>\\n      <div class=\\\"essays\\\" aria-live=\\\"polite\\\">\\n        <sc-for list=\\\"[[essays]]\\\" as=\\\"e\\\" hint-placeholder-count=\\\"4\\\">\\n          <a class=\\\"essay\\\" href=\\\"[[e.href]]\\\"><span class=\\\"essay-t\\\">[[e.t]]</span><span class=\\\"essay-s\\\">[[e.s]]</span></a>\\n        </sc-for>\\n      </div>\\n    </div>\\n    <div class=\\\"acts u-ab6c55\\\">\\n      <a class=\\\"btn btn-ink\\\" href=\\\"https://writing.neilcatton.com/archive\\\">Every essay</a>\\n      <a class=\\\"btn btn-out\\\" href=\\\"/pattern-map.html\\\">The Pattern Map</a>\\n    </div>\\n  </div>\\n</section>\"});\n})();\n",
+  "usesDc": true
 }
 -->
-<!-- PAGE HEADER -->
-  <header class="page-header" aria-labelledby="page-title">
-    <div class="page-header-inner">
-      <div>
-        <span class="page-label">Writing</span>
-        <h1 class="page-title" id="page-title">The Next<br><em>Evolution</em></h1>
-        <p class="page-standfirst">
-          A strategic briefing for leaders and system shapers — moving from
-          accidental evolution to the intentional design of trust, agency,
-          and moral architecture. Published when there is something worth saying.
-        </p>
-      </div>
-      <div class="substack-panel" aria-label="Substack publication details">
-        <span class="substack-panel-label">Publication</span>
-        <h2 class="substack-panel-name">The Next Evolution</h2>
-        <p class="substack-panel-desc">
-          Essays at the intersection of technology, ethics, and human purpose.
-          Written for CTOs, board members, and anyone navigating systems that
-          weren't built with them in mind.
-        </p>
-        <a href="https://writing.neilcatton.com" class="btn-subscribe"
-           target="_blank" rel="noopener noreferrer">
-          Subscribe on Substack
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- PUBLICATION PILLARS -->
-  <div class="publication-strip" role="region" aria-label="Publication principles">
-    <div class="publication-inner">
-      <div class="pub-stat">
-        <span class="pub-stat-word">When it matters</span>
-        <span class="pub-stat-label">Published to no schedule</span>
-      </div>
-      <div class="pub-stat">
-        <span class="pub-stat-word">Free to read</span>
-        <span class="pub-stat-label">No paywall</span>
-      </div>
-      <div class="pub-stat">
-        <span class="pub-stat-word">One argument</span>
-        <span class="pub-stat-label">Per essay, clearly made</span>
-      </div>
+<section class="dark u-cc697f" aria-labelledby="page-title">
+  <div class="inner hero">
+    <span class="label">The Next Evolution</span>
+    <h1 id="page-title" class="h1 u-3c2ba2">One argument at a time.</h1>
+    <div class="acts u-2b3db9">
+      <a class="btn btn-gold" href="https://writing.neilcatton.com">Subscribe free</a>
+      <p>No paywall. No forms in the way of reading.</p>
     </div>
   </div>
+  <div class="latest" data-latest-feed>
+    <a class="late" href="https://writing.neilcatton.com/p/the-lost-art-of-conversation">
+      <span class="late-t">The Lost Art of Conversation</span>
+      <span class="late-d">Latest · 9 October 2026</span>
+    </a>
+    <a class="late" href="https://writing.neilcatton.com/p/which-car-is-that">
+      <span class="late-t">Which car is that?</span>
+      <span class="late-d">8 October 2026</span>
+    </a>
+  </div>
+</section>
 
-  <!-- LIVE RSS FEED -->
-  <section class="feed-section" aria-labelledby="feed-heading">
-    <div class="feed-inner">
-      <span class="section-label">Latest essays</span>
-      <h2 class="section-heading" id="feed-heading">From the Substack</h2>
-      <hr class="section-rule" aria-hidden="true">
-
-      <div id="rss-feed" data-substack-feed="9" data-feed-grid-class="feed-grid">
-        <div class="feed-fallback">
-          <p class="feed-fallback-body">The most recent essays load here from <em>{{substackName}}</em>. If you are reading this, they have not — the full archive is on Substack.</p>
-          <a href="{{substack}}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read the essays on Substack</a>
-        </div>
+<section class="u-183248" data-dc="1" aria-labelledby="pat-title">
+  <div class="inner pad">
+    <span class="label">Find your way in</span>
+    <h2 id="pat-title" class="h2">Different sectors. The same failures.</h2>
+    <div class="explore">
+      <div role="group" aria-label="Choose a pattern">
+        <button class="pat" type="button" aria-pressed="true">The dashboard stays green</button><button class="pat" type="button" aria-pressed="false">Correct at every step, wrong at the end</button><button class="pat" type="button" aria-pressed="false">Built to be defensible, not to help</button><button class="pat" type="button" aria-pressed="false">Designed for the person who isn’t there</button><button class="pat" type="button" aria-pressed="false">The permanent record you didn’t choose</button><button class="pat" type="button" aria-pressed="false">Engineered compulsion</button>
       </div>
-
-      <div class="feed-cta x-articles-1">
-        <a href="https://writing.neilcatton.com" class="btn btn-primary"
-           target="_blank" rel="noopener noreferrer">
-          Read all essays on Substack
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE REVIEW — the same writing at full length. Uses the shared
-       section primitives only, so it needs no page CSS. -->
-  <section class="section" aria-labelledby="review-pointer-heading">
-    <div class="section-inner">
-      <span class="eyebrow">Every two months</span>
-      <h2 class="section-heading" id="review-pointer-heading">The Next Evolution Review</h2>
-      <hr class="section-rule" aria-hidden="true">
-      <p class="review-pointer-text">
-        An argument that takes six essays to build is never visible in any one
-        of them. The Review takes one question each issue and gives it room: a
-        long cover story, shorter articles from other sectors, and a ledger of
-        the cases with their sources. Issue One is out now.
-      </p>
-      <a href="/review.html" class="link-cta">Read the Review</a>
-    </div>
-  </section>
-
-  <!-- ABOUT THE WRITING -->
-  <section class="about-writing" aria-labelledby="about-writing-heading">
-    <div class="about-writing-inner">
-      <div>
-        <h2 class="about-writing-heading" id="about-writing-heading">
-          Why Substack.<br>Why no schedule.
-        </h2>
-        <p>
-          The Next Evolution publishes when there is something worth saying.
-          Not to a content calendar. Not to an algorithm. The form is deliberate:
-          if the writing argues that technology should adapt to the individual
-          rather than the other way around, it would be a poor advertisement
-          for itself if it chased engagement metrics instead.
-        </p>
-        <p>
-          The essays are read by CTOs, board members, and product leaders —
-          and by people who have nothing to do with technology professionally
-          but find themselves navigating systems that were not built with them
-          in mind. That range is not accidental. The argument is the same
-          whoever is reading it.
-        </p>
-        <p>
-          Each essay makes one argument. Clearly. Anchored in a specific
-          human consequence. It does not end with a rallying call.
-        </p>
-        <a href="https://writing.neilcatton.com" class="btn btn-secondary x-articles-2"
-           target="_blank" rel="noopener noreferrer">
-          Follow on Substack
-        </a>
-      </div>
-
-      <div>
-        <span class="topics-label">Territory</span>
-        <div class="topics-grid" role="list">
-          <div class="topic-item" role="listitem">AI ethics &amp; governance</div>
-          <div class="topic-item" role="listitem">Human agency in technology</div>
-          <div class="topic-item" role="listitem">Organisational systems</div>
-          <div class="topic-item" role="listitem">Cognitive sovereignty</div>
-          <div class="topic-item" role="listitem">Cyber security &amp; risk</div>
-          <div class="topic-item" role="listitem">Digital identity</div>
-          <div class="topic-item" role="listitem">Public sector technology</div>
-          <div class="topic-item" role="listitem">Trust &amp; moral architecture</div>
-          <div class="topic-item" role="listitem">System design &amp; failure</div>
-          <div class="topic-item" role="listitem">Leadership &amp; strategy</div>
-          <div class="topic-item" role="listitem">Society 5.0</div>
-          <div class="topic-item" role="listitem">The future of policing</div>
-        </div>
+      <div class="essays" aria-live="polite">
+        <a class="essay" href="https://writing.neilcatton.com/p/the-number-that-tells-you-nothing"><span class="essay-t">The number that tells you nothing</span><span class="essay-s">HR and people</span></a><a class="essay" href="https://writing.neilcatton.com/p/the-consultation-that-changed-nothing"><span class="essay-t">The consultation that changed nothing</span><span class="essay-s">Public sector</span></a><a class="essay" href="https://writing.neilcatton.com/p/the-voice-that-never-reaches-the"><span class="essay-t">The voice that never reaches the room</span><span class="essay-s">Across sectors</span></a><a class="essay" href="https://writing.neilcatton.com/p/when-the-board-asks-the-wrong-question"><span class="essay-t">When the board asks the wrong question</span><span class="essay-s">Corporate governance</span></a>
       </div>
     </div>
-  </section>
-
-  <!-- SUBSCRIBE -->
-  <section class="subscribe-section" aria-labelledby="subscribe-heading">
-    <div class="subscribe-inner">
-      <div class="subscribe-flex">
-        <div class="subscribe-text">
-          <h2 class="subscribe-heading" id="subscribe-heading">One essay.<br>When it matters.</h2>
-          <p class="subscribe-sub">
-            No noise. No schedule. Published when there is something
-            worth saying — and not before.
-          </p>
-          <div class="embed-row">
-            <div class="embed-frame">
-              <iframe data-src="https://writing.neilcatton.com/embed"
-                      width="480" height="200" class="x-articles-3 lazy-embed"
-                      frameborder="0" scrolling="no" loading="lazy"
-                     
-                      title="Subscribe to The Next Evolution on Substack">
-              </iframe>
-              <noscript><a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="x-articles-4">Subscribe on Substack</a></noscript>
-            </div>
-          </div>
-          <p class="subscribe-note">Free to read. Unsubscribe at any time.</p>
-        </div>
-        <a href="https://writing.neilcatton.com" target="_blank" rel="noopener noreferrer" class="subscribe-qr" aria-label="Scan to subscribe to The Next Evolution on Substack">
-          <img src="/images/qr-code-substack.svg" width="180" height="180" alt="QR code linking to The Next Evolution Substack" class="x-articles-5">
-          <span class="subscribe-qr-label">Scan to subscribe</span>
-        </a>
-      </div>
+    <div class="acts u-ab6c55">
+      <a class="btn btn-ink" href="https://writing.neilcatton.com/archive">Every essay</a>
+      <a class="btn btn-out" href="/pattern-map.html">The Pattern Map</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="on-gold u-e35e18" aria-labelledby="rv-title">
+  <div class="inner pad rv">
+    <div>
+      <span class="label">The Next Evolution Review · Issue One</span>
+      <h2 id="rv-title" class="h2">The distance between proven and permitted.</h2>
+    </div>
+    <div>
+      <p class="u-37b1f1">When something that works does not reach the people it was built for, how many people had to say yes, and who is answerable for the time they took?</p>
+      <a class="btn btn-ink" href="/review.html">Read the issue</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+{
+  "_about": "Transcripts for the recorded human moments. A block appears on a briefing only when audio/<slug>-human-moment.mp3 exists, so a page never shows an empty player. If a recording changes a word, change it here too.",
+  "briefings": {
+    "passenger-transport": [
+      "A wheelchair user has booked help at both ends of a rail journey. Someone to meet them at the start. Someone to meet them at the end.",
+      "The train is cancelled.",
+      "They are rebooked onto another service. Whether anyone meets them now depends on one thing: whether the booking travelled with them.",
+      "The rail regulator asked people who book this help. When the train runs, 86 in every 100 are met. When it is cancelled, 67. The other 33 are not.",
+      "Compensation claims are being automated, and for most passengers that is a real gain. The rail industry’s AI plan sets out to do it. That plan does not mention disabled passengers once.",
+      "So when the tool acts on that cancelled train, what happens to the booking? Is anyone waiting?"
+    ],
+    "grocery-retail": [
+      "A shopper is at the self-checkout in a supermarket. A member of staff stops them, says they have been identified by the AI, and they can’t finish buying their shopping.",
+      "That was August 2026. The retailer called it human error. The supplier said a correct alert had been sent, then handled wrongly.",
+      "Six months earlier, in another store, three managers told a different shopper to leave. The supplier confirmed it held no incidents or alerts on that person at all. The retailer called it the wrong person being approached, and offered a £75 voucher.",
+      "That chain went from two stores to more than 55 in under a year, with up to 150 more announced before Christmas.",
+      "Every match, the retailer says, is reviewed by a trained manager. So the defence rests on that one person, in seconds, mid-shift, with a queue forming.",
+      "There is no statutory grocery ombudsman. So far, the published price of getting it wrong is £75, set by the retailer."
+    ],
+    "energy-retail": [
+      "A household on a smart prepayment meter runs out of credit. The power goes off. The meter tells the supplier.",
+      "Nothing happens.",
+      "In the first three months of 2026, more than 510,000 electricity customers on smart prepayment meters cut off their own supply at least once. For more than 279,000 of them it lasted over three hours. Ofgem leaves the shorter ones out of its headline, because they may mostly be people who forgot to top up. Three hours is the figure that means a cold house.",
+      "In that same quarter, no supplier disconnected a single domestic customer for not paying. That has been true of every quarter since the start of 2023. Disconnection has not ended. It has been handed to the customer, and it is recorded as a meter reading.",
+      "That record is what an AI system would be learning from.",
+      "Who follows up?"
+    ],
+    "social-housing": [
+      "A child’s bedroom window is boarded up, and the family is worried about the cold. It stays boarded up for four years.",
+      "A household lives with bin bags covering a hole in their living room ceiling, with the risk of asbestos, for two years. A resident goes three years without working heating or hot water.",
+      "All three are real. The Housing Ombudsman published them.",
+      "None of them was a damp and mould case, so none falls under the first phase of Awaab’s Law. That law follows the death of Awaab Ishak, who was two years old, in December 2020.",
+      "The second phase is due on 30 November 2026, subject to Parliament’s approval. Hazards like these then come inside a legal clock: ten working days to investigate, counted from the moment the landlord becomes aware.",
+      "Four years, against ten working days. When did that landlord first know?"
+    ],
+    "justice": [
+      "A number is produced about a person. Call them Sam. I have made Sam up. The rest of this is on the record.",
+      "Sam is out of prison on licence. A probation practitioner is deciding whether to recall Sam to custody, and a scored assessment informs that decision.",
+      "In 2018-19, inspectors found risk of harm adequately assessed in 60 in every 100 cases. In 2024, 28.",
+      "Since 5 February 2026, the law asks whether the human involvement in a decision like that was meaningful, and part of the answer turns on how far the decision was reached by profiling.",
+      "So where would Sam look that tool up? The government keeps a public transparency register for algorithmic tools. On 20 September 2026, a search of it for OASys returned nothing. Recidivism, nothing. Parole, nothing. Probation returned seven records, so the search works.",
+      "A human decision, then. How would anyone outside it know how much of it was human?"
+    ]
+  }
+}

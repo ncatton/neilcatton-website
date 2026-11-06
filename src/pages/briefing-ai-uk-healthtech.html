@@ -2,10 +2,8 @@
 {
   "title": "AI in UK HealthTech — Briefing — Neil Catton",
   "description": "A free, sourced briefing on AI in UK HealthTech — the same AI ambient-voice product measured twice in 2026, once as a productivity gain and once as a source of undetected errors, and why nothing yet counts what the second measurement found.",
-  "slug": "briefing-ai-uk-healthtech",
   "ogImage": "/images/social/briefing-healthtech-og.jpg",
   "ogType": "article",
-  "css": ".section-label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); border-top: 1px solid var(--rule); padding-top: 0.9rem; margin-bottom: 0.75rem; }\n  .x-briefing-ai-uk-healthtech-1.x-briefing-ai-uk-healthtech-1.x-briefing-ai-uk-healthtech-1 { margin-top:3rem; margin-bottom:0; }",
   "jsonld": [
     {
       "@type": "Report",
@@ -66,7 +64,7 @@
           "name": "Is this vendor material?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Almost every published statistic about AI in health is produced by a company selling AI into health, and none of them appear here. Every figure traces to the MHRA, NHS England, an NHS foundation trust's own published evaluation, the Nuffield Trust and Royal College of General Practitioners, or a university research team that published its method and its funder."
+            "text": "No. Almost every published statistic about AI in health is produced by a company selling AI into health, and none of them appear here. Every figure traces to the MHRA, NHS England, an NHS foundation trust’s own published evaluation, the Nuffield Trust and Royal College of General Practitioners, or a university research team that published its method and its funder."
           }
         },
         {
@@ -82,7 +80,7 @@
           "name": "How current is the research?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Verified against primary sources as at 8 September 2026, including the MHRA's clarification of 29 July 2026 that most ambient-voice products are not medical devices, the GOSH DRIVE trial report and the MHRA AI Airlock Phase 2 programme report, both published in 2026, and NHS England's £10bn technology announcement of 4 July 2026."
+            "text": "Verified against primary sources as at 8 September 2026, including the MHRA’s clarification of 29 July 2026 that most ambient-voice products are not medical devices, the trial report and the MHRA AI Airlock Phase 2 programme report, both published in 2026, and NHS England’s £10bn technology announcement of 4 July 2026."
           }
         },
         {
@@ -90,7 +88,7 @@
           "name": "Does it name products or suppliers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TORTUS, by name, because it is the one product both an NHS England-sponsored trial and the MHRA's own regulatory sandbox independently tested in 2026 — every figure about it in the briefing comes from those two published evaluations, not from the supplier."
+            "text": "One product by name, because it is the one both an NHS England-sponsored trial and the MHRA’s own regulatory sandbox independently tested in 2026. Every figure about it comes from those two published evaluations, not from the supplier."
           }
         },
         {
@@ -98,7 +96,7 @@
           "name": "Is it only about AI scribes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. It also covers the national AI imaging rollout funded to reach every NHS trust by 2029, an autonomous skin-cancer pathway that can discharge a patient without a clinician reviewing the image, and the data infrastructure — the Federated Data Platform and Our Future Health — underneath the next generation of predictive tools."
+            "text": "No. It also covers the national AI imaging rollout funded to reach every NHS trust by 2029, an autonomous skin-cancer pathway that can discharge a patient without a clinician reviewing the image, and the data infrastructure underneath the next generation of predictive tools."
           }
         },
         {
@@ -106,131 +104,106 @@
           "name": "What if I want to take this further?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The briefing ends with an eight-workstream action plan. The first three — readiness assessment, use case triage, and a regulatory position paper — form a natural first engagement of six to eight weeks."
+            "text": "The briefing ends with an eight-workstream action plan. The first three, readiness assessment, use case triage and a regulatory position paper, form a natural first engagement of six to eight weeks."
           }
         }
       ],
       "@context": "https://schema.org"
     }
   ],
-  "searchTitle": "AI in UK HealthTech"
+  "searchTitle": "AI in UK HealthTech",
+  "slug": "briefing-ai-uk-healthtech",
+  "sheets": [
+    "briefing"
+  ]
 }
 -->
-<header class="detail-header">
-  <div class="detail-header-inner">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/briefings.html">Briefings</a></li>
-        <li aria-current="page">AI in UK HealthTech</li>
-      </ol>
-    </nav>
-    <span class="detail-label">Briefings — HealthTech</span>
-    <h1 class="detail-title">AI in UK HealthTech</h1>
-    <p class="detail-standfirst">The same AI ambient-voice product was independently measured twice in 2026 — once by the NHS as a productivity gain, once by the regulator as a source of undetected errors. The £10bn rollout is built on the first measurement, and nothing yet exists to count what the second one found.</p>
-  </div>
-</header>
-
-  <div class="detail-main">
-    <div class="detail-prose">
-      <div class="detail-section">
-        <h2 class="detail-section-heading">Why this briefing</h2>
-        <p>In February 2026 an NHS England-sponsored evaluation at Great Ormond Street Hospital reported that an AI ambient-voice scribe raised direct care time by 23.5 per cent and cut documentation time by 51.7 per cent, across nine sites and 192 clinicians. It is a serious piece of work, and its findings are strong. It also states plainly what it did not measure: transcription errors, hallucinations, omissions, clinical inaccuracy — none of it, anywhere in the report.</p>
-        <p>Four months later the MHRA published the results of testing the same product in its own regulatory sandbox. Without active guardrails, out-of-scope behaviour — the system moving from documentation into clinical decision support — was detected in approximately 39 per cent of real-world notes, falling to 20 per cent with guardrails active. The same report warns that "users may reduce scrutiny of outputs over time in response to consistent and reliable product performance." NHS England's £10bn technology commitment, announced weeks later, is built on the first measurement.</p>
-        <p>Nothing currently connects the two. When the MHRA confirmed in July 2026 that most of these products are not medical devices, it placed the most widely deployed clinical AI in Britain outside the Yellow Card scheme — the national route by which a device fault is reported and counted. A patient safety charity states it plainly: there is currently no reliable mechanism to detect, report or count an AI ambient-voice incident at all.</p>
-      </div>
-
-      <figure class="detail-figure">
-        <picture>
-          <source srcset="/images/briefings/healthtech-full-briefing.webp" type="image/webp">
-          <img src="/images/briefings/healthtech-full-briefing.jpg" alt="The NHS measured the time it saved. The regulator measured what it missed — 23.5% relative increase in direct care time from the GOSH DRIVE trial, 39% of real-world notes flagged out-of-scope without guardrails by the MHRA's own sandbox, and £10bn in NHS technology commitment built on the first measurement" width="780" height="1017" loading="lazy" decoding="async">
-        </picture>
-        <figcaption>From the full briefing's clinical trial and regulatory sandbox data — sources listed in the document.</figcaption>
-      </figure>
-
-      <div class="detail-section">
-        <h2 class="detail-section-heading">The human moment</h2>
-        <p>A clinician reads an AI-generated note before signing it. Early on they read closely, because the system is new. Months in, the system is right almost every time — the MHRA's own sandbox recorded a real-world precision score of 0.989 — and the regulator's own warning is that scrutiny falls exactly because performance is reliable. One trust that measured this directly found 44.4 per cent of its clinicians had, at some point, encountered the system inventing information. The safety case for every one of these products is that a human reads the output. Nobody is currently measuring whether that reading is still happening at month six.</p>
-      </div>
-      <div class="detail-section">
-        <h2 class="detail-section-heading">What's inside</h2>
-        <p>Seventeen pages, written for an executive who knows health well and AI not at all:</p>
-        <ul>
-          <li>A note on the numbers — what is included, what was excluded, and why</li>
-          <li>The sector this lands on, and the largest technology commitment the NHS has made</li>
-          <li>The pressure point — two arms of the state, the same product, two different pictures</li>
-          <li>What the sector is facing, from four separate evaluations to the national imaging rollout</li>
-          <li>Five risks, each named by a regulator, a trade body or the statute book</li>
-          <li>The threat side — the reporting gap, and the clinical AI patients reach for that isn't the NHS's</li>
-          <li>The UK legal position, and why section 80 did not liberalise health data</li>
-          <li>Beyond the UK, and what the EMA and FDA's joint principles do and do not cover</li>
-          <li>Seven things that can be done now, none requiring the National Commission to report first</li>
-          <li>Three levels, defined by where accountability sits</li>
-          <li>Benefit realisation, and the four measures a business case is currently missing</li>
-          <li>An eight-workstream way in</li>
-        </ul>
-      </div>
-      <div class="detail-section">
-        <h2 class="detail-section-heading">The discipline behind it</h2>
-        <p>Every figure carries a source. There is no market-size figure for AI in UK health technology anywhere in this briefing, because every one located traced back to a paywalled commercial research house with no published method. A regulator's own commentary on AI adoption was excluded despite ranking highly in search, because it dates from June 2022 and reads as current. A trade-press figure of 20,000 clinicians in a London rollout was superseded by NHS England's own published numbers and dropped.</p>
-        <p>One disagreement is reported rather than resolved. Two national surveys of GP AI use disagree — the Nuffield Trust and Royal College of General Practitioners found 28 per cent of GPs using AI clinically, a separate commercial-panel survey found 40 per cent. They used different frames and different recruitment, and the Nuffield Trust study has the stronger sample. The briefing leads on 28 per cent and names the disagreement, rather than choosing the larger number because it makes a better headline.</p>
-      </div>
-      <div class="detail-section">
-        <h2 class="detail-section-heading">Who it's for</h2>
-        <p>An NHS trust digital or clinical safety lead, a board member being asked to approve a wider ambient-voice rollout, or anyone who wants a plain, sourced account of what an NHS trial and a regulatory sandbox each actually found about the same product. It is written to work for all three.</p>
-      </div>
-    </div>
-
-    <div class="detail-section x-briefing-ai-uk-healthtech-1">
-      <h2 class="detail-section-heading">Briefing details</h2>
-    </div>
-    <div class="details-grid">
-      <div class="cell"><div class="k">Sector</div><div class="v">HealthTech</div></div>
-      <div class="cell"><div class="k">Regulator</div><div class="v">MHRA / NHS England</div></div>
-      <div class="cell"><div class="k">Published</div><div class="v">8 September 2026</div></div>
-      <div class="cell"><div class="k">Length</div><div class="v">18 pages, free PDF</div></div>
+<section class="dark u-cc697f">
+  <div class="inner u-b46063">
+    <span class="label">AI in UK HealthTech: a briefing</span>
+    <h1 class="h1 u-68bddf">The NHS measured the time it saved. <em class="u-bd0267">The regulator measured what it missed.</em></h1>
+    <p class="hf"><span class="hf-n vt-healthtech">39%</span><span class="hf-c">of real-world notes flagged out of scope by the MHRA’s sandbox</span></p>
+    <div class="u-d82e66">
+      <a class="btn btn-gold" href="/downloads/briefings/ai-in-uk-healthtech.pdf">Download the briefing (PDF)</a>
+      <span class="u-6f6b53">18 pages. Free. No form.</span><a class="to-sector u-31b81d" href="/sector-health.html">More on health</a>
     </div>
   </div>
+</section>
 
-  <section class="faq-section" aria-labelledby="faq-heading">
-    <h2 class="detail-section-heading">Frequently asked</h2>
-    <h2 class="faq-heading" id="faq-heading">Questions people ask before reading</h2>
-    <div class="faq-list">
-        <details class="faq-item">
-          <summary>Is this vendor material?</summary>
-          <p>No. Almost every published statistic about AI in health is produced by a company selling AI into health, and none of them appear here. Every figure traces to the MHRA, NHS England, an NHS foundation trust's own published evaluation, the Nuffield Trust and Royal College of General Practitioners, or a university research team that published its method and its funder.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is it free to download?</summary>
-          <p>Yes. It downloads directly, with no form and no email address required.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How current is the research?</summary>
-          <p>Verified against primary sources as at 8 September 2026, including the MHRA's clarification of 29 July 2026 that most ambient-voice products are not medical devices, the GOSH DRIVE trial report and the MHRA AI Airlock Phase 2 programme report, both published in 2026, and NHS England's £10bn technology announcement of 4 July 2026.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Does it name products or suppliers?</summary>
-          <p>TORTUS, by name, because it is the one product both an NHS England-sponsored trial and the MHRA's own regulatory sandbox independently tested in 2026 — every figure about it in the briefing comes from those two published evaluations, not from the supplier.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is it only about AI scribes?</summary>
-          <p>No. It also covers the national AI imaging rollout funded to reach every NHS trust by 2029, an autonomous skin-cancer pathway that can discharge a patient without a clinician reviewing the image, and the data infrastructure — the Federated Data Platform and Our Future Health — underneath the next generation of predictive tools.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What if I want to take this further?</summary>
-          <p>The briefing ends with an eight-workstream action plan. The first three — readiness assessment, use case triage, and a regulatory position paper — form a natural first engagement of six to eight weeks.</p>
-        </details>
+<section class="stage dark u-4cc22f" aria-labelledby="met-title">
+  <div class="pin">
+    <div class="frame">
+      <div>
+        <span class="label u-6f6b53">The same AI scribe, measured twice in 2026</span>
+        <h2 id="met-title" class="fig"><span class="fig-a"><span class="fig-n">86.5%</span><span class="fig-c">median direct care time in the NHS England-sponsored trial, up from 70%. It did not measure errors.</span></span><span class="fig-b"><span class="fig-n">39%</span><span class="fig-c">or so of real-world notes showed out-of-scope behaviour without guardrails, in the MHRA’s sandbox. The source gives no sample size.</span></span><span class="fig-c3"><span class="fig-n">20%</span><span class="fig-c">or so with guardrails active.</span></span></h2>
+      </div>
+      <div class="waffle" aria-hidden="true"><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k2"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w w-on k1"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span><span class="w"></span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="engagement-cta" aria-labelledby="cta-heading">
-    <div class="engagement-cta-inner">
-      <h2 class="engagement-cta-heading" id="cta-heading">Read the briefing.</h2>
-      <p class="engagement-cta-sub">
-        Seventeen pages, free, no form. If it raises questions worth a conversation,
-        that conversation is one message away.
-      </p>
-      <a href="/downloads/briefings/ai-in-uk-healthtech.pdf" class="btn-paper" download>Download the briefing (PDF)</a>
-      <a href="https://outlook.office.com/book/NeilCatton1@neilcatton.com/?ismsaljsauthenabled" class="btn-ghost-light" target="_blank" rel="noopener noreferrer">Book a meeting</a>
+<section class="u-e35e18" aria-labelledby="moment-title">
+  <div class="inner pad">
+    <span class="label">The human moment</span>
+    <h2 id="moment-title" class="h2">A clinician reads an AI-generated note before signing it.</h2>
+    <ol class="steps"><li class="step">Early on, they read closely</li><li class="step">Months in, it is nearly always right</li><li class="step step-broken">Scrutiny falls</li><li class="step step-open">Month six: still reading?</li></ol>
+    <p class="lead u-ab6c55">The safety case for every one of these products is that a human reads the output. Nobody is measuring whether that is still happening.</p>
+  </div>
+</section>
+
+<section class="dark u-cc697f" aria-labelledby="now-title">
+  <div class="inner pad">
+    <span class="label">Why it matters now</span>
+    <h2 id="now-title" class="h2">The £10bn rollout is built on the first measurement.</h2>
+    <p class="lead u-36e7c5">Most of these products are not medical devices, which places them outside the Yellow Card reporting scheme.</p>
+    <div class="wall"><div class="tile"><span class="tile-n">£10bn</span><span class="tile-c">over three years: NHS England’s technology commitment.</span></div><div class="tile"><span class="tile-n">44.4%</span><span class="tile-c">of participants in one trust’s evaluation met situations where the system invented information.</span></div><div class="tile"><span class="tile-n">51.7%</span><span class="tile-c">less documentation time, in the NHS trial.</span></div></div>
+  </div>
+</section>
+
+<section class="u-183248" aria-labelledby="test-title">
+  <div class="inner pad">
+    <span class="label">The argument</span>
+    <h2 id="test-title" class="h2">Nothing currently connects the two.</h2>
+    <div class="pair">
+      <div class="crowd" aria-hidden="true"><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span><span class="c c-all"></span></div>
+      <div class="crowd" aria-hidden="true"><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c c-gold"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span></div>
+      <p class="pair-t">The NHS evaluation is a serious piece of work, and its findings are strong.</p>
+      <p class="pair-t"><em>There is no reliable way yet to detect, report or count an incident.</em></p>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="dark u-f40485" aria-labelledby="next-title">
+  <div class="inner pad">
+    <span class="label">If this is yours to answer for</span>
+    <h2 id="next-title" class="h2">Find out whether anyone is still reading at month six.</h2>
+    <ol class="path">
+      <li class="way"><span class="way-t">Read</span><span class="way-c">Eighteen pages, including seven things that can be done now, none requiring the National Commission to report first.</span><a class="btn btn-gold" href="/downloads/briefings/ai-in-uk-healthtech.pdf">Download the PDF</a></li>
+      <li class="way"><span class="way-t">Talk</span><span class="way-c">One conversation about your own trust, and whether the question applies to it.</span><a class="btn btn-line" href="{{booking}}">Book a meeting</a></li>
+      <li class="way"><span class="way-t">Test</span><span class="way-c">Six to eight weeks: a readiness assessment, use case triage and a regulatory position paper.</span><a class="btn btn-line" href="/service-ai-readiness-review.html">How it works</a></li>
+    </ol>
+    <div class="source source-plain">
+      
+      <p>Two national surveys of GP AI use disagree. The briefing leads on 28 per cent, from the stronger sample, and names the disagreement rather than choosing the larger number. No market-size figure appears, because every one traced to a paywalled research house with no published method. Verified at 8 September 2026.</p>
+    </div>
+  </div>
+</section>
+
+<section class="u-8b410e" aria-labelledby="detail-title">
+  <div class="inner pad">
+    <span class="label">If you want the detail</span>
+    <h2 id="detail-title" class="h2 u-10e4c5">What’s in the briefing</h2>
+    
+    <details class="detail u-f42562"><summary><span>What’s inside the eighteen pages</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>Written for an executive who knows health well and AI not at all:</p><ul class="inside u-8fa5cf"><li>A note on the numbers: what is included, what was excluded and why</li><li>The sector this lands on, and the largest technology commitment the NHS has made</li><li>The pressure point: two arms of the state, the same product, two different pictures</li><li>What the sector is facing, from four separate evaluations to the national imaging rollout</li><li>Five risks, each named by a regulator, a trade body or the statute book</li><li>The threat side: the reporting gap, and the clinical AI patients reach for that isn’t the NHS’s</li><li>The UK legal position, and why section 80 did not liberalise health data</li><li>Beyond the UK, and what the EMA and FDA’s joint principles do and do not cover</li><li>Seven things that can be done now, none requiring the National Commission to report first</li><li>Three levels, defined by where accountability sits</li><li>Benefit realisation, and the four measures a business case is currently missing</li><li>An eight-workstream way in</li></ul></div></details>
+    <h3 class="group-t">Questions people ask before reading</h3>
+    <details class="detail"><summary><span>Is this vendor material?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>No. Almost every published statistic about AI in health is produced by a company selling AI into health, and none of them appear here. Every figure traces to the MHRA, NHS England, an NHS foundation trust’s own published evaluation, the Nuffield Trust and Royal College of General Practitioners, or a university research team that published its method and its funder.</p></div></details><details class="detail"><summary><span>Is it free to download?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>Yes. It downloads directly, with no form and no email address required.</p></div></details><details class="detail"><summary><span>How current is the research?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>Verified against primary sources as at 8 September 2026, including the MHRA’s clarification of 29 July 2026 that most ambient-voice products are not medical devices, the trial report and the MHRA AI Airlock Phase 2 programme report, both published in 2026, and NHS England’s £10bn technology announcement of 4 July 2026.</p></div></details><details class="detail"><summary><span>Does it name products or suppliers?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>One product by name, because it is the one both an NHS England-sponsored trial and the MHRA’s own regulatory sandbox independently tested in 2026. Every figure about it comes from those two published evaluations, not from the supplier.</p></div></details><details class="detail"><summary><span>Is it only about AI scribes?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>No. It also covers the national AI imaging rollout funded to reach every NHS trust by 2029, an autonomous skin-cancer pathway that can discharge a patient without a clinician reviewing the image, and the data infrastructure underneath the next generation of predictive tools.</p></div></details><details class="detail"><summary><span>What if I want to take this further?</span><svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg></summary><div class="detail-body"><p>The briefing ends with an eight-workstream action plan. The first three, readiness assessment, use case triage and a regulatory position paper, form a natural first engagement of six to eight weeks.</p></div></details>
+  </div>
+</section>
+
+<section class="dark u-cc697f" aria-labelledby="more-title">
+  <div class="inner pad">
+    <span class="label">The same pattern elsewhere</span>
+    <h2 id="more-title" class="h2">Another sector</h2>
+    <div class="wall"><a class="tile" href="/briefing-ai-uk-justice.html"><span class="tile-n vt-justice">0</span><span class="tile-c">register results for OASys, recidivism or parole</span><span class="tile-s">Justice and probation</span></a><a class="tile" href="/briefing-ai-uk-legal-services.html"><span class="tile-n vt-legal-services">42</span><span class="tile-c">reports of potential AI misuse in twelve months</span><span class="tile-s">Legal services</span></a><a class="tile" href="/briefing-ai-uk-mortgages.html"><span class="tile-n vt-mortgages">74%</span><span class="tile-c">higher arrears hazard above 90% loan-to-value</span><span class="tile-s">Mortgages</span></a></div>
+  </div>
+</section>

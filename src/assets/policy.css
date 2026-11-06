@@ -1,0 +1,25 @@
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.legend { background: #d4cfc9; color: #1a1714; }
+.legend-in { padding-top: 0.75rem; padding-bottom: 0.75rem; font-weight: 600; }
+.prop { background: var(--gold); color: var(--ink); padding: 0 0.15em; }
+.gone { color: #8a2a20; text-decoration-thickness: 2px; }
+.datel { margin-top: 1rem; font-weight: 600; }
+.glance { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--on-dark-rule); border: 1px solid var(--on-dark-rule); margin-top: clamp(2rem, 4vw, 3rem); }
+.gl { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.25rem; background: var(--ink); }
+.gl-n { font-family: var(--serif); font-weight: 300; font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.02; letter-spacing: -0.025em; color: var(--gold); }
+.flow { margin-top: clamp(2.5rem, 5vw, 4rem); --steps: 4; max-width: 72rem; }
+.flow .dotstep:last-child { color: var(--gold); }
+.sects { background: var(--paper); }
+.sect { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr); gap: 1rem clamp(1.5rem, 5vw, 5rem); padding: clamp(2rem, 4vw, 3.5rem) 0; border-top: 1px solid var(--ink-rule); }
+.sect:first-child { border-top: 0; }
+.sect-h { font-family: var(--serif); font-weight: 300; font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.08; letter-spacing: -0.02em; }
+.sect-b { max-width: 46rem; font-size: 1.125rem; line-height: 1.5; }
+.sect-b p + p, .sect-b p + ul, .sect-b ul + p { margin-top: 1rem; }
+.sect-b li { position: relative; padding: 0.625rem 0 0.625rem 1.5rem; border-top: 1px solid var(--stone); }
+.sect-b li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: 9px; height: 9px; border-radius: 50%; background: var(--navy); }
+.sect-b li:last-child { border-bottom: 1px solid var(--stone); }
+.sect-b a { font-weight: 600; }
+.ask { display: flex; flex-direction: column; align-items: flex-start; gap: 1.75rem; }
+@media (max-width: 860px) { .sect { grid-template-columns: 1fr; } .glance { grid-template-columns: 1fr; } }
+@media (forced-colors: active) { .prop { forced-color-adjust: none; } }

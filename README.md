@@ -40,14 +40,18 @@ netlify.toml            build command, redirects, security headers, caching
 
 src/
   assets/
-    site.css            the design system — tokens, nav, footer, components
+    site.css            what every page shares: nav, footer, search, audio, transition
+    shared.css, service.css, briefing.css, sector.css, policy.css, book.css, errors.css
+                        one sheet per page family, chosen with "sheets" in front matter
+    dc-lite.js          small renderer for sections that change when a reader picks something
     site.js             shared behaviour — nav, feed, forms, lazy embeds
     search.js           the search overlay
     fonts.css           self-hosted @font-face declarations
-    fonts/              woff2 files (Playfair Display, Source Sans 3; OFL)
+    fonts/              woff2 files (Fraunces, Source Sans 3; OFL)
   data/
     site.json           canonical facts, the nav, the footer
-    services.json       the twelve service pages, as data
+    pattern-groups.json the Pattern Map columns
+    audio.json          transcripts for the recorded human moments
     briefings.json      the sector briefings register
     practice-library.json  the Practice Library card register
     patterns.json       the Pattern Map
@@ -56,7 +60,7 @@ src/
   templates/
     base.html           the document shell
     partials/           nav, footer, briefing card
-    layouts/            service, briefings, practice-library, pattern-map, sitemap
+    layouts/            home, briefings, practice-library, pattern-map, sitemap
 
 tools/
   check-a11y.mjs        axe-core + reflow + target size, 375px and 1280px
@@ -64,8 +68,7 @@ tools/
   diff-content.mjs      one-off: compares rebuilt pages against the old ones
   migrate.mjs           one-off: the record of what the migration did
 
-netlify/functions/      Substack feed, search feed, practice library feed,
-                        and the Claude-backed plan generator
+netlify/functions/      Substack feed, search feed, practice library feed, contact form
 ```
 
 `dist/`, `node_modules/` and `.DS_Store` are gitignored.
@@ -81,19 +84,15 @@ Create `src/pages/whatever.html`:
 {
   "title": "Page title — Neil Catton",
   "description": "120–158 characters, written to earn the click.",
-  "searchTitle": "Short label for the sitemap and search"
+  "searchTitle": "Short label for the sitemap and search",
+  "sheets": ["shared"]
 }
 -->
-<header class="page-header">
-  <div class="page-header-inner">
-    <p class="page-label">Section</p>
-    <h1 class="page-title">The heading</h1>
-    <p class="page-standfirst">One paragraph.</p>
+<section class="dark" aria-labelledby="page-title">
+  <div class="inner hero">
+    <span class="label">Section</span>
+    <h1 id="page-title" class="h1">The heading</h1>
   </div>
-</header>
-
-<section class="section">
-  <div class="section-inner">…</div>
 </section>
 ```
 
@@ -102,12 +101,30 @@ Person schema, skip link, nav, `<main>`, footer, and the script tags. The
 page appears in `sitemap.xml`, `sitemap.html` and the search index without
 being added to any list by hand.
 
+## Adding a briefing
+
+Copy the closest `src/pages/briefing-ai-uk-*.html` and change the content. Add
+its entry to `src/data/briefings.json` with a `tile`: `n` (the figure), `c` (its
+caption), `label`, `terms` (words the finder searches), `order` and `key` (the
+slug after `briefing-ai-uk-`). The hero repeats the tile's figure and caption in
+`<p class="hf"><span class="hf-n vt-KEY">`. The homepage, Briefings page, feed
+and number transition then follow from the register. Add it to its sector page
+by hand.
+
+## Recording a human moment
+
+Put the file at `audio/<slug>-human-moment.mp3` with its transcript in
+`src/data/audio.json`. A flagship briefing carries `<!--audio:slug-->`; the player
+and transcript appear there on the next build, and not before.
+
 Optional front-matter keys:
 
 | Key | Effect |
 |---|---|
 | `slug` | Output filename. Defaults to the source filename. |
+| `sheets` | Page-family stylesheets to load, e.g. `["shared", "service"]`. |
 | `css` | Page-specific CSS. Written to `/assets/pages/<slug>.css`, never inlined. |
+| `usesDc` | Loads `dc-lite.js` before the page script. |
 | `js` | Page-specific JavaScript. Written to `/assets/pages/<slug>.js`, never inlined. |
 | `jsonld` | Array of JSON-LD objects, emitted after the sitewide Person block. |
 | `layout` | Render the body through `src/templates/<layout>` first. |
@@ -238,3 +255,17 @@ saying so until someone does the manual pass.
 - Relevant JSON-LD (Person is automatic; add Service, FAQPage,
   BreadcrumbList, CollectionPage as they apply)
 - `npm run check` passes
+
+## Downloadable PDFs
+
+`npm run pdfs` builds the site, then writes into `downloads/`:
+
+- `neil-catton-<service>.pdf`: one A4 page per service. There is no separate copy: the script reads each built `service-*.html` page and lays it out for print, so a change to a service page reaches its PDF the next time you run it. If a page grows too long for one sheet, the type steps down a little; below 90% the script stops and names the page.
+- `neil-catton-how-an-engagement-runs.pdf` (one page, linked from Services) and `neil-catton-engagement-guide.pdf` (overview plus a page per phase). Words in `print/engagement.json`.
+
+Styles are in `print/print.css`, with the site's tokens and fonts. It needs the Playwright dev dependency (`npm install`). The PDFs are committed; Netlify doesn't build them.
+
+## Predictive Purpose self-assessment
+
+`/self-assessment.html`, built from `src/data/self-assessment.json` (the forty statements, scoring key, bands and reading guidance, verbatim from the book's appendix) by `layouts/self-assessment.html`. The whole form is in the HTML, so it reads, prints and works as plain radio buttons without script; `src/assets/self-assessment.js` adds one dimension at a time, totals, the profile, notes, print and saving. Answers stay in the visitor's browser (localStorage); nothing is sent anywhere. It replaced the separate tool at tool.neilcatton.com.
+

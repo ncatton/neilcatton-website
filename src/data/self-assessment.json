@@ -1,0 +1,153 @@
+{
+  "_about": "The Predictive Purpose self-assessment (Tool 1, Appendix). Every string is verbatim from appendix-tool1-self-assessment.md, carried over unchanged from the tool that ran at tool.neilcatton.com. Do not paraphrase; if the book text changes, change it here.",
+  "intro": "This instrument covers the eight dimensions of the model: the three lenses, the four conditions, and the development of people. Score each statement 0, 1 or 2 and write the figure in the box. Be honest rather than aspirational – the score reflects current reality, not intended direction.",
+  "scoringKey": [
+    {
+      "score": 0,
+      "meaning": "Not in place"
+    },
+    {
+      "score": 1,
+      "meaning": "Partially in place"
+    },
+    {
+      "score": 2,
+      "meaning": "Consistently in place"
+    }
+  ],
+  "outOf": "Each dimension scores out of 10 and the whole instrument out of 80. The profile across the eight dimensions matters more than the total – read it first.",
+  "multiScorer": "Complete this with at least two people who hold different roles in the organisation. Where scorers disagree, record both – the disagreement is data, not a problem to resolve before you proceed.",
+  "fields": [
+    {
+      "id": "org",
+      "label": "Organisation",
+      "type": "text"
+    },
+    {
+      "id": "dateCompleted",
+      "label": "Date completed",
+      "type": "date"
+    },
+    {
+      "id": "completedBy",
+      "label": "Completed by (roles)",
+      "type": "text"
+    },
+    {
+      "id": "reviewDate",
+      "label": "Review date",
+      "type": "date"
+    }
+  ],
+  "dimensions": [
+    {
+      "title": "Dimension 1 – Primary lens: what you actually are",
+      "shortTitle": "1 – Primary lens",
+      "statements": [
+        "The organisation can describe what it actually does in terms specific to it, not generic to its sector.",
+        "People at different levels would describe the organisation's core purpose in broadly the same way.",
+        "The organisation has mapped where its primary capability ends – the point at which what it does becomes something another organisation would need to continue.",
+        "The organisation distinguishes between what it says it is for and what its decisions reveal it is actually for.",
+        "Primary capability has been formally examined in the last two years, with someone accountable for keeping that picture current."
+      ]
+    },
+    {
+      "title": "Dimension 2 – Secondary lens: who is already in your world",
+      "shortTitle": "2 – Secondary lens",
+      "statements": [
+        "The organisation examines its supplier, partner and user relationships for what they could enable beyond the current transaction.",
+        "The organisation understands what its network of relationships knows about the communities and contexts it operates in.",
+        "There is a way for a wider opportunity in the network to be surfaced and evaluated before it is dismissed as out of scope.",
+        "The organisation can name specific partners or communities who would benefit from value it could create but currently does not.",
+        "The organisation has asked what its network could enable together that none of its members could enable alone."
+      ]
+    },
+    {
+      "title": "Dimension 3 – Tertiary lens: where you operate in the world",
+      "shortTitle": "3 – Tertiary lens",
+      "statements": [
+        "The organisation understands the specific challenges in the places and communities where it operates, not only its market.",
+        "The organisation has asked whether any of its current capabilities could address challenges in those places.",
+        "The organisation has considered who is affected by its activity but has never been counted.",
+        "The organisation knows who cannot access or safely use what it builds, and what it is obliged to provide for them.",
+        "At least one decision in the past two years was materially influenced by this wider context."
+      ]
+    },
+    {
+      "title": "Dimension 4 – Ownership",
+      "shortTitle": "4 – Ownership",
+      "statements": [
+        "If the person who most often raises the wider question left tomorrow, the question would still get asked.",
+        "The leadership team collectively understands what wider purpose means for this organisation's specific capabilities.",
+        "The people who live in the wider potential are present when briefs and investments are designed, not consulted afterwards.",
+        "Responsibility for the wider question is distributed, not held by a single role or function.",
+        "There is accountability for purpose at board level, not only advocacy at executive level."
+      ]
+    },
+    {
+      "title": "Dimension 5 – Timing",
+      "shortTitle": "5 – Timing",
+      "statements": [
+        "In recent significant investments, the wider question entered before the brief was written, not after the scope was set.",
+        "There is a defined moment in the investment process where the wider question must be asked.",
+        "Purpose is reviewed on a rhythm that does not depend on external reporting deadlines.",
+        "The people most affected by an investment outside the primary brief are involved before the architecture is fixed.",
+        "Wider questions reliably influence decisions rather than only document them after the fact."
+      ]
+    },
+    {
+      "title": "Dimension 6 – Language",
+      "shortTitle": "6 – Language",
+      "statements": [
+        "People across functions share a common, specific vocabulary for the wider question.",
+        "The language used to describe purpose is operational, not aspirational.",
+        "The same words mean the same thing to different people in the organisation.",
+        "There is a process for proposing, challenging and updating the shared vocabulary.",
+        "People use the purpose language in a way that suggests genuine understanding rather than compliance."
+      ]
+    },
+    {
+      "title": "Dimension 7 – Measurement",
+      "shortTitle": "7 – Measurement",
+      "statements": [
+        "The organisation measures wider-purpose outcomes that are not reducible to revenue or cost.",
+        "The organisation can quantify the gap between the wider value identified and the wider value realised – its purpose debt.",
+        "Wider-purpose outcomes are held alongside commercial returns in the same review, with the same seriousness.",
+        "The 'remove the primary benefit – what is left?' test is applied to significant investment cases.",
+        "Purpose measurement is reviewed and updated when the evidence shows the current measures are incomplete."
+      ]
+    },
+    {
+      "title": "Dimension 8 – People development",
+      "shortTitle": "8 – People development",
+      "statements": [
+        "The organisation develops people's capacity to ask the wider question, not only to deliver against the brief.",
+        "New joiners encounter the wider question early, before the frame absorbs them.",
+        "People are equipped to bring those outside the frame into the work so their knowledge changes something, not decorates a report.",
+        "Challenging a brief or an investment case before it is settled is treated as contribution, not disloyalty.",
+        "Purpose thinking features in leadership development, not only in induction."
+      ]
+    }
+  ],
+  "bands": [
+    {
+      "min": 0,
+      "max": 26,
+      "text": "0–26 – The organisation is operating within a reactive-purpose frame. The immediate priority is the Stage 0 and Stage 1 foundations described in Chapter 9."
+    },
+    {
+      "min": 27,
+      "max": 53,
+      "text": "27–53 – Some purpose thinking is in place, but it is uneven. Use the dimension scores to find where the gaps are largest, and start there."
+    },
+    {
+      "min": 54,
+      "max": 80,
+      "text": "54–80 – The foundations are present. The question shifts from whether purpose is being considered to whether it is being pursued deliberately enough to constitute Deliberately Predictive Purpose."
+    }
+  ],
+  "reading": [
+    "The profile matters more than the total. Read the three lens dimensions together: a strong primary lens with weak secondary and tertiary lenses is an organisation with self-knowledge and no outward vision. Read the four condition dimensions together: strong ownership with weak timing is an organisation with the right people carrying the wider question at the wrong moment. The lowest-scoring dimension is almost always where the first substantive work belongs.",
+    "Map the lowest-scoring dimensions against the three opening questions from Chapter 9. In most organisations, the things people said they would change cluster directly around the dimensions that scored lowest. Note any dimension where scorers disagreed – those disagreements are often the most useful material the assessment produces."
+  ]
+}

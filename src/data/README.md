@@ -21,6 +21,7 @@ Field notes:
 - `link` — the canonical Substack post URL. Used to de-duplicate against the live feed, so it must match what the feed reports (no tracking parameters).
 - `date` — the publication date, ISO format. This should match the provenance line printed on the card itself.
 - `book` — `"I"` (The Next Evolution), `"II"` (The Cognitive Crucible), `"III"` (The Shadow System). Drives the book filter on the page.
+- `line` — optional. The one-line prompt the deck and the card list show. Without it the card still appears, with its title only.
 - `image` — the card PNG's URL. Easiest source: publish the post, open the card image in the browser, copy the substackcdn URL. The page shows a plain placeholder if it's missing, so a card is never invisible just because the image URL hasn't been added yet.
 
 Newest entries can go anywhere in the array — the page sorts by date. Keeping them in publication order (newest last) makes the file read as the record it is.

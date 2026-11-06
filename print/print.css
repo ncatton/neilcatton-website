@@ -1,0 +1,105 @@
+/* The downloadable PDFs: service one-pagers and the engagement overview and guide.
+   Built by tools/build-pdfs.mjs (npm run pdfs). Same tokens and fonts as the site. */
+@page { size: A4; margin: 0; }
+:root {
+  --ink: #1a1714; --ink-mid: #3d3935; --paper: #f5f2ee; --paper-mid: #ede9e3; --stone: #d4cfc9;
+  --navy: #2b4a6f; --gold: #e8b75a; --gold-deep: #c9973a; --on-dark: rgba(245,242,238,0.9);
+  --serif: Fraunces, Georgia, serif; --sans: "Source Sans 3", Helvetica, Arial, sans-serif;
+  --s: 1; --x: 14mm;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; padding: 0; background: #fff; }
+body { color: var(--ink); font-family: var(--sans); font-size: calc(9.6pt * var(--s)); line-height: 1.38; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; font-weight: 400; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+.sheet { position: relative; display: flex; flex-direction: column; width: 210mm; height: 297mm; overflow: hidden; background: var(--paper); page-break-after: always; break-after: page; }
+.sheet:last-child { page-break-after: auto; break-after: auto; }
+
+/* Masthead */
+.top { background: var(--ink); color: var(--paper); padding: 9mm var(--x) 7.5mm; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+.brand { font-family: var(--serif); font-weight: 300; font-size: 14pt; letter-spacing: -0.01em; }
+.kind { font-weight: 600; font-size: 8.5pt; color: var(--gold); }
+.top h1 { margin-top: 7mm; font-family: var(--serif); font-weight: 300; font-size: calc(34pt * var(--s)); line-height: 1.02; letter-spacing: -0.025em; }
+.top h1 em { font-style: italic; color: var(--gold); }
+.promise { margin-top: 3mm; max-width: 150mm; font-size: calc(12.5pt * var(--s)); line-height: 1.3; color: var(--on-dark); }
+
+/* Engagement details strip */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--gold); padding: 4.5mm var(--x); gap: 5mm; }
+.facts dt { font-weight: 600; font-size: 7.8pt; }
+.facts dd { font-size: calc(9.6pt * var(--s)); line-height: 1.25; }
+
+/* Body */
+.body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 9mm; padding: 6mm var(--x) 5mm; }
+.k { font-weight: 600; font-size: 8.5pt; margin: 0 0 2.2mm; padding-top: 2.2mm; border-top: 0.6pt solid var(--ink); }
+.k + * { margin-top: 0; }
+.col > .k:not(:first-child) { margin-top: 4.5mm; }
+.fam li { position: relative; padding-left: 5mm; margin-bottom: 1.6mm; }
+.fam li::before { content: ""; position: absolute; left: 0; top: 1.4mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--gold-deep); }
+.fam-p { margin-top: 2.4mm; font-weight: 600; }
+.strap { font-family: var(--serif); font-weight: 300; font-size: calc(14pt * var(--s)); line-height: 1.12; letter-spacing: -0.01em; margin-bottom: 3mm; }
+.steps { position: relative; }
+.steps li { position: relative; padding: 0 0 2.4mm 6.5mm; }
+.steps li::before { content: ""; position: absolute; left: 0; top: 1.2mm; width: 2.6mm; height: 2.6mm; border-radius: 50%; background: var(--ink); }
+.steps li::after { content: ""; position: absolute; left: 1.15mm; top: 4mm; bottom: -0.6mm; width: 0.4mm; background: var(--stone); }
+.steps li:last-child::after { display: none; }
+.steps b { font-weight: 600; }
+.cadence li { padding-left: 0; margin-bottom: 2mm; }
+.cadence li::before, .cadence li::after { display: none; }
+.cadence b { display: block; font-family: var(--serif); font-weight: 300; font-size: calc(12pt * var(--s)); line-height: 1.15; }
+.k2 { margin: 3.2mm 0 1.6mm; font-weight: 600; font-size: 8.5pt; }
+.covers { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+.covers li { padding: 0.8mm 2.2mm; border: 0.6pt solid var(--ink-mid); font-size: calc(8.8pt * var(--s)); }
+.ba li { display: grid; grid-template-columns: minmax(0, 0.8fr) 4mm minmax(0, 1fr); gap: 1.5mm; align-items: start; padding: 1.7mm 0; border-bottom: 0.5pt solid var(--stone); }
+.ba li:first-child { padding-top: 0; }
+.ba .b { color: var(--ink-mid); }
+.ba .arr { color: var(--gold-deep); font-weight: 600; }
+.ba .a { font-weight: 600; }
+.ba-head { display: grid; grid-template-columns: minmax(0, 0.8fr) 4mm minmax(0, 1fr); gap: 1.5mm; margin-bottom: 1.2mm; font-size: 7.8pt; font-weight: 600; color: var(--ink-mid); }
+.proofs li { display: grid; grid-template-columns: 24mm minmax(0, 1fr); gap: 3mm; padding: 2mm 0; border-bottom: 0.5pt solid var(--stone); }
+.proofs li:first-child { padding-top: 0; }
+.proofs .n { font-family: var(--serif); font-weight: 300; font-size: calc(19pt * var(--s)); line-height: 1; letter-spacing: -0.02em; color: var(--navy); }
+.proofs .n.long { font-size: calc(13pt * var(--s)); line-height: 1.1; }
+.proofs .s { display: block; margin-top: 0.8mm; font-size: 7.8pt; font-weight: 600; color: var(--ink-mid); }
+
+/* Close */
+.bottom { background: var(--ink); color: var(--paper); padding: 5.5mm var(--x) 4.5mm; }
+.close { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8mm; align-items: end; }
+.close-h { font-family: var(--serif); font-weight: 300; font-size: 20pt; line-height: 1; letter-spacing: -0.02em; }
+.close-p { margin-top: 1.6mm; color: var(--on-dark); }
+.cta { text-align: right; }
+.cta-b { display: inline-block; padding: 2mm 4.5mm; background: var(--gold); color: var(--ink); font-weight: 600; }
+.cta-l { display: block; margin-top: 1.8mm; color: var(--on-dark); font-size: 8.8pt; }
+.foot { margin-top: 3.5mm; padding-top: 2.5mm; border-top: 0.5pt solid rgba(245,242,238,0.3); font-size: 7.6pt; color: var(--on-dark); display: flex; justify-content: space-between; gap: 6mm; }
+
+/* Engagement arc */
+.arc { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; margin: 2mm 0 0; }
+.arc::before { content: ""; position: absolute; left: 0; right: 0; top: 2.4mm; height: 0.6mm; background: var(--ink); }
+.arc li { position: relative; padding: 8mm 3mm 0 0; }
+.arc li::before { content: ""; position: absolute; left: 0; top: 0; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--ink); }
+.arc li.on::before { background: var(--gold-deep); }
+.arc .an { display: block; font-family: var(--serif); font-weight: 300; font-size: calc(13pt * var(--s)); line-height: 1.08; }
+.arc .at { display: block; margin-top: 1.4mm; font-size: 8.4pt; font-weight: 600; color: var(--ink-mid); }
+.wide { flex: 1; padding: 7mm var(--x) 5mm; display: flex; flex-direction: column; gap: 5mm; }
+.found { padding: 4.5mm 5mm; background: var(--gold); font-size: calc(10pt * var(--s)); }
+.phases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5mm 9mm; font-size: calc(9.2pt * var(--s)); }
+.phases li { padding-top: 2.2mm; border-top: 0.6pt solid var(--ink); }
+.phases .pn { display: block; font-weight: 600; font-size: 8.5pt; color: var(--ink-mid); }
+.phases .pt { display: block; margin: 0.6mm 0 1.4mm; font-family: var(--serif); font-weight: 300; font-size: calc(15pt * var(--s)); line-height: 1.05; letter-spacing: -0.01em; }
+.phases .pw { display: block; margin-top: 1.4mm; font-size: 8.4pt; font-weight: 600; color: var(--navy); }
+
+/* Guide phase pages */
+.big-n { font-family: var(--serif); font-weight: 300; font-size: 64pt; line-height: 0.85; color: var(--gold); letter-spacing: -0.03em; }
+.top .of { font-weight: 600; font-size: 8.5pt; color: var(--on-dark); }
+.phase-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 7mm; align-items: end; margin-top: 9mm; }
+.phase-top h1 { margin-top: 0; }
+.guide-body { flex: 1; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 10mm; padding: 9mm var(--x) 7mm; }
+.desc { font-family: var(--serif); font-weight: 300; font-size: calc(14pt * var(--s)); line-height: 1.3; letter-spacing: -0.005em; }
+.acts li { position: relative; padding: 1.8mm 0 1.8mm 6mm; border-bottom: 0.5pt solid var(--stone); }
+.acts li::before { content: "→"; position: absolute; left: 0; top: 1.8mm; color: var(--gold-deep); font-weight: 600; }
+.side { background: var(--paper-mid); padding: 5mm; align-self: start; }
+.side .k:first-child { border-top: 0; padding-top: 0; }
+.side p { font-size: calc(10.5pt * var(--s)); }
+.side .k { margin-top: 5mm; }
+.mini { flex: none; margin-top: auto; }

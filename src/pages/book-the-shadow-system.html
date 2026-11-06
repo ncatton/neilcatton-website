@@ -1,0 +1,80 @@
+<!--page
+{
+  "slug": "book-the-shadow-system",
+  "sheets": [
+    "shared",
+    "book"
+  ],
+  "js": "(function () {\n\"use strict\";\nclass Component extends DCLogic {\n  constructor(props) { super(props); this.state = { lens: 0, who: 0 }; }\n  renderVals() {\n    var self = this, st = this.state;\n    var L = [[\"It’s Criminal\", \"The anatomy of a cyberattack and the economics of exploitation.\", \"Cybercrime is an industry, with supply chains, specialisation, customer service, and profit margins. Understanding its structure is the first step to building effective defence.\"], [\"It’s Personal\", \"The individual as target, vector, and first line of defence.\", \"Most attacks begin with a person: a click, a credential, a moment of inattention. Individual digital hygiene is not a nice-to-have. It is the perimeter.\"], [\"It’s Business\", \"Organisational exposure, resilience, and the true cost of a breach.\", \"The question is not whether your organisation will be targeted. It is whether your risk posture matches your actual exposure, and whether your recovery capability has been tested before it needs to work.\"], [\"It’s Political\", \"State-sponsored operations and the rewriting of the rules of conflict.\", \"Cyber has become the domain of first contact in geopolitical conflict: deniable, scalable, and capable of effects that would previously have required military action.\"], [\"It’s the Future\", \"AI-enabled threats, quantum risk, and the shape of what is coming.\", \"The threat landscape is not static. AI is industrialising attack capability at a rate that outpaces most defensive investment. The organisations and individuals who survive are those who treat security as a continuously evolving discipline.\"]];\n    var W = [[\"Individual\", \"Your digital perimeter\", [\"Use a password manager: unique credentials for every service\", \"Enable multi-factor authentication on everything that matters\", \"Treat every unsolicited link or attachment as hostile until verified\", \"Review app permissions and connected accounts at least annually\", \"Know what you would do the moment you suspect a breach\"]], [\"Organisation\", \"Proportionate, embedded security\", [\"Security strategy proportionate to actual risk exposure, not compliance minimum\", \"Test recovery capability before you need it: backup, restore, incident response\", \"People are the perimeter: invest in culture, not just controls\", \"Third-party risk is your risk: audit your supply chain\", \"Board-level ownership of cyber risk, not delegation to IT\"]], [\"Critical infrastructure\", \"Resilience as a design principle\", [\"Assume breach: design for containment and recovery, not just prevention\", \"Operational technology and IT networks require separate security disciplines\", \"Nation-state threat intelligence must inform defensive posture\", \"Sector coordination: attacks on one are lessons for all\", \"Continuity planning for scenarios where digital systems are unavailable\"]], [\"Nation state\", \"Doctrine for the fifth domain\", [\"Cyber doctrine requires the same rigour as military doctrine, and the same clarity on escalation\", \"Attribution is political as much as technical: act accordingly\", \"Offensive capability must be matched by defensive investment\", \"International norms in cyberspace require active, not passive, diplomacy\", \"Democratic societies must hold state cyber capability to democratic standards\"]]];\n    var out = {};\n    if (L.length) {\n      out.lenses = L.map(function (x, i) { return { name: x[0], pressed: i === st.lens ? 'true' : 'false', pick: function () { self.setState({ lens: i }); } }; });\n      out.lens = { name: L[st.lens][0], head: L[st.lens][1], body: L[st.lens][2] };\n    }\n    if (W.length) {\n      out.whos = W.map(function (x, i) { return { name: x[0], pressed: i === st.who ? 'true' : 'false', pick: function () { self.setState({ who: i }); } }; });\n      out.who = { head: W[st.who][1], items: W[st.who][2].map(function (t) { return { t: t }; }) };\n    }\n    return out;\n  }\n}\nwindow.dcMount(Component, {\"2\": \"<section class=\\\"dark u-cc697f\\\" aria-labelledby=\\\"fw-title\\\">\\n  <div class=\\\"inner pad\\\">\\n    <span class=\\\"label\\\">The threat landscape</span>\\n    <h2 id=\\\"fw-title\\\" class=\\\"h2\\\">Who is doing it, why it works, and where it goes next.</h2>\\n    <div class=\\\"lenses\\\" role=\\\"group\\\" aria-label=\\\"Who is doing it, why it works, and where it goes next.\\\">\\n      <sc-for list=\\\"[[lenses]]\\\" as=\\\"l\\\" hint-placeholder-count=\\\"5\\\">\\n        <button class=\\\"lens\\\" type=\\\"button\\\" aria-pressed=\\\"[[l.pressed]]\\\" onClick=\\\"[[l.pick]]\\\">[[l.name]]</button>\\n      </sc-for>\\n    </div>\\n    <div class=\\\"lens-p\\\" aria-live=\\\"polite\\\">\\n      <p class=\\\"lens-n\\\">[[lens.name]]</p>\\n      <div><p class=\\\"lens-h\\\">[[lens.head]]</p><p class=\\\"lead\\\">[[lens.body]]</p></div>\\n    </div>\\n  </div>\\n</section>\", \"3\": \"<section class=\\\"u-183248\\\" aria-labelledby=\\\"who-title\\\">\\n  <div class=\\\"inner pad\\\">\\n    <span class=\\\"label\\\">Four levels of defence</span>\\n    <h2 id=\\\"who-title\\\" class=\\\"h2\\\">What defence looks like at each scale.</h2>\\n    <div class=\\\"who-row\\\" role=\\\"group\\\" aria-label=\\\"What defence looks like at each scale.\\\">\\n      <sc-for list=\\\"[[whos]]\\\" as=\\\"w\\\" hint-placeholder-count=\\\"4\\\">\\n        <button class=\\\"who\\\" type=\\\"button\\\" aria-pressed=\\\"[[w.pressed]]\\\" onClick=\\\"[[w.pick]]\\\">[[w.name]]</button>\\n      </sc-for>\\n    </div>\\n    <div class=\\\"who-p\\\" aria-live=\\\"polite\\\">\\n      <p class=\\\"who-h\\\">[[who.head]]</p>\\n      <ul class=\\\"ticks\\\"><sc-for list=\\\"[[who.items]]\\\" as=\\\"i\\\" hint-placeholder-count=\\\"5\\\"><li>[[i.t]]</li></sc-for></ul>\\n    </div>\\n    \\n  </div>\\n</section>\"});\n})();\n",
+  "usesDc": true,
+  "title": "The Shadow System — Neil Catton",
+  "searchTitle": "The Shadow System (book)",
+  "section": "read",
+  "description": "Beneath the surface of innovation and convenience, a shadow economy thrives. This is a practical roadmap out of fear and into a proactive stance, for yours"
+}
+-->
+<section class="dark u-48c193" aria-labelledby="page-title">
+  <div class="inner hero bk-top">
+    <div>
+      <a class="bk-back" href="/books.html">Books</a>
+      <p class="bk-when">January 2026 · Trilogy III: Action</p>
+      <h1 id="page-title" class="h1">The Shadow System</h1>
+      <p class="bk-s">Criminality, compromise, and the strategic mandate for a new digital state.</p>
+      <p class="lead bk-hook">Beneath the surface of innovation and convenience, a shadow economy thrives. This is a practical roadmap out of fear and into a proactive stance, for yourself, your business and your community.</p>
+      <div class="acts"><a class="btn btn-gold" href="https://amzn.eu/d/0dyQaBbU">Buy on Amazon</a></div>
+    </div>
+    <img class="bk-cover" src="/images/books/the-shadow-system-cover.jpg" alt="Cover of The Shadow System" width="700" height="1122">
+  </div>
+</section>
+<section class="u-183248" aria-labelledby="arg-title">
+  <div class="inner pad">
+    <span class="label">Five parts</span>
+    <h2 id="arg-title" class="h2">From opportunistic intrusion to geopolitical instrument.</h2>
+    <ol class="dotline parts u-5df08e"><li class="dotstep">It’s Criminal</li><li class="dotstep">It’s Personal</li><li class="dotstep">It’s Business</li><li class="dotstep">It’s Political</li><li class="dotstep">It’s the Future</li></ol>
+  </div>
+</section>
+<section data-dc="2" class="dark u-cc697f" aria-labelledby="fw-title">
+  <div class="inner pad">
+    <span class="label">The threat landscape</span>
+    <h2 id="fw-title" class="h2">Who is doing it, why it works, and where it goes next.</h2>
+    <div class="lenses" role="group" aria-label="Who is doing it, why it works, and where it goes next.">
+      <button class="lens" type="button" aria-pressed="true">It’s Criminal</button><button class="lens" type="button" aria-pressed="false">It’s Personal</button><button class="lens" type="button" aria-pressed="false">It’s Business</button><button class="lens" type="button" aria-pressed="false">It’s Political</button><button class="lens" type="button" aria-pressed="false">It’s the Future</button>
+    </div>
+    <div class="lens-p" aria-live="polite">
+      <p class="lens-n">It’s Criminal</p>
+      <div><p class="lens-h">The anatomy of a cyberattack and the economics of exploitation.</p><p class="lead">Cybercrime is an industry, with supply chains, specialisation, customer service, and profit margins. Understanding its structure is the first step to building effective defence.</p></div>
+    </div>
+  </div>
+</section>
+<section class="u-183248" data-dc="3" aria-labelledby="who-title">
+  <div class="inner pad">
+    <span class="label">Four levels of defence</span>
+    <h2 id="who-title" class="h2">What defence looks like at each scale.</h2>
+    <div class="who-row" role="group" aria-label="What defence looks like at each scale.">
+      <button class="who" type="button" aria-pressed="true">Individual</button><button class="who" type="button" aria-pressed="false">Organisation</button><button class="who" type="button" aria-pressed="false">Critical infrastructure</button><button class="who" type="button" aria-pressed="false">Nation state</button>
+    </div>
+    <div class="who-p" aria-live="polite">
+      <p class="who-h">Your digital perimeter</p>
+      <ul class="ticks"><li>Use a password manager: unique credentials for every service</li><li>Enable multi-factor authentication on everything that matters</li><li>Treat every unsolicited link or attachment as hostile until verified</li><li>Review app permissions and connected accounts at least annually</li><li>Know what you would do the moment you suspect a breach</li></ul>
+    </div>
+    
+  </div>
+</section>
+<section class="on-gold u-e35e18" aria-labelledby="rq-title">
+  <div class="inner pad">
+    <h2 id="rq-title" class="label">Reader responses</h2>
+    <p class="rq">“Neil's extensive expertise of the digital world makes this book both enlightening and an essential reference for both my business and personal online security. Neil sets out many practical steps — many that I hadn't thought of addressing.”<span class="rw">Amazon reader</span></p>
+  </div>
+</section>
+<section class="dark u-cc697f" aria-labelledby="end-title">
+  <div class="inner pad end">
+    <div><h2 id="end-title" class="h2">The full threat landscape and defence framework, on one page.</h2><p>The complete A2 framework poster: free, no sign-up required.</p></div>
+    <div class="acts"><a class="btn btn-gold" href="/downloads/BOOK_THREE_OF_THREE_Neil_Catton_Group_CTO_-_Author_-_The_Next_Evolution.pdf">Download the poster (PDF)</a><a class="btn btn-line" href="https://amzn.eu/d/0dyQaBbU">Buy on Amazon</a></div>
+  </div>
+</section>
+<section class="u-8b410e" aria-labelledby="more-title">
+  <div class="inner pad">
+    <h2 id="more-title" class="label">The other books</h2>
+    <div class="more"><a class="mo" href="/book-the-next-evolution.html"><img src="/images/books/the-next-evolution-cover.jpg" alt="" width="700" height="1122"><span>The Next Evolution</span></a><a class="mo" href="/book-the-cognitive-crucible.html"><img src="/images/books/the-cognitive-crucible-cover.jpg" alt="" width="700" height="1044"><span>The Cognitive Crucible</span></a><a class="mo" href="/book-working-as-designed.html"><img src="/images/books/working-as-designed-cover.jpg" alt="" width="536" height="860"><span>Working as Designed</span></a><a class="mo" href="/book-predictive-purpose.html"><img src="/images/books/predictive-purpose-cover.jpg" alt="" width="700" height="1122"><span>Predictive Purpose</span></a></div>
+  </div>
+</section>
