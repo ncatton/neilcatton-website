@@ -29,6 +29,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, rmSync, existsSync, copyFileSync, lstatSync } from "node:fs";
 import { join, dirname, basename, extname } from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -140,8 +141,21 @@ const helpers = {
     if (/^https?:\/\//i.test(path)) return path;
     return site.origin + (path.startsWith("/") ? path : "/" + path);
   },
-  json(obj) { return JSON.stringify(obj, null, 2); }
+  json(obj) { return JSON.stringify(obj, null, 2); },
+  /* A stylesheet or script URL with a fingerprint of its contents. /assets is
+     cached for an hour, so without this a changed file under an unchanged name
+     reached visitors up to an hour late, with new HTML running against old CSS
+     and JS. Every built file under /assets is written before any page renders. */
+  v(path) {
+    if (!versions.has(path)) {
+      const file = join(DIST, path);
+      if (!existsSync(file)) throw new Error(`${path} is linked from a page but was not built.`);
+      versions.set(path, createHash("sha256").update(readFileSync(file)).digest("hex").slice(0, 10));
+    }
+    return `${path}?v=${versions.get(path)}`;
+  }
 };
+const versions = new Map();
 
 const templateCache = new Map();
 function compile(name) {
