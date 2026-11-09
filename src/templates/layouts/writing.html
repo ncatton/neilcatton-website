@@ -1,0 +1,30 @@
+<!-- The Writing page. Rendered at build time from src/data/essays.json (the essay import writes it) and
+     patterns.json. With JavaScript off every essay is listed and the first pattern is open; the page
+     script switches patterns and filters the archive by strand, topic, year and title. -->
+${(() => {
+  const E = d.data.essays.essays, PAT = d.data.patterns, e = h.esc;
+  const dateText = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const img = (x, cls, w, lazy) => '<img class="' + cls + '" src="/images/essays/' + x.slug + '/cover-' + w + '.webp" width="' + w + '" height="' + Math.round(w * 2 / 3) + '" alt=""' + (lazy ? ' loading="lazy" decoding="async"' : '') + '>';
+  const latest = E.slice(0, 3).map((x, i) => '<a class="lt' + (i ? "" : " lt-1") + '" href="' + x.url + '">' + img(x, "lt-img", i ? 480 : 800, false) + '<span class="lt-x"><span class="lt-t">' + e(x.title) + '</span><span class="lt-d">' + (i ? "" : "Latest · ") + dateText(x.date) + '</span></span></a>').join("");
+  const bySlugSub = {}, byUrl = {}; E.forEach((x) => { bySlugSub[x.substack.split("/p/")[1]] = x; byUrl[x.url] = x; });
+  const pats = PAT.map((p) => ({ p, list: (p.instances || []).map((ins) => { const m = /\/p\/([a-z0-9-]+)/.exec(ins.url || ""); const x = byUrl[ins.url] || (m && bySlugSub[m[1]]); return x ? { x, sector: ins.sector } : null; }).filter(Boolean) })).filter((g) => g.list.length);
+  const patButtons = pats.map((g, i) => '<button class="pat" type="button" aria-pressed="' + (i ? "false" : "true") + '" data-pat="' + i + '">' + e(g.p.name) + '</button>').join("");
+  const patPanels = pats.map((g, i) => '<div class="pat-panel" data-panel="' + i + '"' + (i ? " hidden" : "") + '><p class="pat-def">' + e(g.p.def) + '</p><ul class="pat-list">' + g.list.map((r) => '<li><a class="prow" href="' + r.x.url + '">' + img(r.x, "thumb", 480, true) + '<span class="prow-t">' + e(r.x.title) + '</span><span class="prow-s">' + e(r.sector || "") + '</span></a></li>').join("") + '</ul></div>').join("");
+  const essays = E.filter((x) => x.strand === "essays");
+  const tc = {}; essays.forEach((x) => { if (x.topic) tc[x.topic] = (tc[x.topic] || 0) + 1; });
+  const topics = Object.keys(tc).filter((t) => tc[t] >= 3).sort((a, b) => tc[b] - tc[a]);
+  const chips = '<button class="chip" type="button" aria-pressed="true" data-topic="all">All topics</button>' + topics.map((t) => '<button class="chip" type="button" aria-pressed="false" data-topic="' + e(t) + '">' + e(t) + '</button>').join("");
+  const years = Array.from(new Set(E.map((x) => x.date.slice(0, 4)))).sort().reverse();
+  const rows = E.map((x) => '<li class="arow-i" data-strand="' + x.strand + '" data-topic="' + e(x.topic) + '" data-year="' + x.date.slice(0, 4) + '" data-title="' + e(x.title.toLowerCase()) + '"><a class="arow" href="' + x.url + '">' + img(x, "thumb", 480, true) + '<span class="arow-d">' + dateText(x.date) + '</span><span class="arow-t">' + e(x.title) + '</span><span class="arow-s">' + e(x.strand === "science" ? "Science" : x.topic) + '</span></a></li>').join("");
+  const counts = { essays: essays.length, science: E.length - essays.length };
+  return d.body
+    .replace("<!--latest-->", () => latest)
+    .replace("<!--pat-buttons-->", () => patButtons)
+    .replace("<!--pat-panels-->", () => patPanels)
+    .replace("<!--chips-->", () => chips)
+    .replace("<!--years-->", () => years.map((y) => '<option value="' + y + '">' + y + '</option>').join(""))
+    .replace("<!--rows-->", () => rows)
+    .replace(/<!--n-essays-->/g, () => String(counts.essays))
+    .replace(/<!--n-science-->/g, () => String(counts.science))
+    .replace(/<!--n-all-->/g, () => String(E.length));
+})()}
