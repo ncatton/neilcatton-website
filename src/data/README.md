@@ -14,6 +14,15 @@ Generated, never edited by hand. Both files, and every image under `images/cards
 
 Substack no longer feeds the library. The `practice-library-feed` function was retired on 9 November 2026.
 
+# data/essays.json and data/essay-bodies.json — the essays
+
+Generated, never edited by hand, by `OUTPUTS/Article Publishing Model/tools/import_essays.py`, with the covers in `images/essays/<slug>/` (cover-480/800/1600.webp, share.jpg). The back catalogue came from the published Substack posts (the archive in `OUTPUTS/Article Publishing Model/import/`); new essays come from their final markdown file and cover, website first.
+
+## Publishing an essay
+
+1. Day 1: `python3 import_essays.py --add "<final essay>.md"` (cover image beside the file, or `--cover`). The essay needs its row in the published-articles index first. Build, check, commit, push: the essay page, Writing page, homepage, feed, sitemap and search all follow.
+2. Day 2, after Substack sends it: `python3 import_essays.py --substack <slug> <Substack post URL>`. Build, commit, push: the page's "Talk about it" panel now points to the Substack post.
+
 # data/announcements.json — the homepage signpost
 
 Short announcements shown as a slim bar at the top of the homepage (index.html), above the hero. Used to signpost current activity — a new CTO Grand Rounds session, a talk, a launch — with a link through to wherever the detail lives.
