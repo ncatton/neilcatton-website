@@ -255,6 +255,7 @@ function groupFor(slug) {
   if (slug.startsWith("sector-")) return "Sectors";
   if (slug.startsWith("service-")) return "Services";
   if (slug.startsWith("briefing-")) return "Briefings";
+  if (slug.startsWith("practice-library/")) return "Practice Library";
   if (["privacy", "accessibility", "ai-usage", "sitemap"].includes(slug)) return "This site";
   return "Main";
 }
@@ -337,6 +338,7 @@ function buildPage(meta) {
   if (page.title) page.title = resolveFacts(page.title);
 
   const html = render("base.html", page);
+  mkdirSync(dirname(join(DIST, `${slug}.html`)), { recursive: true });
   writeFileSync(join(DIST, `${slug}.html`), html);
   return page;
 }
@@ -422,6 +424,85 @@ function reviewEditions() {
   });
 }
 
+/* The Practice Library: one page per card at /practice-library/<slug>.html.
+   practice-library.json is the catalogue (deck, lists, feed, sector pages);
+   practice-cards.json holds each card's full text and release note. Both are
+   written by the import tool in OUTPUTS/Practice Library Redesign/tools, never
+   by hand. A card whose images are missing fails the build, so a page never
+   ships with a broken card or download. */
+function practiceCardPages() {
+  const lib = readJSON(join(SRC, "data/practice-library.json"));
+  const full = readJSON(join(SRC, "data/practice-cards.json")).cards;
+  const section = sectionFor("practice-library");
+  return lib.cards.map((entry) => {
+    const card = full[entry.slug];
+    if (!card) throw new Error(`practice-library.json lists ${entry.slug}, but practice-cards.json has no text for it. Run the import again.`);
+    for (const file of ["card.png", "card-480.webp", "card-1200.webp", "share.jpg"]) {
+      if (!existsSync(join(ROOT, "images/cards", entry.slug, file))) throw new Error(`Practice Library card ${entry.slot} is missing images/cards/${entry.slug}/${file}. Run the import again.`);
+    }
+    const B = lib.books[card.book];
+    const url = helpers.abs(entry.url);
+    const description = `${card.line ? card.line + " " : ""}A free reference card from ${B.name}, to read here or print.`;
+    return {
+      slug: `practice-library/${entry.slug}`,
+      title: `${card.title}: a Practice Library card — Neil Catton`,
+      searchTitle: `${card.title} (Practice Library card)`,
+      description,
+      layout: "layouts/practice-card.html",
+      data: [],
+      content: "",
+      card,
+      lib,
+      section,
+      sheets: ["shared", "practice-card"],
+      libraryFeed: true,
+      ogType: "article",
+      ogImage: `/images/cards/${entry.slug}/share.jpg`,
+      sitemapGroup: "Practice Library",
+      priority: "0.5",
+      jsonld: [
+        {
+          "@context": "https://schema.org",
+          "@type": "LearningResource",
+          name: card.title,
+          description,
+          url,
+          image: helpers.abs(`/images/cards/${entry.slug}/card-1200.webp`),
+          learningResourceType: "Reference card",
+          inLanguage: "en-GB",
+          isAccessibleForFree: true,
+          author: { "@type": "Person", name: site.name, url: site.origin + "/" },
+          isPartOf: { "@type": "CollectionPage", name: "The Practice Library", url: helpers.abs("/practice-library.html") },
+          about: B.name
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: site.origin + "/" },
+            { "@type": "ListItem", position: 2, name: "Practice Library", item: helpers.abs("/practice-library.html") },
+            { "@type": "ListItem", position: 3, name: card.title, item: url }
+          ]
+        }
+      ]
+    };
+  });
+}
+
+/* A feed for the Practice Library, newest card first. */
+function writePracticeLibraryFeed() {
+  const lib = readJSON(join(SRC, "data/practice-library.json"));
+  const xmlEsc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const items = lib.cards.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)) || b.slot - a.slot);
+  const body = items.map((c) => {
+    const url = helpers.abs(c.url);
+    return `    <item>\n      <title>${xmlEsc(c.title)}</title>\n      <link>${url}</link>\n      <guid isPermaLink="true">${url}</guid>\n      <pubDate>${new Date(c.date + "T09:00:00Z").toUTCString()}</pubDate>\n      <description>${xmlEsc(c.line)}</description>\n      <enclosure url="${helpers.abs("/images/cards/" + c.slug + "/card-480.webp")}" type="image/webp" length="0" />\n    </item>`;
+  }).join("\n");
+  writeFileSync(join(DIST, "practice-library.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>The Practice Library — ${xmlEsc(site.name)}</title>\n    <link>${site.origin}/practice-library.html</link>\n    <atom:link href="${site.origin}/practice-library.xml" rel="self" type="application/rss+xml" />\n    <description>Free reference cards from the trilogy, to read, print and pass on.</description>\n    <language>en-GB</language>\n    <lastBuildDate>${NOW.toUTCString()}</lastBuildDate>\n${body}\n  </channel>\n</rss>\n`);
+  return items.length;
+}
+
 /* ── run ─────────────────────────────────────────────────────────── */
 
 function main() {
@@ -432,7 +513,8 @@ function main() {
 
   const pageFiles = readdirSync(join(SRC, "pages")).filter((f) => extname(f) === ".html").sort();
   const metas = pageFiles.map((f) => parsePage(join(SRC, "pages", f)));
-  const all = metas;
+  const cardPages = practiceCardPages();
+  const all = metas.concat(cardPages);
 
   let built = all.map(buildPage);
   const editions = reviewEditions();
@@ -453,12 +535,13 @@ function main() {
   const nSitemap = writeSitemapXml(built);
   const nSearch = writeSearchIndex(built);
   const nFeed = writeBriefingsFeed();
+  const nCards = writePracticeLibraryFeed();
 
   const ms = Date.now() - t0;
   console.log(
-    `built ${built.length - editions.length} pages ` +
+    `built ${built.length - editions.length - cardPages.length} pages + ${cardPages.length} Practice Library cards · ` +
         `review editions ${editions.length} · ` +
-    `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · ` +
+    `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · card feed ${nCards} · ` +
     `${YEARS_NUM} years since ${site.careerStartYear} · ${ms}ms`
   );
 }

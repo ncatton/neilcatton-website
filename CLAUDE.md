@@ -12,7 +12,8 @@ Generated static site. Read `README.md` (front-matter keys, canonical-fact token
 - Shared styling: `src/assets/site.css`, the whole design system. Shared behaviour: `src/assets/site.js`.
 - Nav, footer, canonical facts, booking link: `src/data/site.json`.
 - Page-family styles: `src/assets/shared.css`, `service.css`, `briefing.css`, `sector.css`, `policy.css`, `book.css`, `errors.css`, chosen with `"sheets"` in front matter.
-- Service, briefing, sector and book pages are authored files in `src/pages/`. Tiles and the feed come from `src/data/briefings.json` (`tile`), the deck and card list from `practice-library.json`, the map from `patterns.json` and `pattern-groups.json`.
+- Service, briefing, sector and book pages are authored files in `src/pages/`. Tiles and the feed come from `src/data/briefings.json` (`tile`), the map from `patterns.json` and `pattern-groups.json`.
+- Practice Library: every card has its own page at `/practice-library/<slug>.html`, generated from `layouts/practice-card.html` (styles `practice-card.css`). `src/data/practice-library.json` (catalogue: deck, list, filters, `/practice-library.xml`) and `src/data/practice-cards.json` (each card's text and release note), and the images in `images/cards/<slug>/`, are written by `OUTPUTS/Practice Library Redesign/tools/import_to_site.py` from the card data. Never edit them by hand: change the card data or `situation-tags-for-review.md` and run `render_cards.py` then `import_to_site.py`. Nothing on Substack feeds the library any more.
 - `review.html` is authored for Issue One. When an issue is imported, update that page as well as `review.json`.
 - Recordings: `audio/<slug>-human-moment.mp3` plus `src/data/audio.json`. Nothing shows until the file exists.
 - Downloadable PDFs: `npm run pdfs` rebuilds the twelve service one-pagers (read from the built service pages, so edit the page, not the PDF) and the engagement overview and guide (words in `print/engagement.json`, styles in `print/print.css`). Commit the PDFs in `downloads/`; Netlify doesn't build them.
@@ -27,7 +28,7 @@ Generated static site. Read `README.md` (front-matter keys, canonical-fact token
 4. Run `npm run check` before publishing (zero axe violations, no horizontal overflow at 375px, no control under 24×24; it also gates CI). Run `npm run check:csp` after any CSP change in `netlify.toml`.
 5. Contrast: translucent paper fails 4.5:1 below 0.55 alpha on `--ink`. Keep to the tokens in `shared.css`.
 7. `transition-ready.js` must stay in the head after the stylesheets. Without it Chromium skips the number transition whenever a deferred script is pending.
-6. `package.json` is load-bearing for the Netlify Functions. Never add `"type": "module"` (`substack-feed.js`, `search-feed.js` and `practice-library-feed.js` are CommonJS; `contact-form.mjs` is ESM). Breaking this still deploys green and then returns 502s.
+6. `package.json` is load-bearing for the Netlify Functions. Never add `"type": "module"` (`substack-feed.js` and `search-feed.js` are CommonJS; `contact-form.mjs` is ESM). Breaking this still deploys green and then returns 502s.
 
 ## Functions
 A green deploy doesn't prove the functions work. After any change to `package.json`, `netlify.toml` or `netlify/functions/`, load each function in a clean clone (`node -e "import('./netlify/functions/contact-form.mjs')"`; `require()` the CommonJS ones), then check the live Netlify function log after the first real request.

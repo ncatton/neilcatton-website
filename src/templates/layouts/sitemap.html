@@ -1,6 +1,6 @@
 <!-- Human sitemap, generated from the page list the build produced, so it cannot drift. -->
 ${(() => {
-  const ORDER = ["Sectors", "Main", "Briefings", "Services", "This site"];
+  const ORDER = ["Sectors", "Main", "Briefings", "Services", "Practice Library", "This site"];
   const navOrder = [];
   for (const g of s.nav) for (const i of g.items) if (i.href.startsWith("/")) navOrder.push(i.href);
   const rank = (p) => { if (p.path === "/") return -1; const i = navOrder.indexOf(p.path); return i === -1 ? 999 : i; };

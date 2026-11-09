@@ -100,20 +100,20 @@
     "def": "Institutional response systems for fraud, breach and cybersecurity are built to produce a record that the institution acted, not to close the exposure or protect the person living inside it.",
     "card": [
       {
-        "title": "How to Protect Yourself",
-        "url": "https://writing.neilcatton.com/p/how-to-protect-yourself"
+        "title": "Protect Yourself",
+        "url": "/practice-library/protect-yourself.html"
       },
       {
-        "title": "How to Build Your Digital Fortress",
-        "url": "https://writing.neilcatton.com/p/how-to-build-your-digital-fortress"
+        "title": "Build Your Digital Fortress",
+        "url": "/practice-library/build-your-digital-fortress.html"
       },
       {
         "title": "Fortify the Enterprise",
-        "url": "https://writing.neilcatton.com/p/fortify-the-enterprise"
+        "url": "/practice-library/fortify-the-enterprise.html"
       },
       {
-        "title": "How to Defend Your Identity from Theft and Impersonation",
-        "url": "https://writing.neilcatton.com/p/how-to-defend-your-identity-from-c87"
+        "title": "Defend Your Identity from Theft and Impersonation",
+        "url": "/practice-library/defend-your-identity-from-theft-and-impersonation.html"
       }
     ],
     "instances": [
@@ -348,12 +348,12 @@
     "def": "Data about a person is captured once and becomes a durable, portable record used to make decisions about them, with no mechanism for the person to see it, correct it, or reclaim it.",
     "card": [
       {
-        "title": "How to Manage Your Algorithmic Reputation",
-        "url": "https://writing.neilcatton.com/p/how-to-manage-your-algorithmic-reputation"
+        "title": "Manage Your Algorithmic Reputation",
+        "url": "/practice-library/manage-your-algorithmic-reputation.html"
       },
       {
-        "title": "How to Shape Your Networked Self",
-        "url": "https://writing.neilcatton.com/p/how-to-shape-your-networked-self"
+        "title": "Shape Your Networked Self",
+        "url": "/practice-library/shape-your-networked-self.html"
       }
     ],
     "instances": [
@@ -390,11 +390,11 @@
     "card": [
       {
         "title": "Your Smartphone’s Grip",
-        "url": "https://writing.neilcatton.com/p/your-smartphones-grip"
+        "url": "/practice-library/your-smartphones-grip.html"
       },
       {
         "title": "Shielding Your Focus",
-        "url": "https://writing.neilcatton.com/p/shielding-your-focus"
+        "url": "/practice-library/shielding-your-focus.html"
       }
     ],
     "instances": [

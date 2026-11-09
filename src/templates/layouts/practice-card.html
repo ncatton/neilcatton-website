@@ -1,0 +1,65 @@
+<!-- One Practice Library card. Generated for every card in src/data/practice-cards.json by build.mjs
+     (practiceCardPages). The card's text is real text here; the image is the same text, drawn for print. -->
+${(() => {
+  const c = d.card, L = d.lib, B = L.books[c.book], e = h.esc;
+  const ICON = {
+    eye: '<path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="2.6"></circle>',
+    check: '<path d="M5 12.5l4.2 4.2L19 7"></path>',
+    venn: '<circle cx="9" cy="12" r="6"></circle><circle cx="15" cy="12" r="6"></circle>',
+    shield: '<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8-7.5 9.5-4.3-1.5-7.5-4.9-7.5-9.5V6z"></path>',
+    "switch": '<rect x="3" y="8" width="18" height="8" rx="4"></rect><circle cx="16" cy="12" r="2.4"></circle>',
+    network: '<circle cx="12" cy="5" r="2.4"></circle><circle cx="5" cy="18" r="2.4"></circle><circle cx="19" cy="18" r="2.4"></circle><path d="M10.9 7.1 6.2 15.9M13.1 7.1l4.7 8.8M7.4 18h9.2"></path>'
+  };
+  const icon = (n) => (n && ICON[n]) ? '<svg class="pc-i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + ICON[n] + '</svg>' : "";
+  const img = (x, cls, sizes) => '<img class="' + cls + '" src="/images/cards/' + x.slug + '/card-480.webp" srcset="/images/cards/' + x.slug + '/card-480.webp 480w, /images/cards/' + x.slug + '/card-1200.webp 1200w" sizes="' + sizes + '" width="480" height="679" alt="" loading="lazy" decoding="async">';
+  const rel = (x, meta) => '<a class="pc-rel" href="' + x.url + '">' + img(x, "pc-rel-img", "7rem") + '<span class="pc-rel-x"><span class="pc-rel-m">' + e(meta) + '</span><span class="pc-rel-t">' + e(x.title) + '</span>' + (x.line ? '<span class="pc-rel-l">' + e(x.line) + '</span>' : "") + '</span></a>';
+  const sections = c.sections.map((sec) => {
+    const H = sec.label ? "h4" : "h3";
+    return '<section class="pc-sec">' + (sec.label ? '<h3 class="pc-cl">' + e(sec.label) + '</h3>' : "") +
+      '<div class="pc-groups">' + sec.groups.map((g) =>
+        '<div class="pc-g">' + (g.heading ? '<' + H + ' class="pc-gh">' + icon(g.icon) + '<span>' + e(g.heading) + '</span></' + H + '>' : "") +
+        '<ul class="pc-items">' + g.items.map((i) => '<li><span class="pc-lead">' + e(i.lead) + '</span> <span class="pc-body">' + e(i.body) + '</span></li>').join("") + '</ul></div>'
+      ).join("") + '</div></section>';
+  }).join("");
+  const closing = c.closing ? '<aside class="pc-close" aria-label="' + e(c.closing.label || "To close") + '">' + (c.closing.label ? '<p class="pc-close-l">' + e(c.closing.label) + '</p>' : "") + '<p class="pc-close-t">' + e(c.closing.lead || "") + '</p><p class="pc-close-b">' + e(c.closing.body || "") + '</p></aside>' : "";
+  const companions = (c.companions || []).map((s) => L.cards.find((x) => x.slot === s)).filter(Boolean);
+  const taken = new Set([c.slot].concat(companions.map((x) => x.slot)));
+  const sameBook = L.cards.filter((x) => x.book === c.book && !taken.has(x.slot))
+    .sort((a, b) => Math.abs(a.slot - c.slot) - Math.abs(b.slot - c.slot)).slice(0, Math.max(0, 3 - companions.length));
+  const related = companions.map((x) => rel(x, "Companion card · No. " + x.slot)).concat(sameBook.map((x) => rel(x, "Also from " + B.name + " · No. " + x.slot))).join("");
+  const i = L.cards.findIndex((x) => x.slot === c.slot), prev = L.cards[i - 1], next = L.cards[i + 1];
+  const situ = (c.tags || []).map((t) => L.situations.find((s) => s.id === t)).filter(Boolean);
+  return '<article class="pc pc-' + c.book + '">' +
+  '<header class="pc-head"><div class="inner">' +
+    '<nav class="pc-crumb" aria-label="Breadcrumb"><a href="/practice-library.html">Practice Library</a> <span aria-hidden="true">/</span> <span aria-current="page">' + e(c.title) + '</span></nav>' +
+    '<p class="pc-eye"><a href="' + B.page + '">Book ' + c.book + ' · ' + e(B.name) + '</a> · ' + e(c.form) + ' · No. ' + c.slot + '</p>' +
+    '<h1 class="pc-h1">' + e(c.title) + '</h1>' +
+    (c.line ? '<p class="pc-line">' + e(c.line) + '</p>' : "") +
+    (c.subtitle ? '<p class="pc-sub">' + e(c.subtitle) + '</p>' : "") +
+  '</div></header>' +
+  '<div class="pc-top"><div class="inner pc-grid">' +
+    '<div class="pc-fig">' +
+      '<a class="pc-cardlink" href="/images/cards/' + c.slug + '/card-1200.webp"><img class="pc-card" src="/images/cards/' + c.slug + '/card-1200.webp" srcset="/images/cards/' + c.slug + '/card-480.webp 480w, /images/cards/' + c.slug + '/card-1200.webp 1200w" sizes="(max-width: 860px) 90vw, 26rem" width="1200" height="1697" alt="' + e(c.title) + ': the card. Its full text is further down this page."></a>' +
+      '<a class="btn btn-ink pc-dl" href="/images/cards/' + c.slug + '/card.png" download="' + c.slug + '-practice-library-card.png">Download the print-ready card</a>' +
+      '<p class="pc-dl-n">A4, 300 dpi PNG. Free to print and pin up.</p>' +
+    '</div>' +
+    '<div class="pc-note">' + c.note.map((p) => '<p>' + p + '</p>').join("") + '</div>' +
+  '</div></div>' +
+  '<section class="pc-full" aria-labelledby="pc-full-h"><div class="inner pad">' +
+    '<span class="label">The card in full</span>' +
+    '<h2 id="pc-full-h" class="h2 pc-h2">' + e(c.title) + '</h2>' +
+    sections + closing +
+    '<div class="pc-foot">' + (c.quote ? '<p class="pc-quote">' + e(c.quote) + '</p>' : "") + '<p class="pc-prov">From <a href="' + B.page + '"><cite>' + e(B.name) + '</cite></a> · © Neil Catton' + (situ.length ? ' · Filed under ' + situ.map((s) => '<a href="/practice-library.html?situation=' + s.id + '#cards">' + e(s.label.toLowerCase()) + '</a>').join(", ") : "") + '</p></div>' +
+  '</div></section>' +
+  (related ? '<section class="pc-more" aria-labelledby="pc-more-h"><div class="inner pad"><h2 id="pc-more-h" class="pc-h3">Read it alongside</h2><div class="pc-rels">' + related + '</div>' : '<section class="pc-more"><div class="inner pad">') +
+    '<nav class="pc-pn" aria-label="Previous and next card">' +
+      (prev ? '<a class="pc-pn-a" href="' + prev.url + '" rel="prev"><span class="pc-pn-k">Previous card</span><span class="pc-pn-t">' + e(prev.title) + '</span></a>' : '<span></span>') +
+      (next ? '<a class="pc-pn-a pc-pn-next" href="' + next.url + '" rel="next"><span class="pc-pn-k">Next card</span><span class="pc-pn-t">' + e(next.title) + '</span></a>' : "") +
+    '</nav>' +
+  '</div></section>' +
+  '<section class="dark pc-sub-band" aria-labelledby="pc-sub-h"><div class="inner pad pc-sub-in">' +
+    '<h2 id="pc-sub-h" class="h2">All ' + L.cards.length + ' cards, free.</h2>' +
+    '<div class="acts"><a class="btn btn-gold" href="/practice-library.html">Browse the Practice Library</a><a class="btn btn-line" href="' + f.substack + '">Hear about new cards</a></div>' +
+  '</div></section>' +
+  '</article>';
+})()}

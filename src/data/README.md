@@ -1,32 +1,18 @@
-# data/practice-library.json — the card register
+# data/practice-library.json and data/practice-cards.json — the Practice Library
 
-The permanent record of every published Practice Library card. `practice-library.html` merges this file with the live Substack section feed: the feed surfaces new cards automatically, the register keeps every card on the page after it drops off the RSS window (Substack feeds only carry the most recent ~20 posts). It is also the provenance record — one dated, version-controlled entry per card.
+Generated, never edited by hand. Both files, and every image under `images/cards/<slug>/`, are written by `OUTPUTS/Practice Library Redesign/tools/import_to_site.py` from the card data in `OUTPUTS/Practice Library App/data/` (cards.json, items.json), each card's release note, and the situation tags in `OUTPUTS/Practice Library Redesign/situation-tags-for-review.md`.
 
-## Publishing ritual
+- `practice-library.json` is the catalogue: books, the situations shown as filters (any with at least three cards), and one entry per card (slot, slug, title, book, form, "For when…" line, page URL, list image, situations, date). The library page, its deck, the card feed `/practice-library.xml` and the build all read it. It is also copied to `dist/data/`.
+- `practice-cards.json` holds each card's full text, closing panel and release note for its page. Build-time only.
 
-When a card goes out on the Substack section, add one entry to the `cards` array:
+## Adding or changing a card
 
-```json
-{
-  "title": "How to Address the Ghost in the Machine",
-  "link": "https://writing.neilcatton.com/p/the-post-slug",
-  "date": "2026-07-13",
-  "book": "I",
-  "image": "https://substackcdn.com/...card image URL from the post..."
-}
-```
+1. Build or correct the card's data (the practice-card skill).
+2. `python3 render_cards.py <slot>` in the tools folder: draws the A4 card in the website design.
+3. `python3 import_to_site.py`: rewrites both JSON files and the card's images in this repo.
+4. Build, check, commit, push. The card's page, its place in the deck and list, the feed, the sitemap and site search all follow from the catalogue.
 
-Field notes:
-
-- `link` — the canonical Substack post URL. Used to de-duplicate against the live feed, so it must match what the feed reports (no tracking parameters).
-- `date` — the publication date, ISO format. This should match the provenance line printed on the card itself.
-- `book` — `"I"` (The Next Evolution), `"II"` (The Cognitive Crucible), `"III"` (The Shadow System). Drives the book filter on the page.
-- `line` — optional. The one-line prompt the deck and the card list show. Without it the card still appears, with its title only.
-- `image` — the card PNG's URL. Easiest source: publish the post, open the card image in the browser, copy the substackcdn URL. The page shows a plain placeholder if it's missing, so a card is never invisible just because the image URL hasn't been added yet.
-
-Newest entries can go anywhere in the array — the page sorts by date. Keeping them in publication order (newest last) makes the file read as the record it is.
-
----
+Substack no longer feeds the library. The `practice-library-feed` function was retired on 9 November 2026.
 
 # data/announcements.json — the homepage signpost
 

@@ -1,7 +1,7 @@
 // Netlify serverless function — returns the full Substack post archive as JSON,
 // for the site-wide search feature (search.js).
 // Companion to substack-feed.js (which only returns the latest 20 posts for the
-// "Latest essays" grid) and practice-library-feed.js (which filters to one section).
+// "Latest essays" grid).
 // This one is deliberately unfiltered by section, and paginates past Substack's
 // per-request cap so search can reach the full archive, not just the newest page.
 // Updated 2026-11-09 for Substack's cursor pagination (see fetchAllPosts).

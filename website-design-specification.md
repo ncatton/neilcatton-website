@@ -177,7 +177,7 @@ This is the area with the most daylight between the current site and the target 
 - HTTPS enforced everywhere with HSTS (Netlify default at the edge).
 - A Content Security Policy restricting script/style sources to known origins (self, Google Fonts, Microsoft Bookings, Microsoft 365 (Graph), Google Analytics, Substack) — not currently set in `netlify.toml`; a real gap, but one that needs careful testing against every embed before going live, since a misconfigured CSP breaks the Microsoft Bookings and Substack iframes silently (Section 19).
 - Form spam protection on the contact form beyond Microsoft 365 (Graph)'s own filtering — a honeypot field is the lower-effort, privacy-respecting option (avoids adding a Google reCAPTCHA tracker for a low-value anti-spam gain).
-- No secrets or API keys committed to the repository — the two Netlify functions (`substack-feed.js`, `practice-library-feed.js`, `search-feed.js`) should be checked to confirm they don't hardcode anything sensitive.
+- No secrets or API keys committed to the repository — the Netlify functions (`substack-feed.js`, `search-feed.js`, `contact-form.mjs`) should be checked to confirm they don't hardcode anything sensitive.
 - Dependency hygiene — enable Dependabot alerts on the GitHub repo if not already on.
 
 ---

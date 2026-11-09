@@ -4,7 +4,7 @@
   "private": true,
   "description": "neilcatton.com — static site. Templates and data in src/, generated output in dist/. Netlify runs `npm run build`.",
 
-  "_comment_type": "Deliberately NOT \"type\": \"module\". build.mjs and everything in tools/ use the .mjs extension, so they are ESM regardless. Three of the Netlify Functions (substack-feed.js, search-feed.js, practice-library-feed.js) are CommonJS — they use require() and exports.handler — and declaring the package as ESM makes Node parse those .js files as modules, which breaks all three at load time.",
+  "_comment_type": "Deliberately NOT \"type\": \"module\". build.mjs and everything in tools/ use the .mjs extension, so they are ESM regardless. Two of the Netlify Functions (substack-feed.js, search-feed.js) are CommonJS — they use require() and exports.handler — and declaring the package as ESM makes Node parse those .js files as modules, which breaks both at load time.",
 
   "scripts": {
     "build": "node build.mjs",
