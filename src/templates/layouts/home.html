@@ -1,6 +1,7 @@
-<!-- Homepage. The wall of figures comes from the tile on each entry in src/data/briefings.json. -->
+<!-- Homepage. The wall of figures comes from the tile on each entry in src/data/briefings.json; the latest essay from src/data/essays.json. -->
 ${(() => {
   const tiles = d.data.briefings.briefings.filter((b) => b.tile).sort((a, b) => a.tile.order - b.tile.order);
   const tile = (b, cls) => `<a class="tile${cls || ""}" href="/${b.page}"${d.tileTerms ? ` data-terms="${h.esc((b.tile.label + " " + b.tile.terms).toLowerCase())}"` : ""}><span class="tile-n vt-${b.tile.key}">${b.tile.n}</span><span class="tile-c">${b.tile.c}</span><span class="tile-s">${b.tile.label}</span></a>`;
-  return d.body.replace("<!--wall-->", () => tiles.filter((b) => b.tile.key !== "passenger-transport").map((b) => tile(b, " rise")).join("\n"));
+  const latest = (d.data.essays && d.data.essays.essays[0]) || { url: "/articles.html", title: "The writing" };
+  return d.body.replace("<!--latest-essay-url-->", () => latest.url).replace("<!--latest-essay-title-->", () => h.esc(latest.title)).replace("<!--wall-->", () => tiles.filter((b) => b.tile.key !== "passenger-transport").map((b) => tile(b, " rise")).join("\n"));
 })()}
