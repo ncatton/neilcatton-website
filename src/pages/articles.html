@@ -1,7 +1,7 @@
 <!--page
 {
   "title": "Writing — Neil Catton",
-  "description": "Essays on technology, ethics, and human purpose from The Next Evolution — Neil Catton's Substack for CTOs, board members, and system shapers.",
+  "description": "Essays on technology, ethics and human purpose by Neil Catton: every essay from The Next Evolution, by pattern, topic and year.",
   "jsonld": [
     {
       "@context": "https://schema.org",
@@ -42,48 +42,36 @@
   "sheets": [
     "shared"
   ],
-  "css": ".latest { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--on-dark-rule); border-top: 1px solid var(--on-dark-rule); border-bottom: 1px solid var(--on-dark-rule); }\n.late { display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; min-height: 19rem; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--navy); color: var(--paper); text-decoration: none; }\n.late:focus-visible { outline-offset: -6px; }\n.late:hover { background: var(--gold); color: var(--ink); }\n.late:hover:focus-visible { outline-color: var(--ink); }\n.late-t { font-family: var(--serif); font-weight: 300; font-size: clamp(2.25rem, 4.8vw, 4.25rem); line-height: 1.04; letter-spacing: -0.025em; }\n.late-d { font-weight: 600; }\n.explore { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: clamp(1.5rem, 5vw, 5rem); margin-top: clamp(2rem, 4vw, 3.5rem); }\n.pat { display: block; width: 100%; min-height: 60px; padding: 0.75rem 0; background: transparent; color: var(--ink); border: 0; border-top: 1px solid var(--ink-rule); font: 600 1.125rem/1.25 var(--sans); text-align: left; cursor: pointer; }\n.pat:last-child { border-bottom: 1px solid var(--ink-rule); }\n.pat:hover { color: var(--navy); }\n.pat[aria-pressed=\"true\"] { background: var(--ink); color: var(--gold); padding-left: 0.875rem; padding-right: 0.875rem; }\n.essays { min-height: 25rem; }\n.essay { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; min-height: 96px; padding: 1rem 0; border-top: 1px solid var(--ink-rule); color: var(--ink); text-decoration: none; }\n.essay:last-child { border-bottom: 1px solid var(--ink-rule); }\n.essay-t { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.8vw, 2.5rem); line-height: 1.1; letter-spacing: -0.015em; }\n.essay:hover .essay-t { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.12em; }\n.essay-s { font-size: 0.9375rem; font-weight: 600; color: var(--ink-mid); }\n.rv { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; }\n@media (max-width: 820px) {\n  .latest, .explore, .rv { grid-template-columns: 1fr; }\n  .late { min-height: 14rem; }\n  .essays { min-height: 30rem; }\n}",
-  "js": "(function () {\n\"use strict\";\nclass Component extends DCLogic {\n  constructor(props) {\n    super(props);\n    this.state = { pat: 0 };\n  }\n  renderVals() {\n    var self = this;\n    var base = 'https://writing.neilcatton.com/p/';\n    var P = [\n      ['The dashboard stays green', [\n        ['The number that tells you nothing', 'HR and people', 'the-number-that-tells-you-nothing'],\n        ['The consultation that changed nothing', 'Public sector', 'the-consultation-that-changed-nothing'],\n        ['The voice that never reaches the room', 'Across sectors', 'the-voice-that-never-reaches-the'],\n        ['When the board asks the wrong question', 'Corporate governance', 'when-the-board-asks-the-wrong-question']\n      ]],\n      ['Correct at every step, wrong at the end', [\n        ['The Decision Nobody Made', 'Financial services', 'the-decision-nobody-made'],\n        ['The Board That Didn’t Understand What It Had Approved', 'Corporate governance', 'the-board-that-didnt-understand-what'],\n        ['Every Department Did Its Job', 'Public sector', 'every-department-did-its-job'],\n        ['The Orchestration Crisis', 'AI and technology', 'the-orchestration-crisis-why-your']\n      ]],\n      ['Built to be defensible, not to help', [\n        ['Why the Victim Is Always Wrong', 'Financial services', 'why-the-victim-is-always-wrong'],\n        ['The company that knew and said nothing', 'Cybersecurity', 'the-company-that-knew-and-said-nothing'],\n        ['Crime with a support desk', 'Cybersecurity', 'crime-with-a-support-desk'],\n        ['They Already Have It', 'National security', 'they-already-have-it']\n      ]],\n      ['Designed for the person who isn’t there', [\n        ['The Last Person in the Queue', 'Public services', 'the-last-person-in-the-queue'],\n        ['Designing for the Person Who Isn’t Coping', 'Design', 'designing-for-the-person-who-isnt'],\n        ['The Screen That Broke the Trust', 'Healthcare', 'the-screen-that-broke-the-trust'],\n        ['The Land the Data Missed', 'Agriculture', 'the-land-the-data-missed']\n      ]],\n      ['The permanent record you didn’t choose', [\n        ['Permanent, Portable, Wrong', 'Financial services', 'permanent-portable-wrong'],\n        ['The Thing You Gave Away for Free', 'Consumer technology', 'the-thing-you-gave-away-for-free'],\n        ['The Anticipatory Trap', 'Consumer technology', 'the-anticipatory-trap'],\n        ['Sovereign is Not a Postcode', 'Government and data', 'sovereign-is-not-a-postcode']\n      ]],\n      ['Engineered compulsion', [\n        ['Technically Present', 'Consumer platforms', 'technically-present'],\n        ['A Reflex That Was Installed', 'Consumer platforms', 'a-reflex-that-was-installed'],\n        ['Boredom Was the Doorway', 'Children and education', 'boredom-was-the-doorway'],\n        ['Why Helpful Isn’t the Same as Good', 'Children and education', 'why-helpful-isnt-the-same-as-good']\n      ]]\n    ];\n    var st = this.state;\n    return {\n      patterns: P.map(function (p, i) {\n        return { name: p[0], pressed: i === st.pat ? 'true' : 'false', pick: function () { self.setState({ pat: i }); } };\n      }),\n      essays: P[st.pat][1].map(function (e) {\n        return { t: e[0], s: e[1], href: base + e[2] };\n      })\n    };\n  }\n}\nwindow.dcMount(Component, {\"1\": \"<section class=\\\"u-183248\\\" aria-labelledby=\\\"pat-title\\\">\\n  <div class=\\\"inner pad\\\">\\n    <span class=\\\"label\\\">Find your way in</span>\\n    <h2 id=\\\"pat-title\\\" class=\\\"h2\\\">Different sectors. The same failures.</h2>\\n    <div class=\\\"explore\\\">\\n      <div role=\\\"group\\\" aria-label=\\\"Choose a pattern\\\">\\n        <sc-for list=\\\"[[patterns]]\\\" as=\\\"p\\\" hint-placeholder-count=\\\"6\\\">\\n          <button class=\\\"pat\\\" type=\\\"button\\\" aria-pressed=\\\"[[p.pressed]]\\\" onClick=\\\"[[p.pick]]\\\">[[p.name]]</button>\\n        </sc-for>\\n      </div>\\n      <div class=\\\"essays\\\" aria-live=\\\"polite\\\">\\n        <sc-for list=\\\"[[essays]]\\\" as=\\\"e\\\" hint-placeholder-count=\\\"4\\\">\\n          <a class=\\\"essay\\\" href=\\\"[[e.href]]\\\"><span class=\\\"essay-t\\\">[[e.t]]</span><span class=\\\"essay-s\\\">[[e.s]]</span></a>\\n        </sc-for>\\n      </div>\\n    </div>\\n    <div class=\\\"acts u-ab6c55\\\">\\n      <a class=\\\"btn btn-ink\\\" href=\\\"https://writing.neilcatton.com/archive\\\">Every essay</a>\\n      <a class=\\\"btn btn-out\\\" href=\\\"/pattern-map.html\\\">The Pattern Map</a>\\n    </div>\\n  </div>\\n</section>\"});\n})();\n",
-  "usesDc": true
+  "css": ".wr-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 5rem); align-items: end; }\n.wr-h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(3rem, 8vw, 6.25rem); line-height: 1.02; letter-spacing: -0.025em; margin: 0.5rem 0 2.5rem; }\n.lts { display: grid; gap: 1rem; }\n.lt { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1.125rem; align-items: center; padding-top: 1rem; border-top: 1px solid var(--on-dark-rule); color: var(--paper); text-decoration: none; }\n.lt-1 { grid-template-columns: minmax(0, 1fr); padding-top: 0; border-top: 0; }\n.lt-img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: #3d3935; }\n.lt-x { display: flex; flex-direction: column; gap: 0.375rem; }\n.lt-t { font-family: var(--serif); font-weight: 300; font-size: 1.5rem; line-height: 1.15; }\n.lt-1 .lt-t { font-size: clamp(1.75rem, 3vw, 2.5rem); }\n.lt-d { font-size: 0.9375rem; color: var(--on-dark); }\n.lt:hover .lt-t { text-decoration: underline; text-underline-offset: 0.2em; }\n.explore { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(1.5rem, 5vw, 4rem); margin-top: clamp(2rem, 4vw, 3rem); }\n.pat { display: block; width: 100%; min-height: 56px; padding: 0.75rem 0; background: transparent; color: var(--ink); border: 0; border-top: 1px solid var(--ink-rule); font: 600 1.125rem/1.25 var(--sans); text-align: left; cursor: pointer; }\n.pat:last-child { border-bottom: 1px solid var(--ink-rule); }\n.pat:hover { color: var(--navy); }\n.pat[aria-pressed=\"true\"] { background: var(--ink); color: var(--gold); padding-left: 0.875rem; padding-right: 0.875rem; }\n.pat-def { font-size: 1.1875rem; line-height: 1.55; color: var(--ink-mid); max-width: 40rem; margin-bottom: 1.25rem; }\n.prow, .arow { display: grid; grid-template-columns: 6rem minmax(0, 1fr) 12rem; gap: 1.25rem; align-items: center; padding: 0.875rem 0; border-top: 1px solid var(--stone); color: var(--ink); text-decoration: none; }\n.thumb { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: var(--stone); }\n.prow-t, .arow-t { font-family: var(--serif); font-size: 1.3125rem; line-height: 1.25; }\n.prow-s, .arow-s { font-size: 0.9375rem; color: var(--ink-mid); text-align: right; }\n.prow:hover .prow-t, .arow:hover .arow-t { color: var(--navy); text-decoration: underline; text-underline-offset: 0.2em; }\n.arow { grid-template-columns: 6rem 9.5rem minmax(0, 1fr) 13rem; }\n.arow-d { font-size: 0.9375rem; color: var(--ink-mid); }\n.strands { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--ink); margin-bottom: 1.25rem; }\n.strand { min-height: 48px; padding: 0 1.375rem; border: 0; background: transparent; color: var(--ink); font: 600 1.0625rem var(--sans); cursor: pointer; }\n.strand[aria-pressed=\"true\"] { background: var(--ink); color: var(--paper); }\n.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }\n.chip { min-height: 44px; padding: 0.375rem 0.875rem; background: #ffffff; color: var(--ink); border: 1px solid var(--ink-rule); font: 400 0.9375rem/1.2 var(--sans); cursor: pointer; }\n.chip[aria-pressed=\"true\"] { background: var(--ink); color: var(--paper); border-color: var(--ink); font-weight: 600; }\n.finders { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; margin-bottom: 1.75rem; }\n.finders label { font-weight: 600; }\n.finders select, .finders input { min-height: 44px; padding: 0 0.75rem; border: 1px solid var(--ink-rule); background: #ffffff; font: 1rem var(--sans); color: var(--ink); }\n.finders input { width: min(100%, 18rem); }\n.acount { margin-left: auto; font-weight: 600; }\n.arch { border-bottom: 1px solid var(--stone); }\n.none { margin-top: 1.5rem; }\n.rv { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: end; }\n@media (max-width: 860px) {\n  .wr-hero, .explore, .rv { grid-template-columns: minmax(0, 1fr); }\n  .arow { grid-template-columns: 5rem minmax(0, 1fr); gap: 0.25rem 1rem; }\n  .arow .thumb { grid-row: span 3; }\n  .arow-s, .prow-s { text-align: left; }\n  .prow { grid-template-columns: 5rem minmax(0, 1fr); }\n  .prow .thumb { grid-row: span 2; }\n  .acount { margin-left: 0; width: 100%; }\n}\n",
+  "js": "/* Writing page: switch pattern, and filter the archive by strand, topic, year and title. */\n(function () {\n  \"use strict\";\n  var pats = [].slice.call(document.querySelectorAll(\".pat\")), panels = [].slice.call(document.querySelectorAll(\".pat-panel\"));\n  pats.forEach(function (b) {\n    b.addEventListener(\"click\", function () {\n      var i = b.getAttribute(\"data-pat\");\n      pats.forEach(function (x) { x.setAttribute(\"aria-pressed\", String(x === b)); });\n      panels.forEach(function (p) { p.hidden = p.getAttribute(\"data-panel\") !== i; });\n    });\n  });\n  var box = document.getElementById(\"finders\"); if (!box) return;\n  box.hidden = false;\n  var rows = [].slice.call(document.querySelectorAll(\".arow-i\"));\n  var strands = [].slice.call(document.querySelectorAll(\".strand\")), chips = [].slice.call(document.querySelectorAll(\".chip\"));\n  var year = document.getElementById(\"year\"), find = document.getElementById(\"find\"), count = document.getElementById(\"acount\"), none = document.getElementById(\"none\");\n  var st = { strand: \"essays\", topic: \"all\" };\n  function apply() {\n    var q = (find.value || \"\").trim().toLowerCase(), y = year.value, n = 0;\n    rows.forEach(function (r) {\n      var ok = r.getAttribute(\"data-strand\") === st.strand &&\n        (st.strand !== \"essays\" || st.topic === \"all\" || r.getAttribute(\"data-topic\") === st.topic) &&\n        (y === \"all\" || r.getAttribute(\"data-year\") === y) &&\n        (!q || r.getAttribute(\"data-title\").indexOf(q) > -1);\n      r.hidden = !ok; if (ok) n++;\n    });\n    count.textContent = n + (n === 1 ? \" essay\" : \" essays\");\n    none.hidden = n > 0;\n    document.getElementById(\"chips\").hidden = st.strand !== \"essays\";\n  }\n  strands.forEach(function (b) { b.addEventListener(\"click\", function () { st.strand = b.getAttribute(\"data-strand\"); strands.forEach(function (x) { x.setAttribute(\"aria-pressed\", String(x === b)); }); apply(); }); });\n  chips.forEach(function (b) { b.addEventListener(\"click\", function () { st.topic = b.getAttribute(\"data-topic\"); chips.forEach(function (x) { x.setAttribute(\"aria-pressed\", String(x === b)); }); apply(); }); });\n  year.addEventListener(\"change\", apply); find.addEventListener(\"input\", apply);\n  apply();\n})();\n",
+  "layout": "layouts/writing.html",
+  "data": [
+    "essays",
+    "patterns"
+  ],
+  "writingFeed": true
 }
 -->
 <section class="dark u-cc697f" aria-labelledby="page-title">
-  <div class="inner hero">
-    <span class="label">The Next Evolution</span>
-    <h1 id="page-title" class="h1 u-3c2ba2">One argument at a time.</h1>
-    <div class="acts u-2b3db9">
-      <a class="btn btn-gold" href="https://writing.neilcatton.com">Subscribe free</a>
-      <p>No paywall. No forms in the way of reading.</p>
+  <div class="inner pad wr-hero">
+    <div>
+      <span class="label">The Next Evolution</span>
+      <h1 id="page-title" class="wr-h1">One argument at a time.</h1>
+      <div class="acts"><a class="btn btn-gold" href="{{substack}}/subscribe">Get each essay by email</a><a class="btn btn-line" href="/writing.xml">Follow the feed</a></div>
     </div>
-  </div>
-  <div class="latest" data-latest-feed>
-    <a class="late" href="https://writing.neilcatton.com/p/the-lost-art-of-conversation">
-      <span class="late-t">The Lost Art of Conversation</span>
-      <span class="late-d">Latest · 9 October 2026</span>
-    </a>
-    <a class="late" href="https://writing.neilcatton.com/p/which-car-is-that">
-      <span class="late-t">Which car is that?</span>
-      <span class="late-d">8 October 2026</span>
-    </a>
+    <div class="lts"><!--latest--></div>
   </div>
 </section>
 
-<section class="u-183248" data-dc="1" aria-labelledby="pat-title">
+<section class="u-183248" aria-labelledby="pat-title">
   <div class="inner pad">
     <span class="label">Find your way in</span>
     <h2 id="pat-title" class="h2">Different sectors. The same failures.</h2>
     <div class="explore">
-      <div role="group" aria-label="Choose a pattern">
-        <button class="pat" type="button" aria-pressed="true">The dashboard stays green</button><button class="pat" type="button" aria-pressed="false">Correct at every step, wrong at the end</button><button class="pat" type="button" aria-pressed="false">Built to be defensible, not to help</button><button class="pat" type="button" aria-pressed="false">Designed for the person who isn’t there</button><button class="pat" type="button" aria-pressed="false">The permanent record you didn’t choose</button><button class="pat" type="button" aria-pressed="false">Engineered compulsion</button>
-      </div>
-      <div class="essays" aria-live="polite">
-        <a class="essay" href="https://writing.neilcatton.com/p/the-number-that-tells-you-nothing"><span class="essay-t">The number that tells you nothing</span><span class="essay-s">HR and people</span></a><a class="essay" href="https://writing.neilcatton.com/p/the-consultation-that-changed-nothing"><span class="essay-t">The consultation that changed nothing</span><span class="essay-s">Public sector</span></a><a class="essay" href="https://writing.neilcatton.com/p/the-voice-that-never-reaches-the"><span class="essay-t">The voice that never reaches the room</span><span class="essay-s">Across sectors</span></a><a class="essay" href="https://writing.neilcatton.com/p/when-the-board-asks-the-wrong-question"><span class="essay-t">When the board asks the wrong question</span><span class="essay-s">Corporate governance</span></a>
-      </div>
+      <div role="group" aria-label="Choose a pattern"><!--pat-buttons--></div>
+      <div aria-live="polite"><!--pat-panels--></div>
     </div>
-    <div class="acts u-ab6c55">
-      <a class="btn btn-ink" href="https://writing.neilcatton.com/archive">Every essay</a>
-      <a class="btn btn-out" href="/pattern-map.html">The Pattern Map</a>
-    </div>
+    <div class="acts u-ab6c55"><a class="btn btn-out" href="/pattern-map.html">The Pattern Map</a></div>
   </div>
 </section>
 
@@ -97,5 +85,31 @@
       <p class="u-37b1f1">When something that works does not reach the people it was built for, how many people had to say yes, and who is answerable for the time they took?</p>
       <a class="btn btn-ink" href="/review.html">Read the issue</a>
     </div>
+  </div>
+</section>
+
+<section class="u-8b410e" id="all" aria-labelledby="all-title">
+  <div class="inner pad">
+    <span class="label">The archive</span>
+    <h2 id="all-title" class="h2 u-10e4c5">Every essay</h2>
+    <div id="finders" hidden>
+      <div class="strands" role="group" aria-label="Choose a strand"><button class="strand" type="button" aria-pressed="true" data-strand="essays">Essays (<!--n-essays-->)</button><button class="strand" type="button" aria-pressed="false" data-strand="science">Science and emerging technology (<!--n-science-->)</button></div>
+      <div class="chips" id="chips" role="group" aria-label="Show essays on one topic"><!--chips--></div>
+      <div class="finders">
+        <label for="year">Year</label><select id="year"><option value="all">All years</option><!--years--></select>
+        <label for="find">Find</label><input id="find" type="search" placeholder="A word in the title" autocomplete="off">
+        <p class="acount" id="acount" aria-live="polite"><!--n-all--> essays</p>
+      </div>
+    </div>
+    <ul class="arch"><!--rows--></ul>
+    <p class="none" id="none" hidden>No essay matches. Try another topic, year or word.</p>
+  </div>
+</section>
+
+<section class="dark u-cc697f" aria-labelledby="sub-title">
+  <div class="inner pad u-170900">
+    <h2 id="sub-title" class="h2">Each new essay, by email.</h2>
+    <p class="u-37b1f1">Free, through The Next Evolution on Substack. The full essay arrives in your inbox.</p>
+    <div class="acts"><a class="btn btn-gold" href="{{substack}}/subscribe">Subscribe free</a><a class="btn btn-line" href="/writing.xml">Follow the feed</a></div>
   </div>
 </section>

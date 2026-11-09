@@ -1,0 +1,43 @@
+<!-- One essay, generated for every entry in src/data/essays.json by build.mjs (essayPages).
+     Text from essay-bodies.json; both written by the essay import tool, never by hand. -->
+${(() => {
+  const E = d.essay, B = d.essayBody, ALL = d.essays, e = h.esc;
+  const dateText = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  const bySlug = {}; ALL.forEach((x) => { bySlug[x.slug] = x; });
+  const cover = (x, cls, sizes, lazy) => '<img class="' + cls + '" src="/images/essays/' + x.slug + '/cover-800.webp" srcset="/images/essays/' + x.slug + '/cover-480.webp 480w, /images/essays/' + x.slug + '/cover-800.webp 800w, /images/essays/' + x.slug + '/cover-1600.webp 1600w" sizes="' + sizes + '" width="1600" height="1067" alt=""' + (lazy ? ' loading="lazy" decoding="async"' : '') + '>';
+  const label = E.strand === "science" ? "Science and emerging technology" : (E.topic || "Essay");
+  const P = E.pattern;
+  const members = (B.pattern_members || []).map((s) => bySlug[s]).filter(Boolean);
+  const i = members.findIndex((x) => x.slug === E.slug);
+  const prev = i > 0 ? members[i - 1] : null, next = i > -1 && i < members.length - 1 ? members[i + 1] : null;
+  const pn = (x, k, rel) => x ? '<a class="es-pn' + (rel === "next" ? " es-pn-next" : "") + '" href="' + x.url + '" rel="' + rel + '"><span class="es-pn-k">' + k + (x.pattern && x.pattern.sector ? " · " + e(x.pattern.sector) : "") + '</span><span class="es-pn-t">' + e(x.title) + '</span></a>' : '<span></span>';
+  const others = members.filter((x) => x.slug !== E.slug && x !== prev && x !== next).slice(0, 2);
+  const sameTopic = others.length ? others : ALL.filter((x) => x.slug !== E.slug && x.strand === E.strand && (E.strand === "science" || x.topic === E.topic)).slice(0, 2);
+  const rel = (x) => '<a class="es-rel" href="' + x.url + '">' + cover(x, "es-rel-img", "6rem", true) + '<span class="es-rel-x"><span class="es-rel-m">' + e(x.pattern && others.length ? x.pattern.sector : dateText(x.date)) + '</span><span class="es-rel-t">' + e(x.title) + '</span></span></a>';
+  const cards = (B.cards || []).map((c) => (d.lib.cards || []).find((k) => k.url === c.url)).filter(Boolean).slice(0, 1);
+  const card = cards.map((k) => '<a class="es-rel" href="' + k.url + '"><img class="es-rel-card" src="' + k.image + '" alt="" width="480" height="679" loading="lazy" decoding="async"><span class="es-rel-x"><span class="es-rel-m">Practice Library · free to print</span><span class="es-rel-t">' + e(k.title) + '</span>' + (k.line ? '<span class="es-rel-l">' + e(k.line) + '</span>' : "") + '</span></a>').join("");
+  return '<article class="es">' +
+  '<header class="es-head"><div class="inner">' +
+    '<nav class="es-crumb" aria-label="Breadcrumb"><a href="/articles.html">Writing</a> <span aria-hidden="true">/</span> <span aria-current="page">' + e(E.title) + '</span></nav>' +
+    '<p class="es-eye">' + e(label) + '</p>' +
+    '<h1 class="es-h1">' + e(E.title) + '</h1>' +
+    (E.subtitle ? '<p class="es-stand">' + e(E.subtitle) + '</p>' : "") +
+    '<p class="es-meta"><span>Neil Catton</span><span>' + dateText(E.date) + '</span><span>' + E.minutes + ' minute read</span></p>' +
+    (P ? '<p class="es-pat"><a href="/pattern-map.html">' + e(P.name) + '</a> · ' + P.pos + ' of ' + P.n + ' essays in this pattern</p>' : "") +
+  '</div></header>' +
+  '<figure class="es-cover"><div class="inner">' + cover(E, "es-cover-img", "(max-width: 1320px) 100vw, 1192px", false) + '</div></figure>' +
+  '<div class="inner es-wrap"><div class="es-col">' +
+    '<div class="es-body">' + B.html + '</div>' +
+    (B.opinion ? '<section class="es-op" aria-labelledby="es-op-h"><div class="es-op-top"><img class="es-face" src="/images/neil-catton-headshot.webp" alt="" width="56" height="56" loading="lazy"><div><h2 id="es-op-h">My opinion</h2><span class="es-op-n">Neil Catton</span></div></div><div class="es-body">' + B.opinion + '</div></section>' : "") +
+    (B.sources ? '<section class="es-src" aria-labelledby="es-src-h"><h2 id="es-src-h">Sources</h2><div class="es-src-b">' + B.sources + '</div></section>' : "") +
+    '<aside class="es-talk" aria-labelledby="es-talk-h"><h2 id="es-talk-h">Talk about it</h2><p>The conversation about this essay happens on The Next Evolution on Substack, where readers comment and reply.</p><div class="acts"><a class="btn btn-ink" href="' + E.substack + '">Join the discussion on Substack</a><a class="btn btn-out" href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(h.abs(E.url)) + '">Share on LinkedIn</a></div></aside>' +
+    (P ? '<nav class="es-pnav" aria-labelledby="es-pnav-h"><p id="es-pnav-h" class="es-pnav-h">More in <a href="/pattern-map.html">' + e(P.name) + '</a></p><div class="es-pns">' + pn(prev, "Previous", "prev") + pn(next, "Next", "next") + '</div></nav>' : "") +
+    '<aside class="es-au" aria-labelledby="es-au-h"><img class="es-face es-face-l" src="/images/neil-catton-headshot.webp" alt="" width="88" height="88" loading="lazy"><div><h2 id="es-au-h">Neil Catton</h2><p>Independent technology strategist. More than {{years.words}} years across {{sectors}} industry sectors — from computer operator to Group CTO — working where large organisations meet complex technology decisions.</p><div class="acts"><a class="btn btn-ink" href="{{booking}}">Book a call</a><a class="btn btn-out" href="/service-ai-board-briefing.html">Board briefings</a></div></div></aside>' +
+  '</div></div>' +
+  ((sameTopic.length || card) ? '<section class="es-more" aria-labelledby="es-more-h"><div class="inner pad"><h2 id="es-more-h" class="es-h3">Read it alongside</h2><div class="es-more-g">' +
+    (sameTopic.length ? '<div><p class="es-more-k">' + (others.length ? "Same pattern, other sectors" : "More like this") + '</p>' + sameTopic.map(rel).join("") + '</div>' : "") +
+    (card ? '<div><p class="es-more-k">From the Practice Library</p>' + card + '</div>' : "") +
+  '</div></div></section>' : "") +
+  '<section class="dark es-sub" aria-labelledby="es-sub-h"><div class="inner pad es-sub-in"><h2 id="es-sub-h" class="h2">One argument at a time, by email.</h2><div class="acts"><a class="btn btn-gold" href="{{substack}}/subscribe">Subscribe free</a><a class="btn btn-line" href="/articles.html">Every essay</a></div></div></section>' +
+  '</article>';
+})()}

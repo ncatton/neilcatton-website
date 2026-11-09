@@ -270,6 +270,7 @@ function groupFor(slug) {
   if (slug.startsWith("service-")) return "Services";
   if (slug.startsWith("briefing-")) return "Briefings";
   if (slug.startsWith("practice-library/")) return "Practice Library";
+  if (slug.startsWith("writing/")) return "Writing";
   if (["privacy", "accessibility", "ai-usage", "sitemap"].includes(slug)) return "This site";
   return "Main";
 }
@@ -503,6 +504,91 @@ function practiceCardPages() {
   });
 }
 
+/* Essays: one page per essay at /writing/<slug>.html. essays.json is the catalogue
+   (Writing page, feed, patterns, related links); essay-bodies.json holds the text.
+   Both are written by the essay import tool in OUTPUTS/Article Publishing Model/tools,
+   never by hand. A missing cover fails the build rather than shipping a broken page. */
+function essayPages() {
+  const f = join(SRC, "data/essays.json");
+  if (!existsSync(f)) return [];
+  const cat = readJSON(f).essays;
+  const bodies = readJSON(join(SRC, "data/essay-bodies.json")).essays;
+  const lib = readJSON(join(SRC, "data/practice-library.json"));
+  const section = sectionFor("articles");
+  return cat.map((E) => {
+    const body = bodies[E.slug];
+    if (!body) throw new Error(`essays.json lists ${E.slug}, but essay-bodies.json has no text for it. Run the essay import again.`);
+    for (const file of ["cover-480.webp", "cover-800.webp", "cover-1600.webp", "share.jpg"]) {
+      if (!existsSync(join(ROOT, "images/essays", E.slug, file))) throw new Error(`Essay ${E.slug} is missing images/essays/${E.slug}/${file}. Run the essay import again.`);
+    }
+    const url = helpers.abs(E.url);
+    const description = E.subtitle || body.description || "";
+    return {
+      slug: `writing/${E.slug}`,
+      title: `${E.title} — Neil Catton`,
+      searchTitle: E.title,
+      description,
+      layout: "layouts/essay.html",
+      data: [],
+      content: "",
+      essay: E,
+      essayBody: body,
+      essays: cat,
+      lib,
+      section,
+      sheets: ["shared", "essay"],
+      writingFeed: true,
+      ogType: "article",
+      ogImage: `/images/essays/${E.slug}/share.jpg`,
+      sitemapGroup: "Writing",
+      priority: "0.6",
+      jsonld: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: E.title,
+          description,
+          url,
+          mainEntityOfPage: url,
+          image: helpers.abs(`/images/essays/${E.slug}/cover-1600.webp`),
+          datePublished: E.date,
+          inLanguage: "en-GB",
+          author: { "@type": "Person", name: site.name, url: site.origin + "/" },
+          publisher: { "@type": "Person", name: site.name, url: site.origin + "/" },
+          isPartOf: { "@type": "CollectionPage", name: "Writing", url: helpers.abs("/articles.html") }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: site.origin + "/" },
+            { "@type": "ListItem", position: 2, name: "Writing", item: helpers.abs("/articles.html") },
+            { "@type": "ListItem", position: 3, name: E.title, item: url }
+          ]
+        }
+      ]
+    };
+  });
+}
+
+/* The essays feed carries the full text, so readers can follow the writing without Substack. */
+function writeEssayFeed() {
+  const f = join(SRC, "data/essays.json");
+  if (!existsSync(f)) return 0;
+  const cat = readJSON(f).essays;
+  const bodies = readJSON(join(SRC, "data/essay-bodies.json")).essays;
+  const xmlEsc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const absLinks = (html) => String(html).replace(/(href|src)="\//g, `$1="${site.origin}/`).replace(/\]\]>/g, "]]&gt;");
+  const body = cat.slice(0, 50).map((E) => {
+    const url = helpers.abs(E.url), b = bodies[E.slug];
+    const full = `<p><img src="${helpers.abs("/images/essays/" + E.slug + "/cover-800.webp")}" alt=""></p>` + b.html + (b.opinion ? "<h2>My opinion</h2>" + b.opinion : "") + (b.sources ? "<h2>Sources</h2>" + b.sources : "");
+    return `    <item>\n      <title>${xmlEsc(E.title)}</title>\n      <link>${url}</link>\n      <guid isPermaLink="true">${url}</guid>\n      <pubDate>${new Date(E.date + "T07:00:00Z").toUTCString()}</pubDate>\n      <description>${xmlEsc(E.subtitle)}</description>\n      <content:encoded><![CDATA[${absLinks(full)}]]></content:encoded>\n    </item>`;
+  }).join("\n");
+  writeFileSync(join(DIST, "writing.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">\n  <channel>\n    <title>Essays — ${xmlEsc(site.name)}</title>\n    <link>${site.origin}/articles.html</link>\n    <atom:link href="${site.origin}/writing.xml" rel="self" type="application/rss+xml" />\n    <description>The Next Evolution: one argument at a time.</description>\n    <language>en-GB</language>\n    <lastBuildDate>${NOW.toUTCString()}</lastBuildDate>\n${body}\n  </channel>\n</rss>\n`);
+  return cat.length;
+}
+
 /* A feed for the Practice Library, newest card first. */
 function writePracticeLibraryFeed() {
   const lib = readJSON(join(SRC, "data/practice-library.json"));
@@ -528,7 +614,8 @@ function main() {
   const pageFiles = readdirSync(join(SRC, "pages")).filter((f) => extname(f) === ".html").sort();
   const metas = pageFiles.map((f) => parsePage(join(SRC, "pages", f)));
   const cardPages = practiceCardPages();
-  const all = metas.concat(cardPages);
+  const essayPagesList = essayPages();
+  const all = metas.concat(cardPages, essayPagesList);
 
   let built = all.map(buildPage);
   const editions = reviewEditions();
@@ -550,12 +637,13 @@ function main() {
   const nSearch = writeSearchIndex(built);
   const nFeed = writeBriefingsFeed();
   const nCards = writePracticeLibraryFeed();
+  const nEssays = writeEssayFeed();
 
   const ms = Date.now() - t0;
   console.log(
-    `built ${built.length - editions.length - cardPages.length} pages + ${cardPages.length} Practice Library cards · ` +
+    `built ${built.length - editions.length - cardPages.length - essayPagesList.length} pages + ${cardPages.length} Practice Library cards + ${essayPagesList.length} essays · ` +
         `review editions ${editions.length} · ` +
-    `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · card feed ${nCards} · ` +
+    `sitemap ${nSitemap} · search index ${nSearch} · briefings feed ${nFeed} · card feed ${nCards} · essay feed ${nEssays} · ` +
     `${YEARS_NUM} years since ${site.careerStartYear} · ${ms}ms`
   );
 }
