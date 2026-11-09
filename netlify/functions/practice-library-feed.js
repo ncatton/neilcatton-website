@@ -1,30 +1,33 @@
-// Netlify serverless function — returns the Practice Library cards as JSON.
+// Netlify serverless function — returns recent Practice Library card posts as JSON.
 // Companion to substack-feed.js (the main publication feed).
 //
-// Why the JSON API and not RSS: Substack does not expose a working RSS feed
-// per section on this publication (verified 2026-07-11 — both
-// /s/the-practice-library/feed and /feed/sections/419813 return nothing).
-// The publication's JSON API does carry the section id on every post, so
-// this function fetches /api/v1/posts and filters to the Practice Library
-// section. It also returns the post's cover image directly, which is the
-// card PNG — better than scraping it out of RSS HTML.
+// Rewritten 2026-11-09. The previous version read /api/v1/posts and filtered
+// on the section id. Two things broke that:
+//   1. Substack changed /api/v1/posts to return { posts, nextCursor } and to
+//      reject the `offset` parameter, so the old call returned HTTP 400.
+//   2. The Practice Library section is now set to "Hide posts on homepage",
+//      and hidden sections are left out of /api/v1/posts altogether.
+// The publication RSS feed (/feed) still carries hidden-section posts, so this
+// version reads that. RSS carries no section, so card posts are recognised by
+// the card post format (OUTPUTS/InfoGraphics/post-format.md): the subtitle
+// names the reader's moment ("For when …") or the body talks about "the card".
+// The site only uses this for the "Not yet catalogued" list and the
+// practice-library-sync skill matches titles exactly against the register,
+// so an occasional false positive is harmless.
 //
-// SECTION_ID 419813 = the-practice-library (confirmed from the API on
-// 2026-07-11, first card post). If the section is ever deleted and
-// recreated, the id changes — re-check via
-// https://writing.neilcatton.com/api/v1/posts?limit=3 (section_id field).
+// Output shape is unchanged: { items: [{ title, link, pubDate, excerpt, image }] }.
+// The image is the post's cover (the card PNG), taken from the RSS enclosure.
 
 const https = require("https");
 
-const API_URL = "https://writing.neilcatton.com/api/v1/posts?limit=50&offset=0";
-const SECTION_ID = 419813;
+const FEED_URL = "https://writing.neilcatton.com/feed";
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; NeilCattonSite/1.0)",
-        "Accept": "application/json"
+        "Accept": "application/rss+xml, application/xml, text/xml"
       }
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
@@ -36,6 +39,41 @@ function fetchURL(url) {
     }).on("error", reject);
   });
 }
+
+function field(item, tag) {
+  const m = item.match(new RegExp("<" + tag + "(?:\\s[^>]*)?>([\\s\\S]*?)</" + tag + ">"));
+  if (!m) return "";
+  return m[1].replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "").trim();
+}
+
+function isCard(description, content) {
+  return /^for when\b/i.test(description) || /\b(the|this) card\b/i.test(content);
+}
+
+function parse(xml) {
+  const items = [];
+  const re = /<item>([\s\S]*?)<\/item>/g;
+  let m;
+  while ((m = re.exec(xml)) !== null) {
+    const it = m[1];
+    const title = field(it, "title");
+    const link = field(it, "link");
+    const description = field(it, "description");
+    const content = field(it, "content:encoded");
+    const enc = it.match(/<enclosure[^>]*url="([^"]+)"/);
+    if (!title || !link || !isCard(description, content)) continue;
+    items.push({
+      title,
+      link,
+      pubDate: field(it, "pubDate") ? new Date(field(it, "pubDate")).toISOString() : "",
+      excerpt: description.slice(0, 200),
+      image: enc ? enc[1] : ""
+    });
+  }
+  return items;
+}
+
+exports.parse = parse;
 
 exports.handler = async function(event, context) {
   const headers = {
@@ -50,26 +88,13 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const raw = await fetchURL(API_URL);
-    const posts = JSON.parse(raw);
-
-    const items = (Array.isArray(posts) ? posts : [])
-      .filter(p => p.section_id === SECTION_ID && p.audience === "everyone")
-      .map(p => ({
-        title:   p.title || "Untitled",
-        link:    p.canonical_url || "",
-        pubDate: p.post_date || "",
-        excerpt: (p.subtitle || "").slice(0, 200),
-        image:   p.cover_image || ""
-      }))
-      .filter(i => i.title && i.link);
-
+    const xml = await fetchURL(FEED_URL);
+    const items = parse(xml);
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({ items })
     };
-
   } catch (err) {
     return {
       statusCode: 500,
