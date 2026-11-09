@@ -4,6 +4,7 @@
 // "Latest essays" grid) and practice-library-feed.js (which filters to one section).
 // This one is deliberately unfiltered by section, and paginates past Substack's
 // per-request cap so search can reach the full archive, not just the newest page.
+// Updated 2026-11-09 for Substack's cursor pagination (see fetchAllPosts).
 
 const https = require("https");
 
@@ -30,25 +31,32 @@ function fetchURL(url) {
 }
 
 async function fetchAllPosts() {
+  // Substack changed /api/v1/posts in November 2026: it now returns
+  // { posts, nextCursor } and rejects any `offset` parameter (HTTP 400).
+  // Page with the cursor instead. Posts in sections set to "Hide posts on
+  // homepage" (The Ethical CTO, My Archive, The Practice Library) are not
+  // returned by this endpoint.
   const all = [];
+  let cursor = null;
   for (let page = 0; page < MAX_PAGES; page++) {
-    const offset = page * PAGE_SIZE;
-    const url = `${PUB_API}?limit=${PAGE_SIZE}&offset=${offset}`;
+    const url = `${PUB_API}?limit=${PAGE_SIZE}` + (cursor ? `&cursor=${encodeURIComponent(cursor)}` : "");
     let raw;
     try {
       raw = await fetchURL(url);
     } catch (e) {
       break;
     }
-    let posts;
+    let data;
     try {
-      posts = JSON.parse(raw);
+      data = JSON.parse(raw);
     } catch (e) {
       break;
     }
-    if (!Array.isArray(posts) || posts.length === 0) break;
+    const posts = Array.isArray(data) ? data : (data && Array.isArray(data.posts) ? data.posts : []);
+    if (posts.length === 0) break;
     all.push(...posts);
-    if (posts.length < PAGE_SIZE) break; // reached the end of the archive
+    cursor = data && data.nextCursor;
+    if (!cursor) break; // reached the end of the archive
   }
   return all;
 }
