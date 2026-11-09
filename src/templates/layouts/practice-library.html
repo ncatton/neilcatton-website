@@ -1,30 +1,30 @@
-<!-- Practice Library. Rendered at build time from src/data/practice-library.json, so a card added to the
-     register appears with no other change. "line" is optional. The page script turns the first panel into a deck. -->
+<!-- Practice Library. Rendered at build time from src/data/practice-library.json, which the import tool writes.
+     Every card opens its own page on this site. The page script turns the first panel into a deck and
+     filters the list by book and by situation; with JavaScript off, the deck shows one card and the list shows them all. -->
 ${(() => {
-  const B = {
-    I: { book: "The Next Evolution", theme: "Awareness" },
-    II: { book: "The Cognitive Crucible", theme: "Agency" },
-    III: { book: "The Shadow System", theme: "Action" }
-  };
-  const cards = d.data["practice-library"].cards.map((c) => ({ b: c.book, title: c.title, url: c.link.split("?")[0], line: c.line || "", book: B[c.book].book, img: c.image }));
-  /* A fixed shuffle, so colours and subjects alternate. */
-  const shuffled = cards.map((_, i) => cards[(10 + i * 17) % cards.length]);
+  const L = d.data["practice-library"], B = L.books, e = h.esc;
+  const cards = L.cards.map((c) => ({ b: c.book, title: c.title, url: c.url, line: c.line || "", book: B[c.book].name, img: "/images/cards/" + c.slug + "/card-1200.webp" }));
+  /* A fixed shuffle, so colours and subjects alternate. 17 is coprime with the card count, so every card appears once. */
+  const n = cards.length;
+  let step = 17; while (n % step === 0) step += 1;
+  const shuffled = cards.map((_, i) => cards[(10 + i * step) % n]);
   const first = shuffled[0] || {};
-  const chev = '<svg class="detail-mark" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M3 10h14"></path></svg>';
-  const groups = Object.keys(B).map((k) => {
-    const mine = cards.filter((c) => c.b === k);
-    return `<details class="detail"><summary><span class="swatch swatch-${k}" aria-hidden="true"></span><span class="detail-t">${B[k].book}: ${B[k].theme}</span><span class="detail-n">${mine.length} cards</span>${chev}</summary><ul class="rows">${mine.map((c) => `<li><a class="row" href="${c.url}"><img class="row-img" src="${c.img}" alt="" width="640" height="905" loading="lazy"><span class="row-text"><span class="row-t">${c.title}</span><span class="row-l">${c.line}</span></span></a></li>`).join("")}</ul></details>`;
-  }).join("");
+  const list = L.cards.map((c) => '<li class="lib-i" data-book="' + c.book + '" data-tags="' + c.tags.join(" ") + '"><a class="lib-a" href="' + c.url + '"><img class="lib-img" src="' + c.image + '" alt="" width="480" height="679" loading="lazy" decoding="async"><span class="lib-x"><span class="lib-m">Book ' + c.book + ' · No. ' + c.slot + '</span><span class="lib-t">' + e(c.title) + '</span>' + (c.line ? '<span class="lib-l">' + e(c.line) + '</span>' : "") + '</span></a></li>').join("");
+  const bookChips = '<button class="lib-chip" type="button" aria-pressed="true" data-book="all">All books</button>' + Object.keys(B).map((k) => '<button class="lib-chip" type="button" aria-pressed="false" data-book="' + k + '"><span class="swatch swatch-' + k + '" aria-hidden="true"></span>' + e(B[k].name) + '</button>').join("");
+  const sitChips = '<button class="lib-chip" type="button" aria-pressed="true" data-tag="all">Any situation</button>' + L.situations.map((s) => '<button class="lib-chip" type="button" aria-pressed="false" data-tag="' + s.id + '">' + e(s.label) + '</button>').join("");
   const data = JSON.stringify(shuffled).replace(/</g, "\\u003c");
   return d.body
-    .replace("<!--groups-->", () => groups)
+    .replace("<!--list-->", () => list)
+    .replace("<!--book-chips-->", () => bookChips)
+    .replace("<!--situation-chips-->", () => sitChips)
+    .replace(/<!--total-->/g, () => String(n))
     .replace("<!--deck-book-->", () => "deck-" + first.b)
-    .replace("<!--line-->", () => first.line)
-    .replace("<!--title-->", () => first.title)
-    .replace("<!--book-->", () => first.book)
+    .replace("<!--line-->", () => e(first.line))
+    .replace("<!--title-->", () => e(first.title))
+    .replace("<!--book-->", () => e(first.book))
     .replace(/<!--url-->/g, () => first.url)
     .replace("<!--img-->", () => first.img)
-    .replace("<!--position-->", () => "1 of " + shuffled.length)
-    .replace("<!--dots-->", () => shuffled.map((_, i) => `<span class="dot${i ? "" : " dot-on"}"></span>`).join(""))
-    .replace("<!--data-->", () => `<script type="application/json" id="library-data">${data}</script>`);
+    .replace("<!--position-->", () => "1 of " + n)
+    .replace("<!--dots-->", () => shuffled.map((_, i) => '<span class="dot' + (i ? "" : " dot-on") + '"></span>').join(""))
+    .replace("<!--data-->", () => '<script type="application/json" id="library-data">' + data + '</script>');
 })()}

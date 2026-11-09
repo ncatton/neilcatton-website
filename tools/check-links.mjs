@@ -61,7 +61,9 @@ for (const f of htmlFiles) {
     }
     if (!ref.startsWith("/")) { problems.push(`${rel}: relative reference "${ref}" — the site uses root-relative URLs`); continue; }
 
-    const [pathPart, hash] = ref.split("#");
+    /* A query string selects state on the page (the Practice Library's filters); the file is the path before it. */
+    const [pathAndQuery, hash] = ref.split("#");
+    const pathPart = pathAndQuery.split("?")[0];
     const target = pathPart === "/" ? "/index.html" : pathPart;
     const onDisk = join(DIST, target);
     internalChecked++;

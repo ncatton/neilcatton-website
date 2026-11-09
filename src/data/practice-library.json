@@ -1,333 +1,960 @@
 {
-  "_about": "Permanent register of every published Practice Library card. The practice-library.html page merges this file with the live Substack section feed — the feed shows the newest cards automatically, this file keeps every card visible after it falls off the feed window. This is also the provenance record: one entry per card, version-controlled, dated. Add an entry INSIDE the cards array as part of publishing each card. See data/README.md.",
-  "cards": [
-    {
-      "title": "How to Address the Ghost in the Machine",
-      "link": "https://writing.neilcatton.com/p/how-to-address-the-ghost-in-the-machine",
-      "date": "2026-07-11",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!Y_cw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd388b10f-a221-4bb0-a988-a1b57a4da8af_2480x3508.png",
-      "line": "For when a system has acted and nobody in the room can say who decided."
-    },
-    {
-      "title": "How to Assert Ownership of Your Digital Self",
-      "link": "https://writing.neilcatton.com/p/how-to-assert-ownership-of-your-digital",
-      "date": "2026-07-24",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!vb1W!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc1f8633-62fd-4245-bf3a-19b2a2e7db36_2480x3508.png",
-      "line": "For when you realise the version of you that platforms hold is more detailed, and more valuable, than the one you’d choose to show anyone."
-    },
-    {
-      "title": "How to Become a System Shaper",
-      "link": "https://writing.neilcatton.com/p/how-to-become-a-system-shaper",
-      "date": "2026-07-25",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!IXCH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F061a51b7-1f52-4de9-9d46-6749985f32ad_2480x3508.png",
-      "line": "For when the device decides before you do, and calls it a courtesy."
-    },
-    {
-      "title": "How to Build Trust Into Unseen Infrastructure",
-      "link": "https://writing.neilcatton.com/p/how-to-build-trust-into-unseen-infrastructure",
-      "date": "2026-08-01",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!hHLY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4862aab2-f5c5-495e-9949-6d6d256e076a_2480x3508.png",
-      "line": "For when the system that decided about you won’t say why, and neither will anyone you can actually reach."
-    },
-    {
-      "title": "How to Co-create Experiences of Efficiency and Equity",
-      "link": "https://writing.neilcatton.com/p/how-to-co-create-experiences-of-efficiency",
-      "date": "2026-08-08",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!cV-H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5832da3-49cf-4c82-beef-8a02ae76a7c6_2480x3508.png",
-      "line": "For when a service gets faster for the people who already found it easy, and nobody asks who got left behind."
-    },
-    {
-      "title": "Your Smartphone's Grip",
-      "link": "https://writing.neilcatton.com/p/your-smartphones-grip",
-      "date": "2026-08-11",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!tHQg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6b39586e-ad8d-4b19-855a-9834e543f05c_2480x3506.png",
-      "line": "For the habit that formed without your permission, and the attention you get to take back once you notice it."
-    },
-    {
-      "title": "How to Design Morality into Machines",
-      "link": "https://writing.neilcatton.com/p/how-to-design-morality-into-machines",
-      "date": "2026-08-13",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!tKQF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46573476-8910-46f2-90a3-37502f8833f1_2480x3508.png",
-      "line": "For when nobody decided what the system should value, and it found something to value anyway."
-    },
-    {
-      "title": "Shielding your Focus",
-      "link": "https://writing.neilcatton.com/p/shielding-your-focus",
-      "date": "2026-08-15",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!AHNh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F33e5de73-9f54-42c9-ac13-fb2cfb4f0580_2480x3508.png",
-      "line": "For the moment a message demands you act now, and the pause you get to insert before you do."
-    },
-    {
-      "title": "How to Navigate the Future of Work and Economic Systems",
-      "link": "https://writing.neilcatton.com/p/how-to-navigate-the-future-of-work",
-      "date": "2026-08-18",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!4vg8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9b39de47-df18-4ea7-b3b7-aae678f1dd4c_2480x3508.png",
-      "line": "For when the terms of work are changing faster than anyone agreed to change them."
-    },
-    {
-      "title": "How to Protect Yourself",
-      "link": "https://writing.neilcatton.com/p/how-to-protect-yourself",
-      "date": "2026-08-20",
-      "book": "III",
-      "image": "https://substackcdn.com/image/fetch/$s_!mQn6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1f1aa935-3646-45dc-be52-f6d156a617a5_2480x3508.png",
-      "line": "For when you already know the threats exist and still don’t know where to start."
-    },
-    {
-      "title": "How to Design for Digital Well-being and Mental Health",
-      "link": "https://writing.neilcatton.com/p/how-to-design-for-digital-well-being",
-      "date": "2026-08-22",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!iAy9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F10a11692-a4be-4f42-a1ac-a82e3ec4a461_2480x3508.png",
-      "line": "For when the phone in your pocket has more say over your mood than you do."
-    },
-    {
-      "title": "Your Social Media Habits",
-      "link": "https://writing.neilcatton.com/p/your-social-media-habits",
-      "date": "2026-08-25",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!1mM3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a1f4f3d-23dd-489b-bfeb-fff90384fa47_2480x3508.png",
-      "line": "For the scroll that goes on longer than you meant, and the choice you get back once you see why."
-    },
-    {
-      "title": "How to Navigate the Ethics of Algorithmic Intelligence",
-      "link": "https://writing.neilcatton.com/p/how-to-navigate-the-ethics-of-algorithmic",
-      "date": "2026-08-27",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!9j1S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c94291a-8e0b-4e9c-b1b2-dfbdbd23b042_2480x4132.png",
-      "line": "For when a judgement call that used to be yours quietly became the system’s."
-    },
-    {
-      "title": "Reclaiming Your Quiet Moments",
-      "link": "https://writing.neilcatton.com/p/reclaiming-your-quiet-moments",
-      "date": "2026-08-29",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!begb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8d279de-efc8-4579-9aab-9c202a40c214_2480x3506.png",
-      "line": "For the pause you fill before you’ve noticed there’s a pause at all, and the thinking that comes back once you leave it alone."
-    },
-    {
-      "title": "How to Manage Your Algorithmic Reputation",
-      "link": "https://writing.neilcatton.com/p/how-to-manage-your-algorithmic-reputation",
-      "date": "2026-09-01",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!uOxL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86b7b3bb-8102-4bf1-b7ff-72ff0647e8a9_2480x4380.png",
-      "line": "For when you realise the profile shaping what you see was never one you agreed to."
-    },
-    {
-      "title": "Decoding Weaponised Messages",
-      "link": "https://writing.neilcatton.com/p/decoding-weaponised-messages",
-      "date": "2026-09-03",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!T_lZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff01d78d5-83e1-4461-a29f-c5fe0b8f4104_2480x3506.png",
-      "line": "For the moment persuasion tips into manipulation, and the habit of catching it before it lands."
-    },
-    {
-      "title": "How to Build Your Digital Fortress",
-      "link": "https://writing.neilcatton.com/p/how-to-build-your-digital-fortress",
-      "date": "2026-09-05",
-      "book": "III",
-      "image": "https://substackcdn.com/image/fetch/$s_!nDT2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F10c6cebb-7e14-4e6d-92f3-b8e7516cf504_2480x3508.png",
-      "line": "For when the passwords are set, the 2FA is on, and the risk hasn’t actually gone away."
-    },
-    {
-      "title": "How to Foster Human-AI Symbiosis",
-      "link": "https://writing.neilcatton.com/p/how-to-foster-human-ai-symbiosis",
-      "date": "2026-09-08",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!k7Rq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ad9a106-0e59-42dc-bd29-8cc5c634abf3_2480x3506.png",
-      "line": "For when the AI stops feeling like a tool and starts feeling like a colleague nobody agreed to hire."
-    },
-    {
-      "title": "Understanding Your Cognitive Limits",
-      "link": "https://writing.neilcatton.com/p/understanding-your-cognitive-limits",
-      "date": "2026-09-10",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!Jhjk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F56615787-c51b-4462-9a43-758fbc8949fa_2480x3508.png",
-      "line": "For the moment you realise you’ve read the same paragraph three times and none of it landed."
-    },
-    {
-      "title": "How to Practise the Three-Foot World in a Digital Age",
-      "link": "https://writing.neilcatton.com/p/how-to-practise-the-three-foot-world",
-      "date": "2026-09-12",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!CKWr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7d129618-0541-47fc-9a53-b88893981e97_2480x3714.png",
-      "line": "For the evening you’ve read about four crises on three continents and haven’t spoken to anyone in the house."
-    },
-    {
-      "title": "Asserting Your Data Rights",
-      "link": "https://writing.neilcatton.com/p/asserting-your-data-rights",
-      "date": "2026-09-15",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!qc5c!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff99ef96b-2387-463e-8796-6d377360d718_2480x3508.png",
-      "line": "For the moment you click “Accept All” without reading past the first line, and want to change that."
-    },
-    {
-      "title": "How to Design Digital Humans with Intention",
-      "link": "https://writing.neilcatton.com/p/how-to-design-digital-humans-with",
-      "date": "2026-09-17",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!KJ82!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd3bdebf-7b3a-40c4-9add-82c9c0a452f5_2480x3560.png",
-      "line": "For when the voice on the other end of a public service turns out not to be a person, and no one thought to say so."
-    },
-    {
-      "title": "Navigating the AI-Curated World",
-      "link": "https://writing.neilcatton.com/p/navigating-the-ai-curated-world",
-      "date": "2026-09-19",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!rkUw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6b33179b-a84a-4f90-a142-c95a0bef94ec_2480x3508.png",
-      "line": "For when you can’t tell whether an idea found you, or was placed in front of you."
-    },
-    {
-      "title": "How to Secure the Smart Home",
-      "link": "https://writing.neilcatton.com/p/how-to-secure-the-smart-home",
-      "date": "2026-09-22",
-      "book": "III",
-      "image": "https://substackcdn.com/image/fetch/$s_!bz03!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86260c91-a7b6-4ee0-b479-87fec31a63b8_2480x3508.png",
-      "line": "For the moment you realise nobody in the house has thought about the smart speaker’s security since the day it went in the box."
-    },
-    {
-      "title": "How to Shape Your Networked Self",
-      "link": "https://writing.neilcatton.com/p/how-to-shape-your-networked-self",
-      "date": "2026-09-24",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!J8AJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F845672b8-9f49-4dc8-824b-0748017dca83_2480x3854.png",
-      "line": "For when the version of you online no longer feels like a decision you made."
-    },
-    {
-      "title": "The Digital Sieve",
-      "link": "https://writing.neilcatton.com/p/the-digital-sieve",
-      "date": "2026-09-26",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!vj2E!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0fa9af7f-ad9e-45a4-8d64-c92289a880e1_2480x3508.png",
-      "line": "For when you realise the version of the world you’re reacting to was assembled before you ever looked at it."
-    },
-    {
-      "title": "How to Navigate the Geopolitics of Technology and Global Governance",
-      "link": "https://writing.neilcatton.com/p/how-to-navigate-the-geopolitics-of",
-      "date": "2026-09-29",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!2qtw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a66adda-80dd-42fb-b238-c8bdf4ee2d02_2480x3702.png",
-      "line": "For when a technical standard turns out to be a foreign policy decision nobody voted on."
-    },
-    {
-      "title": "Reclaiming Your Inner Landscape",
-      "link": "https://writing.neilcatton.com/p/reclaiming-your-inner-landscape",
-      "date": "2026-10-01",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!9Fyd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26efcc91-0ed2-425d-9444-216a108e4715_2480x3652.png",
-      "line": "For when the fog by mid-afternoon has started to feel less like a mood and more like a fact of the day."
-    },
-    {
-      "title": "How to Reclaim Your Engagement",
-      "link": "https://writing.neilcatton.com/p/how-to-reclaim-your-engagement",
-      "date": "2026-10-03",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!AfL2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faafa4ea1-a395-4086-adb1-03caf423f819_2480x3508.png",
-      "line": "For when you look up and can’t remember choosing to scroll this far."
-    },
-    {
-      "title": "The Historical Roots of Persuasion",
-      "link": "https://writing.neilcatton.com/p/the-historical-roots-of-persuasion",
-      "date": "2026-10-06",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!SuTM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6cd785c8-3d09-4742-8588-8cf109950e55_2480x3508.png",
-      "line": "For when the ad you just watched felt like it knew you a little too well."
-    },
-    {
-      "title": "Fortify the Enterprise",
-      "link": "https://writing.neilcatton.com/p/fortify-the-enterprise",
-      "date": "2026-10-08",
-      "book": "III",
-      "image": "https://substackcdn.com/image/fetch/$s_!h-hW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ca1534e-d325-4b22-8b4f-4e6efac7b3ff_2480x3508.png",
-      "line": "For when the human element is your strongest layer of defence, not your weakest."
-    },
-    {
-      "title": "How to Engage with Human Augmentation for Cognitive Enhancement",
-      "link": "https://writing.neilcatton.com/p/how-to-engage-with-human-augmentation",
-      "date": "2026-10-10",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!OPNU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8ffba58d-7856-4d20-b695-3e13941407f1_2480x3742.png",
-      "line": "For when the tool meant to sharpen your thinking starts doing some of the thinking for you."
-    },
-    {
-      "title": "Asserting Your Digital Self",
-      "link": "https://writing.neilcatton.com/p/asserting-your-digital-self",
-      "date": "2026-10-13",
-      "book": "II",
-      "image": "https://substackcdn.com/image/fetch/$s_!cAVE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd7890780-ef18-4ab4-ad8a-baaa1b68e993_2480x3508.png",
-      "line": "For when the profile you built stopped looking like you."
-    },
-    {
-      "title": "How to Defend Your Identity from Theft and Impersonation",
-      "link": "https://writing.neilcatton.com/p/how-to-defend-your-identity-from-c87",
-      "date": "2026-10-15",
-      "book": "I",
-      "image": "https://substackcdn.com/image/fetch/$s_!q-sO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb326ec94-f5a4-4afe-98c4-cf21ae9e447d_2480x3508.png",
-      "line": "For when the voice on the phone sounds exactly like someone you trust."
-    },
-    {
-      "title": "Designing Your Digital Life",
-      "link": "https://writing.neilcatton.com/p/designing-your-digital-life",
-      "date": "2026-10-17",
-      "book": "II",
-      "image": "/images/cards/designing-your-digital-life.jpg",
-      "line": "For when the apps you didn’t choose start choosing for you."
-    },
-    {
-      "title": "How to Cultivate Conscious Perception in Virtual Frontiers",
-      "link": "https://writing.neilcatton.com/p/how-to-cultivate-conscious-perception",
-      "date": "2026-10-20",
-      "book": "I",
-      "image": "/images/cards/how-to-cultivate-conscious-perception.jpg",
-      "line": "For when an environment reaches your senses before it reaches your judgement."
-    },
-    {
-      "title": "Monetising the Mind",
-      "link": "https://writing.neilcatton.com/p/monetising-the-mind",
-      "date": "2026-10-22",
-      "book": "II",
-      "image": "/images/cards/monetising-the-mind.jpg",
-      "line": "For when you notice you’ve read the privacy policy of exactly nothing you’ve ever signed up for."
-    },
-    {
-      "title": "The Citizen Soldier",
-      "link": "https://writing.neilcatton.com/p/the-citizen-soldier",
-      "date": "2026-10-24",
-      "book": "III",
-      "image": "/images/cards/the-citizen-soldier.jpg",
-      "line": "For when defence stops being someone else’s job."
-    },
-    {
-      "title": "How to Design Technology for Sustainability and Ethical Boundaries",
-      "link": "https://writing.neilcatton.com/p/how-to-design-technology-for-sustainability",
-      "date": "2026-10-27",
-      "book": "I",
-      "image": "/images/cards/how-to-design-technology-for-sustainability.jpg",
-      "line": "For when a product ships fast, scales well, and nobody on the team can say what it actually cost to make."
-    },
-    {
-      "title": "Strengthening Your Digital Defences",
-      "link": "https://writing.neilcatton.com/p/strengthening-your-digital-defences",
-      "date": "2026-10-29",
-      "book": "II",
-      "image": "/images/cards/strengthening-your-digital-defences.jpg",
-      "line": "For when you realise the password you’re proudest of remembering is also the one you’ve used four times."
-    },
-    {
-      "title": "How to Shape the Stories",
-      "link": "https://writing.neilcatton.com/p/how-to-shape-the-stories",
-      "date": "2026-10-31",
-      "book": "I",
-      "image": "/images/cards/how-to-shape-the-stories.jpg",
-      "line": "For when the version of events everyone else believes isn’t the one you lived."
-    }
-  ]
+ "_about": "Generated by OUTPUTS/Practice Library Redesign/tools/import_to_site.py. Do not edit by hand: change the card data or the tags file and run the import again.",
+ "books": {
+  "I": {
+   "name": "The Next Evolution",
+   "theme": "Awareness",
+   "page": "/book-the-next-evolution.html"
+  },
+  "II": {
+   "name": "The Cognitive Crucible",
+   "theme": "Agency",
+   "page": "/book-the-cognitive-crucible.html"
+  },
+  "III": {
+   "name": "The Shadow System",
+   "theme": "Action",
+   "page": "/book-the-shadow-system.html"
+  }
+ },
+ "situations": [
+  {
+   "id": "design_leadership",
+   "label": "Design and leadership",
+   "count": 16
+  },
+  {
+   "id": "security_safety",
+   "label": "Security and safety",
+   "count": 13
+  },
+  {
+   "id": "ai_ethics",
+   "label": "AI ethics",
+   "count": 8
+  },
+  {
+   "id": "persuasion_information",
+   "label": "Persuasion and information",
+   "count": 10
+  },
+  {
+   "id": "civic_collective",
+   "label": "Civic and collective",
+   "count": 7
+  },
+  {
+   "id": "attention_focus",
+   "label": "Attention and focus",
+   "count": 9
+  },
+  {
+   "id": "identity_reputation",
+   "label": "Identity and reputation",
+   "count": 4
+  },
+  {
+   "id": "wellbeing_mental_load",
+   "label": "Wellbeing and mental load",
+   "count": 6
+  },
+  {
+   "id": "governance_institutions",
+   "label": "Governance and institutions",
+   "count": 3
+  },
+  {
+   "id": "meaning_reinvention",
+   "label": "Meaning and reinvention",
+   "count": 3
+  }
+ ],
+ "cards": [
+  {
+   "slot": 1,
+   "slug": "address-the-ghost-in-the-machine",
+   "title": "Address the Ghost in the Machine",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a system has acted and nobody in the room can say who decided.",
+   "url": "/practice-library/address-the-ghost-in-the-machine.html",
+   "image": "/images/cards/address-the-ghost-in-the-machine/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-07-11"
+  },
+  {
+   "slot": 2,
+   "slug": "become-a-system-shaper",
+   "title": "Become a System Shaper",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the device decides before you do, and calls it a courtesy.",
+   "url": "/practice-library/become-a-system-shaper.html",
+   "image": "/images/cards/become-a-system-shaper/card-480.webp",
+   "tags": [
+    "identity_reputation"
+   ],
+   "date": "2026-07-25"
+  },
+  {
+   "slot": 3,
+   "slug": "assert-ownership-of-your-digital-self",
+   "title": "Assert Ownership of Your Digital Self",
+   "book": "I",
+   "form": "How To",
+   "line": "For when you realise the version of you that platforms hold is more detailed, and more valuable, than the one you’d choose to show anyone.",
+   "url": "/practice-library/assert-ownership-of-your-digital-self.html",
+   "image": "/images/cards/assert-ownership-of-your-digital-self/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-07-24"
+  },
+  {
+   "slot": 4,
+   "slug": "build-trust-into-unseen-infrastructure",
+   "title": "Build Trust Into Unseen Infrastructure",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the system that decided about you won’t say why, and neither will anyone you can actually reach.",
+   "url": "/practice-library/build-trust-into-unseen-infrastructure.html",
+   "image": "/images/cards/build-trust-into-unseen-infrastructure/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-08-01"
+  },
+  {
+   "slot": 5,
+   "slug": "co-create-experiences-of-efficiency-and-equity",
+   "title": "Co-create Experiences of Efficiency and Equity",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a service gets faster for the people who already found it easy, and nobody asks who got left behind.",
+   "url": "/practice-library/co-create-experiences-of-efficiency-and-equity.html",
+   "image": "/images/cards/co-create-experiences-of-efficiency-and-equity/card-480.webp",
+   "tags": [
+    "civic_collective",
+    "design_leadership"
+   ],
+   "date": "2026-08-08"
+  },
+  {
+   "slot": 6,
+   "slug": "your-smartphones-grip",
+   "title": "Your Smartphone’s Grip",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the habit that formed without your permission, and the attention you get to take back once you notice it.",
+   "url": "/practice-library/your-smartphones-grip.html",
+   "image": "/images/cards/your-smartphones-grip/card-480.webp",
+   "tags": [
+    "attention_focus"
+   ],
+   "date": "2026-08-11"
+  },
+  {
+   "slot": 7,
+   "slug": "design-morality-into-machines",
+   "title": "Design Morality into Machines",
+   "book": "I",
+   "form": "How To",
+   "line": "For when nobody decided what the system should value, and it found something to value anyway.",
+   "url": "/practice-library/design-morality-into-machines.html",
+   "image": "/images/cards/design-morality-into-machines/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-08-13"
+  },
+  {
+   "slot": 8,
+   "slug": "shielding-your-focus",
+   "title": "Shielding Your Focus",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the moment a message demands you act now, and the pause you get to insert before you do.",
+   "url": "/practice-library/shielding-your-focus.html",
+   "image": "/images/cards/shielding-your-focus/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-08-15"
+  },
+  {
+   "slot": 9,
+   "slug": "navigate-the-future-of-work-and-economic-systems",
+   "title": "Navigate the Future of Work and Economic Systems",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the terms of work are changing faster than anyone agreed to change them.",
+   "url": "/practice-library/navigate-the-future-of-work-and-economic-systems.html",
+   "image": "/images/cards/navigate-the-future-of-work-and-economic-systems/card-480.webp",
+   "tags": [
+    "work_economy"
+   ],
+   "date": "2026-08-18"
+  },
+  {
+   "slot": 10,
+   "slug": "protect-yourself",
+   "title": "Protect Yourself",
+   "book": "III",
+   "form": "How To",
+   "line": "For when you already know the threats exist and still don’t know where to start.",
+   "url": "/practice-library/protect-yourself.html",
+   "image": "/images/cards/protect-yourself/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-08-20"
+  },
+  {
+   "slot": 11,
+   "slug": "design-for-digital-well-being-and-mental-health",
+   "title": "Design for Digital Well-being and Mental Health",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the phone in your pocket has more say over your mood than you do.",
+   "url": "/practice-library/design-for-digital-well-being-and-mental-health.html",
+   "image": "/images/cards/design-for-digital-well-being-and-mental-health/card-480.webp",
+   "tags": [
+    "wellbeing_mental_load",
+    "attention_focus"
+   ],
+   "date": "2026-08-22"
+  },
+  {
+   "slot": 12,
+   "slug": "your-social-media-habits",
+   "title": "Your Social Media Habits",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the scroll that goes on longer than you meant, and the choice you get back once you see why.",
+   "url": "/practice-library/your-social-media-habits.html",
+   "image": "/images/cards/your-social-media-habits/card-480.webp",
+   "tags": [
+    "attention_focus",
+    "wellbeing_mental_load"
+   ],
+   "date": "2026-08-25"
+  },
+  {
+   "slot": 13,
+   "slug": "navigate-the-ethics-of-algorithmic-intelligence",
+   "title": "Navigate the Ethics of Algorithmic Intelligence",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a judgement call that used to be yours quietly became the system’s.",
+   "url": "/practice-library/navigate-the-ethics-of-algorithmic-intelligence.html",
+   "image": "/images/cards/navigate-the-ethics-of-algorithmic-intelligence/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-08-27"
+  },
+  {
+   "slot": 14,
+   "slug": "reclaiming-your-quiet-moments",
+   "title": "Reclaiming Your Quiet Moments",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the pause you fill before you’ve noticed there’s a pause at all, and the thinking that comes back once you leave it alone.",
+   "url": "/practice-library/reclaiming-your-quiet-moments.html",
+   "image": "/images/cards/reclaiming-your-quiet-moments/card-480.webp",
+   "tags": [
+    "attention_focus",
+    "wellbeing_mental_load"
+   ],
+   "date": "2026-08-29"
+  },
+  {
+   "slot": 15,
+   "slug": "manage-your-algorithmic-reputation",
+   "title": "Manage Your Algorithmic Reputation",
+   "book": "I",
+   "form": "How To",
+   "line": "For when you realise the profile shaping what you see was never one you agreed to.",
+   "url": "/practice-library/manage-your-algorithmic-reputation.html",
+   "image": "/images/cards/manage-your-algorithmic-reputation/card-480.webp",
+   "tags": [
+    "identity_reputation"
+   ],
+   "date": "2026-09-01"
+  },
+  {
+   "slot": 16,
+   "slug": "decoding-weaponised-messages",
+   "title": "Decoding Weaponised Messages",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the moment persuasion tips into manipulation, and the habit of catching it before it lands.",
+   "url": "/practice-library/decoding-weaponised-messages.html",
+   "image": "/images/cards/decoding-weaponised-messages/card-480.webp",
+   "tags": [
+    "persuasion_information"
+   ],
+   "date": "2026-09-03"
+  },
+  {
+   "slot": 17,
+   "slug": "build-your-digital-fortress",
+   "title": "Build Your Digital Fortress",
+   "book": "III",
+   "form": "How To",
+   "line": "For when the passwords are set, the 2FA is on, and the risk hasn’t actually gone away.",
+   "url": "/practice-library/build-your-digital-fortress.html",
+   "image": "/images/cards/build-your-digital-fortress/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-09-05"
+  },
+  {
+   "slot": 18,
+   "slug": "foster-human-ai-symbiosis",
+   "title": "Foster Human-AI Symbiosis",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the AI stops feeling like a tool and starts feeling like a colleague nobody agreed to hire.",
+   "url": "/practice-library/foster-human-ai-symbiosis.html",
+   "image": "/images/cards/foster-human-ai-symbiosis/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-09-08"
+  },
+  {
+   "slot": 19,
+   "slug": "understanding-your-cognitive-limits",
+   "title": "Understanding Your Cognitive Limits",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the moment you realise you’ve read the same paragraph three times and none of it landed.",
+   "url": "/practice-library/understanding-your-cognitive-limits.html",
+   "image": "/images/cards/understanding-your-cognitive-limits/card-480.webp",
+   "tags": [
+    "attention_focus"
+   ],
+   "date": "2026-09-10"
+  },
+  {
+   "slot": 20,
+   "slug": "practise-the-three-foot-world-in-a-digital-age",
+   "title": "Practise the Three-Foot World in a Digital Age",
+   "book": "I",
+   "form": "How To",
+   "line": "For the evening you’ve read about four crises on three continents and haven’t spoken to anyone in the house.",
+   "url": "/practice-library/practise-the-three-foot-world-in-a-digital-age.html",
+   "image": "/images/cards/practise-the-three-foot-world-in-a-digital-age/card-480.webp",
+   "tags": [
+    "design_leadership",
+    "wellbeing_mental_load"
+   ],
+   "date": "2026-09-12"
+  },
+  {
+   "slot": 21,
+   "slug": "asserting-your-data-rights",
+   "title": "Asserting Your Data Rights",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the moment you click “Accept All” without reading past the first line, and want to change that.",
+   "url": "/practice-library/asserting-your-data-rights.html",
+   "image": "/images/cards/asserting-your-data-rights/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-09-15"
+  },
+  {
+   "slot": 22,
+   "slug": "design-digital-humans-with-intention",
+   "title": "Design Digital Humans with Intention",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the voice on the other end of a public service turns out not to be a person, and no one thought to say so.",
+   "url": "/practice-library/design-digital-humans-with-intention.html",
+   "image": "/images/cards/design-digital-humans-with-intention/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-09-17"
+  },
+  {
+   "slot": 23,
+   "slug": "navigating-the-ai-curated-world",
+   "title": "Navigating the AI-Curated World",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when you can't tell whether an idea found you, or was placed in front of you.",
+   "url": "/practice-library/navigating-the-ai-curated-world.html",
+   "image": "/images/cards/navigating-the-ai-curated-world/card-480.webp",
+   "tags": [
+    "persuasion_information",
+    "ai_ethics"
+   ],
+   "date": "2026-09-19"
+  },
+  {
+   "slot": 24,
+   "slug": "secure-the-smart-home",
+   "title": "Secure the Smart Home",
+   "book": "III",
+   "form": "How To",
+   "line": "For the moment you realise nobody in the house has thought about the smart speaker's security since the day it went in the box.",
+   "url": "/practice-library/secure-the-smart-home.html",
+   "image": "/images/cards/secure-the-smart-home/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-09-22"
+  },
+  {
+   "slot": 25,
+   "slug": "shape-your-networked-self",
+   "title": "Shape Your Networked Self",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the version of you online no longer feels like a decision you made.",
+   "url": "/practice-library/shape-your-networked-self.html",
+   "image": "/images/cards/shape-your-networked-self/card-480.webp",
+   "tags": [
+    "identity_reputation"
+   ],
+   "date": "2026-09-24"
+  },
+  {
+   "slot": 26,
+   "slug": "the-digital-sieve",
+   "title": "The Digital Sieve",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when you realise the version of the world you're reacting to was assembled before you ever looked at it.",
+   "url": "/practice-library/the-digital-sieve.html",
+   "image": "/images/cards/the-digital-sieve/card-480.webp",
+   "tags": [
+    "wellbeing_mental_load"
+   ],
+   "date": "2026-09-26"
+  },
+  {
+   "slot": 27,
+   "slug": "navigate-the-geopolitics-of-technology-and-global-governance",
+   "title": "Navigate the Geopolitics of Technology and Global Governance",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a technical standard turns out to be a foreign policy decision nobody voted on.",
+   "url": "/practice-library/navigate-the-geopolitics-of-technology-and-global-governance.html",
+   "image": "/images/cards/navigate-the-geopolitics-of-technology-and-global-governance/card-480.webp",
+   "tags": [
+    "governance_institutions"
+   ],
+   "date": "2026-09-29"
+  },
+  {
+   "slot": 28,
+   "slug": "reclaiming-your-inner-landscape",
+   "title": "Reclaiming Your Inner Landscape",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the fog by mid-afternoon has started to feel less like a mood and more like a fact of the day.",
+   "url": "/practice-library/reclaiming-your-inner-landscape.html",
+   "image": "/images/cards/reclaiming-your-inner-landscape/card-480.webp",
+   "tags": [
+    "wellbeing_mental_load",
+    "attention_focus"
+   ],
+   "date": "2026-10-01"
+  },
+  {
+   "slot": 29,
+   "slug": "reclaim-your-engagement",
+   "title": "Reclaim Your Engagement",
+   "book": "I",
+   "form": "How To",
+   "line": "For when you look up and can't remember choosing to scroll this far.",
+   "url": "/practice-library/reclaim-your-engagement.html",
+   "image": "/images/cards/reclaim-your-engagement/card-480.webp",
+   "tags": [
+    "attention_focus",
+    "design_leadership"
+   ],
+   "date": "2026-10-03"
+  },
+  {
+   "slot": 30,
+   "slug": "the-historical-roots-of-persuasion",
+   "title": "The Historical Roots of Persuasion",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the ad you just watched felt like it knew you a little too well.",
+   "url": "/practice-library/the-historical-roots-of-persuasion.html",
+   "image": "/images/cards/the-historical-roots-of-persuasion/card-480.webp",
+   "tags": [
+    "persuasion_information"
+   ],
+   "date": "2026-10-06"
+  },
+  {
+   "slot": 31,
+   "slug": "fortify-the-enterprise",
+   "title": "Fortify the Enterprise",
+   "book": "III",
+   "form": "How To",
+   "line": "For when the human element is your strongest layer of defence, not your weakest.",
+   "url": "/practice-library/fortify-the-enterprise.html",
+   "image": "/images/cards/fortify-the-enterprise/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-10-08"
+  },
+  {
+   "slot": 32,
+   "slug": "engage-with-human-augmentation-for-cognitive-enhancement",
+   "title": "Engage with Human Augmentation for Cognitive Enhancement",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the tool meant to sharpen your thinking starts doing some of the thinking for you.",
+   "url": "/practice-library/engage-with-human-augmentation-for-cognitive-enhancement.html",
+   "image": "/images/cards/engage-with-human-augmentation-for-cognitive-enhancement/card-480.webp",
+   "tags": [
+    "meaning_reinvention"
+   ],
+   "date": "2026-10-10"
+  },
+  {
+   "slot": 33,
+   "slug": "asserting-your-digital-self",
+   "title": "Asserting Your Digital Self",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the profile you built stopped looking like you.",
+   "url": "/practice-library/asserting-your-digital-self.html",
+   "image": "/images/cards/asserting-your-digital-self/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-10-13"
+  },
+  {
+   "slot": 34,
+   "slug": "defend-your-identity-from-theft-and-impersonation",
+   "title": "Defend Your Identity from Theft and Impersonation",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the voice on the phone sounds exactly like someone you trust.",
+   "url": "/practice-library/defend-your-identity-from-theft-and-impersonation.html",
+   "image": "/images/cards/defend-your-identity-from-theft-and-impersonation/card-480.webp",
+   "tags": [
+    "identity_reputation"
+   ],
+   "date": "2026-10-15"
+  },
+  {
+   "slot": 35,
+   "slug": "designing-your-digital-life",
+   "title": "Designing Your Digital Life",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the apps you didn't choose start choosing for you.",
+   "url": "/practice-library/designing-your-digital-life.html",
+   "image": "/images/cards/designing-your-digital-life/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-10-17"
+  },
+  {
+   "slot": 36,
+   "slug": "cultivate-conscious-perception-in-virtual-frontiers",
+   "title": "Cultivate Conscious Perception in Virtual Frontiers",
+   "book": "I",
+   "form": "How To",
+   "line": "For when an environment reaches your senses before it reaches your judgement.",
+   "url": "/practice-library/cultivate-conscious-perception-in-virtual-frontiers.html",
+   "image": "/images/cards/cultivate-conscious-perception-in-virtual-frontiers/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-10-20"
+  },
+  {
+   "slot": 37,
+   "slug": "monetising-the-mind",
+   "title": "Monetising the Mind",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when you notice you've read the privacy policy of exactly nothing you've ever signed up for.",
+   "url": "/practice-library/monetising-the-mind.html",
+   "image": "/images/cards/monetising-the-mind/card-480.webp",
+   "tags": [
+    "persuasion_information",
+    "security_safety"
+   ],
+   "date": "2026-10-22"
+  },
+  {
+   "slot": 38,
+   "slug": "the-citizen-soldier",
+   "title": "The Citizen Soldier",
+   "book": "III",
+   "form": "How To",
+   "line": "For when defence stops being someone else's job.",
+   "url": "/practice-library/the-citizen-soldier.html",
+   "image": "/images/cards/the-citizen-soldier/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-10-24"
+  },
+  {
+   "slot": 39,
+   "slug": "design-technology-for-sustainability-and-ethical-boundaries",
+   "title": "Design Technology for Sustainability and Ethical Boundaries",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a product ships fast, scales well, and nobody on the team can say what it actually cost to make.",
+   "url": "/practice-library/design-technology-for-sustainability-and-ethical-boundaries.html",
+   "image": "/images/cards/design-technology-for-sustainability-and-ethical-boundaries/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-10-27"
+  },
+  {
+   "slot": 40,
+   "slug": "strengthening-your-digital-defences",
+   "title": "Strengthening Your Digital Defences",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when you realise the password you're proudest of remembering is also the one you've used four times.",
+   "url": "/practice-library/strengthening-your-digital-defences.html",
+   "image": "/images/cards/strengthening-your-digital-defences/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-10-29"
+  },
+  {
+   "slot": 41,
+   "slug": "shape-the-stories",
+   "title": "Shape the Stories",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the version of events everyone else believes isn't the one you lived.",
+   "url": "/practice-library/shape-the-stories.html",
+   "image": "/images/cards/shape-the-stories/card-480.webp",
+   "tags": [
+    "design_leadership",
+    "persuasion_information",
+    "civic_collective"
+   ],
+   "date": "2026-10-31"
+  },
+  {
+   "slot": 42,
+   "slug": "the-webs-shifting-promise",
+   "title": "The Web's Shifting Promise",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the site you opened to look up one thing is still open forty minutes later.",
+   "url": "/practice-library/the-webs-shifting-promise.html",
+   "image": "/images/cards/the-webs-shifting-promise/card-480.webp",
+   "tags": [
+    "persuasion_information"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 43,
+   "slug": "design-for-the-human-os",
+   "title": "Design for the Human OS",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a system is built around the part of a person that's easiest to measure.",
+   "url": "/practice-library/design-for-the-human-os.html",
+   "image": "/images/cards/design-for-the-human-os/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 44,
+   "slug": "bridging-generational-focus",
+   "title": "Bridging Generational Focus",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when the family group chat and the family dinner table can't agree on what deserves attention.",
+   "url": "/practice-library/bridging-generational-focus.html",
+   "image": "/images/cards/bridging-generational-focus/card-480.webp",
+   "tags": [
+    "attention_focus",
+    "civic_collective"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 45,
+   "slug": "the-blueprint-for-the-future",
+   "title": "The Blueprint for the Future",
+   "book": "III",
+   "form": "How To",
+   "line": "For the citizen roles that don't fit inside your own four walls.",
+   "url": "/practice-library/the-blueprint-for-the-future.html",
+   "image": "/images/cards/the-blueprint-for-the-future/card-480.webp",
+   "tags": [
+    "civic_collective"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 46,
+   "slug": "navigate-techno-intimacy",
+   "title": "Navigate Techno-Intimacy",
+   "book": "I",
+   "form": "How To",
+   "line": "For when your home finishes your sentences before you do.",
+   "url": "/practice-library/navigate-techno-intimacy.html",
+   "image": "/images/cards/navigate-techno-intimacy/card-480.webp",
+   "tags": [
+    "security_safety",
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 47,
+   "slug": "shaping-your-worldview",
+   "title": "Shaping Your Worldview",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when everyone in the room seems to be watching a slightly different version of the same news.",
+   "url": "/practice-library/shaping-your-worldview.html",
+   "image": "/images/cards/shaping-your-worldview/card-480.webp",
+   "tags": [
+    "persuasion_information"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 48,
+   "slug": "foster-and-navigate-collective-intelligence",
+   "title": "Foster and Navigate Collective Intelligence",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a room full of smart people still produces a worse answer than any one of them would have alone.",
+   "url": "/practice-library/foster-and-navigate-collective-intelligence.html",
+   "image": "/images/cards/foster-and-navigate-collective-intelligence/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 49,
+   "slug": "your-role-in-digital-safety",
+   "title": "Your Role in Digital Safety",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when you've done everything right on your own accounts and the danger still feels bigger than you are.",
+   "url": "/practice-library/your-role-in-digital-safety.html",
+   "image": "/images/cards/your-role-in-digital-safety/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 50,
+   "slug": "design-with-human-nature-in-mind",
+   "title": "Design with Human Nature in Mind",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a system is built for the way people are supposed to behave.",
+   "url": "/practice-library/design-with-human-nature-in-mind.html",
+   "image": "/images/cards/design-with-human-nature-in-mind/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 51,
+   "slug": "rebuilding-common-ground",
+   "title": "Rebuilding Common Ground",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when a conversation that should have taken five minutes turns into something neither of you can walk back from.",
+   "url": "/practice-library/rebuilding-common-ground.html",
+   "image": "/images/cards/rebuilding-common-ground/card-480.webp",
+   "tags": [
+    "persuasion_information"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 52,
+   "slug": "the-citizens-role",
+   "title": "The Citizen's Role",
+   "book": "III",
+   "form": "How To",
+   "line": "For when the state can't be the only line of defence.",
+   "url": "/practice-library/the-citizens-role.html",
+   "image": "/images/cards/the-citizens-role/card-480.webp",
+   "tags": [
+    "civic_collective",
+    "persuasion_information"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 53,
+   "slug": "redesign-integrity-for-exponential-times",
+   "title": "Redesign Integrity for Exponential Times",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a small oversight scales faster than anyone can catch it.",
+   "url": "/practice-library/redesign-integrity-for-exponential-times.html",
+   "image": "/images/cards/redesign-integrity-for-exponential-times/card-480.webp",
+   "tags": [
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 54,
+   "slug": "building-digital-resilience",
+   "title": "Building Digital Resilience",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the week before the breach, not the week after.",
+   "url": "/practice-library/building-digital-resilience.html",
+   "image": "/images/cards/building-digital-resilience/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 55,
+   "slug": "use-technology-as-mirror-and-instrument",
+   "title": "Use Technology as Mirror and Instrument",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a tool starts showing you more about yourself than you expected.",
+   "url": "/practice-library/use-technology-as-mirror-and-instrument.html",
+   "image": "/images/cards/use-technology-as-mirror-and-instrument/card-480.webp",
+   "tags": [
+    "design_leadership",
+    "governance_institutions"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 56,
+   "slug": "envisioning-your-role",
+   "title": "Envisioning Your Role",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For when it's easier to critique the system than decide what to do inside it.",
+   "url": "/practice-library/envisioning-your-role.html",
+   "image": "/images/cards/envisioning-your-role/card-480.webp",
+   "tags": [
+    "civic_collective"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 57,
+   "slug": "take-a-moment-to-act",
+   "title": "Take a Moment to Act",
+   "book": "II",
+   "form": "Pause to Reflect",
+   "line": "For the moment you realise every pause in this series has been building toward one thing.",
+   "url": "/practice-library/take-a-moment-to-act.html",
+   "image": "/images/cards/take-a-moment-to-act/card-480.webp",
+   "tags": [
+    "attention_focus",
+    "persuasion_information"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 58,
+   "slug": "reimagine-governance",
+   "title": "Reimagine Governance",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the system meant to represent you stopped feeling like it does.",
+   "url": "/practice-library/reimagine-governance.html",
+   "image": "/images/cards/reimagine-governance/card-480.webp",
+   "tags": [
+    "civic_collective",
+    "governance_institutions"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 59,
+   "slug": "find-meaning-in-a-mechanised-world",
+   "title": "Find Meaning in a Mechanised World",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the tasks that used to prove your worth get automated before you've worked out what proves it now.",
+   "url": "/practice-library/find-meaning-in-a-mechanised-world.html",
+   "image": "/images/cards/find-meaning-in-a-mechanised-world/card-480.webp",
+   "tags": [
+    "meaning_reinvention"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 60,
+   "slug": "recognise-and-embrace-reinvention",
+   "title": "Recognise and Embrace Reinvention",
+   "book": "I",
+   "form": "How To",
+   "line": "For when the small, awkward experiment in the corner turns out to be the thing that mattered.",
+   "url": "/practice-library/recognise-and-embrace-reinvention.html",
+   "image": "/images/cards/recognise-and-embrace-reinvention/card-480.webp",
+   "tags": [
+    "meaning_reinvention",
+    "design_leadership"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 61,
+   "slug": "engage-with-the-future-of-consciousness-and-sentience",
+   "title": "Engage with the Future of Consciousness and Sentience",
+   "book": "I",
+   "form": "How To",
+   "line": "For when a conversation with a machine starts to feel like it might actually be one.",
+   "url": "/practice-library/engage-with-the-future-of-consciousness-and-sentience.html",
+   "image": "/images/cards/engage-with-the-future-of-consciousness-and-sentience/card-480.webp",
+   "tags": [
+    "ai_ethics"
+   ],
+   "date": "2026-11-09"
+  },
+  {
+   "slot": 62,
+   "slug": "a-new-set-of-rules",
+   "title": "A New Set of Rules",
+   "book": "III",
+   "form": "How To",
+   "line": "For the fortitude that outlasts any single defence.",
+   "url": "/practice-library/a-new-set-of-rules.html",
+   "image": "/images/cards/a-new-set-of-rules/card-480.webp",
+   "tags": [
+    "security_safety"
+   ],
+   "date": "2026-11-09"
+  }
+ ]
 }

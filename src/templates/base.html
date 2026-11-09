@@ -29,6 +29,7 @@ ${d.robots ? `<meta name="robots" content="${d.robots}">` : ""}
 <meta name="twitter:image" content="${d.ogImage}">
 
 <link rel="alternate" type="application/rss+xml" title="Sector Briefings — ${s.name}" href="/briefings.xml">
+${d.libraryFeed ? `<link rel="alternate" type="application/rss+xml" title="The Practice Library — ${s.name}" href="/practice-library.xml">` : ""}
 
 <!-- Fonts are self-hosted. No request reaches Google, nothing external
      blocks the render, and fonts.googleapis.com / fonts.gstatic.com are
