@@ -174,6 +174,18 @@
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
 
+# MTA-STS policy (added 12 Nov 2026). Served at
+# https://mta-sts.neilcatton.com/.well-known/mta-sts.txt via the Netlify domain
+# alias mta-sts.neilcatton.com. It tells other mail servers to deliver to
+# Exchange Online only over verified TLS. Short cache so a policy change
+# (testing -> enforce) isn't held by the site-wide immutable cache. After any
+# edit to the policy file, also change the id in the _mta-sts DNS TXT record.
+[[headers]]
+  for = "/.well-known/mta-sts.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300"
+
 [[headers]]
   for = "/briefings.xml"
   [headers.values]
